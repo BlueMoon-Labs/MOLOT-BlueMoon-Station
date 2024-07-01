@@ -700,3 +700,38 @@
 	path = /obj/item/modkit/karabiner_kit
 	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/tacticool/satt
+	name = "SATT combat uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/syndicate/tacticool/satt
+	ckeywhitelist = list("Allazarius")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/mask/satt
+	name = "Skull half mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/gas/sechailer/syndicate/skull
+	ckeywhitelist = list("Allazarius")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/mask/satt
+	name = "SATT dogtag"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/accessory/dogtag
+	ckeywhitelist = list("Allazarius")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/mask/satt
+	name = "AT41 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/at41
+	ckeywhitelist = list("Allazarius")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/backpack/satt
+	name = "SATT backpack"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/storage/backpack/satt
+	ckeywhitelist = list("Allazarius")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

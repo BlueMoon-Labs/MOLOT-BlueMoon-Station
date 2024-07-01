@@ -53,7 +53,7 @@
 			damage *= 0.75
 		//skyrat edit
 		if(H.w_socks)
-			if(H.w_socks.body_parts_covered & FEET)
+			if(H.w_socks.body_parts_covered & FEET & !(flags & CALTROP_BYPASS_SHOES)) //bluemoon change носки не должны резать урон пунжи и шипов
 				damage *= 0.75
 		//
 		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = 5)

@@ -7,7 +7,7 @@
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
 	item_state = "ushm_r"
 	w_class = WEIGHT_CLASS_BULKY
-	toolspeed = 0.3 //the epitome of powertools. extremely fast mining, laughs at puny walls
+	toolspeed = 0.3
 	usesound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
 	hitsound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
 	desc = "УШМ с алмазным диском и четырёх тактовым двигателем на жидкой плазме. Что ещё может быть нужно, когда требуется взять штурмом чью то крепость? "
@@ -23,13 +23,22 @@
 	. = ..()
 	if(!proximity || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/structure/window)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
+	if(istype(A, /obj/structure/window))
 		var/obj/structure/window/W = A
 		W.take_damage(200, BRUTE, MELEE, 0)
-	else if(istype(A, /obj/structure/grille))
+		playsound(user, 'modular_bluemoon/Ren/Sound/USHM_hit.ogg', 50, 1)
+	if(istype(A, /obj/structure/grille))
 		var/obj/structure/grille/G = A
 		G.take_damage(40, BRUTE, MELEE, 0)
-
+		playsound(user, 'modular_bluemoon/Ren/Sound/USHM_hit.ogg', 50, 1)
+	if(istype(A, /obj/machinery))
+		var/obj/machinery/M = A
+		M.take_damage(100, BRUTE, MELEE, 0)
+		playsound(user, 'modular_bluemoon/Ren/Sound/USHM_hit.ogg', 50, 1)
+	if(istype(A, /obj/structure))
+		var/obj/structure/S = A
+		S.take_damage(100, BRUTE, MELEE, 0)
+		playsound(user, 'modular_bluemoon/Ren/Sound/USHM_hit.ogg', 50, 1)
 
 /obj/item/pickaxe/drill/jackhammer/angle_grinder/ComponentInitialize()
 	. = ..()
@@ -41,28 +50,48 @@
 	desc = "<span class='danger'>Не направлять рабочую часть на живых существ</span>"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	icon_state = "melter"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/melter)
-	cell_type = "/obj/item/stock_parts/cell/pulse/pistol"
+	charge_delay = 4
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/melter, /obj/item/ammo_casing/energy/laser/melter/destroy)
+	cell_type = "/obj/item/stock_parts/cell/pulse/melter"
+
+/obj/item/stock_parts/cell/pulse/melter
+	name = "melter power cell"
+	maxcharge = 10000
+	chargerate = 1000
 
 /obj/item/ammo_casing/energy/laser/melter
 	projectile_type = /obj/item/projectile/beam/melter
-	e_cost = 300
+	e_cost = 1400
+	select_name = "Kill"
+	fire_sound = 'modular_bluemoon/Ren/Sound/Melter.ogg'
+
+/obj/item/ammo_casing/energy/laser/melter/destroy
+	projectile_type = /obj/item/projectile/beam/melter/destroy
+	e_cost = 5000
 	select_name = "MELT"
 	fire_sound = 'modular_bluemoon/Ren/Sound/Melter.ogg'
 
 /obj/item/projectile/beam/melter
-	icon_state = "pulse0"
+	icon_state = "heavylaser"
 	damage = 60
 	light_color = "#ffff00"
+	wound_bonus = 10
+
+/obj/item/projectile/beam/melter/destroy
+	icon_state = "pulse0"
+	light_color = "#e6250c"
 	wound_bonus = 40
 
 /obj/item/projectile/beam/melter/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
-		target.ex_act(EXPLODE_HEAVY)
 	var/turf/open/target_turf = get_turf(target)
 	if(istype(target_turf))
 		new /obj/effect/decal/cleanable/plasma(drop_location(target_turf))
+
+/obj/item/projectile/beam/melter/destroy/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
+		target.ex_act(EXPLODE_HEAVY)
 
 /obj/item/gun/energy/laser/canceller
 	name = "Canceller"

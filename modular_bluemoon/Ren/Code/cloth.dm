@@ -639,6 +639,59 @@
 		custom_price = 1000
 	if(class == "<span class='nicegreen'>ZAIN</span>")
 		custom_price = 500
+//донат вещи
+/obj/item/clothing/under/syndicate/tacticool/satt
+	name = "SATT combat uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/mob.dmi'
+	icon_state = "SATT_combatuniform"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/skull
+	name = "Skull half mask"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	actions_types = list(/datum/action/item_action/adjust)
+	icon_state = "SATT_skull_half_mask"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/mob.dmi'
+
+/obj/item/storage/backpack/satt
+	name = "SATT backpack"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATT_backpack"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/mob.dmi'
+
+/obj/item/clothing/accessory/dogtag
+	name = "SATT dogtag"
+	desc = "Таких жетонов много, но этот твой."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/mob.dmi'
+	icon_state = "SATT_dogtag"
+	obj_flags = UNIQUE_RENAME
+
+/obj/item/modkit/at41
+	name = "AT41 Kit"
+	desc = "A modkit for making an WT into a AT41."
+	product = /obj/item/gun/ballistic/automatic/wt550/at41
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/at41
+	name = "AT41"
+	desc = "A new life for old gun."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/at41.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	icon_state = "SATT_AT41_ammo"
+	item_state = "SATT_AT41"
+
+/obj/item/gun/ballistic/automatic/wt550/at41/update_icon_state()
+	..()
+	if(magazine)
+		icon_state = "SATT_AT41_ammo"
+	else
+		icon_state = "SATT_AT41_noammo"
 
 ///Чулки чулки чулки блять
 /obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt

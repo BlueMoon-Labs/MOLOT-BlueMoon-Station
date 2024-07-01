@@ -249,8 +249,8 @@
 
 //Энергетический балистический щит
 /obj/item/shield/inteq_energy
-	name = "Еnergy ballistic shield"
-	desc = "A shield that reflects almost all ballistic projectiles, but is useless against energy attacks. It can be retracted, expanded, and stored anywhere."
+	name = "Old energy shield"
+	desc = "Устаревшая на несколько поколений модель энергетического щита. Использует механические ограничители силового поля и эрганомика немного страдает, но всё ещё является желанным элементом экипировки."
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
@@ -314,3 +314,193 @@
 	desc = "Красный плащ с чёрным силуэтом черепа в очках. Ходят слухи, что он принадлежал величайшему шахтёру, чей бур мог пронзить небеса. А теперь это ещё один символ победившего капитализма."
 	cost = 3000
 	contains = list(/obj/item/clothing/neck/cloak/miner)
+
+//---------------------------------------------------------------------------------------------------------------------------------
+/obj/item/robot_module/inteq_builder
+	name = "InteQ Engineering"
+	has_snowflake_deadsprite = TRUE
+	basic_modules = list(
+		/obj/item/pickaxe/drill/jackhammer/angle_grinder,
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/construction/rcd/borg, //----------------
+		/obj/item/pipe_dispenser,
+		/obj/item/weldingtool/largetank/cyborg,
+		/obj/item/screwdriver/cyborg,
+		/obj/item/wrench/cyborg,
+		/obj/item/crowbar/cyborg,
+		/obj/item/wirecutters/cyborg,
+		/obj/item/multitool/cyborg,
+		/obj/item/storage/part_replacer/cyborg,
+		/obj/item/holosign_creator/combifan,
+		/obj/item/gripper,
+		/obj/item/lightreplacer/cyborg,
+		/obj/item/assembly/signaler/cyborg,
+		/obj/item/areaeditor/blueprints/cyborg,
+		/obj/item/electroadaptive_pseudocircuit,
+		/obj/item/stack/sheet/metal/cyborg,
+		/obj/item/stack/sheet/glass/cyborg,
+		/obj/item/stack/sheet/rglass/cyborg,
+		/obj/item/stack/rods/cyborg,
+		/obj/item/stack/tile/plasteel/cyborg,
+		/obj/item/screwdriver/power/inteq,
+		/obj/item/stack/cable_coil/cyborg)
+	emag_modules = list(/obj/item/borg/stun)
+	ratvar_modules = list(
+		/obj/item/clockwork/slab/cyborg/engineer,
+		/obj/item/clockwork/replica_fabricator/cyborg)
+	cyborg_base_icon = "mekainteq"
+	cyborg_icon_override = 'modular_bluemoon/Ren/Icons/Mob/robot.dmi'
+	hasrest = TRUE
+	magpulsing = TRUE
+	hat_offset = -4
+
+/mob/living/silicon/robot/modules/inteq/builder
+	icon_state = "mekainteq"
+	playstyle_string = "<span class='big bold'>Вы - Строительный Киборг ИнтеКью!</span><br>\
+						<b>Вы вооружены надежными инженерными средствами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
+						Ваш Маркер Назначения позволит Вам скрытно перемещаться по сети утилизации по всей станции. \
+						Ваш сварочный аппарат позволит Вам ремонтировать экзокостюмы оперативников, а также себя и своих товарищей-киборгов. \
+						Ваш Киборг-Проектор Хамелеон позволит вам принять облик и зарегистрированное имя инженерного борга Nanotrasen и проводить тайные операции на Космических Станциях. \
+						Имейте в виду, что почти любой физический контакт или случайное повреждение нарушит ваш камуфляж! \
+						<i>Помогите оперативникам любой ценой!!!</i></b>"
+	set_module = /obj/item/robot_module/inteq_builder
+//---------------------------------------------------------------------------[ловушки]------------------------------------------------------------------------
+//колючая проволока
+/obj/structure/oldtrap
+	name = "old trap"
+	desc = "Ты не должен этого видеть"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
+	icon_state = "razor"
+	anchored = TRUE
+	density = FALSE
+
+/obj/structure/oldtrap/razor_wire
+	name = "Razor wire"
+	desc = "Она и правда колючая."
+	max_integrity = 100
+	var/base = /obj/item/stack/sheet/mineral/wood
+	var/damage = 10
+
+/obj/structure/oldtrap/razor_wire/industrial
+	icon_state = "razor_industrial"
+	max_integrity = 400
+	base = /obj/item/stack/sheet/plasteel
+	damage = 20
+
+/obj/structure/oldtrap/razor_wire/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+	if(istype(mover, /mob/living/silicon/robot))
+		return TRUE
+	if(istype(mover, /obj/item/projectile))
+		return TRUE
+	if(prob(50))
+		to_chat(mover, "<span class='danger'>Ты цепляешься за колючую проволоку, застревая в ней.</span>")
+		return FALSE
+
+/obj/structure/oldtrap/razor_wire/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/caltrop, 5, damage, 50, CALTROP_BYPASS_SHOES)
+
+/obj/structure/oldtrap/razor_wire/deconstruct(disassembled = TRUE)
+	if(!loc)
+		return
+	if(!(flags_1&NODECONSTRUCT_1))
+		var/amount = rand(1,10)
+		var/obj/R = new /obj/item/stack/rods(drop_location(), amount)
+		var/obj/D = new base(drop_location(), 5)
+		transfer_fingerprints_to(R,D)
+		qdel(src)
+	..()
+
+/obj/structure/oldtrap/razor_wire/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/wirecutters))
+		to_chat(user, "<span class='notice'>Ты разрезаешь колючую проволоку с помощью [I].</span>")
+		if(I.use_tool(src, user, 8 SECONDS, volume=50))
+			deconstruct()
+	if(istype(I, /obj/item/wrench))
+		if(anchored == TRUE)
+			to_chat(user, "<span class='notice'>Ты откручиваешь основание колючей проволоки с помощью [I].</span>")
+		else
+			to_chat(user, "<span class='notice'>Ты закручиваешь основание колючей проволоки с помощью [I].</span>")
+		if(I.use_tool(src, user, 20 SECONDS, volume=50))
+			anchored = !anchored
+	else
+		..()
+//Шипы
+/obj/structure/oldtrap/floor_spike
+	name = "Strange floor"
+	desc = "Я бы на него не наступал."
+	icon_state = "spike_trap"
+	max_integrity = 200
+	var/screwd = 0
+
+/obj/structure/oldtrap/floor_spike/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/caltrop, 25, 30, 100, CALTROP_BYPASS_SHOES)
+
+/obj/structure/oldtrap/floor_spike/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+	if(istype(mover, /mob/living))
+		mover.visible_message("<span class='danger'>Ловушка активируется, выбрасывая свои шипы вверх!</span>", "<span class='danger'>Ты активируешь ловушку, заставляя шипы устремиться вверх!</span>")
+		icon_state = "spike_trap-1"
+		update_icon()
+		icon_state = "spike_trap-2"
+		update_icon()
+
+/obj/structure/oldtrap/floor_spike/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/screwdriver))
+		if(screwd == 0)
+			to_chat(user, "<span class='notice'>Ты раскручиваешь винты креплений ловушки с шипами [I].</span>")
+			if(I.use_tool(src, user, 16 SECONDS, volume=50))
+				screwd = !screwd
+		else
+			to_chat(user, "<span class='notice'>Ты закручиваешь винты креплений ловушки с шипами [I].</span>")
+			if(I.use_tool(src, user, 16 SECONDS, volume=50))
+				screwd = !screwd
+	if(istype(I, /obj/item/crowbar))
+		if(screwd == 1)
+			to_chat(user, "<span class='notice'>Ты приподнимаешь пластину, удерживающую пружины ловушки.</span>")
+			if(I.use_tool(src, user, 30 SECONDS, volume=50))
+				deconstruct()
+	else
+		. = ..()
+
+/obj/structure/oldtrap/floor_spike/deconstruct(disassembled = TRUE)
+	if(!loc)
+		return
+	if(!(flags_1&NODECONSTRUCT_1))
+		var/amount = rand(1,5)
+		var/obj/R = new /obj/item/stack/sheet/plasteel(drop_location(), amount)
+		var/obj/D = new /obj/item/stake/hardened/silver(drop_location(), 3)
+		transfer_fingerprints_to(R,D)
+		qdel(src)
+	..()
+// Ловушка струна
+/obj/structure/oldtrap/string_trap
+	name = "Piano wire"
+	desc = "Струна натянутая на высоте шеи существа среднего роста. Будет очень неприятно нарваться на неё со всей скорости в темноте"
+	icon_state = "string_trap"
+
+/obj/structure/oldtrap/string_trap/Crossed(datum/source, atom/movable/AM)
+	if(ishuman(AM))
+		var/mob/living/carbon/human/H = AM
+		var/picked_def_zone = NONE
+		var/multiplier = 1
+		if(H.maxHealth <= 70)
+			return
+		if((H.maxHealth > 70) & (H.maxHealth < 130))
+			picked_def_zone = BODY_ZONE_HEAD
+		if(H.maxHealth >= 130)
+			picked_def_zone = BODY_ZONE_CHEST
+		if(H.m_intent == MOVE_INTENT_RUN)
+			multiplier = multiplier*3
+		if(H.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
+			multiplier = multiplier*1.5
+		var/damage = 10*multiplier
+		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = 5)
+
+
+
+
+
+
