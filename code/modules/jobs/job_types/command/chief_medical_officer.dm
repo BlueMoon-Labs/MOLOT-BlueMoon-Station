@@ -114,4 +114,5 @@
 
 /datum/outfit/job/cmo/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	. = ..()
+	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/cmo
 	ADD_TRAIT(H, TRAIT_SURGEON, TRAIT_GENERIC)

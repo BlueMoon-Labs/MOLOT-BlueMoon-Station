@@ -31,11 +31,18 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
   * @param state_override - Sets the state that we will fetch. Defaults to src.get_typing_indicator_icon_state()
   * @param force - shows even if src.typing_indcator_enabled is FALSE.
   */
-/mob/proc/display_typing_indicator(timeout_override = TYPING_INDICATOR_TIMEOUT, state_override = generate_typing_indicator(), force = FALSE)
+/mob/proc/display_typing_indicator(timeout_override = TYPING_INDICATOR_TIMEOUT, state_override = generate_typing_indicator(), force = FALSE, isMe = null, isSay = null)
 	if(((!typing_indicator_enabled || (stat != CONSCIOUS)) && !force) || typing_indicator_current)
 		return
-	typing_indicator_current = state_override
-	add_overlay(state_override)
+	if(isMe)
+		var/state_of_bubble = "emotetyping"
+		var/mutable_appearance/bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
+		typing_indicator_current = bubble_overlay
+		bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
+		add_overlay(bubble_overlay)
+	if(isSay)
+		typing_indicator_current = state_override
+		add_overlay(state_override)
 	typing_indicator_timerid = addtimer(CALLBACK(src, PROC_REF(clear_typing_indicator)), timeout_override, TIMER_STOPPABLE)
 
 /**

@@ -113,3 +113,8 @@
 	gloves = /obj/item/clothing/gloves/color/yellow
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
+
+/datum/outfit/job/ce/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/ce

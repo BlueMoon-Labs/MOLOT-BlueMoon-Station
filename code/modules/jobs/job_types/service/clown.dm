@@ -107,3 +107,4 @@
 		H.fully_replace_character_name(H.real_name, pick(GLOB.clown_names))
 	H.dna.add_mutation(CLOWNMUT)
 	H.dna.add_mutation(SMILE)
+	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/clown

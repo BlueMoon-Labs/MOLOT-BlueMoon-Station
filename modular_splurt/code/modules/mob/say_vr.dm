@@ -65,7 +65,7 @@
 		return
 
 	// Display typing indicator
-	display_typing_indicator()
+	display_typing_indicator(isMe = TRUE)
 
 	// Prompt user for text input
 	var/input_message = input(usr, "What would you like to subtly emote, with a typing indicator?", "Input subtle emote") as message|null

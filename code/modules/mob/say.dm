@@ -5,7 +5,7 @@
 	set hidden = TRUE
 	set category = "IC"
 	client?.last_activity = world.time
-	display_typing_indicator()
+	display_typing_indicator(isSay = TRUE)
 	var/message = input(usr, "", "say") as text|null
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()		// clear it immediately!
@@ -32,7 +32,7 @@
 	set hidden = TRUE
 	set category = "IC"
 	client?.last_activity = world.time
-	display_typing_indicator()
+	display_typing_indicator(isMe = TRUE)
 	var/message = input(usr, "", "me") as message|null
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()		// clear it immediately!
