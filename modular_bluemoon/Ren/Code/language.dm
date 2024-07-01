@@ -1,7 +1,7 @@
 /datum/language/old_codes
 	name = "Old fast codes"
-	desc = "Old military codes used on Earth hundreds of years ago. Now they are almost forgotten and replaced by more advanced referral systems, but someone still uses them"
-	key = "e"
+	desc = "Old military codes used on Earth hundreds of years ago. Now they are almost forgotten and replaced by more advanced referral systems, but someone still uses them. (Используйте русскую букву для префикса)"
+	key = "е"
 	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	space_chance = 100
 	icon_state = "inteq"

@@ -46,6 +46,9 @@
 		/datum/language/modular_bluemoon/felinid, // BM Felinid language
 		/datum/language/modular_splurt/avian, //SPLURT change - peep peep!
 		/datum/language/old_codes, //Bluemoon change inteq
+		/datum/language/modular_bluemoon/acratarian, // BLUEMOON ADD - язык акрадоров
+		/datum/language/modular_bluemoon/cetria, // BLUEMOON ADD - язык кеткринов
+		/datum/language/modular_bluemoon/demonic, // BLUEMOON ADD - демонический
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2

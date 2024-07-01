@@ -62,7 +62,7 @@
 	ask_verb = "queries"
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"
-	key = "v"
+	key = "e" // BLUEMOON CHANES - WAS "v" - уже занято для волтаика
 	space_chance = 30
 	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list(

@@ -38,8 +38,9 @@
 	// создание оверлея вони
 	var/matrix/M = matrix()
 	M.Scale(0.6)
-	stink_overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_double", pixel_y = 12, layer = -FIRE_LAYER)
+	stink_overlay = mutable_appearance(icon = 'modular_bluemoon/shower_trait/stink.dmi', icon_state = "steam_double", layer = -FIRE_LAYER)
 	stink_overlay.transform = M
+	stink_overlay.pixel_y = 12
 
 /datum/quirk/bluemoon_shower_need/remove()
 	if(quirk_holder)
@@ -71,7 +72,7 @@
 		if(-INFINITY to FINE_CLEAN)
 			if(warning_level > 0)
 				to_chat(quirk_holder, span_notice("Моё тело чистое, можно выходить."))
-				human_owner.remove_overlay(stink_overlay)
+				human_owner.cut_overlay(stink_overlay)
 				doing_shower = FALSE
 				warning_level = 0
 		if(FIRST_WARNING to DIRTY)
@@ -90,7 +91,7 @@
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
 			if(warning_level < 3)
-				human_owner.apply_overlay(stink_overlay)
+				human_owner.add_overlay(stink_overlay)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
 
@@ -116,6 +117,17 @@
 			examine_list += span_notice("[quirk_holder.p_they_ru(TRUE)] давно не мы[quirk_holder.ru_sya()].") // т.к. облачко в таком исходе всё ещё существует, на глаз можно определить, что персонаж давно не мылся
 		else
 			examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
+
+
+/datum/quirk/bluemoon_shower_need/proc/chance_visual_effect()
+	hide_visual_effect = !hide_visual_effect
+
+	if(!hide_visual_effect)
+		if(cleanse_level >= VERY_DIRTY)
+			human_owner.cut_overlay(stink_overlay)
+			human_owner.add_overlay(stink_overlay)
+	else
+		human_owner.cut_overlay(stink_overlay)
 
 /datum/quirk/bluemoon_shower_need/proc/cleaning(var/hide_clothing_warning)
 	SIGNAL_HANDLER
@@ -192,7 +204,7 @@
 /datum/action/cooldown/change_stink_overlay/Activate()
 	var/mob/living/carbon/human/action_holder = owner
 	for(var/datum/quirk/bluemoon_shower_need/quirk in action_holder.roundstart_quirks)
-		quirk.hide_visual_effect = !quirk.hide_visual_effect // скрываем визуальный эффект
+		quirk.chance_visual_effect()
 		to_chat(owner, span_notice("Теперь окружающие [quirk.hide_visual_effect ? "не будут" : "будут"] замечать плохой запах. [quirk.hide_visual_effect ? "Однако, настроение будет контролировать намного сложнее, если долго не ходить в душ..." : ""]"))
 		StartCooldown() // начала отчёта для КД на способность
 

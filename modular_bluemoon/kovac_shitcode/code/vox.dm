@@ -280,13 +280,13 @@
 
 /datum/language/modular_bluemoon/vox
 	name = "Vox-Pidgin"
-	desc = "A language comprised largely of screeching and squawking sounds. The language is largely shared only between Vox."
+	desc = "A language comprised largely of screeching and squawking sounds. The language is largely shared only between Vox. (Используйте русскую букву для префикса)"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/vox.dmi'
 	speech_verb = "shrieks"
 	ask_verb = "queries"
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"
-	key = "v"
+	key = "в"
 	space_chance = 75
 	default_priority = 99
 	// flags = TONGUELESS_SPEECH bluemoon change
