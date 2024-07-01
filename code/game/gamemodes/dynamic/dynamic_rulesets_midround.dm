@@ -193,19 +193,18 @@
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 1
 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
-	weight = 0  //BLUEMOON CHANGES
-	cost = 8  //BLUEMOON CHANGES
+	weight = 0  //BLUEMOON CHANGES - это автр-трейтор, его не должен выбирать режим сам по себе
+	cost = 0  //BLUEMOON CHANGES - бесконечные трейторы
 	requirements = list(101,40,30,20,10,10,10,10,10,10)
 	repeatable = TRUE
-
 	/// Whether or not this instance of sleeper agent should be randomly acceptable.
 	/// If TRUE, then this has a threat level% chance to succeed.
-	var/has_failure_chance = TRUE
+	var/has_failure_chance = FALSE // BLUEMOON CHANGES - было TRUE
 
 /datum/dynamic_ruleset/midround/autotraitor/acceptable(population = 0, threat = 0)
 	var/player_count = mode.current_players[CURRENT_LIVING_PLAYERS].len
 	var/antag_count = mode.current_players[CURRENT_LIVING_ANTAGS].len
-	var/max_traitors = round(player_count / 16) + 1 //BLUEMOON CNANGES - 1 предатель на каждые 16 человек
+	var/max_traitors = round(player_count / 15) + 1 //BLUEMOON CNANGES - 1 предатель на каждые 15 играющих персонажей
 
 	// adding traitors if the antag population is getting low
 	var/too_little_antags = antag_count < max_traitors

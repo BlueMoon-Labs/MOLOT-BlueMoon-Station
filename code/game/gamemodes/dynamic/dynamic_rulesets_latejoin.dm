@@ -64,8 +64,8 @@
 	restricted_roles = list("AI", "Cyborg", "Positronic Brain")
 	required_candidates = 1
 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
-	weight = 6  //BLUEMOON CHANGES
-	cost = 6 //BLUEMOON CHANGES
+	weight = 0 //BLUEMOON CHANGES
+	cost = 0 //BLUEMOON CHANGES - бесконечные предатели с автотрейтора
 	requirements = list(101,40,25,20,15,10,10,10,10,10)
 	repeatable = TRUE
 

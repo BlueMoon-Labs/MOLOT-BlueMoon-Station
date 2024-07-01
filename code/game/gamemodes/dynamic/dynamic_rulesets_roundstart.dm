@@ -14,13 +14,13 @@
 	protected_roles = list("Expeditor", "Shaft Miner", "NanoTrasen Representative", "Internal Affairs Agent", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg", "Positronic Brain") //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 13 //BLUEMOON CHANGES
-	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
-	scaling_cost = 9
+	weight = 999 //BLUEMOON CHANGES - автотрейтор практически гарантирован в каждый динамик. Стоит мало очков, даёт движ и бесконечных антагонистов
+	cost = 1 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
+	flags = LONE_RULESET // BLUEMOON ADD
 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
-	antag_cap = list("denominator" = 20) //BLUEMOON CHANGES
-	var/autotraitor_cooldown = (30 MINUTES) //BLUEMOON CHANGES
+	antag_cap = list("denominator" = 8, "offset" = 1) //BLUEMOON CHANGES - реди жмёт малое количество людей
+	var/autotraitor_cooldown = (12 MINUTES) //BLUEMOON CHANGES
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
 /datum/dynamic_ruleset/roundstart/traitor/pre_execute(population)
@@ -34,16 +34,20 @@
 	var/num_traitors = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_traitors)
 		var/mob/M = pick_n_take(candidates)
-		assigned += M.mind
-		M.mind.special_role = ROLE_TRAITOR
-		M.mind.restricted_roles = restricted_roles
+		if(M) // BLUEMOON ADD - защита от рантаймов
+			assigned += M.mind
+			M.mind.special_role = ROLE_TRAITOR
+			M.mind.restricted_roles = restricted_roles
 	return TRUE
 
 /datum/dynamic_ruleset/roundstart/traitor/rule_process()
 	if (COOLDOWN_FINISHED(src, autotraitor_cooldown_check))
 		COOLDOWN_START(src, autotraitor_cooldown_check, autotraitor_cooldown)
 		log_game("DYNAMIC: Checking if we can turn someone into a traitor.")
-		mode.picking_specific_rule(/datum/dynamic_ruleset/midround/autotraitor)
+		if(prob(50)) // BLUEMOON ADD
+			mode.picking_specific_rule(/datum/dynamic_ruleset/midround/autotraitor)
+		else // BLUEMOON ADD
+			mode.picking_specific_rule(/datum/dynamic_ruleset/latejoin/infiltrator) // BLUEMOON ADD
 
 //////////////////////////////////////////
 //                                      //
