@@ -88,6 +88,11 @@
 			prob_chance = implements[implement_type]
 		prob_chance *= surgery.get_propability_multiplier()
 		// BLUEMOON ADD START - самооперирование - чертовски сложное дело
+		if(HAS_TRAIT(target, TRAIT_BLUEMOON_COMPLEX_MAINTENANCE)) // только роботехники, РД и борги могут ремонтировать таких роботов
+			if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+				if(!HAS_TRAIT(user.mind, QUALIFIED_ROBOTIC_MAINTER) && !user.mind.antag_datums) // гост роли и обученный персонал могут оперировать таких синтов
+					to_chat(user, span_warning("Этот протез выглядит слишком сложно... Здесь необходим специалист!"))
+					prob_chance = 0
 		if(target == user)
 			if(HAS_TRAIT(target, CAN_BE_OPERATED_WITHOUT_PAIN)) // Роботам и некоторым другим расам даётся проще. Они не чувствуют боли
 				display_results(target, self_message = "<span class='notice'>Вы пытаетесь [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "отремонтироваться" : "вылечитья"] самостоятельно. Это не так сложно, как было бы [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "органикам" : "другим расам"], но неудобно.</span>")
