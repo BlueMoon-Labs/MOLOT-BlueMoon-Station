@@ -142,6 +142,19 @@
 	crate_name = "robotics assembly crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
+/datum/supply_pack/science/robotics_repair
+	name = "Robotics Repair Kit"
+	desc = "Набор крайне полезных инструментов для ремонта синтетических товарищей. Содержит пять ёмкостей с SysCleaner. Для открытия требуется доступ к робототехнике."
+	cost = 3000
+	access = ACCESS_ROBOTICS
+	contains = list(/obj/item/reagent_containers/glass/bottle/system_cleaner,
+					/obj/item/reagent_containers/glass/bottle/system_cleaner,
+					/obj/item/reagent_containers/glass/bottle/system_cleaner,
+					/obj/item/reagent_containers/glass/bottle/system_cleaner,
+					/obj/item/reagent_containers/glass/bottle/system_cleaner)
+	crate_name = "robotics repair crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
 /datum/supply_pack/science/rped
 	name = "RPED crate"
 	desc = "Нужно восстановить ORM, но наука была уничтожена после испытания бомбы? Купите это для самых продвинутых деталей, которые NT может вам предоставить."

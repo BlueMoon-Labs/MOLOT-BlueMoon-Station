@@ -53,6 +53,18 @@
 					/obj/item/reagent_containers/blood/oilblood)
 	crate_name = "hydraulic fluid crate"
 	crate_type = /obj/structure/closet/crate
+
+/datum/supply_pack/medical/oilblood_deluxe
+	name = "Super-Pressurized Hydraulic Fluid Crate"
+	desc = "Содержит пять ёмкостей с инновационной гидравлической жидкостью, способной усваиваться гораздо быстрее и в большем объёме."
+	cost = 4000
+	contains = list(/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe)
+	crate_name = "deluxe hydraulic fluid crate"
+	crate_type = /obj/structure/closet/crate
 // BLUEMOON ADD END
 
 /datum/supply_pack/medical/chemical

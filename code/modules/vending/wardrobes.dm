@@ -231,7 +231,11 @@
 	vend_reply = "Спасибо за использование RoboDrobe!"
 	products = list(/obj/item/clothing/glasses/hud/diagnostic = 3,
 					/obj/item/stack/medical/nanogel = 5,
-					/obj/item/reagent_containers/blood/oilblood = 5, // BLUEMOON ADD - гидравлическая жидкость для синтетиков,
+					// BLUEMOON ADD START - гидравлическая жидкость для синтетиков в двух вариациях, систем клинер
+					/obj/item/reagent_containers/blood/oilblood = 5,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe = 1,
+					/obj/item/reagent_containers/glass/bottle/system_cleaner = 4,
+					// BLUEMOON ADD END
 					/obj/item/clothing/head/beret/robo = 3,
 					/obj/item/clothing/under/rank/rnd/roboticist = 3,
 					/obj/item/clothing/under/rank/rnd/roboticist/sleek = 3,
