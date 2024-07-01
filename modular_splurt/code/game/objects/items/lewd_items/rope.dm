@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 				apply_legs(C)
 
 	// BLUEMOON ADD START - сверхтяжёлых персонажей нельзя таскать за собой
-	if((!HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER)))
+	if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
 		to_chat(user, span_warning("[C] is too heavy to be moved on ropes. It would be useless."))
 		return
 	// BLUEMOON ADD END
