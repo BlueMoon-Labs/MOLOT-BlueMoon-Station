@@ -5,41 +5,13 @@
 	icon = 'modular_sand/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
-	icon_state = "hardsuit0-powerarmor-1"
-	item_state = "hardsuit0-powerarmor-1"
+	icon_state = "hardsuit0-powerarmor"
+	item_state = "hardsuit0-powerarmor"
 	hardsuit_type = "powerarmor"
 	clothing_flags = THICKMATERIAL //Ouchie oofie my bones
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 40, "bio" = 100, "rad" = 5, "fire" = 75, "acid" = 100)
 	resistance_flags = ACID_PROOF
 	mutantrace_variation = STYLE_MUZZLE
-
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/spraycan_paintable)
-	update_icon()
-
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/update_overlays()
-	. = ..()
-	var/mutable_appearance/glass_overlay = mutable_appearance(icon, "hardsuit0-powerarmor-2")
-	if(icon_state == "hardsuit1-powerarmor-1")
-		glass_overlay = mutable_appearance(icon, "hardsuit1-powerarmor-2")
-		var/mutable_appearance/flight_overlay = mutable_appearance(icon, "hardsuit1-powerarmor-3")
-		flight_overlay.appearance_flags = RESET_COLOR
-		. += flight_overlay
-	glass_overlay.appearance_flags = RESET_COLOR
-	. += glass_overlay
-
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
-	. = ..()
-	if(!isinhands)
-		var/mutable_appearance/M1 = mutable_appearance(icon_file, "hardsuit0-powerarmor-2")
-		if(icon_state == "hardsuit1-powerarmor-1")
-			M1 = mutable_appearance(icon_file, "hardsuit1-powerarmor-2")
-			var/mutable_appearance/M2 = mutable_appearance(icon, "hardsuit1-powerarmor-3")
-			M2.appearance_flags = RESET_COLOR
-			. += M2
-		M1.appearance_flags = RESET_COLOR
-		. += M1
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -59,42 +31,32 @@
 	icon = 'modular_sand/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
-	icon_state = "hardsuit-powerarmor-1"
-	item_state = "hardsuit-powerarmor-1"
+	icon_state = "hardsuit-powerarmor"
+	item_state = "hardsuit-powerarmor"
 	slowdown = -0.1
 	clothing_flags = THICKMATERIAL //Not spaceproof. No, it isn't Spaceproof in Rimworld either.
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 40, "bio" = 100, "rad" = 5, "fire" = 75, "acid" = 100) //I was asked to buff this again. Here, fine.
+	armor = list("melee" = 60, "bullet" = 55, "laser" = 20, "energy" = 20, "bomb" = 70, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 100) //I was asked to buff this again. Here, fine.
 	resistance_flags = ACID_PROOF
 	var/explodioprobemp = 1
 	var/stamdamageemp = 200
 	var/brutedamageemp = 20
 	var/rebootdelay
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
+	//BLUEMOON ADD вариация силовухи
+	unique_reskin = list(
+		"T-60" = list(RESKIN_ICON_STATE = "hardsuit-powerarmor2"),
+	)
 
-/obj/item/clothing/suit/space/hardsuit/powerarmor/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/spraycan_paintable)
-	update_icon()
-
-/obj/item/clothing/suit/space/hardsuit/powerarmor/update_overlays()
-	. = ..()
-	var/mutable_appearance/black_overlay = mutable_appearance(icon, "hardsuit-powerarmor-2")
-	black_overlay.appearance_flags = RESET_COLOR
-	var/mutable_appearance/bluecore_overlay = mutable_appearance(icon, "hardsuit-powerarmor-3")
-	bluecore_overlay.appearance_flags = RESET_COLOR
-	. += black_overlay
-	. += bluecore_overlay
-
-/obj/item/clothing/suit/space/hardsuit/powerarmor/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
-	. = ..()
-	if(!isinhands)
-		var/mutable_appearance/M1 = mutable_appearance(icon_file, "hardsuit-powerarmor-2")
-		M1.appearance_flags = RESET_COLOR
-		var/mutable_appearance/M2 = mutable_appearance(icon_file, "hardsuit-powerarmor-3")
-		M2.appearance_flags = RESET_COLOR
-		. += M1
-		. += M2
+/obj/item/clothing/suit/space/hardsuit/powerarmor/reskin_obj(mob/user)
+	if(current_skin == "T-60")
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
+		tail_state = "sec2"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "hardsuit0-powerarmor2"
+			Helm.update_icon_state()
+	//BLUEMOON ADD END
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/emp_act()
 	. = ..()
