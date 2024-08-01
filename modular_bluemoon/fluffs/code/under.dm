@@ -45,19 +45,6 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
 	icon_state = "gg_envirosuit"
 
-/obj/item/clothing/under/donator/bm/flektarn
-	name = "flektarn combat uniform"
-	desc = "Black turtleneck with -explosive- camouflaged combat pants."
-	icon_state = "flektarn"
-	item_state = "syndicate-black"
-	can_adjust = TRUE
-
-/obj/item/clothing/under/donator/bm/flektarn_casual
-	name = "flektarn casual uniform"
-	desc = "White tank top with -explosive- camouflaged combat pants."
-	icon_state = "flektarn_casual"
-	item_state = "syndicate-black"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/donator/bm/nri_drg // civil variant of nri antagonist uniform
 	name = "covert ops tactical uniform"

@@ -80,13 +80,6 @@
 	item_state = "angelo"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
-/obj/item/clothing/suit/donator/bm/flektarn_montur
-	name = "flektarn montur"
-	desc = "A five-color, -explosive- uniform in camouflage colors, decorated with gold shoulder straps and various combat awards. Initials tell you that it belongs to Koruhaundo Adoriana O."
-	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
-	icon_state = "flektarn_montur"
-	item_state = "flektarn_montur"
-
 /obj/item/clothing/suit/donator/bm/SH_jacket
 	name = "Shiro's Samurai Jacket"
 	desc = "Iconic jacket of the Shiro Silverhand he wore in his Samurai days."
