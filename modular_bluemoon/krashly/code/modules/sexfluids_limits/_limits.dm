@@ -1,0 +1,12 @@
+#define MAX_FLUID 300
+#define OCHEN_BLIZKO_FLUID 280
+#define BLIZKO_TO_MAX_FLUID 200
+#define SREDNE_FLUID 150
+#define MIN_FLUID 0
+
+#define MIN_FLUID_SPAWN 100
+#define MAX_FLUID_SPAWN 200
+
+#define NETU 1
+#define CHUTKA 2
+#define OVERDOHUYA 3

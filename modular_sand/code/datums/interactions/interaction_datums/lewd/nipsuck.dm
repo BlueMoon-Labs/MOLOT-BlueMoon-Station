@@ -33,6 +33,12 @@
 		var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
 		var/modifier = B?.get_lactation_amount_modifier() || 1
 		if(B?.fluid_id)
+			if(HAS_TRAIT(target, TRAIT_FLUID)) 	// BLUEMOON ADDITION START
+				if(B.fluid_volume >= 2)
+					B.fluid_volume -= 2
+				else
+					user_message += ", ничего не вытягивая!"
+					return 						// BLUEMOON ADDITION END
 			var/milktype = B?.fluid_id
 			var/datum/reagent/milk = find_reagent_object_from_type(milktype)
 			var/milktext = milk.name //So you know what are you drinking. - Gardelin0

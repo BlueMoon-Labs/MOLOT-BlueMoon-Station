@@ -523,6 +523,17 @@
 	if (!isnull(trait_exam))
 		msg += trait_exam
 
+	if(HAS_TRAIT(user, TRAIT_FLUID))
+		if(HAS_TRAIT(user, TRAIT_FLUID_TITS))
+			if(breasts_protechka_examine != null)
+				. += breasts_protechka_examine
+		if(HAS_TRAIT(user, TRAIT_FLUID_PENIS))
+			if(penis_protechka_examine != null)
+				. += penis_protechka_examine
+		if(HAS_TRAIT(user, TRAIT_FLUID_WOMB))
+			if(womb_protechka_examine != null)
+				. += womb_protechka_examine
+
 	var/scar_severity = 0
 	for(var/i in all_scars)
 		var/datum/scar/S = i

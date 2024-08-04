@@ -42,6 +42,8 @@
 /datum/proc/ru_aya_oy(temp_gender)
 	. = "ой"
 
+/datum/proc/ru_oy_im(temp_gender)
+	. = "ым"
 
 //like clients, which do have gender.
 /client/ru_who(capitalized, temp_gender)
@@ -125,6 +127,18 @@
 			. = "ая"
 		if(MALE)
 			. = "ой"
+	if(capitalized)
+		. = capitalize(.)
+
+/atom/ru_oy_im(capitalized, temp_gender) // Я чувствую себя свободн(ым/ой)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "ым"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "ой"
+		if(MALE)
+			. = "ым"
 	if(capitalized)
 		. = capitalize(.)
 
