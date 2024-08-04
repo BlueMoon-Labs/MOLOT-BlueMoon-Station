@@ -297,7 +297,7 @@
 			cat["items"] += list(list(
 				"id" = D.id,
 				"name" = D.name,
-				"cost" = D.materials[SSmaterials.GetMaterialRef(/datum/material/biomass)]/efficiency,
+				"cost" = ceil(D.materials[SSmaterials.GetMaterialRef(/datum/material/biomass)]/efficiency),
 			))
 		data["categories"] += list(cat)
 
