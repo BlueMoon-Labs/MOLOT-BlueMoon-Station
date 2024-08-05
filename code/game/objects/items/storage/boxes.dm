@@ -254,6 +254,10 @@
 	..()
 	new /obj/item/camera_bug(src)
 	new /obj/item/door_remote/omni(src)
+	new /obj/item/pinpointer/crew/centcom(src)
+	new /obj/item/stamp/chameleon(src)
+	new /obj/item/detective_scanner(src)
+	new /obj/item/pda/heads(src)
 	new /obj/item/megaphone/command(src)
 
 //blueshield suit box

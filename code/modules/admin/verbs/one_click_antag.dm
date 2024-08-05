@@ -472,7 +472,6 @@
 
 		var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
 		var/teamSpawned = FALSE
-
 		if(candidates.len > 0)
 			//Pick the (un)lucky players
 			var/numagents = min(ertemplate.teamsize,candidates.len)
@@ -506,12 +505,41 @@
 					to_chat(usr, span_warning("Could not spawn you in as briefing officer as you are not a ghost!"))
 
 			var/list/spawnpoints = GLOB.emergencyresponseteamspawn
+
+			var/list/sorted_candidates = candidates.Copy()
+
+
+			var/mob/living/carbon/human/candidate0
+			var/mob/living/carbon/human/candidate1
+			var/mob/living/carbon/human/candidate_max
+			var/imax
+			var/exp0
+			var/exp1
+			for (var/i = 1, i <= sorted_candidates.len, i++)
+				candidate0 = sorted_candidates[i]
+				exp0 = candidate0.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate0.client.prefs.exp[EXP_TYPE_SECURITY]
+				imax = i
+				for (var/j = i, j <= sorted_candidates.len, j++)
+					candidate1 = sorted_candidates[j]
+					exp1 = candidate1.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate1.client.prefs.exp[EXP_TYPE_SECURITY]
+					if (exp0 < exp1)
+						imax = j
+						candidate_max = candidate1
+				if (imax != i)
+					sorted_candidates[imax] = candidate0
+					sorted_candidates[i] = candidate_max
+
+			var/candidate_id = 1
 			while(numagents && candidates.len)
 				if (numagents > spawnpoints.len)
 					numagents--
 					continue // This guy's unlucky, not enough spawn points, we skip him.
 				var/spawnloc = spawnpoints[numagents]
-				var/mob/chosen_candidate = pick(candidates)
+
+				// выбираем кандидата ?
+				//var/mob/chosen_candidate = pick(candidates)
+				var/mob/chosen_candidate = sorted_candidates[candidate_id]
+
 				candidates -= chosen_candidate
 				if(!chosen_candidate.key)
 					continue
@@ -527,7 +555,7 @@
 				//Give antag datum
 				var/datum/antagonist/ert/ert_antag
 
-				if(numagents == 1)
+				if(candidate_id == 1)
 					ert_antag = new ertemplate.leader_role
 				else
 					ert_antag = ertemplate.roles[WRAP(numagents,1,length(ertemplate.roles) + 1)]
@@ -540,6 +568,7 @@
 				log_game("[key_name(ERTOperative)] has been selected as an [ert_antag.name]")
 				numagents--
 				teamSpawned++
+				candidate_id++
 
 			if (teamSpawned)
 				message_admins("[ertemplate.polldesc] были отправлены на станцию со следующей миссией: [ertemplate.mission]")

@@ -631,8 +631,6 @@
 
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/storage/box/ert_commander=1,
-		/obj/item/pda/heads=1,
-		/obj/item/stamp/chameleon=1,
 		)
 	implants = list(
 		/obj/item/implant/mindshield,

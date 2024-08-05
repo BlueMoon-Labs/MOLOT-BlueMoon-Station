@@ -176,6 +176,14 @@
 	if(!target) //target can be set to null from above code, or elsewhere
 		active = FALSE
 
+/obj/item/pinpointer/crew/centcom
+	name = "Centcom Pimpointer"
+	desc = "A handheld tracking device that locks onto certain signals. Ignores suit sensors, but is much less accurate."
+	icon_state = "pinpointer_centcom"
+	item_state = "pinpointer_black"
+	minimum_range = 12
+	ignore_suit_sensor_level = TRUE
+
 /obj/item/pinpointer/pair
 	name = "pair pinpointer"
 	desc = "A handheld tracking device that locks onto its other half of the matching pair."
