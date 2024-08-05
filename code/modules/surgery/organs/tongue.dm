@@ -22,6 +22,7 @@
 		/datum/language/vulpkanin,
 		/datum/language/tajaran,
 		/datum/language/codespeak,
+		/datum/language/corpspeak,
 		/datum/language/monkey,
 		/datum/language/narsie,
 		/datum/language/beachbum,
@@ -198,6 +199,7 @@
 		/datum/language/draconic,
 		/datum/language/ratvar,
 		/datum/language/codespeak, //Bluemoon Change - because blyad
+		/datum/language/corpspeak,
 		/datum/language/monkey))
 
 /obj/item/organ/tongue/alien/Initialize(mapload)
@@ -307,6 +309,7 @@
 		/datum/language/machine,
 		/datum/language/draconic,
 		/datum/language/codespeak,
+		/datum/language/corpspeak,
 		/datum/language/monkey,
 		/datum/language/narsie,
 		/datum/language/beachbum,
@@ -329,6 +332,7 @@
 		/datum/language/machine,
 		/datum/language/draconic,
 		/datum/language/codespeak,
+		/datum/language/corpspeak,
 		/datum/language/monkey,
 		/datum/language/narsie,
 		/datum/language/beachbum,

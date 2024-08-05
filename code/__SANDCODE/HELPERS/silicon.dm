@@ -7,8 +7,10 @@
 
 	var/list/config_laws = CONFIG_GET(keyed_list/choosable_laws)
 	var/player_lawset = config_laws[player_client.prefs.silicon_lawset]
+	var/datum/ai_laws/law_datum = GLOB.all_law_datums[config_laws[player_client.prefs.silicon_lawset]]
 	if(player_lawset)
 		Silicon.laws = new player_lawset
+		law_datum.associate(Silicon) //BM add
 		var/admin_warning = "[player_client] / [Silicon] ([initial(Silicon.name)]) has joined with the [player_client.prefs.silicon_lawset] ([player_lawset]) lawset.<br>"
 		admin_warning += "Laws:<br>"
 		admin_warning += english_list(Silicon.laws.get_law_list(TRUE), "No laws", "<br>", "<br>")

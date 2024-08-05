@@ -14,7 +14,7 @@
 	exp_type = EXP_TYPE_MEDICAL
 	considered_combat_role = TRUE
 	exp_type_department = EXP_TYPE_MEDICAL
-	alt_titles = list("Security Doctor", "Security Medic", "Brig Doctor", "Brig EMT", "Security Physician", "Security EMT", "Slutcurity Nurse", "Fucking Slave", "Well-Trained Girl", "Well-Trained Boy", "Trauma Team", "Security Corpsman", "AC Combat Medic", "Field Medic of Interdyne", "Syndicate Field Medic", "Syndicate Corpsman")
+	alt_titles = list("NT Safeguard Physician", "Syndicate Field Medic", "Security Doctor", "Security Medic", "Brig Doctor", "Brig EMT", "Security Physician", "Security EMT", "Slutcurity Nurse", "Fucking Slave", "Well-Trained Girl", "Well-Trained Boy", "Trauma Team", "Security Corpsman", "AC Combat Medic", "Field Medic of Interdyne", "Syndicate Corpsman")
 
 
 	outfit = /datum/outfit/job/brigdoc

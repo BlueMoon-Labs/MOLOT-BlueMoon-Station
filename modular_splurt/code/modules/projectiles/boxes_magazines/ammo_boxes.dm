@@ -65,6 +65,10 @@
 	ammo_type = /obj/item/ammo_casing/c22lr
 	max_ammo = 24
 
+/obj/item/ammo_box/c22lr/rubber
+	name = "ammo box (.22 Rubber)"
+	ammo_type = /obj/item/ammo_casing/c22lr/rubber
+
 /obj/item/ammo_box/c9mm/rubber
 	name = "ammo box (9mm Rubber)"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber

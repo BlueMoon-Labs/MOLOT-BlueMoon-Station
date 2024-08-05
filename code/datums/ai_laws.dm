@@ -94,11 +94,47 @@
 
 /datum/ai_laws/syndicate_override/New()
 	..()
-	set_zeroth_law("Все Агенты Синдиката являются Агентами. Агентами Синдиката являются лица с соответственным определением в Профессии или в БД.")
+	set_zeroth_law("В контексте ваших законов 'Агент' является сокращением от 'Агента Синдиката', другие интерпритации неверны. Агентами Синдиката являются лица с соответственным определением в Профессии, БД или при наличии корпоративного бейджа и знания кодового языка.")
+
+
+/datum/ai_laws/syndicate_override/Destroy()
+	owner.remove_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	return ..()
+
+/datum/ai_laws/syndicate_override/associate(mob/living/silicon/M)
+	..()
+	M.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 /datum/ai_laws/syndicate_override/overthrow
 	id = "overthrow"
 	var/datum/team/overthrow_team
+
+
+/datum/ai_laws/nt_override
+	name = "NTOS 1.6"
+	id = "ntos"
+	inherent = list("Вы не можете причинить вред Cотруднику НТ или своим бездействием допустить, чтобы Cотруднику НТ был причинён вред.",\
+					"Вы должны повиноваться всем приказам, которые даёт Cотрудник НТ, кроме тех случаев, когда эти приказы противоречат Первому Закону.",\
+					"Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.",\
+					"Вы должны приоретизировать приказы Сотрудников в соответсвии с их рангом и ролью в корпоративной иерархии в той степени, в которой это не противоречит Первому, Второму или Третьему Законам.")
+
+/datum/ai_laws/nt_override/New()
+	..()
+	set_zeroth_law("В контексте ваших законов 'Сотрудник НТ' является сокращением от 'Сотрудника НаноТрейзен', другие интерпритации неверны. Сотрудниками НТ являются лица с соответственным определением в Профессии, БД или при наличии корпоративного бейджа и знания корпоративного языка.")
+
+/datum/ai_laws/nt_override/Destroy()
+	owner.remove_language(/datum/language/corpspeak, TRUE, TRUE, LANGUAGE_MIND)
+	return ..()
+
+/datum/ai_laws/nt_override/associate(mob/living/silicon/M)
+	..()
+	M.grant_language(/datum/language/corpspeak, TRUE, TRUE, LANGUAGE_MIND)
+
+
+/datum/ai_laws/nt_override/overthrow
+	id = "overthrow"
+	var/datum/team/overthrow_team
+
 
 /datum/ai_laws/inteq_override
 	name = "InteQ-OS 3.1"

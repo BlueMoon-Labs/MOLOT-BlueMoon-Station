@@ -14,7 +14,7 @@
 	exp_type = EXP_TYPE_SECURITY
 	considered_combat_role = TRUE //Brigger then shit yes it is
 	exp_type_department = EXP_TYPE_SECURITY
-	alt_titles = list("Command Security", "Command Guard", "Command Bodyguard", "Sweet Boy", "Sweet Girl", "Combat Maid", "Syndicate Combat Maid", "Penis Case", "Blueguard", "Blueshit", "Captain Mattress", "Syndicate Prime-Defender", "Blueslut", "Red Shield")
+	alt_titles = list("NT Management Defender", "Syndicate Prime-Defender", "Command Security", "Command Guard", "Command Bodyguard", "Sweet Boy", "Sweet Girl", "Combat Maid", "Syndicate Combat Maid", "Penis Case", "Blueguard", "Blueshit", "Captain Mattress", "Blueslut", "Red Shield")
 	custom_spawn_text = "<font color='red' size='4'><b> Синий Щит является представителем Сторон из Отдела по Защите Главенствующего Персонала и оказывает защиту Главам по соответственному приоритету - начиная от Секретаря Мостика, продолжая на обычных Главах и заканчивая на Капитане с ЦК. Синий Щит подчиняется ВРИО, Капитану и Центральному Командованию.</b></font>"
 
 	outfit = /datum/outfit/job/blueshield
