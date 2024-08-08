@@ -1430,6 +1430,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Brig"
 	icon_state = "brig"
 
+/area/security/brig_cells
+	name = "Brig Cells"
+	icon_state = "brig"
+
+/area/security/brig_briefing
+	name = "Brig Briefing room"
+	icon_state = "brig"
+
 /area/security/brig/upper
 	name = "Brig Overlook"
 
