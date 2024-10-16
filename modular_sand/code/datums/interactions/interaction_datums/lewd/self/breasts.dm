@@ -59,6 +59,9 @@
 			if(milkers && milktype)
 				liquid_container.reagents.add_reagent(milktype, rand(1,3 * milkers.get_lactation_amount_modifier()))
 				playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
+				if(HAS_TRAIT(user, TRAIT_FLUID)) 	// BLUEMOON ADDITION START
+					if(milkers.fluid_volume >= 2)
+						milkers.fluid_volume -= 2
 		else
 			message += ", но дойка не дает результатов..."
 
@@ -92,6 +95,9 @@
 
 		if(milkers && milktype)
 			user.reagents.add_reagent(milktype, rand(1,3 * milkers.get_lactation_amount_modifier()) * user.get_fluid_mod(milkers))
+			if(HAS_TRAIT(user, TRAIT_FLUID)) 	// BLUEMOON ADDITION START
+				if(milkers.fluid_volume >= 2)
+					milkers.fluid_volume -= 2 // BLUEMOON ADDITION END
 			lines = list(
 				"подносит соски своих собственных ёмкостей для молока ко рту и начинает их посасывать.",
 				"делает большой глоток свежего <b>'[lowertext(milktext)]'</b> и громко выдыхает после такого.",
