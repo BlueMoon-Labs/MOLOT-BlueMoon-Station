@@ -9,7 +9,7 @@
 	blacklisted = 1
 	ignored_by = list(/mob/living/simple_animal/hostile/faithless)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/shadow
-	species_traits = list(NOBLOOD,NOEYES,HAS_FLESH,HAS_BONE)
+	species_traits = list(NOBLOOD,NOEYES,HAS_FLESH,HAS_BONE,HAIR) // BLUEMOON CHANGE - species_traits = list(NOBLOOD,NOEYES,HAS_FLESH,HAS_BONE)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH)
 
 	dangerous_existence = 1
@@ -40,7 +40,7 @@
 	brutemod = 0.75
 	blacklisted = TRUE
 	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYES,NOGENITALS,NOAROUSAL)
+	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYES,NOGENITALS,NOAROUSAL,HAIR) // BLUEMOON CHANGE - species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYES,NOGENITALS,NOAROUSAL) 
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_CHUNKYFINGERS,TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOHUNGER,TRAIT_NOTHIRST)
 	mutanteyes = /obj/item/organ/eyes/night_vision/nightmare
 	mutant_organs = list(/obj/item/organ/heart/nightmare)
@@ -54,7 +54,13 @@
 	to_chat(C, "[info_text]")
 
 	C.fully_replace_character_name("[pick(GLOB.nightmare_names)]")
-
+// BLUEMOON ADD START - Задаем найтмеру темно-пепельные волосы
+	var/mob/living/carbon/human/H = C
+	H.hair_color = "333333"
+	H.facial_hair_color = "333333"
+	H.update_hair()
+	H.grad_style = NONE
+// BLUEMOON ADD END
 /datum/species/shadow/nightmare/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H)
 	var/turf/T = H.loc
 	if(istype(T))
@@ -99,6 +105,7 @@
 	var/respawn_progress = 0
 	var/obj/item/light_eater/blade
 	decay_factor = 0
+	actions_types = list(/datum/action/item_action/organ_action/use) // BLUEMOON ADD - для работы /obj/item/organ/heart/nightmare/ui_action_click(mob/living/carbon/M, action)
 
 /obj/item/organ/heart/nightmare/ComponentInitialize()
 	. = ..()
@@ -119,10 +126,11 @@
 
 /obj/item/organ/heart/nightmare/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	..()
-	if(special != HEART_SPECIAL_SHADOWIFY)
-		blade = new/obj/item/light_eater
-		M.put_in_hands(blade)
-
+//BLUEMOON REMOVE START - Заставляем Кошмара спавнится без клинка
+	// if(special != HEART_SPECIAL_SHADOWIFY)
+	// 	blade = new/obj/item/light_eater
+	// 	M.put_in_hands(blade)
+//BLUEMOON REMOVE END
 /obj/item/organ/heart/nightmare/Remove(special = FALSE)
 	respawn_progress = 0
 	if(!QDELETED(owner) && blade && special != HEART_SPECIAL_SHADOWIFY)
@@ -154,7 +162,16 @@
 		owner.visible_message("<span class='warning'>[owner] staggers to [owner.ru_ego()] feet!</span>")
 		playsound(owner, 'sound/hallucinations/far_noise.ogg', 50, 1)
 		respawn_progress = 0
-
+// BLUEMOON ADD START - Добавляем кнопку интерфейса, чтобы убирать/доставать клинок
+/obj/item/organ/heart/nightmare/ui_action_click(mob/living/carbon/M, action)
+	..()
+	blade = new/obj/item/light_eater
+	if (locate(/obj/item/light_eater) in M.held_items)
+		for(var/obj/item/light_eater/I in M.held_items)
+			qdel(I)
+	else
+		M.put_in_hands(blade)
+// BLUEMOON ADD END
 //Weapon
 
 /obj/item/light_eater
@@ -235,8 +252,8 @@
 			QDEL_NULL(weapon.alight)
 			visible_message("<span class='danger'>[light] on [O] flickers out and disintegrates!</span>")
 	else
-		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
-		O.burn()
+		visible_message("<span class='danger'>[O] flickers out!</span>") // BLUEMOON CHANGE - [O] is disintegrated by [src]!
+		O.set_light(0) // BLUEMOON CHANGE - O.burn()
 	playsound(src, 'sound/items/welder.ogg', 50, 1)
 
 #undef HEART_SPECIAL_SHADOWIFY
