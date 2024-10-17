@@ -61,4 +61,6 @@
 			return
 		I.on_grind()
 		reagents.add_reagent_list(I.grind_results)
+		if(I.reagents)
+			I.reagents.trans_to(src, I.reagents.total_volume)
 		qdel(I)
