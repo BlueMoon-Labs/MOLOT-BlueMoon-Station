@@ -2001,7 +2001,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "lI" = (
 /obj/machinery/porta_turret/syndicate{
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_y = 32
 	},
 /turf/closed/mineral/random,
@@ -3245,9 +3245,6 @@
 "sm" = (
 /obj/structure/closet,
 /obj/item/coin/antagtoken,
-/obj/item/encryptionkey/inteq,
-/obj/item/encryptionkey/inteq,
-/obj/item/encryptionkey/inteq,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -3310,6 +3307,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/storage/belt/esabre_belt,
 /obj/item/paper/fluff/ruins/forgottenship/missionobj/sol,
+/obj/item/paper/fluff/ruins/forgottenship/password,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "st" = (
@@ -3601,7 +3599,7 @@
 /obj/machinery/porta_turret/syndicate/energy{
 	armor = list("melee" = 80, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
 	dir = 4;
-	faction = list("InteQ");
+	faction = list("neutral");
 	name = "СИЗО-37 Ship Turret";
 	shot_delay = 10
 	},
@@ -5363,7 +5361,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "colossus_port"
+	id = "colossus_starboard"
 	},
 /obj/effect/turf_decal/stripes{
 	dir = 1
@@ -5977,7 +5975,7 @@
 "IP" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 8;
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_x = 31
 	},
 /turf/open/floor/holofloor/asteroid,
@@ -8338,7 +8336,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "WL" = (
 /obj/machinery/porta_turret/syndicate{
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_y = 32
 	},
 /turf/open/floor/holofloor/asteroid,
@@ -8352,7 +8350,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "WP" = (
 /obj/machinery/porta_turret/syndicate{
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_y = 32
 	},
 /turf/template_noop,
@@ -8841,7 +8839,7 @@
 /obj/machinery/porta_turret/syndicate/energy{
 	armor = list("melee" = 80, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
 	dir = 4;
-	faction = list("InteQ");
+	faction = list("neutral");
 	name = "СИЗО-37 Ship Turret";
 	shot_delay = 10
 	},
