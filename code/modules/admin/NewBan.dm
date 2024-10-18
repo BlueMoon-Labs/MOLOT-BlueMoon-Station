@@ -63,7 +63,7 @@ GLOBAL_PROTECT(Banlist)
 /proc/LoadBans()
 	if(!CONFIG_GET(flag/ban_legacy_system))
 		return
-		
+
 	GLOB.Banlist = new("data/banlist.bdb")
 	log_admin("Loading Banlist")
 
@@ -128,6 +128,16 @@ GLOBAL_PROTECT(Banlist)
 			create_message("note", key, bannedby, "Permanently banned - [reason]", null, null, 0, 0, null, 0, 0)
 		else
 			create_message("note", key, bannedby, "Banned for [minutes] minutes - [reason]", null, null, 0, 0, null, 0, 0)
+
+	GLOB.bot_event_sending_que += list(list(
+		"type" = "ban",
+		"admin" = bannedby,
+		"player" = ban_ckey,
+		"reason" = reason,
+		"round" = GLOB.round_id,
+		"temp" = temp
+	))
+
 	return TRUE
 
 /proc/RemoveBan(foldername)
@@ -156,6 +166,12 @@ GLOBAL_PROTECT(Banlist)
 			GLOB.Banlist.cd = "/base"
 			GLOB.Banlist.dir.Remove(A)
 			continue
+
+	GLOB.bot_event_sending_que += list(list(
+		"type" = "unban",
+		"admin" = usr ? key_name(usr) : null,
+		"player" = key
+	))
 
 	return TRUE
 
