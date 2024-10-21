@@ -10,10 +10,10 @@ export const Telesci = (props, context) => {
     temp_msg,
     rotation,
     angle,
-    z_coord,
     power_possible,
     crystals,
   } = data;
+  const z_coord = data.z_coord < 5 ? 5 : data.z_coord;
   const last_tele_data = data.last_tele_data || [];
   return (
     <Window
@@ -83,8 +83,8 @@ export const Telesci = (props, context) => {
                   value={z_coord}
                   step={1}
                   stepPixelSize={25}
-                  minValue={1}
-                  maxValue={10}
+                  minValue={5}
+                  maxValue={15}
                   onDrag={(e, value) => act('setSector', {
                     ref: value,
                   })} />
