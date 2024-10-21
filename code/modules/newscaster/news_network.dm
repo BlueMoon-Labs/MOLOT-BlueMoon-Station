@@ -35,7 +35,7 @@ GLOBAL_DATUM_INIT(news_network, /datum/news_network, new)
 			FC.messages += newMsg
 			break
 	for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
-		NEWSCASTER.newsAlert(channel_name)
+		INVOKE_ASYNC(NEWSCASTER, TYPE_PROC_REF(/obj/machinery/newscaster, newsAlert), channel_name)
 	lastAction ++
 	newMsg.creationTime = lastAction
 

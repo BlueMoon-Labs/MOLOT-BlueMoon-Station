@@ -646,12 +646,14 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 /datum/controller/subsystem/mapping
 	var/list/station_room_templates = list()
 
-/datum/controller/subsystem/mapping/proc/seedStation()
+/datum/controller/subsystem/mapping/proc/seedStation(late_load = FALSE)
 	for(var/V in GLOB.stationroom_landmarks)
 		var/obj/effect/landmark/stationroom/LM = V
+		if(!late_load && LM.late_load)
+			continue
 		LM.load()
-	if(GLOB.stationroom_landmarks.len)
-		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
+	if(late_load && GLOB.stationroom_landmarks.len)
+		seedStation(TRUE)
 
 /**
   * Generates an obfuscated but constant id for an original id for cases where you don't want players codediving for an id.
