@@ -647,3 +647,47 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
 	icon_state = "anstrum"
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/anstrumshot.ogg'
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/gun/energy/e_gun/hos/dreadmk3
+	name = "\improper Законодатель MK3"
+	desc = "Стандартное оружие судей из Мега-Города Солнечной Федерации. Пистолет комплектуется несколькими типами боеприпасов, иногда набор снарядов отличается от стандартного в зависимости от миссии судьи. Оснащён биометрическим датчиком ладони — оружие может применять только судья, а при несанкционированном использовании в рукояти срабатывает взрывное устройство. Этот же пистолет на радость недругов что преступают Закон, со сломанной биометрией ради стандартизации электронных бойков."
+	icon = 'modular_bluemoon/fluffs/icons/obj/dreadmk3.dmi'
+	icon_state = "dreadmk3"
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/dreadmk3, /obj/item/ammo_casing/energy/laser/hos/dreadmk3, /obj/item/ammo_casing/energy/ion/hos/dreadmk3, /obj/item/ammo_casing/energy/electrode/hos/dreadmk3)
+	ammo_x_offset = 0
+	flight_x_offset = 22
+	flight_y_offset = 5
+
+/obj/item/ammo_casing/energy/disabler/dreadmk3
+
+/obj/item/ammo_casing/energy/laser/hos/dreadmk3
+
+/obj/item/ammo_casing/energy/ion/hos/dreadmk3
+
+/obj/item/ammo_casing/energy/electrode/hos/dreadmk3
+
+/obj/item/modkit/dreadmk3_kit
+	name = "Законодатель MK3 Kit"
+	desc = "A modkit for making a MultiPhase Energy Gun into Законодатель MK3."
+	product = /obj/item/gun/energy/e_gun/hos/dreadmk3
+	fromitem = list(/obj/item/gun/energy/e_gun/hos)
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/crowbar/large/heavy/hammercrowbar
+	name = "Heavy pocket hammer"
+	desc = "A heavy-duty hammer designed for all types of working conditions. Extremely durable and reliable. Made of high-quality black metal, with a rubberized silicone handle."
+	item_state = "hammercrowbar"
+	icon_state = "hammercrowbar"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	hitsound = "modular_bluemoon/fluffs/sound/weapon/stab_hammer.ogg"
+
+/obj/item/modkit/hammercrowbar_kit
+	name = "Heavy pocket hammer Kit"
+	desc = "A modkit for making a Heavy crowbar into Heavy pocket hammer."
+	product = /obj/item/crowbar/large/heavy/hammercrowbar
+	fromitem = list(/obj/item/crowbar/large/heavy)

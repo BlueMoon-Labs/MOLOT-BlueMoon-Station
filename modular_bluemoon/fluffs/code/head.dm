@@ -89,3 +89,13 @@
 	item_state = "provocateur"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/HoS/dread_helmet
+	name = "Шлем Судьи"
+	desc = "Стандартный шлем судьи из Мега-Города Солнечной Федерации. Оснащен слоем кевлара и других материалов что защищают голову и визор что защищает от осколков и вспышек. Имеет встроенный микрофон с динамиком в который непонятно почему вам так и хочется сказать Я! ЗАКОН!"
+	icon_state = "dread_helmet"
+	item_state = "dread_helmet"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	flags_cover = HEADCOVERSEYES
+	flags_inv = HIDEHAIR|HIDEEARS|HIDESNOUT

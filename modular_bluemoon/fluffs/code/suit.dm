@@ -209,3 +209,11 @@
 	item_state = "nrimundir"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/armor/hos/dread_armor
+	name = "Броня Судьи"
+	desc = "Стандартный  бронежилет судьи из Мега-Города Солнечной Федерации. Броня покрывает плечи и большую часть тела. На наплечниках красуются орлы из скорее всего золота как и на левой части груди с ремнём где красуется значок с потертым именем Дредд. Вам кажется это имя знакомым. Эта броня так и веет чуством что вас защищает Закон."
+	icon_state = "dread_armor"
+	item_state = "dread_armor"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
