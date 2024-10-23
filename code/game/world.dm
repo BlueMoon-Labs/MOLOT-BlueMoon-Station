@@ -5,6 +5,11 @@ GLOBAL_VAR(restart_counter)
 GLOBAL_VAR(topic_status_lastcache)
 GLOBAL_LIST(topic_status_cache)
 
+// Enables tracy profiler at compile-time.
+// MAKE SURE you have a compiled library inside the codebase root folder.
+// DO NOT commit the library to the repo.
+// #define TRACY_PROFILE
+
 //This happens after the Master subsystem new(s) (it's a global datum)
 //So subsystems globals exist, but are not initialised
 
@@ -68,6 +73,23 @@ GLOBAL_LIST(topic_status_cache)
 	#ifdef UNIT_TESTS
 	HandleTestRun()
 	#endif
+
+	#ifdef TRACY_PROFILE
+	prof_init()
+	#endif
+
+#ifdef TRACY_PROFILE
+/world/proc/prof_init()
+	var/lib
+
+	switch(world.system_type)
+		if(MS_WINDOWS) lib = "prof.dll"
+		if(UNIX) lib = "libprof.so"
+		else CRASH("unsupported platform")
+
+	var/init = call_ext(lib, "init")()
+	if("0" != init) CRASH("[lib] init error: [init]")
+#endif
 
 /world/proc/InitTgs()
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
