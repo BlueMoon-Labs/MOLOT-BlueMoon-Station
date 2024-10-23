@@ -525,6 +525,17 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	if (!isnull(trait_exam))
 		msg += trait_exam
 
+	if(HAS_TRAIT(user, TRAIT_FLUID))
+		if(HAS_TRAIT(user, TRAIT_FLUID_TITS))
+			if(breasts_fluid_leak_examine != null)
+				. += breasts_fluid_leak_examine
+		if(HAS_TRAIT(user, TRAIT_FLUID_PENIS))
+			if(penis_fluid_leak_examine != null)
+				. += penis_fluid_leak_examine
+		if(HAS_TRAIT(user, TRAIT_FLUID_WOMB))
+			if(womb_fluid_leak_examine != null)
+				. += womb_fluid_leak_examine
+
 	var/scar_severity = 0
 	for(var/i in all_scars)
 		var/datum/scar/S = i
