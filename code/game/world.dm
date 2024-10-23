@@ -175,31 +175,68 @@ GLOBAL_LIST(topic_status_cache)
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC	//redirect to server tools if necessary
 
-	if(!SSfail2topic)
-		return "Server not initialized."
-	if(SSfail2topic.IsRateLimited(addr))
-		return "Rate limited."
+	var/list/response = list()
 
 	if(length(T) > CONFIG_GET(number/topic_max_size))
-		return "Payload too large!"
+		response["statuscode"] = 413
+		response["response"] = "Payload too large"
+		return json_encode(response)
 
-	var/static/list/topic_handlers = TopicHandlers()
+	var/logging = CONFIG_GET(flag/log_world_topic)
+	var/topic_decoded = rustg_url_decode(T)
+	if(!rustg_json_is_valid(topic_decoded))
+		if(logging)
+			log_topic("(NON-JSON) \"[topic_decoded]\", from:[addr], master:[master], key:[key]")
+		// Fallback check for spacestation13.com requests
+		if(topic_decoded == "status")
+			return list2params(list("players" = length(GLOB.clients)))
+		response["statuscode"] = 400
+		response["response"] = "Bad Request - Invalid JSON format"
+		return json_encode(response)
 
-	var/list/input = params2list(T)
-	var/datum/world_topic/handler
-	for(var/I in topic_handlers)
-		if(I in input)
-			handler = topic_handlers[I]
-			break
+	var/list/params = json_decode(topic_decoded)
+	params["addr"] = addr
+	var/query = params["query"]
+	var/auth = params["auth"]
+	var/source = params["source"]
 
-	if((!handler || initial(handler.log)) && config && CONFIG_GET(flag/log_world_topic))
-		log_topic("\"[T]\", from:[addr], master:[master], key:[key]")
+	if(logging)
+		var/list/censored_params = params.Copy()
+		censored_params["auth"] = "***[copytext(params["auth"], -4)]"
+		log_topic("\"[json_encode(censored_params)]\", from:[addr], master:[master], auth:[censored_params["auth"]], key:[key], source:[source]")
 
-	if(!handler)
-		return
+	if(!source)
+		response["statuscode"] = 400
+		response["response"] = "Bad Request - No source specified"
+		return json_encode(response)
 
-	handler = new handler()
-	return handler.TryRun(input, addr)
+	if(!query)
+		response["statuscode"] = 400
+		response["response"] = "Bad Request - No endpoint specified"
+		return json_encode(response)
+
+	if(!LAZYACCESS(GLOB.topic_tokens["[auth]"], "[query]"))
+		response["statuscode"] = 401
+		response["response"] = "Unauthorized - Bad auth"
+		return json_encode(response)
+
+	var/datum/world_topic/command = GLOB.topic_commands["[query]"]
+	if(!command)
+		response["statuscode"] = 501
+		response["response"] = "Not Implemented"
+		return json_encode(response)
+
+	if(command.CheckParams(params))
+		response["statuscode"] = command.statuscode
+		response["response"] = command.response
+		response["data"] = command.data
+		return json_encode(response)
+	else
+		command.Run(params)
+		response["statuscode"] = command.statuscode
+		response["response"] = command.response
+		response["data"] = command.data
+		return json_encode(response)
 
 /world/proc/AnnouncePR(announcement, list/payload)
 	var/static/list/PRcounts = list()	//PR id -> number of times announced this round
