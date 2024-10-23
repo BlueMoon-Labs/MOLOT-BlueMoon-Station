@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm - SPLURT Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">SPLURT Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define">Define Details</a></header>
+<main>
+<h1>modular_bluemoon/plug13_integration/bluemoon_masochism.dm 
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm"/></a></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define/PLUG13_MASOCHISM_STRENGTH_MIN">PLUG13_MASOCHISM_STRENGTH_MIN</a></th><td>ÐÐ¸Ð¶Ðµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ ÑÐ¸Ð»Ñ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÐ°Ð¶Ðµ Ð¿ÑÐ¸ 1 ÑÑÐ¾Ð½Ð° Ð¾Ð½ Ð¿ÑÐ¾Ð²Ð¸Ð±ÑÐ¸ÑÑÐµÑ Ñ ÑÑÐ¾Ð¹ ÑÐ¸Ð»Ð¾Ð¹.</td></tr>
+        <tr><th><a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define/PLUG13_MASOCHISM_STRENGTH_MAX">PLUG13_MASOCHISM_STRENGTH_MAX</a></th><td>ÐÑÑÐµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ ÑÐ¸Ð»Ñ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÑÐ¸ <code>PLUG13_MASOCHISM_STRENGTH_DAMAGE</code> Ð¸ Ð²ÑÑÐµ, Ð±ÑÐ´ÐµÑ Ð¸Ð¼ÐµÐ½Ð½Ð¾ ÑÑÐ° ÑÐ¸Ð»Ð°.</td></tr>
+        <tr><th><a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define/PLUG13_MASOCHISM_STRENGTH_DAMAGE">PLUG13_MASOCHISM_STRENGTH_DAMAGE</a></th><td>Ð¡ÐºÐ¾Ð»ÑÐºÐ¾ ÑÑÐ¾Ð½Ð° Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¿Ð¾Ð»ÑÑÐ¸ÑÑ Ð¸Ð³ÑÐ¾Ðº Ð´Ð»Ñ Ð¾ÑÑÑÐµÐ½Ð¸Ñ
+ÑÐ°Ð±Ð¾ÑÑ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑÐ½Ð¾Ð¹ ÑÐ¸Ð»Ñ.</td></tr>
+        <tr><th><a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define/PLUG13_MASOCHISM_DURATION_MIN">PLUG13_MASOCHISM_DURATION_MIN</a></th><td>ÐÐ¸Ð¶Ðµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÐ°Ð¶Ðµ Ð¿ÑÐ¸ 1 ÑÑÐ¾Ð½Ð° Ð¾Ð½ Ð±ÑÐ´ÐµÑ ÑÐ°Ð±Ð¾ÑÐ°ÑÑ Ð¸Ð¼ÐµÐ½Ð½Ð¾ ÑÑÐ¾Ð»ÑÐºÐ¾.</td></tr>
+        <tr><th><a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define/PLUG13_MASOCHISM_DURATION_MAX">PLUG13_MASOCHISM_DURATION_MAX</a></th><td>ÐÑÑÐµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÑÐ¸ <code>PLUG13_MASOCHISM_DURATION_DAMAGE</code> Ð¸ Ð²ÑÑÐµ, Ð±ÑÐ´ÐµÑ ÑÑÐ° Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÑ.</td></tr>
+        <tr><th><a href="modular_bluemoon/plug13_integration/bluemoon_masochism.html#define/PLUG13_MASOCHISM_DURATION_DAMAGE">PLUG13_MASOCHISM_DURATION_DAMAGE</a></th><td>Ð¡ÐºÐ¾Ð»ÑÐºÐ¾ ÑÑÐ¾Ð½Ð° Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¿Ð¾Ð»ÑÑÐ¸ÑÑ Ð¸Ð³ÑÐ¾Ðº Ð´Ð»Ñ Ð¾ÑÑÑÐµÐ½Ð¸Ñ
+ÑÐ°Ð±Ð¾ÑÑ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑÐ½Ð¾Ð¹ Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸.</td></tr></table><h2 id="define">Define Details</h2>
+<h3 id="define/PLUG13_MASOCHISM_DURATION_DAMAGE"><aside class="declaration">#define </aside>PLUG13_MASOCHISM_DURATION_DAMAGE
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm#L23">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm 23"/></a>
+    </h3>
+    <p>Ð¡ÐºÐ¾Ð»ÑÐºÐ¾ ÑÑÐ¾Ð½Ð° Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¿Ð¾Ð»ÑÑÐ¸ÑÑ Ð¸Ð³ÑÐ¾Ðº Ð´Ð»Ñ Ð¾ÑÑÑÐµÐ½Ð¸Ñ
+ÑÐ°Ð±Ð¾ÑÑ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑÐ½Ð¾Ð¹ Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸.</p><h3 id="define/PLUG13_MASOCHISM_DURATION_MAX"><aside class="declaration">#define </aside>PLUG13_MASOCHISM_DURATION_MAX
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm#L19">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm 19"/></a>
+    </h3>
+    <p>ÐÑÑÐµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÑÐ¸ <code>PLUG13_MASOCHISM_DURATION_DAMAGE</code> Ð¸ Ð²ÑÑÐµ, Ð±ÑÐ´ÐµÑ ÑÑÐ° Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÑ.</p><h3 id="define/PLUG13_MASOCHISM_DURATION_MIN"><aside class="declaration">#define </aside>PLUG13_MASOCHISM_DURATION_MIN
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm#L15">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm 15"/></a>
+    </h3>
+    <p>ÐÐ¸Ð¶Ðµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ Ð´Ð»Ð¸ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÐ°Ð¶Ðµ Ð¿ÑÐ¸ 1 ÑÑÐ¾Ð½Ð° Ð¾Ð½ Ð±ÑÐ´ÐµÑ ÑÐ°Ð±Ð¾ÑÐ°ÑÑ Ð¸Ð¼ÐµÐ½Ð½Ð¾ ÑÑÐ¾Ð»ÑÐºÐ¾.</p><h3 id="define/PLUG13_MASOCHISM_STRENGTH_DAMAGE"><aside class="declaration">#define </aside>PLUG13_MASOCHISM_STRENGTH_DAMAGE
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm#L11">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm 11"/></a>
+    </h3>
+    <p>Ð¡ÐºÐ¾Ð»ÑÐºÐ¾ ÑÑÐ¾Ð½Ð° Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¿Ð¾Ð»ÑÑÐ¸ÑÑ Ð¸Ð³ÑÐ¾Ðº Ð´Ð»Ñ Ð¾ÑÑÑÐµÐ½Ð¸Ñ
+ÑÐ°Ð±Ð¾ÑÑ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑÐ½Ð¾Ð¹ ÑÐ¸Ð»Ñ.</p><h3 id="define/PLUG13_MASOCHISM_STRENGTH_MAX"><aside class="declaration">#define </aside>PLUG13_MASOCHISM_STRENGTH_MAX
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm#L7">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm 7"/></a>
+    </h3>
+    <p>ÐÑÑÐµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ ÑÐ¸Ð»Ñ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÑÐ¸ <code>PLUG13_MASOCHISM_STRENGTH_DAMAGE</code> Ð¸ Ð²ÑÑÐµ, Ð±ÑÐ´ÐµÑ Ð¸Ð¼ÐµÐ½Ð½Ð¾ ÑÑÐ° ÑÐ¸Ð»Ð°.</p><h3 id="define/PLUG13_MASOCHISM_STRENGTH_MIN"><aside class="declaration">#define </aside>PLUG13_MASOCHISM_STRENGTH_MIN
+            <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/23f5a965552c9db25b42f0884a8f5fc724f53dba/modular_bluemoon/plug13_integration/bluemoon_masochism.dm#L3">
+        <img src="git.png" width="16" height="16" title="modular_bluemoon&#x2F;plug13_integration&#x2F;bluemoon_masochism.dm 3"/></a>
+    </h3>
+    <p>ÐÐ¸Ð¶Ðµ ÑÑÐ¾Ð³Ð¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ ÑÐ¸Ð»Ñ Ð¿ÑÐ¸Ð²Ð¾Ð´Ð° Ð±ÑÑÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ.
+ÐÐ°Ð¶Ðµ Ð¿ÑÐ¸ 1 ÑÑÐ¾Ð½Ð° Ð¾Ð½ Ð¿ÑÐ¾Ð²Ð¸Ð±ÑÐ¸ÑÑÐµÑ Ñ ÑÑÐ¾Ð¹ ÑÐ¸Ð»Ð¾Ð¹.</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/tree/23f5a965552c9db25b42f0884a8f5fc724f53dba">23f5a96</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>
