@@ -6,9 +6,6 @@
 	..()
 	new /obj/item/clothing/neck/petcollar(src) //I considered removing the pet stuff too but eh, who knows. We might get Renault back. Plus I guess you could use that collar for... other means. Aren't you supposed to be guarding the disk?
 	new /obj/item/pet_carrier(src)
-	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
-	new /obj/item/clothing/suit/toggle/captains_parade(src)
-	new /obj/item/clothing/head/crown/fancy(src)
 	new /obj/item/cartridge/captain(src)
 	new /obj/item/storage/box/silver_ids(src)
 	new /obj/item/radio/headset/heads/captain/alt(src)
@@ -19,6 +16,7 @@
 	new /obj/item/storage/photo_album/Captain(src)
 	new /obj/item/mod/construction/armor/magnate(src)
 	new /obj/item/mod/module/holster(src)
+	new /obj/item/storage/garment_case/captain(src) //BLUEMOON add
 
 /obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
@@ -26,13 +24,6 @@
 	icon_state = "hop"
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
-	new /obj/item/clothing/neck/cloak/hop(src)
-	new /obj/item/clothing/neck/mantle/head_of_personnel(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/whimsy(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
-	new /obj/item/clothing/head/hopcap(src)
-	new /obj/item/clothing/head/hopcap/beret(src)
 	new /obj/item/cartridge/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
@@ -41,9 +32,7 @@
 	new /obj/item/storage/box/deviants(src) // bluemoon edit
 	new /obj/item/storage/box/deviants(src)
 	new /obj/item/megaphone/command(src)
-	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/clothing/neck/petcollar(src)
@@ -53,6 +42,7 @@
 	new /obj/item/storage/photo_album/HoP(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/hop(src)
 	new /obj/item/clothing/head/hopcap/beret/white(src)
+	new /obj/item/storage/garment_case/hop(src) // BLUEMOON add
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
