@@ -44,7 +44,7 @@
 			M.add_fingerprint(user)
 			qdel(src)
 
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
+	else if(istype(W, /obj/item/pickaxe/drill/jackhammer) || istype(W, /obj/item/demolition_hammer))	// BLUEMOON EDIT - Demolition Hammer.
 		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
 		new /obj/item/stack/sheet/metal(get_turf(src))
 		W.play_tool_sound(src)
