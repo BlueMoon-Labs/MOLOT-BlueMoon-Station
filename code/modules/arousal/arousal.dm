@@ -91,6 +91,7 @@
 	if(condomning)
 		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри твоей спермой!</span>")
 		R.trans_to(condomning, R.total_volume)
+		sender.fluid_volume = 0
 	else
 		if(spill && R.total_volume > 0)
 			var/turf/location = get_turf(target)
@@ -99,12 +100,14 @@
 			if(istype(sender, /obj/item/organ/genital/penis))
 				if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 					if(R.trans_to(S, R.total_volume))
+						sender.fluid_volume = 0
 						S.blood_DNA |= get_blood_dna_list()
 						S.update_icon()
 						return
 				else
 					var/obj/effect/decal/cleanable/semendrip/drip = (locate(/obj/effect/decal/cleanable/semendrip) in location) || new(location)
 					if(R.trans_to(drip, R.total_volume))
+						sender.fluid_volume = 0
 						drip.blood_DNA |= get_blood_dna_list()
 						drip.update_icon()
 						if(drip.reagents.total_volume >= 10)
@@ -117,12 +120,14 @@
 			if(istype(sender, /obj/item/organ/genital/vagina))
 				if(F)
 					if(R.trans_to(F, R.total_volume))
+						sender.fluid_volume = 0
 						F.blood_DNA |= get_blood_dna_list()
 						F.update_icon()
 						return
 				else
 					F = new(location)
 					if(R.trans_to(F, R.total_volume))
+						sender.fluid_volume = 0
 						F.blood_DNA |= get_blood_dna_list()
 						F.update_icon()
 						return
@@ -139,6 +144,7 @@
 					if(copy.total_volume > 0)
 						cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
 			R.trans_to(target, amount_to_transfer, log = TRUE)
+			sender.fluid_volume = 0
 		//
 	sender.last_orgasmed = world.time
 	R.clear_reagents()

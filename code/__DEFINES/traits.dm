@@ -290,7 +290,11 @@
 //used because it's more reliable than checking for the component
 #define TRAIT_DULLAHAN "dullahan"
 
-#define TRAIT_AKIMBO	"akimbo"
+#define TRAIT_AKIMBO		"akimbo" // BLUEMOON ADDITION
+#define TRAIT_FLUID 		"fluid" // BLUEMOON ADDITION
+#define TRAIT_FLUID_TITS	"fluid_tits" // BLUEMOON ADDITION
+#define TRAIT_FLUID_WOMB	"fluid_womb" // BLUEMOON ADDITION
+#define TRAIT_FLUID_PENIS	"fluid_penis" // BLUEMOON ADDITION
 
 
 // mobility flag traits
