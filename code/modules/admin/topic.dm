@@ -230,39 +230,47 @@
 		var/banreason = href_list["dbbanreason"]
 		var/banseverity = href_list["dbbanaddseverity"]
 
+		var/bantitle = " "
 		switch(bantype)
 			if(BANTYPE_PERMA)
+				bantitle = "Пермаментная Блокировка"
 				if(!banckey || !banreason || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, severity, and reason).")
 					return
 				banduration = null
 				banjob = null
 			if(BANTYPE_TEMP)
+				bantitle = "Блокировка"
 				if(!banckey || !banreason || !banduration || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, reason, severity and duration).")
 					return
 				banjob = null
 			if(BANTYPE_JOB_PERMA)
+				bantitle = "Пермаментная Блокировка Роли"
 				if(!banckey || !banreason || !banjob || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, severity, reason and job).")
 					return
 				banduration = null
 			if(BANTYPE_JOB_TEMP)
+				bantitle = "Блокировка Роли"
 				if(!banckey || !banreason || !banjob || !banduration || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, severity, reason and job).")
 					return
 			if(BANTYPE_ADMIN_PERMA)
+				bantitle = "Пермаментная Блокировка"
 				if(!banckey || !banreason || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, severity and reason).")
 					return
 				banduration = null
 				banjob = null
 			if(BANTYPE_ADMIN_TEMP)
+				bantitle = "Блокировка"
 				if(!banckey || !banreason || !banduration || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, severity, reason and duration).")
 					return
 				banjob = null
 			if(BANTYPE_PACIFIST)
+				bantitle = "Пацификация"
 				if(!banckey || !banreason || !banduration || !banseverity)
 					to_chat(usr, "Not enough parameters (Requires ckey, severity, reason and duration).")
 					return
@@ -288,7 +296,19 @@
 		if(!DB_ban_record(bantype, playermob, banduration, banreason, banjob, bankey, banip, bancid ))
 			to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 			return
-		create_message("note", bankey, null, banreason, null, null, 0, 0, null, 0, banseverity)
+		create_message("note", bankey, null, banreason, null, null, 0, 0, null, 0, banseverity, dont_announce_to_events = TRUE)
+
+		GLOB.bot_event_sending_que += list(list(
+			"type" = "ban_a",
+			"title" = bantitle,
+			"player" = bankey,
+			"admin" = usr.key,
+			"reason" = banreason,
+			"banduration" = banduration,
+			"bantimestamp" = SQLtime(),
+			"round" = GLOB.round_id,
+			"additional_info" = list("ban_type" = bantype, "ban_job" = banjob)
+		))
 
 	else if(href_list["editrightsbrowser"])
 		edit_admin_permissions(0)

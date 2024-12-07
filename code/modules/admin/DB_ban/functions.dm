@@ -379,6 +379,14 @@
 	qdel(query_unban)
 	message_admins("[key_name_admin(usr)] has lifted [p_key]'s ban.")
 
+	GLOB.bot_event_sending_que += list(list(
+		"type" = "unban_a",
+		"title" = "Разбан",
+		"player" = p_key,
+		"admin" = usr.key,
+		"round" = GLOB.round_id,
+	))
+
 /client/proc/DB_ban_panel()
 	set category = "Admin"
 	set name = "Banning Panel"
