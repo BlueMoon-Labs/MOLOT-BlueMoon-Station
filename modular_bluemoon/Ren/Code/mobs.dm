@@ -199,8 +199,9 @@
 	start_when = 1
 
 /datum/round_event/sniper/announce(fake)
-	priority_announce("Один из наших... кхм... особых заключённых сбежал. Так получилось, что его последнее известное местонахождение до того, как их маячок заглох, - это ваша станция, так что будьте осторожней и остерегайтесь Технических Тоннелей. И еще... никто не знает, куда подевались ключи от оружейного сейфа?",
-	sender_override = "Психиатрический Отдел Nanotrasen", has_important_message = TRUE)
+	send_fax_to_area(new /obj/item/paper/fax_CC_message/escapee/crazy_shooter_announce, /area/security, "Психиатрический Отдел Nanotrasen", FALSE)
+	// priority_announce("Один из наших... кхм... особых заключённых сбежал. Так получилось, что его последнее известное местонахождение до того, как их маячок заглох, - это ваша станция, так что будьте осторожней и остерегайтесь Технических Тоннелей. И еще... никто не знает, куда подевались ключи от оружейного сейфа?",
+	// sender_override = "Психиатрический Отдел Nanotrasen", has_important_message = TRUE)
 
 /datum/round_event/sniper/start()
 	var/list/spawn_locs = list()
@@ -245,3 +246,21 @@
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
 	outfit = /datum/outfit/inteq_dead
+
+/obj/item/paper/fax_CC_message/escapee
+	name = "Извещение о побеге"
+
+/obj/item/paper/fax_CC_message/escapee/deathclaw_announce
+	default_raw_text = "<font color=\"darkred\"><center><h1>Сообщение от <br>Психиатрического Отдела Nanotrasen</h1></center></font> <hr><br>Один из наших особых заключённых сбежал.<br> <br>По имеющимся у нас сведениям, его последнее известное местонахождение до того, как их маячок заглох - это **Ваша** станция.<br> <br>Соблюдайте осторожность и остерегайтесь Технических Тоннелей.<br> <br>p.s. Вы не видели ящерку уборщика?<br> <br><hr> <p><font color=\"grey\" size=1><div align=\"justify\">- Содержимое данного документа следует считать конфиденциальным. Если не указано иное, распространение содержащейся в данном документе информации среди третьих лиц и сторонних организаций строго запрещено.</div></font></p> <hr> <font color=\"RoyalBlue\"><center>Все права защищены.</center></font> <font color=\"RoyalBlue\"><center>(с) NanoTrasen, 2020 — 2564 г.</center></font><font color=\"RoyalBlue\"><center>(с) Пакт, 2555 — 2564 г.</center></font>"
+
+/obj/item/paper/fax_CC_message/escapee/cat_surgeon_announce
+	default_raw_text = "<font color=\"darkred\"><center><h1>Сообщение от <br>Психиатрического Отдела Nanotrasen</h1></center></font> <hr><br>Один из наших особых заключённых сбежал.<br> <br>По имеющимся у нас сведениям, его последнее известное местонахождение до того, как их маячок заглох - это **Ваша** станция.<br> <br>Соблюдайте осторожность и остерегайтесь Технических Тоннелей.<br> <br>p.s. Никто не видел наших кошек?<br> <br><hr> <p><font color=\"grey\" size=1><div align=\"justify\">- Содержимое данного документа следует считать конфиденциальным. Если не указано иное, распространение содержащейся в данном документе информации среди третьих лиц и сторонних организаций строго запрещено.</div></font></p> <hr> <font color=\"RoyalBlue\"><center>Все права защищены.</center></font> <font color=\"RoyalBlue\"><center>(с) NanoTrasen, 2020 — 2564 г.</center></font><font color=\"RoyalBlue\"><center>(с) Пакт, 2555 — 2564 г.</center></font>"
+
+/obj/item/paper/fax_CC_message/escapee/mosquito_announce
+	default_raw_text = "<font color=\"darkred\"><center><h1>Сообщение от <br>Психиатрического Отдела Nanotrasen</h1></center></font> <hr><br>Один из наших особых заключённых сбежал.<br> <br>По имеющимся у нас сведениям, его последнее известное местонахождение до того, как их маячок заглох - это **Ваша** станция.<br> <br>Соблюдайте осторожность и остерегайтесь Технических Тоннелей.<br> <br>p.s. Это что, выкрики на нео-русском?<br> <br><hr> <p><font color=\"grey\" size=1><div align=\"justify\">- Содержимое данного документа следует считать конфиденциальным. Если не указано иное, распространение содержащейся в данном документе информации среди третьих лиц и сторонних организаций строго запрещено.</div></font></p> <hr> <font color=\"RoyalBlue\"><center>Все права защищены.</center></font> <font color=\"RoyalBlue\"><center>(с) NanoTrasen, 2020 — 2564 г.</center></font><font color=\"RoyalBlue\"><center>(с) Пакт, 2555 — 2564 г.</center></font>"
+
+/obj/item/paper/fax_CC_message/escapee/gigachad_inteq_announce
+	default_raw_text = "<font color=\"darkred\"><center><h1>Сообщение от <br>Психиатрического Отдела Nanotrasen</h1></center></font> <hr><br>Один из наших особых заключённых сбежал.<br> <br>По имеющимся у нас сведениям, его последнее известное местонахождение до того, как их маячок заглох - это **Ваша** станция.<br> <br>Соблюдайте осторожность и остерегайтесь Технических Тоннелей.<br> <br>p.s. Что это за стуки металла?<br> <br><hr> <p><font color=\"grey\" size=1><div align=\"justify\">- Содержимое данного документа следует считать конфиденциальным. Если не указано иное, распространение содержащейся в данном документе информации среди третьих лиц и сторонних организаций строго запрещено.</div></font></p> <hr> <font color=\"RoyalBlue\"><center>Все права защищены.</center></font> <font color=\"RoyalBlue\"><center>(с) NanoTrasen, 2020 — 2564 г.</center></font><font color=\"RoyalBlue\"><center>(с) Пакт, 2555 — 2564 г.</center></font>"
+
+/obj/item/paper/fax_CC_message/escapee/crazy_shooter_announce
+	default_raw_text = "<font color=\"darkred\"><center><h1>Сообщение от <br>Психиатрического Отдела Nanotrasen</h1></center></font> <hr><br>Один из наших особых заключённых сбежал.<br> <br>По имеющимся у нас сведениям, его последнее известное местонахождение до того, как их маячок заглох - это **Ваша** станция.<br> <br>Соблюдайте осторожность и остерегайтесь Технических Тоннелей.<br> <br>p.s. Никто не знает, куда подевались ключи от оружейного сейфа?<br> <br><hr> <p><font color=\"grey\" size=1><div align=\"justify\">- Содержимое данного документа следует считать конфиденциальным. Если не указано иное, распространение содержащейся в данном документе информации среди третьих лиц и сторонних организаций строго запрещено.</div></font></p> <hr> <font color=\"RoyalBlue\"><center>Все права защищены.</center></font> <font color=\"RoyalBlue\"><center>(с) NanoTrasen, 2020 — 2564 г.</center></font><font color=\"RoyalBlue\"><center>(с) Пакт, 2555 — 2564 г.</center></font>"
