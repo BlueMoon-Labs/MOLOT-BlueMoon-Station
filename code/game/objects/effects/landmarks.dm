@@ -512,6 +512,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	var/list/template_names = list()
 	/// Whether or not we can choose templates that have already been chosen
 	var/unique = FALSE
+	var/late_load = FALSE
 	layer = BULLET_HOLE_LAYER
 	plane = ABOVE_WALL_PLANE
 
@@ -678,3 +679,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/stationroom/maint/tenxten
 	template_names = list("Maint aquarium", "Maint bigconstruction", "Maint bigtheatre", "Maint deltalibrary", "Maint graffitiroom", "Maint junction", "Maint podrepairbay", "Maint pubbybar", "Maint roosterdome", "Maint sanitarium", "Maint snakefighter", "Maint vault", "Maint ward", "Maint assaultpod", "Maint maze", "Maint maze2", "Maint boxfactory",
 	"Maint sixsectorsdown", "Maint advbotany", "Maint beach", "Maint botany_apiary", "Maint gamercave", "Maint ladytesla_altar", "Maint olddiner", "Maint smallmagician", "Maint fourshops", "Maint fishinghole", "Maint fakewalls", "Maint wizard", "Maint halloween")
+
+// Landmark for the gostrole station
+/obj/effect/landmark/stationroom/space/forgottenship
+	template_names = list("SCSBC-14" = 3)
+	icon = 'icons/rooms/Lavaland/Mining.dmi'
+	late_load = TRUE
+
+/obj/effect/landmark/stationroom/space/forgottenship/load()
+	if(GLOB.master_mode == "Extended")
+		template_names = list("SCSBC-13" = 3)
+	else
+		template_names = list("SCSBC-12" = 3)
+	. = ..()
