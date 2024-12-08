@@ -248,6 +248,7 @@
 			job_access_override[type] = json["job_access_override"]
 
 	defaulted = FALSE
+	log_config("Map config loaded successfully: [filename]")
 	return TRUE
 #undef CHECK_EXISTS
 
