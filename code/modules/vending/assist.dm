@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\assist.dm'
 /obj/machinery/vending/assist
 	name = "\improper Part-Mart"
 	desc = "All the finest of miscellaneous electronics one could ever need! Not responsible for any injuries caused by reckless misuse of parts."
@@ -28,3 +29,4 @@
 /obj/item/vending_refill/assist
 	machine_name = "Part-Mart"
 	icon_state = "refill_parts"
+*/

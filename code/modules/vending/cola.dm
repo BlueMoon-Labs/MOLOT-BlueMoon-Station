@@ -1,4 +1,5 @@
 
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\cola.dm'
 /obj/machinery/vending/cola
 	name = "\improper Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
@@ -122,3 +123,4 @@
 	premium = list(/obj/item/reagent_containers/food/drinks/beer/light = 1,
 					/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 1)
 	product_slogans = "~Улей со вкусом!;Жгучий вкус!;Идеал рабочего трутня!;Жужжание!;Есть мед?;Королева одобряет этот напиток!;Верните недостающую энергию!;Пчела - потребитель!"
+*/

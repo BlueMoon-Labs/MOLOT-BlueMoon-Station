@@ -1,3 +1,5 @@
+
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\kinkmate.dm'
 /obj/machinery/vending/kink/Initialize()
 	var/list/extra_contraband = list(
 		/obj/item/restraints/handcuffs/cable/silk_ribbon/red = 1,
@@ -21,3 +23,4 @@
 	LAZYADD(contraband, extra_contraband)
 	LAZYADD(premium, extra_premium)
 	. = ..()
+	*/

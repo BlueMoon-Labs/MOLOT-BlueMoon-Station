@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\plasmaresearch.dm'
 //This one's from bay12
 /obj/machinery/vending/plasmaresearch
 	name = "\improper Bombuddy 3000"
@@ -14,3 +15,4 @@
 	default_price = PRICE_EXPENSIVE
 	extra_price = PRICE_REALLY_EXPENSIVE
 	payment_department = ACCOUNT_SCI
+*/

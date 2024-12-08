@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\engineering.dm'
 //This one's from bay12
 /obj/machinery/vending/engineering
 	name = "\improper Robco Tool Maker"
@@ -36,3 +37,4 @@
 /obj/item/vending_refill/engineering
 	machine_name = "Robco Tool Maker"
 	icon_state = "refill_engi"
+*/

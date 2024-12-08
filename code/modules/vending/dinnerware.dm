@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\dinnerware.dm'
 /obj/machinery/vending/dinnerware
 	name = "\improper Plasteel Chef's Dinnerware Vendor"
 	desc = "A kitchen and restaurant equipment vendor."
@@ -36,3 +37,4 @@
 
 /obj/item/vending_refill/dinnerware
 	icon_state = "refill_cook"
+*/
