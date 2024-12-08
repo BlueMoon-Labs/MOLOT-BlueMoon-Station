@@ -1,6 +1,6 @@
 /obj/item/forbidden_book
-	name = "Codex Cicatrix"
-	desc = "This book describes the secrets of the veil between worlds."
+	name = "Кодекс Рубцов"
+	desc = "Книга которая может открыть секреты завесы между мирами."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "codex"
 	item_state = "codex"
@@ -26,10 +26,10 @@
 	. = ..()
 	if(!IS_HERETIC(user))
 		return
-	. += "The Tome holds [charge] charges."
-	. += "Use it on the floor to create a transmutation rune, used to perform rituals."
-	. += "Hit an influence in the black part with it to gain a charge."
-	. += "Hit a transmutation rune to destroy it."
+	. += "Фолиант содержит [charge] знаний."
+	. += "Используйте на полу для начертания руны трансмутации и проведения ритуалов."
+	. += "Используйте его на разломе для получения знаний."
+	. += "Используйте его на руне трансмутации чтобы стереть её."
 
 /obj/item/forbidden_book/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -45,7 +45,7 @@
 ///Gives you a charge and destroys a corresponding influence
 /obj/item/forbidden_book/proc/get_power_from_influence(atom/target, mob/user)
 	var/obj/effect/reality_smash/RS = target
-	to_chat(user, "<span class='danger'>You start drawing power from influence...</span>")
+	to_chat(user, "<span class='danger'>Начинаю черпать знания из разлома...</span>")
 	if(do_after(user, 10 SECONDS, RS))
 		qdel(RS)
 		charge += 1
@@ -55,10 +55,10 @@
 
 	for(var/turf/T in range(1,target))
 		if(is_type_in_typecache(T, blacklisted_turfs))
-			to_chat(user, "<span class='warning'>The terrain doesn't support runes!</span>")
+			to_chat(user, "<span class='warning'>Эта поверхность не может служить местом для руны!</span>")
 			return
 	var/A = get_turf(target)
-	to_chat(user, "<span class='danger'>You start drawing a rune...</span>")
+	to_chat(user, "<span class='danger'>Начинаю чертить руну...</span>")
 
 	if(do_after(user, 30 SECONDS, user))
 
@@ -67,7 +67,7 @@
 ///Removes runes from the selected turf
 /obj/item/forbidden_book/proc/remove_rune(atom/target,mob/user)
 
-	to_chat(user, "<span class='danger'>You start removing a rune...</span>")
+	to_chat(user, "<span class='danger'>Начинаю стирать руну...</span>")
 	if(do_after(user, 2 SECONDS, user))
 		qdel(target)
 
@@ -106,7 +106,7 @@
 		else
 			lore["disabled"] = TRUE
 		lore["path"] = EK.route
-		lore["state"] = "Research"
+		lore["state"] = "Изучить"
 		lore["flavour"] = EK.gain_text
 		lore["desc"] = EK.desc
 		data["to_know"] += list(lore)
@@ -119,7 +119,7 @@
 		lore["sacs"] = EK.sacs_needed
 		lore["disabled"] = TRUE
 		lore["path"] = EK.route
-		lore["state"] = "Researched"
+		lore["state"] = "Изучен"
 		lore["flavour"] = EK.gain_text
 		lore["desc"] = EK.desc
 		data["to_know"] += list(lore)

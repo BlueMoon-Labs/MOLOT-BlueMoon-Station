@@ -167,10 +167,10 @@
 			compiled_list[human_to_check.real_name] = human_to_check
 
 	if(compiled_list.len == 0)
-		to_chat(user, "<span class='warning'>These items don't possess the required fingerprints or DNA.</span>")
+		to_chat(user, "<span class='warning'>На этих предметах нет необходимых отпечатков пальцев или ДНК цели.</span>")
 		return FALSE
 
-	var/chosen_mob = input("Select the person you wish to curse","Your target") as null|anything in sort_list(compiled_list, GLOBAL_PROC_REF(cmp_mob_realname_dsc))
+	var/chosen_mob = input("Выберите цель вашего проклятия","Ваша цель") as null|anything in sort_list(compiled_list, GLOBAL_PROC_REF(cmp_mob_realname_dsc))
 	if(!chosen_mob)
 		return FALSE
 	curse(compiled_list[chosen_mob])
@@ -191,14 +191,14 @@
 /datum/eldritch_knowledge/summon/on_finished_recipe(mob/living/user,list/atoms,loc)
 	//we need to spawn the mob first so that we can use it in pollCandidatesForMob, we will move it from nullspace down the code
 	var/mob/living/summoned = new mob_to_summon(loc)
-	message_admins("[summoned.name] is being summoned by [user.real_name] in <b>[loc]</b>")
-	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as [summoned.name]", ROLE_HERETIC, null, FALSE, 100, summoned)
+	message_admins("[summoned.name] был призван [user.real_name] в <b>[loc]</b>")
+	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Хочешь сыграть за [summoned.name]", ROLE_HERETIC, null, FALSE, 100, summoned)
 	if(!LAZYLEN(candidates))
-		to_chat(user,"<span class='warning'>No ghost could be found...</span>")
+		to_chat(user,"<span class='warning'>Никого из призраков найти не удалось...</span>")
 		qdel(summoned)
 		return FALSE
 	var/mob/dead/observer/C = pick(candidates)
-	log_game("[key_name_admin(C)] has taken control of ([key_name_admin(summoned)]), their master is [user.real_name]")
+	log_game("[key_name_admin(C)] принимает контроль над ([key_name_admin(summoned)]), его хозяин [user.real_name]")
 	summoned.ghostize(FALSE)
 	summoned.key = C.key
 	summoned.mind.add_antag_datum(/datum/antagonist/heretic_monster)
@@ -237,9 +237,9 @@
 ///////////////
 
 /datum/eldritch_knowledge/spell/basic
-	name = "Break of Dawn"
-	desc = "Starts your journey in the Mansus. Allows you to select a target using a living heart on a transmutation rune."
-	gain_text = "Another day at a meaningless job. You feel a shimmer around you, as a realization of something strange in your backpack unfolds. You look at it, unknowingly opening a new chapter in your life."
+	name = "Рассвет"
+	desc = "Начните свое путешествие в Мансусе. Позволяет выбрать цель, используя живое сердце на руне трансмутации."
+	gain_text = "Еще один день на бессмысленной работе. Я ощущаю мерцание вокруг себя, когда осознаю, что в моем рюкзаке есть что-то странное. Я смотрю на это, неосознанно открывая новую главу в своей жизни."
 	next_knowledge = list(/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/base_void)
 	cost = 0
 	spell_to_add = /obj/effect/proc_holder/spell/targeted/touch/mansus_grasp
@@ -261,7 +261,7 @@
 	for(var/obj/item/living_heart/LH in atoms)
 
 		if(LH.target && LH.target.stat == DEAD)
-			to_chat(carbon_user,"<span class='danger'>Your patrons accepts your offer...</span>")
+			to_chat(carbon_user,"<span class='danger'>Мои покровители принимают это предложение...</span>")
 			var/mob/living/carbon/human/H = LH.target
 			H.become_husk("burn") //Husks the target with removable husking, but causes a bunch of additional burn damage to prevent it from being 'too easy' to do
 			H.adjustFireLoss(200)
@@ -296,7 +296,7 @@
 				if(!targeted)
 					break
 				targets["[targeted.current.real_name] the [targeted.assigned_role]"] = targeted.current
-			LH.target = targets[input(user,"Choose your next target","Target") in targets]
+			LH.target = targets[input(user,"Выберите следующую цель","Цель") in targets]
 
 			if(!LH.target && targets.len)
 				LH.target = pick(targets)	//Tsk tsk, you can and will get another target if you want it or not.
@@ -308,25 +308,25 @@
 						continue
 					target_blacklist.Add(CLH.target.mind)
 				if(LH.target.mind in target_blacklist)	//Someone was faster, or you tried to cheese the system.
-					to_chat(user, "<span class='warning'>It seems you were too slow, and your target of choice has already been selected by another living heart!</span>")
+					to_chat(user, "<span class='warning'>Кажется, я был слишком медлительным, и моя цель уже была выбрана другим живым сердцем!</span>")
 					LH.target = null
 
 			qdel(A)
 			if(LH.target)
-				to_chat(user,"<span class='warning'>Your new target has been selected, go and sacrifice [LH.target.real_name]!</span>")
+				to_chat(user,"<span class='warning'>Моя цель выбрана, время принести в жертву [LH.target.real_name]!</span>")
 				var/datum/antagonist/heretic/EC = carbon_user.mind.has_antag_datum(/datum/antagonist/heretic)
 				LH.sac_targetter = EC
 				EC.sac_targetted.Add(LH.target.real_name)
 			else
-				to_chat(user,"<span class='warning'>target could not be found for living heart.</span>")
+				to_chat(user,"<span class='warning'>не удалось найти цель для живого сердца.</span>")
 
 /datum/eldritch_knowledge/spell/basic/cleanup_atoms(list/atoms)
 	return
 
 /datum/eldritch_knowledge/living_heart
-	name = "Living Heart"
-	desc = "Allows you to create additional living hearts, using a heart, a pool of blood and a poppy. Living hearts when used on a transmutation rune will grant you a person to hunt and sacrifice on the rune. Every sacrifice gives you an additional charge in the book."
-	gain_text = "The Gates of Mansus open up to your mind."
+	name = "Живое сердце"
+	desc = "Позволяет создавать дополнительные живые сердца, используя обычное сердце, лужицу крови и мак. Живые сердца, используемые на руне трансмутации, выбирают вам человека, на которого можно охотиться и приносить в жертву с помощью этой руны. Каждая жертва дает вам дополнительный знания в книге."
+	gain_text = "Врата Мансуса открылись твоему разуму."
 	cost = 0
 	required_atoms = list(/obj/item/organ/heart,/obj/effect/decal/cleanable/blood,/obj/item/reagent_containers/food/snacks/grown/poppy)
 	next_knowledge = list(/datum/eldritch_knowledge/spell/silence)
@@ -334,18 +334,18 @@
 	route = "Start"
 
 /datum/eldritch_knowledge/codex_cicatrix
-	name = "Codex Cicatrix"
-	desc = "Allows you to create a spare Codex Cicatrix if you have lost one, using a bible, human skin, a pen and a pair of eyes."
-	gain_text = "Their hand is at your throat, yet you see Them not."
+	name = "Кодекс Резцов"
+	desc = "Позволяет вам создать запасной Кодекс Резцов, если вы его потеряли, используя библию, человеческую кожу, ручку и пару глаз."
+	gain_text = "Их руки на твоем горле, но ты их не видишь."
 	cost = 0
 	required_atoms = list(/obj/item/organ/eyes,/obj/item/stack/sheet/animalhide/human,/obj/item/storage/book/bible,/obj/item/pen)
 	result_atoms = list(/obj/item/forbidden_book)
 	route = "Start"
 
 /datum/eldritch_knowledge/spell/silence
-	name = "Silence"
-	desc = "Allows you to use the power of the Mansus to force an individual's tongue to be held down for up to twenty seconds. They'll notice quickly, however."
-	gain_text = "They must hold their tongues, for they do not understand."
+	name = "Молчание"
+	desc = "Позволяет вам использовать силу Мансуса, чтобы заставить человека замолчать на срок до двадцати секунд. Однако он быстро заметит это."
+	gain_text = "Они должны держать язык за зубами, потому что ничего не понимают."
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/pointed/trigger/mute/eldritch
 	route = PATH_SIDE
