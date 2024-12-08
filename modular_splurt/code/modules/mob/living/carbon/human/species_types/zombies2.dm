@@ -337,7 +337,7 @@
 
 	owner.grab_ghost()
 	owner.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.ru_who()][stand_up ? " stagger to [owner.ru_ego()] feet and" : ""] gain a ravenous hunger in [owner.ru_ego()] eyes!</span>", "<span class='cultlarge'>* But it refused</span>")
-	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
+	playsound(owner.loc, 'sound/hallucinations/zombie_reanimate_00.ogg', 50, 1)
 	owner.do_jitter_animation(living_transformation_time)
 	owner.Stun(living_transformation_time)
 //	to_chat(owner, "<span class='alertalien'>You are now a zombie! You claw and bite, turning your fellow crewmembers into friends that help spread the plague.</span>")
