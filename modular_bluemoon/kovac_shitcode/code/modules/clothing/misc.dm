@@ -231,6 +231,7 @@
 	icon_state = "sol"
 	assignment = "Sol"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /obj/item/card/id/nri_citizen
 	name = "NRI Citizen ID"
@@ -238,6 +239,7 @@
 	icon_state = "nri"
 	assignment = "NRI"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /obj/item/card/id/blumenland_citizen
 	name = "Blumenland Citizen ID"
@@ -245,6 +247,7 @@
 	icon_state = "blumland"
 	assignment = "Blumenland Citizen"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /datum/gear/hands/sol_citizen
 	name = "Solar Federation Citizen ID"

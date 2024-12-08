@@ -199,6 +199,8 @@
 	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
+	var/card_sticker = FALSE //BLUEMOON ADD часть карт можно навешивать на другие карты
+	var/list/previus_icon[3] //BLUEMOON ADD лист для наклеек на карты, порядок icon, icon_state, assignment
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -238,6 +240,23 @@
 		add_fingerprint(user)
 
 /obj/item/card/id/attackby(obj/item/W, mob/user, params)
+	//BLUEMOON ADD стикеры на карту
+	if(istype(W, /obj/item/card/id) && !src.card_sticker && !contents.len)
+		var/obj/item/card/id/ID = W
+		if(ID.card_sticker)
+			to_chat(user, "<span class='notice'>You start to wrap the card...</span>")
+			if(!do_after(user, 15, target = user))
+				return
+			ID.forceMove(src)
+			previus_icon[1] = icon
+			previus_icon[2] = icon_state
+			previus_icon[3] = assignment
+			icon = ID.icon
+			icon_state = ID.icon_state
+			assignment = ID.assignment
+			return
+		//BLUEMOON ADD END
+
 	if(!bank_support)
 		return ..()
 	if(istype(W, /obj/item/holochip))
@@ -337,6 +356,22 @@
 
 /obj/item/card/id/AltClick(mob/living/user)
 	. = ..()
+	//BLUEMOON ADD стикеры на карту
+	if(src.contents)
+		for(var/obj/item/card/id/ID in contents)
+			if(ID.card_sticker)
+				var/response = alert(user, "What you want to do?","[src.name]", "remove sticker", "[prob(1)? "do some tax evasion" : "withdraw money"]")
+				if(response == "remove sticker")
+					to_chat(user, "<span class='notice'>You start to unwrap the card...</span>")
+					if(!do_after(user, 15, target = user))
+						return
+					user.put_in_hands(ID)
+					icon = previus_icon[1]
+					icon_state = previus_icon[2]
+					assignment = previus_icon[3]
+					return
+	//BLUEMOON ADD END
+
 	if(!bank_support || !alt_click_can_use_id(user))
 		return
 
@@ -385,6 +420,8 @@
 			. += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
 	else
 		. += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
+	if(card_sticker)
+		. += "<span class='info'>Can be used like a card sticker on another card.</span>"
 
 /obj/item/card/id/GetAccess()
 	return access

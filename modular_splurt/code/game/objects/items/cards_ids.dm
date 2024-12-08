@@ -14,6 +14,7 @@
 	icon_state = "vampire"
 	assignment = "Bloodsucker Fledgling"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /obj/item/card/id/away/hotel/splurt
 	name = "Staff ID"
