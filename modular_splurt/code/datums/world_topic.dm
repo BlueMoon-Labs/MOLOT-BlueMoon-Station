@@ -1,3 +1,4 @@
+/* NOOOOOO
 /datum/world_topic/whois
 	keyword = "whoIs"
 
@@ -19,3 +20,4 @@
 	.["admins"] += afkmins
 
 	return list2params(.)
+*/
