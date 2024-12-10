@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\clothesmate.dm'
 /obj/machinery/vending/clothing/Initialize()
 	var/list/extra_products = list(
 		/obj/item/clothing/suit/assu_suit = 16,
@@ -104,3 +105,4 @@
 	LAZYADD(contraband, extra_contraband)
 	LAZYADD(premium, extra_premium)
 	. = ..()
+*/

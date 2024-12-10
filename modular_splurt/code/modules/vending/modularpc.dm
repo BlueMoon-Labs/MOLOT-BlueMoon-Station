@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\modularapc.dm'
 /obj/machinery/vending/modularpc
 	name = "\improper Deluxe Silicate Solutions"
 	desc = "Your dream PC, just a few credits away!."
@@ -33,3 +34,4 @@
 /obj/item/vending_refill/modularpc
 	machine_name = "Deluxe Silicate Solutions"
 	icon_state = "refill_parts"
+*/

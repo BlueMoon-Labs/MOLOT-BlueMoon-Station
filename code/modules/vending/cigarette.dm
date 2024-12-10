@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\cigarette.dm'
 /obj/machinery/vending/cigarette
 	name = "\improper ShadyCigs Deluxe"
 	desc = "If you want to get cancer, might as well do it in style."
@@ -65,3 +66,4 @@
 	if(istype(I, /obj/item/lighter))
 		var/obj/item/lighter/L = I
 		L.set_lit(TRUE)
+*/

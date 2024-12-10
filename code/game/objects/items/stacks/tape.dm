@@ -101,6 +101,8 @@ GLOBAL_LIST_INIT(tape_recipes, list ( \
 	. = ..()
 	. += GLOB.tape_recipes
 
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\kinkmate.dm'
 /obj/machinery/vending/kink/Initialize(mapload)
 	products += list(/obj/item/stack/sticky_tape/black = 4)
 	. = ..()
+*/

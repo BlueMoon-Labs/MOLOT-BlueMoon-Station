@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\youtool.dm'
 /obj/machinery/vending/tool
 	name = "\improper YouTool"
 	desc = "Tools for tools."
@@ -28,3 +29,4 @@
 /obj/item/vending_refill/youtool
 	machine_name = "YouTool"
 	icon_state = "refill_engi"
+*/

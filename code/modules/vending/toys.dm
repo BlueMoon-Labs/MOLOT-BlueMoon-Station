@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\donksofttoyvendor.dm'
 /obj/machinery/vending/donksofttoyvendor
 	name = "\improper Donksoft Toy Vendor"
 	desc = "Ages 8 and up approved vendor that dispenses toys."
@@ -30,3 +31,4 @@
 /obj/item/vending_refill/donksoft
 	machine_name = "Donksoft Toy Vendor"
 	icon_state = "refill_donksoft"
+*/

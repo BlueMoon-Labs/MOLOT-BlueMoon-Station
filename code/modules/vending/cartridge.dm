@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\cartridge.dm'
 //This one's from bay12
 /obj/machinery/vending/cart
 	name = "\improper PTech"
@@ -45,3 +46,4 @@
 	machine_name = "PTech"
 	icon_state = "refill_smoke"
 
+*/

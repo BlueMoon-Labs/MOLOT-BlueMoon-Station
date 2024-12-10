@@ -584,6 +584,7 @@
 	for(var/obj/item/mail in mails)
 		mail.forceMove(dropturf)
 
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\wardrobes.dm'
 /obj/machinery/vending/wardrobe/cargo_wardrobe/Initialize(mapload)
 	var/list/extra_products = list(
 		/obj/item/mailmat_deployer = 3
@@ -591,3 +592,4 @@
 
 	LAZYADD(products, extra_products)
 	. = ..()
+	*/
