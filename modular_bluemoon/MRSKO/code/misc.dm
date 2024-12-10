@@ -1,6 +1,6 @@
 /obj/item/toy/plush/laska
 	name = "Lotti Plushie"
-	desc = "Ìÿãêàÿ èãðóøêà â ôîðìå êîøêè ëåãêî óòîëèò âàøó æàæäó îáúÿòèé è ëàñêè, îò íå¸ âû ìîæåòå ïî÷óâñòâîâàòü ëåãêèé àðîìàò ïåïëà è ñëàäêîâàòî ÿãîäíîãî âêóñà."
+	desc = " Мягкая игрушка в форме кошки легко утолит вашу жажду объятий и ласки, от неё вы можете почувствовать легкий аромат пепла и сладковато ягодного вкуса."
 	icon_state = "laska"
 	icon = 'modular_bluemoon/MRSKO/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/MRSKO/Icons/Mob/inhand_l.dmi'
