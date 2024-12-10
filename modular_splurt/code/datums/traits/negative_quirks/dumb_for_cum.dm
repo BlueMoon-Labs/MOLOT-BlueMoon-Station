@@ -68,6 +68,12 @@
 	reminder_trigger = rand(3000, 9000)
 	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
+	//quirk_holder.add_client_colour(/datum/client_colour/monochrome)
+	quirk_holder.overlay_fullscreen("dumb_cum_depression", /atom/movable/screen/fullscreen/scaled/depression, 2)
+	stoplag(10 SECONDS)
+	//quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
+	quirk_holder.clear_fullscreen("dumb_cum_depression")
+
 /datum/quirk/dumb4cum/proc/uncrave(print_text = FALSE)
 	// Remove active status trait
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)

@@ -44,11 +44,6 @@
 	.=..()
 	if(!.)
 		return
-	if(from.has_reagent(/datum/reagent/consumable/semen) && (HAS_TRAIT(src, TRAIT_DUMB_CUM) || HAS_TRAIT(src, TRAIT_GFLUID_DETECT)))
-		to_chat(src, span_love("Вы узнаете хорошо знакомый вам вкус свежей спермы~"))
-		if(HAS_TRAIT(src, TRAIT_DUMB_CUM))
-			var/datum/quirk/dumb4cum/quirk_instance = locate() in roundstart_quirks
-			quirk_instance.uncrave()
 	if ((from.pH > 12.5) || (from.pH < 1.5))
 		if(!(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))) // BLUEMOON ADD - синтетики в ином случае получают химические ожоги, если пьют гидравлическую жидкость
 			T.applyOrganDamage(5)
