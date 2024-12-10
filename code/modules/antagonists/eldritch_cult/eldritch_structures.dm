@@ -1,6 +1,6 @@
 /obj/structure/eldritch_crucible
-	name = "Mawed Crucible"
-	desc = "Immortalized cast iron, the steel-like teeth holding it in place, it's vile extract has the power of rebirthing things, remaking them from the very beginning."
+	name = "Растерзанный тигель"
+	desc = "Увековеченный чугун, стальные зубья удерживающие его на месте, этот мерзкий экстракт в нем обладает способностью возрождать вещи, переделывая саму их суть."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "crucible"
 	anchored = FALSE
@@ -17,15 +17,15 @@
 	if(!IS_HERETIC(user) && !IS_HERETIC_MONSTER(user))
 		return
 	if(current_mass < max_mass)
-		. += "The Crucible requires [max_mass - current_mass] more organs or bodyparts!"
+		. += "Тигель требует [max_mass - current_mass] больше органов или частей тела!"
 	else
-		. += "The Crucible is ready to be used!"
+		. += "Тигель готов к использованию!"
 
-	. += "You can anchor and reanchor it using Codex Cicatrix!"
-	. += "It is currently [anchored == FALSE ? "unanchored" : "anchored"]"
-	. += "This structure can brew 'Brew of Crucible soul' - when used it gives you the ability to phase through matter for 15 seconds, after the time elapses it teleports you back to your original location"
-	. += "This structure can brew 'Brew of Dusk and Dawn' - when used it gives you xray for 1 minute"
-	. += "This structure can brew 'Brew of Wounded Soldier' - when used it makes you immune to damage slowdown, additionally you start healing for every wound you have, quickly outpacing the damage caused by them."
+	. += "Могу открутить и закрепить его повторно с помощью Кодекса Рубцов!"
+	. += "Сейчас он [anchored == FALSE ? "незакреплен" : "закреплен"]"
+	. += "Позволяет вам сварить 'Напиток Крепкой Души' - Позволяет проходить сквозь стены в течение 15 секунд, по истечении этого времени вы телепортируетесь в свое первоначальное местоположение"
+	. += "Позволяет вам сварить 'Напиток Заката и Рассвета' - Позволяет вам четко видеть сквозь стены и предметы в течение 60 секунд"
+	. += "Позволяет вам сварить 'Напиток Раненного солдата' - В течение следующих 60 секунд каждая рана будет заживать на вас, незначительные раны заживают на 1 единицу урона в секунду, средние - на 3, а критические - на 6. Вы также становитесь невосприимчивы к замедленнию от урона."
 
 /obj/structure/eldritch_crucible/attacked_by(obj/item/I, mob/living/user)
 	if(istype(I,/obj/item/nullrod))
@@ -40,7 +40,7 @@
 	if(istype(I,/obj/item/forbidden_book))
 		playsound(src, 'sound/misc/desceration-02.ogg', 75, TRUE)
 		anchored = !anchored
-		to_chat(user,"<span class='notice'>You [anchored == FALSE ? "unanchor" : "anchor"] the crucible</span>")
+		to_chat(user,"<span class='notice'>Ты [anchored == FALSE ? "откручиваешь" : "закрепляешь"] тигель</span>")
 		return
 
 	if(istype(I,/obj/item/bodypart) || istype(I,/obj/item/organ))
@@ -50,10 +50,10 @@
 			return
 
 		if(current_mass >= max_mass)
-			to_chat(user,"<span class='notice'> Crucible is already full!</span>")
+			to_chat(user,"<span class='notice'> Тигель полон!</span>")
 			return
 		playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
-		to_chat(user,"<span class='notice'>Crucible devours [I.name] and fills itself with a little bit of liquid!</span>")
+		to_chat(user,"<span class='notice'>Тигель поглощает [I.name] и наполняется небольшим количеством вязкой жидкости!</span>")
 		current_mass++
 		qdel(I)
 		update_icon_state()
@@ -68,11 +68,11 @@
 		return
 
 	if(in_use)
-		to_chat(user,"<span class='notice'>Crucible is already in use!</span>")
+		to_chat(user,"<span class='notice'>Тигель готов к использованию!</span>")
 		return
 
 	if(current_mass < max_mass)
-		to_chat(user,"<span class='notice'>Crucible isn't full! Bring it more organs or bodyparts!</span>")
+		to_chat(user,"<span class='notice'>Тигель недостаточно полон! Принесите ещё органов или частей тел!</span>")
 		return
 
 	in_use = TRUE
@@ -80,7 +80,7 @@
 	for(var/X in subtypesof(/obj/item/eldritch_potion))
 		var/obj/item/eldritch_potion/potion = X
 		lst[initial(potion.name)] = potion
-	var/type = lst[input(user,"Choose your brew","Brew") in lst]
+	var/type = lst[input(user,"Выберите своё варево","Напиток") in lst]
 	playsound(src, 'sound/misc/desceration-02.ogg', 75, TRUE)
 	new type(drop_location())
 	current_mass = 0
@@ -92,7 +92,7 @@
 	if(HAS_TRAIT(user,TRAIT_NODISMEMBER))
 		return
 	playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
-	to_chat(user,"<span class='danger'>Crucible grabs your arm and devours it whole!</span>")
+	to_chat(user,"<span class='danger'>Тигель хватает твою руку и пожирает её целиком!</span>")
 	var/obj/item/bodypart/arm = user.get_active_hand()
 	arm.dismember()
 	qdel(arm)
@@ -107,8 +107,8 @@
 		icon_state = "crucible_empty"
 
 /obj/structure/trap/eldritch
-	name = "elder carving"
-	desc = "Collection of unknown symbols, they remind you of days long gone..."
+	name = "Резьба старших"
+	desc = "Коллекция неизвестных символов, они напоминают вам о давно минувших днях..."
 	icon = 'icons/obj/eldritch.dmi'
 	charges = 1
 	///Owner of the trap
@@ -132,13 +132,13 @@
 	owner = _owner
 
 /obj/structure/trap/eldritch/alert
-	name = "alert carving"
+	name = "Резьба предосторожности"
 	icon_state = "alert_rune"
 	alpha = 10
 
 /obj/structure/trap/eldritch/alert/trap_effect(mob/living/L)
 	if(owner)
-		to_chat(owner,"<span class='big boldwarning'>[L.real_name] has stepped foot on the alert rune in [get_area(src)]!</span>")
+		to_chat(owner,"<span class='big boldwarning'>[L.real_name] наступает на предупреждающую руну в [get_area(src)]!</span>")
 	return ..()
 
 //this trap can only get destroyed by rune carving knife or nullrod
@@ -146,7 +146,7 @@
 	return
 
 /obj/structure/trap/eldritch/tentacle
-	name = "grasping carving"
+	name = "Резьба захвата"
 	icon_state = "tentacle_rune"
 
 /obj/structure/trap/eldritch/tentacle/trap_effect(mob/living/L)
@@ -161,7 +161,7 @@
 	return ..()
 
 /obj/structure/trap/eldritch/mad
-	name = "mad carving"
+	name = "Резьба безумия"
 	icon_state = "madness_rune"
 
 /obj/structure/trap/eldritch/mad/trap_effect(mob/living/L)
