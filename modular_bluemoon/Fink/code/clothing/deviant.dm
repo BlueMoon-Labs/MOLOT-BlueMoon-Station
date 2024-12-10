@@ -6,6 +6,7 @@
 	icon_state = "occult_id"
 	assignment = "Herecit"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /obj/item/card/id/lust
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
@@ -14,6 +15,7 @@
 	icon_state = "lust_id"
 	assignment = "Sex worker"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /obj/item/card/id/agony
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
@@ -22,6 +24,7 @@
 	icon_state = "agony_id"
 	assignment = "Ravenheart Resident"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 
 /obj/item/card/id/muck
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
@@ -30,6 +33,7 @@
 	icon_state = "muck_id"
 	assignment = "Mucker"
 	uses_overlays = FALSE
+	card_sticker = TRUE
 // спермиты
 
 /obj/item/clothing/accessory/permit/occult
