@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\wardrobes.dm'
 /obj/machinery/vending/wardrobe/curator_wardrobe/Initialize()
 	var/list/extra_products = list()
 	var/list/extra_contraband = list()
@@ -11,3 +12,4 @@
 	LAZYADD(contraband, extra_contraband)
 	LAZYADD(premium, extra_premium)
 	. = ..()
+	*/

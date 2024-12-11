@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\boozeomat.dm'
 /obj/machinery/vending/boozeomat/Initialize()
 	var/list/extra_products = list(
 		/obj/item/reagent_containers/food/drinks/bottle/blank/syrup_bottle = 5,
@@ -21,3 +22,4 @@
 	LAZYADD(contraband, extra_contraband)
 	LAZYADD(premium, extra_premium)
 	. = ..()
+*/

@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\wardrobes.dm'
 /obj/item/vending_refill/wardrobe
 	icon_state = "refill_clothes"
 
@@ -796,3 +797,4 @@
 /obj/item/vending_refill/wardrobe/syndie_wardrobe/civil
 	machine_name = "Civilian SynDrobe"
 	icon_state = "refill_donksoft"
+*/

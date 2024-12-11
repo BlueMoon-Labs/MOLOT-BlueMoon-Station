@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\liberation.dm'
 /obj/machinery/vending/liberationstation
 	name = "\improper Liberation Station"
 	desc = "An overwhelming amount of <b>ancient patriotism</b> washes over you just by looking at the machine."
@@ -93,3 +94,4 @@
 	name = "Nanotrasen Weapon Voucher"
 	desc = "A token used to redeem equipment from your nearest marine vendor."
 	icon_state = "nanotrasen-voucher"
+*/

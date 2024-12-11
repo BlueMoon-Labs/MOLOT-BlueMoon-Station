@@ -87,6 +87,21 @@ export const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 };
 
+// Bluemoon Edit: Vending Update Start
+/**
+ * Similar to capitalize, this takes a string and replaces all first letters
+ * of any words.
+ *
+ * @param {string} str
+ * @return {string} The string with the first letters capitalized.
+ *
+ * @example capitalizeAll('heLLo woRLd') === 'HeLLo WoRLd'
+ */
+export const capitalizeAll = (str) => {
+  return str.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+};
+// Bluemoon Edit: Vending Update End
+
 export const toTitleCase = str => {
   // Handle array
   if (Array.isArray(str)) {

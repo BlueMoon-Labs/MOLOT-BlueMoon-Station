@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\medical_wall.dm'
 /obj/machinery/vending/wallmed
 	name = "\improper NanoMed"
 	desc = "Wall-mounted Medical Equipment dispenser."
@@ -51,3 +52,4 @@
 					/obj/item/reagent_containers/pill/patch/silver_sulf = 1,
 					/obj/item/reagent_containers/medspray/sterilizine = 1)
 	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2)
+*/

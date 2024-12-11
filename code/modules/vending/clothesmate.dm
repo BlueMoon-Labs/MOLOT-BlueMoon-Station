@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\clothesmate.dm'
 /obj/machinery/vending/clothing
 	name = "ClothesMate" //renamed to make the slogan rhyme
 	desc = "A vending machine for clothing."
@@ -316,3 +317,4 @@
 /obj/item/vending_refill/clothing
 	machine_name = "ClothesMate"
 	icon_state = "refill_clothes"
+*/

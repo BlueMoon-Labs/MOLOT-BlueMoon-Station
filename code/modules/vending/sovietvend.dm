@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\sovietvend.dm'
 /obj/machinery/vending/sovietvend
 	name = "KomradeVendtink"
 	desc = "Rodina-mat' zovyot!"
@@ -32,3 +33,4 @@
 /obj/item/vending_refill/soviet
 	machine_name 	= "sovietvend"
 	icon_state 		= "refill_soviet"
+*/

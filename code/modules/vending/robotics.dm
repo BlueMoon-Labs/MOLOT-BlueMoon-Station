@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\robotics.dm'
 //This one's from bay12
 /obj/machinery/vending/robotics
 	name = "\improper Robotech Deluxe"
@@ -29,3 +30,4 @@
 /obj/item/vending_refill/robotics
 	machine_name = "Robotech Deluxe"
 	icon_state = "refill_engi"
+*/

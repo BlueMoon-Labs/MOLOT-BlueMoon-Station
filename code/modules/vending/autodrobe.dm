@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\autodrobe.dm'
 /obj/machinery/vending/autodrobe
 	name = "\improper AutoDrobe"
 	desc = "A vending machine for costumes."
@@ -239,3 +240,4 @@
 /obj/item/vending_refill/autodrobe
 	machine_name = "AutoDrobe"
 	icon_state = "refill_costume"
+*/

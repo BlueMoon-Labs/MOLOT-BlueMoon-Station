@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\barkbox.dm'
 /obj/machinery/vending/barkbox/Initialize(mapload)
 	var/list/extra_products = list(
 		/obj/item/clothing/neck/petcollar/spike = 5,
@@ -14,4 +15,4 @@
 	LAZYADD(products, extra_products)
 	LAZYADD(contraband, extra_contraband)
 	. = ..()
-
+*/

@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\kinkmate.dm'
 /obj/machinery/vending/kink
 	name = "KinkMate"
 	desc = "A vending machine for all your unmentionable desires."
@@ -86,3 +87,4 @@
 		if(T)
 			qdel(src)
 			new /obj/machinery/vending/sexmachine(T)
+*/
