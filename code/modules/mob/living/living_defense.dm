@@ -3,10 +3,12 @@
 	var/armor = getarmor(def_zone, attack_flag)
 
 	// BLUEMOON ADD START - characters_size_changes - броня хуже работает на персонажей большого размера
-	if(get_size(src) > 1)
+	var/user_size_armor_reduction = get_size(src)
+	if(user_size_armor_reduction > 1)
 		if(attack_flag in list(MELEE, BULLET, LASER)) // было бы смешно, если бы защита от размера не работала бы от радиации, потому что вы порвали рад костюм . . .
 			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_DEVOURER) && !HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT)) // у пожирателей и лёгких уже дебаф к ХП, для них исключение
-				armor = max(0, armor * (2 - get_size(src))) // За каждый % увеличения размера, броня работает на % хуже. Вплоть до того, что персонажи с размером +200% не получают бонусов от брони. Сделано для компенсации факта, что от увеличения размера уже повышается ХП, которое сродни наличию брони
+				user_size_armor_reduction = min(user_size_armor_reduction, 1.75) // Смайли сказал, что убирать всю броню слишком жёстко, потому работает 25% от изначальной брони, если размер более 175%
+				armor = armor * (2 - user_size_armor_reduction) // За каждый % увеличения размера, броня работает на % хуже. Вплоть до того, что персонажи с размером +175% получают только 25% брони. Сделано для компенсации факта, что от увеличения размера уже повышается ХП, которое сродни наличию брони
 	// BLUEMOON ADD END
 
 	if(silent)
