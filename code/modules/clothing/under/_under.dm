@@ -390,7 +390,7 @@
 	if(toggle_jumpsuit_adjust() && ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()
-		H.update_body()
+		H.update_body(TRUE)
 
 /obj/item/clothing/under/proc/toggle_jumpsuit_adjust()
 	if(!can_adjust)
