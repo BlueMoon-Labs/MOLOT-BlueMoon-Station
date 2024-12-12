@@ -108,13 +108,13 @@
 	switch(tip.type)
 		if(/obj/item/shard/plasma)
 			force = 11
-			throwforce = 21
+			throwforce = 41
 			custom_materials = list(/datum/material/iron= HALF_SHEET_MATERIAL_AMOUNT, /datum/material/alloy/plasmaglass= HALF_SHEET_MATERIAL_AMOUNT * 2)
 			icon_prefix = "spearplasma"
 			AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]1")
 		if(/obj/item/shard/titanium)
 			force = 13
-			throwforce = 21
+			throwforce = 41
 			throw_range = 8
 			throw_speed = 5
 			custom_materials = list(/datum/material/iron= HALF_SHEET_MATERIAL_AMOUNT, /datum/material/alloy/titaniumglass= HALF_SHEET_MATERIAL_AMOUNT * 2)
@@ -123,7 +123,7 @@
 			AddComponent(/datum/component/two_handed, force_unwielded=13, force_wielded=18, icon_wielded="[icon_prefix]1")
 		if(/obj/item/shard/plastitanium)
 			force = 13
-			throwforce = 22
+			throwforce = 42
 			throw_range = 9
 			throw_speed = 5
 			custom_materials = list(/datum/material/iron= HALF_SHEET_MATERIAL_AMOUNT, /datum/material/alloy/plastitaniumglass= HALF_SHEET_MATERIAL_AMOUNT * 2)
