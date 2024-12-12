@@ -1,3 +1,4 @@
+/* NO
 SUBSYSTEM_DEF(fail2topic)
 	name = "Fail2Topic"
 	init_order = INIT_ORDER_FAIL2TOPIC
@@ -135,3 +136,4 @@ SUBSYSTEM_DEF(fail2topic)
 		subsystem_log("Failed to invoke shell for firewall rule drop.")
 	else
 		subsystem_log("Firewall rule dropped.")
+*/
