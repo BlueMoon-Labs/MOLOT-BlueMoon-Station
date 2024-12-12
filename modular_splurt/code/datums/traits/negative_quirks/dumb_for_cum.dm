@@ -17,8 +17,8 @@
 										"Было бы неплохо сейчас потребить спермы!",\
 										"Ты начинаешь тосковать по сперме..."
 									  )
-	var/list/uncrave_phrases = list("Вы узнаете хорошо знакомый вам вкус свежей спермы~",\
-									"Незабываемый вкус свежей спермы вы узнаете из тысячи~",\
+	var/list/uncrave_phrases = list("Ааахх~ сперма~ наконец-то!~",\
+									"Это ощущение свежей спермы во мне... бесценно~",\
 									"Ммм~, мне так не хватало этой восхитительной спермы~"
 									)
 
@@ -74,7 +74,7 @@
 	//quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
 	quirk_holder.clear_fullscreen("dumb_cum_depression")
 
-/datum/quirk/dumb4cum/proc/uncrave(print_text = FALSE)
+/datum/quirk/dumb4cum/proc/uncrave(visible_effect = TRUE)
 	// Remove active status trait
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
 
@@ -94,7 +94,8 @@
 	// Add new timer
 	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
 
-	if(print_text)
+	if(visible_effect)
+		quirk_holder.set_drugginess(2)
 		to_chat(quirk_holder, span_love("[pick(uncrave_phrases)]"))
 
 /datum/mood_event/cum_craving

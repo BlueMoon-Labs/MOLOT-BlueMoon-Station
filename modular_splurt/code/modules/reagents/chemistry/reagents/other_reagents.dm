@@ -2,7 +2,7 @@
 	. = ..()
 
 	// Check for D4C quirk
-	if(HAS_TRAIT(M,TRAIT_DUMB_CUM))
+	if(HAS_TRAIT(M,TRAIT_DUMB_CUM) && !istype(src, /datum/reagent/consumable/semen/femcum))
 		// Define quirk entry
 		var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
 
@@ -18,7 +18,7 @@
 		var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
 
 		// Remove reset timer
-		quirk_target.uncrave()
+		quirk_target.uncrave(FALSE) //diluted, so no "wow effect".
 
 //incubus and succubus additions below
 /datum/reagent/consumable/semen/on_mob_life(mob/living/carbon/M)
