@@ -10,7 +10,7 @@
 	icon_state = "bloodhand_left"
 	var/icon_left = "bloodhand_left"
 	var/icon_right = "bloodhand_right"
-	hitsound = 'sound/hallucinations/growl1.ogg'
+	hitsound = 'sound/hallucinations/zombie_bite.ogg'
 	force = 18
 	sharpness = SHARP_POINTY //it's a claw, they're sharp.
 	damtype = "brute"
