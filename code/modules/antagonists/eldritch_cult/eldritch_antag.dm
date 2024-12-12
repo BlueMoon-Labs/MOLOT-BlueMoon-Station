@@ -25,13 +25,13 @@
 
 /datum/antagonist/heretic/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ecult_op.ogg', 100, FALSE, pressure_affected = FALSE)//subject to change
-	to_chat(owner, "<span class='boldannounce'>You are the Heretic!</span><br>\
-	<B>The old ones gave you these tasks to fulfill:</B>")
+	to_chat(owner, "<span class='boldannounce'>Ты Еретик!</span><br>\
+	<B>Забытые боги дали вам следующие задания:</B>")
 	owner.announce_objectives()
-	to_chat(owner, "<span class='cult'>The book whispers softly, its forbidden knowledge walks this plane once again!<br>\
-	Your book allows you to research abilities. Read it very carefully, for you cannot undo what has been done!<br>\
-	You gain charges by either collecting influences or sacrificing people tracked by the living heart.<br> \
-	You can find a basic guide at : https://tgstation13.org/wiki/Heresy_101 </span>")
+	to_chat(owner, "<span class='cult'>Книга шепчет мне, её запретные знания вновь появились в этом мире!<br>\
+	Книга позволит мне исследовать новые способности. Нужно читать очень внимательно, ибо то что сделано уже не вернуть!<br>\
+	Я получу нужные мне знания собирая их из разломов или принося в жертву цели которое укажет мне живое сердце.<br> \
+	Основное руководство : https://tgstation13.org/wiki/Heresy_101 </span>")
 
 /datum/antagonist/heretic/on_gain()
 	var/mob/living/current = owner.current
@@ -84,10 +84,10 @@
 	var/item_name = initial(item_path.name)
 	var/where = H.equip_in_one_of_slots(T, slots, critical = TRUE)
 	if(!where)
-		to_chat(H, "<span class='userdanger'>Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1).</span>")
+		to_chat(H, "<span class='userdanger'>К сожалению, тебе не удалось получить [item_name]. Это очень плохо и тебе нужно срочно попросить помощи у администратора (press F1).</span>")
 		return FALSE
 	else
-		to_chat(H, "<span class='danger'>You have a [item_name] in your [where].</span>")
+		to_chat(H, "<span class='danger'>Я получил [item_name] в мой [where].</span>")
 		if(where == "backpack")
 			SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 		return TRUE
@@ -129,7 +129,7 @@
 	if(mob_override)
 		current = mob_override
 	add_antag_hud(antag_hud_type, antag_hud_name, current)
-	handle_clown_mutation(current, mob_override ? null : "Ancient knowledge described in the book allows you to overcome your clownish nature, allowing you to use complex items effectively.")
+	handle_clown_mutation(current, mob_override ? null : "Древние знания из моей книги позволяют преодолеть клоунскую природу и использовать эффективно даже сложные предметы.")
 	current.faction |= "heretics"
 
 /datum/antagonist/heretic/remove_innate_effects(mob/living/mob_override)
@@ -151,27 +151,27 @@
 	var/cultiewin = TRUE
 
 	parts += printplayer(owner)
-	parts += "<b>Sacrifices Made:</b> [total_sacrifices]"
+	parts += "<b>Жертв принесено:</b> [total_sacrifices]"
 
 	if(length(objectives))
 		var/count = 1
 		for(var/o in objectives)
 			var/datum/objective/objective = o
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='greentext'>Success!</b></span>"
+				parts += "<b>Цель #[count]</b>: [objective.explanation_text] <span class='greentext'>Выполнена!</b></span>"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
+				parts += "<b>Цель #[count]</b>: [objective.explanation_text] <span class='redtext'>Провалена.</span>"
 				cultiewin = FALSE
 			count++
 	if(ascended)
-		parts += "<span class='greentext big'>THE HERETIC ASCENDED!</span>"
+		parts += "<span class='greentext big'>ЕРЕТИК СОВЕРШИЛ ВОЗНЕСЕНИЕ!</span>"
 	else
 		if(cultiewin)
-			parts += "<span class='greentext'>The heretic was successful!</span>"
+			parts += "<span class='greentext'>Еретик успешен!</span>"
 		else
-			parts += "<span class='redtext'>The heretic has failed.</span>"
+			parts += "<span class='redtext'>Еретик потерпел неудачу.</span>"
 
-	parts += "<b>Knowledge Researched:</b> "
+	parts += "<b>Исследованные знания:</b> "
 
 	var/list/knowledge_message = list()
 	var/list/knowledge = get_all_knowledge()
@@ -180,14 +180,14 @@
 		knowledge_message += "[EK.name]"
 	parts += knowledge_message.Join(", ")
 
-	parts += "<b>Targets assigned by living hearts, but not sacrificed:</b>"
+	parts += "<b>Цели поставленные живым сердцем но не принесённые в жертву:</b>"
 	if(!sac_targetted.len)
-		parts += "None."
+		parts += "Отсутствуют."
 	else
 		parts += sac_targetted.Join(",")
-	parts += "<b>Sacrifices performed:</b>"
+	parts += "<b>Совершённые жертвоприношения:</b>"
 	if(!actually_sacced.len)
-		parts += "<span class='redtext'>None!</span>"
+		parts += "<span class='redtext'>Отсутствуют!</span>"
 	else
 		parts += actually_sacced.Join(",")
 
@@ -232,7 +232,7 @@
 /datum/antagonist/heretic/antag_panel()
 	var/list/parts = list()
 	parts += ..()
-	parts += "<b>Targets currently assigned by living hearts (Can give a false negative if they stole someone elses living heart):</b>"
+	parts += "<b>Цели которые в данный момент обозначило живое сердце (Результат может быть ложным если вы украли чужое сердце):</b>"
 	if(!sac_targetted.len)
 		parts += "Отсутствует."
 	else
