@@ -170,12 +170,20 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			qdel(turf_fire)
 		if(ispath(path,/turf/closed))
 			. = ..()
+			// BLUEMOON EDIT START: Invalid Space Turfs
+			if (!.)
+				return
 			var/turf/open/newTurf = .
-			newTurf.update_air_ref(-1)
+			if (newTurf)
+				newTurf.update_air_ref(-1)
 		else
 			. = ..()
+			if (!.)
+				return
 			var/turf/open/newTurf = .
-			newTurf.Initalize_Atmos(0)
+			if (newTurf)
+				newTurf.Initalize_Atmos(0)
+			// BLUEMOON EDIT END: Invalid Space Turfs
 	else
 		. = ..()
 

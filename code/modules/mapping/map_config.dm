@@ -24,6 +24,10 @@
 	var/traits = null
 	var/space_ruin_levels = 7
 	var/space_empty_levels = 1
+	// BLUEMOON EDIT START: Invalid Space Turfs
+	/// Boolean that tells us if this is a planetary station. (like IceBoxStation)
+	var/planetary = FALSE
+	// BLUEMOON EDIT END: Invalid Space Turfs
 	var/station_ruin_budget = -1 // can be set to manually override the station ruins budget on maps that don't support station ruins, stopping the error from being unable to place the ruins.
 
 	var/minetype = "lavaland"
@@ -173,6 +177,11 @@
 
 	if ("minetype" in json)
 		minetype = json["minetype"]
+
+	// BLUEMOON EDIT START: Invalid Space Turfs
+	if ("planetary" in json)
+		planetary = json["planetary"]
+	// BLUEMOON EDIT END: Invalid Space Turfs
 
 	if ("maptype" in json)
 		maptype = json["maptype"]

@@ -492,11 +492,11 @@
 	name = "Abandoned Ship"
 	icon_state = "yellow"
 
-/area/solars/derelict_starboard
+/area/ruin/space/solars/derelict_starboard
 	name = "Derelict Starboard Solar Array"
 	icon_state = "panelsS"
 
-/area/solars/derelict_aft
+/area/ruin/space/solars/derelict_aft
 	name = "Derelict Aft Solar Array"
 	icon_state = "yellow"
 

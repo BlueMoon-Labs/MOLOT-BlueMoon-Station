@@ -2684,11 +2684,16 @@
 	update_icon()
 
 /obj/effect/decal/cleanable/semen/replace_decal(obj/effect/decal/cleanable/semen/S)
-	if(reagents.total_volume > 0)
+	// BLUEMOON EDIT START: Invalid Space Turfs
+	if(reagents && reagents.total_volume > 0)
 		reagents.trans_to(S.reagents, reagents.total_volume)
 	if(blood_DNA)
-		S.blood_DNA |= blood_DNA
-		S.update_icon()
+		if (!islist(S.blood_DNA))
+			S.blood_DNA = list()
+		if (islist(blood_DNA))
+			S.blood_DNA |= blood_DNA
+	S.update_icon()
+	// BLUEMOON EDIT END: Invalid Space Turfs
 	return ..()
 
 /obj/effect/decal/cleanable/semen/update_icon()

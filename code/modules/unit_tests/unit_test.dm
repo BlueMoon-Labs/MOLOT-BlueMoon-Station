@@ -15,6 +15,11 @@ GLOBAL_DATUM(current_test, /datum/unit_test)
 GLOBAL_VAR_INIT(failed_any_test, FALSE)
 GLOBAL_VAR(test_log)
 
+// BLUEMOON EDIT START: Invalid Space Turfs
+/// When unit testing, all logs sent to log_mapping are stored here and retrieved in log_mapping unit test.
+GLOBAL_LIST_EMPTY(unit_test_mapping_logs)
+// BLUEMOON EDIT END: Invalid Space Turfs
+
 /// A list of every test that is currently focused.
 /// Use the PERFORM_ALL_TESTS macro instead.
 GLOBAL_VAR_INIT(focused_tests, focused_tests())
@@ -170,6 +175,7 @@ GLOBAL_VAR_INIT(focused_tests, focused_tests())
 		var/text = fail_reasons[reasonID][1]
 		var/file = fail_reasons[reasonID][2]
 		var/line = fail_reasons[reasonID][3]
+		var/map_name = SSmapping.config.map_name // BLUEMOON EDIT END: Invalid Space Turfs
 
 		test.log_for_test(text, "error", file, line)
 

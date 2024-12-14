@@ -247,28 +247,35 @@
 /area/shuttle/syndicate_scout
 	name = "Syndicate Scout"
 
-/area/shuttle/caravan
+// BLUEMOON EDIT START: Invalid Space Turfs
+/area/shuttle/ruin
+	name = "Ruined Shuttle"
+
+/// Special shuttles made for the Caravan Ambush ruin.
+/area/shuttle/ruin/caravan
 	requires_power = TRUE
+	name = "Ruined Caravan Shuttle"
+// BLUEMOON EDIT END: Invalid Space Turfs
 
-/area/shuttle/caravan/syndicate1
+/area/shuttle/ruin/caravan/syndicate1 // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Syndicate Fighter"
 
-/area/shuttle/caravan/syndicate2
+/area/shuttle/ruin/caravan/syndicate2 // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Syndicate Fighter"
 
-/area/shuttle/caravan/syndicate3
+/area/shuttle/ruin/caravan/syndicate3 // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Syndicate Drop Ship"
 
-/area/shuttle/caravan/pirate
+/area/shuttle/ruin/caravan/pirate // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Pirate Cutter"
 
-/area/shuttle/caravan/freighter1
+/area/shuttle/ruin/caravan/freighter1 // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Small Freighter"
 
-/area/shuttle/caravan/freighter2
+/area/shuttle/ruin/caravan/freighter2 // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Tiny Freighter"
 
-/area/shuttle/caravan/freighter3
+/area/shuttle/ruin/caravan/freighter3 // BLUEMOON EDIT: Invalid Space Turfs
 	name = "Tiny Freighter"
 
 /area/shuttle/snowtaxi

@@ -14,10 +14,10 @@
 	minimap_show_walls = FALSE
 
 
-/area/ruin/unpowered
+/area/ruin/space/has_grav
 	always_unpowered = FALSE
 
-/area/ruin/unpowered/no_grav
+/area/ruin/space
 	has_gravity = FALSE
 
 /area/ruin/powered

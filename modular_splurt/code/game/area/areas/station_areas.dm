@@ -117,6 +117,6 @@
 	ambientsounds = SPOOKY
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
-/area/ruin/unpowered/ylvaturf
+/area/ruin/space/has_grav/ylvaturf
 	name = "Ylva Outskirts"
 	icon_state = "spacecontent26"

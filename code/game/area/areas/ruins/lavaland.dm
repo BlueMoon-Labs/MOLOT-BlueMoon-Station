@@ -107,6 +107,6 @@
 /area/ruin/lavaland/unpowered/ash_walkers
 	icon_state = "red"
 
-/area/ruin/unpowered/russianbunker
+/area/ruin/space/has_grav/russianbunker
 	name = "Russian Bunker"
 	area_flags = NOTELEPORT

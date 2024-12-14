@@ -226,6 +226,11 @@
 	SEND_TEXT(world.log, text)
 
 /proc/log_mapping(text)
+// BLUEMOON EDIT START: Invalid Space Turfs
+#ifdef UNIT_TESTS
+	GLOB.unit_test_mapping_logs += text
+#endif
+// BLUEMOON EDIT END: Invalid Space Turfs
 	WRITE_LOG(GLOB.world_map_error_log, text)
 
 /proc/log_perf(list/perf_info)
