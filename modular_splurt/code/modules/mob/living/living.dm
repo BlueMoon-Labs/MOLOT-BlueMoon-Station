@@ -70,18 +70,21 @@
 
 /mob/living/adjust_mobsize()
 	. = ..()
+	// BLUEMOON ADDITION START
+	RemoveElement(/datum/element/bigtalk)
+	RemoveElement(/datum/element/smalltalk)
+	// BLUEMOON ADDITION END
 	switch(mob_size)
 		if(MOB_SIZE_TINY)
 			AddElement(/datum/element/smalltalk)
 		// BLUEMOON ADDITION START
-			RemoveElement(/datum/element/bigtalk)
 		if(MOB_SIZE_LARGE)
 			AddElement(/datum/element/bigtalk)
-			RemoveElement(/datum/element/smalltalk)
+		// BLUEMOON ADDITION END
+		/* BLUEMOON REMOVAL START
 		else
-			RemoveElement(/datum/element/bigtalk)
-		 // BLUEMOON ADDITION END
 			RemoveElement(/datum/element/smalltalk)
+		/ BLUEMOON REMOVAL END*/
 
 /mob/living/do_resist_grab(moving_resist, forced, silent = FALSE)
 	. = ..()
