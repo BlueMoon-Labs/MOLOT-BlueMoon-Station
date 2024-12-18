@@ -73,6 +73,7 @@
 		if(locate(/obj/item/genital_equipment/sounding) in bepis.contents)
 			spill = TRUE
 			to_chat(src, "<span class='userlove'>Ты чувствуешь, как стержень выталкивается из твоей уретры вместе со струей оргазменной жидкости!</span>")
+			bepis.fluid_volume = 0
 			var/obj/item/genital_equipment/sounding/rod = locate(/obj/item/genital_equipment/sounding) in bepis.contents
 			rod.forceMove(get_turf(src))
 
