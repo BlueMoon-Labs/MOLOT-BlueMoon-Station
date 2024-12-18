@@ -410,6 +410,7 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	dog_fashion = null
+	armor = list(MELEE = 5, BULLET = 5, LASER = 15, ENERGY = 20, BOMB = 35, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/head/helmet/redtaghelm
 	name = "red laser tag Helmet"

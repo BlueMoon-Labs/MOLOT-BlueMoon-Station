@@ -281,7 +281,7 @@
 	item_state = "bonearmor"
 	tail_state = ""
 	blood_overlay_type = "armor"
-	armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
+	armor = list(MELEE = 25, BULLET = 25, LASER = 0, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/armor/bulletproof

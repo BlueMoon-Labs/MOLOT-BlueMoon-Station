@@ -370,7 +370,7 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list(MELEE = 15, BULLET = 35, LASER = 35, ENERGY = 20, BOMB = 35, BIO = 35, RAD = 35, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 5, BULLET = 5, LASER = 15, ENERGY = 20, BOMB = 35, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/gloves/thief
 	name = "black gloves"
