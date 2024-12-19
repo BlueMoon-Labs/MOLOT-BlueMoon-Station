@@ -1,9 +1,9 @@
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
-	ru_name = "грудь"
-	ru_name_v = "груди"
-	ru_name_y = "грудь"
-	ru_name_capital = "Грудь"
+	ru_name = "туловище"
+	ru_name_v = "туловище"
+	ru_name_y = "туловище"
+	ru_name_capital = "Туловище"
 	desc = "It's impolite to stare at a person's chest."
 	icon_state = "default_human_chest"
 	max_damage = 200

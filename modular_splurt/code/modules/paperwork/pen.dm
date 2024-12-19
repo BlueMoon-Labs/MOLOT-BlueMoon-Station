@@ -1,4 +1,4 @@
-/obj/item/pen/attack(mob/living/M, mob/user, stealth)
+/obj/item/pen/attack(mob/living/M, mob/living/user, stealth)
 	if(!istype(M))
 		return
 
@@ -13,13 +13,9 @@
 					return
 
 				// BLUEMOON EDIT START - возможность писать на отдельных частях тела
-				var/try_to_write_on_genitals = FALSE
-				var/target_body_part
-
-				target_body_part = zone2body_parts_covered_complicated(user.zone_selected)
-
+				var/target_body_part = zone2body_parts_covered_complicated(user.zone_selected)
 				if(!target_body_part)
-					to_chat(user, span_warning("You must choose a bodypart on your doll to write on!"))
+					to_chat(user, span_warning("Вы должны выбрать часть тела!"))
 					return
 
 				var/list/items_on_target = list()
@@ -28,12 +24,10 @@
 				for(var/A in items_on_target)
 					var/obj/item/worn_clothes = A
 					if(worn_clothes.body_parts_covered & target_body_part)
-						to_chat(user, span_warning("The target body part is covered with their clothes."))
+						to_chat(user, span_warning("Вам мешает одежда."))
 						return
 
-				var/obj/item/G
-				if(try_to_write_on_genitals && T.exposed_genitals.len)
-					G = user:pick_receiving_organ(T, NONE, "Pick a genital to write on", "PRESS CANCEL to write on the targeted body part")
+				var/obj/item/G = user.pick_receiving_organ(T, NONE, "Выбирите где оставить надпись", "Выберите CANCEL что-бы написать на выбранной конечности")
 				// BLUEMOON ADD END
 
 				/* BLUEMOON REMOVAL START - сверху более умная реализация по отдельным частям тела
@@ -42,8 +36,11 @@
 					return
 				/ BLUEMOON REMOVAL END */
 
-				var/obj/item/BP  = (G ? G : T.get_bodypart(user.zone_selected))
-
+				var/obj/item/bodypart/BP = G ? G : T.get_bodypart(user.zone_selected) // Выборка части тела
+				if(user.zone_selected == BODY_ZONE_PRECISE_GROIN) // проверка на гроин
+					BP = T.get_bodypart(BODY_ZONE_CHEST)
+				if(isnull(BP)) // Если выбраны глаза  или рот
+					return
 				/* BLUEMOON ADD START - перемещаем код выше
 				var/obj/item/BP = (G ? G : T.get_bodypart(user.zone_selected))
 
@@ -51,25 +48,32 @@
 					return
 				/ BLUEMOON ADD END */
 
-				var/writting = input(user, "Add writing, doesn't replace current text", "Writing on [T]")  as text|null
+				if(target_body_part == 2) // проверка на туловище
+					target_body_part = CHEST
+
+
+
+				var/writting = input(user, "Оставить надпись, не заменяет уже имеющийся", "Надпись на [T]")  as text|null
 				if(!writting)
 					return
 
-				if(!(user==T))
-					src.visible_message("<span class='notice'>[user] begins to write on [T]'s [BP:name].</span>")
+				if(user != T)
+					src.visible_message("<span class='notice'>[user] начинает выводить надпись на [T]'s [BP.name].</span>")
 				else
-					to_chat(user, "<span class='notice'>You begin to write on your [BP:name].</span>")
+					to_chat(user, "<span class='notice'>Вы начали выводить надпись на [BP.name].</span>")
 
 				if(do_mob(user, T, 4 SECONDS))
-					if((length(BP:writtentext))+(length(writting)) < 130) //130 character limit to stop spamming.
-						BP:writtentext += html_encode(writting) //you can add to text, not remove it.
+					if((length(BP.writtentext))+(length(writting)) < 130) //130 лимит символов.
+						BP.writtentext += html_encode(writting) //you can add to text, not remove it.
 					else
-						to_chat(user, "<span class='notice'>There isnt enough space to write that on [T]'s [BP:name].</span>")
+						to_chat(user, "<span class='notice'>Недостаточно места для надписи на [T]'s [BP.name].</span>")
 						return
 
 				if(!(user==T))
-					to_chat(user, "<span class='notice'>You write on [T]'s [BP:name].</span>")
+					to_chat(user, "<span class='notice'>Вы оставили надпись на [T]'s [BP.name].</span>")
 				else
-					to_chat(user, "<span class='notice'>You write on your [BP:name].</span>")
+					to_chat(user, "<span class='notice'>Вы оставили надпись на [BP.name].</span>")
 	else
 		. = ..()
+
+
