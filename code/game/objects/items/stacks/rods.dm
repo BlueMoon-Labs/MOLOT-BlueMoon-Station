@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 /obj/item/stack/rods/cyborg
 	custom_materials = null
 	is_cyborg = TRUE
-	source = /datum/robot_energy_storage/medical
+	source = /datum/robot_energy_storage/metal
 	cost = MINERAL_MATERIAL_AMOUNT * 0.125
 
 /obj/item/stack/rods/ten
