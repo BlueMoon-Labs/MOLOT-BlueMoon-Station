@@ -280,7 +280,7 @@
 	safety = FALSE
 	always_emagged = TRUE
 	disarm_shock_time = 0
-	cell = /obj/item/stock_parts/cell/infinite
+	cell = /obj/item/stock_parts/cell/hyper //BLUEMOON REBALANCE /obj/item/stock_parts/cell/infinite ---> /obj/item/stock_parts/cell/hyper (лол кто вообще инфинити сунул, а код снизу не работал и её можно было достать)))))))
 	paddles = /obj/item/shockpaddles/syndicate
 	paddle_state = "defibcombat-paddles"
 	powered_state = null
