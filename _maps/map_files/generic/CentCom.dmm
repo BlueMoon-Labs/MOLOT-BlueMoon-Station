@@ -2491,7 +2491,14 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "aim" = (
-/obj/structure/fluff/railing/corner,
+/obj/structure/railing{
+	dir = 4;
+	pixel_y = 3;
+	layer = 4.8
+	},
+/obj/effect/turf_decal/tile/red/half{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "ain" = (
@@ -2531,10 +2538,10 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "aiv" = (
-/obj/structure/fluff/railing{
+/obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red/half{
+/obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2593,14 +2600,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"aiL" = (
-/obj/structure/railing/corner{
-	dir = 1;
-	pixel_y = -32;
-	pixel_x = 33
-	},
-/turf/closed/indestructible/fakeglass,
-/area/centcom/control)
 "aiM" = (
 /obj/machinery/stasis{
 	dir = 1
@@ -2616,13 +2615,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod/loading/ert)
-"aiT" = (
-/obj/structure/railing/corner{
-	dir = 8;
-	pixel_x = 33
-	},
-/turf/closed/indestructible/fakeglass,
-/area/centcom/control)
 "aiU" = (
 /obj/machinery/light{
 	dir = 8
@@ -2882,8 +2874,13 @@
 /turf/open/space/transit/centcom,
 /area/space)
 "akZ" = (
-/obj/structure/fluff/railing/corner{
-	dir = 8
+/obj/structure/railing{
+	dir = 4;
+	layer = 4.6;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/tile/red/half{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
@@ -2953,8 +2950,13 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "alt" = (
-/obj/structure/fluff/railing/corner{
-	dir = 1
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.8;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/tile/dark_blue/half{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
@@ -3041,10 +3043,18 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "alO" = (
-/obj/structure/fluff/railing/corner{
+/obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	dir = 4;
+	pixel_y = -35;
+	pixel_x = -31
+	},
+/turf/open/floor/grass/grass2,
 /area/centcom/control)
 "alP" = (
 /obj/structure/railing{
@@ -3380,14 +3390,6 @@
 /obj/item/toy/plush/mammal/fox/emma/aiko,
 /turf/open/space/basic,
 /area/space)
-"anN" = (
-/obj/structure/railing/corner{
-	dir = 4;
-	pixel_y = -32;
-	pixel_x = -33
-	},
-/turf/closed/indestructible/fakeglass,
-/area/centcom/control)
 "anU" = (
 /obj/effect/landmark/ert_spawn,
 /turf/open/floor/plasteel/dark,
@@ -4908,10 +4910,10 @@
 	},
 /area/slavers)
 "azE" = (
-/obj/structure/fluff/railing{
+/obj/effect/turf_decal/tile/red/anticorner,
+/obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red/anticorner,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "azF" = (
@@ -5012,11 +5014,15 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod/loading/one)
 "aAr" = (
-/obj/structure/railing/corner{
-	pixel_y = -1;
-	pixel_x = -33
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.6;
+	pixel_y = -3
 	},
-/turf/closed/indestructible/fakeglass,
+/obj/effect/turf_decal/tile/dark_blue/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "aAu" = (
 /obj/machinery/abductor/experiment{
@@ -15175,6 +15181,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	dir = 4;
+	pixel_y = -35;
+	pixel_x = -31
+	},
 /turf/open/floor/grass,
 /area/centcom/control)
 "fYk" = (
@@ -15360,6 +15371,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	dir = 8;
+	pixel_y = 31;
+	pixel_x = 31
+	},
 /turf/open/floor/grass/grass3,
 /area/centcom/control)
 "ghn" = (
@@ -16824,13 +16840,19 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "hxf" = (
-/obj/structure/fluff/railing/corner{
-	dir = 4
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	dir = 1;
+	pixel_y = -36;
+	pixel_x = 31
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/grass/grass2,
 /area/centcom/control)
 "hxh" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -21444,6 +21466,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	dir = 8;
+	pixel_y = 31;
+	pixel_x = 31
+	},
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
 "lzU" = (
@@ -24024,7 +24051,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/fluff/railing/corner,
 /turf/open/floor/carpet/red,
 /area/centcom/control)
 "ofp" = (
@@ -24393,10 +24419,10 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "owo" = (
-/obj/structure/fluff/railing{
+/obj/effect/turf_decal/tile/red/anticorner{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red/anticorner{
+/obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -28929,15 +28955,6 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/ferry)
-"sxz" = (
-/obj/structure/fluff/railing/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/dark_blue{
-	dir = 2
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/control)
 "sxO" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -29751,6 +29768,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	pixel_y = 32;
+	layer = 2.1;
+	pixel_x = -31
+	},
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
 "tlR" = (
@@ -33447,6 +33469,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	dir = 1;
+	pixel_y = -36;
+	pixel_x = 31
+	},
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
 "wGf" = (
@@ -33808,6 +33835,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing/corner{
+	pixel_y = 32;
+	layer = 2.1;
+	pixel_x = -31
+	},
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
 "wYA" = (
@@ -80130,7 +80162,7 @@ mGQ
 xyj
 ago
 wiM
-lzO
+hxf
 alP
 ail
 lzO
@@ -80384,15 +80416,15 @@ aio
 aio
 aio
 ago
-aiT
+ago
 ago
 wFE
 als
-alt
-akZ
+mlM
+mlM
 amR
 gfX
-aiL
+ago
 ago
 ago
 aEp
@@ -80642,14 +80674,14 @@ ajF
 ajw
 ewi
 nBV
+aAr
 aiK
-aiK
-sxz
+koz
 mxr
 ajB
-akZ
+mlM
 aiK
-aiK
+alt
 nBV
 jwV
 sKU
@@ -80899,14 +80931,14 @@ ajF
 rSg
 bMI
 pgO
+akZ
 aiu
-aiu
-hxf
+clL
 sMf
 uip
+mlM
+aiu
 aim
-aiu
-aiu
 pgO
 kAI
 mys
@@ -81155,15 +81187,15 @@ aio
 aio
 aio
 ago
-aAr
+ago
 ago
 fXL
 alu
-alO
-aim
+mlM
+mlM
 amS
 wYv
-anN
+ago
 ago
 ago
 aEp
@@ -81415,7 +81447,7 @@ mGQ
 biW
 ago
 kxB
-tkY
+alO
 jvL
 agO
 tkY
@@ -92637,11 +92669,11 @@ unK
 unK
 unK
 unK
-cZu
-fne
-cZu
 unK
-iAf
+fne
+unK
+unK
+unK
 unK
 unK
 unK
