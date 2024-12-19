@@ -22,6 +22,7 @@ GLOBAL_VAR_INIT(weapon_permits_issued, 0)
 	var/locked = FALSE
 	// Выдан ли роли при спавне
 	var/special = FALSE
+	var/access_to_issue = ACCESS_ARMORY
 
 /obj/item/clothing/accessory/permit/Initialize(mapload)
 	. = ..()
@@ -156,7 +157,7 @@ GLOBAL_VAR_INIT(weapon_permits_issued, 0)
 		var/obj/item/card/id/redactor_card = redactor.get_id_card()
 		if(!redactor_card)
 			return FALSE
-		if(ACCESS_ARMORY in redactor_card.GetAccess())
+		if(access_to_issue in redactor_card.GetAccess())
 			return TRUE
 	return FALSE
 

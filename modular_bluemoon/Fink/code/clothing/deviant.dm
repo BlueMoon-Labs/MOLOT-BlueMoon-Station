@@ -19,7 +19,7 @@
 
 /obj/item/card/id/agony
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
-	name = "Ravenheart Resident ID "
+	name = "Ravenheart Resident ID"
 	desc = "ID for research related to extreme activities whose nature of agony is strictly prohibited by scientific evidence."
 	icon_state = "agony_id"
 	assignment = "Ravenheart Resident"
@@ -36,15 +36,21 @@
 	card_sticker = TRUE
 // спермиты
 
-/obj/item/clothing/accessory/permit/occult
+/obj/item/clothing/accessory/permit/deviant
+	access_to_issue = ACCESS_HOP
+
+/obj/item/clothing/accessory/permit/special/deviant
+	access_to_issue = ACCESS_HOP
+
+/obj/item/clothing/accessory/permit/deviant/heresey
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "occult_permit"
 	name = "Occult activity permit"
 	desc = "Вещественное одобрение на проведение оккультной деятельности"
-	permitted_weapons = "Оружие культра Рат`вара и прочих не кровавых культов"
+	permitted_weapons = "Вооружение культа"
 	notes = "Носитель имеет право на проведение ритуалов, жертвоприношений и аггитирование без страха преследования со стороны службы безопасности."
 
-/obj/item/clothing/accessory/permit/lust
+/obj/item/clothing/accessory/permit/deviant/lust
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "lust_permit"
 	name = "Horny activity permit"
@@ -52,7 +58,7 @@
 	permitted_weapons = "Holy dildo, BDSM whip, Riding crop "
 	notes = "Носитель имеет право обустраивать бордели и оргии, иметь при себе и использовать афродизиаки, ходить голым, а также имеет права на публичное совокупление и изнасилования без страха преследования со стороны службы безопасности."
 
-/obj/item/clothing/accessory/permit/agony
+/obj/item/clothing/accessory/permit/deviant/agony
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "agony_permit"
 	name = "Agony activity permit"
@@ -60,7 +66,7 @@
 	permitted_weapons = "Bloody Nullrods(Armblade, Darkblade, Red Claymore, Pithfork, Tentacle) Satan Bible"
 	notes = "Носитель имеет право на поклонение любому божеству (Нар`си, Сатана в т.ч.), на проведение пыток, боёв и казней и т.д. без страха преследования со стороны службы безопасности."
 
-/obj/item/clothing/accessory/permit/muck
+/obj/item/clothing/accessory/permit/deviant/muck
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "muck_permit"
 	name = "Muck activity permit"
@@ -71,15 +77,15 @@
 ///
 
 
-/obj/item/clothing/accessory/permit/special/occult
+/obj/item/clothing/accessory/permit/special/deviant/heresey
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "occult_plus"
 	name = "Occult activity permit"
 	desc = "Вещественное одобрение ЦК на проведение оккультной деятельности"
-	permitted_weapons = "Оружие культра Рат`вара и прочих не кровавых культов"
+	permitted_weapons = "Вооружение культа"
 	notes = "Носитель имеет право на проведение ритуалов, жертвоприношений и аггитирование без страха преследования со стороны службы безопасности."
 
-/obj/item/clothing/accessory/permit/special/lust
+/obj/item/clothing/accessory/permit/special/deviant/lust
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "lust_plus"
 	name = "Horny activity permit"
@@ -87,7 +93,7 @@
 	permitted_weapons = "Holy dildo, BDSM whip, Riding crop "
 	notes = "Носитель имеет право обустраивать бордели и оргии, иметь при себе и использовать афродизиаки, ходить голым, а также имеет права на публичное совокупление и изнасилования без страха преследования со стороны службы безопасности."
 
-/obj/item/clothing/accessory/permit/special/agony
+/obj/item/clothing/accessory/permit/special/deviant/agony
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "agony_plus"
 	name = "Agony activity permit"
@@ -95,7 +101,7 @@
 	permitted_weapons = "Bloody Nullrods(Armblade, Darkblade, Red Claymore, Pithfork, Tentacle) Satan Bible"
 	notes = "Носитель имеет право на поклонение любому божеству (Нар`си, Сатана в т.ч.), на проведение пыток, боёв и казней и т.д. без страха преследования со стороны службы безопасности."
 
-/obj/item/clothing/accessory/permit/special/muck
+/obj/item/clothing/accessory/permit/special/deviant/muck
 	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
 	icon_state = "muck_plus"
 	name = "Muck activity permit"
@@ -112,10 +118,10 @@
 
 /obj/item/storage/box/deviants/PopulateContents()
 
-	new	/obj/item/clothing/accessory/permit/occult(src)
-	new	/obj/item/clothing/accessory/permit/occult(src)
-	new	/obj/item/clothing/accessory/permit/lust(src)
-	new	/obj/item/clothing/accessory/permit/lust(src)
-	new	/obj/item/clothing/accessory/permit/agony(src)
-	new	/obj/item/clothing/accessory/permit/agony(src)
-	new	/obj/item/clothing/accessory/permit/muck(src)
+	new	/obj/item/clothing/accessory/permit/deviant/heresey(src)
+	new	/obj/item/clothing/accessory/permit/deviant/heresey(src)
+	new	/obj/item/clothing/accessory/permit/deviant/lust(src)
+	new	/obj/item/clothing/accessory/permit/deviant/lust(src)
+	new	/obj/item/clothing/accessory/permit/deviant/agony(src)
+	new	/obj/item/clothing/accessory/permit/deviant/agony(src)
+	new	/obj/item/clothing/accessory/permit/deviant/muck(src)
