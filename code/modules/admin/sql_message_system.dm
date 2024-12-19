@@ -1,4 +1,4 @@
-/proc/create_message(type, target_key, admin_ckey, text, timestamp, server, secret, logged = 1, browse, expiry, note_severity)
+/proc/create_message(type, target_key, admin_ckey, text, timestamp, server, secret, logged = 1, browse, expiry, note_severity, dont_announce_to_events = FALSE)
 	if(!SSdbcore.Connect())
 		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>", confidential = TRUE)
 		return
@@ -93,6 +93,17 @@
 		"expiry" = expiry || null,
 		"note_severity" = note_severity,
 	))
+
+	if(!secret && !dont_announce_to_events)
+		GLOB.bot_event_sending_que += list(list(
+			"type" = "notes",
+			"player" = target_ckey,
+			"admin_ckey" = admin_ckey,
+			"text" = text,
+			"timestamp" = timestamp,
+			"round" = GLOB.round_id
+		))
+
 	var/pm = "[key_name(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]: [text]"
 	var/header = "[key_name_admin(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]"
 	if(!query_create_message.warn_execute())
