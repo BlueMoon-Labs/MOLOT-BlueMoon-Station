@@ -7,7 +7,7 @@
 	shrapnel_type = /obj/item/shard
 	ricochet_incidence_leeway = 60
 
-/obj/item/grenade/iedcasing
+/obj/item/grenade/iedcasing/iedpipe
 	name = "improvised explosive"
 	desc = "An improvised explosive device."
 	w_class = WEIGHT_CLASS_SMALL
@@ -38,7 +38,7 @@
 	/// Cooldown to prevent spam
 	COOLDOWN_DECLARE(spam_cd)
 
-/obj/item/grenade/iedcasing/Initialize(mapload)
+/obj/item/grenade/iedcasing/iedpipe/Initialize(mapload)
 	. = ..()
 	if(ispath(activator))
 		var/obj/item/assembly/new_activator = new activator(src)
@@ -46,7 +46,7 @@
 		activator = null
 		attach_activator(new_activator)
 
-/obj/item/grenade/iedcasing/proc/setup_effects_from_contents()
+/obj/item/grenade/iedcasing/iedpipe/proc/setup_effects_from_contents()
 	for(var/item in contents)
 		for(var/effect_type in effects)
 			if(!istype(item, effect_type))
@@ -58,7 +58,7 @@
 				effects[effect_type]++
 			break
 
-/obj/item/grenade/iedcasing/examine(mob/user)
+/obj/item/grenade/iedcasing/iedpipe/examine(mob/user)
 	. = ..()
 	. += span_notice("Using it in-hand activates the assembly, which means timers start timing and so on.")
 	. += span_notice("Using it off-hand allows you to configure the assembly, if possible.")
@@ -70,24 +70,24 @@
 
 // assembly handling
 
-/obj/item/grenade/iedcasing/IsAssemblyHolder()
+/obj/item/grenade/iedcasing/iedpipe/IsAssemblyHolder()
 	return TRUE
 
-/obj/item/grenade/iedcasing/on_found(mob/finder)
+/obj/item/grenade/iedcasing/iedpipe/on_found(mob/finder)
 	if(activator)
 		activator.on_found(finder)
 
-/obj/item/grenade/iedcasing/Move()
+/obj/item/grenade/iedcasing/iedpipe/Move()
 	. = ..()
 	if(activator)
 		activator.holder_movement()
 
-/obj/item/grenade/iedcasing/dropped()
+/obj/item/grenade/iedcasing/iedpipe/dropped()
 	. = ..()
 	if(activator)
 		activator.dropped()
 
-/obj/item/grenade/iedcasing/proc/attach_activator(obj/item/assembly/new_one)
+/obj/item/grenade/iedcasing/iedpipe/proc/attach_activator(obj/item/assembly/new_one)
 	if(activator)
 		return
 	activator = new_one
@@ -96,13 +96,13 @@
 	activator.toggle_secure()
 	update_icon(UPDATE_ICON_STATE)
 
-/obj/item/grenade/tool_act(mob/living/user, obj/item/I, tool_behaviour)
+/obj/item/grenade/iedcasing/iedpipe/tool_act(mob/living/user, obj/item/I, tool_behaviour)
 	if(tool_behaviour == TOOL_SCREWDRIVER)
 		return
 
 //assembly handling end
 
-/obj/item/grenade/iedcasing/attack_hand(mob/user, list/modifiers)
+/obj/item/grenade/iedcasing/iedpipe/attack_hand(mob/user, list/modifiers)
 	if(loc == user) //if we were picked up already, this opening whenever picked up is not ok
 		activator.ui_interact(user) //if any
 	. = ..()
@@ -112,7 +112,7 @@
 		return
 	activator.attack_hand(act_intent = user?.a_intent)
 
-/obj/item/grenade/iedcasing/update_icon_state()
+/obj/item/grenade/iedcasing/iedpipe/update_icon_state()
 	if(isnull(activator))
 		icon_state = "slicedapart" //this shouldnt happen but should prevent runtimes
 		return ..()
@@ -127,7 +127,7 @@
 	icon_state = "[base_icon_state]-[initial(activator.name)][suffix]" //signalers detonate instantly so theyre not here
 	return ..()
 
-/obj/item/grenade/iedcasing/attack_self(mob/user)
+/obj/item/grenade/iedcasing/iedpipe/attack_self(mob/user)
 	if(isnull(activator) || !COOLDOWN_FINISHED(src, spam_cd))
 		balloon_alert(user, isnull(activator) ? "you shouldnt be seeing this" : "on cooldown!")
 		return
@@ -138,10 +138,10 @@
 	user.balloon_alert_to_viewers("arming!")
 	COOLDOWN_START(src, spam_cd, 1 SECONDS)
 
-/obj/item/grenade/iedcasing/proc/process_activation()
+/obj/item/grenade/iedcasing/iedpipe/proc/process_activation()
 	prime()
 
-/obj/item/grenade/iedcasing/prime(mob/living/lanced_by) //Blowing that can up
+/obj/item/grenade/iedcasing/iedpipe/prime(mob/living/lanced_by) //Blowing that can up
 	if(effects[/obj/item/shard]) //this has to be before so it initializes us a pellet cloud or something
 		shrapnel_radius = effects[/obj/item/shard]
 	. = ..()
@@ -170,11 +170,11 @@
 
 	qdel(src)
 
-/obj/item/grenade/iedcasing/Destroy()
+/obj/item/grenade/iedcasing/iedpipe/Destroy()
 	. = ..()
 	activator = null
 
-/obj/item/grenade/iedcasing/spawned
+/obj/item/grenade/iedcasing/iedpipe/spawned
 	power = 2.5 //20u welding fuel
 	activator = /obj/item/assembly/timer
 
@@ -279,7 +279,7 @@
 			return
 		user.balloon_alert(user, "attached")
 
-		var/obj/item/grenade/iedcasing/pipebomb = new(drop_location())
+		var/obj/item/grenade/iedcasing/iedpipe/pipebomb = new(drop_location())
 		for(var/atom/movable/item_inside as anything in contents)
 			item_inside.forceMove(pipebomb)
 
@@ -293,7 +293,7 @@
 
 /datum/crafting_recipe/improv_explosive
 	name = "Improvised Explosive"
-	result = /obj/item/grenade/iedcasing/spawned
+	result = /obj/item/grenade/iedcasing/iedpipe/spawned
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	reqs = list(
 		/datum/reagent/fuel = 20,
