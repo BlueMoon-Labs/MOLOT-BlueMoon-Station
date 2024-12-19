@@ -1256,6 +1256,11 @@
 		buckle_mob(M)
 
 /mob/living/silicon/robot/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
+	// BLUEMOON ADD START - дубликает проверки, т.к. функция переписывает попытку сесть
+	if(!pre_buckle_mob(M))
+		return FALSE
+	// BLUEMOON ADD END
+
 	if(!is_type_in_typecache(M, can_ride_typecache))
 		M.visible_message("<span class='warning'>[M] really can't seem to mount [src]...</span>")
 		return

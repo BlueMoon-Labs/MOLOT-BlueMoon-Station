@@ -93,6 +93,15 @@
 		return FALSE
 	// BLUEMOON ADD END
 
+	// BLUEMOON ADD START - запрет на усаживание сверхтяжёлого персонажа посторонними
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые сверхтяжёлые персонажи садятся с особым эффектом
+		if(istype(src, /obj/structure/bed/roller/heavy)) // простая проверка на предмет, пока не появится необходимость в большем количестве предметов-исключений
+			// Всё в порядке
+		else if(M != usr)
+			to_chat(usr, span_warning("Слишком много весит!"))
+			return FALSE
+	// BLUEMOON ADD END
+
 	// if(!check_loc && M.loc != loc)
 	if(M.loc != loc)
 		M.forceMove(loc)
@@ -104,15 +113,6 @@
 	M.update_mobility()
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	post_buckle_mob(M)
-
-	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые сверхтяжёлые персонажи садятся с особым эффектом
-		if(!M.buckled) // чтобы лишний раз не появлялось сообщение о попытке сесть
-			return FALSE
-		if(M != usr)
-			to_chat(usr, span_warning("Слишком много весит!"))
-			return FALSE
-	// BLUEMOON ADDITION END
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_BUCKLE, M, force)
 	return TRUE

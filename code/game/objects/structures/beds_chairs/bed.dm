@@ -103,7 +103,7 @@
 		usr.put_in_hands(B)
 		qdel(src)
 
-// BLUEMOON ADD AHEAD - сверхтяжёлых персонажей нельзя помещать на носилки (предотвращает абуз через толкание + повышает значимость боргов, халков и других сверхтяжёлых персонажей)
+// BLUEMOON ADD AHEAD - сверхтяжёлых персонажей нельзя помещать на обычные носилки (предотвращает абуз через толкание + повышает значимость боргов, халков и других сверхтяжёлых персонажей)
 /obj/structure/bed/roller/pre_buckle_mob(mob/living/M)
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
 		if(!can_move_superheavy_characters)
@@ -227,6 +227,14 @@
 /obj/structure/bed/dogbed/buckle_mob(mob/living/M, force, check_loc)
 	. = ..()
 	update_owner(M)
+
+// BLUEMOON ADD AHEAD - сверхтяжёлых персонажей нельзя помещать на кроватки для питомцев (потому что эти кроватки можно таскать, прямо как носилки)
+/obj/structure/bed/dogbed/pre_buckle_mob(mob/living/M)
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		usr.visible_message(span_warning("[usr] tried to put [M] on [src], but it is too small!"), span_warning("You try to put [M] on [src], but it is too small!"))
+		return FALSE
+	. = ..()
+// BLUEMOON ADD END
 
 /obj/structure/bed/alien
 	name = "resting contraption"
