@@ -38,7 +38,7 @@
 	// создание оверлея вони
 	var/matrix/M = matrix()
 	M.Scale(0.6)
-	stink_overlay = mutable_appearance(icon = 'modular_bluemoon/shower_trait/stink.dmi', icon_state = "steam_double", layer = -FIRE_LAYER)
+	stink_overlay = mutable_appearance(icon = 'modular_bluemoon/modules/shower_trait/stink.dmi', icon_state = "steam_double", layer = -FIRE_LAYER)
 	stink_overlay.transform = M
 	stink_overlay.pixel_y = 12
 

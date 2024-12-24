@@ -7,7 +7,7 @@
 
 /obj/structure/bed/roller/heavy
 	name = "heavy roller bed"
-	icon = 'modular_bluemoon/heavy_and_superheavy_quirks/heavy_rollerbed.dmi'
+	icon = 'modular_bluemoon/modules/heavy_and_superheavy_quirks/heavy_rollerbed.dmi'
 	foldabletype = /obj/item/roller/heavy
 	pixel_x = -16
 	can_move_superheavy_characters = TRUE
@@ -22,7 +22,7 @@
 /obj/item/roller/heavy
 	name = "heavy roller bed"
 	desc = "A collapsed roller bed that can be carried around. Can be used to move heavy spacemens and spacevulfs."
-	icon = 'modular_bluemoon/heavy_and_superheavy_quirks/heavy_rollerbed.dmi'
+	icon = 'modular_bluemoon/modules/heavy_and_superheavy_quirks/heavy_rollerbed.dmi'
 	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/roller/heavy/ComponentInitialize()
