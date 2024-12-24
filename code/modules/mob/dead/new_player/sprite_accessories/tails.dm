@@ -462,6 +462,8 @@
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
 
+
+
 /datum/sprite_accessory/tails/human/skunk
 	name = "Skunk"
 	icon_state = "skunk"
@@ -757,6 +759,16 @@
 /datum/sprite_accessory/tails_animated/mam_tails_animated/fish
 	name = "Fish"
 	icon_state = "fish"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/fish_alt //BLUEMOON ADD
+	name = "Fish alt"
+	icon_state = "fish_alt"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/fish_alt //BLUEMOON ADD
+	name = "Fish alt"
+	icon_state = "fish_alt"
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/mam_tails/fox
