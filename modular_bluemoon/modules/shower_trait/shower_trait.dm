@@ -38,7 +38,7 @@
 	// создание оверлея вони
 	var/matrix/M = matrix()
 	M.Scale(0.6)
-	stink_overlay = mutable_appearance(icon = 'modular_bluemoon/shower_trait/stink.dmi', icon_state = "steam_double", layer = -FIRE_LAYER)
+	stink_overlay = mutable_appearance(icon = 'modular_bluemoon/modules/shower_trait/stink.dmi', icon_state = "steam_double", layer = -FIRE_LAYER)
 	stink_overlay.transform = M
 	stink_overlay.pixel_y = 12
 
@@ -91,7 +91,8 @@
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
 			if(warning_level < 3)
-				human_owner.add_overlay(stink_overlay)
+				if(!hide_visual_effect)
+					human_owner.add_overlay(stink_overlay)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
 
@@ -116,7 +117,7 @@
 		if(cannot_smell)
 			examine_list += span_notice("[quirk_holder.p_they_ru(TRUE)] давно не мы[quirk_holder.ru_sya()].") // т.к. облачко в таком исходе всё ещё существует, на глаз можно определить, что персонаж давно не мылся
 		else
-			examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
+			examine_list += span_redtext("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
 
 
 /datum/quirk/bluemoon_shower_need/proc/chance_visual_effect()

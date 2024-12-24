@@ -6,9 +6,9 @@
 	It has an internal power unit with power rating of 10 KJ. There is the magnetic charger on top of the PCU for recharging. \
 	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest, an armor or a hardsuit</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
-	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
-	mob_overlay_icon = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
+	icon = 'modular_bluemoon/modules/cooling_device/cooling_device.dmi'
+	mob_overlay_icon = 'modular_bluemoon/modules/cooling_device/cooling_device_back.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/modules/cooling_device/cooling_device_back.dmi'
 
 	icon_state = "suitcooler0"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING // Можно вешать на спину и на грудь (а также в слот хранилища некоторых костюмов)
