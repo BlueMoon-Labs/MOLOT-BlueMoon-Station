@@ -10,7 +10,7 @@
 /obj/item/computer_hardware/radio_card
 	name = "integrated radio card"
 	desc = "An integrated signaling assembly for computers to send an outgoing frequency signal. Required by certain programs."
-	icon_state = "signal_card"
+	icon_state = "cell_con_micro"
 	w_class = WEIGHT_CLASS_TINY
 	device_type = MC_SIGNALER
 	expansion_hw = TRUE
