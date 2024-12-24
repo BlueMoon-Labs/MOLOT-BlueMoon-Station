@@ -84,9 +84,9 @@
 	donator_group_id = DONATOR_GROUP_TIER_1
 
 /datum/gear/donator/agent_card
-	name = "Agent Card (without microscanners)" //BLUEMOON CHANGES
+	name = "Callsign ID Card" //BLUEMOON CHANGES
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/syndicate/civilian/vending/loadout  //BLUEMOON CHANGES
+	path = /obj/item/card/id/callsign/loadout  //BLUEMOON CHANGES
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 

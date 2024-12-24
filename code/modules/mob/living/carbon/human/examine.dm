@@ -23,7 +23,12 @@
 		var/obj/item/clothing/neck/petcollar/collar = wear_neck
 		if(collar.tagname)
 			collar_tagname = " \[[collar.tagname]\]"
-	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname]</EM>!")
+	var/id_card_callsign_name = ""
+	if(istype(wear_id?.GetID(), /obj/item/card/id/callsign))
+		var/obj/item/card/id/callsign/callsign_id = wear_id?.GetID()
+		if(callsign_id.callsign)
+			id_card_callsign_name = " \[[callsign_id.callsign]\]"
+	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname][id_card_callsign_name]</EM>!")
 	if(skipface || get_visible_name() == "Unknown")
 		. += "Вы не можете разобрать, к какому виду относится находящееся перед вами существо."
 	else
