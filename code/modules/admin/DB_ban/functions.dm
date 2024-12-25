@@ -2,14 +2,14 @@
 #define MAX_ADMIN_BANS_PER_HEADMIN 3
 
 //Either pass the mob you wish to ban in the 'banned_mob' attribute, or the banckey, banip and bancid variables. If both are passed, the mob takes priority! If a mob is not passed, banckey is the minimum that needs to be passed! banip and bancid are optional.
-/datum/admins/proc/DB_ban_record(bantype, mob/banned_mob, duration = -1, reason, job = "", bankey = null, banip = null, bancid = null)
+/datum/admins/proc/DB_ban_record(bantype, mob/banned_mob, duration = -1, reason, job = "", bankey = null, banip = null, bancid = null, forced_holder = FALSE)
 
-	if(!check_rights(R_BAN))
-		return
+	if(!forced_holder && !check_rights(R_BAN))
+		return "Not enough rights"
 
 	if(!SSdbcore.Connect())
 		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
-		return
+		return "DB Connect issue"
 
 	var/bantype_pass = 0
 	var/bantype_str
@@ -55,11 +55,11 @@
 			bantype_str = "PACIFICATION_BAN"
 			bantype_pass = 1
 	if( !bantype_pass )
-		return
+		return "Wrong ban type"
 	if( !istext(reason) )
-		return
+		return "Not given reason"
 	if( !isnum(duration) )
-		return
+		return "Not given duration"
 
 	var/ckey
 	var/computerid
@@ -90,13 +90,13 @@
 		list("ckey" = ckey))
 	if(!query_add_ban_get_ckey.warn_execute())
 		qdel(query_add_ban_get_ckey)
-		return
+		return "Failed DB get key"
 	var/seen_before = query_add_ban_get_ckey.NextRow()
 	qdel(query_add_ban_get_ckey)
 	if(!seen_before)
 		if(!had_banned_mob || (had_banned_mob && !banned_mob_guest_key))
-			if(alert(usr, "[bankey] has not been seen before, are you sure you want to create a ban for them?", "Unknown ckey", "Yes", "No", "Cancel") != "Yes")
-				return
+			if(!forced_holder && alert(usr, "[bankey] has not been seen before, are you sure you want to create a ban for them?", "Unknown ckey", "Yes", "No", "Cancel") != "Yes")
+				return "Canceled"
 
 	var/a_key
 	var/a_ckey
@@ -109,10 +109,16 @@
 		a_computerid = owner.computer_id
 		a_ip = owner.address
 
+	if(forced_holder)
+		a_key = "DISCORD BAN PASSTHRU"
+		a_ckey = "DISCORD BAN PASSTHRU"
+		a_computerid = "0"
+		a_ip = "0.0.0.0"
+
 	if(blockselfban)
 		if(a_ckey == ckey)
 			to_chat(usr, "<span class='danger'>You cannot apply this ban type on yourself.</span>")
-			return
+			return "Self ban restricted"
 
 	var/who
 	for(var/client/C in GLOB.clients)
@@ -135,7 +141,7 @@
 			"}, list("a_ckey" = a_ckey))
 		if(!query_check_adminban_amt.warn_execute())
 			qdel(query_check_adminban_amt)
-			return
+			return "Failed DB admin ban amt run"
 		if(query_check_adminban_amt.NextRow())
 			var/adm_bans = text2num(query_check_adminban_amt.item[1])
 			var/max_bans = MAX_ADMIN_BANS_PER_ADMIN
@@ -144,7 +150,7 @@
 			if(adm_bans >= max_bans)
 				to_chat(usr, "<span class='danger'>You already logged [max_bans] admin ban(s) or more. Do not abuse this function!</span>")
 				qdel(query_check_adminban_amt)
-				return
+				return "Overlimit admin bans"
 		qdel(query_check_adminban_amt)
 	if(!computerid)
 		computerid = "0"
@@ -161,7 +167,7 @@
 		))
 	if(!query_add_ban.warn_execute())
 		qdel(query_add_ban)
-		return
+		return "Failed to add ban"
 	qdel(query_add_ban)
 	to_chat(usr, "<span class='adminnotice'>Ban saved to database.</span>")
 	var/msg = "[key_name_admin(usr)] has added a [bantype_str] for [bankey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database."
@@ -378,6 +384,14 @@
 		return
 	qdel(query_unban)
 	message_admins("[key_name_admin(usr)] has lifted [p_key]'s ban.")
+
+	GLOB.bot_event_sending_que += list(list(
+		"type" = "unban_a",
+		"title" = "Разбан",
+		"player" = p_key,
+		"admin" = usr.key,
+		"round" = GLOB.round_id,
+	))
 
 /client/proc/DB_ban_panel()
 	set category = "Admin"

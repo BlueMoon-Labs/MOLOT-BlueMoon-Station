@@ -116,7 +116,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				return
 			var/msg
 			for(var/job in notbannedlist)
-				if(!DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job))
+				if(DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job) != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
@@ -127,11 +127,23 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 					msg = job
 				else
 					msg += ", [job]"
-			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
+			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity, dont_announce_to_events = TRUE)
 			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes.</span>")
 			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
 			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
 			to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
+
+			GLOB.bot_event_sending_que += list(list(
+				"type" = "ban_a",
+				"title" = "Блокировка",
+				"player" = M.key,
+				"admin" = usr.key,
+				"reason" = reason,
+				"banduration" = mins,
+				"bantimestamp" = SQLtime(),
+				"additional_info" = list("ban_job" = msg),
+				"round" = GLOB.round_id
+			))
 
 		if("Permanent")
 			reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
@@ -143,7 +155,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 
 			var/msg
 			for(var/job in notbannedlist)
-				if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job))
+				if(DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job) != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
@@ -154,11 +166,23 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 					msg = job
 				else
 					msg += ", [job]"
-			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg].</span>")
+			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity, dont_announce_to_events = TRUE)
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name(M)] from [msg].</span>")
 			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
 			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
 			to_chat(M, "<span class='danger'>This jobban can be lifted only upon request.</span>")
+
+			GLOB.bot_event_sending_que += list(list(
+				"type" = "ban_a",
+				"title" = "Пермаментная Блокировка",
+				"player" = M.key,
+				"admin" = usr.key,
+				"reason" = reason,
+				"banduration" = null,
+				"bantimestamp" = SQLtime(),
+				"additional_info" = list("ban_job" = msg),
+				"round" = GLOB.round_id
+			))
 
 // notbannedlist is just a list of strings of the job titles you want to unban.
 /datum/admins/proc/UnJobban(mob/M, list/bannedlist)
@@ -181,5 +205,14 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			else
 				msg += ", [job]"
 	if(msg)
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg].</span>")
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name(M)] from [msg].</span>")
 		to_chat(M, "<span class='boldannounce'><BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG></span>")
+
+	GLOB.bot_event_sending_que += list(list(
+		"type" = "unban_a",
+		"title" = "Снятие блокировки",
+		"player" = M.key,
+		"admin" = usr.key,
+		"additional_info" = list("ban_job" = msg),
+		"round" = GLOB.round_id
+	))

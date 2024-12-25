@@ -21,6 +21,8 @@
 		window_flash(iter_admin_client)
 		SEND_SOUND(iter_admin_client.mob, sound('sound/misc/bloop.ogg'))
 
+	GLOB.bot_asay_sending_que += list(list("author" = key, "message" = msg, "rank" = holder.rank.name))
+
 	msg = emoji_parse(msg)
 	mob.log_talk(msg, LOG_ASAY)
 
