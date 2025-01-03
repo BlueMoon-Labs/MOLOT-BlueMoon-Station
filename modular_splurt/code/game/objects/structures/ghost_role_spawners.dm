@@ -49,6 +49,7 @@
 	random = TRUE
 	can_load_appearance = TRUE
 	loadout_enabled = FALSE
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/ash_walkers_slave/special_post_appearance(mob/living/new_spawn)
 	. = ..()
@@ -81,6 +82,7 @@
 	Only you know how you got to this planetoid, whether this place in which you woke up was one of your shelters, or you just stumbled upon it."
 	can_load_appearance = TRUE
 	antagonist_type = /datum/antagonist/ghost_role/hermit
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/wandering_hermit/Destroy()
 	var/obj/structure/fluff/empty_sleeper/S = new(drop_location())
@@ -196,6 +198,7 @@
 	assignedrole = ROLE_GHOSTROLE_INTEQ
 	antagonist_type = /datum/antagonist/ghost_role/inteq
 	loadout_enabled = TRUE
+	category = "inteq"
 
 /datum/outfit/inteqspace/inteq_crew/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_INTEQ

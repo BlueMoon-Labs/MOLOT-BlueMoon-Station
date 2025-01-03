@@ -24,6 +24,7 @@
 		this["short_desc"] = ""
 		this["flavor_text"] = ""
 		this["important_warning"] = ""
+		this["category"] = ""
 		this["refs"] = list()
 		for(var/spawner_obj in GLOB.mob_spawners[spawner])
 			this["refs"] += "[REF(spawner_obj)]"
@@ -33,6 +34,7 @@
 					this["short_desc"] = MS.short_desc
 					this["flavor_text"] = MS.flavour_text
 					this["important_info"] = MS.important_info
+					this["category"] = MS.category
 					this["can_load_appearance"] = MS.can_load_appearance
 				else
 					var/obj/O = spawner_obj

@@ -36,6 +36,7 @@
 	var/can_load_appearance = FALSE
 	var/make_bank_account = FALSE // BLUEMOON ADD
 	var/starting_money = 0 // BLUEMOON ADD работает только при make_bank_account = TRUE
+	var/category = "misc" // BLUEMOON ADD - категоризация для отображения по спискам
 
 ///override this to add special spawn conditions to a ghost role
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user, silent = FALSE)

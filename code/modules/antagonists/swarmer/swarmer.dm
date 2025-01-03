@@ -29,6 +29,7 @@
 	2. Ensure that this location is fit for invasion at a later date; do not perform actions that would render it dangerous or inhospitable.
 	3. Biological resources will be harvested at a later date; do not harm them.
 	"}
+	category = "midround"
 
 /obj/effect/mob_spawn/swarmer/Initialize(mapload)
 	. = ..()

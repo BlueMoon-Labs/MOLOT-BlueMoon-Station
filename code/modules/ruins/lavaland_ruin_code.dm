@@ -133,6 +133,7 @@
 	assignedrole = "Lavaland Syndicate"
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
+	category = "syndicate"
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/special(mob/living/new_spawn)
 	. = ..()
