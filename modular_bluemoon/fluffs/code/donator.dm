@@ -1097,3 +1097,10 @@
     path = /obj/item/clothing/underwear/shirt/bra/kladmen_bra
     ckeywhitelist = list("kladmenuwu")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SMART_fabric_boatcloak
+	name = "SMART-fabric boatcloak"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/SMART_fabric_boatcloak
+	ckeywhitelist = list("KiJoking")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
