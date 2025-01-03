@@ -321,7 +321,7 @@
 	name = "Tratch Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/tratch_patch
-	ckeywhitelist = list("fryktik", "hazzi", "targon38", "ghos7ik")
+	ckeywhitelist = list("fryktik", "hazzi", "targon38", "ghos7ik", "devildeadspace", "trora")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SH_jacket

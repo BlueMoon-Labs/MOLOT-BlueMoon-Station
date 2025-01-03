@@ -22,7 +22,7 @@
 
 /datum/language/modular_splurt/nyanese
 	name = "Nyanese"
-	desc = "Кеткринский язык, который используется для общения кеткринами и кошечками."
+	desc = "The intergalactic language of felines, often used to annoy gods."
 	speech_verb = "meows"
 	ask_verb = "mrrps"
 	exclaim_verb = "mrowls"

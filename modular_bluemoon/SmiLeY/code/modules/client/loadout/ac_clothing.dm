@@ -49,16 +49,17 @@
 //					КОСТЮМЫ					//
 //					КОСТЮМЫ					//
 
-/obj/item/clothing/suit/armor/hos/ac
+/obj/item/clothing/suit/toggle/armor/hos/hos_formal/ac
 	name = "AC Armored Coat"
 	desc = "An coat for a prestigious Mercenaries in the Adamas Cattus PMC."
 	icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
 	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_coat"
 
 /datum/gear/suit/ac_armoredcoat
 	name = "AC Armored Coat"
-	path = /obj/item/clothing/suit/armor/hos/ac
+	path = /obj/item/clothing/suit/toggle/armor/hos/hos_formal/ac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Head of Security, Warden, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Blueshield")
