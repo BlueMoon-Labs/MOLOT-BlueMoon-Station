@@ -74,8 +74,11 @@
 			break
 		CHECK_TICK
 	// This fucker has a history of playing on a banned account.
+	// BLUEMOON EDIT START: Telemetry
 	if(found)
-		var/msg = "[key_name(client)] has a banned account in connection history! (Matched: [found["ckey"]], [found["address"]], [found["computer_id"]])"
-		message_admins(msg)
-		log_admin_private(msg)
-		log_suspicious_login(msg, access_log_mirror = FALSE)
+		if(!client?.holder?.check_for_rights(R_PERMISSIONS))
+			var/msg = "[key_name(client)] has a banned account in connection history! https://iphub.info/?ip=[client.address] (Actual: [client.ckey], [client.address], [client.computer_id] ) (Matched: [found["ckey"]], [found["address"]], [found["computer_id"]])"
+			suspect_message_to_admin_chat(msg)
+			log_admin_private(msg)
+			log_suspicious_login(msg, access_log_mirror = FALSE)
+	// BLUEMOON EDIT END: Telemetry
