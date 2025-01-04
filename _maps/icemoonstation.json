@@ -1,0 +1,40 @@
+{
+	"map_name": "IceMoon Station",
+	"map_path": "map_files/bluemoon_maps",
+	"map_file": "icemoonstation.dmm",
+	"station_ruin_budget": 0,
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_box",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_box",
+		"emergency": "emergency_box"
+	},
+	"traits": [
+		{
+			"Up": 1,
+			"Gravity": true,
+			"Baseturf": "/turf/open/lava/plasma/ice_moon",
+			"Linkage": "null",
+			"Mining": true
+		},
+		{
+			"Up": 1,
+			"Down": -1,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace/icemoon",
+			"Linkage": "null",
+			"Mining": true
+		},
+		{
+			"Down": -1,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace",
+			"Weather_Snowstorm": true,
+			"Linkage": "null",
+			"Mining": true
+		}
+	],
+	"minetype": "none"
+}
