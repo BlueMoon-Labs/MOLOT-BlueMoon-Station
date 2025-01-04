@@ -272,6 +272,15 @@
 	category = list("initial", "Misc","Equipment")
 	maxstack = 30
 
+/datum/design/wrapping_paper
+	name = "Wrapping Paper"
+	id = "wrappingpaper"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
+	build_path = /obj/item/stack/wrapping_paper
+	category = list("initial", "Misc","Equipment")
+	maxstack = 30
+
 /datum/design/holodisk
 	name = "Holodisk"
 	id = "holodisk"
