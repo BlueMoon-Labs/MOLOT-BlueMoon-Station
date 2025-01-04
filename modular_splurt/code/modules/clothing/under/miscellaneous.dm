@@ -582,3 +582,13 @@
 /obj/item/clothing/under/misc/miniskirt_sheer/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/polychromic, list("#0e0e0e"), 1)
+
+/obj/item/clothing/under/latex_bodysuit
+	name = "latex bodysuit"
+	desc = "Some sort of soft latex material made for cover your silly thoughts."
+	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	icon_state = "latexbodysuit"
+	item_state = "latexbodysuit"
+	body_parts_covered = CHEST|ARMS|LEGS|GROIN
