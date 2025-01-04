@@ -761,6 +761,10 @@
 	var/card_throw_range = 7
 	var/list/card_attack_verb = list("attacked")
 
+/obj/item/toy/cards/examine()
+	. = ..()
+	. += "<span class='notice'>Лежащие на столе карты можно взять с большего расстояния.</span>"
+
 /obj/item/toy/cards/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] wrists with \the [src]! It looks like [user.ru_who()] [user.p_have()] a crummy hand!</span>")
 	playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
@@ -817,6 +821,7 @@
 	H.apply_card_vars(H,O)
 	H.pickup(user)
 	user.put_in_hands(H)
+	playsound(src, 'sound/items/carddraw.ogg', 50, 1)
 	user.visible_message("[user] draws a card from the deck.", "<span class='notice'>You draw a card from the deck.</span>")
 	update_icon()
 
@@ -886,6 +891,12 @@
 		to_chat(usr, "<span class='warning'>You can't reach it from here!</span>")
 
 
+/obj/item/toy/cards/Adjacent(var/atom/neighbor, var/recurse = 1)
+	if(isturf(src.loc) && locate(/obj/structure/table) in src.loc)
+		for(var/obj/structure/table/T in orange(src, 1))
+			if(T.Adjacent(neighbor))
+				return TRUE
+	. = ..()
 
 /obj/item/toy/cards/cardhand
 	name = "hand of cards"
