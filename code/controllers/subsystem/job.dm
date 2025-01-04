@@ -738,7 +738,9 @@ SUBSYSTEM_DEF(job)
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
-	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	var/list/chosen_gear
+	if(the_mob.client.prefs.loadout_data)
+		chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
 	var/heirloomer = FALSE
 	if(!is_dummy)
 		var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
@@ -824,7 +826,9 @@ SUBSYSTEM_DEF(job)
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
-	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	var/list/chosen_gear
+	if(the_mob.client.prefs.loadout_data)
+		chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
 	var/heirloomer = FALSE
 	if(!is_dummy)
 		var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
