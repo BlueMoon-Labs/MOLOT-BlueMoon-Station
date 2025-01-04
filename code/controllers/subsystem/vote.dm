@@ -41,6 +41,17 @@ SUBSYSTEM_DEF(vote)
 
 	var/list/stored_modetier_results = list() // The aggregated tier list of the modes available in secret.
 
+	// BLUEMOON ADD START - перевод режимов
+	var/static/list/ru_votemodes = list(
+	"restart" = "за рестарт сервера",
+	"map" = "за выбор карты",
+	"gamemode" = "за выбор режима игры",
+	"transfer" = "за окончание раунда",
+	"roundtype" = "за выбор режима игры",
+	"custom" = "" // за упокой
+	)
+	// BLUEMOON ADD END
+
 /datum/controller/subsystem/vote/fire()	//called by master_controller
 	if(mode)
 //BLUEMOON ADD START
@@ -291,10 +302,8 @@ SUBSYSTEM_DEF(vote)
 	var/vote_title_text
 	var/text
 	if(question)
-		text += "<b>[question]</b>"
 		vote_title_text = "[question]"
 	else
-		text += "<b>[capitalize(mode)] Vote</b>"
 		vote_title_text = "[capitalize(mode)] Vote"
 	if(vote_system == SCHULZE_VOTING)
 		calculate_condorcet_votes(vote_title_text)
@@ -304,6 +313,9 @@ SUBSYSTEM_DEF(vote)
 		calculate_highest_median(vote_title_text) // nothing uses this at the moment
 	var/list/winners = vote_system == INSTANT_RUNOFF_VOTING ? get_runoff_results() : get_result()
 	var/was_roundtype_vote = mode == "roundtype" || mode == "dynamic"
+	text += "Результаты [mode == "custom" ? "кастомного " : ""]голосования[mode != "custom" ? " [ru_votemodes[mode]]" : ""]: \n" // BLUEMOON EDIT
+	if(question)
+		text += "\n<b>[question]</b>\n"
 	if(winners.len > 0)
 		if(was_roundtype_vote)
 			stored_gamemode_votes = list()
@@ -312,22 +324,39 @@ SUBSYSTEM_DEF(vote)
 				text += "\nIt should be noted that this is not a raw tally of votes (impossible in ranked choice) but the score determined by the schulze method of voting, so the numbers will look weird!"
 			if(vote_system == HIGHEST_MEDIAN_VOTING)
 				text += "\nThis is the highest median score plus the tiebreaker!"
-		for(var/i=1,i<=choices.len,i++)
-			var/votes = choices[choices[i]]
-			if(!votes)
-				votes = 0
+		// BLUEMOON EDIT START - отрисовка результатов голосования 
+		var/total_votes = 0
+		var/votes_left = "<div class='left-column'>"
+		var/votes_right = "<div class='right-column' id='results-container'>"
+		for(var/i = 1, i <= choices.len, i++)
+			var/votes_amount = choices[choices[i]]
+			if(!votes_amount)
+				votes_amount = 0
 			if(was_roundtype_vote)
-				stored_gamemode_votes[choices[i]] = votes
-			text += "\n<b>[choices[i]]:</b> [display_votes & SHOW_RESULTS ? votes : "???"]" //CIT CHANGE - adds obfuscated votes
+				stored_gamemode_votes[choices[i]] = votes_amount
+			total_votes += votes_amount
+			votes_left += "<div class='vote_variant'>[choices[i]]: <b>[display_votes & SHOW_RESULTS ? votes_amount : "???"]</b></div>"
+		for(var/i = 1, i <= choices.len, i++)
+			if (display_votes & SHOW_RESULTS)
+				var/votes_amount = choices[choices[i]]
+				var/percent = total_votes > 0 ? round((votes_amount / total_votes) * 100, 1) : 0
+				if (percent > 0)
+					votes_right += "<div class='votewrap'><div class='voteresult' style='width: calc([percent]% + 2px);'><span>[percent]%</span></div></div>"
+				else 
+					votes_right += "<div class='votewrap'><div class='voteresult' style='background-color: rgba(0, 0, 0, 0);'><span>[percent]%</span></div></div>";
+		votes_left += "</div>"
+		votes_right += "</div>"
+		text += "<div class='voteresults'>[votes_left][votes_right]</div>"
+		// BLUEMOON EDIT END 
 		if(mode != "custom")
 			if(winners.len > 1 && display_votes & SHOW_WINNER) //CIT CHANGE - adds obfuscated votes
-				text = "\n<b>Vote Tied Between:</b>"
+				text = "\n<b>ничья между...</b>"
 				for(var/option in winners)
 					text += "\n\t[option]"
 			. = pick(winners)
-			text += "\n<b>Vote Result: [display_votes & SHOW_WINNER ? . : "???"]</b>" //CIT CHANGE - adds obfuscated votes
+			text += "Победитель голосования: <b>[display_votes & SHOW_WINNER ? . : "???"]</b>\n" //CIT CHANGE - adds obfuscated votes
 		if(display_votes & SHOW_ABSTENTION)
-			text += "\n<b>Did not vote:</b> [GLOB.clients.len-voted.len]"
+			text += "\nВоздержались: <b>[GLOB.clients.len-voted.len]</b>"
 	else if(vote_system == SCORE_VOTING)
 		for(var/score_name in scores)
 			var/score = scores[score_name]
@@ -338,10 +367,11 @@ SUBSYSTEM_DEF(vote)
 			text = "\n<b>[score_name]:</b> [display_votes & SHOW_RESULTS ? score : "???"]"
 			. = 1
 	else
-		text += "<b>Vote Result: Inconclusive - No Votes!</b>"
+		text += "<b>\nГолосование не удалось – голосов не было!</b>"
 	log_vote(text)
 	remove_action_buttons()
-	to_chat(world, "\n<font color='purple'>[text]</font>")
+	SEND_SOUND(world, sound('sound/misc/notice2.ogg'))
+	to_chat(world, vote_block(text))
 	switch(vote_system)
 		if(APPROVAL_VOTING,PLURALITY_VOTING)
 			for(var/i=1,i<=choices.len,i++)
@@ -598,14 +628,20 @@ SUBSYSTEM_DEF(vote)
 		mode = vote_type
 		initiator = initiator_key ? initiator_key : "the Server" // austation -- Crew autotransfer vote
 		started_time = world.time
-		var/text = "[capitalize(mode)] vote started by [initiator]."
+		// BLUEMOON EDIT START - реструктурирование
+		var/text = ""
+
+		text += capitalize("[mode == "custom" ? "кастомное " : ""]голосование [mode != "custom" ? "[ru_votemodes[mode]] " : ""]начато [initiator == "server" ? "автоматически" : initiator].\n")
 		if(mode == "custom")
-			text += "\n[question]"
+			text += "\n<b>[question]</b>\n"
 		log_vote(text)
 		var/vp = vote_time
 		if(vp == -1)
 			vp = CONFIG_GET(number/vote_period)
-		to_chat(world, "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>")
+		text += "\nНажмите <b>'Vote'</b> во вкладке OOC или нажмите <a href='?src=[REF(src)]'>сюда</a> чтобы проголосовать."
+		text += "\nДо окончания голосования – [DisplayTimeText(vp)]."
+		to_chat(world, vote_block(text))
+		// BLUEMOON EDIT END
 		end_time = started_time+vp
 		// generate statclick list
 		choice_statclicks = list()
@@ -675,7 +711,7 @@ SUBSYSTEM_DEF(vote)
 
 		if(mode == "roundtype")
 			// BLUEMOON ADD START
-			. += "<br>Если побеждает [ROUNDTYPE_DYNAMIC], то берётся одна из вариаций динамика."
+			. += "<br>Если побеждает [ROUNDTYPE_DYNAMIC], то берётся одна из вариаций динамика."  // df
 
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]:</b></font></small>"
 			. += "<br><font size=1><small>55-100 угрозы, только командные и особые одиночные антагонисты, необходим минимум [ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN] игрок;</font></small>"

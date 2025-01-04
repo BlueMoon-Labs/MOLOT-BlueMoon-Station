@@ -50,14 +50,14 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 	if(!second)
 		return "сейчас"
 	if(second < 60)
-		return "[second] секунд[(second != 1)? "":"у"]"
+		return "[second] секунд[second % 10 == 1 && second % 100 != 11 ? "а" : (second % 10 >= 2 && second % 10 <= 4 && (second % 100 < 10 || second % 100 >= 20) ? "ы" : "")]"
 	var/minute = FLOOR(second / 60, 1)
 	second = FLOOR(MODULUS(second, 60), round_seconds_to)
 	var/secondT
 	if(second)
-		secondT = " и [second] секунд[(second != 1)? "":"у"]"
+		secondT = " и [second] секунд[second % 10 == 1 && second % 100 != 11 ? "а" : (second % 10 >= 2 && second % 10 <= 4 && (second % 100 < 10 || second % 100 >= 20) ? "ы" : "")]"
 	if(minute < 60)
-		return "[minute] минут[(minute != 1)? "":"ы"][secondT]"
+		return "[minute] минут[minute % 10 == 1 && minute % 100 != 11 ? "а" : (minute % 10 >= 2 && minute % 10 <= 4 && (minute % 100 < 10 || minute % 100 >= 20) ? "ы" : "")][secondT]"
 	var/hour = FLOOR(minute / 60, 1)
 	minute = MODULUS(minute, 60)
 	var/minuteT
