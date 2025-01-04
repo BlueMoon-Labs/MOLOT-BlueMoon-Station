@@ -781,6 +781,16 @@
 	icon_state = "fox"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/tails/mam_tails/fox_alt //BLUEMOON ADD bubber nova TG port
+	name = "Fox alt"
+	icon_state = "fox_alt"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/fox_alt //BLUEMOON ADD bubber nova TG port
+	name = "Fox alt"
+	icon_state = "fox_alt"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/mam_tails/hawk
 	name = "Hawk"
 	icon_state = "hawk"
