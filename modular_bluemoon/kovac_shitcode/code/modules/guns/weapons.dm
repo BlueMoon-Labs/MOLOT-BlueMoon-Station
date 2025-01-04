@@ -97,6 +97,9 @@
 	automatic_burst_overlay = TRUE
 	spawnwithmagazine = FALSE
 	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/g22.ogg'
+	can_flashlight = 1
+	flight_x_offset = 18
+	flight_y_offset = 14
 
 /obj/item/gun/ballistic/automatic/pistol/g22/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
