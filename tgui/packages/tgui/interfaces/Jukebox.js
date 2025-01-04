@@ -26,6 +26,7 @@ export const Jukebox = (props, context) => {
     random_mode,
     songs = [],
     queued_tracks = [],
+    favorite_tracks = [],
   } = data;
 
   // Получаем тему из конфигурации. Для будущих изменений, если найдется тот кто сделает нормальную ретротему для обычного джукбокса.
@@ -36,12 +37,14 @@ export const Jukebox = (props, context) => {
   const [query, setQuery] = useSharedState(context, 'query', '');
   const [page, setPage] = useSharedState(context, 'page', 1);
   const [tab, setTab] = useSharedState(context, 'tab', 1);
+  const [inFavorites, setInFavorites] = useSharedState(context, 'inFavorites', false);
   const [inputPage, setInputPage] = useSharedState(context, 'inputPage', page);
 
   const songsPerPage = 25;
   const filteredSongs = !query
-    ? songs
-    : songs.filter(name => name.toLowerCase().includes(query.toLowerCase()));
+    ? (inFavorites ? [...favorite_tracks].reverse() : songs)
+    : (inFavorites ? [...favorite_tracks].reverse() : songs)
+      .filter(name => name.toLowerCase().includes(query.toLowerCase()));
 
   const totalPages = Math.max(1, Math.ceil(filteredSongs.length / songsPerPage));
   const safePage = Math.max(1, Math.min(page, totalPages));
@@ -145,7 +148,16 @@ export const Jukebox = (props, context) => {
         </Section>
 
         <Tabs>
-          <Tabs.Tab selected={tab === 1} onClick={() => setTab(1)}>
+          <Tabs.Tab selected={tab === 1} onClick={() => setTab(1)}
+            rightSlot={
+              <Button
+                icon={"star" + (inFavorites ? "" : "-o")}
+                color="transparent"
+                selected={inFavorites}
+                onClick={() => setInFavorites(!inFavorites)}
+                tooltip={`${inFavorites ? "Показать все" : "Показать избранное"}`}
+              />
+            }>
             Треки
           </Tabs.Tab>
           <Tabs.Tab selected={tab === 2} onClick={() => setTab(2)}>
@@ -178,20 +190,37 @@ export const Jukebox = (props, context) => {
                 Нет треков
               </Box>
             ) : (
-              currentSongs.map(track => (
-                <Stack key={track} mb={1} align="center">
-                  <Stack.Item grow>
-                    <Box color="gray">{truncate(track, 50)}</Box>
-                  </Stack.Item>
-                  <Stack.Item>
-                    <Button
-                      icon="plus"
-                      content="В очередь"
-                      onClick={() => act('add_to_queue', { track })}
-                    />
-                  </Stack.Item>
-                </Stack>
-              ))
+              currentSongs.map(track => {
+                const isAvailable = songs.includes(track);
+                const isFavorite = favorite_tracks.includes(track);
+
+                return (
+                  <Stack key={track} mb={1} align="center">
+                    <Stack.Item grow>
+                      <Box
+                        color={isAvailable ? "gray" : "red"}
+                        style={!isAvailable ? { textDecoration: 'line-through' } : null}>
+                        {truncate(track, 50)}
+                      </Box>
+                    </Stack.Item>
+                    <Stack.Item>
+                      {isAvailable && (
+                        <Button
+                          icon="plus"
+                          content="В очередь"
+                          onClick={() => act('add_to_queue', { track })}
+                        />
+                      )}
+                      <Button
+                        icon="star"
+                        color="transparent"
+                        selected={isFavorite}
+                        onClick={() => act('toggle_favorite', { track })}
+                      />
+                    </Stack.Item>
+                  </Stack>
+                );
+              })
             )}
 
             {totalPages > 1 && (

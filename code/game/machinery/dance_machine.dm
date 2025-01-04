@@ -125,6 +125,7 @@
 	for (var/datum/track/T in SSjukeboxes.songs)
 		all_song_names += T.song_name
 	data["songs"] = all_song_names
+	data["favorite_tracks"] = user?.client?.prefs?.favorite_tracks
 	// BLUEMOON EDIT:END
 	return data
 

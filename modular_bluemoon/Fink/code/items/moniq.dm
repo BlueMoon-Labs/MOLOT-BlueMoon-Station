@@ -92,6 +92,7 @@
 	for (var/datum/track/T in SSjukeboxes.songs)
 		all_song_names += T.song_name
 	data["songs"] = all_song_names
+	data["favorite_tracks"] = user?.client?.prefs?.favorite_tracks
 	return data
 
 /obj/item/sign/moniq/ui_act(action, list/params)
@@ -311,6 +312,7 @@
 	for (var/datum/track/T in SSjukeboxes.songs)
 		all_song_names += T.song_name
 	data["songs"] = all_song_names
+	data["favorite_tracks"] = user?.client?.prefs?.favorite_tracks
 	return data
 
 /obj/structure/sign/moniq/ui_act(action, list/params)
