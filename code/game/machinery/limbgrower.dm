@@ -383,8 +383,10 @@
 	C.med_hud_set_health()
 	C.underwear = "Nude"
 	C.undershirt = "Nude"
+	/*
 	C.saved_underwear = ""
 	C.saved_undershirt = ""
+	*/
 
 	// Just enough to start reviving them, I hope
 	C.blood_volume = BLOOD_VOLUME_SURVIVE

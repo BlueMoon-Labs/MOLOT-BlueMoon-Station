@@ -3,13 +3,15 @@
 	var/mb_cd_timer = 0									//The timer itself
 
 /mob/living/carbon/human
+	var/arousal_rate = 1
+/*
 	var/saved_underwear = ""//saves their underwear so it can be toggled later
 	var/saved_undershirt = ""
 	var/saved_socks = ""
 	var/hidden_underwear = FALSE
 	var/hidden_undershirt = FALSE
 	var/hidden_socks = FALSE
-	var/arousal_rate = 1
+
 
 //Mob procs
 /mob/living/carbon/human/verb/underwear_toggle()
@@ -39,7 +41,7 @@
 		log_message("[on_off ? "removed" : "put on"] all [ru_ego()] undergarments.", LOG_EMOTE)
 
 	update_body(TRUE)
-
+*/
 
 /mob/living/carbon/human/proc/adjust_arousal(strength, cause = "manual toggle", aphro = FALSE,maso = FALSE) // returns all genitals that were adjust
 	var/list/obj/item/organ/genital/genit_list = list()

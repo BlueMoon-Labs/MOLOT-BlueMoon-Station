@@ -381,9 +381,11 @@
 	babby.undershirt = "Nude"
 	babby.socks = "Nude"
 
+	/*
 	babby.saved_underwear = babby.underwear
 	babby.saved_undershirt = babby.undershirt
 	babby.saved_socks = babby.socks
+	*/
 
 /datum/component/pregnancy/proc/generic_pragency_start()
 	if(revealed)
