@@ -50,12 +50,12 @@
 /datum/gear/glasses/security/sunglasses/holo
 	name = "Holo Secuirity HUD Glasses"
 	path = /obj/item/clothing/glasses/hud/security/sunglasses/holo
-	restricted_roles = list("Peacekeeper", "Security Officer", "Warden", "Head of Security")
+	restricted_roles = list("Peacekeeper", "Security Officer", "Warden", "Head of Security", "NanoTrasen Representative", "Captain", "Blueshield") // Add by KiJoking
 
 /datum/gear/glasses/security/sunglasses/holo/prescription
 	name = "Prescription Holo Secuirity HUD Glasses"
 	path = /obj/item/clothing/glasses/hud/security/sunglasses/holo/prescription
-	restricted_roles = list("Peacekeeper", "Security Officer", "Warden", "Head of Security")
+	restricted_roles = list("Peacekeeper", "Security Officer", "Warden", "Head of Security", "NanoTrasen Representative", "Captain", "Blueshield") // Add by KiJoking
 
 //NON-RESTRICTED
 

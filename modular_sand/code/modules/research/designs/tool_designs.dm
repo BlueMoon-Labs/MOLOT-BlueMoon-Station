@@ -1,5 +1,5 @@
 /datum/design/bsrpd
-	name = "Bluespace Rapid Pipe Dispenser"
+	name = "Bluespace Rapid Pipe Dispenser (BSRPD)"
 	desc = "A tool that can construct and deconstruct pipes on the fly."
 	id = "bsrpd"
 	build_type = PROTOLATHE

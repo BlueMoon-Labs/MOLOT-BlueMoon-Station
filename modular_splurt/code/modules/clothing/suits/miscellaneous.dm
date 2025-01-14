@@ -80,7 +80,7 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
 	icon_state = "baroness"
 	item_state = "baroness"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET
+	body_parts_covered = CHEST|GROIN|LEGS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	flags_inv = HIDESHOES|HIDEUNDERWEAR
 

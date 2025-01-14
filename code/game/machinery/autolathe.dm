@@ -274,12 +274,14 @@
 
 /obj/machinery/autolathe/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(busy)
-		balloon_alert(user, "Занято!")
-		return STOP_ATTACK_PROC_CHAIN
+	if(user.a_intent == INTENT_DISARM)
+		if(busy)
+			balloon_alert(user, "Занято!")
+			return STOP_ATTACK_PROC_CHAIN
 
-	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", I))
-		return STOP_ATTACK_PROC_CHAIN
+		if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", I))
+			return STOP_ATTACK_PROC_CHAIN
+	return ..()
 
 /obj/machinery/autolathe/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()

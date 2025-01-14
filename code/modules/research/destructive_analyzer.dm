@@ -31,6 +31,10 @@ Note: Must be placed within 3 tiles of the R&D Console
 	linked_console.linked_destroy = null
 	..()
 
+/obj/machinery/rnd/default_deconstruction_screwdriver(mob/user, icon_state_open, icon_state_closed, obj/item/I)
+	if(user.a_intent == INTENT_DISARM)
+		return ..()
+
 /obj/machinery/rnd/destructive_analyzer/Insert_Item(obj/item/O, mob/user)
 	if(user.a_intent != INTENT_HARM)
 		. = 1

@@ -219,6 +219,7 @@ GLOBAL_LIST_INIT(autodrobe_other_items, list(
 	/obj/item/clothing/underwear/briefs/garland_panties = 5,
 	/obj/item/clothing/underwear/shirt/garland_bra = 5,
 	/obj/item/clothing/suit/garland_suit = 5,
+	/obj/item/clothing/under/rank/civilian/gift_ribbon = 5,
 ))
 
 GLOBAL_LIST_INIT(autodrobe_premium_items, list(
