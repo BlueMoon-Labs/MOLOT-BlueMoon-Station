@@ -4,6 +4,7 @@
 
 /datum/antagonist/ghost_role/ghost_cafe
 	name = "Ghost Cafe"
+	var/area/adittonal_allowed_area
 
 /datum/antagonist/ghost_role/tarkov
 	name = "Port Tarkov"
