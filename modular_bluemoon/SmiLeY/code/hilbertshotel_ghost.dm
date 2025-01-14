@@ -16,6 +16,34 @@
 			return //you can't enter infinity dormitories if you are a role
 	return promptAndCheckIn(user, user)
 
+/turf/closed/indestructible/hoteldoor/CtrlClick(mob/user)
+	. = ..()
+	var/area/hilbertshotel/HB = get_area(src)
+	var/roomnumber = "[HB.roomnumber]"
+	if(!parentSphere )
+		return
+	if(!parentSphere.mob_dorms[user] || !parentSphere.mob_dorms[user].Find(HB.roomnumber))
+		return
+	if(get_dist(get_turf(src), get_turf(user)) > 1)
+		return
+
+	if(parentSphere.lockedRooms[roomnumber])
+		parentSphere.lockedRooms -= roomnumber
+		playsound(src, 'sound/machines/locker_open.ogg', 50, 1)
+	else
+		parentSphere.lockedRooms[roomnumber] = TRUE
+		playsound(src, 'sound/machines/locker_close.ogg', 50, 1)
+
+	to_chat(user, "<span class='notice'>You [parentSphere.lockedRooms[roomnumber] ? "locked" : "unlocked"] room...</span>")
+
+/turf/closed/indestructible/hoteldoor/examine(mob/user)
+	. = ..()
+	if(!isliving(user))
+		return
+	. += "The placard reads 'Room [roomnumber]'."
+	. += "<span class='info'>Alt-Click to look through the peephole.</span>"
+	. += "<span class='info'>Ctrl-Click to lock door if you owner of the room.</span>"
+
 /datum/map_template/hilbertshotel/apartment
 	name = "Apartment"
 	mappath = '_maps/templates/apartment.dmm'
