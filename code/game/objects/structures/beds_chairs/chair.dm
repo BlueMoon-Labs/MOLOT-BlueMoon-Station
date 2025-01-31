@@ -287,7 +287,6 @@
 	name = "stool"
 	desc = "Apply butt."
 	icon_state = "stool"
-	can_buckle = 0
 	buildstackamount = 1
 	item_chair = /obj/item/chair/stool
 
