@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="dmdoc.css"><title>modular__juicy/README.md - Space Station 13</title></head><body><header><a href="index.html">Space Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular__juicy/README.md <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/834e39f7468655ea436e02935d3708cdb71c90bd/modular__juicy/README.md0"><img src="git.png" width="16" height="16" title="modular__juicy/README.md0"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p><strong>это руководство по модуляризации являтеся не обязательным к прочтению и необязательным по исполнению. Некоторые моменты противоречат тому что вы делаете. За дополнительной информацией обращаться к кодерам проекта.</strong></p>
+<h1 id="модуляризация">Модуляризация</h1><h3 id="это-руководство-несёт-рекомендательный-характер">Это руководство несёт рекомендательный характер.</h3><details>
+<summary><b>Содержание документа</b></summary>
+<ul>
+<li><a href="#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">Модуляризация</a>
+<ul>
+<li><a href="#%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Введение</a></li>
+<li><a href="#%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5-pr%D1%8B">Тестите PRы!</a></li>
+<li><a href="#%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82%D0%BE%D0%B2">Природа конфликтов</a></li>
+<li><a href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5">Решение</a></li>
+</ul>
+</li>
+<li><a href="#%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8">Руководство по модуляризации</a>
+<ul>
+<li><a href="#%D0%BC%D0%BE%D0%B4%D0%BF%D0%B0%D0%BA%D0%B8">Модпаки</a></li>
+<li><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BC%D0%BE%D0%B4%D0%BF%D0%B0%D0%BA%D0%B0">Создание модпака</a>
+<ul>
+<li><a href="#%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BC%D0%BE%D0%B4%D0%BF%D0%B0%D0%BA%D0%B0">Структура модпака</a></li>
+<li><a href="#%D0%B1%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B5-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%BC%D0%BE%D0%B4%D0%B0">Быстрое создание основы мода</a></li>
+<li><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE-%D0%B8%D0%B7-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2">Назначение каждого из файлов</a></li>
+<li><a href="#%D0%BF%D0%B0%D0%BF%D0%BA%D0%B8-code-icons-sounds-maps">Папки <code>code/</code>, <code>icons/</code>, <code>sounds/</code>, <code>maps/</code></a></li>
+<li><a href="#%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B0---%D0%BD%D0%B5-%D0%B4%D0%B5%D0%BB%D0%B0%D0%B9-%D1%8D%D1%82%D0%BE%D0%B3%D0%BE">Комментирование кода мода - Не делай этого!</a></li>
+</ul>
+</li>
+<li><a href="#%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0-_master_files">Папка <code>_master_files</code></a></li>
+<li><a href="#%D0%BE%D0%B2%D0%B5%D1%80%D1%80%D0%B0%D0%B9%D0%B4%D1%8B">Оверрайды</a>
+<ul>
+<li><a href="#%D0%B0%D1%81%D1%81%D0%B5%D1%82%D1%8B-%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8-%D0%B7%D0%B2%D1%83%D0%BA%D0%B8-%D0%B8-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D0%B1%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B">Ассеты: Изображения, иконки, звуки и другие бинарные файлы</a></li>
+<li><a href="#%D0%BA%D0%BE%D0%B4-%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Код: Модульные изменения</a></li>
+<li><a href="#%D0%BA%D0%BE%D0%B4-%D0%BD%D0%B5%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Код: Немодульные изменения</a></li>
+</ul>
+</li>
+<li><a href="#nanoui">NanoUI</a></li>
+<li><a href="#%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B8">Исключительные случаи</a></li>
+<li><a href="#%D0%B4%D0%B5%D1%84%D0%B0%D0%B9%D0%BD%D1%8B-define">Дефайны (<code>#define</code>)</a></li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="введение">Введение</h2>
+<p>Разработка и поддержка отдельной кодовой базы - это громадная, тяжёлая задача, пытаясь справиться с которой, многие потерпели неудачу и пострадали от последствий, таких как устаревший и беспорядочный код. Это не обязательно вина нехватки навыков у людей, поддерживающих кодбазу - просто нехватка ресурсов и то, сколько непрерывных усилий требует такая попытка.</p>
+<p>Git, как система контроля версий, очень удобен, однако это просто очень методичная вещь, которая следует своим многочисленным алгоритмам, и они, к сожалению, не всегда могут разумно разрешать определенные изменения в коде однозначным образом, вызывая <em>конфликты</em>, которые приходится решать вручную.</p>
+<p>Так как возможность долгосрочной поддержки является одной из основных причин использования как основы другой кодбазы, <strong>это руководство по модуляризации являтеся обязательным к прочтению и использованию</strong>. Хорошо организованный, задокументированный и атомизированный код избавляет мейнтейнеров от тонны головной боли. Не перекладывайте на них работу, которую можете сделать сами.</p>
+<p>Этот документ может обновляться время от времени, если вдруг появятся новые исключения из правил. Иногда его стоило бы перепроверять.</p>
+<h2 id="тестите-prы">Тестите PRы!</h2>
+<p>Ты ответственнен за тестирование твоих PR. PR нельзя отмечать готовым к ревью, пока он тобой не протестирован. Если для тестов требуется второй клиент - ты можешь зайти с использованием гостевого аккаунта. Для этого нужно лишь выйти из аккаунта BYOND и зайти на сервер. Тест мёржи - не для поиска багов, а для стресс-тестов, которые локально повторить не получится.</p>
+<h2 id="природа-конфликтов">Природа конфликтов</h2>
+<p>Например, у нас есть переменная</p>
+<pre><code class="language-dm">var/something = 1
+</code></pre>
+<p>В <em>кор коде</em> мы решили заменить <code>1</code> на <code>2</code></p>
+<pre><code class="language-diff">- var/something = 1
++ var/something = 2 // JUICY
+</code></pre>
+<p>А на апстриме решили сменить на <code>1</code> вообще на <code>4</code></p>
+<pre><code class="language-diff">- var/something = 1
++ var/something = 4
+</code></pre>
+<p>Таким образом получается достаточно простой конфликт</p>
+<pre><code class="language-diff">- var/something = 1
+&lt;&lt;&lt;&lt;&lt;&lt; ours
++ var/something = 2 // JUICY
+======
++ var/something = 4
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+</code></pre>
+<p>Где мы выбираем предпочитаемый вариант вручную.</p>
+<h2 id="решение">Решение</h2>
+<p>Конфликты - это то, что не может и не должно решаться автоматически, потому что это может привести к ошибкам и багам, которые будет очень сложно отследить, не говоря уже и о более сложных примерах, например таких, что добавляют, изменяют и перемещают строки кода повсюду.</p>
+<p>Вкратце, программа изо всех сил старается, но она слишком глупая. Поэтому мы сами должны что-то делать, чтобы она могла без усилий выполнять большую часть работы, сводя к минимуму участие мейнтейнеров, вмешательство которых будет требоваться лишь когда конфликты будут неизбежны.</p>
+<p>Решение - модуляризация кода.</p>
+<p>Модуляризация означает, что максимально возможное количество изменений будут производиться в отдельной папке <code>modular_juicy/</code>, независимой от <em>кор кода</em> насколько это возможно, а те изменения, которые ну никак не поддаются модуляризации будут отмечены специальными комментариями с указанием где они начинаются, заканчиваются и частью какого мода они являются.</p>
+<h1 id="руководство-по-модуляризации">Руководство по модуляризации</h1>
+<p>Начни с определения темы/цели того что ты хочешь сделать. Возможно ты можешь не создавать новый мод, а добавить функционал к уже существующему.</p>
+<p>В ином случае, выбери ID для своего мода, например <code>DNA_FEATURE_WINGS</code>, <code>XENOARCHEOLOGY</code> или <code>SHUTTLE_TOGGLE</code> - он будет использоваться для документирования и идентифицирования мода. Именно этот ID должен использоваться ВЕЗДЕ, чтобы можно было легко найти всё что относится к твоему моду.</p>
+<p>Далее тебе нужно создать папку, название которой - ID твоего мода строчными буквами. Например, для <code>HELLO_WORLD</code> это будет путь <code>modular_juicy/hello_world/</code></p>
+<h2 id="модпаки">Модпаки</h2>
+<p>Модпаки загружаются компилятором сразу после всего остального кода и после карты, что позволяет делать оверрайды, безболезненно добавлять предметы, пользуясь дефайнами из <em>кор кода</em> и много много всего.</p>
+<p>Инициализируются модпаки на этапе <code>SS_INIT_EARLY</code> с вызовом соответствующей процедуры у синглтона. Подробнее можно почитать в <a href="/modular_juicy/_modpack.dm"><code>modular_juicy/_modpack.dm</code></a></p>
+<h2 id="создание-модпака">Создание модпака</h2>
+<p>Любой модпак состоит из:</p>
+<ul>
+<li><code>README.md</code> файла с информацией о моде</li>
+<li><code>.dme</code> файла с подключением всех остальных</li>
+<li><code>.dm</code> файла с синглтоном, содержащем информацию о паке</li>
+<li>Возможных в нём подпапок:
+<ul>
+<li><code>code</code> - содержит <strong>только</strong> <code>.dm</code> файлы</li>
+<li><code>maps</code> - содержит <strong>только</strong> <code>.dmm</code> файлы</li>
+</ul>
+</li>
+</ul>
+<h3 id="структура-модпака">Структура модпака</h3>
+<p>Если мы условимся, что наш пак будет называется <code>hello_world</code>, то это будет выглядеть так:</p>
+<pre><code>modular_juicy/hello_world
+├─ code
+│  ├─ any_file.dm
+│  ╰─ some_file.dm
+├─ maps
+│  ├─ any_map.dmm
+│  ╰─ some_map.dmm
+├─ _hello_world.dm
+├─ _hello_world.dme
+╰─ README.md
+</code></pre>
+<p>А вот иконки и звуки стоит хранить в двух общих паках</p>
+<ul>
+<li><code>icons</code> - содержит <strong>только</strong> файлы изображений</li>
+<li><code>sounds</code> - содержит <strong>только</strong> файлы звуков</li>
+</ul>
+<p>Это <code>_storge_icons</code> и <code>_storge_sounds</code> и выглядеть их структура будет так:</p>
+<pre><code>modular_juicy/_storge_icons
+├─ icons
+│  ├─ any_icon.dmi
+│  ╰─ some_icon.png
+├─ _storge_icons.dm
+├─ _storge_icons.dme
+╰─ README.md
+</code></pre>
+<pre><code>modular_juicy/_storge_sounds
+├─ sound
+│  ├─ any_sound.ogg
+│  ╰─ some_sound.mp3
+├─ _storge_sounds.dm
+├─ _storge_sounds.dme
+╰─ README.md
+</code></pre>
+<h3 id="быстрое-создание-основы-мода">Быстрое создание основы мода</h3><h4 id="автоматически">Автоматически</h4>
+<p><strong>Для любой системы</strong> с установленным Python 3 - запустить файл <code>modular_juicy/CREATE_MOD.py</code>.</p>
+<p>В <strong>Windows</strong> можно это сделать ещё двумя способами:</p>
+<ol>
+<li>Открыть конмандную строку в папке вашего репозитория и прописать:
+<pre><code class="language-bat">powershell modular_juicy\CREATE_MOD.ps1
+</code></pre>
+</li>
+<li>Открыть PowerShell в папке вашего репозитория и прописать:
+<pre><code class="language-ps">.\modular_juicy\CREATE_MOD.ps1
+</code></pre>
+</li>
+</ol>
+<p>Те, кто пользуется <strong>Linux или WSL</strong> могут использовать bash файл:</p>
+<pre><code class="language-bash">./modular_juicy/CREATE_MOD.sh
+</code></pre>
+<h4 id="вручную">Вручную</h4>
+<p>Чтобы реализовать основу мода достаточно выполнить три действия:</p>
+<ul>
+<li>Создать папку <code>modular_juicy/hello_world/</code>.</li>
+<li>Скопировать в папку <code>modular_juicy/hello_world/</code> все файлы из <a href="/modular_juicy/_example/"><code>/modular_juicy/_example/</code></a>.</li>
+<li>Переименовать <code>example.dme</code> и <code>example.dm</code> в <code>_hello_world.dme</code> и <code>_hello_world.dm</code>.</li>
+</ul>
+<h3 id="назначение-каждого-из-файлов">Назначение каждого из файлов</h3><h4 id="файл">Файл <code>README.md</code></h4>
+<p>В нём содержатся:</p>
+<ul>
+<li>ID мода</li>
+<li>Ссылка на PR, в котором был создан мод.</li>
+<li>Ссылки на PR с крупными изменениями мода.</li>
+<li>Название мода и его подробное описание.</li>
+<li>Список файлов, изменённых в <em>кор коде</em> с коротким описанием изменений.</li>
+<li>Список изменений, внесённых в другие моды, необходимых для функционирования этого.</li>
+<li>Автор кода.</li>
+</ul>
+<p>Все подробности по заполнению файла находятся в нём самом.</p>
+<h4 id="файл">Файл <code>_hello_world.dm</code></h4>
+<p>В синглтоне описывается базовая информация о моде, отображаемая игрокам.</p>
+<ul>
+<li>
+<p><code>name</code> - Имя мода из <code>readme.md</code>, либо оно же, но на русском.</p>
+</li>
+<li>
+<p><code>desc</code> - Описание мода. Не из <code>readme.md</code>.</p>
+<p>Хотелось бы, чтобы описание было достаточно подробным, чтобы можно было понять что содержит мод, но не сильно замудрённым, чтобы любой игрок осилил читать буквы.</p>
+</li>
+<li>
+<p><code>author</code> - Автор (или авторы) кода из <code>readme.md</code>.</p>
+</li>
+</ul>
+<p>Здесь не стоит размещать имплементацию процедур этого синглтона.</p>
+<h4 id="файл">Файл <code>_hello_world.dme</code></h4>
+<p>Здесь подключаются все необходимые файлы, включая файл с синглтоном. Ничего особенного.</p>
+<p>Пути здесь указываются локальные, а не глобальные. То есть писать нужно не так:</p>
+<pre><code class="language-dm">#include &quot;modular_juicy/hello_world/_hello_world.dm&quot;
+</code></pre>
+<p>А вот так:</p>
+<pre><code class="language-dm">#include &quot;_hello_world.dm&quot;
+</code></pre>
+<h3 id="папки">Папки <code>code/</code>, <code>icons/</code>, <code>sounds/</code>, <code>maps/</code></h3>
+<p><strong>Не повторяй файловую структуру <em>кор кода</em> в своём модуле!</strong></p>
+<p>Примеры:</p>
+<p><code>code/</code>:</p>
+<ul>
+<li><strong>✅ Правильно:</strong> <code>/modular_juicy/hello_world/code/disease_mob.dm</code></li>
+<li><strong>❌ Неправильно:</strong> <code>/modular_juicy/hello_world/code/modules/antagonists/disease/disease_mob.dm</code></li>
+</ul>
+<p><code>icons/</code>:</p>
+<ul>
+<li><strong>✅ Правильно:</strong> <code>/modular_juicy/hello_world/icons/mining_righthand.dmi</code></li>
+<li><strong>❌ Неправильно:</strong> <code>/modular_juicy/hello_world/icons/mob/inhands/equipment/mining_righthand.dmi</code></li>
+</ul>
+<p>С <code>sounds/</code> и <code>maps/</code> <strong>абсолютно</strong> то же самое.</p>
+<h3 id="комментирование-кода-мода-не-делай-этого">Комментирование кода мода - Не делай этого!</h3>
+<p><strong>Если это не <em>кор код</em></strong>, то старый код комментировать не нужно - просто удали его.</p>
+<p>Даже если ты думаешь, что кто-то возможно захочет отменить изменения - не комментируй, удаляй. Для этого гит и существует как система контроля версий.</p>
+<p><strong>Не относится к <em>кор коду</em>.</strong></p>
+<h2 id="папка">Папка <code>_master_files</code></h2>
+<p>Ты всегда должен помещать любые модульные переопределения иконок, звуков, кода и всего другого в эту папку. Она должна соответствовать структуре папки основного кода.</p>
+<p>Например: <code>code/modules/mob/living/living.dm</code> → <code>modular_juicy/_master_files/code/modules/mob/living/living.dm</code></p>
+<p>Это сделано для того, чтобы было проще выяснить, что изменилось в основном файле, без необходимости поиска в определениях процедур.</p>
+<p>Это также помогает предотвратить многократное ненужное переопределение модулями одной и той же процедуры.</p>
+<h2 id="оверрайды">Оверрайды</h2><h3 id="ассеты-изображения-иконки-звуки-и-другие-бинарные-файлы">Ассеты: Изображения, иконки, звуки и другие бинарные файлы</h3>
+<p>Гит не умеет решать конфликты в бинарных файлах и именно поэтому <strong>изменение бинарных файлов в <em>кор коде</em> запрещено</strong>. Исключением может быть лишь очень <em>очень</em> <em><strong>очень</strong></em> хорошая причина.</p>
+<p>Все ассеты должны быть размещены в той же папке мода, в который находится и твой код. То есть всё хранится именно в папке мода: код, звуки, изображения...</p>
+<h3 id="код-модульные-изменения">Код: Модульные изменения</h3>
+<p>Код можно легко дописывать к выполнению процедуры из <em>кор кода</em> как до её выполнения, так и после, используя вызов родителя - <code>..()</code>. И переменные тоже можно добавлять и переписывать без изменения <em>кор кода</em>.</p>
+<p><strong>Эти модульные изменения должны быть размещены в папке <code>_master_files</code> и следует избегать размещения их где-либо ещё кроме как здесь.</strong></p>
+<p>Предположим, что ты хочешь, чтобы оружие искрило при выстреле, для имитации дульного выстрела или для чего-либо ещё, и ты хочешь сделать это потенциально для всех видов оружия.</p>
+<p>В модульном файле мы добавляем переменную</p>
+<pre><code class="language-dm">/obj/item/gun
+    var/muzzle_flash = TRUE
+</code></pre>
+<p>И это будет прекрасно работать.</p>
+<p>После этого, предположим, ты хочешь проверить эту переменную и создать искры после выстрела. Зная, что исходная процедура вызываемая стрельбой - это</p>
+<pre><code class="language-dm">/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
+</code></pre>
+<p>Ты можешь создать дочернюю процедуру, которая будет вставлена в цепочку наследования связанных процедур (умные слова, но в этом простом примере можно особо над ними не задумываться)</p>
+<pre><code class="language-dm">/obj/item/gun/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
+    // . - это стандартное возвращаемое значение.
+    // Ему мы присваиваем то, что возвращает родительская процедура
+    // Заметь, здесь вызываем родителя перед нашей вставкой
+    . = ..()
+    if(muzzle_flash)
+        // Для упрощения, предположим, что ты уже написал свой proc для этого
+        spawn_sparks(src)
+</code></pre>
+<p>Вот и основа модуьрных изменений.</p>
+<h3 id="код-немодульные-изменения">Код: Немодульные изменения</h3>
+<p>Время от времени происходит случай, когда редактирование файлов <em>кор кода</em> становится неизбежным.</p>
+<p>Обязательно укажите все изменённые файлы в <code>README.md</code> мода.</p>
+<p>В этом случае применяются следующие обозначения:</p>
+<ul>
+<li><strong>Добавление</strong>
+<pre><code class="language-dm">// [JUICY-ADD] - SHUTTLE_TOGGLE - (Необязательно - причина или комментарий)
+var/adminEmergencyNoRecall = FALSE
+var/lastMode = SHUTTLE_IDLE
+var/lastCallTime = 6000
+// [/JUICY-ADD]
+</code></pre>
+</li>
+<li><strong>Удаление</strong>
+<pre><code class="language-dm">// [JUICY-REMOVE] - SHUTTLE_TOGGLE - (Необязательно - причина или комментарий)
+/*
+for(var/obj/docking_port/stationary/S in stationary)
+if(S.id = id)
+  return S
+*/
+// [/JUICY-REMOVE]
+</code></pre>
+Для удаления с перемещением в другой файл:
+<pre><code class="language-dm">// [JUICY-REMOVE] - SHUTTLE_TOGGLE - (Перемещено в /modular_juicy/shuttle_toggle/randomverbs.dm)
+/*
+/client/proc/admin_call_shuttle()
+  set category = &quot;Admin - Events&quot;
+  set name = &quot;Call Shuttle&quot;
+
+  if(EMERGENCY_AT_LEAST_DOCKED)
+    return
+
+  ...
+
+  message_admins(span_adminnotice(&quot;[key_name_admin(usr)] admin-called the emergency shuttle.&quot;))
+  return
+*/
+// [/JUICY-REMOVE]
+</code></pre>
+</li>
+<li><strong>Изменение</strong>
+<pre><code class="language-dm">// [JUICY-EDIT] - SHUTTLE_TOGGLE - (Optional Reason/comment)
+// if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE) // JUICY-EDIT - ORIGINAL
+if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE, SHUTTLE_DISABLED)
+// [/JUICY-EDIT]
+    return 1
+</code></pre>
+</li>
+</ul>
+<h2 id="nanoui">NanoUI</h2>
+<p>Новый интерфейс необходимо создавать в папке <code>nano/templates/modular_juicy</code>. Для редактирования существующего - создать там его копию и включить в игру с помощью мода/модулярного изменения.</p>
+<p>Для подключения интерфейса из этой папки, нужно к названию файла добавить префикс <code>modular_juicy-</code>.</p>
+<p>То есть для файла <code>nano/templates/modular_juicy/jukebox.tmpl</code> при открытии интерфейса нужно использовать название <code>&quot;modular_juicy-jukebox.tmpl&quot;</code> вместо обычного <code>&quot;jukebox.tmpl&quot;</code>.</p>
+<h2 id="исключительные-случаи">Исключительные случаи</h2>
+<p>Из каждого правила есть исключения, обусловленные многими обстоятельствами. Не задумывайся об этом сильно.</p>
+<h2 id="дефайны">Дефайны (<code>#define</code>)</h2>
+<p>Из-за того, как BYOND загружает файлы, есть необходимость существования отдельной папки для хранения дефайнов модов. Эта папка - <code>code/__defines/~modular_juicy/</code>, в которой ты можешь создать новый файл, либо дописать код в существующий.</p>
+<p>Если у тебя есть <code>#define</code>, который используется более чем в одном файле, он должен быть объявлен именно здесь.</p>
+<p>Если <code>#define</code> используется только в одном файле и больше нигде не будет использоваться, объяви его вверху, а в самом низу файла допиши <code>#undef MY_DEFINE</code>. Это делается для того, чтобы контекстные меню при разработке оставались чистыми, а также для предотвращения путаницы у тех, кто использует IDE с автозаполнением.</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/tree/834e39f7468655ea436e02935d3708cdb71c90bd">834e39f</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.9.0</a></footer></body></html>
