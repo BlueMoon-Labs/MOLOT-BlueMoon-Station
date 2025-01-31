@@ -110,12 +110,17 @@
 			REMOVE_TRAIT(target, TRAIT_LEWD_SUMMONED, TRAIT_LEWD_SUMMONED)
 		else
 			ADD_TRAIT(target, TRAIT_LEWD_SUMMONED, TRAIT_LEWD_SUMMONED)
+			if(target.mind?.has_antag_datum(/datum/antagonist/ghost_role/ghost_cafe))
+				target.ghost_cafe_traits(FALSE) // Выдаём и забираем трэйты в разных места для ситуаций ухода госта обратно домой
 
 	playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 	new /obj/effect/temp_visual/yellowsparkles(target.loc)
 	if(nude_target)
 		nuding(target)
 	do_teleport(target, pos_to_teleport, channel = TELEPORT_CHANNEL_MAGIC, forced = TRUE)
+	if(!HAS_TRAIT(target, TRAIT_LEWD_SUMMONED) && switch_summoned && target.mind?.has_antag_datum(/datum/antagonist/ghost_role/ghost_cafe))
+		var/datum/antagonist/ghost_role/ghost_cafe/GC = target.mind?.has_antag_datum(/datum/antagonist/ghost_role/ghost_cafe)
+		target.ghost_cafe_traits(TRUE, GC.adittonal_allowed_area)
 	new /obj/effect/temp_visual/yellowsparkles(src.loc)
 	return TRUE
 

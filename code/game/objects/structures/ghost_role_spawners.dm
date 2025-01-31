@@ -961,23 +961,16 @@
 	. = ..()
 	if(new_spawn.client)
 		new_spawn.client.prefs.copy_to(new_spawn)
-		var/area/A = get_area(src)
+		var/datum/antagonist/ghost_role/ghost_cafe/GC = new_spawn.mind?.has_antag_datum(/datum/antagonist/ghost_role/ghost_cafe)
+		GC.adittonal_allowed_area = get_area(src)
+		GC.adittonal_allowed_area = GC.adittonal_allowed_area.type
 		var/datum/outfit/O = new /datum/outfit/ghostcafe()
 		O.equip(new_spawn, FALSE, new_spawn.client)
 		SSjob.equip_loadout(null, new_spawn)
 		SSjob.post_equip_loadout(null, new_spawn)
 		SSquirks.AssignQuirks(new_spawn, new_spawn.client, TRUE, TRUE, null, FALSE, new_spawn)
-		new_spawn.AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE)
-		new_spawn.AddElement(/datum/element/dusts_on_catatonia)
-		new_spawn.AddElement(/datum/element/dusts_on_leaving_area,list(A.type, /area/centcom/holding/exterior,  /area/hilbertshotel)) // BLUEMOON EDIT - добавлена внешняя зона ГК
-		ADD_TRAIT(new_spawn, TRAIT_SIXTHSENSE, GHOSTROLE_TRAIT)
-		ADD_TRAIT(new_spawn, TRAIT_EXEMPT_HEALTH_EVENTS, GHOSTROLE_TRAIT)
-		ADD_TRAIT(new_spawn, TRAIT_NO_MIDROUND_ANTAG, GHOSTROLE_TRAIT) //The mob can't be made into a random antag, they are still eligible for ghost roles popups.
+		new_spawn.ghost_cafe_traits(TRUE, GC.adittonal_allowed_area)
 		to_chat(new_spawn,"<span class='boldwarning'>Ghosting is free!</span>")
-		var/datum/action/toggle_dead_chat_mob/D = new(new_spawn)
-		D.Grant(new_spawn)
-		var/datum/action/disguise/disguise_action = new(new_spawn)
-		disguise_action.Grant(new_spawn)
 
 /datum/outfit/ghostcafe
 	name = "ID, jumpsuit and shoes"
