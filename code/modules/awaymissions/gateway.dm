@@ -378,6 +378,10 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	else
 		deactivate()
 
+
+/obj/machinery/gateway/away/required_key
+	requires_key = TRUE
+
 /* Gateway control computer */
 /obj/machinery/computer/gateway_control
 	name = "Gateway Control"

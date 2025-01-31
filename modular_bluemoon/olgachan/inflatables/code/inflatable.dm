@@ -1,3 +1,5 @@
+//ВНИМАНИЕ!!! У ЭТИХ НАДУВНЫХ СИЛЬНО ПОРЕЗАН КОД ИЗ-ЗА ВЫЗОВА НЕАДЕКВАТНОГО КОЛИЧЕСТВА РАНТАЙМОВ!!! РЕКОМЕНДУЕТСЯ ИСПОЛЬЗОВАТЬ ИСКЛЮЧИТЕЛЬНО В КОСМЕТИЧЕСКИХ ЦЕЛЯХ
+
 
 #define TAPE_REQUIRED_TO_FIX 2
 #define INFLATABLE_DOOR_OPENED FALSE
@@ -14,6 +16,7 @@
 	max_integrity = 40
 	icon = 'modular_bluemoon/olgachan/inflatables/icons/inflatable.dmi'
 	icon_state = "wall"
+	armor = list(MELEE = 0, BULLET =30, LASER = 20, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	/// The type we drop when damaged.
 	var/torn_type = /obj/item/inflatable/torn
 	/// The type we drop when deflated.
@@ -22,38 +25,6 @@
 	var/hit_sound = 'sound/effects/Glasshit.ogg'
 	/// How quickly we deflate when manually deflated.
 	var/has_been_deflated = FALSE
-
-/obj/structure/inflatable/Initialize(mapload)
-	. = ..()
-	air_update_turf(TRUE, !density)
-	if (!armor)
-		armor = list(MELEE = 0, BULLET =30, LASER = 20, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
-	. = ..()
-	if(smooth)
-		queue_smooth(src)
-		queue_smooth_neighbors(src)
-		icon_state = ""
-	GLOB.cameranet.updateVisibility(src)
-
-/obj/structure/Destroy()
-	GLOB.cameranet.updateVisibility(src)
-	if(smooth)
-		queue_smooth_neighbors(src)
-	return ..()
-
-/obj/structure/inflatable/ex_act(severity)
-	switch(severity)
-		if(EXPLODE_DEVASTATE)
-			qdel(src)
-			return
-		if(EXPLODE_HEAVY)
-			deflate(TRUE)
-			return
-		if(EXPLODE_LIGHT)
-			if(prob(50))
-				deflate(TRUE)
-				return
-
 
 /obj/structure/inflatable/attackby(obj/item/attacking_item, mob/user, params)
 	if(attacking_item.sharpness)
@@ -85,45 +56,6 @@
 	if(usr.stat || usr.can_interact())
 		return
 	deflate(FALSE)
-
-
-/obj/structure/inflatable/door
-	name = "inflatable door"
-	CanAtmosPass = ATMOS_PASS_DENSITY
-	icon = 'modular_bluemoon/olgachan/inflatables/icons/inflatable.dmi'
-	icon_state = "door_closed"
-	base_icon_state = "door"
-	torn_type = /obj/item/inflatable/door/torn
-	deflated_type = /obj/item/inflatable/door
-	/// Are we open(FALSE), or are we closed(TRUE)?
-	var/door_state = INFLATABLE_DOOR_CLOSED
-
-/obj/structure/inflatable/door/Initialize(mapload)
-	. = ..()
-	density = door_state
-
-/obj/structure/inflatable/door/attack_hand(mob/living/user, list/modifiers)
-	. = ..()
-	if(!user.can_interact_with(src))
-		return
-	toggle_door()
-	to_chat(user, span_notice("You [door_state ? "close" : "open"] [src]!"))
-
-/obj/structure/inflatable/door/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]_[door_state ? "closed" : "open"]"
-
-/obj/structure/inflatable/door/proc/toggle_door()
-	if(door_state) // opening
-		door_state = INFLATABLE_DOOR_OPENED
-		flick("[base_icon_state]_opening", src)
-	else // Closing
-		door_state = INFLATABLE_DOOR_CLOSED
-		flick("[base_icon_state]_closing", src)
-	density = door_state
-	air_update_turf(TRUE, !density)
-	update_appearance()
-
 
 // The deployable item
 /obj/item/inflatable
@@ -185,14 +117,3 @@
 	. = ..()
 	if(torn)
 		. += span_warning("It is badly torn, and cannot be used! The damage looks like it could be repaired with some <b>tape</b>.")
-
-/obj/item/inflatable/door
-	name = "inflatable door"
-	desc = "A folded membrane which rapidly expands into a simple door on activation."
-	icon = 'modular_bluemoon/olgachan/inflatables/icons/inflatable.dmi'
-	icon_state = "folded_door"
-	base_icon_state = "folded_door"
-	structure_type = /obj/structure/inflatable/door
-
-/obj/item/inflatable/door/torn
-	torn = TRUE
