@@ -328,6 +328,14 @@
 							"<span class='notice'>Вы трясёте <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", target = src,
 							target_message = "<span class='notice'><b>[M]</b> трясёт тебя в однозначной попытке поднять!</span>")
 
+		else if(M.zone_selected == BODY_ZONE_PRECISE_GROIN) // BLUEMOON ADD — Дергать за хвосты.
+			if(src.dna.features["mam_tail"] != "None")
+				M.visible_message( \
+					"<span class='warning'><b>[M]</b> дёргает хвост <b>[src]</b>!</span>", \
+					"<span class='warning'>Ты дёргаешь <b>[src]</b> за хвост!</span>", target = src,
+					target_message = "<span class='warning'><b>[M]</b> дёргает тебя за хвост!</span>")
+				sound_to_play = SOUND_PAT
+
 		else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // I ADDED BOOP-EH-DEH-NOSEH - Jon
 			// BLUEMOON ADD START
 			var/mob/living/carbon/human/H = src
