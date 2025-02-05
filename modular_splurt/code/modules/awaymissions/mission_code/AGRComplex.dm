@@ -1091,7 +1091,7 @@
 	armed = FALSE
 	trap_damage = 40
 
-/obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/crystalwire/Crossed(AM as mob|obj)
 	if(armed && isturf(src.loc))
 		if(isliving(AM))
 			var/mob/living/L = AM
