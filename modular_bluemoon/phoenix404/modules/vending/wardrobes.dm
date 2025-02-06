@@ -233,9 +233,9 @@
 	vend_reply = "Спасибо за использование AtmosDrobe!"
 	products = list(
 		/obj/item/clothing/accessory/pocketprotector = 3,
-		/obj/item/clothing/head/beret/atmos = 3,
-		/obj/item/storage/backpack/industrial = 3,
-		/obj/item/storage/backpack/satchel/eng = 3,
+		/obj/item/storage/backpack/atmospheric = 3,
+		/obj/item/storage/backpack/satchel/atm = 3,
+		/obj/item/storage/backpack/duffelbag/atmospheric = 3,
 		/obj/item/storage/backpack/duffelbag/engineering = 3,
 		/obj/item/clothing/head/hardhat/weldhat/dblue = 3,
 		/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,

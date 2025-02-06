@@ -44,9 +44,9 @@
 	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician
 	r_pocket = /obj/item/analyzer
 
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	backpack = /obj/item/storage/backpack/atmospheric
+	satchel = /obj/item/storage/backpack/satchel/atm
+	duffelbag = /obj/item/storage/backpack/duffelbag/atmospheric
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -64,9 +64,9 @@
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/hardhat/red/upgraded
 
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	backpack = /obj/item/storage/backpack/atmospheric
+	satchel = /obj/item/storage/backpack/satchel/atm
+	duffelbag = /obj/item/storage/backpack/duffelbag/atmospheric
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/syndicate_uplink=1)
