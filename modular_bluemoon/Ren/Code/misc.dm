@@ -247,7 +247,7 @@
 			ftu_item_list[initial(A.name)] = A
 	return ftu_item_list
 
-//Энергетический балистический щит
+//Энергетический щит
 /obj/item/shield/inteq_energy
 	name = "Old energy shield"
 	desc = "Устаревшая на несколько поколений модель энергетического щита. Использует механические ограничители силового поля и эрганомика немного страдает, но всё ещё является желанным элементом экипировки."
@@ -474,29 +474,6 @@
 		transfer_fingerprints_to(R,D)
 		qdel(src)
 	..()
-// Ловушка струна
-/obj/structure/oldtrap/string_trap
-	name = "Piano wire"
-	desc = "Струна натянутая на высоте шеи существа среднего роста. Будет очень неприятно нарваться на неё со всей скорости в темноте"
-	icon_state = "string_trap"
-
-/obj/structure/oldtrap/string_trap/Crossed(datum/source, atom/movable/AM)
-	if(ishuman(AM))
-		var/mob/living/carbon/human/H = AM
-		var/picked_def_zone = NONE
-		var/multiplier = 1
-		if(H.maxHealth <= 70)
-			return
-		if((H.maxHealth > 70) & (H.maxHealth < 130))
-			picked_def_zone = BODY_ZONE_HEAD
-		if(H.maxHealth >= 130)
-			picked_def_zone = BODY_ZONE_CHEST
-		if(H.m_intent == MOVE_INTENT_RUN)
-			multiplier = multiplier*3
-		if(H.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
-			multiplier = multiplier*1.5
-		var/damage = 10*multiplier
-		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = 5)
 
 /obj/item/toy/plush/bao
 	name = "Stupid cat plush"
@@ -507,6 +484,13 @@
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	squeak_override = list('modular_bluemoon/Ren/Sound/bao_sex.ogg'=1)
 
-
-
-
+/obj/structure/billboard/fishstore
+	name = "Billboard"
+	desc = "An advertisement for a fishing store."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/billboard.dmi'
+	icon_state = "billboard_fishstore"
+	max_integrity = 1000
+	bound_width = 96
+	bound_height = 64
+	density = TRUE
+	anchored = TRUE

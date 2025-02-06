@@ -186,6 +186,9 @@
 /area/ruin/space/has_grav/powered/drugpost
 	name = "Pirat secret post"
 
+/area/ruin/space/has_grav/powered/fisherstore
+	name = "Fishing store"
+
 /area/ruin/space/has_grav/powered/clockworkhaven
 	name = "Ratvar citadel"
 
@@ -194,7 +197,6 @@
 	description = "Захваченый пиратами корабль."
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "cargodiselost.dmm"
-	allow_duplicates = FALSE
 	id = "cargodiselost"
 
 datum/map_template/ruin/space/vaulttango
@@ -245,3 +247,10 @@ datum/map_template/ruin/space/vaulttango
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "clockworkhaven.dmm"
 	id = "clockworkhaven"
+
+/datum/map_template/ruin/space/fisherstore
+	name = "Fishing store"
+	description = "Рыболовный магазин"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "fisher_store.dmm"
+	id = "fisher_store"
