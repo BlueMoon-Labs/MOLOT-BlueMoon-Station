@@ -26,3 +26,9 @@
 
 /datum/antagonist/ghost_role/traders
 	name  = "Traders"
+
+/datum/antagonist/ghost_role/black_mesa
+	name  = "black mesa staff"
+
+/datum/antagonist/ghost_role/hecu
+	name  = "HECU squad"
