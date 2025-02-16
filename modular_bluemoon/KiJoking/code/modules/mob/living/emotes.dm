@@ -33,3 +33,19 @@
 /datum/emote/sound/human/catscream/run_emote(mob/user, params)
 	sound = pick('modular_bluemoon/KiJoking/sound/voice/catscream1.ogg', 'modular_bluemoon/KiJoking/sound/voice/catscream2.ogg')
 	. = ..()
+
+/datum/emote/sound/human/horse_snort
+	key = "horsesnort"
+	key_third_person = "horsesnort"
+	message = "Snort like a horse!"
+	sound = 'modular_bluemoon/KiJoking/sound/voice/snort.ogg'
+	emote_cooldown = 1 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/sound/human/horse_neigh
+	key = "horseneigh"
+	key_third_person = "horseneigh"
+	message = "Neighs like a horse!"
+	sound = 'modular_bluemoon/KiJoking/sound/voice/neigh.ogg'
+	emote_cooldown = 1 SECONDS
+	emote_pitch_variance = FALSE
