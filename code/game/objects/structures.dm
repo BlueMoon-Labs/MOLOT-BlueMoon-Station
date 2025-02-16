@@ -95,7 +95,7 @@
 				// BLUEMOON ADDITION AHEAD - сверхтяжёлые персонажи пересекают преграды быстро, но в процессе ломают их
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER) && !istype(src, /obj/structure/closet/crate))
 					visible_message(span_warning("[src] breaks in half under the weight of [user]!"))
-					playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)
+					playsound(src, 'modular_bluemoon/sound/effects/chair_break.ogg', 70, TRUE)
 					deconstruct(FALSE)
 					return
 				// BLUEMOON ADDITION END

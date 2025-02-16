@@ -861,8 +861,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				var/mutable_appearance/right_eye = mutable_appearance('icons/mob/eyes.dmi', right_state, -BODY_LAYER)
 				BLUEMOON REMOVAL END - EYES*/
 				//BLUEMON ADD - EYES. Это грубый костыль, чтобы не нужно было изменять оригинальный dmi файл
-				var/mutable_appearance/left_eye = mutable_appearance('modular_bluemoon/eyes/eyes.dmi', left_state, -BODY_LAYER)
-				var/mutable_appearance/right_eye = mutable_appearance('modular_bluemoon/eyes/eyes.dmi', right_state, -BODY_LAYER)
+				var/mutable_appearance/left_eye = mutable_appearance('modular_bluemoon/icons/mob/eyes.dmi', left_state, -BODY_LAYER)
+				var/mutable_appearance/right_eye = mutable_appearance('modular_bluemoon/icons/mob/eyes.dmi', right_state, -BODY_LAYER)
 				//BLUEMON END - EYES. Туда скопированы оригинальные глаза. Если сплюрт добавит новые, нужно добавить их и сюда.
 				//bro tip: можно сделать так, чтобы если не находил глаза в оригинале, ссылался на новый файл. Но автору не хватило сил
 				left_eye.category = "HEAD"
