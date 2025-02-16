@@ -781,6 +781,18 @@
 
 
 
+/datum/mutation/human/bm/clearly_audible
+	name = "Хорошо слышимый"
+	desc = "Объясняя ваше маленькость вас уж точно услышат (позволяет при маленьком размере иметь хорошо слышимую речь)"
+	quality = MINOR_NEGATIVE
+	difficulty = 8
+	instability = 0
+	mob_trait = TRAIT_BLUEMOON_CLEARLY_AUDIBLE
+	text_gain_indication = "<span class='notice'>Ваш голос звучит ещё более звонко!</span>"
+	text_lose_indication = "<span class='danger'>Кхе-кхе...</span>"
+
+
+
 /datum/mutation/human/bm/high_pain_threshold
 	name = "Высокий болевой порог"
 	desc = "Жизнь, генетика, или что-то ещё научило вас если и не жить, то терпеть физическую боль. \

@@ -353,7 +353,7 @@
 					"<span class='warning'>Вы бупаете <b>[H]</b> в нос! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
 				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
 				H.add_lust(-5) //Why are you touching me?
-				if(prob(20))
+				if(prob(20) && !HAS_TRAIT(H, TRAIT_PACIFISM))
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
 						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
 					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
@@ -400,7 +400,7 @@
 				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] гладят по голове! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
 					"<span class='warning'>Вы гладите <b>[H]</b> по голове! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
 				H.add_lust(-5) //Why are you touching me?
-				if(prob(20)) // BLUEMOON EDIT - было 5%
+				if(prob(20) && !HAS_TRAIT(H, TRAIT_PACIFISM)) // BLUEMOON EDIT - было 5%
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
 						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
 					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце

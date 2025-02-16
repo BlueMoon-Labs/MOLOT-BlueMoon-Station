@@ -76,7 +76,8 @@
 	// BLUEMOON ADDITION END
 	switch(mob_size)
 		if(MOB_SIZE_TINY)
-			AddElement(/datum/element/smalltalk)
+			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_CLEARLY_AUDIBLE)) //BLUEMOON ADD квирк хорошо слышимого невилирует данную проблему
+				AddElement(/datum/element/smalltalk)
 		// BLUEMOON ADDITION START
 		if(MOB_SIZE_LARGE)
 			AddElement(/datum/element/bigtalk)

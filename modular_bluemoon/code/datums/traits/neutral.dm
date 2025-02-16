@@ -99,6 +99,20 @@
 	medical_record_text = "Пациент имеет аномально низкий вес."
 	antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.
 
+/datum/quirk/clearly_audible
+	name = "Хорошо слышимый"
+	desc = "Объясняя ваше маленькость вас уж точно услышат (позволяет при маленьком размере иметь хорошо слышимую речь)"
+	value = 0
+	mob_trait = TRAIT_BLUEMOON_CLEARLY_AUDIBLE
+	gain_text = "<span class='notice'>Ваш голос звучит ещё более звонко!</span>"
+	lose_text = "<span class='danger'>Кхе-кхе...</span>"
+
+/datum/quirk/clearly_audible/add()
+	quirk_holder.RemoveElement(/datum/element/smalltalk)
+
+/datum/quirk/clearly_audible/remove()
+	quirk_holder.adjust_mobsize() //ленивое добавление /datum/element/smalltalk если нужно
+
 /datum/quirk/anti_normalizer
 	name = "Невосприимчивость к нормалайзеру"
 	desc = "Syntech производит устройства-нормалайзеры, подводящие параметры размера существ к человеческим. \
