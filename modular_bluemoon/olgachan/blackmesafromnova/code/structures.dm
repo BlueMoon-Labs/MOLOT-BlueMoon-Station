@@ -224,3 +224,23 @@
 	light_color = "#ffffdd"
 	max_integrity = 9999999
 
+//ключ карты
+
+/obj/item/keycard/maincomplex
+	name = "Ключ карта первого уровня"
+	desc = "Даёт доступ к большинству закрытых дверей комплекса"
+	color = "#267a7a"
+	puzzle_id = "main_complex"
+
+/obj/item/keycard/utilization
+	name = "Ключ карта второго уровня"
+	desc = "Даёт доступ к техническим помещениям комплеса"
+	color = "#479918"
+	puzzle_id = "utilizationcomplex"
+
+
+/obj/item/keycard/hevstorage
+	name = "Ключ карта третьего уровня"
+	desc = "Даёт доступ к хранилищам ХЕВ костюма"
+	color = "#183099"
+	puzzle_id = "hevstorage"
