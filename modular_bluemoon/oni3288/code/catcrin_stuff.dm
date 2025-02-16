@@ -134,7 +134,7 @@
 		"Default" = list("icon_state" = "mark45_armor"),
 	)
 
-/obj/item/clothing/suit/armor/mark45_armor_desert
+/obj/item/clothing/suit/armor/mark45_armor/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
 	desc = "A modified armor commonly used by desert Catcrins. Among the most noticeable differences is a layer of fabric designed to minimize the wear-and-tear caused by sandstorms, prolonging its lifespan in desert environments. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -147,7 +147,7 @@
 		"Default" = list("icon_state" = "mark45_armor_desert"),
 	)
 
-/obj/item/clothing/suit/armor/mark45_armor_snow
+/obj/item/clothing/suit/armor/mark45_armor/mark45_armor_snow
 	name = "Mk. 45 Snow Cover Аrmor"
 	desc = "A modified Catcrin armor optimized for cold-weather operations. A layer of warm wool is visible inside the armor to preserve the warmth of the wearer. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -160,7 +160,7 @@
 		"Default" = list("icon_state" = "mark45_armor_snow"),
 	)
 
-/obj/item/clothing/suit/armor/mark45_armor_anomalist
+/obj/item/clothing/suit/armor/mark45_armor/mark45_armor_anomalist
 	name = "Mk. 45 Anomalist Аrmor"
 	desc = "Armor made on the basis of Mk. 45. This armor is worn by Catcrin anomalists, those who study the otherworldly world of ghosts, as well as associated with the elimination of various kinds of hostile anomalies. It is also decorated with special light armored fabric, showing the status of the carrier, and also protects it from potential shrapnel. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -173,7 +173,7 @@
 		"Default" = list("icon_state" = "mark45_armor_anomalist"),
 	)
 
-/obj/item/clothing/suit/armor/mark45_armor_combatengineer
+/obj/item/clothing/suit/armor/mark45_armor/mark45_armor_combatengineer
 	name = "Mk. 45 Combat engineer Аrmor"
 	desc = "A modified version of the armor created for combat engineers in the Catcrin army, with a special auxiliary manipulator. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -182,12 +182,11 @@
 	item_state = "mark45_armor_combatengineer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	alternate_worn_layer = "31" //чтобы клешня инженерная была видна поверх шлема
 	unique_reskin = list(
 		"Default" = list("icon_state" = "mark45_armor_combatengineer"),
 	)
 
-/obj/item/clothing/suit/armor/mark45_armor_support
+/obj/item/clothing/suit/armor/mark45_armor/mark45_armor_support
 	name = "Mk. 45 Support Аrmor"
 	desc = "A lighter version of the Mk armor. 45 with additional pouches and a support mark on the shoulder pad. It is used by auxiliary fighters in the Catcrin army. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -223,7 +222,7 @@
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 
-/obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_l
+/obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_l
 	name = "Mk. 45 medic's combat coat"
 	desc = "A special coat for a Catcrin Army medic with light plates in the chest, shoulder protection and armored fabric to minimize movement interference. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45medic.dmi'
@@ -231,7 +230,7 @@
 	icon_state = "mark45_armor_medic_l"
 	item_state = "mark45_armor_medic_l"
 
-/obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_h
+/obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_h
 	name = "Mk. 45 heavy combat medic Аrmor"
 	desc = "heavier by medical standards, modified Catcrin armor. This one has a distinctive mark on a noticeably larger shoulder pad and is much more often used in combat encounters. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45medic.dmi'
@@ -715,28 +714,28 @@
 
 /datum/gear/suit/mark45_armor_snow
 	name = "Mk. 45 Snow Cover Аrmor set"
-	path = /obj/item/clothing/suit/armor/mark45_armor_snow
+	path = /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_snow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
 
 /datum/gear/suit/mark45_armor_anomalist
 	name = "Mk. 45 Anomalist Аrmor set"
-	path = /obj/item/clothing/suit/armor/mark45_armor_anomalist
+	path = /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_anomalist
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Security Officer, Peacekeeper."
 	restricted_roles = list("Security Officer", "Peacekeeper")
 
 /datum/gear/suit/mark45_armor_combatengineer
 	name = "Mk. 45 Combat engineer Аrmor set"
-	path = /obj/item/clothing/suit/armor/mark45_armor_combatengineer
+	path = /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_combatengineer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Security Officer, Peacekeeper."
 	restricted_roles = list("Security Officer", "Peacekeeper")
 
 /datum/gear/suit/mark45_armor_support
 	name = "Mk. 45 Support Аrmor set"
-	path = /obj/item/clothing/suit/armor/mark45_armor_support
+	path = /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_support
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Security Officer, Peacekeeper."
 	restricted_roles = list("Security Officer", "Peacekeeper")
@@ -750,21 +749,21 @@
 
 /datum/gear/suit/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
-	path = /obj/item/clothing/suit/armor/mark45_armor_desert
+	path = /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_desert
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
 
 /datum/gear/suit/mark45_armor_medic_h
 	name = "Mk. 45 heavy combat medic Аrmor"
-	path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_h
+	path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_h
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Brig Physician."
 	restricted_roles = list("Brig Physician")
 
 /datum/gear/suit/mark45_armor_medic_l
 	name = "Mk. 45 medic's combat coat"
-	path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor_medic_l
+	path = /obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_l
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Brig Physician."
 	restricted_roles = list("Brig Physician")
