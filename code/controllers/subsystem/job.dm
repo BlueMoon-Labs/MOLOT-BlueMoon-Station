@@ -528,8 +528,8 @@ SUBSYSTEM_DEF(job)
 			equip_loadout(N, H) // CIT CHANGE - allows players to spawn with loadout items
 	//BLUEMOON ADD проходимся по всем вещам потеряшкам если такие есть, закидываем НАСИЛЬНО в рюкзак невзирая на размеры оного
 		else if(items_to_add_later.len)
-			if(iscarbon(M))
-				var/mob/living/carbon/C = M
+			if(iscarbon(H))
+				var/mob/living/carbon/C = H
 				var/obj/item/storage/backpack/B = C.back
 				if(B)
 					for(var/obj/item/I in items_to_add_later)
