@@ -134,6 +134,8 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	category = "syndicate"
+	make_bank_account = TRUE // BLUEMOON ADD
+	starting_money = 1000 // BLUEMOON ADD
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/special(mob/living/new_spawn)
 	. = ..()
