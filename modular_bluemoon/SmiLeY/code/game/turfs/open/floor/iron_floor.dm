@@ -182,9 +182,6 @@
 /turf/open/floor/iron/dark/corner/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/floor/iron/checker/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/iron/white
 	icon_state = "white"
 	base_icon_state = "white"
@@ -277,17 +274,10 @@
 /turf/open/floor/iron/white/corner/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/floor/iron/cafeteria/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/iron/recharge_floor
 	icon_state = "recharge_floor"
 	base_icon_state = "recharge_floor"
 	floor_tile = /obj/item/stack/tile/iron/recharge_floor
-
-/turf/open/floor/iron/recharge_floor/asteroid
-	icon_state = "recharge_floor_asteroid"
-	base_icon_state = "recharge_floor_asteroid"
 
 /turf/open/floor/iron/smooth
 	icon_state = "smooth"
@@ -354,18 +344,10 @@
 	base_icon_state = "kitchen_herringbone"
 	floor_tile = /obj/item/stack/tile/iron/kitchen/herringbone
 
-/turf/open/floor/iron/chapel
-	icon_state = "chapel"
-	base_icon_state = "chapel"
-	floor_tile = /obj/item/stack/tile/iron/chapel
-
 /turf/open/floor/iron/showroomfloor
 	icon_state = "showroomfloor"
 	base_icon_state = "showroomfloor"
 	floor_tile = /obj/item/stack/tile/iron/showroomfloor
-
-/turf/open/floor/iron/showroomfloor/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/iron/solarpanel
 	icon_state = "solarpanel"
@@ -380,9 +362,6 @@
 	icon_state = "freezerfloor"
 	base_icon_state = "freezerfloor"
 	floor_tile = /obj/item/stack/tile/iron/freezer
-
-/turf/open/floor/iron/freezer/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/iron/kitchen_coldroom
 	name = "cold room floor"
@@ -401,19 +380,6 @@
 	base_icon_state = "grimy"
 	tiled_dirt = FALSE
 	floor_tile = /obj/item/stack/tile/iron/grimy
-
-/turf/open/floor/iron/vaporwave
-	icon_state = "pinkblack"
-	base_icon_state = "pinkblack"
-	floor_tile = /obj/item/stack/tile/iron/vaporwave
-
-/turf/open/floor/iron/goonplaque
-	name = "commemorative plaque"
-	desc = "\"This is a plaque in honour of our comrades on the G4407 Stations. Hopefully TG4407 model can live up to your fame and fortune.\" Scratched in beneath that is a crude image of a meteor and a spaceman. The spaceman is laughing. The meteor is exploding."
-	icon_state = "plaque"
-	base_icon_state = "plaque"
-	tiled_dirt = FALSE
-	floor_tile = /obj/item/stack/tile/iron/goonplaque
 
 /turf/open/floor/iron/stairs
 	icon_state = "stairs"
@@ -435,16 +401,3 @@
 /turf/open/floor/iron/stairs/old
 	icon_state = "stairs-old"
 	base_icon_state = "stairs-old"
-
-/turf/open/floor/iron/bluespace
-	icon_state = "bluespace"
-	base_icon_state = "bluespace"
-	desc = "Sadly, these don't seem to make you faster..."
-	floor_tile = /obj/item/stack/tile/iron/bluespace
-
-/turf/open/floor/iron/sepia
-	icon_state = "sepia"
-	base_icon_state = "sepia"
-	desc = "Well, the flow of time is normal on these tiles, weird."
-	floor_tile = /obj/item/stack/tile/iron/sepia
-

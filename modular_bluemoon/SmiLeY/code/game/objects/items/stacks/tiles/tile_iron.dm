@@ -77,12 +77,10 @@
 		/obj/item/stack/tile/iron/kitchen/small,
 		/obj/item/stack/tile/iron/kitchen/diagonal,
 		/obj/item/stack/tile/iron/kitchen/herringbone,
-		/obj/item/stack/tile/iron/chapel,
 		/obj/item/stack/tile/iron/showroomfloor,
 		/obj/item/stack/tile/iron/solarpanel,
 		/obj/item/stack/tile/iron/freezer,
 		/obj/item/stack/tile/iron/grimy,
-		/obj/item/stack/tile/iron/sepia,
 	)
 
 /obj/item/stack/tile/iron/two
@@ -555,13 +553,6 @@
 	turf_type = /turf/open/floor/iron/kitchen/herringbone
 	merge_type = /obj/item/stack/tile/iron/kitchen/herringbone
 
-/obj/item/stack/tile/iron/chapel
-	name = "chapel floor tile"
-	singular_name = "chapel floor tile"
-	icon_state = "tile_chapel"
-	turf_type = /turf/open/floor/iron/chapel
-	merge_type = /obj/item/stack/tile/iron/chapel
-
 /obj/item/stack/tile/iron/showroomfloor
 	name = "showroom floor tile"
 	singular_name = "showroom floor tile"
@@ -589,39 +580,3 @@
 	icon_state = "tile_grimy"
 	turf_type = /turf/open/floor/iron/grimy
 	merge_type = /obj/item/stack/tile/iron/grimy
-
-/obj/item/stack/tile/iron/sepia
-	name = "sepia floor tile"
-	singular_name = "sepia floor tile"
-	desc = "Well, the flow of time is normal on these tiles, weird."
-	icon_state = "tile_sepia"
-	turf_type = /turf/open/floor/iron/sepia
-	merge_type = /obj/item/stack/tile/iron/sepia
-
-//Tiles below can't be gotten through tile reskinning
-
-/obj/item/stack/tile/iron/bluespace
-	name = "bluespace floor tile"
-	singular_name = "bluespace floor tile"
-	desc = "Sadly, these don't seem to make you faster..."
-	icon_state = "tile_bluespace"
-	turf_type = /turf/open/floor/iron/bluespace
-	merge_type = /obj/item/stack/tile/iron/bluespace
-	tile_reskin_types = null
-
-/obj/item/stack/tile/iron/goonplaque
-	name = "plaqued floor tile"
-	singular_name = "plaqued floor tile"
-	desc = "\"This is a plaque in honour of our comrades on the G4407 Stations. Hopefully TG4407 model can live up to your fame and fortune.\" Scratched in beneath that is a crude image of a meteor and a spaceman. The spaceman is laughing. The meteor is exploding."
-	icon_state = "tile_plaque"
-	turf_type = /turf/open/floor/iron/goonplaque
-	merge_type = /obj/item/stack/tile/iron/goonplaque
-	tile_reskin_types = null
-
-/obj/item/stack/tile/iron/vaporwave
-	name = "vaporwave floor tile"
-	singular_name = "vaporwave floor tile"
-	icon_state = "tile_vaporwave"
-	turf_type = /turf/open/floor/iron/vaporwave
-	merge_type = /obj/item/stack/tile/iron/vaporwave
-	tile_reskin_types = null

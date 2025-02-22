@@ -53,12 +53,6 @@
 
 /turf/open/floor/iron/recharge_floor
 	icon_state = "recharge_floor"
-/turf/open/floor/iron/recharge_floor/asteroid
-	icon_state = "recharge_floor_asteroid"
-
-
-/turf/open/floor/iron/chapel
-	icon_state = "chapel"
 
 /turf/open/floor/iron/showroomfloor
 	icon_state = "showroomfloor"
@@ -66,13 +60,9 @@
 
 /turf/open/floor/iron/solarpanel
 	icon_state = "solarpanel"
-/turf/open/floor/iron/airless/solarpanel
-	icon_state = "solarpanel"
 
 /turf/open/floor/iron/freezer
 	icon_state = "freezerfloor"
-/turf/open/floor/iron/freezer/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/iron/grimy
 	icon_state = "grimy"
@@ -81,28 +71,12 @@
 /turf/open/floor/iron/cafeteria
 	icon_state = "cafeteria"
 
-/turf/open/floor/iron/airless/cafeteria
-	icon_state = "cafeteria"
-
-
 /turf/open/floor/iron/cult
 	icon_state = "cult"
 	name = "engraved floor"
 
-/turf/open/floor/iron/vaporwave
-	icon_state = "pinkblack"
-
-/turf/open/floor/iron/goonplaque
-	icon_state = "plaque"
-	name = "commemorative plaque"
-	desc = "\"This is a plaque in honour of our comrades on the G4407 Stations. Hopefully TG4407 model can live up to your fame and fortune.\" Scratched in beneath that is a crude image of a meteor and a spaceman. The spaceman is laughing. The meteor is exploding."
-	tiled_dirt = FALSE
-
 /turf/open/floor/iron/cult/narsie_act()
 	return
-/turf/open/floor/iron/cult/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 
 /turf/open/floor/iron/stairs
 	icon_state = "stairs"
@@ -121,15 +95,6 @@
 	icon_state = "rockvault"
 /turf/open/floor/iron/rockvault/alien
 	icon_state = "alienvault"
-/turf/open/floor/iron/rockvault/sandstone
-	icon_state = "sandstonevault"
-
 
 /turf/open/floor/iron/elevatorshaft
 	icon_state = "elevatorshaft"
-
-/turf/open/floor/iron/bluespace
-	icon_state = "bluespace"
-
-/turf/open/floor/iron/sepia
-	icon_state = "sepia"
