@@ -178,27 +178,27 @@
 	base_icon_state = "white_herringbone"
 	floor_tile = /obj/item/stack/tile/plasteel/white/herringbone
 
-/turf/open/floor/plasteel/smooth
+/turf/open/floor/plasteel/rivets
 	icon_state = "smooth"
 	base_icon_state = "smooth"
 	floor_tile = /obj/item/stack/tile/plasteel/smooth
 
-/turf/open/floor/plasteel/smooth/edge
+/turf/open/floor/plasteel/rivets/edge
 	icon_state = "smooth_edge"
 	base_icon_state = "smooth_edge"
 	floor_tile = /obj/item/stack/tile/plasteel/smooth_edge
 
-/turf/open/floor/plasteel/smooth/half
+/turf/open/floor/plasteel/rivets/half
 	icon_state = "smooth_half"
 	base_icon_state = "smooth_half"
 	floor_tile = /obj/item/stack/tile/plasteel/smooth_half
 
-/turf/open/floor/plasteel/smooth/corner
+/turf/open/floor/plasteel/rivets/corner
 	icon_state = "smooth_corner"
 	base_icon_state = "smooth_corner"
 	floor_tile = /obj/item/stack/tile/plasteel/smooth_corner
 
-/turf/open/floor/plasteel/smooth/large
+/turf/open/floor/plasteel/rivets/large
 	icon_state = "smooth_large"
 	base_icon_state = "smooth_large"
 	floor_tile = /obj/item/stack/tile/plasteel/smooth_large
