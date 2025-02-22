@@ -51,13 +51,6 @@
 /turf/open/floor/iron/white/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 
-
-/turf/open/floor/iron/yellowsiding
-	icon_state = "yellowsiding"
-/turf/open/floor/iron/yellowsiding/corner
-	icon_state = "yellowcornersiding"
-
-
 /turf/open/floor/iron/recharge_floor
 	icon_state = "recharge_floor"
 /turf/open/floor/iron/recharge_floor/asteroid
@@ -66,9 +59,6 @@
 
 /turf/open/floor/iron/chapel
 	icon_state = "chapel"
-
-/turf/open/floor/iron/chapel_floor
-	icon_state = "chapel_alt"
 
 /turf/open/floor/iron/showroomfloor
 	icon_state = "showroomfloor"

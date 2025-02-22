@@ -115,11 +115,6 @@
 
 ///Shuttles///
 
-/turf/open/floor/iron/shuttle/evac
-	name = "Shuttle Floor"
-	icon = 'modular_bluemoon/SmiLeY/mapping/icons/exploration_floor.dmi'
-	icon_state = "floor"
-
 /turf/open/floor/iron/shuttle/exploration
 	name = "Shuttle Floor"
 	icon = 'icons/turf/exploration_floor.dmi'
@@ -232,21 +227,6 @@
 	name = "Shuttle Floor"
 	icon = 'modular_bluemoon/SmiLeY/mapping/icons/cargo.dmi'
 	icon_state = "floor"
-
-/turf/open/floor/iron/shuttle/cargo/sign_1
-	name = "Shuttle Floor"
-	icon = 'modular_bluemoon/SmiLeY/mapping/icons/cargo.dmi'
-	icon_state = "sign_1"
-
-/turf/open/floor/iron/shuttle/cargo/sign_2
-	name = "Shuttle Floor"
-	icon = 'modular_bluemoon/SmiLeY/mapping/icons/cargo.dmi'
-	icon_state = "sign_2"
-
-/turf/open/floor/iron/shuttle/cargo/sign_3
-	name = "Shuttle Floor"
-	icon = 'modular_bluemoon/SmiLeY/mapping/icons/cargo.dmi'
-	icon_state = "sign_3"
 
 //Re-textures based off the survival pods, without the orange stripe. Now you can re-color them to paint your spaceships!
 //(Do faded tones - DONT USE NEON BRIGHT COLORS, I /WILL/ CRY, and your ship will look like literal crap)
