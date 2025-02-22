@@ -140,28 +140,28 @@
 	name = "edge tile"
 	singular_name = "edge floor tile"
 	icon_state = "tile_edge"
-	turf_type = /turf/open/floor/iron/edge
+	turf_type = /turf/open/floor/iron/smooth/edge
 	merge_type = /obj/item/stack/tile/iron/edge
 
 /obj/item/stack/tile/iron/half
 	name = "half tile"
 	singular_name = "half floor tile"
 	icon_state = "tile_half"
-	turf_type = /turf/open/floor/iron/half
+	turf_type = /turf/open/floor/iron/smooth/half
 	merge_type = /obj/item/stack/tile/iron/half
 
 /obj/item/stack/tile/iron/corner
 	name = "corner tile"
 	singular_name = "corner floor tile"
 	icon_state = "tile_corner"
-	turf_type = /turf/open/floor/iron/corner
+	turf_type = /turf/open/floor/iron/smooth/corner
 	merge_type = /obj/item/stack/tile/iron/corner
 
 /obj/item/stack/tile/iron/large
 	name = "large tile"
 	singular_name = "large floor tile"
 	icon_state = "tile_large"
-	turf_type = /turf/open/floor/iron/large
+	turf_type = /turf/open/floor/iron/smooth/large
 	merge_type = /obj/item/stack/tile/iron/large
 
 /obj/item/stack/tile/iron/textured
@@ -203,21 +203,21 @@
 	name = "small tile"
 	singular_name = "small floor tile"
 	icon_state = "tile_small"
-	turf_type = /turf/open/floor/iron/small
+	turf_type = /turf/open/floor/iron/smooth/small
 	merge_type = /obj/item/stack/tile/iron/small
 
 /obj/item/stack/tile/iron/diagonal
 	name = "diagonal tile"
 	singular_name = "diagonal floor tile"
 	icon_state = "tile_diagonal"
-	turf_type = /turf/open/floor/iron/diagonal
+	turf_type = /turf/open/floor/iron/smooth/diagonal
 	merge_type = /obj/item/stack/tile/iron/diagonal
 
 /obj/item/stack/tile/iron/herringbone
 	name = "herringbone tile"
 	singular_name = "herringbone floor tile"
 	icon_state = "tile_herringbone"
-	turf_type = /turf/open/floor/iron/herringbone
+	turf_type = /turf/open/floor/iron/smooth/herringbone
 	merge_type = /obj/item/stack/tile/iron/herringbone
 
 /obj/item/stack/tile/iron/dark
@@ -231,28 +231,28 @@
 	name = "dark edge tile"
 	singular_name = "edged dark floor tile"
 	icon_state = "tile_dark_edge"
-	turf_type = /turf/open/floor/iron/dark/smooth_edge
+	turf_type = /turf/open/floor/iron/dark/smooth/edge
 	merge_type = /obj/item/stack/tile/iron/dark/smooth_edge
 
 /obj/item/stack/tile/iron/dark/smooth_half
 	name = "dark half tile"
 	singular_name = "halved dark floor tile"
 	icon_state = "tile_dark_half"
-	turf_type = /turf/open/floor/iron/dark/smooth_half
+	turf_type = /turf/open/floor/iron/dark/smooth/half
 	merge_type = /obj/item/stack/tile/iron/dark/smooth_half
 
 /obj/item/stack/tile/iron/dark/smooth_corner
 	name = "dark corner tile"
 	singular_name = "cornered dark floor tile"
 	icon_state = "tile_dark_corner"
-	turf_type = /turf/open/floor/iron/dark/smooth_corner
+	turf_type = /turf/open/floor/iron/dark/smooth/corner
 	merge_type = /obj/item/stack/tile/iron/dark/smooth_corner
 
 /obj/item/stack/tile/iron/dark/smooth_large
 	name = "dark large tile"
 	singular_name = "large dark floor tile"
 	icon_state = "tile_dark_large"
-	turf_type = /turf/open/floor/iron/dark/smooth_large
+	turf_type = /turf/open/floor/iron/dark/smooth/large
 	merge_type = /obj/item/stack/tile/iron/dark/smooth_large
 
 /obj/item/stack/tile/iron/dark/textured
@@ -266,49 +266,49 @@
 	name = "dark textured edge tile"
 	singular_name = "edged dark textured floor tile"
 	icon_state = "tile_textured_dark_edge"
-	turf_type = /turf/open/floor/iron/dark/textured_edge
+	turf_type = /turf/open/floor/iron/dark/textured/edge
 	merge_type = /obj/item/stack/tile/iron/dark/textured_edge
 
 /obj/item/stack/tile/iron/dark/textured_half
 	name = "dark textured half tile"
 	singular_name = "halved dark textured floor tile"
 	icon_state = "tile_textured_dark_half"
-	turf_type = /turf/open/floor/iron/dark/textured_half
+	turf_type = /turf/open/floor/iron/dark/textured/half
 	merge_type = /obj/item/stack/tile/iron/dark/textured_half
 
 /obj/item/stack/tile/iron/dark/textured_corner
 	name = "dark textured corner tile"
 	singular_name = "cornered dark textured floor tile"
 	icon_state = "tile_textured_dark_corner"
-	turf_type = /turf/open/floor/iron/dark/textured_corner
+	turf_type = /turf/open/floor/iron/dark/textured/corner
 	merge_type = /obj/item/stack/tile/iron/dark/textured_corner
 
 /obj/item/stack/tile/iron/dark/textured_large
 	name = "dark textured large tile"
 	singular_name = "large dark textured floor tile"
 	icon_state = "tile_textured_dark_large"
-	turf_type = /turf/open/floor/iron/dark/textured_large
+	turf_type = /turf/open/floor/iron/dark/textured/large
 	merge_type = /obj/item/stack/tile/iron/dark/textured_large
 
 /obj/item/stack/tile/iron/dark/small
 	name = "dark small tile"
 	singular_name = "dark small floor tile"
 	icon_state = "tile_dark_small"
-	turf_type = /turf/open/floor/iron/dark/small
+	turf_type = /turf/open/floor/iron/dark/smooth/small
 	merge_type = /obj/item/stack/tile/iron/dark/small
 
 /obj/item/stack/tile/iron/dark/diagonal
 	name = "dark diagonal tile"
 	singular_name = "dark diagonal floor tile"
 	icon_state = "tile_dark_diagonal"
-	turf_type = /turf/open/floor/iron/dark/diagonal
+	turf_type = /turf/open/floor/iron/dark/smooth/diagonal
 	merge_type = /obj/item/stack/tile/iron/dark/diagonal
 
 /obj/item/stack/tile/iron/dark/herringbone
 	name = "dark herringbone tile"
 	singular_name = "dark herringbone floor tile"
 	icon_state = "tile_dark_herringbone"
-	turf_type = /turf/open/floor/iron/dark/herringbone
+	turf_type = /turf/open/floor/iron/dark/smooth/herringbone
 	merge_type = /obj/item/stack/tile/iron/dark/herringbone
 
 /obj/item/stack/tile/iron/white
@@ -322,28 +322,28 @@
 	name = "white edge tile"
 	singular_name = "edged white floor tile"
 	icon_state = "tile_white_edge"
-	turf_type = /turf/open/floor/iron/white/smooth_edge
+	turf_type = /turf/open/floor/iron/white/smooth/edge
 	merge_type = /obj/item/stack/tile/iron/white/smooth_edge
 
 /obj/item/stack/tile/iron/white/smooth_half
 	name = "white half tile"
 	singular_name = "halved white floor tile"
 	icon_state = "tile_white_half"
-	turf_type = /turf/open/floor/iron/white/smooth_half
+	turf_type = /turf/open/floor/iron/white/smooth/half
 	merge_type = /obj/item/stack/tile/iron/white/smooth_half
 
 /obj/item/stack/tile/iron/white/smooth_corner
 	name = "white corner tile"
 	singular_name = "cornered white floor tile"
 	icon_state = "tile_white_corner"
-	turf_type = /turf/open/floor/iron/white/smooth_corner
+	turf_type = /turf/open/floor/iron/white/smooth/corner
 	merge_type = /obj/item/stack/tile/iron/white/smooth_corner
 
 /obj/item/stack/tile/iron/white/smooth_large
 	name = "white large tile"
 	singular_name = "large white floor tile"
 	icon_state = "tile_white_large"
-	turf_type = /turf/open/floor/iron/white/smooth_large
+	turf_type = /turf/open/floor/iron/white/smooth/large
 	merge_type = /obj/item/stack/tile/iron/white/smooth_large
 
 /obj/item/stack/tile/iron/white/textured
@@ -357,49 +357,49 @@
 	name = "white textured edge tile"
 	singular_name = "edged white textured floor tile"
 	icon_state = "tile_textured_white_edge"
-	turf_type = /turf/open/floor/iron/white/textured_edge
+	turf_type = /turf/open/floor/iron/white/textured/edge
 	merge_type = /obj/item/stack/tile/iron/white/textured_edge
 
 /obj/item/stack/tile/iron/white/textured_half
 	name = "white textured half tile"
 	singular_name = "halved white textured floor tile"
 	icon_state = "tile_textured_white_half"
-	turf_type = /turf/open/floor/iron/white/textured_half
+	turf_type = /turf/open/floor/iron/white/textured/half
 	merge_type = /obj/item/stack/tile/iron/white/textured_half
 
 /obj/item/stack/tile/iron/white/textured_corner
 	name = "white textured corner tile"
 	singular_name = "cornered white textured floor tile"
 	icon_state = "tile_textured_white_corner"
-	turf_type = /turf/open/floor/iron/white/textured_corner
+	turf_type = /turf/open/floor/iron/white/textured/corner
 	merge_type = /obj/item/stack/tile/iron/white/textured_corner
 
 /obj/item/stack/tile/iron/white/textured_large
 	name = "white textured large tile"
 	singular_name = "large white textured floor tile"
 	icon_state = "tile_textured_white_large"
-	turf_type = /turf/open/floor/iron/white/textured_large
+	turf_type = /turf/open/floor/iron/white/textured/large
 	merge_type = /obj/item/stack/tile/iron/white/textured_large
 
 /obj/item/stack/tile/iron/white/small
 	name = "white small tile"
 	singular_name = "white small floor tile"
 	icon_state = "tile_white_small"
-	turf_type = /turf/open/floor/iron/white/small
+	turf_type = /turf/open/floor/iron/white/smooth/small
 	merge_type = /obj/item/stack/tile/iron/white/small
 
 /obj/item/stack/tile/iron/white/diagonal
 	name = "white diagonal tile"
 	singular_name = "white diagonal floor tile"
 	icon_state = "tile_white_diagonal"
-	turf_type = /turf/open/floor/iron/white/diagonal
+	turf_type = /turf/open/floor/iron/white/smooth/diagonal
 	merge_type = /obj/item/stack/tile/iron/white/diagonal
 
 /obj/item/stack/tile/iron/white/herringbone
 	name = "white herringbone tile"
 	singular_name = "white herringbone floor tile"
 	icon_state = "tile_white_herringbone"
-	turf_type = /turf/open/floor/iron/white/herringbone
+	turf_type = /turf/open/floor/iron/white/smooth/herringbone
 	merge_type = /obj/item/stack/tile/iron/white/herringbone
 
 /obj/item/stack/tile/iron/smooth
