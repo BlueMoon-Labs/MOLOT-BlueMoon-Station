@@ -232,39 +232,30 @@
 	base_icon_state = "white_herringbone"
 	floor_tile = /obj/item/stack/tile/iron/white/herringbone
 
-/turf/open/floor/iron/white/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/iron/white/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 
-/turf/open/floor/iron/white/side/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
-/turf/open/floor/iron/white/corner/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
-/turf/open/floor/iron/smooth
+/turf/open/floor/plasteel/smooth
 	icon_state = "smooth"
 	base_icon_state = "smooth"
 	floor_tile = /obj/item/stack/tile/iron/smooth
 
-/turf/open/floor/iron/smooth_edge
+/turf/open/floor/plasteel/smooth/edge
 	icon_state = "smooth_edge"
 	base_icon_state = "smooth_edge"
 	floor_tile = /obj/item/stack/tile/iron/smooth_edge
 
-/turf/open/floor/iron/smooth_half
+/turf/open/floor/plasteel/smooth/half
 	icon_state = "smooth_half"
 	base_icon_state = "smooth_half"
 	floor_tile = /obj/item/stack/tile/iron/smooth_half
 
-/turf/open/floor/iron/smooth_corner
+/turf/open/floor/plasteel/smooth/corner
 	icon_state = "smooth_corner"
 	base_icon_state = "smooth_corner"
 	floor_tile = /obj/item/stack/tile/iron/smooth_corner
 
-/turf/open/floor/iron/smooth_large
+/turf/open/floor/plasteel/smooth/large
 	icon_state = "smooth_large"
 	base_icon_state = "smooth_large"
 	floor_tile = /obj/item/stack/tile/iron/smooth_large

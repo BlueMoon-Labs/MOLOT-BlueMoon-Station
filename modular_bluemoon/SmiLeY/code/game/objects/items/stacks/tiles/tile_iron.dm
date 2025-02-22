@@ -438,35 +438,35 @@
 	name = "smooth tile"
 	singular_name = "smooth floor tile"
 	icon_state = "tile_smooth"
-	turf_type = /turf/open/floor/iron/smooth
+	turf_type = /turf/open/floor/plasteel/smooth
 	merge_type = /obj/item/stack/tile/iron/smooth
 
 /obj/item/stack/tile/iron/smooth_edge
 	name = "smooth edge tile"
 	singular_name = "edged smooth floor tile"
 	icon_state = "tile_smooth_edge"
-	turf_type = /turf/open/floor/iron/smooth_edge
+	turf_type = /turf/open/floor/plasteel/smooth/edge
 	merge_type = /obj/item/stack/tile/iron/smooth_edge
 
 /obj/item/stack/tile/iron/smooth_half
 	name = "smooth half tile"
 	singular_name = "halved smooth floor tile"
 	icon_state = "tile_smooth_half"
-	turf_type = /turf/open/floor/iron/smooth_half
+	turf_type = /turf/open/floor/plasteel/smooth/half
 	merge_type = /obj/item/stack/tile/iron/smooth_half
 
 /obj/item/stack/tile/iron/smooth_corner
 	name = "smooth corner tile"
 	singular_name = "cornered smooth floor tile"
 	icon_state = "tile_smooth_corner"
-	turf_type = /turf/open/floor/iron/smooth_corner
+	turf_type = /turf/open/floor/plasteel/smooth/corner
 	merge_type = /obj/item/stack/tile/iron/smooth_corner
 
 /obj/item/stack/tile/iron/smooth_large
 	name = "smooth large tile"
 	singular_name = "large smooth floor tile"
 	icon_state = "tile_smooth_large"
-	turf_type = /turf/open/floor/iron/smooth_large
+	turf_type = /turf/open/floor/plasteel/smooth/large
 	merge_type = /obj/item/stack/tile/iron/smooth_large
 
 /obj/item/stack/tile/iron/terracotta
