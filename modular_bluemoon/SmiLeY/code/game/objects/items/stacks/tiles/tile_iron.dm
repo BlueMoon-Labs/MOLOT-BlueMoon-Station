@@ -41,7 +41,6 @@
 		/obj/item/stack/tile/iron/dark/herringbone,
 		/obj/item/stack/tile/iron/dark_side,
 		/obj/item/stack/tile/iron/dark_corner,
-		/obj/item/stack/tile/iron/checker,
 		/obj/item/stack/tile/iron/dark/textured,
 		/obj/item/stack/tile/iron/dark/textured_edge,
 		/obj/item/stack/tile/iron/dark/textured_half,
@@ -63,7 +62,6 @@
 		/obj/item/stack/tile/iron/white/textured_half,
 		/obj/item/stack/tile/iron/white/textured_corner,
 		/obj/item/stack/tile/iron/white/textured_large,
-		/obj/item/stack/tile/iron/recharge_floor,
 		/obj/item/stack/tile/iron/smooth,
 		/obj/item/stack/tile/iron/smooth_edge,
 		/obj/item/stack/tile/iron/smooth_half,
@@ -77,10 +75,6 @@
 		/obj/item/stack/tile/iron/kitchen/small,
 		/obj/item/stack/tile/iron/kitchen/diagonal,
 		/obj/item/stack/tile/iron/kitchen/herringbone,
-		/obj/item/stack/tile/iron/showroomfloor,
-		/obj/item/stack/tile/iron/solarpanel,
-		/obj/item/stack/tile/iron/freezer,
-		/obj/item/stack/tile/iron/grimy,
 	)
 
 /obj/item/stack/tile/iron/two
@@ -280,13 +274,6 @@
 	turf_type = /turf/open/floor/iron/dark/corner
 	merge_type = /obj/item/stack/tile/iron/dark_corner
 
-/obj/item/stack/tile/iron/checker
-	name = "checker tile"
-	singular_name = "checker floor tile"
-	icon_state = "tile_checker"
-	turf_type = /turf/open/floor/iron/checker
-	merge_type = /obj/item/stack/tile/iron/checker
-
 /obj/item/stack/tile/iron/dark/textured
 	name = "dark textured tile"
 	singular_name = "dark textured floor tile"
@@ -455,13 +442,6 @@
 	turf_type = /turf/open/floor/iron/white/herringbone
 	merge_type = /obj/item/stack/tile/iron/white/herringbone
 
-/obj/item/stack/tile/iron/recharge_floor
-	name = "recharge floor tile"
-	singular_name = "recharge floor tile"
-	icon_state = "tile_recharge"
-	turf_type = /turf/open/floor/iron/recharge_floor
-	merge_type = /obj/item/stack/tile/iron/recharge_floor
-
 /obj/item/stack/tile/iron/smooth
 	name = "smooth tile"
 	singular_name = "smooth floor tile"
@@ -552,31 +532,3 @@
 	icon_state = "tile_kitchen_herringbone"
 	turf_type = /turf/open/floor/iron/kitchen/herringbone
 	merge_type = /obj/item/stack/tile/iron/kitchen/herringbone
-
-/obj/item/stack/tile/iron/showroomfloor
-	name = "showroom floor tile"
-	singular_name = "showroom floor tile"
-	icon_state = "tile_showroom"
-	turf_type = /turf/open/floor/iron/showroomfloor
-	merge_type = /obj/item/stack/tile/iron/showroomfloor
-
-/obj/item/stack/tile/iron/solarpanel
-	name = "solar panel tile"
-	singular_name = "solar panel floor tile"
-	icon_state = "tile_solarpanel"
-	turf_type = /turf/open/floor/iron/solarpanel
-	merge_type = /obj/item/stack/tile/iron/solarpanel
-
-/obj/item/stack/tile/iron/freezer
-	name = "freezer floor tile"
-	singular_name = "freezer floor tile"
-	icon_state = "tile_freezer"
-	turf_type = /turf/open/floor/iron/freezer
-	merge_type = /obj/item/stack/tile/iron/freezer
-
-/obj/item/stack/tile/iron/grimy
-	name = "grimy floor tile"
-	singular_name = "grimy floor tile"
-	icon_state = "tile_grimy"
-	turf_type = /turf/open/floor/iron/grimy
-	merge_type = /obj/item/stack/tile/iron/grimy
