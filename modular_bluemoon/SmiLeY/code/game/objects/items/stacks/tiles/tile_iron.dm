@@ -175,28 +175,28 @@
 	name = "textured edge tile"
 	singular_name = "edged textured floor tile"
 	icon_state = "tile_textured_edge"
-	turf_type = /turf/open/floor/iron/textured_edge
+	turf_type = /turf/open/floor/iron/textured/edge
 	merge_type = /obj/item/stack/tile/iron/textured_edge
 
 /obj/item/stack/tile/iron/textured_half
 	name = "textured half tile"
 	singular_name = "halved textured floor tile"
 	icon_state = "tile_textured_half"
-	turf_type = /turf/open/floor/iron/textured_half
+	turf_type = /turf/open/floor/iron/textured/half
 	merge_type = /obj/item/stack/tile/iron/textured_half
 
 /obj/item/stack/tile/iron/textured_corner
 	name = "textured corner tile"
 	singular_name = "cornered textured floor tile"
 	icon_state = "tile_textured_corner"
-	turf_type = /turf/open/floor/iron/textured_corner
+	turf_type = /turf/open/floor/iron/textured/corner
 	merge_type = /obj/item/stack/tile/iron/textured_corner
 
 /obj/item/stack/tile/iron/textured_large
 	name = "textured large tile"
 	singular_name = "large textured floor tile"
 	icon_state = "tile_textured_large"
-	turf_type = /turf/open/floor/iron/textured_large
+	turf_type = /turf/open/floor/iron/textured/large
 	merge_type = /obj/item/stack/tile/iron/textured_large
 
 /obj/item/stack/tile/iron/small

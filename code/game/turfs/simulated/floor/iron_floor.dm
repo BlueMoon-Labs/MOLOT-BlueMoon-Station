@@ -13,24 +13,3 @@
 	if(broken || burnt)									//included - tile floofing
 		return											//included - tile floofing
 	icon_state = base_icon_state						//included - tile floofing
-
-/turf/open/floor/iron/dark
-	icon_state = "darkfull"
-
-/turf/open/floor/iron/dark/telecomms
-	initial_gas_mix = TCOMMS_ATMOS
-
-/turf/open/floor/iron/dark/side
-	icon_state = "dark"
-/turf/open/floor/iron/dark/corner
-	icon_state = "darkcorner"
-
-/turf/open/floor/iron/white
-	icon_state = "white"
-/turf/open/floor/iron/white/side
-	icon_state = "whitehall"
-/turf/open/floor/iron/white/corner
-	icon_state = "whitecorner"
-
-/turf/open/floor/iron/white/telecomms
-	initial_gas_mix = TCOMMS_ATMOS

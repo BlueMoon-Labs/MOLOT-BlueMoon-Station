@@ -44,22 +44,22 @@
 	base_icon_state = "textured"
 	floor_tile = /obj/item/stack/tile/iron/textured
 
-/turf/open/floor/iron/textured_edge
+/turf/open/floor/iron/textured/edge
 	icon_state = "textured_edge"
 	base_icon_state = "textured_edge"
 	floor_tile = /obj/item/stack/tile/iron/textured_edge
 
-/turf/open/floor/iron/textured_half
+/turf/open/floor/iron/textured/half
 	icon_state = "textured_half"
 	base_icon_state = "textured_half"
 	floor_tile = /obj/item/stack/tile/iron/textured_half
 
-/turf/open/floor/iron/textured_corner
+/turf/open/floor/iron/textured/corner
 	icon_state = "textured_corner"
 	base_icon_state = "textured_corner"
 	floor_tile = /obj/item/stack/tile/iron/textured_corner
 
-/turf/open/floor/iron/textured_large
+/turf/open/floor/iron/textured/large
 	icon_state = "textured_large"
 	base_icon_state = "textured_large"
 	floor_tile = /obj/item/stack/tile/iron/textured_large
