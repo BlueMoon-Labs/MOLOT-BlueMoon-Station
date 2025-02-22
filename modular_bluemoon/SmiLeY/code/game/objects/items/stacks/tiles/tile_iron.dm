@@ -56,7 +56,6 @@
 		/obj/item/stack/tile/iron/white/herringbone,
 		/obj/item/stack/tile/iron/white_side,
 		/obj/item/stack/tile/iron/white_corner,
-		/obj/item/stack/tile/iron/cafeteria,
 		/obj/item/stack/tile/iron/white/textured,
 		/obj/item/stack/tile/iron/white/textured_edge,
 		/obj/item/stack/tile/iron/white/textured_half,
@@ -378,13 +377,6 @@
 	icon_state = "tile_whitecorner"
 	turf_type = /turf/open/floor/iron/white/corner
 	merge_type = /obj/item/stack/tile/iron/white_corner
-
-/obj/item/stack/tile/iron/cafeteria
-	name = "cafeteria tile"
-	singular_name = "cafeteria floor tile"
-	icon_state = "tile_cafeteria"
-	turf_type = /turf/open/floor/iron/cafeteria
-	merge_type = /obj/item/stack/tile/iron/cafeteria
 
 /obj/item/stack/tile/iron/white/textured
 	name = "white textured tile"

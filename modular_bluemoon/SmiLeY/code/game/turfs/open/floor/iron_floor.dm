@@ -19,10 +19,6 @@
 	icon_state = base_icon_state
 	return ..()
 
-
-/turf/open/floor/iron/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/iron/edge
 	icon_state = "floor_edge"
 	base_icon_state = "floor_edge"
@@ -158,9 +154,6 @@
 	base_icon_state = "dark_herringbone"
 	floor_tile = /obj/item/stack/tile/iron/dark/herringbone
 
-/turf/open/floor/iron/dark/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/iron/dark/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 
@@ -198,11 +191,6 @@
 	icon_state = "whitecorner"
 	base_icon_state = "whitecorner"
 	floor_tile = /obj/item/stack/tile/iron/white_corner
-
-/turf/open/floor/iron/cafeteria
-	icon_state = "cafeteria"
-	base_icon_state = "cafeteria"
-	floor_tile = /obj/item/stack/tile/iron/cafeteria
 
 /turf/open/floor/iron/white/textured
 	icon_state = "textured_white"

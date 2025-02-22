@@ -14,13 +14,9 @@
 		return											//included - tile floofing
 	icon_state = base_icon_state						//included - tile floofing
 
-/turf/open/floor/iron/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/floor/iron/dark
 	icon_state = "darkfull"
-/turf/open/floor/iron/dark/airless
-	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/iron/dark/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 
@@ -38,6 +34,3 @@
 
 /turf/open/floor/iron/white/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
-
-/turf/open/floor/iron/cafeteria
-	icon_state = "cafeteria"
