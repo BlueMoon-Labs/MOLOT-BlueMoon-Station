@@ -1,5 +1,5 @@
 /obj/item/stack/tile/plasteel
-	icon = 'modular_bluemoon/SmiLeY/icons/obj/tiles.dmi'
+	icon = 'modular_bluemoon/icons/obj/tiles.dmi'
 	icon_state = "tile"
 	tile_reskin_types = list(
 		/obj/item/stack/tile/plasteel,
