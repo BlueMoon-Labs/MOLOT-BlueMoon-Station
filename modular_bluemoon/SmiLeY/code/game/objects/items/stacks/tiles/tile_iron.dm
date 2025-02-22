@@ -39,8 +39,6 @@
 		/obj/item/stack/tile/iron/dark/small,
 		/obj/item/stack/tile/iron/dark/diagonal,
 		/obj/item/stack/tile/iron/dark/herringbone,
-		/obj/item/stack/tile/iron/dark_side,
-		/obj/item/stack/tile/iron/dark_corner,
 		/obj/item/stack/tile/iron/dark/textured,
 		/obj/item/stack/tile/iron/dark/textured_edge,
 		/obj/item/stack/tile/iron/dark/textured_half,
@@ -54,8 +52,6 @@
 		/obj/item/stack/tile/iron/white/small,
 		/obj/item/stack/tile/iron/white/diagonal,
 		/obj/item/stack/tile/iron/white/herringbone,
-		/obj/item/stack/tile/iron/white_side,
-		/obj/item/stack/tile/iron/white_corner,
 		/obj/item/stack/tile/iron/white/textured,
 		/obj/item/stack/tile/iron/white/textured_edge,
 		/obj/item/stack/tile/iron/white/textured_half,
@@ -259,20 +255,6 @@
 	turf_type = /turf/open/floor/iron/dark/smooth_large
 	merge_type = /obj/item/stack/tile/iron/dark/smooth_large
 
-/obj/item/stack/tile/iron/dark_side
-	name = "half dark tile"
-	singular_name = "half dark floor tile"
-	icon_state = "tile_darkside"
-	turf_type = /turf/open/floor/iron/dark/side
-	merge_type = /obj/item/stack/tile/iron/dark_side
-
-/obj/item/stack/tile/iron/dark_corner
-	name = "quarter dark tile"
-	singular_name = "quarter dark floor tile"
-	icon_state = "tile_darkcorner"
-	turf_type = /turf/open/floor/iron/dark/corner
-	merge_type = /obj/item/stack/tile/iron/dark_corner
-
 /obj/item/stack/tile/iron/dark/textured
 	name = "dark textured tile"
 	singular_name = "dark textured floor tile"
@@ -363,20 +345,6 @@
 	icon_state = "tile_white_large"
 	turf_type = /turf/open/floor/iron/white/smooth_large
 	merge_type = /obj/item/stack/tile/iron/white/smooth_large
-
-/obj/item/stack/tile/iron/white_side
-	name = "half white tile"
-	singular_name = "half white floor tile"
-	icon_state = "tile_whiteside"
-	turf_type = /turf/open/floor/iron/white/side
-	merge_type = /obj/item/stack/tile/iron/white_side
-
-/obj/item/stack/tile/iron/white_corner
-	name = "quarter white tile"
-	singular_name = "quarter white floor tile"
-	icon_state = "tile_whitecorner"
-	turf_type = /turf/open/floor/iron/white/corner
-	merge_type = /obj/item/stack/tile/iron/white_corner
 
 /obj/item/stack/tile/iron/white/textured
 	name = "white textured tile"
