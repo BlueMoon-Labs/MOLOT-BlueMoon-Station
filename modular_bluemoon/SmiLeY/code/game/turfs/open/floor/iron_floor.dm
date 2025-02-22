@@ -1,6 +1,5 @@
 /turf/open/floor/iron
 	icon_state = "floor"
-	icon = 'icons/turf/floors_new.dmi'
 	floor_tile = /obj/item/stack/tile/iron/base
 
 
