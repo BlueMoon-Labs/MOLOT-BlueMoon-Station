@@ -114,116 +114,7 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
 
-/// loadout additions
-/datum/gear/neck/cross
-	name = "Christian Cross Necklace"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
-	path = /obj/item/clothing/neck/tie/cross
-
-/datum/gear/neck/bandagewraps
-	name = "Bandage wraps"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
-	path = /obj/item/clothing/neck/tie/bandagewraps
-
-/datum/gear/suit/suspenders
-	name = "Suspenders"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/suspenders
-
-/datum/gear/suit/suspenders_white
-	name = "White Suspenders"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/suspenders/suspenders_white
-
-/datum/gear/head/syndicate_cap
-	name = "Syndicate Cap"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
-	path = /obj/item/clothing/head/HoS/syndicate
-	restricted_roles = list("Captain","Head of Security")
-
-/datum/gear/uniform/solfed_formal
-	name = "SolFed Formal Uniform"
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	path = /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
-
-/datum/gear/suit/solfed_dress
-	name = "SolFed Dress"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/sol_dress
-
-/datum/gear/suit/nri_coat
-	name = "Russian Empire Coat"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/armor/nri_coat/armorless
-
-/datum/gear/head/sol_beret
-	name = "SolFed Beret"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/HoS/beret/sol/plain/armorless
-
-/datum/gear/head/sol_cap
-	name = "SolFed Cap"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/HoS/beret/sol/cap/armorless
-
-/datum/gear/head/nri_cap
-	name = "Russian Empire Cap"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/HoS/beret/nri/cap/armorless
-
-/datum/gear/neck/cape_blue
-	name = "Blue Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/cape_blue
-
-/datum/gear/neck/armplate_blue
-	name = "Blue Armplate"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path =/obj/item/clothing/neck/cloak/armplate_blue
-
-/datum/gear/neck/sol_cape
-	name = "SolFed Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/cape
-
-/datum/gear/neck/nri_cape
-	name = "Russian Empire Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/nri_cape
-
-// start bluemoon edit - Katana Zero
-
-/datum/gear/head/chronos_beret
-	name = "New Mecca Beret"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/beret/chronos
-
-/datum/gear/uniform/chronos_uniform
-	name = "New Mecca Uniform"
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	path = /obj/item/clothing/under/chronos
-
-/datum/gear/neck/chronos_cape
-	name = "New Mecca Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/chronos
-
 // end bluemoon edit - Katana Zero
-
-/datum/gear/backpack/flag
-	name = "Flag"
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	path = /obj/item/sign/flag
-
-/datum/gear/backpack/sol_poster
-	name = "SolFed poster"
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	path = /obj/item/poster/sol
-
-/datum/gear/backpack/nri_poster
-	name = "NRI poster"
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	path = /obj/item/poster/nri
 
 /obj/item/card/id/sol_citizen
 	name = "SolFed Citizen ID"
@@ -248,21 +139,6 @@
 	assignment = "Blumenland Citizen"
 	uses_overlays = FALSE
 	card_sticker = TRUE
-
-/datum/gear/hands/sol_citizen
-	name = "Solar Federation Citizen ID"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/sol_citizen
-
-/datum/gear/hands/nri_citizen
-	name = "New Russian Empire Citizen ID"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/nri_citizen
-
-/datum/gear/hands/blumenland_citizen
-	name = "Blumenland Citizen ID"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/blumenland_citizen
 
 //// The default nun robe change to uniform slot
 

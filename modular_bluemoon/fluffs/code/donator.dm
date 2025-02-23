@@ -68,7 +68,7 @@
 /datum/gear/donator/bm/gaston
 	name = "Gaston"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/chaotic_toaster/gaston
+	path = /obj/item/toy/plush/bm/gaston
 	ckeywhitelist = list("gastonix")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
@@ -341,28 +341,28 @@
 /datum/gear/donator/bm/emma_plush
 	name = "Emma Plush"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/mammal/fox/emma
+	path = /obj/item/toy/plush/bm/emma
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/shiro_plush
 	name = "Shiro Plush"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/mammal/fox/emma/shiro
+	path = /obj/item/toy/plush/bm/emma/shiro
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/raita_plush
 	name = "Raita Plush"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/mammal/fox/emma/raita
+	path = /obj/item/toy/plush/bm/emma/raita
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/who_plush
 	name = "Security Officer Plush"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/nukeplushie/who
+	path = /obj/item/toy/plush/bm/who
 	ckeywhitelist = list("stgs")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
 
@@ -426,7 +426,7 @@
 /datum/gear/donator/bm/omega_plushie
 	name = "Omega Plushie"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/nukeplushie/omega
+	path = /obj/item/toy/plush/bm/omega
 	ckeywhitelist = list("malopharan")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
 
@@ -468,7 +468,7 @@
 /datum/gear/donator/bm/vance_plush
 	name = "Vance Plush"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/sergal/judas/vance
+	path = /obj/item/toy/plush/bm/judas/vance
 	ckeywhitelist = list("littlemouse2729")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
 
@@ -698,7 +698,7 @@
 /datum/gear/donator/bm/Doctor_K
 	name = "Doctor K plushie"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/doctor_k
+	path = /obj/item/toy/plush/bm/doctor_k
 	ckeywhitelist = list("sanecman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
@@ -1227,6 +1227,19 @@
 
 /datum/gear/donator/bm/savannah_plusie
 	name = "Plushy Savannah"
-	path = /obj/item/toy/plush/plushy_savannah
+	path = /obj/item/toy/plush/bm/plushy_savannah
 	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/tavern_skirt
+	name = "Tavern skirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/tavern_skirt
+	ckeywhitelist = list("fedor1545")
+	subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bm/elf_bottle
+	name = "Potion bottle"
+	path = /obj/item/reagent_containers/glass/beaker/elf_bottle
+	ckeywhitelist = list("fedor1545")
+	subcategory = LOADOUT_SUBCATEGORIES_DON04

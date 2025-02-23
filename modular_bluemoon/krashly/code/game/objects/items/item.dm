@@ -329,29 +329,7 @@
 	path = /obj/item/hand_mirror
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
-/datum/gear/neck/windy_scarf
-	name = "A windy scarf"
-	path = /obj/item/clothing/neck/windy_scarf
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
-/datum/gear/head/bow
-	name = "A polychromic bow"
-	path = /obj/item/toy/fluff/bant
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
 /////// Заказ Алхимика. ///////
-// Общие шмотки в лодаут:
-
-/datum/gear/mask/pipe
-	name = "Smoking Pipe"
-	path = /obj/item/clothing/mask/cigarette/pipe
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
-/datum/gear/head/rose
-	name = "Rose"
-	path = /obj/item/grown/rose
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
 // Рескин шмоток:
 
 /obj/item/paper/book_alch
