@@ -64,8 +64,10 @@
 		),
 		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
 		"Acrador/Long-Eared" = list(
-			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets.dmi',
-			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets_onmob.dmi'
+			RESKIN_ICON_STATE = "acrador_helmet",
+			RESKIN_ITEM_STATE = "acrador_helmet",
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/clothing/hats.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
 		),
 		// BLUEMOON ADD END
 	)
@@ -169,8 +171,10 @@
 		),
 		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
 		"Acrador/Long-Eared" = list(
-			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets.dmi',
-			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets_onmob.dmi'
+			RESKIN_ICON_STATE = "acrador_helmetalt",
+			RESKIN_ITEM_STATE = "acrador_helmetalt",
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/clothing/hats.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
 		),
 		// BLUEMOON ADD END
 	)
