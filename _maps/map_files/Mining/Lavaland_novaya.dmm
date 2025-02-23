@@ -1,14 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaQ" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/status_display/evac{
 	layer = 4;
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -23,6 +20,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/eva)
+"abj" = (
+/obj/machinery/vending/snack/random,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
+/area/mine/xenoarch_area_b)
 "abn" = (
 /turf/closed/wall,
 /area/mine/living_quarters)
@@ -41,8 +45,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "adI" = (
@@ -75,10 +78,7 @@
 /area/lavaland/surface/outdoors)
 "adW" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -98,12 +98,16 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "aeu" = (
-/obj/effect/turf_decal/tile/purple,
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Ten";
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "aew" = (
 /obj/structure/closet/crate,
@@ -248,15 +252,11 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "ajt" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "ajQ" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
@@ -311,14 +311,11 @@
 /turf/closed/wall,
 /area/mine/xenoarch)
 "apS" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -342,8 +339,21 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
+"arJ" = (
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
+/area/mine/xenoarch_area_c)
 "asn" = (
 /obj/machinery/door/airlock/mining{
 	name = "Mining Station Storage";
@@ -413,8 +423,14 @@
 	c_tag = "Xenoarchaeology Seventeen";
 	dir = 8
 	},
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs/right,
 /area/mine/xenoarch_area_b)
+"axv" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/mine/xenoarch)
 "axz" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -425,7 +441,12 @@
 	name = "Xenoarch";
 	pixel_x = 24
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "axC" = (
 /obj/structure/stone_tile,
@@ -453,13 +474,15 @@
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "ayj" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 4
+	},
 /area/mine/xenoarch_area_c)
 "ayC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -526,7 +549,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "aCr" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -538,8 +561,10 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "aDe" = (
-/obj/effect/turf_decal/tile/purple,
-/turf/open/floor/plasteel/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "aDI" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -645,17 +670,18 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
 "aHt" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "aHW" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -713,13 +739,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "aKs" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
 	},
@@ -728,6 +747,12 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -744,8 +769,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "aLv" = (
@@ -756,8 +780,7 @@
 /area/mine/laborcamp)
 "aMl" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -778,12 +801,16 @@
 /turf/open/floor/plasteel/checker,
 /area/mine/living_quarters)
 "aMA" = (
-/obj/effect/turf_decal/tile/purple,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "aMG" = (
 /obj/machinery/door/firedoor,
@@ -859,6 +886,18 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
+"aQe" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/mine/xenoarch_area_c)
 "aQG" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
@@ -884,16 +923,10 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "aRv" = (
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/suit_storage_unit/industrial,
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "aSb" = (
@@ -927,14 +960,10 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "aVC" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/suit_storage_unit/mining,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple,
-/obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "aVT" = (
@@ -990,13 +1019,12 @@
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "aZA" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/status_display/evac{
 	layer = 4;
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -1071,6 +1099,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+"bbR" = (
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/side,
+/area/mine/xenoarch_area_c)
 "bbU" = (
 /obj/effect/turf_decal/tile/dark{
 	dir = 8
@@ -1107,16 +1145,15 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "bdM" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -1129,13 +1166,17 @@
 /turf/open/floor/plasteel/dark/side,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "bek" = (
-/obj/structure/window/plastitanium,
-/obj/machinery/door/poddoor{
-	id = "interdynecargowest"
+/obj/structure/table,
+/obj/item/folder/white,
+/obj/item/clothing/neck/stethoscope,
+/obj/machinery/vending/wallmed{
+	pixel_y = 28
 	},
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/mine/xenoarch_area_c)
 "bep" = (
 /obj/machinery/autolathe/hacked,
 /obj/effect/turf_decal/bot,
@@ -1170,15 +1211,9 @@
 /area/mine/xenoarch_area_c)
 "bfO" = (
 /obj/structure/closet/wardrobe/xenoarch,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/disposalpipe/segment,
 /obj/item/clothing/glasses/meson,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "bfR" = (
@@ -1197,7 +1232,7 @@
 "bgG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs/medium,
 /area/mine/xenoarch)
 "bhp" = (
 /obj/structure/table,
@@ -1443,16 +1478,15 @@
 /area/mine/xenoarch_area_c)
 "brT" = (
 /obj/structure/closet/wardrobe/xenoarch,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/disposalpipe/segment,
 /obj/item/clothing/glasses/meson,
 /obj/item/radio/intercom{
 	dir = 8;
 	name = "Station Intercom (General)";
 	pixel_x = 28
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -1486,12 +1520,11 @@
 "bsh" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/cable/yellow,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -1502,10 +1535,13 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "bsQ" = (
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "bsT" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/simple/green/visible{
@@ -1514,10 +1550,12 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "bsX" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "buA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -1628,7 +1666,7 @@
 /area/mine/storage)
 "bxL" = (
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "bxN" = (
 /obj/machinery/hydroponics/constructable,
@@ -1641,10 +1679,7 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -1697,7 +1732,9 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/stairs/medium{
+	dir = 8
+	},
 /area/mine/xenoarch_area_c)
 "bBq" = (
 /obj/structure/stone_tile,
@@ -1806,13 +1843,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "bHO" = (
-/obj/machinery/door/poddoor{
-	id = "interdynelibrary"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/disposalpipe/segment{
+	dir = 1
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_c)
 "bId" = (
 /obj/machinery/limbgrower,
 /obj/effect/turf_decal/stripes/white/line,
@@ -1853,11 +1890,8 @@
 	pixel_y = 6
 	},
 /obj/item/pen,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -1877,7 +1911,7 @@
 	name = "Acid-Proof disposal pipe"
 	},
 /turf/closed/wall,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "bLV" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1895,10 +1929,7 @@
 /area/mine/xenoarch_area_c)
 "bMk" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "bMO" = (
@@ -1939,14 +1970,10 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/meter,
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 8
 	},
-/obj/machinery/meter,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "bOo" = (
@@ -1976,18 +2003,16 @@
 /obj/machinery/door/poddoor{
 	id = "interdynescience"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "bQd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "bQj" = (
@@ -2017,13 +2042,6 @@
 /area/mine/xenoarch_area_a)
 "bSD" = (
 /obj/machinery/vending/wardrobe/sec_wardrobe,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/structure/cable/yellow,
 /obj/machinery/power/apc{
 	areastring = "/area/mine/xenoarch";
@@ -2031,6 +2049,7 @@
 	name = "Xenoarch";
 	pixel_x = 24
 	},
+/obj/effect/turf_decal/tile/red/anticorner/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "bTw" = (
@@ -2049,11 +2068,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "bTA" = (
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -2221,15 +2237,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "ccY" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "cdc" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2317,6 +2333,16 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark/side,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+"cfr" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
+/area/mine/xenoarch_area_b)
 "cfx" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2350,9 +2376,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "cgp" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -2441,7 +2465,7 @@
 "chF" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/engine,
 /area/mine/xenoarch_area_a)
 "cix" = (
 /obj/effect/turf_decal/tile/red,
@@ -2486,15 +2510,12 @@
 /area/lavaland/necropolis)
 "cnq" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Thirteen";
 	dir = 5
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -2607,8 +2628,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "ctz" = (
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "ctG" = (
@@ -2618,10 +2638,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 9
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "ctP" = (
@@ -2629,10 +2646,6 @@
 /area/lavaland/surface/outdoors)
 "ctY" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -2640,6 +2653,9 @@
 	dir = 8;
 	name = "Station Intercom (General)";
 	pixel_x = 28
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -2703,6 +2719,14 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel,
 /area/mine/storage)
+"czR" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 1
+	},
+/area/mine/xenoarch_area_c)
 "cAe" = (
 /obj/structure/anvil/obtainable/basalt,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -2720,8 +2744,7 @@
 /obj/machinery/door/poddoor{
 	id = "interdynescience"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "cAO" = (
@@ -2740,6 +2763,15 @@
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"cCf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark/side,
+/area/mine/xenoarch_area_c)
 "cCW" = (
 /obj/structure/noticeboard{
 	dir = 8;
@@ -2800,6 +2832,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"cEB" = (
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
+/area/mine/xenoarch_area_b)
 "cEP" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -2829,7 +2869,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/production)
 "cGZ" = (
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs/left,
 /area/mine/xenoarch_area_b)
 "cHs" = (
 /obj/machinery/door/airlock/medical/glass{
@@ -2944,11 +2984,12 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "cNz" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/structure/chair/sofa/corp/left,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corp/left,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "cOd" = (
 /obj/machinery/firealarm{
@@ -2976,13 +3017,12 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "cQr" = (
-/obj/machinery/light{
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "cQt" = (
 /obj/structure/stone_tile/cracked{
@@ -2991,16 +3031,15 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cRx" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/airalarm{
 	pixel_y = 23
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -3035,11 +3074,11 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "cTf" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -3072,7 +3111,12 @@
 /obj/effect/turf_decal/caution{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "cUZ" = (
 /obj/machinery/processor,
@@ -3190,13 +3234,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
+/obj/effect/turf_decal/tile/red/anticorner/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "cYZ" = (
@@ -3238,14 +3276,11 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "cZW" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/turf/open/floor/wood,
+/area/mine/xenoarch_area_b)
 "dad" = (
 /turf/closed/indestructible/riveted/boss/see_through,
 /area/lavaland/necropolis)
@@ -3314,7 +3349,12 @@
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "ddD" = (
 /obj/machinery/power/terminal{
@@ -3456,8 +3496,7 @@
 /obj/machinery/door/poddoor{
 	id = "interdynecomm"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "dlR" = (
@@ -3550,21 +3589,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "dpR" = (
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3577,16 +3614,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "dro" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "drD" = (
@@ -3631,7 +3667,7 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "dtU" = (
 /obj/structure/table/reinforced,
@@ -3834,8 +3870,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "dCY" = (
@@ -3908,12 +3943,11 @@
 /turf/open/floor/clockwork/reebe,
 /area/lavaland/necropolis)
 "dGt" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/table,
 /obj/item/xenoarch/help/scanner,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "dGC" = (
@@ -3923,7 +3957,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "dGL" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -3938,16 +3972,16 @@
 /obj/machinery/door/airlock{
 	id_tag = "dorm3L"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "dHx" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "dHA" = (
@@ -3989,6 +4023,14 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
+"dKr" = (
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 4
+	},
+/area/mine/xenoarch_area_c)
 "dKw" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
@@ -4048,11 +4090,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -4164,6 +4203,10 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
+"dQJ" = (
+/obj/effect/turf_decal/stripes/corner,
+/turf/open/floor/plasteel/rivets/corner,
+/area/mine/xenoarch_area_c)
 "dRQ" = (
 /obj/structure/table/wood,
 /obj/item/storage/dice,
@@ -4191,7 +4234,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_b)
 "dUv" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -4208,13 +4251,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "dVa" = (
-/obj/machinery/door/poddoor{
-	id = "interdynecargo"
-	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_b)
 "dWb" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -4265,13 +4303,10 @@
 /area/mine/xenoarch)
 "dYl" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/meter,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
-/obj/machinery/meter,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "dYT" = (
@@ -4361,15 +4396,12 @@
 /obj/machinery/door/airlock{
 	id_tag = "dorm1L"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "ecb" = (
 /obj/structure/table,
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "ecN" = (
@@ -4397,6 +4429,11 @@
 	dir = 5
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
+"eeI" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/turf/closed/wall,
+/area/mine/xenoarch_area_c)
 "efo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -4491,19 +4528,23 @@
 /turf/open/floor/plating,
 /area/mine/maintenance)
 "eoR" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology One"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "epA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "epI" = (
 /obj/structure/fence/corner{
@@ -4521,25 +4562,21 @@
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "erk" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/structure/table,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 4
 	},
-/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "esf" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
+/area/mine/xenoarch_area_c)
 "esh" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -4575,10 +4612,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "etX" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "eub" = (
 /obj/structure/stone_tile{
@@ -4631,7 +4672,9 @@
 	pixel_y = 30
 	},
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_c)
 "evX" = (
 /obj/structure/stone_tile/cracked{
@@ -4672,8 +4715,7 @@
 /obj/machinery/door/poddoor{
 	id = "interdynecommsofficer"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "eyA" = (
@@ -4701,7 +4743,12 @@
 	name = "Station Intercom (General)";
 	pixel_x = -28
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "ezw" = (
 /obj/item/stack/rods/ten,
@@ -4728,7 +4775,7 @@
 /obj/structure/disposaloutlet,
 /obj/effect/turf_decal/stripes/end,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "eAB" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -4755,8 +4802,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "eBl" = (
@@ -4842,6 +4888,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
+"eHb" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
+/turf/open/floor/plasteel/rivets/large,
+/area/mine/xenoarch_area_c)
 "eHd" = (
 /turf/open/water/safe,
 /area/mine/xenoarch_area_c)
@@ -4896,15 +4949,11 @@
 /turf/open/floor/plasteel,
 /area/mine/eva)
 "eKf" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "eKp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
@@ -4938,7 +4987,9 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/stairs/right{
+	dir = 8
+	},
 /area/mine/xenoarch_area_c)
 "eLy" = (
 /obj/machinery/chem_dispenser/fullupgrade,
@@ -4950,20 +5001,13 @@
 /turf/open/floor/carpet/black,
 /area/mine/storage)
 "eMm" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_b)
 "eNx" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/bot,
@@ -5073,8 +5117,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "eTd" = (
@@ -5163,15 +5206,12 @@
 /turf/open/floor/circuit,
 /area/mine/maintenance)
 "eZg" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
-	dir = 4;
-	name = "Acid-Proof disposal pipe"
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "eZz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -5181,14 +5221,16 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "fae" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "faq" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -5206,7 +5248,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "faW" = (
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/yellow{
@@ -5312,12 +5354,11 @@
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "ffc" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 30
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -5390,11 +5431,14 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
-"fjn" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
+"fiE" = (
+/obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
+/turf/open/floor/plasteel/rivets,
+/area/mine/xenoarch_area_c)
+"fjn" = (
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "fjt" = (
@@ -5416,6 +5460,23 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/checker,
 /area/mine/living_quarters)
+"fks" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/research/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/mine/xenoarch_area_c)
 "fkI" = (
 /obj/structure/table/reinforced/brass,
 /obj/structure/stone_tile/slab,
@@ -5426,7 +5487,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "flg" = (
 /obj/machinery/door/airlock/mining/glass{
 	name = "Cargo Bay";
@@ -5460,24 +5521,18 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "fmQ" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
+/area/mine/xenoarch_area_c)
 "fnv" = (
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "fny" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/structure/disposalpipe/segment{
-	dir = 1
-	},
-/turf/open/floor/plasteel/stairs,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "fnD" = (
 /obj/item/kirbyplants{
@@ -5611,6 +5666,15 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"fwf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/mine/xenoarch_area_b)
 "fwp" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/yellow{
@@ -5714,10 +5778,7 @@
 /turf/open/floor/engine/o2,
 /area/mine/xenoarch_area_a)
 "fCt" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "fCF" = (
@@ -5734,9 +5795,8 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/necropolis)
 "fCX" = (
-/obj/structure/window/plastitanium,
 /obj/structure/disposalpipe/segment,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "fDt" = (
@@ -5796,27 +5856,21 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "fGZ" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "fHk" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -5903,10 +5957,6 @@
 /turf/open/floor/carpet/royalblue,
 /area/mine/storage)
 "fLy" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/table,
 /obj/item/radio/intercom{
 	dir = 8;
@@ -5914,6 +5964,9 @@
 	pixel_x = 28
 	},
 /obj/item/xenoarch/help/scanner,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "fMe" = (
@@ -5936,21 +5989,18 @@
 /area/mine/xenoarch_area_c)
 "fMI" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "fNO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "fOB" = (
 /obj/structure/stone_tile,
@@ -5992,6 +6042,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
+"fPP" = (
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/mine/xenoarch_area_b)
 "fPW" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
@@ -6192,10 +6248,8 @@
 /area/mine/production)
 "gak" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "gax" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -6224,12 +6278,11 @@
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -6369,11 +6422,10 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "ggV" = (
-/obj/structure/window/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "interdynedorms"
 	},
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "gho" = (
@@ -6440,15 +6492,16 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "gkY" = (
 /obj/structure/closet/wardrobe/xenoarch,
-/obj/effect/turf_decal/tile/purple{
+/obj/item/clothing/glasses/meson,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
-/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "gmF" = (
@@ -6482,14 +6535,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -6547,10 +6597,6 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/lavaland/unpowered)
 "gsu" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
@@ -6558,8 +6604,9 @@
 	c_tag = "Xenoarchaeology Eight";
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "gui" = (
 /obj/structure/fence/door{
 	dir = 4
@@ -6612,8 +6659,7 @@
 "gxh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "gyQ" = (
@@ -6735,7 +6781,12 @@
 	c_tag = "Xenoarchaeology Five";
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "gCt" = (
 /obj/machinery/chem_master,
@@ -6757,13 +6808,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "gDv" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "gDw" = (
@@ -6785,12 +6832,11 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "gFp" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -6840,16 +6886,15 @@
 	},
 /area/mine/living_quarters)
 "gGX" = (
-/obj/machinery/firealarm{
-	pixel_y = 24
+/obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
+/turf/open/floor/plasteel/stairs/left{
+	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "gHh" = (
 /obj/effect/turf_decal/stripes/line{
@@ -6861,7 +6906,7 @@
 /obj/machinery/door/airlock{
 	id_tag = "dorm2L"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "gHO" = (
 /obj/effect/turf_decal/stripes/line,
@@ -6902,7 +6947,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "gJE" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
@@ -6916,15 +6966,12 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_a)
 "gJF" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "gKn" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -7093,24 +7140,21 @@
 	dir = 2
 	},
 /turf/closed/wall,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "gSM" = (
 /obj/machinery/light/small,
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/mine/maintenance)
 "gTf" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "gTj" = (
 /turf/open/floor/engine/o2,
 /area/mine/xenoarch_area_a)
@@ -7126,15 +7170,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "gTN" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/table,
 /obj/machinery/newscaster{
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -7185,7 +7226,12 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "gYe" = (
 /obj/machinery/hydroponics/constructable,
@@ -7247,10 +7293,7 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -7313,11 +7356,8 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
 /obj/machinery/light,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "hhj" = (
@@ -7332,14 +7372,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "hhv" = (
-/obj/structure/grille,
-/obj/structure/window/plastitanium,
-/turf/open/floor/plasteel/dark,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "hjr" = (
 /obj/structure/cable/yellow{
@@ -7436,9 +7473,8 @@
 /obj/machinery/door/poddoor{
 	id = "interdynecargo"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plasteel/dark,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "hqv" = (
 /turf/closed/wall,
@@ -7453,11 +7489,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "hqT" = (
@@ -7548,14 +7583,11 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "hwZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "hyr" = (
@@ -7577,7 +7609,7 @@
 	name = "Acid-Proof disposal pipe"
 	},
 /turf/closed/wall,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "hyG" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -7619,11 +7651,12 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/turf_decal/tile/purple,
+/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/dark_green,
+/turf/open/floor/plasteel/dark/side,
 /area/mine/xenoarch_area_c)
 "hzR" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -7718,17 +7751,14 @@
 /area/mine/xenoarch_area_c)
 "hCK" = (
 /obj/structure/tank_dispenser/oxygen,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -7799,13 +7829,12 @@
 /area/mine/mechbay)
 "hFL" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Fourteen";
 	dir = 9
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -7845,24 +7874,15 @@
 /turf/open/floor/grass/grass0,
 /area/mine/xenoarch_area_b)
 "hHR" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/wood,
+/area/mine/xenoarch_area_b)
 "hIm" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "hJX" = (
 /obj/structure/cable{
@@ -7880,12 +7900,6 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "hKu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -7895,15 +7909,19 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "hKZ" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "hLu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 1
@@ -7913,17 +7931,23 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
-"hLQ" = (
-/obj/effect/turf_decal/tile/purple{
+/area/mine/xenoarch_area_b)
+"hLN" = (
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half{
 	dir = 4
 	},
+/area/mine/xenoarch_area_b)
+"hLQ" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/purple{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "hMm" = (
@@ -7939,7 +7963,12 @@
 	pixel_y = 24
 	},
 /obj/machinery/vending/clothing,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "hNj" = (
 /obj/structure/window/reinforced{
@@ -8037,7 +8066,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "hRj" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8216,15 +8245,17 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "ibh" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "icc" = (
 /obj/structure/table/glass,
@@ -8323,10 +8354,7 @@
 	c_tag = "Xenoarchaeology Fifteen";
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -8439,10 +8467,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "ipK" = (
@@ -8495,7 +8520,12 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "ist" = (
 /obj/machinery/firealarm{
@@ -8512,11 +8542,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/necropolis)
 "isY" = (
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -8536,15 +8562,12 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "ith" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "ium" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -8561,16 +8584,12 @@
 	name = "Station Intercom (General)";
 	pixel_x = -28
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red,
 /obj/item/assembly/flash/handheld,
 /obj/item/crowbar,
 /obj/item/radio/off,
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "iuS" = (
@@ -8687,6 +8706,9 @@
 	pixel_x = 24
 	},
 /obj/effect/landmark/start/medical_doctor,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "iBy" = (
@@ -8701,14 +8723,11 @@
 /area/ruin/lavaland/unpowered/ash_walkers)
 "iBK" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -8722,13 +8741,13 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/production)
 "iCK" = (
-/obj/structure/window/plastitanium,
-/obj/machinery/door/poddoor{
-	id = "interdynemedbay"
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
 	},
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/medbay)
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 4
+	},
+/area/mine/xenoarch_area_c)
 "iDq" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block{
@@ -8737,33 +8756,27 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "iDB" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
 	},
-/obj/machinery/airalarm{
-	pixel_y = 23
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "iDI" = (
 /obj/structure/tank_dispenser/oxygen,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "iEq" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -8802,14 +8815,8 @@
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "iIx" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -8848,18 +8855,12 @@
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "iLd" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "iMp" = (
 /obj/machinery/suit_storage_unit/syndicate,
 /obj/effect/turf_decal/bot,
@@ -9039,9 +9040,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "iXt" = (
 /obj/structure/stone_tile{
@@ -9063,7 +9062,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "iYB" = (
 /obj/structure/toilet{
@@ -9076,14 +9075,11 @@
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "iZD" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -9225,10 +9221,7 @@
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -9326,15 +9319,14 @@
 /area/lavaland/surface/outdoors)
 "jlH" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/recharger{
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -9354,18 +9346,17 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/necropolis)
 "jmr" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "jmw" = (
@@ -9564,23 +9555,21 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "jvd" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "jwa" = (
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/structure/table,
 /obj/machinery/recharger{
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -9630,10 +9619,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "jyg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "jyh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -9666,9 +9652,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "jzp" = (
 /obj/structure/stone_tile/cracked{
@@ -9693,17 +9677,14 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "jAU" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/bin,
 /obj/machinery/status_display/evac{
 	layer = 4;
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -9923,6 +9904,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+"jLE" = (
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 8
+	},
+/area/mine/xenoarch_area_b)
 "jMD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -9963,23 +9952,19 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "jQv" = (
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/open/floor/plasteel,
-/area/mine/xenoarch_area_a)
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_b)
 "jRc" = (
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -9988,8 +9973,7 @@
 /obj/machinery/door/poddoor{
 	id = "interdynecargo"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "jRv" = (
@@ -10010,7 +9994,7 @@
 	},
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "jSs" = (
 /obj/structure/stone_tile{
@@ -10150,7 +10134,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "jZD" = (
 /obj/structure/stone_tile/cracked,
@@ -10194,12 +10178,6 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "kbf" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -10212,17 +10190,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "kbR" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -10288,14 +10266,11 @@
 /area/ruin/lavaland/unpowered/ash_walkers)
 "kgz" = (
 /obj/machinery/atmospherics/components/binary/volume_pump,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -10370,6 +10345,12 @@
 /obj/effect/turf_decal/tile/dark,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+"khP" = (
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/mine/xenoarch_area_c)
 "khQ" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/surrounding_tile{
@@ -10495,14 +10476,11 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "knx" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/table,
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "kox" = (
@@ -10535,7 +10513,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "kqh" = (
 /obj/structure/disposalpipe/segment,
@@ -10547,9 +10525,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "kqs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -10677,7 +10653,7 @@
 	dir = 5
 	},
 /turf/closed/wall,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "kwQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/jukebox/disco{
@@ -10698,11 +10674,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -10735,7 +10708,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "kzt" = (
 /obj/machinery/light/small{
@@ -10767,7 +10740,9 @@
 /area/mine/living_quarters)
 "kCi" = (
 /obj/machinery/bookbinder,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "kCY" = (
 /obj/machinery/vending/coffee,
@@ -10795,7 +10770,7 @@
 "kEU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "kFb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/visible{
@@ -10835,16 +10810,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "kGi" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "kGO" = (
 /obj/effect/turf_decal/arrows{
 	dir = 1
@@ -10946,15 +10923,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "kKt" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -10962,6 +10930,12 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -11000,8 +10974,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "kLj" = (
@@ -11011,7 +10984,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "kLn" = (
 /obj/machinery/power/terminal{
@@ -11030,14 +11005,14 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "kMS" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/junction{
 	dir = 8
 	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "kNL" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/item/reagent_containers/glass/bucket/wood,
@@ -11062,10 +11037,7 @@
 /turf/open/floor/plasteel/checker,
 /area/mine/living_quarters)
 "kOL" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -11075,16 +11047,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/plasteel/dark,
 /area/mine/maintenance)
 "kPF" = (
@@ -11097,10 +11060,7 @@
 /turf/closed/wall,
 /area/mine/laborcamp)
 "kQd" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -11138,10 +11098,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "kSh" = (
@@ -11186,14 +11143,14 @@
 /turf/open/floor/plasteel/white,
 /area/mine/living_quarters)
 "kTA" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -11224,7 +11181,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "kUN" = (
 /obj/effect/turf_decal/siding/dark,
@@ -11259,14 +11221,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_c)
 "kVR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -11280,6 +11241,9 @@
 	normaldoorcontrol = 1;
 	pixel_x = -28;
 	specialfunctions = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
@@ -11442,12 +11406,8 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "leg" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -11457,7 +11417,10 @@
 	dir = 1
 	},
 /obj/machinery/disposal/bin,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/anticorner,
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "lfi" = (
 /obj/structure/stone_tile{
@@ -11478,7 +11441,7 @@
 	},
 /obj/item/poster/random_contraband,
 /turf/open/floor/plating,
-/area/mine/maintenance)
+/area/mine/xenoarch_area_c)
 "lfy" = (
 /obj/structure/table,
 /obj/item/stack/ore/slag{
@@ -11688,14 +11651,8 @@
 /area/ruin/lavaland/unpowered/ash_walkers)
 "lqk" = (
 /obj/structure/chair/sofa/corp/left,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -11755,10 +11712,7 @@
 /area/mine/storage)
 "lsn" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "lsE" = (
@@ -11796,11 +11750,8 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -11811,14 +11762,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 6
 	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -11859,13 +11804,7 @@
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "lyi" = (
@@ -11925,17 +11864,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "lAc" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
+	},
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -12113,13 +12046,13 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "lHk" = (
-/obj/machinery/door/poddoor{
-	id = "interdynedorms"
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "lHA" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -12163,13 +12096,10 @@
 /turf/open/floor/circuit/telecomms,
 /area/mine/maintenance)
 "lIm" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "lIx" = (
 /obj/structure/disposalpipe/segment,
@@ -12191,6 +12121,15 @@
 	id_tag = "xp2"
 	},
 /turf/open/floor/plasteel/white,
+/area/mine/xenoarch_area_c)
+"lJd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "lJf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -12435,14 +12374,11 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "lTO" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -12483,7 +12419,7 @@
 /obj/structure/disposalpipe/junction/flip{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "lWM" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12501,7 +12437,7 @@
 /area/mine/storage)
 "lWZ" = (
 /obj/structure/table,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "lXc" = (
 /obj/structure/table/reinforced,
@@ -12576,12 +12512,8 @@
 /obj/structure/sign/poster/official/random{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -12594,8 +12526,7 @@
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -12635,17 +12566,19 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "met" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Three";
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "meu" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/machinery/light{
@@ -12700,13 +12633,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/machinery/modular_computer/console/preset/id,
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "mfw" = (
@@ -12884,10 +12814,8 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "moF" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "mpc" = (
 /obj/structure/table,
@@ -12926,7 +12854,12 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "mql" = (
 /obj/structure/table/glass,
@@ -13029,10 +12962,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/power/apc{
 	areastring = "/area/mine/xenoarch";
 	dir = 4;
@@ -13042,6 +12971,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "mwb" = (
@@ -13050,14 +12982,10 @@
 	departmentType = 5;
 	pixel_y = 30
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/machinery/computer/security,
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
 	dir = 4
 	},
-/obj/machinery/computer/security,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "mxH" = (
@@ -13195,13 +13123,12 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "mCD" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Eleven";
 	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -13211,14 +13138,10 @@
 /area/mine/production)
 "mDc" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/item/relic,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 8
 	},
-/obj/item/relic,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "mDn" = (
@@ -13401,16 +13324,15 @@
 /turf/open/floor/plasteel/smooth/diagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "mLT" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "mLY" = (
 /obj/structure/closet/crate/science,
@@ -13455,7 +13377,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "mMZ" = (
 /obj/structure/bookcase/random/reference,
@@ -13616,14 +13541,14 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "mTC" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 9
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "mTR" = (
 /obj/item/flashlight/lamp/green{
@@ -13638,6 +13563,12 @@
 /obj/item/bodypart/head/robot,
 /turf/open/floor/carpet/black,
 /area/mine/storage)
+"mUB" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/mine/xenoarch_area_c)
 "mUD" = (
 /obj/structure/fluff/drake_statue,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -13696,11 +13627,13 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "mWX" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/dark_green{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 1
+	},
+/area/mine/xenoarch_area_c)
 "mWY" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -13768,10 +13701,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "nam" = (
@@ -13789,20 +13719,22 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/storage)
 "naP" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "naU" = (
 /obj/structure/frame,
 /turf/open/floor/plating,
-/area/mine/maintenance)
+/area/mine/xenoarch_area_c)
 "naW" = (
 /obj/machinery/light,
 /obj/machinery/vending/cola/random,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "nbg" = (
 /obj/structure/stone_tile/block,
@@ -13826,14 +13758,12 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "nbq" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/status_display/evac{
 	layer = 4;
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "nbO" = (
 /obj/structure/bed,
@@ -13845,13 +13775,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "ncp" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "ncZ" = (
@@ -13923,29 +13847,29 @@
 /obj/machinery/airalarm{
 	pixel_y = 23
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Sixteen"
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/cookie,
 /obj/item/storage/fancy/donut_box,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "nhD" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_c)
 "nir" = (
 /obj/machinery/door/airlock/research{
 	name = "Science Division";
@@ -13997,20 +13921,17 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "njK" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/anticorner,
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 1
+	},
+/area/mine/xenoarch_area_c)
 "njN" = (
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
@@ -14105,10 +14026,7 @@
 /area/lavaland/necropolis)
 "npd" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -14119,7 +14037,7 @@
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "npX" = (
 /obj/structure/cable/yellow{
@@ -14149,8 +14067,7 @@
 /obj/machinery/door/poddoor{
 	id = "interdynemedbay"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "nsf" = (
@@ -14202,7 +14119,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "nuy" = (
 /obj/machinery/door/firedoor,
@@ -14219,10 +14138,7 @@
 /area/mine/production)
 "nuF" = (
 /obj/structure/chair/sofa/corp/left,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -14275,7 +14191,7 @@
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_b)
 "nwy" = (
 /obj/item/toy/plush/gondola,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -14287,7 +14203,7 @@
 /turf/open/floor/wood,
 /area/mine/living_quarters)
 "nwQ" = (
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "nxo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -14301,7 +14217,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_b)
 "nxW" = (
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Security Checkpoint Lobby"
@@ -14310,11 +14226,8 @@
 	dir = 1
 	},
 /obj/structure/chair/sofa/corp/right,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -14508,7 +14421,7 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "nGI" = (
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs/left,
 /area/mine/xenoarch)
 "nGP" = (
 /obj/structure/table,
@@ -14579,11 +14492,8 @@
 /area/lavaland/surface/outdoors)
 "nIp" = (
 /obj/structure/chair/sofa/corp,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -14592,11 +14502,13 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "nIR" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "nJd" = (
 /obj/structure/flora/grass/jungle/b,
@@ -14613,7 +14525,7 @@
 /area/mine/xenoarch_area_a)
 "nKw" = (
 /obj/machinery/photocopier,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "nKK" = (
 /obj/machinery/computer/med_data{
@@ -14688,7 +14600,12 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "nOR" = (
 /obj/effect/turf_decal/tile/blue{
@@ -14885,15 +14802,12 @@
 /area/mine/storage)
 "oad" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/table,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
 /obj/item/strangerock,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "oaj" = (
@@ -15004,8 +14918,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_c)
 "ogk" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -15041,7 +14961,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "oie" = (
 /obj/structure/stone_tile{
@@ -15095,6 +15017,18 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/laborcamp)
+"ojZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/mine/xenoarch)
 "okr" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
 /obj/structure/stone_tile{
@@ -15236,7 +15170,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "opw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -15418,6 +15352,15 @@
 	dir = 10
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
+"oya" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/mine/xenoarch)
 "oyx" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Monitoring";
@@ -15527,8 +15470,11 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/maintenance)
 "oEO" = (
-/turf/open/floor/plating/beach/sand,
-/area/lavaland/surface/outdoors)
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/stairs/right{
+	dir = 1
+	},
+/area/mine/xenoarch_area_b)
 "oER" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -15537,7 +15483,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "oFw" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -15680,10 +15626,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "oNq" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -15740,7 +15683,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_c)
 "oPz" = (
 /obj/structure/stone_tile,
@@ -15866,7 +15811,13 @@
 	layer = 4;
 	pixel_x = -32
 	},
-/turf/open/floor/plasteel/stairs,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "oWW" = (
 /obj/effect/turf_decal/arrows,
@@ -15922,10 +15873,7 @@
 	c_tag = "Xenoarchaeology Seven";
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "oZZ" = (
@@ -16016,7 +15964,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "peE" = (
 /obj/structure/ore_box,
@@ -16126,15 +16076,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/requests_console{
 	department = "Xenoarchaeology";
 	pixel_y = 28
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -16147,10 +16094,7 @@
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "pqf" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -16171,9 +16115,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "prw" = (
 /obj/structure/stone_tile/slab,
@@ -16221,13 +16163,7 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "pts" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "ptN" = (
@@ -16254,16 +16190,16 @@
 /turf/closed/wall/r_wall,
 /area/lavaland/surface/outdoors)
 "pwc" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
 /obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -16283,17 +16219,13 @@
 /area/lavaland/surface/outdoors/explored)
 "pxP" = (
 /obj/structure/closet/wardrobe/xenoarch,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/item/clothing/glasses/meson,
 /obj/machinery/status_display/evac{
 	layer = 4;
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -16332,11 +16264,8 @@
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "pCs" = (
 /obj/machinery/portable_atmospherics/scrubber/huge/movable,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -16441,6 +16370,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/storage)
+"pIe" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/engine,
+/area/mine/xenoarch)
 "pIp" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -16468,15 +16401,9 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "pIZ" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "pJd" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
@@ -16519,11 +16446,9 @@
 /area/mine/production)
 "pNr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/structure/disposalpipe/junction/flip{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/dark,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "pOb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -16590,13 +16515,15 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "pRQ" = (
 /obj/structure/stone_tile/block{
@@ -16677,15 +16604,20 @@
 /turf/open/floor/plasteel/smooth/edge,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "pVc" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "pVt" = (
 /obj/structure/closet/crate,
@@ -16806,10 +16738,7 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "qbh" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -16937,10 +16866,15 @@
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "qgy" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
+/obj/structure/sign/poster/official/random{
+	pixel_x = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "qgF" = (
 /obj/structure/stone_tile/block{
@@ -17012,19 +16946,13 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
 "qjf" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/suit_storage_unit/mining,
 /obj/machinery/requests_console{
 	department = "Xenoarchaeology";
 	pixel_y = 28
+	},
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -17050,7 +16978,7 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "qjZ" = (
 /obj/structure/window/reinforced/survival_pod,
@@ -17073,11 +17001,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -17148,11 +17072,10 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -17163,7 +17086,7 @@
 /area/lavaland/surface/outdoors/explored)
 "qnn" = (
 /obj/structure/bookcase/random,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "qnE" = (
 /obj/machinery/door/airlock{
@@ -17275,11 +17198,8 @@
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
 /obj/machinery/light,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "qsH" = (
@@ -17318,13 +17238,10 @@
 /area/mine/laborcamp/security)
 "qwa" = (
 /obj/machinery/portable_atmospherics/scrubber/huge/movable,
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/machinery/light{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -17700,13 +17617,12 @@
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "qNp" = (
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -17714,10 +17630,7 @@
 /obj/structure/chair/sofa/corp{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/red/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "qNx" = (
@@ -17873,15 +17786,14 @@
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "qUc" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/table,
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
 /obj/item/strangerock,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "qUq" = (
@@ -17903,17 +17815,17 @@
 /turf/closed/wall/r_wall,
 /area/mine/laborcamp)
 "qVZ" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -18003,11 +17915,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "qZm" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -18190,13 +18099,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 6
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/meter,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
-/obj/machinery/meter,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "rjX" = (
@@ -18206,13 +18112,12 @@
 /obj/machinery/computer/shuttle/mining{
 	req_access = null
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
+/turf/open/floor/plasteel/rivets/half{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "rkt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -18240,7 +18145,7 @@
 "rkO" = (
 /obj/structure/disposalpipe/junction/flip,
 /turf/closed/wall,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "rkR" = (
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/medical/glass{
@@ -18331,14 +18236,11 @@
 /obj/structure/table,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/airalarm{
 	pixel_y = 23
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -18397,8 +18299,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/effect/turf_decal/plaque,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "rrH" = (
 /obj/machinery/door/airlock/external/glass,
@@ -18444,14 +18345,11 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "rtK" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -18461,10 +18359,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "ruW" = (
@@ -18481,6 +18376,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+"rvT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
+/area/mine/xenoarch_area_b)
 "rwl" = (
 /obj/structure/bed,
 /obj/machinery/iv_drip,
@@ -18489,7 +18392,9 @@
 /area/mine/xenoarch_area_c)
 "rwr" = (
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/stairs/left{
+	dir = 8
+	},
 /area/mine/xenoarch_area_c)
 "rwy" = (
 /obj/effect/turf_decal/tile/dark{
@@ -18514,11 +18419,12 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "rxy" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "ryA" = (
 /obj/item/storage/toolbox/syndicate,
@@ -18537,7 +18443,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green,
+/turf/open/floor/plasteel/dark/textured/corner,
 /area/mine/xenoarch_area_b)
 "rzH" = (
 /obj/machinery/disposal/bin,
@@ -18572,16 +18479,15 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
+	},
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -18647,13 +18553,18 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "rFl" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
-/turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "rFt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -18690,13 +18601,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/item/strangerock,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/item/strangerock,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "rIR" = (
@@ -18706,14 +18614,25 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "rJf" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "rKf" = (
 /obj/structure/window/reinforced{
@@ -18728,8 +18647,8 @@
 "rLj" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_c)
 "rLl" = (
 /obj/effect/turf_decal/tile/dark{
 	dir = 8
@@ -19026,10 +18945,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "rYG" = (
@@ -19136,7 +19052,9 @@
 /area/mine/xenoarch_area_c)
 "sfL" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_c)
 "sgn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -19145,13 +19063,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "sgH" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
@@ -19163,6 +19077,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -19228,9 +19145,13 @@
 /turf/open/floor/plasteel/dark/corner,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "skF" = (
-/obj/effect/turf_decal/tile/purple,
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "skL" = (
 /obj/structure/cable/yellow{
@@ -19340,14 +19261,8 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "ssM" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/table,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "suj" = (
@@ -19360,14 +19275,11 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "suN" = (
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/effect/turf_decal/tile/red/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "svi" = (
@@ -19378,13 +19290,13 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "svF" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Two"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "svX" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -19416,7 +19328,12 @@
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "swT" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -19452,16 +19369,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "syb" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/item/radio/intercom{
 	dir = 8;
 	name = "Station Intercom (General)";
 	pixel_x = -28
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -19491,13 +19408,10 @@
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "syK" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/suit_storage_unit/mining,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "syT" = (
@@ -19759,8 +19673,11 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "sOU" = (
-/turf/open/floor/plasteel/stairs,
-/area/mine/xenoarch_area_c)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/dark_green,
+/turf/open/floor/plasteel/dark/textured/corner,
+/area/mine/xenoarch_area_b)
 "sPc" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/cracked{
@@ -19973,6 +19890,12 @@
 /obj/item/book/granter/spell/sacredflame,
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
+"sXG" = (
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/mine/xenoarch_area_b)
 "sYr" = (
 /turf/open/floor/plating,
 /area/mine/storage)
@@ -19995,7 +19918,12 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "sZN" = (
 /turf/closed/mineral/random/volcanic,
@@ -20029,10 +19957,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "tce" = (
@@ -20094,13 +20021,10 @@
 /area/lavaland/surface/outdoors/explored)
 "teO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -20112,7 +20036,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "tfT" = (
 /obj/machinery/computer/pandemic,
@@ -20205,10 +20129,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "tkd" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -20293,6 +20214,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "trp" = (
@@ -20356,14 +20281,14 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 1
-	},
 /obj/machinery/computer/shuttle/mining/common{
 	dir = 1;
 	icon_state = "computer"
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/purple/half,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_c)
 "tuT" = (
 /obj/structure/ore_box,
@@ -20441,14 +20366,11 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "tym" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
@@ -20459,7 +20381,12 @@
 /obj/machinery/airalarm{
 	pixel_y = 23
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "tBf" = (
 /obj/structure/window/reinforced,
@@ -20467,16 +20394,19 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "tBs" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/airalarm{
 	pixel_y = 23
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
+/area/mine/xenoarch_area_c)
+"tBz" = (
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/stairs/right{
+	dir = 8
+	},
 /area/mine/xenoarch_area_c)
 "tBM" = (
 /obj/structure/barricade/wooden/crude,
@@ -20524,13 +20454,10 @@
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/machinery/light{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -20539,19 +20466,13 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 30
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/newscaster/security_unit{
 	pixel_x = -32
 	},
 /obj/machinery/computer/secure_data,
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "tCX" = (
@@ -20635,11 +20556,7 @@
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -20736,8 +20653,7 @@
 	name = "Security Checkpoint";
 	req_access_txt = "1"
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -20798,9 +20714,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/catwalk_floor{
-	icon_state = "catwalk_combined_example"
-	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "tSv" = (
 /obj/structure/cable/yellow{
@@ -20856,11 +20770,10 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "tUL" = (
-/obj/structure/window/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "interdynelibrary"
 	},
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "tVs" = (
@@ -20933,10 +20846,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tXI" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "tYd" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -20945,7 +20858,10 @@
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "tYl" = (
 /obj/machinery/vending/snack/random,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/anticorner,
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "tYq" = (
 /obj/machinery/door/airlock/public/glass{
@@ -21056,8 +20972,7 @@
 /obj/machinery/door/poddoor{
 	id = "interdynemedbay"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "ufD" = (
@@ -21307,8 +21222,7 @@
 /turf/open/floor/carpet,
 /area/mine/xenoarch_area_b)
 "upi" = (
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "upm" = (
@@ -21465,35 +21379,31 @@
 /area/mine/xenoarch)
 "uur" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "uvP" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "uwo" = (
 /obj/machinery/camera{
 	c_tag = "Xenoarchaeology Four";
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "uwp" = (
 /obj/machinery/atmospherics/miner/nitrogen,
@@ -21569,7 +21479,7 @@
 	pixel_x = 30
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "uCD" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -21599,9 +21509,8 @@
 /obj/machinery/door/poddoor{
 	id = "interdynecargowest"
 	},
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plasteel/dark,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "uCR" = (
 /obj/effect/turf_decal/vg_decals/atmos/nitrogen,
@@ -21691,8 +21600,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -21748,6 +21656,17 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
+"uMA" = (
+/obj/structure/chair/sofa/corp/left{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 8
+	},
+/area/mine/xenoarch_area_b)
 "uMH" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -21773,11 +21692,7 @@
 /obj/structure/table,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -21787,7 +21702,7 @@
 	dir = 1
 	},
 /obj/machinery/disposal/bin,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "uOj" = (
 /obj/structure/disposalpipe/segment,
@@ -21892,7 +21807,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "uUH" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -21958,16 +21878,16 @@
 /turf/closed/wall,
 /area/mine/xenoarch)
 "uXh" = (
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "uXD" = (
 /obj/structure/table,
 /obj/item/folder,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "uXT" = (
 /obj/structure/chair{
@@ -22005,10 +21925,7 @@
 /obj/structure/sign/poster/official/random{
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "uYN" = (
@@ -22119,7 +22036,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "vdm" = (
 /obj/effect/turf_decal/tile/dark{
 	dir = 8
@@ -22191,10 +22108,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "vly" = (
@@ -22262,18 +22176,15 @@
 /area/lavaland/necropolis)
 "voD" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/item/radio/intercom{
 	dir = 8;
 	name = "Station Intercom (General)";
 	pixel_x = -28
 	},
 /obj/item/strangerock,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "voK" = (
@@ -22333,7 +22244,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "vqZ" = (
 /turf/open/floor/plasteel/dark,
@@ -22464,10 +22380,7 @@
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "vwd" = (
@@ -22492,14 +22405,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/table,
 /obj/item/relic,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "vzP" = (
@@ -22550,6 +22460,16 @@
 	},
 /turf/open/floor/plasteel/checker,
 /area/mine/living_quarters)
+"vBL" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/mine/xenoarch_area_c)
 "vDQ" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 8
@@ -22587,7 +22507,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "vFS" = (
 /obj/effect/turf_decal/stripes/line,
@@ -22699,7 +22619,12 @@
 	pixel_x = 32
 	},
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "vMq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -22733,10 +22658,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -22845,9 +22770,8 @@
 	id = "interdynecargoout"
 	},
 /obj/structure/fans/tiny,
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plasteel/dark,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "vVc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
@@ -22934,15 +22858,17 @@
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "wan" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/item/radio/intercom{
 	dir = 8;
 	name = "Station Intercom (General)";
 	pixel_x = -28
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "waK" = (
 /obj/structure/stone_tile/block{
@@ -23057,13 +22983,12 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -23119,13 +23044,10 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "wjn" = (
-/obj/effect/turf_decal/tile/yellow{
+/obj/machinery/suit_storage_unit/industrial,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "wjr" = (
@@ -23166,10 +23088,7 @@
 	dir = 5
 	},
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "wmg" = (
@@ -23187,12 +23106,11 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "woc" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 30
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -23245,7 +23163,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/large,
 /area/mine/xenoarch_area_c)
 "wry" = (
 /obj/structure/flora/ash/stem_shroom,
@@ -23347,15 +23265,12 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "wzI" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "wzS" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile{
@@ -23363,15 +23278,15 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"wAj" = (
+/turf/open/floor/plasteel/stairs/right,
+/area/mine/xenoarch)
 "wAo" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -23408,10 +23323,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "wBP" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/machinery/door/firedoor,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -23419,6 +23330,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "wCv" = (
@@ -23433,7 +23347,12 @@
 	department = "Xenoarchaeology";
 	pixel_x = 32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
 /area/mine/xenoarch_area_b)
 "wCY" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -23453,10 +23372,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "wDS" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
@@ -23470,6 +23385,7 @@
 	c_tag = "Xenoarchaeology Twelve";
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "wDU" = (
@@ -23539,13 +23455,15 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "wEP" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_c)
 "wEZ" = (
 /obj/structure/table,
@@ -23581,7 +23499,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_b)
 "wHz" = (
 /obj/structure/table,
@@ -23696,7 +23614,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs/medium,
 /area/mine/xenoarch_area_b)
 "wKQ" = (
 /obj/machinery/light,
@@ -23746,18 +23664,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "wNy" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing/corner{
@@ -23769,14 +23686,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -23880,8 +23794,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -23911,7 +23824,14 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/rivets/half{
+	dir = 4
+	},
+/area/mine/xenoarch_area_c)
+"wUQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/turf/closed/wall,
 /area/mine/xenoarch_area_c)
 "wUX" = (
 /obj/structure/stone_tile,
@@ -23940,10 +23860,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "wWh" = (
@@ -24011,13 +23928,13 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wXA" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/airalarm{
 	pixel_y = 23
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "wYB" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -24081,27 +23998,21 @@
 /turf/open/floor/plasteel,
 /area/mine/eva)
 "xaC" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
 "xaT" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "xaW" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -24115,6 +24026,9 @@
 	dir = 4;
 	name = "Xenoarch";
 	pixel_x = 24
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/mechbay)
@@ -24155,10 +24069,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/dark_green/half{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "xcc" = (
 /obj/item/melee/smith/hammer,
@@ -24170,14 +24084,14 @@
 /turf/open/floor/engine,
 /area/mine/storage)
 "xes" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -24190,13 +24104,11 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "xfJ" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "xgg" = (
 /obj/machinery/air_sensor/atmos/oxygen_tank,
@@ -24316,10 +24228,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/red/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "xlU" = (
@@ -24375,6 +24284,10 @@
 	},
 /turf/open/floor/plating,
 /area/mine/mechbay)
+"xoB" = (
+/obj/structure/table,
+/turf/open/floor/wood,
+/area/mine/xenoarch_area_b)
 "xpb" = (
 /obj/machinery/hydroponics/soil,
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -24433,10 +24346,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -24446,7 +24356,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/mine/xenoarch_area_b)
 "xrJ" = (
 /obj/structure/stone_tile/cracked{
@@ -24542,14 +24452,11 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "xwr" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
@@ -24667,7 +24574,11 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "xzO" = (
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/plasteel/stairs/left{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "xzX" = (
 /obj/effect/spawner/structure/window,
@@ -24703,10 +24614,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -24735,10 +24645,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -24799,14 +24706,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "xFh" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
 /obj/structure/chair/sofa/corp/right,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
 /area/mine/xenoarch_area_c)
 "xFj" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
@@ -24916,15 +24824,19 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 8
+	},
+/area/mine/xenoarch_area_c)
 "xKz" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -24979,10 +24891,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "xNq" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "xNt" = (
@@ -25035,7 +24944,10 @@
 	dir = 1
 	},
 /obj/machinery/vending/kink,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/corner,
 /area/mine/xenoarch_area_b)
 "xQP" = (
 /obj/structure/window/reinforced{
@@ -25049,14 +24961,12 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "xRf" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
+/obj/effect/turf_decal/tile/dark_green/half,
+/turf/open/floor/plasteel/dark/textured/half,
+/area/mine/xenoarch_area_c)
 "xRp" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
@@ -25064,14 +24974,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "xRB" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -25143,7 +25053,12 @@
 /area/mine/storage)
 "xVb" = (
 /obj/machinery/vending/cola/random,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/anticorner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 4
+	},
 /area/mine/xenoarch_area_b)
 "xWX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
@@ -25190,13 +25105,10 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "yaM" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "ybe" = (
@@ -25239,7 +25151,12 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
 /area/mine/xenoarch_area_b)
 "ydw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -25261,10 +25178,7 @@
 /area/mine/eva)
 "yeE" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple{
+/obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -25283,14 +25197,11 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ygl" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
@@ -25299,7 +25210,7 @@
 	dir = 9
 	},
 /turf/closed/wall,
-/area/mine/xenoarch)
+/area/mine/xenoarch_area_c)
 "ygK" = (
 /obj/structure/stone_tile/slab,
 /turf/open/lava/smooth/lava_land_surface,
@@ -25339,14 +25250,17 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "yjv" = (
-/obj/effect/turf_decal/tile/purple,
-/turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/corner{
+	dir = 4
+	},
+/area/mine/xenoarch_area_b)
 "ylx" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
 	},
-/obj/structure/table/optable,
 /obj/structure/table/optable,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/white,
@@ -97946,7 +97860,7 @@ cAH
 orU
 utQ
 rsF
-bHO
+tUL
 aew
 hKr
 atH
@@ -98203,7 +98117,7 @@ cAH
 ral
 gfz
 oCh
-bHO
+tUL
 bUO
 ldP
 nFj
@@ -98460,7 +98374,7 @@ cAH
 ral
 gQc
 oCh
-bHO
+tUL
 vGd
 rPf
 cfp
@@ -98995,7 +98909,7 @@ jLD
 jLD
 nym
 ajd
-lHk
+ggV
 tfw
 tfw
 tfw
@@ -99252,7 +99166,7 @@ lIx
 rVU
 eUL
 kKl
-lHk
+ggV
 tfw
 tfw
 tfw
@@ -99497,7 +99411,7 @@ dcZ
 oKc
 dHA
 jUt
-bsQ
+hhv
 jLD
 oQS
 nXf
@@ -99509,7 +99423,7 @@ dqG
 qHq
 ice
 nXf
-lHk
+ggV
 tfw
 tfw
 tfw
@@ -99758,10 +99672,10 @@ hyK
 qXG
 eTb
 qXG
-bsQ
-bsQ
-bsQ
-bsQ
+hhv
+hhv
+hhv
+hhv
 clu
 pfq
 txC
@@ -102037,13 +101951,13 @@ tfw
 tfw
 tfw
 tfw
-dVa
+hqj
 qTC
 uCN
 wRl
 lJp
 aYj
-dVa
+hqj
 uls
 tfw
 tfw
@@ -102294,13 +102208,13 @@ tfw
 tfw
 tfw
 tfw
-dVa
+hqj
 siL
 vUQ
 hqj
 hqj
 hqj
-dVa
+hqj
 tfw
 tfw
 tfw
@@ -102551,9 +102465,9 @@ tfw
 tfw
 tfw
 tfw
-dVa
+hqj
 dhY
-bek
+uCN
 tfw
 tfw
 tfw
@@ -106939,7 +106853,7 @@ tfw
 wLK
 wLK
 nrJ
-iCK
+nrJ
 wLK
 wLK
 tfw
@@ -121947,7 +121861,7 @@ nNY
 qCq
 lMQ
 wdn
-cPg
+bek
 iAi
 uEY
 wdn
@@ -122204,8 +122118,8 @@ wdn
 suj
 chy
 cWW
-cWW
-cWW
+wUQ
+eeI
 cWW
 cWW
 lfH
@@ -122461,7 +122375,7 @@ nGC
 qCq
 dbL
 nBH
-qCq
+dbL
 kWo
 qCq
 lIT
@@ -122983,7 +122897,7 @@ gFJ
 uhR
 gFJ
 wdn
-fnv
+dQJ
 gjW
 gjW
 gjW
@@ -122991,9 +122905,9 @@ per
 gjW
 gjW
 gjW
-fnv
+fiE
 wdn
-fnv
+dQJ
 gjW
 gjW
 gjW
@@ -123001,7 +122915,7 @@ per
 gjW
 gjW
 gjW
-fnv
+iCK
 wdn
 llq
 llq
@@ -124525,25 +124439,25 @@ sIq
 tLQ
 pDU
 wdn
-fnv
+lHk
 nsW
-nsW
+bsQ
 ohi
 cUw
 kLj
 nsW
 nsW
-fnv
+czR
 wdn
-fnv
+lHk
 nsW
 nsW
 ohi
 cUw
 kLj
+bsQ
 nsW
-nsW
-fnv
+czR
 wdn
 llq
 llq
@@ -124782,25 +124696,25 @@ qCq
 tLQ
 tRL
 wdn
-fnv
-fnv
+jyg
+jyg
 rkm
-fnv
-uUg
+jyg
+lJd
 fNO
 wqR
-jyg
+lIm
 uNO
 wdn
-fnv
-fnv
+eHb
 lIm
-fnv
-uUg
-fNO
+lIm
+aDe
+lJd
+jyg
 tuw
 jyg
-uNO
+jyg
 wdn
 llq
 llq
@@ -125052,9 +124966,9 @@ wdn
 wdn
 wdn
 wdn
-rwr
+gGX
 bBi
-eLx
+tBz
 wdn
 wdn
 wdn
@@ -125275,17 +125189,17 @@ rFb
 wdn
 gLx
 wdn
-oNq
+khP
 oNq
 apS
 ygl
 oNq
 oNq
 yaM
-cTf
+oNq
 syb
 xes
-vPY
+aQe
 kTA
 xRB
 iEq
@@ -125296,21 +125210,21 @@ cTf
 qVZ
 oVY
 vPY
-cTf
+bbR
 mLT
-cTf
-fnv
+eZg
+eZg
 uUg
 kUi
-moF
-moF
+eZg
+eZg
 pRc
 nIR
-sOU
+eZg
 wan
 ibh
-moF
-moF
+arJ
+rFl
 eZg
 wEP
 ayj
@@ -125532,7 +125446,7 @@ rFb
 wdn
 rFb
 pYk
-naP
+eKf
 naP
 sgH
 bdM
@@ -125551,22 +125465,22 @@ wPv
 soM
 soM
 brQ
-fny
 soM
 soM
-soM
-soM
-soM
+cCf
+bHO
+bHO
+bHO
 rrE
 lWu
-etX
-etX
-etX
+tfD
+tfD
+tfD
 kGh
 tfD
-etX
-etX
-etX
+tfD
+tfD
+lWu
 etX
 pNr
 mTC
@@ -125784,7 +125698,7 @@ wdn
 nOY
 nOY
 nOY
-rFb
+mUB
 rFb
 pYk
 rFb
@@ -125800,33 +125714,33 @@ wAo
 fcu
 wui
 gFp
-rxy
-rxy
 naP
-rxy
+naP
+naP
+naP
 fGZ
 mCD
-rxy
-rxy
-sOU
+naP
+naP
+naP
 woc
 hzQ
 rxy
 rxy
 rxy
-wui
-aDe
-aDe
-aDe
+rxy
+rxy
+rxy
+rxy
 aeu
 skF
-sOU
-aDe
-aDe
+rxy
+rxy
+rxy
 aMA
-aDe
-bfG
-epA
+rxy
+dKr
+oeS
 moF
 wdn
 llq
@@ -126083,7 +125997,7 @@ wdn
 wdn
 wdn
 tXI
-epA
+oeS
 gak
 wdn
 llq
@@ -126339,8 +126253,8 @@ llq
 llq
 llq
 wdn
-rFl
-epA
+esf
+oeS
 moF
 wdn
 llq
@@ -126597,7 +126511,7 @@ llq
 llq
 wdn
 tXI
-epA
+oeS
 moF
 wdn
 llq
@@ -126824,7 +126738,7 @@ wdn
 wdn
 wdn
 wdn
-gGX
+uvP
 fcu
 fjn
 wdn
@@ -126854,7 +126768,7 @@ llq
 llq
 wdn
 eoR
-epA
+oeS
 moF
 wdn
 llq
@@ -127065,14 +126979,14 @@ llq
 llq
 llq
 llq
-bCF
+wdn
 lfs
 lfs
 naU
 lfs
 lfs
-bCF
-oXf
+wdn
+rFb
 uXb
 uur
 adW
@@ -127111,7 +127025,7 @@ llq
 llq
 wdn
 tXI
-epA
+oeS
 nbq
 wdn
 llq
@@ -127322,14 +127236,14 @@ llq
 llq
 llq
 llq
-bCF
-bCF
-bCF
-bCF
-bCF
-bCF
-bCF
-oXf
+wdn
+wdn
+wdn
+wdn
+wdn
+wdn
+wdn
+rFb
 uXb
 rIs
 xAx
@@ -127338,8 +127252,8 @@ lTj
 oTN
 ecb
 uXb
-qbh
-eMm
+kOL
+fcu
 gsu
 hyC
 vAU
@@ -127368,7 +127282,7 @@ llq
 llq
 wdn
 wXA
-epA
+oeS
 moF
 wdn
 llq
@@ -127592,18 +127506,18 @@ iZD
 lTj
 hbV
 hbV
-lTj
+axv
 bMk
 uXb
-qbh
-eMm
+kOL
+fcu
 ith
 bKy
 kwO
-uXb
-uXb
-uXb
-uXb
+wdn
+wdn
+wdn
+wdn
 vAU
 vAU
 vAU
@@ -127625,7 +127539,7 @@ vAU
 llq
 wdn
 ccY
-epA
+oeS
 moF
 wdn
 llq
@@ -127849,7 +127763,7 @@ xwr
 iJO
 uhH
 uhH
-iJO
+ojZ
 xaT
 tqE
 aHt
@@ -127858,9 +127772,9 @@ kMS
 ajt
 hyC
 faS
-lTj
+fnv
 hZD
-uXb
+wdn
 vAU
 vAU
 vAU
@@ -128106,18 +128020,18 @@ jAU
 utR
 eaU
 eaU
-utR
+oya
 wDS
 apP
 gTf
 ccF
 fle
-lTj
+fjn
 hyC
-lTj
-lTj
-lTj
-uXb
+fnv
+fnv
+fnv
+wdn
 vAU
 vAU
 llq
@@ -128139,7 +128053,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 oZp
@@ -128367,14 +128281,14 @@ lTj
 knx
 uXb
 uvP
-eMm
-yjv
+fcu
+wui
 pIZ
-aVz
+fks
 oER
 uCq
 hZD
-uXb
+wdn
 vAU
 vAU
 llq
@@ -128396,7 +128310,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 prE
@@ -128628,10 +128542,10 @@ vdk
 wzI
 gRU
 ygt
-uXb
-uXb
-uXb
-uXb
+wdn
+wdn
+wdn
+wdn
 vAU
 vAU
 llq
@@ -128653,7 +128567,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 ktg
@@ -128883,7 +128797,7 @@ uXb
 eKf
 wNv
 iLd
-uXb
+wdn
 llq
 llq
 llq
@@ -128895,7 +128809,7 @@ llq
 llq
 dDQ
 luL
-jQv
+kVR
 npd
 cnq
 dYl
@@ -128910,7 +128824,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 ktg
@@ -129167,7 +129081,7 @@ vAU
 vAU
 wdn
 tXI
-epA
+oeS
 moF
 ciU
 sfh
@@ -129394,7 +129308,7 @@ hCK
 syK
 aVC
 iMO
-hHR
+iIx
 gpS
 leg
 uXb
@@ -129681,7 +129595,7 @@ vAU
 vAU
 wdn
 xFh
-epA
+vBL
 moF
 ciU
 ktg
@@ -129938,7 +129852,7 @@ vAU
 vAU
 wdn
 xbM
-epA
+oeS
 moF
 ciU
 ktg
@@ -130195,7 +130109,7 @@ vAU
 vAU
 wdn
 svF
-epA
+oeS
 moF
 ciU
 ktg
@@ -130452,7 +130366,7 @@ vAU
 vAU
 wdn
 ccY
-epA
+oeS
 moF
 ciU
 bGB
@@ -130709,7 +130623,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 ktg
@@ -130966,7 +130880,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 ktg
@@ -131187,7 +131101,7 @@ jiD
 fcH
 lTj
 xuY
-cZW
+lTj
 gCG
 iKb
 hAe
@@ -131223,7 +131137,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 sfh
@@ -131449,7 +131363,7 @@ dpN
 bQd
 tbh
 jvd
-nGI
+wAj
 wPE
 rCB
 xNq
@@ -131480,7 +131394,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 ciU
 ktg
@@ -131740,10 +131654,10 @@ uXh
 rJf
 hIm
 wdn
-oEO
-oEO
-oEO
-oEO
+oZp
+oZp
+oZp
+oZp
 llq
 llq
 llq
@@ -131994,7 +131908,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 moF
 wdn
 llq
@@ -132251,7 +132165,7 @@ vAU
 vAU
 ciU
 tXI
-epA
+oeS
 nbq
 wdn
 llq
@@ -132506,11 +132420,11 @@ llq
 llq
 vAU
 vAU
-oGm
-mWX
+ciU
+tXI
 oeS
-qgy
-eQh
+moF
+wdn
 llq
 llq
 llq
@@ -132735,17 +132649,17 @@ uXb
 uXb
 uXb
 uXb
-tob
+pIe
 sRJ
-tob
-uXb
-uXb
-uXb
-uXb
-uXb
-uXb
-uXb
-uXb
+pIe
+eQh
+eQh
+eQh
+eQh
+eQh
+eQh
+eQh
+eQh
 dCY
 adM
 eQh
@@ -132763,11 +132677,11 @@ llq
 llq
 vAU
 vAU
-eQh
+wdn
 esf
 oeS
 fmQ
-eQh
+wdn
 llq
 llq
 llq
@@ -133020,11 +132934,11 @@ llq
 llq
 vAU
 vAU
-eQh
-iDB
+wdn
+wXA
 oeS
-qgy
-eQh
+moF
+wdn
 llq
 llq
 llq
@@ -133264,24 +133178,24 @@ eQh
 rTN
 eQh
 xQp
-nwQ
-nwQ
+cQr
+cQr
 uwo
-nwQ
+cQr
 ezn
-nwQ
-nwQ
+cQr
+eMm
 eQh
 llq
 llq
 llq
 vAU
 vAU
-eQh
-mWX
+wdn
+tXI
 oeS
-qgy
-eQh
+moF
+wdn
 llq
 llq
 llq
@@ -133521,9 +133435,9 @@ eQh
 rTN
 eQh
 hMp
-nwQ
-nOP
-nwQ
+cEB
+qgy
+cEB
 vqP
 rzj
 sZn
@@ -133534,11 +133448,11 @@ llq
 llq
 llq
 vAU
-eQh
-mWX
+wdn
+tXI
 oeS
-qgy
-eQh
+moF
+wdn
 llq
 llq
 llq
@@ -133790,12 +133704,12 @@ eQh
 eQh
 eQh
 eQh
-eQh
-eQh
-cQr
+wdn
+wdn
+xbM
 oeS
-qgy
-eQh
+moF
+wdn
 llq
 llq
 llq
@@ -134043,7 +133957,7 @@ rIR
 hoY
 bbm
 hvG
-nwQ
+bsX
 bsX
 bsX
 bsX
@@ -134051,8 +133965,8 @@ hKZ
 met
 mWX
 oeS
-qgy
-eQh
+moF
+wdn
 llq
 llq
 llq
@@ -134288,12 +134202,12 @@ kQI
 kQI
 hHz
 gPT
-kYq
+oGm
 oTJ
 rZj
 kYq
-nwQ
-nwQ
+fPP
+cQr
 cGZ
 gJc
 sgn
@@ -134305,11 +134219,11 @@ bxL
 bxL
 bxL
 rLj
-bxL
-bxL
+fny
+fny
 nhD
 xRf
-eQh
+wdn
 llq
 llq
 llq
@@ -134558,15 +134472,15 @@ kEU
 kEU
 kqg
 kEU
-kEU
-kEU
-kEU
+sOU
+cfr
+cfr
 fae
 kGi
 kGi
 xKy
 njK
-eQh
+wdn
 llq
 llq
 llq
@@ -134802,28 +134716,28 @@ kQI
 kQI
 hHz
 dSq
-kYq
+oGm
 hWM
 xjZ
 kYq
-nwQ
-nwQ
+sXG
+cEB
 awB
 ydq
 axz
-nwQ
-nwQ
+yjv
+dVa
 jYg
-nwQ
-nwQ
+dVa
+hLN
 eQh
 eQh
-eQh
-eQh
-eQh
-eQh
-eQh
-eQh
+wdn
+wdn
+wdn
+wdn
+wdn
+wdn
 llq
 llq
 llq
@@ -135071,8 +134985,8 @@ eQh
 mpW
 ooY
 jYg
-nwQ
-nwQ
+dVa
+jLE
 xVb
 eQh
 qnn
@@ -135328,13 +135242,13 @@ eQh
 swS
 lWZ
 jYg
-nwQ
-nwQ
+dVa
+dVa
 naW
 eQh
 nwQ
 nwQ
-nwQ
+iDB
 nwQ
 nwQ
 eQh
@@ -135584,14 +135498,14 @@ llq
 eQh
 ism
 iYz
-jYg
-nwQ
-nwQ
-nwQ
+jQv
+kEU
+kEU
+rvT
 xzO
-nwQ
+hHR
 kCi
-nwQ
+fwf
 dtR
 uXD
 eQh
@@ -135843,13 +135757,13 @@ mpW
 qjX
 dGC
 vFM
-nwQ
-nwQ
-xzO
+dVa
+hLN
+oEO
 nwQ
 nKw
-nwQ
-lWZ
+cZW
+xoB
 hQH
 eQh
 llq
@@ -136098,10 +136012,10 @@ llq
 eQh
 ddv
 lWZ
-nwQ
-nwQ
-nwQ
-tYl
+dVa
+dVa
+dVa
+abj
 eQh
 nwQ
 nwQ
@@ -136353,7 +136267,7 @@ llq
 llq
 llq
 eQh
-ism
+uMA
 vLo
 wCI
 gCj
