@@ -1243,3 +1243,10 @@
 	path = /obj/item/reagent_containers/glass/beaker/elf_bottle
 	ckeywhitelist = list("fedor1545")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bm/wh_kit
+	name = "A box of Unholy Armor"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/box/donator/bm/wh_kit
+	ckeywhitelist = list("darksungwyndolin")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

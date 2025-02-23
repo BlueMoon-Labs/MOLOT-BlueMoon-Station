@@ -306,3 +306,21 @@
 	icon_state = "SyndAngelicJaket"
 	item_state = "SyndAngelicJaket"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+
+/obj/item/clothing/suit/armor/riot/chaplain/wh_armor
+	name = "The Armor of the Dark Apostle"
+	desc = "Beautifully crafted armor for the apostles. Inscribed with unholy runes and containing writings for hideous rituals. From the armor itself, an aura of blood and the influence of demons emanates"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "wh_armor"
+	item_state = "wh_armor"
+	mutantrace_variation = NOT_DIGITIGRADE
+
+/obj/item/modkit/wharmor_kit
+	name = "The Armor of the Dark Apostle modkit"
+	desc = "A modkit for making an chaplain armor into The Armor of the Dark Apostle"
+	product = /obj/item/clothing/suit/armor/riot/chaplain/wh_armor
+	fromitem = list(/obj/item/clothing/suit/armor/riot/chaplain, /obj/item/clothing/suit/armor/riot/chaplain/teutonic, /obj/item/clothing/suit/armor/riot/chaplain/teutonic/alt, /obj/item/clothing/suit/armor/riot/chaplain/hospitaller)
