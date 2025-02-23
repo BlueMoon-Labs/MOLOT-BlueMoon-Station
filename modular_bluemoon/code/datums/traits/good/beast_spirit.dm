@@ -5,7 +5,7 @@
 /mob/living/simple_animal/hostile/beastspirit
 	name = "beast spirit"
 	desc = "Feral, probably abnormal, animal."
-	icon = 'modular_bluemoon/vagabond/icons/mob/beast_spirit.dmi'
+	icon = 'modular_bluemoon/icons/mob/beast_spirit.dmi'
 	icon_state = "male"
 	icon_living = "male"
 	icon_dead = "male-dead"
@@ -60,10 +60,10 @@
 /datum/action/innate/beastchange
 	name = "Change Appearance"
 	desc = "Change your feral appearance."
-	icon_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
+	icon_icon = 'modular_bluemoon/icons/mob/actions/traits_actions.dmi'
 	button_icon_state = "change"
 	var/beastskin = ""
-	var/beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+	var/beastsound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
@@ -72,28 +72,28 @@
 	switch(skin)
 		if("Default")
 			beastskin = ""
-			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 		if("Black")
 			beastskin = "black_"
-			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 		if("White")
 			beastskin = "white_"
-			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 		if("Skull")
 			beastskin = "skull_"
-			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 		if("Aiko")
 			beastskin = "aiko_"
-			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 		if("Werecat")
 			beastskin = "werecat_"
-			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/cat.ogg'
 		if("Panther")
 			beastskin = "panther_"
-			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/cat.ogg'
 		if("Garfield")
 			beastskin = "garfield_"
-			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+			beastsound = 'modular_bluemoon/sound/creatures/cat.ogg'
 		if("Mouse")
 			beastskin = "mouse_"
 			beastsound = 'sound/effects/mousesqueek.ogg'
@@ -103,7 +103,7 @@
 /datum/action/innate/beastsex
 	name = "Toggle Aroused"
 	desc = "Switch between horny and not horny."
-	icon_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
+	icon_icon = 'modular_bluemoon/icons/mob/actions/traits_actions.dmi'
 	button_icon_state = "sex"
 
 /datum/action/innate/beastsex/Activate()
@@ -127,7 +127,7 @@
 /datum/action/innate/beastpose
 	name = "Toggle Pose"
 	desc = "Switch between poses."
-	icon_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
+	icon_icon = 'modular_bluemoon/icons/mob/actions/traits_actions.dmi'
 	button_icon_state = "pose"
 
 /datum/action/innate/beastpose/Activate()
@@ -179,12 +179,12 @@
 	invocation_type = "none"
 	charge_max = 50
 	cooldown_min = 50
-	action_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
+	action_icon = 'modular_bluemoon/icons/mob/actions/traits_actions.dmi'
 	action_icon_state = "beast"
 	shapeshift_type = /mob/living/simple_animal/hostile/beastspirit
 	var/beast_gender = "male"
 	var/beast_type = ""
-	var/beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+	var/beast_sound = 'modular_bluemoon/sound/creatures/wolf.ogg'
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/beast/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
@@ -246,7 +246,7 @@
 	BEAST.icon = M
 
 	if(has_clothes_to_rip)
-		playsound(caster, 'modular_bluemoon/vagabond/sound/transform.ogg', 50, 1)
+		playsound(caster, 'modular_bluemoon/sound/effects/transform.ogg', 50, 1)
 
 	switch(beast_gender)
 		if("male")

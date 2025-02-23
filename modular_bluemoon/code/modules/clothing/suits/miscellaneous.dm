@@ -26,3 +26,16 @@
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "suit_corset"
 	item_state = "suit_corset"
+
+/obj/item/clothing/suit/jacket/paratrench
+	name = "trenchcoat"
+	desc = "A trenchcoat with a TailorCo brand on the tag. Looks expensive."
+	icon_state = "paratrench"
+	icon = 'modular_bluemoon/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/suit.dmi'
+
+/obj/item/clothing/suit/jacket/paratrench/black
+	icon_state = "paratrench_black"
+	unique_reskin = list(
+		"Adjusted coat" = list("icon_state" = "paratrench_black_d")
+	)

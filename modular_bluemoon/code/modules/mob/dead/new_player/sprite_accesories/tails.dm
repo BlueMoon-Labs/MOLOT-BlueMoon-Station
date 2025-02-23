@@ -37,3 +37,9 @@
 	name = "Shark tipped"
 	icon_state = "shark_tipped"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/sergal //Респрайт
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/sergal //Респрайт
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
