@@ -220,7 +220,7 @@
 	if(!silent_backstab)
 		if(user != victim)
 			user.do_attack_animation(victim)
-		var/bs_sound = "modular_bluemoon/vlad0s_staff/sound/critical_hit.ogg"
+		var/bs_sound = "modular_bluemoon/sound/effects/critical_hit.ogg"
 		if(custom_backstab_sound)
 			bs_sound = custom_backstab_sound
 		playsound(victim, bs_sound, 100, 1)

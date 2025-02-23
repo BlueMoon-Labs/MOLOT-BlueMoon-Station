@@ -13,3 +13,12 @@
 	build_path = /obj/item/circuitboard/machine/aug_manipulator
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+// Дизайн для фабрикатора платы генератора жидкостей
+/datum/design/board/robo_liquid_generator
+	name = "Machine Design (RoboLiquid Generator)"
+	desc = "Allows for the construction of circuit boards used to build a RoboLiquid Generator."
+	id = "roboliq"
+	build_path = /obj/item/circuitboard/machine/robo_liquid_generator
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE

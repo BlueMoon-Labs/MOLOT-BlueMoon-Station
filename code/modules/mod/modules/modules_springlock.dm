@@ -351,7 +351,7 @@
 				springtrap.set_species(/datum/species/zombie)
 	springtrap.visible_message("<span class='boldwarning'>[springtrap] внезапно вздрагивает и медленно поднимается, [mod], кажется, сидит на нём плотнее, чем когда-либо...</span>", "<span class='userdanger'>Вы восстали из мёртвых!</span>")
 	to_chat(springtrap, "<span class='boldwarning'>Вы вернулись в этот мир, привязанные к этому проклятому костюму. [mod] теперь часть вас, и намерены выполнить свои задачи и отомстить своим обидчикам...</span>")
-	playsound(springtrap, 'modular_bluemoon/vlad0s_staff/sound/always_come_back.ogg', 50)
+	playsound(springtrap, 'modular_bluemoon/sound/emotes/always_come_back.ogg', 50)
 
 
 // Улучшенная версия пружинных замков, делаемая в лейтгейм РнД - имеет запас прочности и гораздо эффективнее, но ещё более уязвима
@@ -396,7 +396,7 @@
 	if(!spring)
 		. = ..()
 		if(!miming && .)
-			playsound(user, 'modular_bluemoon/vlad0s_staff/sound/afton_laugh.ogg', 75)
+			playsound(user, 'modular_bluemoon/sound/emotes/afton_laugh.ogg', 75)
 	// Шутки кончились...
 	else
 		// Большинство этих проверок сделано для красивого эмоута в обход initiate_failure()
@@ -408,7 +408,7 @@
 				return
 			spring.adjust_springlock_damage(10, "слишком сильного смеха")
 			if(!miming)
-				playsound(user, 'modular_bluemoon/vlad0s_staff/sound/afton_laugh.ogg', 75)
+				playsound(user, 'modular_bluemoon/sound/emotes/afton_laugh.ogg', 75)
 			return
 		message = "маниакально смеётся, как вдруг..."
 		message_mime = "с жуткой гримасой изображает смех, рубя невидимым ножом кого-то, как вдруг резко хватается за грудь и беззвучно открывает рот в крике агонии..."
@@ -426,7 +426,7 @@
 		springtrapped.silent = clamp(springtrapped.silent + 10, 0, 10) // Сложно говорить в такой ситуации
 		springtrapped.Stun(120)
 		if(!miming)
-			playsound(springtrapped, 'modular_bluemoon/vlad0s_staff/sound/afton_death_laugh.ogg', 75)
+			playsound(springtrapped, 'modular_bluemoon/sound/emotes/afton_death_laugh.ogg', 75)
 		addtimer(CALLBACK(spring, TYPE_PROC_REF(/obj/item/mod/module/springlock, snap_shut), TRUE), 3.5 SECONDS)
 		emote_cooldown = initial(emote_cooldown)
 		message = initial(message)

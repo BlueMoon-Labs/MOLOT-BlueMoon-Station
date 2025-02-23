@@ -1,7 +1,7 @@
 /obj/item/aspergillum
 	name = "Holy Aspergillum"
 	desc = "Древний инструмент для окропления святой водой. Да будет смыта ересь с этой станции!"
-	icon = 'modular_bluemoon/vlad0s_staff/icons/misc.dmi'
+	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
 	icon_state = "aspergillum"
 	force = 0
 	throwforce = 0
