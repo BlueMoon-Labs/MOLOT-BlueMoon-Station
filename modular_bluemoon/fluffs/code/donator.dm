@@ -1122,7 +1122,7 @@
 /datum/gear/donator/bm/letuale
 	name = "Элегантное красное платье"
 	slot = ITEM_SLOT_ICLOTHING
-	path = /obj/item/clothing/under/rank/civilian/ElegantRedDress
+	path = /obj/item/clothing/under/donator/bm/ElegantRedDress
 	ckeywhitelist = list("loonel")
 
 /datum/gear/donator/bm/papermaskunderhair

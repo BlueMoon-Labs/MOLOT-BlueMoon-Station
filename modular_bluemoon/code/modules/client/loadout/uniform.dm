@@ -124,7 +124,7 @@
 
 /datum/gear/uniform/gift_ribbon
 	name = "Gift ribbon"
-	path = /obj/item/clothing/under/rank/civilian/gift_ribbon
+	path = /obj/item/clothing/under/bm/gift_ribbon
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/solfed_formal
