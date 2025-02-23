@@ -43,3 +43,16 @@
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/sergal //Респрайт
 	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+
+/datum/sprite_accessory/tails/mam_tails/scorpid
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/scorpid/sting
+	name = "Scorpid Sting"
+	icon_state = "scorptail"
+
+/datum/sprite_accessory/tails/mam_tails/scorpid/plug
+	name = "Scorpid Plug"
+	icon_state = "plugtail"
+

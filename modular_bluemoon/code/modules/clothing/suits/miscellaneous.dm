@@ -39,3 +39,30 @@
 	unique_reskin = list(
 		"Adjusted coat" = list("icon_state" = "paratrench_black_d")
 	)
+
+/obj/item/clothing/suit/toggle/warm_poncho
+	name = "warm rainbow poncho"
+	desc = "Warm coarse knit wool poncho."
+	icon = 'modular_bluemoon/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/clothing_righthand.dmi'
+	icon_state = "rainbow_warm_poncho"
+	cold_protection = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	togglename = "style"
+
+/obj/item/clothing/suit/toggle/warm_poncho/green
+	name = "warm green poncho"
+	desc = "Warm coarse knit wool poncho."
+	icon_state = "green_warm_poncho"
+
+/obj/item/clothing/suit/toggle/warm_poncho/red
+	name = "warm red poncho"
+	desc = "Warm coarse knit wool poncho."
+	icon_state = "red_warm_poncho"
+
+/obj/item/clothing/suit/toggle/warm_poncho/blue
+	name = "warm blue poncho"
+	desc = "Warm coarse knit wool poncho."
+	icon_state = "blue_warm_poncho"
