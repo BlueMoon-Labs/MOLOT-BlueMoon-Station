@@ -19,3 +19,18 @@
 	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 30, ACID = 30, WOUND = 10)
+
+/obj/item/clothing/under/bm/utility
+	name = "green utility uniform"
+	desc = "A green utility uniform, eerily reminds of these that the Terrans use."
+	icon_state = "utilgreen"
+
+/obj/item/clothing/under/bm/utility/navy
+	name = "navy utility uniform"
+	desc = "A navy utility uniform, primarily seen in SolGov fleet use."
+	icon_state = "utilnavy"
+
+/obj/item/clothing/under/bm/utility/tan
+	name = "tan utility uniform"
+	desc = "A tan utility uniform, now all you need is a FUCKIN' CAS!"
+	icon_state = "utiltan"

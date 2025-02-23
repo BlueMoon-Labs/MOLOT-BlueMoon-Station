@@ -89,9 +89,9 @@
 		/obj/item/clothing/under/rank/security/stripper = 5,
 		/obj/item/clothing/suit/hooded/corpus/s = 5,
 		/obj/item/clothing/head/utilcover = 5,
-		/obj/item/clothing/under/utility/green = 5,
-		/obj/item/clothing/under/utility/navy = 5,
-		/obj/item/clothing/under/utility/tan = 5
+		/obj/item/clothing/under/bm/utility = 5,
+		/obj/item/clothing/under/bm/utility/navy = 5,
+		/obj/item/clothing/under/bm/utility/tan = 5
 	)
 	contraband = list(
 		/obj/item/clothing/under/rank/security/stripper = 5,
