@@ -42,3 +42,9 @@
 	taste_description = "oil"
 	color = BLOOD_COLOR_OIL
 	value = REAGENT_VALUE_NONE
+
+/datum/reagent/consumable/organicprecursor
+	name = "Organic Precursor"
+	description = "A very simple precursor-alike chemical that can be used in the creation of any specific liquids."
+	color = "#FFFFFF" // rgb: 255, 255, 255
+	taste_mult = 0 // oderless and tasteless
