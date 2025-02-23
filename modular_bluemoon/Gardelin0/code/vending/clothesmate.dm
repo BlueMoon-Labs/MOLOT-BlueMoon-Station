@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\clothesmate.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\clothesmate.dm'
 /obj/machinery/vending/clothing/Initialize()
 	var/list/extra_products = list(
 		/obj/item/clothing/under/dress/skirt/blackjumpskirt = 3,

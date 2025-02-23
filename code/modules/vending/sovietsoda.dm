@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\sovietsoda.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\sovietsoda.dm'
 /obj/machinery/vending/sovietsoda
 	name = "\improper BODA"
 	desc = "Old sweet water vending machine."

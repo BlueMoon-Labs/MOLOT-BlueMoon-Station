@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\engivend.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\engivend.dm'
 /obj/machinery/vending/engivend/Initialize()
 	var/list/extra_products = list(
 		/obj/item/assembly/control = 10,

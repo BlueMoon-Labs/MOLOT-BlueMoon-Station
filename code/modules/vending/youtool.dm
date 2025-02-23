@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\youtool.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\youtool.dm'
 /obj/machinery/vending/tool
 	name = "\improper YouTool"
 	desc = "Tools for tools."

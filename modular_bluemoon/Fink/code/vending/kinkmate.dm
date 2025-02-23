@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\kinkmate.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\kinkmate.dm'
 /obj/machinery/vending/kink/Initialize()
 	var/list/extra_products = list(
 		/obj/item/summon_chalk = 5,
