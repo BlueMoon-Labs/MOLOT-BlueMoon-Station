@@ -254,7 +254,7 @@
 		// Если процесс не заглушён, издаём звуки ломающихся костей и разорванной плоти, а также заставляем кричать
 		if(!silenced)
 			if(prob(40))
-				var/noise = pick('sound/effects/snap.ogg', 'sound/surgery/organ2.ogg', 'sound/effects/splat.ogg', 'modular_bluemoon/kovac_shitcode/sound/new_emotes/bonecrack.ogg')
+				var/noise = pick('sound/effects/snap.ogg', 'sound/surgery/organ2.ogg', 'sound/effects/splat.ogg', 'modular_bluemoon/sound/emotes/bonecrack.ogg')
 				playsound(springtrapped, noise, 70, TRUE, frequency = 0.5)
 			if(prob(20))
 				var/agony_emote = pick("scream", "realagony")
