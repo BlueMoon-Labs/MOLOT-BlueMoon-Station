@@ -2,7 +2,7 @@
 /mob/living/simple_animal/hostile/brute
 	name = "Brute"
 	real_name = "Brute"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/64x64necros.dmi'
+	icon = 'modular_bluemoon/icons/mob/64x64necros.dmi'
 	desc = "A massive, armored necromorph. Seems that he likes you."
 	icon_state = "brute"
 	icon_living = "brute"
@@ -18,7 +18,7 @@
 	attack_verb_simple = "smash your armored gauntlet into"
 	speed = 0.7
 	environment_smash = ENVIRONMENT_SMASH_WALLS
-	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/necros/brute_attack_3.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/necros/brute_attack_3.ogg'
 	status_flags = 0
 	mob_size = MOB_SIZE_LARGE
 	force_threshold = 10
@@ -29,7 +29,7 @@
 /mob/living/simple_animal/hostile/brute/leaper
 	name = "Leaper"
 	real_name = "Leaper"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/64x64necros.dmi'
+	icon = 'modular_bluemoon/icons/mob/64x64necros.dmi'
 	desc = "Better run through the station."
 	icon_state = "leaper"
 	icon_living = "leaper"
@@ -42,14 +42,14 @@
 	attack_verb_simple = "smash into"
 	speed = 2.5
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
-	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/necros/leaper_attack_5.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/necros/leaper_attack_5.ogg'
 	mob_size = MOB_SIZE_HUMAN
 
 /////////////////Ubermorph///////////////
 /mob/living/simple_animal/hostile/brute/uber
 	name = "Ubermorph"
 	real_name = "Ubermorph"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/64x64necros.dmi'
+	icon = 'modular_bluemoon/icons/mob/64x64necros.dmi'
 	desc = "Tick-tick-tick."
 	icon_state = "ubermorph"
 	icon_living = "ubermorph"
@@ -62,13 +62,13 @@
 	attack_verb_simple = "smash into"
 	speed = 1.5
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
-	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/necros/ubermorph_attack_1.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/necros/ubermorph_attack_1.ogg'
 
 /////////////////Grunt///////////////
 /mob/living/simple_animal/hostile/grunt
 	name = "Necromorph"
 	real_name = "Necromorph"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/necros.dmi'
+	icon = 'modular_bluemoon/icons/mob/necros.dmi'
 	desc = "Hey down there, hugs!"
 	icon_state = "alien_s"
 	icon_living = "alien_s"
@@ -84,7 +84,7 @@
 	attack_verb_simple = "claws"
 	speed = 1
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
-	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/necros/puker_attack_1.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/necros/puker_attack_1.ogg'
 	status_flags = 0
 	mob_size = MOB_SIZE_HUMAN
 	force_threshold = 10
@@ -95,7 +95,7 @@
 /mob/living/simple_animal/hostile/spider
 	name = "Necromorph"
 	real_name = "Necromorph"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/necros.dmi'
+	icon = 'modular_bluemoon/icons/mob/necros.dmi'
 	desc = "Fear the arachnids"
 	icon_state = "aliend_s"
 	icon_living = "aliend_s"
@@ -111,7 +111,7 @@
 	attack_verb_simple = "claws"
 	speed = 1.8
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
-	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/necros/infector_attack_4.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/necros/infector_attack_4.ogg'
 	status_flags = 0
 	mob_size = MOB_SIZE_SMALL
 	force_threshold = 10

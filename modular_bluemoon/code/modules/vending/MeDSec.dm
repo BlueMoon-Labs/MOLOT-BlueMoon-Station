@@ -1,7 +1,7 @@
 /obj/machinery/vending/brigdoc_vendomat
 	name = "\improper MeDSec"
 	desc = "Stay alive until the end. Dispenses stuff for brig physicians."
-	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/vending_additional.dmi'
+	icon = 'modular_bluemoon/icons/obj/vending.dmi'
 	icon_state = "brigdoc"
 	product_slogans = "А вы знаете, что такое Женевская конвенция?;Террористы ведь не будут стрелять в офицеров с красным крестом, правда?;Иди и спаси чью-то жизнь!"
 	vend_reply = "Медицинское снаряжение выдано. Удачной службы."
@@ -31,5 +31,6 @@
 					/obj/item/stack/medical/nanogel = 1)
 	refill_canister = /obj/item/vending_refill/brigdoc_vendomat
 	payment_department = ACCOUNT_SEC
+
 /obj/item/vending_refill/brigdoc_vendomat
 	machine_name = "SecMedDrobe"

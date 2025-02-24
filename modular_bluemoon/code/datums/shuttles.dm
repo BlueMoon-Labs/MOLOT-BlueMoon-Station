@@ -1,5 +1,3 @@
-///Собственно шаттл
-
 /area/shuttle/lambda
 	name = "Lambda Code Shuttle"
 
