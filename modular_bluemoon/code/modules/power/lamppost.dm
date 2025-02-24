@@ -1,18 +1,8 @@
-/obj/machinery/door/airlock/multi_tile/metal
-	doorDeni = './modular_bluemoon/icemoon/sound/access_denied.ogg'
-	doorOpen = './modular_bluemoon/icemoon/sound/airlockopen.ogg'
-	doorClose = './modular_bluemoon/icemoon/sound/airlockclose.ogg'
-
-/obj/machinery/door/airlock/hatch/syndicate
-	doorDeni = './modular_bluemoon/icemoon/sound/access_denied.ogg'
-	doorOpen = './modular_bluemoon/icemoon/sound/airlock_ext_open.ogg'
-	doorClose = './modular_bluemoon/icemoon/sound/airlock_ext_close.ogg'
-
 /obj/machinery/power/floodlight/lamppost
 	name = "lamppost"
 	desc = "Освещает окружающее пространство. Или не освещает."
-	icon = './modular_bluemoon/icemoon/lamppost.dmi'
-	base_icon_state = "base"
+	icon = 'modular_bluemoon/icons/obj/lamppost96x160.dmi'
+	icon_state = "base"
 	plane = GAME_PLANE
 	layer = SPACEVINE_LAYER
 	var/number_of_lamps
@@ -58,14 +48,14 @@
 	if(world.time < last_interaction + interaction_cooldown)
 		return
 	last_interaction = world.time
-	
+
 	playsound(src, 'sound/machines/button4.ogg', 50, TRUE)
 
 	if(lamps_active == number_of_lamps)
 		turn_off()
 		balloon_alert(user, "выключено")
 		return
-	
+
 	var/next_power_usage = lamp_power_usage * (lamps_active + 1)
 	if(check_power(next_power_usage))
 		lamps_active++
@@ -99,7 +89,7 @@
 		light_source.set_light(0, 0, "#ffde9b")
 		lamp_lights += light_source
 	update_lamp_positions()
-	
+
 	if(light_on_init)
 		addtimer(CALLBACK(src, .proc/try_initial_lighting), 10)
 
@@ -178,15 +168,15 @@
 /obj/machinery/power/floodlight/lamppost/process()
 	if(!lamps_active)
 		return
-	
+
 	if(world.time < last_interaction + power_update_delay)
 		return
-		
+
 	if(!check_power(active_power_usage))
 		turn_off()
 		balloon_alert_to_viewers("нет питания!")
 		return
-		
+
 	add_load(active_power_usage)
 
 /obj/machinery/power/floodlight/lamppost/AltClick(mob/user)

@@ -1,6 +1,5 @@
 /area/ruin/icemoon/unpowered
 	name = "IceMoon Ruin"
-	icon = './modular_bluemoon/icemoon/icemoon_areas.dmi'
 	icon_state = "dk_yellow"
 	always_unpowered = FALSE
 
@@ -13,7 +12,7 @@
 	icon_state = "glacier_hsec"
 	ambientsounds = HIGHSEC
 
-/area/ruin/icemoon/unpowered/glacier/outsidestorage	
+/area/ruin/icemoon/unpowered/glacier/outsidestorage
 	name = "OP 'Glacier' | Outer Storage"
 	icon_state = "glacier_ostor"
 
@@ -21,7 +20,7 @@
 	name = "OP 'Glacier' | Engineering"
 	icon_state = "glacier_engi"
 
-/area/ruin/icemoon/unpowered/glacier/medbay	
+/area/ruin/icemoon/unpowered/glacier/medbay
 	name = "OP 'Glacier' | Medbay"
 	icon_state = "glacier_med"
 
