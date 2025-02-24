@@ -4,7 +4,7 @@
 	name = "binocular lenses"
 	desc = "A pair of binocular lenses, that can be attached to the eyes."
 	contents = newlist(/obj/item/binoculars/strong)
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "binolenses" //Codespriting is a thing, yes. We should pay some artist to look it better in some future. Or not.
 	slot = ORGAN_SLOT_EYES_LENSES//See? IT IS NOT AN ARM!!!!!!
 	zone = BODY_ZONE_PRECISE_EYES

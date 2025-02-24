@@ -164,6 +164,7 @@
 
 /obj/item/organ/eyes/robotic
 	name = "robotic eyes"
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi' //BLUEMOON ADD респрайты киберглаз
 	icon_state = "cybernetic_eyeballs"
 	desc = "Your vision is augmented."
 	status = ORGAN_ROBOTIC
@@ -184,6 +185,7 @@
 	desc = "These cybernetic eyes will give you X-ray vision. Blinking is futile."
 	left_eye_color = "000"
 	right_eye_color = "000"
+	icon_state = "xray_eyes" //BLUEMOON ADD респрайты киберглаз
 	see_in_dark = 8
 	sight_flags = SEE_MOBS | SEE_OBJS | SEE_TURFS
 
@@ -192,6 +194,7 @@
 	desc = "These cybernetic eye implants will give you thermal vision. Vertical slit pupil included."
 	left_eye_color = "FC0"
 	right_eye_color = "FC0"
+	icon_state = "thermal_eyes" //BLUEMOON ADD респрайты киберглаз
 	sight_flags = SEE_MOBS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	flash_protect = -1
@@ -232,6 +235,7 @@
 /obj/item/organ/eyes/robotic/shield
 	name = "shielded robotic eyes"
 	desc = "These reactive micro-shields will protect you from welders and flashes without obscuring your vision."
+	icon_state = "shielded_eyes" //BLUEMOON ADD респрайты киберглаз
 	flash_protect = 2
 
 /obj/item/organ/eyes/robotic/shield/emp_act(severity)
@@ -245,6 +249,7 @@
 	left_eye_color = "000"
 	right_eye_color = "000"
 	actions_types = list(/datum/action/item_action/organ_action/use, /datum/action/item_action/organ_action/toggle)
+	icon_state = "light_eyes" //BLUEMOON ADD респрайты киберглаз
 	var/current_color_string = "#ffffff"
 	var/active = FALSE
 	var/max_light_beam_distance = 5

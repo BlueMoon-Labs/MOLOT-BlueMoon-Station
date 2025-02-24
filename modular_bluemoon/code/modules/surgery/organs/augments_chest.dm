@@ -2,7 +2,7 @@
 	name = "internal health analyzer"
 	desc = "An advanced health analyzer implant, designed to directly interface with a host's body and relay scan information to the brain on command."
 	slot = ORGAN_SLOT_THRUSTERS //BLUEEMOON EDIT: Now you have to choose. You can't be superior cyborg-ish lifeform. Seethe well. Doesn't cause an error anymore!
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "internal_HA"
 	actions_types = list(/datum/action/item_action/organ_action/use)
 	w_class = WEIGHT_CLASS_SMALL
@@ -20,7 +20,7 @@
 /obj/item/organ/cyberimp/chest/nutrimentextreme
 	name = "Nutriment pump implant EXTREME"
 	desc = "This implant will synthesize and pump into your bloodstream a small amount of nutriment when you are hungry. This version of the pump also provides a proper water supply."
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "pumpextreme"
 	slot = ORGAN_SLOT_STOMACH_AID
 	var/poison_amount = 5
@@ -49,7 +49,7 @@
 /obj/item/organ/cyberimp/chest/healer
 	name = "Healer-BB implant"
 	desc = "This implant will slowly mend localized damage that it can find. This version mends only brute and fire injures!"
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "healerbrute"
 	slot = ORGAN_SLOT_HEART_AID
 
@@ -68,7 +68,7 @@
 /obj/item/organ/cyberimp/chest/healertoxoxy
 	name = "Healer-TO implant"
 	desc = "This implant will slowly mend localized damage that it can find. This version filters out toxins, as well as considers any lack of oxygen in the bloodstream!"
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "healertox"
 	slot = ORGAN_SLOT_HEART_AID
 
@@ -88,7 +88,7 @@
 /obj/item/organ/cyberimp/chest/revitilzer
 	name = "Revitalizing Cortex"
 	desc = "This attachable to the torso cortex optimizes the body's processes in order to preserve the body. Provides overall basic mending."
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "revitilizer"
 	slot = ORGAN_SLOT_HEART_AID
 

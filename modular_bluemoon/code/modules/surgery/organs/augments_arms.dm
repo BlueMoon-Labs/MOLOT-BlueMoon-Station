@@ -2,7 +2,7 @@
 	name = "arm blade implant"
 	desc = "An integrated blade implant designed to be installed into a persons arm. Stylish and deadly; Although, being caught with this without proper permits is sure to draw unwanted attention."
 	contents = newlist(/obj/item/melee/implantarmblade)
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/implanted_blade.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "mantis_blade"
 
 /obj/item/organ/cyberimp/arm/mantis_blade/l
@@ -21,9 +21,9 @@
 /obj/item/melee/implantarmblade
 	name = "implanted arm blade"
 	desc = "A long, sharp, mantis-like blade implanted into someones arm. Cleaves through flesh like its particularly strong butter."
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/implanted_blade.dmi'
-	righthand_file = 'modular_bluemoon/_medicalAndCyberpunk/icons/implanted_blade_righthand.dmi'
-	lefthand_file = 'modular_bluemoon/_medicalAndCyberpunk/icons/implanted_blade_lefthand.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/implanted_blade_righthand.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/implanted_blade_lefthand.dmi'
 	icon_state = "mantis_blade"
 	force = 25
 	armour_penetration = 20
