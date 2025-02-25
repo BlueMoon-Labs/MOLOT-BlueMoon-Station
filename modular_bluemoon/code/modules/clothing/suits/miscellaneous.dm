@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/uniforms.dmi'
 	icon_state = "uniform_parade"
 	item_state = "uniform_parade"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
