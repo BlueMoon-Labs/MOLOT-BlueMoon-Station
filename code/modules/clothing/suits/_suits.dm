@@ -1,4 +1,4 @@
-/obj/item/clothing/suit
+/obj/item/clothing/su
 	icon = 'icons/obj/clothing/suits.dmi'
 	name = "suit"
 	block_priority = BLOCK_PRIORITY_WEAR_SUIT
