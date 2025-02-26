@@ -12,18 +12,4 @@
 		"Adjusted coat" = list("icon_state" = "paratrench_black_d")
 	)
 
-/datum/gear/suit/paratrench
-	name = "Brown trenchcoat"
-	path = /obj/item/clothing/suit/jacket/paratrench
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
-	cost = 2
-
-/datum/gear/suit/paratrenchblack
-	name = "Black trenchcoat"
-	path = /obj/item/clothing/suit/jacket/paratrench/black
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
-	cost = 2
-
 

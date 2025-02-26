@@ -1,7 +1,3 @@
-/datum/gear/backpack/black_tape
-	name = "Black Sticky Tape"
-	path = /obj/item/stack/sticky_tape/black
-
 /obj/item/clothing/underwear/shirt/top/black_tape
 	name = "Black Sticky Tape Top"
 	desc = "Идеальна для закрытия протечек."

@@ -26,10 +26,6 @@
 	var/newkey = new /obj/item/key/chastity_key(src)
 	new /obj/item/genital_equipment/chastity_cage/flat(src, newkey)
 
-/datum/gear/backpack/flat_chastity_box
-	name = "Flat Chastity Box"
-	path = /obj/item/storage/box/chastity_cage/flat
-
 /* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\kinkmate.dm'
 /obj/machinery/vending/kink/Initialize(mapload)
 	products += list(/obj/item/storage/box/chastity_cage/flat = 3)

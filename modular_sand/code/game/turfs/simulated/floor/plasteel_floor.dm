@@ -14,7 +14,7 @@
 	floor_tile = /obj/item/stack/tile/plasteel/freezer
 
 /turf/open/floor/plasteel/cafeteria
-	floor_tile = /obj/item/stack/tile/plasteel/kitchen
+	floor_tile = /obj/item/stack/tile/plasteel/cafeteria
 
 /turf/open/floor/plasteel/grimy
 	floor_tile = /obj/item/stack/tile/plasteel/grimy

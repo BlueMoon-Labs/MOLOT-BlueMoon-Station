@@ -42,3 +42,20 @@
     . += "Alt-click on [src] to toggle the [togglename]."
 
 //Copypaste ends
+
+/obj/item/clothing/underwear/shirt/shoulderless_shirt
+	name = "shoulderless shirt"
+	desc = "Really shoulderless shirt."
+	icon = 'modular_bluemoon/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/underwear.dmi'
+	icon_state = "shoulderless_shirt"
+	item_state = "shoulderless_shirt"
+
+/obj/item/clothing/underwear/shirt/garland_bra
+	name = "garland bra"
+	desc = "X-mas garland bra."
+	icon = 'modular_bluemoon/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/underwear.dmi'
+	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	icon_state = "garland_shirt"
+	item_state = "garland_shirt"

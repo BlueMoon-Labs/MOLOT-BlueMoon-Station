@@ -80,6 +80,7 @@
 /obj/item/fireaxe/energized
 	desc = "Someone with a love for fire axes decided to turn this one into a high-powered energy weapon. Seems excessive."
 	armour_penetration = 50
+	icon_state = "fireaxe_old0"
 	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
 	var/charge = 90
 	var/max_charge = 90

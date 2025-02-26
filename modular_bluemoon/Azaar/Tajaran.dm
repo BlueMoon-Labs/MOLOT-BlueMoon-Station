@@ -13,12 +13,3 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /////////////////////////////////////////////////////////// Пихаю в лодаут
-
-/datum/gear/mask/fir36
-	name = "FIR-36 half-face rebreather"
-	path = /obj/item/clothing/mask/gas/sechailer/fir36
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield", "Brig Physician")
-
-/datum/gear/mask/fir22
-	name = "FIR-22 full-face rebreather"
-	path = /obj/item/clothing/mask/gas/syndicate/fir22

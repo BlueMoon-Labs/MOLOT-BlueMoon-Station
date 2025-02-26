@@ -1341,6 +1341,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	outfit = /datum/outfit/ds2/prisoner
+	starting_money = 50 // BLUEMOON ADD
 
 /obj/effect/mob_spawn/human/ds2/syndicate
 	name = "Syndicate Operative"
@@ -1351,6 +1352,7 @@
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
 	important_info = "Вы не антагонист."
 	outfit = /datum/outfit/ds2/syndicate
+	starting_money = 1000 // BLUEMOON ADD
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command
 	name = "Syndicate Command Operative"
@@ -1361,6 +1363,7 @@
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
 	important_info = "Вы не антагонист."
 	outfit = /datum/outfit/ds2/syndicate_command
+	starting_money = 5000 // BLUEMOON ADD
 
 /obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/carbon/human/new_spawn)
 	. = ..()
@@ -1412,6 +1415,7 @@
 /obj/effect/mob_spawn/human/ds2/syndicate_command/admiral
 	mob_name = "a Triglav Syndicate admiral"
 	outfit = /datum/outfit/ds2/syndicate_command/admiral
+	starting_money = 10000 // BLUEMOON ADD
 
 // BLUEMOON ADD wires trait system + */special proc place for future coding
 /obj/effect/mob_spawn/human/ds2/syndicate/enginetech/special(mob/living/carbon/human/new_spawn)
