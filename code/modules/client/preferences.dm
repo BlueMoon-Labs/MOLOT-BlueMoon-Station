@@ -266,7 +266,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "fuzzy" = FALSE,
 "color_scheme" = OLD_CHARACTER_COLORING,
 "neckfire" = FALSE,
-"neckfire_color" = "ffffff"
+"neckfire_color" = "ffffff",
+"puddle_slime_fea" = FALSE
 )
 
 	var/list/custom_emote_panel = list() //user custom emote panel
@@ -953,6 +954,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<h3>Body sprite</h3>"
 						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=bodysprite;task=input'>[chosen_limb_id]</a>"
+
+					//BLUEMOON edit start
+					if(pref_species.type == /datum/species/jelly/roundstartslime)
+						dat += APPEARANCE_CATEGORY_COLUMN
+						dat += "<h3>be a slime?</h3>"
+						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=puddle_slime_task;task=input'>[features["puddle_slime_fea"] ? "Yes" : "No"]</a>"
+						dat += "</td>"
+					//BLUEMOON edit end
 
 					if(mutant_category)
 						dat += "</td>"
@@ -2899,6 +2908,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("mismatched_markings")
 					show_mismatched_markings = !show_mismatched_markings
+
+				if("puddle_slime_task")
+					features["puddle_slime_fea"] = !features["puddle_slime_fea"]
 
 				if("has_neckfire")
 					features["neckfire"] = !features["neckfire"]

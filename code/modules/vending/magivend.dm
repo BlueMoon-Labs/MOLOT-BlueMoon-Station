@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\magivend.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\magivend.dm'
 /obj/machinery/vending/magivend
 	name = "\improper MagiVend"
 	desc = "A magic vending machine."

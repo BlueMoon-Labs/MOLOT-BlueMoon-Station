@@ -133,3 +133,16 @@
 		item_state = downsprite
 		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
 	earflaps = !earflaps
+
+/obj/item/clothing/head/helmet/chaplain/wh_helmet
+	name = "The Helmet of the Dark Apostle"
+	desc = "This is the helmet of one of the dark apostles serving the Dark Gods. The face mask is made in the shape of a screaming demon"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "wh_chaplain"
+
+/obj/item/modkit/whhelmet_kit
+	name = "The Helmet of the Dark Apostle modkit"
+	desc = "A modkit for making an chaplain helmet into The Helmet of the Dark Apostle"
+	product = /obj/item/clothing/head/helmet/chaplain/wh_helmet
+	fromitem = list(/obj/item/clothing/head/helmet/chaplain, /obj/item/clothing/head/helmet/chaplain/bland/horned, /obj/item/clothing/head/helmet/chaplain/bland/winged, /obj/item/clothing/head/helmet/chaplain/bland)

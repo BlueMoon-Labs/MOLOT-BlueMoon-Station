@@ -104,7 +104,7 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	cold_protection = HEAD
-	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/head/hardhat/weldhat

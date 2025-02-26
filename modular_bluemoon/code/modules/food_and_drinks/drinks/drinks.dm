@@ -16,3 +16,9 @@
 	custom_price = PRICE_PRETTY_CHEAP
 	list_reagents = list(/datum/reagent/consumable/kvass = 30)
 	custom_materials = list(/datum/material/plastic = 200)
+
+/obj/item/reagent_containers/food/drinks/soda_cans/synthdrink
+	name = "Positronic Oil"
+	desc = "I guess they used to sell gasoline in cans. Nothing changed."
+	icon_state = "synthanolcan"
+	list_reagents = list(/datum/reagent/consumable/synthdrink = 40)

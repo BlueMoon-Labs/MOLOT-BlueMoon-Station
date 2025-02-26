@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT: MENTORS! SEE IN MODULAR modular_bluemoon\phoenix404\modules\mentor\code\mentor.dm
+/* BLUEMOON EDIT: MENTORS! SEE IN MODULAR modular_bluemoon\modules\mentor\code\mentor.dm
 GLOBAL_LIST_EMPTY(mentor_datums)
 GLOBAL_PROTECT(mentor_datums)
 

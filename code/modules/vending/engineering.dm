@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\engineering.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\engineering.dm'
 //This one's from bay12
 /obj/machinery/vending/engineering
 	name = "\improper Robco Tool Maker"

@@ -11,8 +11,11 @@
 	var/out_transformation_duration = 7
 	var/puddle_into_effect = /obj/effect/temp_visual/slime_puddle
 	var/puddle_from_effect = /obj/effect/temp_visual/slime_puddle/reverse
+	var/puddle_into_effect_alt = /obj/effect/temp_visual/slime_puddle_alt
+	var/puddle_from_effect_alt = /obj/effect/temp_visual/slime_puddle/reverse_alt
 	var/puddle_icon = 'icons/mob/mob.dmi'
 	var/puddle_state = "puddle"
+	var/puddle_state_alt = "puddle_alt"
 	var/mutable_appearance/tracked_overlay
 	var/datum/component/squeak/squeak
 	var/transforming = FALSE
@@ -46,6 +49,9 @@
 				ADD_TRAIT(H, TRAIT_HUMAN_NO_RENDER, SLIMEPUDDLE_TRAIT)
 				owner.cut_overlays() //we dont show our normal sprite, we show a puddle sprite
 				var/obj/effect/puddle_effect = new puddle_into_effect(get_turf(owner), owner.dir)
+				if (H.dna.features["puddle_slime_fea"] == TRUE)
+					qdel(puddle_effect)
+					puddle_effect = new puddle_into_effect_alt(get_turf(owner), owner.dir)
 				puddle_effect.color = mutcolor
 				puddle_effect.transform = H.transform //copy mob size for consistent meltdown appearance
 				H.Stun(in_transformation_duration, ignore_canstun = TRUE) //cant move while transforming
@@ -59,9 +65,7 @@
 				ADD_TRAIT(H, TRAIT_MOBILITY_NOREST, SLIMEPUDDLE_TRAIT)
 				ADD_TRAIT(H, TRAIT_ARMOR_BROKEN, SLIMEPUDDLE_TRAIT)
 				H.update_disabled_bodyparts(silent = TRUE)	//silently update arms to be paralysed
-
 				H.add_movespeed_modifier(/datum/movespeed_modifier/slime_puddle)
-
 				H.pass_flags |= PASSMOB //this actually lets people pass over you
 				squeak = H.AddComponent(/datum/component/squeak, custom_sounds = list('sound/effects/blobattack.ogg')) //blorble noise when people step on you
 
@@ -72,11 +76,12 @@
 
 				//set the puddle overlay up
 				var/mutable_appearance/puddle_overlay = mutable_appearance(icon = puddle_icon, icon_state = puddle_state)
+				if (H.dna.features["puddle_slime_fea"] == TRUE)
+					puddle_overlay = mutable_appearance(icon = puddle_icon, icon_state = puddle_state_alt)
 				puddle_overlay.color = mutcolor
 				tracked_overlay = puddle_overlay
 				owner.add_overlay(puddle_overlay)
 				owner.update_antag_overlays()
-
 				transforming = FALSE
 				UpdateButtons()
 		else
@@ -89,6 +94,9 @@
 	//like the above, but reverse everything done!
 	H.cut_overlay(tracked_overlay)
 	var/obj/effect/puddle_effect = new puddle_from_effect(get_turf(owner), owner.dir)
+	if (H.dna.features["puddle_slime_fea"] == TRUE) // Блаамп
+		qdel(puddle_effect)
+		puddle_effect = new puddle_from_effect_alt(get_turf(owner), owner.dir)
 	puddle_effect.color = tracked_overlay.color
 	puddle_effect.transform = H.transform //copy mob size for consistent transform size
 	H.Stun(out_transformation_duration, ignore_canstun = TRUE)

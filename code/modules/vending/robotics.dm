@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\robotics.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\robotics.dm'
 //This one's from bay12
 /obj/machinery/vending/robotics
 	name = "\improper Robotech Deluxe"

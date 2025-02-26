@@ -16,7 +16,7 @@
 						/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro = 4,\
 						/mob/living/simple_animal/hostile/syndicate/ranged/anthro = 4,\
 						/mob/living/simple_animal/hostile/viscerator = 8)
-	triggersound = 'modular_bluemoon/kovac_shitcode/sound/syndie_storm.ogg'
+	triggersound = 'modular_bluemoon/sound/ambience/storm/syndie_storm.ogg'
 
 /datum/round_event_control/portal_storm_inteq
 	name = "Portal Storm: Inteq Shocktroops"
@@ -36,7 +36,7 @@
 						/mob/living/simple_animal/hostile/syndicate/ranged/smg = 4,\
 						/mob/living/simple_animal/hostile/syndicate/ranged/shotgun = 4,\
 						/mob/living/simple_animal/hostile/viscerator = 8)
-	triggersound = 'modular_bluemoon/kovac_shitcode/sound/syndie_storm.ogg'
+	triggersound = 'modular_bluemoon/sound/ambience/storm/syndie_storm.ogg'
 
 /datum/round_event_control/portal_storm_narsie
 	name = "Portal Storm: Constructs"
@@ -78,7 +78,7 @@
 						/mob/living/simple_animal/hostile/retaliate/clown/lube = 5,\
 						/mob/living/simple_animal/hostile/retaliate/clown/banana = 5,\
 						/mob/living/simple_animal/hostile/retaliate/clown/fleshclown = 4)
-	triggersound = 'modular_bluemoon/kovac_shitcode/sound/clown_storm.ogg'
+	triggersound = 'modular_bluemoon/sound/ambience/storm/clown_storm.ogg'
 
 /datum/round_event_control/portal_storm_necros
 	name = "Portal Storm: Necromorphs"
@@ -96,7 +96,7 @@
 						/mob/living/simple_animal/hostile/spider = 6,\
 						/mob/living/simple_animal/hostile/brute/leaper = 5,\
 						/mob/living/simple_animal/hostile/brute/uber = 5)
-	triggersound = 'modular_bluemoon/kovac_shitcode/sound/necros_storm.ogg'
+	triggersound = 'modular_bluemoon/sound/ambience/storm/necros_storm.ogg'
 
 /datum/round_event_control/portal_storm_funclaws
 	name = "Portal Storm: Funclaws"
@@ -130,7 +130,7 @@
 	hostile_types = list(/mob/living/simple_animal/hostile/skibidi_toilet = 6,\
 						/mob/living/simple_animal/hostile/skibidi_toilet/vulp = 6)
 
-	triggersound = "modular_bluemoon/kovac_shitcode/sound/skibidi_toilets.ogg"
+	triggersound = "modular_bluemoon/sound/ambience/storm/skibidi_toilets.ogg"
 
 /datum/round_event_control/portal_storm_clock
 	name = "Portal Storm: Clock Cult"
@@ -147,7 +147,7 @@
 						/mob/living/simple_animal/hostile/clockcultistranged = 5,\
 						/mob/living/simple_animal/hostile/clockwork/clocktank/weak = 3,\
 						/mob/living/simple_animal/hostile/clockwork/clocktank = 2)
-	triggersound = 'modular_bluemoon/kovac_shitcode/sound/clock_storm.ogg'
+	triggersound = 'modular_bluemoon/sound/ambience/storm/clock_storm.ogg'
 
 /datum/round_event/portal_storm
 	start_when = 7

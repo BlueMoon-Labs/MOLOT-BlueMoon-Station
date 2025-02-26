@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\modularapc.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\modularapc.dm'
 /obj/machinery/vending/modularpc
 	name = "\improper Deluxe Silicate Solutions"
 	desc = "Your dream PC, just a few credits away!."

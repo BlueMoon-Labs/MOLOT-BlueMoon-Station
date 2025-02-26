@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\nutrimax.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\nutrimax.dm'
 /obj/machinery/vending/hydronutrients
 	name = "\improper NutriMax"
 	desc = "A plant nutrients vendor."

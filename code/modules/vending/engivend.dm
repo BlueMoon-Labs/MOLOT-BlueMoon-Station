@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\engivend.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\engivend.dm'
 /obj/machinery/vending/engivend
 	name = "\improper Engi-Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"

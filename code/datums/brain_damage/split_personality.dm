@@ -12,10 +12,11 @@
 	var/mob/living/split_personality/stranger_backseat //there's two so they can swap without overwriting
 	var/mob/living/split_personality/owner_backseat
 
-	//Vagabond edit
+	//BLUEMOON ADD
 	var/time_personality_spent = 0	//Go change personalities on some time instead of random
 	var/last_attempt = 0
 	var/got_ghost = FALSE
+	//BLUEMOON ADD END
 
 /datum/brain_trauma/severe/split_personality/on_gain()
 	var/mob/living/M = owner
@@ -33,19 +34,18 @@
 
 /datum/brain_trauma/severe/split_personality/proc/get_ghost()
 	set waitfor = FALSE
-	last_attempt = world.time
-	var/list/mob/candidates = pollCandidatesForMob("Do you want to play as [owner]'s split personality?", ROLE_PAI, null, null, 100, stranger_backseat, POLL_IGNORE_SPLITPERSONALITY)
+	last_attempt = world.time	//BLUEMOON ADD
+	var/list/mob/candidates = pollCandidatesForMob("Do you want to play as [owner]'s split personality?", ROLE_PAI, null, null, 100, stranger_backseat, POLL_IGNORE_SPLITPERSONALITY) //BLUEMOON CHANGE
 	if(LAZYLEN(candidates))
 		var/mob/C = pick(candidates)
 		C.transfer_ckey(stranger_backseat, FALSE)
 		log_game("[key_name(stranger_backseat)] became [key_name(owner)]'s split personality.")
 		message_admins("[ADMIN_LOOKUPFLW(stranger_backseat)] became [ADMIN_LOOKUPFLW(owner)]'s split personality.")
-		got_ghost = TRUE
+		got_ghost = TRUE //BLUEMOON CHANGE
 
 /datum/brain_trauma/severe/split_personality/on_life()
-	//Vagabond edit
 
-//	if(prob(3))
+//BLUEMOON CHANGE
 	if(got_ghost == TRUE)
 		if(time_personality_spent > 50)
 			time_personality_spent = 0
@@ -56,6 +56,7 @@
 		if(last_attempt+100 < world.time)
 			get_ghost()
 			last_attempt = world.time
+//BLUEMOON CHANGE END
 	..()
 
 /datum/brain_trauma/severe/split_personality/on_lose()
@@ -156,11 +157,11 @@
 	to_chat(src, "<span class='warning'><b>Do not commit suicide or put the body in a deadly position. Behave like you care about it as much as the owner.</b></span>")
 
 /mob/living/split_personality/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
-//	to_chat(src, "<span class='warning'>You cannot speak, your other self is controlling your body!</span>")
-	//Vagabond edit
+//BLUEMOON CHANGE
 	if(length(message) && body)
 		to_chat(body, "You hear a strange voice in your head... \"[message]\"")
 	return
+//BLUEMOON CHANGE END
 
 /mob/living/split_personality/emote(act, m_type = null, message = null, intentional = FALSE)
 	return

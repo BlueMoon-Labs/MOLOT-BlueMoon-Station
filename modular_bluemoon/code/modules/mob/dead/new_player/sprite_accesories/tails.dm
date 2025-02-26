@@ -37,3 +37,54 @@
 	name = "Shark tipped"
 	icon_state = "shark_tipped"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/sergal //Респрайт
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/sergal //Респрайт
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+
+/datum/sprite_accessory/tails/mam_tails/scorpid
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/scorpid/sting
+	name = "Scorpid Sting"
+	icon_state = "scorptail"
+
+/datum/sprite_accessory/tails/mam_tails/scorpid/plug
+	name = "Scorpid Plug"
+	icon_state = "plugtail"
+
+/datum/sprite_accessory/tails/mam_tails/acrador
+	name = "Acrador (Narrow)"
+	icon_state = "acrador_1"
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/acrador/normal
+	name = "Acrador (Medium)"
+	icon_state = "acrador_2"
+
+/datum/sprite_accessory/tails/mam_tails/acrador/big
+	name = "Acrador (Big)"
+	icon_state = "acrador_3"
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine_long
+	name = "Acrador (Narrow and Long)"
+	icon_state = "acrador_4"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador
+	name = "Acrador (Narrow and Long)"
+	icon_state = "acrador_4"
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine_very_long
+	name = "Acrador (Narrow and Very Long)"
+	icon_state = "acrador_5"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_very_long
+	name = "Acrador (Narrow and Very Long)"
+	icon_state = "acrador_5"
+

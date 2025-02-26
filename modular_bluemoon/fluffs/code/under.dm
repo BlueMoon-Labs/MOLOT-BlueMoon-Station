@@ -216,3 +216,10 @@
 	desc = "The dress from the tavern for elves is made of lightweight material that softly fits the figure. This pale green dress highlights the grace and elegance of the Elven people."
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "tavern_skirt"
+
+/obj/item/clothing/under/donator/bm/ElegantRedDress
+	name = "Элегантное красное платье"
+	desc = "Элегантное кроваво красное платье для вечеринок, принадлежащее одной адской гончей."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "ElegantRedDress"
+

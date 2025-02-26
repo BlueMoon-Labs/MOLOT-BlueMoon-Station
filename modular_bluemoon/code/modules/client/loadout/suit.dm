@@ -121,7 +121,7 @@
 
 /datum/gear/suit/warm_ponchorainbow
 	name = "Rainbow warm poncho"
-	path = /obj/item/clothing/suit/toggle/warm_poncho/rainbow
+	path = /obj/item/clothing/suit/toggle/warm_poncho
 
 /datum/gear/suit/ac_armoredcoat
 	name = "AC Armored Coat"

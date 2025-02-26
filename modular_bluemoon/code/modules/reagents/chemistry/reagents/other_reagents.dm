@@ -35,3 +35,16 @@
 	if(HAS_TRAIT(M, TRAIT_GFLUID_DETECT) || HAS_TRAIT(M,TRAIT_DUMB_CUM))
 		to_chat(M, span_love("Вы чувствуете явную нотку свежей спермы в напитке~"))
 
+/datum/reagent/blood/oil
+	data = list("donor"=null,"viruses"=null,"blood_DNA"="REPLICATED", "bloodcolor" = BLOOD_COLOR_OIL, "bloodblend" = BLEND_MULTIPLY, "blood_type"="HF","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null)
+	name = "Hydraulic Liquid"
+	description = "Hydraulic liquid for synthetic crewmembers."
+	taste_description = "oil"
+	color = BLOOD_COLOR_OIL
+	value = REAGENT_VALUE_NONE
+
+/datum/reagent/consumable/organicprecursor
+	name = "Organic Precursor"
+	description = "A very simple precursor-alike chemical that can be used in the creation of any specific liquids."
+	color = "#FFFFFF" // rgb: 255, 255, 255
+	taste_mult = 0 // oderless and tasteless
