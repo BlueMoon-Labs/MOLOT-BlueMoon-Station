@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\donksofttoyvendor.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\donksofttoyvendor.dm'
 /obj/machinery/vending/donksofttoyvendor
 	name = "\improper Donksoft Toy Vendor"
 	desc = "Ages 8 and up approved vendor that dispenses toys."

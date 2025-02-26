@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\plasmaresearch.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\plasmaresearch.dm'
 //This one's from bay12
 /obj/machinery/vending/plasmaresearch
 	name = "\improper Bombuddy 3000"

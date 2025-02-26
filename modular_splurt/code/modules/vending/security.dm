@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\security.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\security.dm'
 /obj/machinery/vending/security/Initialize()
 	var/list/extra_products = list(
 		/obj/item/ammo_box/magazine/e45/taser = 10,
@@ -34,7 +34,7 @@
 	)
 	LAZYREMOVE(premium, rem_premium)
 	. = ..()
-// BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\wardrobes.dm'
+// BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\wardrobes.dm'
 /obj/machinery/vending/wardrobe/sec_wardrobe/Initialize()
 	var/list/extra_products = list(
 		/obj/item/clothing/head/beret/sec/peacekeeper/cap = 5,
@@ -50,9 +50,9 @@
 		/obj/item/clothing/under/rank/security/stripper = 5,
 		/obj/item/clothing/suit/hooded/corpus/s = 5,
 		/obj/item/clothing/head/utilcover = 5,
-		/obj/item/clothing/under/utility/green = 5,
-		/obj/item/clothing/under/utility/navy = 5,
-		/obj/item/clothing/under/utility/tan = 5
+		/obj/item/clothing/under/bm/utility = 5,
+		/obj/item/clothing/under/bm/utility/navy = 5,
+		/obj/item/clothing/under/bm/utility/tan = 5
 	)
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,

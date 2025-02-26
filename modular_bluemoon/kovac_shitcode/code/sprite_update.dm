@@ -124,37 +124,6 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/datum/gear/mask/surgical
-	name = "Surgical Mask"
-	path = /obj/item/clothing/mask/surgical
-	cost = 2
-
-/datum/gear/mask/redscarf
-	name = "Red Facescarf"
-	path = /obj/item/clothing/mask/balaclava/breath/redscarf
-	cost = 2
-
-/datum/gear/mask/bluescarf
-	name = "Blue Facescarf"
-	path = /obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf
-	cost = 2
-
-/datum/gear/mask/purplescarf
-	name = "Purple Facescarf"
-	path = /obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf
-	cost = 2
-
-/datum/gear/mask/yellowscarf
-	name = "Yellow Facescarf"
-	path = /obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf
-	cost = 2
-
-/datum/gear/mask/greenscarf
-	name = "Green Facescarf"
-	path = /obj/item/clothing/mask/balaclava/breath/redscarf/greenscarf
-	cost = 2
-
-
 //// Vox suits and weapons (tau ceti). Sprites by deadmodo and coiscin /////////////////////
 
 // Base
@@ -677,7 +646,6 @@
 
 
 ///////////////////
-
 
 /obj/item/storage/backpack/ert_commander
 	name = "Tactical Backpack"

@@ -55,3 +55,12 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
 	force = 5
+
+/obj/item/storage/box/donator/bm/wh_kit
+	name = "A box of Unholy Armor"
+	desc = "This is a box imbued with the demonic influence of the Dark Gods, containing armor modkit inside"
+	icon_state = "box"
+
+/obj/item/storage/box/donator/bm/wh_kit/PopulateContents()
+	new /obj/item/modkit/whhelmet_kit(src)
+	new /obj/item/modkit/wharmor_kit(src)

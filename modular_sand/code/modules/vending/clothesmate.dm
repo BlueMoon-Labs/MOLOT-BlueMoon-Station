@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\wardrobes.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\wardrobes.dm'
 /obj/machinery/vending/clothing/Initialize(mapload)
 	products += list(/obj/item/clothing/head/wig = 5,
 					/obj/item/clothing/suit/jacket/duster = 5,

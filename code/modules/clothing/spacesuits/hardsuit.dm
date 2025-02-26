@@ -646,12 +646,18 @@
 	// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
 	unique_reskin = list(
 		"Acrador/Long-Eared" = list(
-			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets.dmi',
-			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets_onmob.dmi',
-			RESKIN_ANTHRO_WORN_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets_onmob.dmi'
+			RESKIN_ICON_STATE = "hardsuit0-sec_acrador",
+			RESKIN_ITEM_STATE = "hardsuit0-sec_acrador",
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/clothing/hats.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/icons/mob/clothing/hats.dmi',
+			RESKIN_ANTHRO_WORN_STATE_FILE = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
 		)
 	)
-	// BLUEMOON ADD END
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/reskin_obj(mob/user)
+	if(current_skin == "Acrador/Long-Eared")
+		hardsuit_type = "sec_acrador"
+	//BLUEMOON ADD END
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"

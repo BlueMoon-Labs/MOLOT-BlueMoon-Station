@@ -25,7 +25,7 @@
 	invocation_type = "none"
 	charge_max = 50
 	cooldown_min = 50
-	action_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
+	action_icon = 'icons/mob/actions/actions_xeno.dmi'
 	action_icon_state = "alien_resin"
 	shapeshift_type = /mob/living/simple_animal/hostile/tentacles
 

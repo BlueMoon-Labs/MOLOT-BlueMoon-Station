@@ -1,3 +1,4 @@
+/* BLUEMOON REWRITE переписано в modular_bluemoon\code\game\objects\items\stacks\tiles\tile_plasteel.dm
 /obj/item/stack/tile/plasteel
 	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_plasteel"
@@ -13,13 +14,14 @@
 		/obj/item/stack/tile/plasteel/solar_panel,
 		/obj/item/stack/tile/plasteel/shower_drain,
 		)
+*/
 
 /obj/item/stack/tile/plasteel/white
 	name = "white floor tile"
 	singular_name = "white floor tile"
 	desc = "White metal floor tiles."
 	turf_type = /turf/open/floor/plasteel/white
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_white"
 
 /obj/item/stack/tile/plasteel/dark
@@ -27,7 +29,7 @@
 	singular_name = "dark floor tile"
 	desc = "Dark metal floor tiles."
 	turf_type = /turf/open/floor/plasteel/dark
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_dark"
 
 /obj/item/stack/tile/plasteel/chapel
@@ -35,7 +37,7 @@
 	singular_name = "chapel floor tile"
 	desc = "Those very dark floor tiles you find in the chapel a lot."
 	turf_type = /turf/open/floor/plasteel/chapel
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_chapel"
 
 /obj/item/stack/tile/plasteel/shower
@@ -43,23 +45,23 @@
 	singular_name = "shower floor tile"
 	desc = "Tiles for showers, bathrooms and wetrooms."
 	turf_type = /turf/open/floor/plasteel/showroomfloor
-	icon = 'modular_sand/icons/obj/tiles.dmi'
-	icon_state = "tile_shower"
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
+	icon_state = "tile_showroom"
 
 /obj/item/stack/tile/plasteel/freezer
 	name = "freezer floor tile"
 	singular_name = "freezer floor tile"
 	desc = "High-grip flooring for walk-in freezers and chillers."
 	turf_type = /turf/open/floor/plasteel/freezer
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_freezer"
 
-/obj/item/stack/tile/plasteel/kitchen
+/obj/item/stack/tile/plasteel/cafeteria //BLUEMOON EDIT cafeteria чтобы сходилось с полом
 	name = "kitchen floor tile"
 	singular_name = "kitchen floor tile"
 	desc = "Chequered pattern plasteel tiles."
 	turf_type = /turf/open/floor/plasteel/cafeteria
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_kitchen"
 
 /obj/item/stack/tile/plasteel/grimy
@@ -67,7 +69,7 @@
 	singular_name = "grimy floor tile"
 	desc = "I'm sure it'll look nice somewhere?"
 	turf_type = /turf/open/floor/plasteel/grimy
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_grimy"
 
 /obj/item/stack/tile/plasteel/solar_panel
@@ -75,7 +77,7 @@
 	singular_name = "solar panel floor tile"
 	desc = "Flooring usually placed below solar panels. Using this indoors is an intergalactic fashion crime."
 	turf_type = /turf/open/floor/plasteel/solarpanel
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_white"
 
 /obj/item/stack/tile/plasteel/shower_drain
@@ -83,5 +85,5 @@
 	singular_name = "shower drain floor tile"
 	desc = "Tiles that look nice alongside showers."
 	turf_type = /turf/open/floor/plasteel/showroomfloor/shower
-	icon = 'modular_sand/icons/obj/tiles.dmi'
+//	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_drain"
