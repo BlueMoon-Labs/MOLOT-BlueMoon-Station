@@ -598,53 +598,6 @@
 	speak_chance = 10
 	loot = list(/obj/item/clothing/head/wizard/fake = 1)
 
-///////////////
-
-/obj/item/toy/plush/nukeplushie/who
-	name = "security officer plushie"
-	desc = "A stuffed toy that resembles a Nanotrasen operative. He smells like burnt cotton."
-	icon_state = "who"
-	item_state = "who"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
-	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
-	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
-	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/plush_1.ogg' = 9, 'modular_bluemoon/kovac_shitcode/sound/vulps/plush_2.ogg' = 1)
-
-/obj/item/toy/plush/deer/qm
-	name = "supply chief plushie"
-	desc = "A stuffed toy that resembles a Cargonia Chief. Looks like a fallen economy."
-	icon_state = "qm"
-	item_state = "qm"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
-	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
-	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
-
-/obj/item/toy/plush/sergal/judas
-	name = "yellow shark plushie"
-	desc = "An adorable stuffed plushie that resembles a yellow security shark."
-	icon_state = "judas"
-	item_state = "judas"
-	squeak_override = list('modular_splurt/sound/voice/barks/undertale/voice_alphys.ogg' = 9)
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
-	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
-	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
-
-/obj/item/toy/plush/nukeplushie/omega
-	name = "Omega plushie"
-	desc = "This plushie really has an empty noggin and zero thoughts about commiting something especially cruel."
-	icon_state = "omega"
-	item_state = "omega"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
-	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/ooh.ogg' = 9)
-
-/obj/item/toy/plush/sergal/judas/vance
-	name = "Vance plushie"
-	desc = "A plush rodent, she smells like cheese and xenobiology!"
-	icon_state = "vance"
-	item_state = "vance"
-	squeak_override = list('sound/items/toysqueak1.ogg' = 3, 'sound/items/toysqueak2.ogg' = 3, 'sound/items/toysqueak3.ogg' = 3)
-
-
 ///////////////////
 
 /obj/item/storage/backpack/ert_commander
