@@ -247,6 +247,7 @@
 	can_adjust = FALSE
 	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/misc/squatter
 	name = "Slav Squatter Tracksuit"

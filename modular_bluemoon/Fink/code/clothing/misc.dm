@@ -14,4 +14,4 @@
 		"Lit" = list("icon_state" = "Lotos-Rykav", "item_state" = "Lotos-Rykav"),
 		"Strip" = list("icon_state" = "Lotos-Alt", "item_state" = "Lotos-Alt"),
 	)
-
+	fitted = FEMALE_UNIFORM_TOP

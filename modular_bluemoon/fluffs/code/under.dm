@@ -107,6 +107,7 @@
     desc = "Изысканный эльфийский наряд, что выполнен из нежной ткани и украшен золотыми нитями."
     icon_state = "Elf_skirt"
     item_state = "Elf_skirt"
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/donator/bm/Prosecutor_suit
     name = "Prosecutor_suit"
@@ -171,6 +172,7 @@
 	icon_state = "laskaskirt"
 	item_state = "laskaskirt"
 	can_adjust = TRUE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/underwear/briefs/kladmen_panties
 	name = "Panties"
@@ -216,6 +218,7 @@
 	desc = "The dress from the tavern for elves is made of lightweight material that softly fits the figure. This pale green dress highlights the grace and elegance of the Elven people."
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "tavern_skirt"
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/donator/bm/ElegantRedDress
 	name = "Элегантное красное платье"

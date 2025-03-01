@@ -38,6 +38,7 @@
 	item_state = "capspacehelmet"
 	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/bm/ryodan
 	name = "Ryodan Suit"

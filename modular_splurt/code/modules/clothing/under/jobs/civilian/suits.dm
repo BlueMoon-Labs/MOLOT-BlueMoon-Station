@@ -84,6 +84,7 @@
 	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/under/suits_digi.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/suit/inferno
 	name = "inferno suit"
@@ -108,6 +109,7 @@
 		"Lust" = list("icon_state" = "modeus"),
 		"Sloth" = list("icon_state" = "pande"),
 	)
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/suit/inferno/beeze
 	name = "designer inferno suit"
@@ -128,6 +130,7 @@
 	name = "red shirt with white skirt"
 	desc = "No time. Busy gathering boys."
 	icon_state = "helltakerskirt"
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/suit/error
 	name = "error suit"
