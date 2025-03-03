@@ -104,6 +104,6 @@
 	mood_change = -5 //STOP BEING SUICIDAL BECAUSE OF THE LACK OF CUM! - Gardelin0
 
 /datum/mood_event/cum_stuffed
-	description = span_nicegreen("Вкусная была еда! Ням-ням!\n")
+	description = span_lewd("Сперма ощущается так приятно внутри меня~\n")
 	mood_change = 8
 	timeout = 5 MINUTES

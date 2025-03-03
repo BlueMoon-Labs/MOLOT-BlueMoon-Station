@@ -30,3 +30,13 @@
 	name = "Subtler (Indicatored)"
 	full_name = "Subtler Anti-Ghost Emote (with indicator)"
 	clientside = "subtler-anti-ghost-indicatored"
+
+/datum/emote/sound/human/subtle
+	emote_cooldown = 0
+
+/datum/emote/sound/human/subtler
+	emote_cooldown = 0
+
+/datum/emote/sound/human/subtler_table
+	emote_cooldown = 0
+
