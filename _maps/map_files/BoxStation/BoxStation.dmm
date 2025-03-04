@@ -40841,9 +40841,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "eWv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/service/bar)
 "eWL" = (
@@ -43836,6 +43834,7 @@
 	req_one_access_txt = "25";
 	name = "Bar Backroom"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/service/bar)
 "gDl" = (
@@ -51899,13 +51898,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/cells)
-"kZs" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/service/bar)
 "kZD" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -53014,9 +53006,9 @@
 /area/commons/storage/art)
 "lNE" = (
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/dark,
 /area/service/bar)
 "lNH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -62385,6 +62377,9 @@
 /area/security/detectives_office)
 "qXI" = (
 /obj/effect/landmark/start/bartender,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "qXJ" = (
@@ -65725,6 +65720,9 @@
 /obj/structure/sign/barsign{
 	pixel_x = -32;
 	pixel_y = 32
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/bar)
@@ -111088,7 +111086,7 @@ caI
 aJC
 dDz
 aVM
-kZs
+wEk
 aJC
 sWY
 xXh
@@ -111345,7 +111343,7 @@ oUR
 aJC
 oVr
 anE
-lNE
+wEk
 ksc
 qXI
 fTZ
@@ -111604,7 +111602,7 @@ tkZ
 suy
 eWv
 gDe
-xXh
+lNE
 nYS
 xXh
 aJz
