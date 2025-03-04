@@ -42,6 +42,9 @@
 	if(is_type_in_list(target, current_sort))
 		to_chat(user, span_warning("[target] is already in [src]'s sorting list!"))
 		return
+	if(ismob(target)) //BLUEMOON CHANGE ограничение от абузов с "щитами" от мобов
+		to_chat(user, span_warning("[target] cannot be added in [src]'s sorting list!"))
+		return
 	if(length(current_sort) >= 5)
 		to_chat(user, span_warning("[src] already has five things within the sorting list!"))
 		return
