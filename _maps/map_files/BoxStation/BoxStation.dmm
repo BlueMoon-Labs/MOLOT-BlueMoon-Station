@@ -6831,9 +6831,9 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/auxiliary)
 "aEI" = (
-/obj/machinery/biogenerator,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/service/kitchen)
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel,
+/area/commons/dorms)
 "aEJ" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -29085,6 +29085,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
+"cgr" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/service/hydroponics)
 "cgs" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -34555,25 +34562,11 @@
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
 "cxF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/half,
-/obj/structure/sign/warning/fire{
-	desc = "A sign that states the labeled room's number.";
-	dir = 10;
-	icon_state = "roomnum";
-	name = "Room Number 6";
-	pixel_y = -23;
-	pixel_x = 0
-	},
-/turf/open/floor/plasteel/dark/textured/half{
-	dir = 4
-	},
-/area/commons/dorms)
+/turf/open/floor/plasteel,
+/area/service/hydroponics)
 "cxN" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -37816,8 +37809,24 @@
 /turf/open/floor/padded,
 /area/security/prison/cells)
 "drE" = (
-/obj/machinery/washing_machine,
-/turf/open/floor/plasteel,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half,
+/obj/structure/sign/warning/fire{
+	desc = "A sign that states the labeled room's number.";
+	dir = 10;
+	icon_state = "roomnum";
+	name = "Room Number 6";
+	pixel_y = -23;
+	pixel_x = 0
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/commons/dorms)
 "drK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -39750,7 +39759,13 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "eqD" = (
-/obj/structure/window/reinforced{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -40309,17 +40324,9 @@
 /turf/open/floor/plasteel/dark,
 /area/security/execution/transfer)
 "eKA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/half/contrasted{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/service/hydroponics)
+/obj/machinery/biogenerator,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/service/kitchen)
 "eKF" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 5;
@@ -42491,13 +42498,13 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/central)
 "fTV" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "botanyshuttersprivacy";
-	name = "botany shutters"
+/obj/machinery/washing_machine,
+/obj/structure/bedsheetbin{
+	pixel_x = 0;
+	pixel_y = 7
 	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/service/hydroponics)
+/turf/open/floor/plasteel,
+/area/commons/dorms)
 "fTZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 6
@@ -47802,11 +47809,6 @@
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
 "iVr" = (
-/obj/machinery/washing_machine,
-/obj/structure/bedsheetbin{
-	pixel_x = 0;
-	pixel_y = 7
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -55526,6 +55528,10 @@
 /turf/open/floor/plasteel,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "mXE" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "botanyshuttersprivacy";
+	name = "botany shutters"
+	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/service/hydroponics)
@@ -65903,11 +65909,8 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "tbF" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 2
-	},
-/obj/machinery/disposal/bin,
-/turf/open/floor/plasteel/dark/textured/large,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/service/hydroponics)
 "tbK" = (
 /obj/structure/closet/secure_closet/evidence,
@@ -108744,11 +108747,11 @@ arf
 krH
 piw
 pCP
-ros
+fTV
 fod
 lZZ
 asu
-asu
+aEI
 aJC
 leO
 fpz
@@ -109262,7 +109265,7 @@ aAh
 aAh
 asu
 iVr
-drE
+ros
 aJC
 pMv
 jdV
@@ -113878,7 +113881,7 @@ arf
 arf
 arf
 kSC
-cxF
+drE
 arf
 csH
 eAW
@@ -114663,7 +114666,7 @@ aJI
 aJI
 aJI
 aJI
-aEI
+eKA
 ask
 aSP
 aJI
@@ -115177,7 +115180,7 @@ aOX
 aRJ
 gMN
 aIp
-tbF
+cgr
 mMP
 kKE
 kck
@@ -115435,7 +115438,7 @@ aRJ
 uOq
 aIp
 aIp
-eKA
+eqD
 gBt
 gBt
 aRJ
@@ -115688,11 +115691,11 @@ hHQ
 wVt
 aIp
 wWP
-eqD
+cxF
 uOq
 aRJ
-mXE
-eKA
+tbF
+eqD
 gBt
 gBt
 aRJ
@@ -116214,7 +116217,7 @@ efq
 efq
 aTl
 vwm
-fTV
+mXE
 acV
 nRy
 tvt
