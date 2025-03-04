@@ -6831,7 +6831,10 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/auxiliary)
 "aEI" = (
-/turf/open/floor/plasteel/dark/textured/large,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/service/hydroponics)
 "aEJ" = (
 /obj/effect/turf_decal/tile/red,
@@ -29085,10 +29088,6 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cgr" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "botanyshuttersprivacy";
-	name = "botany shutters"
-	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/service/hydroponics)
@@ -34562,8 +34561,7 @@
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
 "cxF" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/service/hydroponics)
 "cxN" = (
 /obj/structure/cable{
@@ -39741,9 +39739,17 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "eqD" = (
-/obj/machinery/biogenerator,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/service/kitchen)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/service/hydroponics)
 "eqK" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/structure/disposalpipe/segment{
@@ -40298,16 +40304,12 @@
 /turf/open/floor/plasteel/dark,
 /area/security/execution/transfer)
 "eKA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "botanyshuttersprivacy";
+	name = "botany shutters"
 	},
-/obj/effect/turf_decal/tile/green/half/contrasted{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/service/hydroponics)
 "eKF" = (
 /obj/structure/extinguisher_cabinet{
@@ -41476,6 +41478,11 @@
 /area/maintenance/aft)
 "fqR" = (
 /obj/structure/table/wood,
+/obj/item/storage/crayons,
+/obj/item/clothing/mask/balaclava{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel,
 /area/commons/fitness)
 "frk" = (
@@ -42475,25 +42482,9 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/central)
 "fTV" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/half,
-/obj/structure/sign/warning/fire{
-	desc = "A sign that states the labeled room's number.";
-	dir = 10;
-	icon_state = "roomnum";
-	name = "Room Number 6";
-	pixel_y = -23;
-	pixel_x = 0
-	},
-/turf/open/floor/plasteel/dark/textured/half{
-	dir = 4
-	},
-/area/commons/dorms)
+/obj/machinery/biogenerator,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/service/kitchen)
 "fTZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 6
@@ -60185,12 +60176,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
 "pLl" = (
-/obj/structure/table,
-/obj/item/storage/crayons,
-/obj/item/clothing/mask/balaclava{
-	pixel_x = -8;
-	pixel_y = 8
-	},
+/obj/machinery/vending/kink,
 /turf/open/floor/carpet/green,
 /area/commons/dorms)
 "pLn" = (
@@ -70916,11 +70902,25 @@
 /turf/open/floor/plating,
 /area/security/processing)
 "vTT" = (
-/obj/structure/window/reinforced{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/service/hydroponics)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half,
+/obj/structure/sign/warning/fire{
+	desc = "A sign that states the labeled room's number.";
+	dir = 10;
+	icon_state = "roomnum";
+	name = "Room Number 6";
+	pixel_y = -23;
+	pixel_x = 0
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
+/area/commons/dorms)
 "vTZ" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -113881,7 +113881,7 @@ arf
 arf
 arf
 kSC
-fTV
+vTT
 arf
 csH
 eAW
@@ -114666,7 +114666,7 @@ aJI
 aJI
 aJI
 aJI
-eqD
+fTV
 ask
 aSP
 aJI
@@ -114923,7 +114923,7 @@ gon
 foq
 kWT
 aIp
-aEI
+cxF
 gdJ
 dKa
 hjD
@@ -115438,7 +115438,7 @@ aRJ
 uOq
 aIp
 aIp
-eKA
+eqD
 gBt
 gBt
 aRJ
@@ -115691,11 +115691,11 @@ hHQ
 wVt
 aIp
 wWP
-vTT
+aEI
 uOq
 aRJ
-cxF
-eKA
+cgr
+eqD
 gBt
 gBt
 aRJ
@@ -116217,7 +116217,7 @@ efq
 efq
 aTl
 vwm
-cgr
+eKA
 acV
 nRy
 tvt
