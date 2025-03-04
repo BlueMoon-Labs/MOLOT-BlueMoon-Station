@@ -6831,11 +6831,9 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/auxiliary)
 "aEI" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/service/hydroponics)
+/obj/machinery/biogenerator,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/service/kitchen)
 "aEJ" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -29087,13 +29085,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
-"cgr" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 2
-	},
-/obj/machinery/disposal/bin,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/service/hydroponics)
 "cgs" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -34564,8 +34555,25 @@
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
 "cxF" = (
-/turf/open/floor/plasteel/dark/textured/large,
-/area/service/hydroponics)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half,
+/obj/structure/sign/warning/fire{
+	desc = "A sign that states the labeled room's number.";
+	dir = 10;
+	icon_state = "roomnum";
+	name = "Room Number 6";
+	pixel_y = -23;
+	pixel_x = 0
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
+/area/commons/dorms)
 "cxN" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -39742,13 +39750,7 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "eqD" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/half/contrasted{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -40307,9 +40309,17 @@
 /turf/open/floor/plasteel/dark,
 /area/security/execution/transfer)
 "eKA" = (
-/obj/machinery/biogenerator,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/service/kitchen)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/service/hydroponics)
 "eKF" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 5;
@@ -55516,25 +55526,9 @@
 /turf/open/floor/plasteel,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "mXE" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/half,
-/obj/structure/sign/warning/fire{
-	desc = "A sign that states the labeled room's number.";
-	dir = 10;
-	icon_state = "roomnum";
-	name = "Room Number 6";
-	pixel_y = -23;
-	pixel_x = 0
-	},
-/turf/open/floor/plasteel/dark/textured/half{
-	dir = 4
-	},
-/area/commons/dorms)
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/service/hydroponics)
 "mYa" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -65909,8 +65903,11 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "tbF" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/service/hydroponics)
 "tbK" = (
 /obj/structure/closet/secure_closet/evidence,
@@ -70918,6 +70915,9 @@
 	},
 /turf/open/floor/plating,
 /area/security/processing)
+"vTT" = (
+/turf/open/floor/plasteel/dark/textured/large,
+/area/service/hydroponics)
 "vTZ" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -113878,7 +113878,7 @@ arf
 arf
 arf
 kSC
-mXE
+cxF
 arf
 csH
 eAW
@@ -114663,7 +114663,7 @@ aJI
 aJI
 aJI
 aJI
-eKA
+aEI
 ask
 aSP
 aJI
@@ -114920,7 +114920,7 @@ gon
 foq
 kWT
 aIp
-cxF
+vTT
 gdJ
 dKa
 hjD
@@ -115177,7 +115177,7 @@ aOX
 aRJ
 gMN
 aIp
-cgr
+tbF
 mMP
 kKE
 kck
@@ -115435,7 +115435,7 @@ aRJ
 uOq
 aIp
 aIp
-eqD
+eKA
 gBt
 gBt
 aRJ
@@ -115688,11 +115688,11 @@ hHQ
 wVt
 aIp
 wWP
-aEI
+eqD
 uOq
 aRJ
-tbF
-eqD
+mXE
+eKA
 gBt
 gBt
 aRJ
@@ -118784,7 +118784,7 @@ adu
 qVd
 pqQ
 bat
-aFu
+bbD
 aYV
 aXq
 beE
