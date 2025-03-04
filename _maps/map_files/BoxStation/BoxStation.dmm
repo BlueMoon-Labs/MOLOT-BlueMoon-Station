@@ -6831,9 +6831,8 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/auxiliary)
 "aEI" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/plasteel,
-/area/commons/dorms)
+/turf/open/floor/plasteel/dark/textured/large,
+/area/service/hydroponics)
 "aEJ" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -7343,6 +7342,7 @@
 "aGN" = (
 /obj/structure/chair/stool,
 /obj/effect/turf_decal/tile/green/half/contrasted,
+/obj/effect/landmark/start/botanist,
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "aHe" = (
@@ -29086,12 +29086,9 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cgr" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 2
-	},
-/obj/machinery/disposal/bin,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/service/hydroponics)
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel,
+/area/commons/dorms)
 "cgs" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -34562,10 +34559,8 @@
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
 "cxF" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/service/hydroponics)
 "cxN" = (
 /obj/structure/cable{
@@ -37809,25 +37804,11 @@
 /turf/open/floor/padded,
 /area/security/prison/cells)
 "drE" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/half,
-/obj/structure/sign/warning/fire{
-	desc = "A sign that states the labeled room's number.";
-	dir = 10;
-	icon_state = "roomnum";
-	name = "Room Number 6";
-	pixel_y = -23;
-	pixel_x = 0
-	},
-/turf/open/floor/plasteel/dark/textured/half{
-	dir = 4
-	},
-/area/commons/dorms)
+/turf/open/floor/plasteel,
+/area/service/hydroponics)
 "drK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/cable{
@@ -38774,6 +38755,14 @@
 /obj/structure/loot_pile/maint,
 /turf/open/floor/plating,
 /area/maintenance/fore)
+"dPt" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "botanyshuttersprivacy";
+	name = "botany shutters"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/service/hydroponics)
 "dPD" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/structure/cable{
@@ -42498,12 +42487,24 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/central)
 "fTV" = (
-/obj/machinery/washing_machine,
-/obj/structure/bedsheetbin{
-	pixel_x = 0;
-	pixel_y = 7
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/half,
+/obj/structure/sign/warning/fire{
+	desc = "A sign that states the labeled room's number.";
+	dir = 10;
+	icon_state = "roomnum";
+	name = "Room Number 6";
+	pixel_y = -23;
+	pixel_x = 0
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 4
+	},
 /area/commons/dorms)
 "fTZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -49208,6 +49209,7 @@
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/tile/green/fourcorners,
+/obj/effect/landmark/start/botanist,
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "jGI" = (
@@ -51495,7 +51497,6 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "kNC" = (
-/obj/effect/landmark/start/botanist,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
@@ -55528,13 +55529,12 @@
 /turf/open/floor/plasteel,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "mXE" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "botanyshuttersprivacy";
-	name = "botany shutters"
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/service/hydroponics)
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/wood,
+/area/service/bar)
 "mYa" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -60618,6 +60618,7 @@
 /obj/structure/chair/sofa/corner/brown{
 	dir = 8
 	},
+/obj/effect/landmark/start/bouncer,
 /turf/open/floor/carpet/black,
 /area/service/bar)
 "pWS" = (
@@ -63089,6 +63090,14 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
+"ruf" = (
+/obj/machinery/washing_machine,
+/obj/structure/bedsheetbin{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel,
+/area/commons/dorms)
 "ruF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/security/glass{
@@ -64175,6 +64184,7 @@
 "rZK" = (
 /obj/structure/bed,
 /obj/item/bedsheet/gondola,
+/obj/effect/landmark/start/bartender,
 /turf/open/floor/wood,
 /area/service/bar)
 "rZO" = (
@@ -65909,8 +65919,11 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "tbF" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/service/hydroponics)
 "tbK" = (
 /obj/structure/closet/secure_closet/evidence,
@@ -68907,7 +68920,6 @@
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "uOq" = (
-/obj/effect/landmark/start/botanist,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
@@ -70919,7 +70931,16 @@
 /turf/open/floor/plating,
 /area/security/processing)
 "vTT" = (
-/turf/open/floor/plasteel/dark/textured/large,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/green{
+	dir = 8
+	},
+/obj/effect/landmark/start/botanist,
+/turf/open/floor/plasteel,
 /area/service/hydroponics)
 "vTZ" = (
 /obj/effect/turf_decal/tile/red,
@@ -108747,11 +108768,11 @@ arf
 krH
 piw
 pCP
-fTV
+ruf
 fod
 lZZ
 asu
-aEI
+cgr
 aJC
 leO
 fpz
@@ -109530,7 +109551,7 @@ acN
 aJC
 aKq
 xli
-bDu
+mXE
 wEk
 wgU
 iHG
@@ -113881,7 +113902,7 @@ arf
 arf
 arf
 kSC
-drE
+fTV
 arf
 csH
 eAW
@@ -114923,7 +114944,7 @@ gon
 foq
 kWT
 aIp
-vTT
+aEI
 gdJ
 dKa
 hjD
@@ -115180,11 +115201,11 @@ aOX
 aRJ
 gMN
 aIp
-cgr
+tbF
 mMP
 kKE
 kck
-kck
+vTT
 wnT
 bBs
 gkS
@@ -115691,10 +115712,10 @@ hHQ
 wVt
 aIp
 wWP
-cxF
+drE
 uOq
 aRJ
-tbF
+cxF
 eqD
 gBt
 gBt
@@ -116217,7 +116238,7 @@ efq
 efq
 aTl
 vwm
-mXE
+dPt
 acV
 nRy
 tvt
