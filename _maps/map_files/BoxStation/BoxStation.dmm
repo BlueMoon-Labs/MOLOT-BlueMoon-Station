@@ -1985,7 +1985,6 @@
 /area/science/circuit)
 "akL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/meter,
 /obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plating,
@@ -5084,10 +5083,6 @@
 /obj/structure/girder,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"awH" = (
-/obj/machinery/space_heater,
-/turf/open/floor/plating,
-/area/maintenance/port)
 "awI" = (
 /obj/machinery/button/door{
 	id = "maint2";
@@ -6035,6 +6030,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/meter{
+	target_layer = 1
+	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "aBm" = (
@@ -8874,9 +8872,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/meter{
+	target_layer = 1
+	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "aOv" = (
@@ -10378,7 +10378,6 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
 "aVC" = (
-/obj/machinery/meter,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -10390,6 +10389,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
+	},
+/obj/machinery/meter{
+	target_layer = 1
 	},
 /turf/open/floor/plating,
 /area/maintenance/port)
@@ -11528,6 +11530,10 @@
 	},
 /turf/open/floor/carpet,
 /area/command/meeting_room)
+"baL" = (
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/maintenance/port)
 "baM" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -90751,7 +90757,7 @@ aZs
 baN
 aSg
 hmT
-awH
+baL
 aSg
 aSg
 bfq
