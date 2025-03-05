@@ -5085,9 +5085,9 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "awH" = (
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
-/area/maintenance/starboard/fore)
+/area/maintenance/port)
 "awI" = (
 /obj/machinery/button/door{
 	id = "maint2";
@@ -11528,12 +11528,6 @@
 	},
 /turf/open/floor/carpet,
 /area/command/meeting_room)
-"baL" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/maintenance/port)
 "baM" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -12490,12 +12484,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plating,
 /area/maintenance/port)
-"bdD" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/maintenance/port)
 "bdE" = (
 /obj/structure/sign/poster/contraband/have_a_puff{
 	pixel_y = -32
@@ -12601,13 +12589,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plating,
-/area/maintenance/port)
-"bea" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/meter,
 /turf/open/floor/plating,
 /area/maintenance/port)
 "beb" = (
@@ -13091,7 +13072,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/maintenance/port)
 "bfx" = (
@@ -37447,13 +37430,6 @@
 /obj/structure/reagent_dispensers/keg/gargle,
 /turf/open/floor/wood,
 /area/maintenance/bar)
-"dfM" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/binary/valve/layer1,
-/turf/open/floor/plating,
-/area/maintenance/starboard/fore)
 "dgz" = (
 /turf/closed/wall,
 /area/commons/cryopod)
@@ -48084,9 +48060,7 @@
 /area/medical/surgery)
 "jaF" = (
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 8
-	},
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "jaG" = (
@@ -54586,12 +54560,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
-"mAH" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/fore)
 "mAT" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Pool Maintenance";
@@ -61776,15 +61744,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/execution/transfer)
-"qIY" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/fore)
 "qJa" = (
 /obj/structure/sign/warning/securearea{
 	pixel_x = -32
@@ -71526,16 +71485,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit)
-"whJ" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 8
-	},
-/obj/machinery/meter,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/fore)
 "wiR" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/loot_pile/maint,
@@ -71864,13 +71813,14 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison/upper)
 "woA" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
@@ -90545,8 +90495,8 @@ osH
 tAB
 tAB
 aPz
-baL
-baL
+sMI
+aSl
 bfh
 aPz
 aPz
@@ -90801,9 +90751,9 @@ aZs
 baN
 aSg
 hmT
+awH
 aSg
-bdD
-bea
+aSg
 bfq
 kDd
 bkF
@@ -115187,9 +115137,9 @@ gLe
 asw
 asw
 asw
-qIY
-whJ
-dfM
+asw
+asw
+asw
 woA
 cVb
 flV
@@ -115444,7 +115394,7 @@ arj
 aqy
 elR
 aBF
-mAH
+aoQ
 jaF
 alP
 aql
@@ -116219,7 +116169,7 @@ anf
 anf
 alP
 auF
-aoQ
+hyY
 cVb
 cVb
 cVb
@@ -116476,7 +116426,7 @@ anf
 anf
 alP
 auF
-awH
+hyY
 alP
 aAr
 aBF
