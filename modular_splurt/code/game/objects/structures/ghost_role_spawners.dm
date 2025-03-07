@@ -228,7 +228,7 @@
 	if(GLOB.master_mode == "Extended")
 		important_info = "Запрещено пытаться сбежать и сопротивляться без веских причин как серьёзная угроза жизни от сотрудников Космической Полиции и Солнечной. Побег только с разрешения администрации."
 		category = "sol"
-		
+
 /obj/effect/mob_spawn/human/inteqspace/captain
 	name = "InteQ Ship Captain"
 	short_desc = "Вы - Лидер Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
@@ -271,7 +271,7 @@
 
 	id = /obj/item/card/id/inteq/crew_id
 	backpack_contents = list(/obj/item/paper/fluff/ruins/forgottenship/password)
-
+	implants = list(/obj/item/implant/deathrattle/inteqcrew)
 /datum/outfit/inteqspace/inteq_hostage
 	name = "InteQ Hostage"
 
@@ -298,6 +298,7 @@
 
 	id = /obj/item/card/id/inteq/captain_id
 	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)
+	implants = list(/obj/item/implant/deathrattle/inteqcrew)
 
 // Ghost Cafe Spawner (VR Version)
 
