@@ -41,7 +41,7 @@
 	name = "Syndicate Listening Post"
 	icon_state = "yellow"
 	has_gravity = STANDARD_GRAVITY
-
+/*
 /obj/effect/mob_spawn/human/space/syndicate/special(mob/living/new_spawn)
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
@@ -75,7 +75,7 @@
 
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.faction |= ROLE_SYNDICATE
-
+*/
 /area/ruin/space/ruinsolars
 	name = "Solar Array"
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
