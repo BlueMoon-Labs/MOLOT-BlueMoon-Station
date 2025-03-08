@@ -481,9 +481,10 @@ SUBSYSTEM_DEF(job)
 	if(H.mind)
 		H.mind.assigned_role = rank
 
+	var/list/items_to_add_later = list() //BLUEMOON ADD вещи потеряшки из !job.dresscodecompliant уходят на второй круг в попытке заспавниться позже
 	if(job)
 		if(!job.dresscodecompliant)// CIT CHANGE - dress code compliance
-			equip_loadout(N, H) // CIT CHANGE - allows players to spawn with loadout items
+			items_to_add_later = equip_loadout(N, H) //BLUEMOON ADD вещи потеряшки оговоренные ранее
 		var/new_mob = job.equip(H, null, null, joined_late , null, M.client)
 		if(ismob(new_mob))
 			H = new_mob
@@ -525,6 +526,23 @@ SUBSYSTEM_DEF(job)
 	if(job && H)
 		if(job.dresscodecompliant)// CIT CHANGE - dress code compliance
 			equip_loadout(N, H) // CIT CHANGE - allows players to spawn with loadout items
+	//BLUEMOON ADD проходимся по всем вещам потеряшкам если такие есть, закидываем НАСИЛЬНО в рюкзак невзирая на размеры оного
+		else if(items_to_add_later.len)
+			if(iscarbon(H))
+				var/mob/living/carbon/C = H
+				var/obj/item/storage/backpack/B = C.back
+				if(B)
+					for(var/obj/item/I in items_to_add_later)
+						I.forceMove(B) //если кто-то это как-то заобузит забаньте его пермой пожалуйста
+				else
+					for(var/obj/item/I in items_to_add_later)
+						I.forceMove(get_turf(M))
+
+			else
+				for(var/obj/item/I in items_to_add_later)
+					if(!M.equip_to_slot_if_possible(I, ITEM_SLOT_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // Otherwise, try to put it in the backpack
+						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
+	//BLUEMOON ADD END
 		job.after_spawn(H, M.client, joined_late) // note: this happens before the mob has a key! M will always have a client, H might not.
 		post_equip_loadout(N, H)//CIT CHANGE - makes players spawn with in-backpack loadout items properly. A little hacky but it works
 
@@ -749,6 +767,7 @@ SUBSYSTEM_DEF(job)
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
+		var/list/items_to_add_later = list() //BLUEMOON ADD сбор потеряшек чтобы они точно не застряли на главном экране
 		for(var/i in chosen_gear)
 			var/datum/gear/G = istext(i[LOADOUT_ITEM]) ? text2path(i[LOADOUT_ITEM]) : i[LOADOUT_ITEM]
 			if(!ispath(G))
@@ -804,12 +823,12 @@ SUBSYSTEM_DEF(job)
 					var/obj/item/storage/backpack/B = C.back
 					if(!B || !SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE)) // Otherwise, try to put it in the backpack, for carbons.
 						if(can_drop)
-							I.forceMove(get_turf(C))
+							items_to_add_later += I //BLUEMOON ADD сбор потеряшек чтобы они точно не застряли на главном экране
 						else
 							qdel(I)
 				else if(!M.equip_to_slot_if_possible(I, ITEM_SLOT_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // Otherwise, try to put it in the backpack
 					if(can_drop)
-						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
+						items_to_add_later += I //BLUEMOON ADD сбор потеряшек чтобы они точно не застряли на главном экране
 					else
 						qdel(I)
 			// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
@@ -819,6 +838,7 @@ SUBSYSTEM_DEF(job)
 				if(!i[LOADOUT_CUSTOM_NAME])
 					var/list/family_name = splittext(M.real_name, " ")
 					I.name = "\improper [family_name[family_name.len]] family [I.name]"
+		return items_to_add_later //BLUEMOON ADD выводим потеряшек для работы в EquipRank
 			// BLUEMOON ADD END
 
 
