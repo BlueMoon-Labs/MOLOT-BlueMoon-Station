@@ -82,14 +82,12 @@
 	cost = 6
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
-/*
 /datum/uplink_item/inteq/sand_parasite
 	name = "Sand parasite"
 	desc = "Искусственно выращенный паразит, пожирающий тело носителя и перестраивающий его в более пластичную форму. Необратимо лишает носителя человечности в обмен даруя способности к мимикрии, при этом не мешая взаимодействовать с окружением."
 	item = /obj/item/reagent_containers/syringe/sand
 	cost = 15
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
-*/
 
 /datum/uplink_item/dangerous/garand
 	name = "Old, but gold rifle"
