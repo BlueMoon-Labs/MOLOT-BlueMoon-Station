@@ -31,7 +31,7 @@
 
 /obj/item/clothing/mask/infiltrator/inteq
 	name = "SpecOps Balaclava"
-	desc = "Необычная балоклава со встроеным блоком изменения голоса. Выглядит немного кустарно, но идеально справляется со своими задачами"
+	desc = "Необычная балаклава со встроенным блоком изменения голоса. Выглядит немного кустарно, но идеально справляется со своими задачами"
 	icon_state = "infiltrator_m"
 	item_state = "infiltrator_m"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
@@ -40,7 +40,7 @@
 
 /obj/item/clothing/suit/armor/vest/infiltrator/inteq
 	name = "SpecOps combat vest"
-	desc = "Качественный бронежилет с бронепластиной из многослойной пластали. Совмещает в себе лёгкость и прочность, имеет буферный подкладки и идеально прилегает к телу, не издавая лишних звуков при ношении."
+	desc = "Качественный бронежилет с броне пластиной из многослойной пластали. Совмещает в себе лёгкость и прочность, имеет буферный подкладки и идеально прилегает к телу, не издавая лишних звуков при ношении."
 	icon_state = "infiltrator_a"
 	item_state = "infiltrator_a"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
@@ -120,7 +120,7 @@
 // Шлем
 /obj/item/clothing/head/helmet/space/syndicate/darktemplar
 	name = "Dark Power Armour helmet"
-	desc = "Грамоздкий шлем, созданый что бы вселять страх в сердца предателей и ксеносов."
+	desc = "Громоздкий шлем, созданный что бы вселять страх в сердца предателей и ксеносов."
 	icon_state = "darktemplar_helm"
 	item_state = "darktemplar_helm"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
@@ -171,7 +171,7 @@
 ///Кричалка с крутыми фразами. Они прописаны в коде хайлера.
 /obj/item/clothing/mask/gas/sechailer/angrymarin
 	name = "Space Marine Gas Mask"
-	desc = "Древняя система подачи кислорода объединёная с вокс системой, усиливающей голос пользователя"
+	desc = "Древняя система подачи кислорода объединённая с вокс системой, усиливающей голос пользователя"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	actions_types = list(/datum/action/item_action/halt)
 	aggressiveness = 999 ///Очень злой
@@ -180,7 +180,7 @@
 ///Ботинки с крутым звуком топота
 /obj/item/clothing/shoes/jackboots/powerbots
 	name = "Power boots"
-	desc = "Тяжёлые латные ботинки созданые, что бы ходить по трупам поверженых врагов."
+	desc = "Тяжёлые латные ботинки созданные, что бы ходить по трупам поверженных врагов."
 	clothing_flags = NOSLIP
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 0, BIO = 0, RAD = 0, FIRE = 40, ACID = 75)
@@ -235,7 +235,7 @@
 //безумие
 /obj/item/clothing/head/helmet/hank
 	name = "Black old bandana"
-	desc = "Чёрные повязки на голову, призваные скрывать бинты. В этих красных очках виднелось отражение не одной сотни смертей."
+	desc = "Чёрная бандана на голову, призванная скрыть бинты. В этих красных очках виднелось отражение не одной сотни смертей."
 	icon_state = "hank_m"
 	item_state = "hank_m"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
@@ -258,7 +258,7 @@
 
 /obj/item/clothing/suit/armor/hank
 	name = "Old black coat"
-	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
+	desc = "Поношенный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
 	icon_state = "hank"
 	item_state = "hank"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
@@ -347,7 +347,7 @@
 /// Тело
 /obj/item/armorkit/inteq
 	name = "Quiet kid armor kit"
-	desc = "Набор гибких армированых пластин которые будут совершенно незаметно сидеть под твоей толстовкой, с которой ты так не захотел растоваться даже на миссии, нёрд."
+	desc = "Набор гибких армированных пластин которые будут совершенно незаметно сидеть под твоей толстовкой, с которой ты так не захотел расставаться даже на миссии, хиккан."
 	icon_state = "inteq_armor_kit"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	w_class = WEIGHT_CLASS_SMALL
@@ -386,7 +386,7 @@
 //Голова
 /obj/item/armorkit/helmet/inteq
 	name = "Quiet kid helmet kit"
-	desc = "Набор гибких армированых пластин которые будут совершенно незаметно сидеть под твоей кепкой, с которой ты так не захотел растоваться даже на миссии, нёрд."
+	desc = "Набор гибких армированных пластин которые будут совершенно незаметно сидеть под твоей кепкой, с которой ты так не захотел расставаться даже на миссии, хиккан."
 	icon_state = "inteq_helm_kit"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	w_class = WEIGHT_CLASS_SMALL
@@ -451,7 +451,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/explorer
 	name = "Expedition hardsuit helmet"
-	desc = "Армированый шлем, в котором не страшно засунуть свой нос даже в самые опасные заброшеные станции и обломки кораблей."
+	desc = "Армированный шлем, в котором не страшно сунуть свой нос даже в самые опасные заброшенные станции и обломки кораблей."
 	icon_state = "hardsuit0-explorer"
 	item_state = "hardsuit0-explorer"
 	hardsuit_type = "explorer"
@@ -461,7 +461,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/explorer
 	name = "Expedition hardsuit"
-	desc = "Армированый костюм, в котором не страшно ступить даже в самые опасные заброшеные станции и обломки кораблей."
+	desc = "Армированный костюм, в котором не страшно ступить даже в самые опасные заброшенные станции и обломки кораблей."
 	icon_state = "hardsuit-explorer"
 	item_state = "hardsuit-explorer"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
@@ -485,7 +485,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/ftu
 	name = "Fleet security hardsuit"
-	desc = "Боевой костюм, расчитаный на длительные сражения в космосе с превосходящими силами противника. После многолетних чисток целых секторов от пиратства, теперь заставляет многих нервно сглотнуть от одного своего вида."
+	desc = "Боевой костюм, рассчитанный на длительные сражения в космосе с превосходящими силами противника. После многолетних чисток целых секторов от пиратства, теперь заставляет многих нервно сглотнуть от одного своего вида."
 	icon_state = "hardsuit-ftu_combat"
 	item_state = "hardsuit-ftu_combat"
 	tail_state = "syndicate-winter"
@@ -501,7 +501,7 @@
 ///Инженерный риг
 /obj/item/clothing/head/helmet/space/hardsuit/engine/ftu
 	name = "Ship engineering hardsuit helmet"
-	desc = "Стандартный шлем инженерного костюма для техническогл обслуживания судов торгового флота."
+	desc = "Стандартный шлем инженерного костюма для технического обслуживания судов торгового флота."
 	icon_state = "hardsuit0-odst"
 	item_state = "hardsuit0-odst"
 	hardsuit_type = "odst"
@@ -530,7 +530,7 @@
 
 /obj/item/clothing/suit/armor/vest/ftu
 	name = "FTU Security Armor"
-	desc = "Стандартный бронежилет охраны свободных торговцев. Обеспечивает оптимальную защиту жизнено важных органов в тесных коридорах кораблей и трюмов."
+	desc = "Стандартный бронежилет охраны свободных торговцев. Обеспечивает оптимальную защиту жизненно важных органов в тесных коридорах кораблей и трюмов."
 	icon_state = "epic_bp_armor"
 	item_state = "epic_bp_armor"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
@@ -551,7 +551,7 @@
 
 /obj/item/clothing/head/helmet/skull/ftu
 	name = "FTU Combat Skull"
-	desc = "Бронированая маска из полимеров стилизованая под череп. Вселяет страх в каждого пирата."
+	desc = "Бронированная маска из полимеров стилизованная под череп. Вселяет страх в каждого пирата."
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 	flash_protect = 2
 	armor = list(MELEE = 30, BULLET = 60, LASER = 25, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 30)

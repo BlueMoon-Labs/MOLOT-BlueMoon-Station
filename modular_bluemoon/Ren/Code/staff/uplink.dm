@@ -77,17 +77,19 @@
 
 /datum/uplink_item/inteq/canceller
 	name = "Canceller"
-	desc = "Старый пистолет для нелетальных задержаний использовавшийся спецслужбами Солнечной федерации. Вместо батареи был поставлен РИТЭГ, благадаря чему заряд постепенно восполняется, а рукам становится тепло в этом холодном космосе."
+	desc = "Старый пистолет для не летальных задержаний использовавшийся спецслужбами Солнечной федерации. Вместо батареи был поставлен РИТЭГ, благодаря чему заряд постепенно восполняется, а рукам становится тепло в этом холодном космосе."
 	item = /obj/item/gun/energy/laser/canceller
 	cost = 6
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+/*
 /datum/uplink_item/inteq/sand_parasite
 	name = "Sand parasite"
 	desc = "Искусственно выращенный паразит, пожирающий тело носителя и перестраивающий его в более пластичную форму. Необратимо лишает носителя человечности в обмен даруя способности к мимикрии, при этом не мешая взаимодействовать с окружением."
 	item = /obj/item/reagent_containers/syringe/sand
 	cost = 15
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+*/
 
 /datum/uplink_item/dangerous/garand
 	name = "Old, but gold rifle"
