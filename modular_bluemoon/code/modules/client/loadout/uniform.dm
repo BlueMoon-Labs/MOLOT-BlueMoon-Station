@@ -185,3 +185,11 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
+
+/datum/gear/uniform/boobblouse
+	name = "Custom-Tailored Blouse"
+	path = /obj/item/clothing/under/rank/civilian/lawyer/boobblouse
+
+/datum/gear/uniform/boobsuit
+	name = "Custom-Tailored Suit"
+	path = /obj/item/clothing/under/rank/civilian/lawyer/boobsuit
