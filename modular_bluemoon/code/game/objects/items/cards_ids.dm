@@ -99,3 +99,27 @@
 		if(src != my_owner?.get_item_by_slot(ITEM_SLOT_ID)) // Если в будущем что-то переделают и карта будет спавниться в отдельной коробке или вроде того
 			visible_message(span_warning("ID карта из лодаута не нашла цель для копирования доступа, сообщите разработчикам."))
 	. = ..()
+
+/obj/item/card/id/nri
+	name = "\improper NRI Military ID"
+	desc = "An Novaya Rossiyskya Imperia Spetsnaz ID card."
+	icon_state = "nri"
+	registered_name = "NRI"
+	assignment = "NRI"
+	uses_overlays = FALSE
+
+/obj/item/card/id/nri/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
+
+/obj/item/card/id/sol
+	name = "\improper SolFed Military ID"
+	desc = "An Solar Federation Military ID card. Provided with special sensors, allowing to unlock all necessary doors for combatants, slightly reminding emag functions."
+	icon_state = "sol"
+	registered_name = "Sol"
+	assignment = "Sol"
+	uses_overlays = FALSE
+
+/obj/item/card/id/sol/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
