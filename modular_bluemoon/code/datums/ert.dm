@@ -6,7 +6,7 @@
 	code = "Red"
 	mission = "Экипаж станции не справляется с активной биологической угрозой. Окажите соответствующую поддержку."
 	polldesc = "elite Nanotrasen Fire Team"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/ert_firesquad_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/ert_firesquad_send.ogg"
 
 /datum/ert/heavysquad // Удар молота
 	roles = list(/datum/antagonist/ert/heavysquad, /datum/antagonist/ert/heavysquad/machinegun)
@@ -15,7 +15,7 @@
 	code = "Delta"
 	mission = "По имеющимся разведанным на станции присутствует особо опасный и тяжеловооруженный противник. Корпорация заинтересована в сохранении своих активов. Разберитесь с проблемой."
 	polldesc = "elite Nanotrasen Heavy Team"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/ert_heavysquad_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/ert_heavysquad_send.ogg"
 
 /datum/ert/russian_ert // НРИ
 	roles = list(/datum/antagonist/ert/russian_ert, /datum/antagonist/ert/russian_ert/support)
@@ -24,7 +24,7 @@
 	code = "Delta"
 	mission = "От одной из близлежащих космических станций получен сигнал о помощи. Мы связались с НТ и получили добро на вмешательство. Окажите поддержку."
 	polldesc = "Novaya Rossiyskaya Imperiya Spetsnaz Squad"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/nri_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/nri_send.ogg"
 
 /datum/ert/sol_ert // Солнечная Федерация
 	roles = list(/datum/antagonist/ert/sol_ert, /datum/antagonist/ert/sol_ert/support)
@@ -33,7 +33,7 @@
 	code = "Delta"
 	mission = "НТ авторизовало интервенцию сил Солнечной Федерации на космическую станцию. Окажите помощь её экипажу."
 	polldesc = "Solar Federation Marine Squad"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/sol_send.ogg"
 
 /datum/ert/engineer_ert // Инженерное подразделение
 	roles = list(/datum/antagonist/ert/engineer)
@@ -42,7 +42,7 @@
 	code = "Orange"
 	mission = "Окажите поддержку станции по части ремонтных работ."
 	polldesc = "Emergency Engineer Squad"
-	//ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
+	//ertphrase = "modular_bluemoon/sound/ert/sol_send.ogg"
 
 /datum/ert/ntr_ert // Агенты Внутренних Дел
 	roles = list(/datum/antagonist/ert/ntr_ert_agent)
@@ -52,7 +52,7 @@
 	mission = "Слушайтесь Представителя Корпорации. Окажите поддержку Представителю Корпорации в установлении порядка и верховенства права на станции."
 	polldesc = "Internal Affairs Squad"
 	teamsize = 4
-	//ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
+	//ertphrase = "modular_bluemoon/sound/ert/sol_send.ogg"
 
 /datum/ert/maid_ert // рофлоЕРТ горничных
 	roles = list(/datum/antagonist/ert/maid)
@@ -62,7 +62,7 @@
 	mission = "Наведите порядок на станции, если вы понимаете, что офицер ССО имел ввиду."
 	polldesc = "Elite maid Squad"
 	teamsize = 5
-	//ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
+	//ertphrase = "modular_bluemoon/sound/ert/sol_send.ogg"
 
 /datum/ert/zealteam_ert // Удар наковальней
 	roles = list(/datum/antagonist/ert/zeal_team)
@@ -71,4 +71,4 @@
 	polldesc = "Zeal Team Squad"
 	code = "Delta"
 	mission = "По имеющимся разведанным на станции присутствует особо опасный и тяжеловооруженный противник. Корпорация заинтересована в сохранении своих активов. Разберитесь с проблемой."
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/ert_heavysquad_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/ert_heavysquad_send.ogg"
