@@ -291,11 +291,8 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	return FALSE
 
 //There's a lot of QDELETED() calls here if someone can figure out how to optimize this but not runtime when something gets deleted by a Bump/CanPass/Cross call, lemme know or go ahead and fix this mess - kevinz000
-// MODULAR_JUICY-EDIT
-// /turf/Enter(atom/movable/mover, atom/oldloc) // ORIGINAL
 // Test if a movable can enter this turf. Send no_side_effects = TRUE to prevent bumping.
-/turf/Enter(atom/movable/mover, atom/oldloc, no_side_effects = FALSE)
-// MODULAR_JUICY-EDIT
+/turf/Enter(atom/movable/mover, atom/oldloc, no_side_effects = FALSE) // BLUEMOON EDIT
 	// Do not call ..()
 	// Byond's default turf/Enter() doesn't have the behaviour we want with Bump()
 	// By default byond will call Bump() on the first dense object in contents
