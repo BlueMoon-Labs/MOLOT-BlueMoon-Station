@@ -2,7 +2,7 @@
 /obj/item/choice_beacon/box/creepy_statue_kit
 	name = "Creepy statue construction kit"
 	desc = "Construction requires a crowbar & screwdriver . Put it on the ground first!"
-	icon = 'modular_bluemoon/Fink/icons/structures/creepy_statue.dmi'
+	icon = 'modular_bluemoon/icons/obj/statue.dmi'
 	icon_state = "const_box"
 	throwforce = 0
 	var/unwrapped = 0
@@ -39,7 +39,7 @@
 /obj/structure/statue/creepy_statue
 	//name = "Creepy statue"
 	desc = "Goosebumps run when you see it."
-	icon = 'modular_bluemoon/Fink/icons/structures/creepy_statue.dmi'
+	icon = 'modular_bluemoon/icons/obj/statue.dmi'
 	anchored = 0
 
 
@@ -130,7 +130,7 @@
 /obj/structure/statue/big_monument
 	name = "Big monument"
 	desc = "The scale is mesmerizing."
-	icon = 'modular_bluemoon/Fink/icons/structures/big_monument.dmi'
+	icon = 'modular_bluemoon/icons/obj/statue_big.dmi'
 	density = TRUE
 
 	anchored = 0
