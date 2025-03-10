@@ -135,11 +135,6 @@
 		return
 	. = ..()
 
-/obj/item/poster/random_inteq
-	name = "random InteQ poster"
-	poster_type = /obj/structure/sign/poster/contraband/inteq/random
-	icon_state = "rolled_contraband"
-
 /obj/item/storage/box/inteq_box/posters
 	name = "InteQ Posters Box"
 	desc = "Каробочка. Крутая."
@@ -152,104 +147,6 @@
 	new	/obj/item/poster/random_inteq(src)
 	new	/obj/item/poster/random_inteq(src)
 	new	/obj/item/poster/random_inteq(src)
-
-///////
-
-/obj/structure/sign/poster/contraband/inteq
-	var/datum/proximity_monitor/advanced/demoraliser/demotivator
-
-/obj/structure/sign/poster/contraband/inteq/Initialize(mapload)
-	demotivator = new(src, 7, TRUE)
-	START_PROCESSING(SSobj,src)
-	return ..()
-
-/obj/structure/sign/poster/contraband/inteq/process()
-	if(world.time < demotivator.next_scare)
-		return
-	var/scared_someone = FALSE
-	for(var/mob/living/viewer in view(5, src))
-		demotivator.pugach(viewer)
-		scared_someone = TRUE
-	if(scared_someone)
-		demotivator.next_scare = world.time + 120
-
-/obj/item/poster/random_inteq/poster_place_check(mob/user, turf/closed/wall)
-	// Хз, как ты пытаешься повесить постер, будучи не хуманом, но мало ли
-	if(!ishuman(user))
-		return FALSE
-	var/mob/living/carbon/human/placer = user
-	if(IS_INTEQ(placer) || placer.mind?.antag_datums)
-		return ..()
-	to_chat(placer, span_warning("Вы разворачиваете постер, и тут замечаете, что это пропаганда InteQ! Ну его, от греха подальше!"))
-	placer.drop_all_held_items()
-	return FALSE
-//////
-
-
-/obj/structure/sign/poster/contraband/inteq/attackby(obj/item/tool, mob/user, params)
-	if (tool.tool_behaviour == TOOL_WIRECUTTER)
-		QDEL_NULL(demotivator)
-	return ..()
-
-/obj/structure/sign/poster/contraband/inteq/Destroy()
-	QDEL_NULL(demotivator)
-	return ..()
-
-/obj/structure/sign/poster/contraband/inteq/on_attack_hand(mob/living/carbon/human/user)
-	if(istype(user) && user.dna.check_mutation(TK))
-		to_chat(user, "<span class='notice'>You telekinetically remove the [src].</span>")
-	else if(user.gloves)
-		if(istype(user.gloves,/obj/item/clothing/gloves/tackler))
-			to_chat(user, "<span class='warning'>Вы срываете [src], но лезвия на обороте режут вам руку!</span>")
-			user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-	else
-		to_chat(user, "<span class='warning'>Вы пытаетесь сорвать [src], но лезвия на обороте режут вам руку и мешают поддеть [src]!</span>")
-		to_chat(user, "<span class='warning'>Нужны кусачки!</span>")
-		user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		return
-	.=..()
-///////
-/obj/structure/sign/poster/contraband/inteq/random
-	name = "random contraband poster"
-	icon_state = "random_contraband"
-	never_random = TRUE
-	random_basetype = /obj/structure/sign/poster/contraband/inteq
-
-/obj/structure/sign/poster/contraband/inteq/inteq_recruitment
-	name = "InteQ Recruitment"
-	desc = "Увидь Галактику! Заработай денег! Вступай сегодня!"
-	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
-	icon_state = "poster_inteq"
-
-/obj/structure/sign/poster/contraband/inteq/inteq_sign
-	name = "InteQ poster"
-	desc = "Частная Военная Компания, занимающаяся обороной частных предприятий и выполнением заказов. В данный момент они хотят уничтожить Пакт между НТ и Синдикатом..."
-	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
-	icon_state = "poster_inteq_baza"
-
-/obj/structure/sign/poster/contraband/inteq/inteq_better_dead
-	name = "Better Dead!"
-	desc = "Сокрушим врагов!"
-	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
-	icon_state = "poster_inteq_better_dead"
-
-/obj/structure/sign/poster/contraband/inteq/inteq_no_peace
-	name = "No peace!"
-	desc = "Не имей сто друзей, а имей сто рублей, Вступай в ЧВК 'InteQ'!"
-	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
-	icon_state = "poster_inteq_no_love"
-
-/obj/structure/sign/poster/contraband/inteq/inteq_no_sex
-	name = "No SEX"
-	desc = "Хватит дрочить, вступай в ЧВК 'InteQ'!"
-	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
-	icon_state = "poster_inteq_no_sex"
-
-/obj/structure/sign/poster/contraband/inteq/inteq_vulp
-	name = "InteQ Recruitment"
-	desc = "Коричневый постер. На нём написано: 'Даже если ты дрочишь на вульп, вступай в ЧВК 'InteQ'. Сокрушим врагов вместе!'."
-	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
-	icon_state = "poster_inteq_vulp"
 
 /obj/item/storage/box/inteq_box
 	name = "brown box"

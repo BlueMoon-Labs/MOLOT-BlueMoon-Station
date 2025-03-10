@@ -38,3 +38,7 @@
 /datum/gear/neck/windy_scarf
 	name = "A windy scarf"
 	path = /obj/item/clothing/neck/windy_scarf
+
+/datum/gear/neck/scarf/cow
+	name = "Holly's Scarf"
+	path = /obj/item/clothing/neck/scarf/cow

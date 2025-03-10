@@ -43,6 +43,13 @@
 	color = BLOOD_COLOR_OIL
 	value = REAGENT_VALUE_NONE
 
+/datum/reagent/blood/fancy
+	name = "High Quality Blood"
+	description = "A noble virgin donor's blood."
+	taste_description = "sweet innocence"
+	glass_name = "glass of Vampire Delight"
+	glass_desc = "To sate the fanged gentlemen and gentlewomen."
+
 /datum/reagent/consumable/organicprecursor
 	name = "Organic Precursor"
 	description = "A very simple precursor-alike chemical that can be used in the creation of any specific liquids."

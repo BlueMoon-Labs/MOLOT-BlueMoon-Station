@@ -53,3 +53,7 @@
 /datum/gear/mask/pipe
 	name = "Smoking Pipe"
 	path = /obj/item/clothing/mask/cigarette/pipe
+
+/datum/gear/mask/kindle
+	name = "Kindred`s Mask"
+	path = /obj/item/clothing/mask/kindle

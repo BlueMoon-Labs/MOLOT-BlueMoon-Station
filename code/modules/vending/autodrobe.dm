@@ -172,7 +172,7 @@
 					/obj/item/clothing/head/HoS/beret/nri/cap/armorless = 2,
 					/obj/item/clothing/head/helmet/aviator_helmet/no_armor = 3,
 					/obj/item/clothing/neck/cloak/chronos = 5,
-					/obj/item/clothing/under/chronos = 5,
+					/obj/item/clothing/under/bm/chronos = 5,
 					/obj/item/clothing/head/beret/chronos = 5,
 					/obj/item/clothing/head/npc_questhuh_hat = 3,
 					/obj/item/clothing/head/npc_questhey_hat = 3

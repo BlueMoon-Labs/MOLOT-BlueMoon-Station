@@ -77,3 +77,7 @@
 /datum/gear/shirt/poly_keyholesweater
 	name = "polychromic keyhole sweater"
 	path = /obj/item/clothing/underwear/shirt/poly_keyholesweater
+
+/datum/gear/shirt/cheese
+	name = "Cheese-Kini Bra"
+	path = /obj/item/clothing/underwear/shirt/cheese

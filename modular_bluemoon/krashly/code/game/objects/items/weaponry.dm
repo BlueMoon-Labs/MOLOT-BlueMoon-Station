@@ -259,17 +259,6 @@
 	icon_state = "akr12_mag"
 	item_state = "akr12_mag"
 
-/datum/supply_pack/security/armory/ak12r
-	name = "Pink AK-12 Rifle Crate"
-	desc = "Contains one high-powered, fully automatic rifle, and three mags. Requires Armory access to open."
-	cost = 35000
-	contains = list(/obj/item/gun/ballistic/automatic/ak12/r,
-					/obj/item/ammo_box/magazine/ak12/r,
-					/obj/item/ammo_box/magazine/ak12/r,
-					/obj/item/ammo_box/magazine/ak12/r)
-	crate_name = "pink ak12 rifle crate"
-
-
 /obj/item/gun/ballistic/revolver/inteq
 	icon_state = "revolver_inteq"
 

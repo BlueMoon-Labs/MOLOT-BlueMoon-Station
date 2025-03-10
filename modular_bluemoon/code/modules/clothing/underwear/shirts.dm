@@ -59,3 +59,9 @@
 	mutantrace_variation = STYLE_NO_ANTHRO_ICON
 	icon_state = "garland_shirt"
 	item_state = "garland_shirt"
+
+/obj/item/clothing/underwear/shirt/cheese
+	name = "cheese-kini bra"
+	icon = 'modular_bluemoon/icons/mob/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/underwear.dmi'
+	icon_state = "bra_cheese-kini"

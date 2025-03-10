@@ -1,10 +1,3 @@
-/datum/supply_pack/security/armory/pact_ninja_case
-	name = "Pact Ninja Case"
-	desc = "Хранит в себе специализированный боевой костюм с оружием ближнего боя. Требует доступ к Арсеналу для открытия ящичка."
-	cost = 29990
-	contains = list(/obj/item/storage/toolbox/infiltrator/pact_ninja)
-	crate_name = "Pact Ninja Case Crate"
-
 /obj/item/storage/toolbox/infiltrator/pact_ninja
 	name = "Pact Ninja Case"
 	desc = "Элегантный кейс с отделкой из кожи и с эмблемой Nanotrasen и Синдиката. Содержит внутри костюм, разработанный для понижения заметности пользователя в условиях тесных пространств замкнутых помещений. Сам кейс же отлично подходит для переноса всего того арсенала оружия, что ты взял с собой на 'тихую' миссию."

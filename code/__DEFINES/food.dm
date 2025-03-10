@@ -13,6 +13,9 @@
 #define PINEAPPLE	(1<<12)
 #define BREAKFAST	(1<<13)
 #define ANTITOXIC 	(1<<14)
+#define SEAFOOD 	(1<<15) //BLUEMOON ADD
+#define NUTS 		(1<<16) //BLUEMOON ADD
+#define SAUCE 		(1<<17) //BLUEMOON ADD
 
 #define DRINK_NICE	1
 #define DRINK_GOOD	2
@@ -37,9 +40,3 @@
 
 #define BLACKBOX_LOG_FOOD_MADE(food) SSblackbox.record_feedback("tally", "food_made", 1, food)
 
-// Всё ради еды
-#define SEAFOOD (1<<15)
-#define NUTS 	(1<<16)
-#define SAUCE 	(1<<17)
-
-#define CAT_EAST "East foods"

@@ -468,7 +468,7 @@
 		ertemplate.notify_players = prefs["notify_players"]["value"] == "Yes"
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		if(ertemplate.notify_players)
-			priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
+			priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/sound/ert/ert_send.ogg') //BlueMoon sound
 
 		var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
 		var/teamSpawned = FALSE
@@ -583,7 +583,7 @@
 			return TRUE
 		else
 			if(ertemplate.notify_players)
-				priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+				priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/sound/ert/ert_no.ogg') //BlueMoon sound
 			return FALSE
 
 	return

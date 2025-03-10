@@ -4,7 +4,7 @@
 	cost = 1
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
-	item_icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
+	item_icon = 'modular_bluemoon/icons/obj/card.dmi'
 	item_icon_state = "muck_id"
 
 /datum/gear/donator/lewdsleepy

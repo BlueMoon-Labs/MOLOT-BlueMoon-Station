@@ -686,23 +686,6 @@
 	new /obj/item/poster/erthelp(src)
 	new /obj/item/poster/dymai(src)
 
-// И скрутки определённых постеров тож сюда закину, чтоб не срать х2
-
-/obj/item/poster/erthelp
-	name = "No one will help you poster"
-	poster_type = /obj/structure/sign/poster/contraband/erthelp
-	icon_state = "rolled_contraband"
-
-/obj/item/poster/dymai
-	name = "Dymai poster"
-	poster_type = /obj/structure/sign/poster/official/dymai
-	icon_state = "rolled_legit"
-
-/obj/item/poster/vlm
-	name = "Voxes Lives Matter poster"
-	poster_type = /obj/structure/sign/poster/official/vlm
-	icon_state = "rolled_legit"
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////ДАТУМы.
 
 /datum/gear/donator/bm/catcrin_combatmask_one

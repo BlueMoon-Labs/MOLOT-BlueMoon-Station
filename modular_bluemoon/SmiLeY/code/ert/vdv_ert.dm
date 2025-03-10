@@ -8,7 +8,7 @@
 	code = "Red"
 	mission = "От одной из близлежащих космических станций получен сигнал о помощи. Мы связались с НТ и получили добро на вмешательство. Окажите поддержку."
 	polldesc = "Vozdushno Desantnie Voyska Squad"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/nri_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/nri_send.ogg"
 
 /datum/antagonist/ert/vdv
 	name = "NRI VDV Soldier"

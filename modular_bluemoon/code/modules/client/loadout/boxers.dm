@@ -6,3 +6,7 @@
 /datum/gear/underwear/boxers/panties/portalpanties
 	name = "Портальные Трусики"
 	path = /obj/item/clothing/underwear/briefs/panties/portalpanties
+
+/datum/gear/underwear/cheese
+	name = "Cheese-Kini Panties"
+	path = 	/obj/item/clothing/underwear/briefs/cheese

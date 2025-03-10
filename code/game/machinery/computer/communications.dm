@@ -775,7 +775,7 @@
 	ertemplate.ertphrase = prefs["ertphrase"]["value"]
 	ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" ? TRUE : FALSE
 	ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes" ? TRUE : FALSE
-	priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
+	priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/sound/ert/ert_send.ogg') //BlueMoon sound
 
 	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
 	var/teamSpawned = FALSE
@@ -844,7 +844,7 @@
 				CHECK_TICK
 		return TRUE
 	else
-		priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников. Средства были возвращены.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+		priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников. Средства были возвращены.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/sound/ert/ert_no.ogg') //BlueMoon sound
 		var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 		GLOB.payed_ert[id]["available"] = TRUE
 		bank_account.adjust_money(GLOB.payed_ert[id]["price"])

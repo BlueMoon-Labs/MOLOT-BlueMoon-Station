@@ -179,7 +179,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/headset_law
 	name = "law radio headset"
 	desc = "This is used by your local budget lawyer."
-	icon = 'modular_bluemoon/Fink/icons/clothing/radio.dmi'
+	icon = 'modular_bluemoon/icons/obj/radio.dmi'
 	icon_state = "law_headset"
 	keyslot = new /obj/item/encryptionkey/headset_law
 

@@ -274,7 +274,6 @@
 
 		balloon_alert(user, "wires attached")
 		icon_state = "[icon_state]-cable"
-		reagents.flags = NO_REACT
 		wires_are_in = TRUE
 	else // wires are in, lets finish this up
 		var/obj/item/assembly/assembly = item
