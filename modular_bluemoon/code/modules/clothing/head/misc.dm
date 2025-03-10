@@ -23,3 +23,10 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
 	strip_delay = 60
 	dog_fashion = null
+
+/obj/item/clothing/head/beret/chronos
+	name = "new mecca beret"
+	desc = "But burning those villages, watching those naked peasants cry..."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "torch_beret"

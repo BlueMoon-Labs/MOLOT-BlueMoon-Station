@@ -34,3 +34,11 @@
 	name = "tan utility uniform"
 	desc = "A tan utility uniform, now all you need is a FUCKIN' CAS!"
 	icon_state = "utiltan"
+
+/obj/item/clothing/under/bm/chronos
+	name = "new mecca uniform"
+	desc = "In this suit, your grandfather fucked cromag."
+	icon_state = "torch_uniform"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	flags_inv = HIDEGLOVES|HIDESHOES
+	alt_covers_chest = FALSE

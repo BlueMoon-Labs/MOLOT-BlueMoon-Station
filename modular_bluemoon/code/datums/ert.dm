@@ -72,3 +72,24 @@
 	code = "Delta"
 	mission = "По имеющимся разведанным на станции присутствует особо опасный и тяжеловооруженный противник. Корпорация заинтересована в сохранении своих активов. Разберитесь с проблемой."
 	ertphrase = "modular_bluemoon/sound/ert/ert_heavysquad_send.ogg"
+
+/datum/ert/rabbit
+	roles = list(/datum/antagonist/ert/security/rabbit)
+	leader_role = /datum/antagonist/ert/commander/rabbit
+	teamsize = 6
+	opendoors = FALSE
+	rename_team = "Rabbit Team"
+	mission = "Устраните любые нарушения и/или отклонения от нормы на станции."
+	polldesc = "a Rabbit Team"
+	code = "Orange"
+	ertphrase = 'modular_bluemoon/sound/ert/rabbit_protocol.ogg'
+
+/datum/ert/lfwb_ordinator
+	roles = list(/datum/antagonist/ert/lfwb_ordinator)
+	leader_role = /datum/antagonist/ert/lfwb_ordinator/leader
+	opendoors = TRUE
+	rename_team = "Tribunal Ordinator"
+	code = "Red"
+	mission = "Уничтожить все угрозы Активам Пакта."
+	polldesc = "an Nanotrasen Tribunal Ordinator"
+	ertphrase = "modular_bluemoon/sound/ert/ert_tribunal.ogg"
