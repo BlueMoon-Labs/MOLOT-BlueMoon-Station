@@ -1,6 +1,6 @@
 /obj/item/toy/crayon/ritualdagger
 	name = "Ritual dagger"
-	icon = 'modular_bluemoon/Fink/icons/obj/holy.dmi'
+	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
 	icon_state = "dagger"
 	item_state = "switchblade_ext"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'

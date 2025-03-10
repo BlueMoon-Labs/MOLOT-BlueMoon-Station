@@ -9,7 +9,7 @@
 
 ////////////
 /obj/item/slimecross/stabilized/fetish
-	icon = 'modular_bluemoon/Fink/icons/obj/fetish.dmi'
+	icon = 'modular_bluemoon/icons/obj/holy_fetish.dmi'
 
 /obj/item/slimecross/stabilized/fetish/grey
 	name = "Cтуденистый куб"

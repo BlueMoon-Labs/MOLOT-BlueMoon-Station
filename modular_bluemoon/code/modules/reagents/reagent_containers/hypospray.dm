@@ -1,4 +1,3 @@
-
 /obj/item/reagent_containers/hypospray/medipen/lewdsleepy
 	name = "Lewd sleepy medipen"
 	desc = "Усыпляющий Автоинъектор. Использовать исключительно в целях воплощения своих сексуальных фантазий. Вы же не хотите, чтобы нас засудили? С любовью, Silver Love Co."

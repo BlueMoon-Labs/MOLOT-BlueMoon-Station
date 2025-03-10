@@ -1,9 +1,9 @@
 /obj/item/sign/moniq
 	name = "Muz-tv"
 	desc = "Самые топовые хиты этого сезона."
-	icon = 'modular_bluemoon/Fink/icons/obj/jukebox.dmi'
-	righthand_file = 'modular_bluemoon/Fink/icons/mob/inhands/righthand.dmi'
-	lefthand_file = 'modular_bluemoon/Fink/icons/mob/inhands/lefthand.dmi'
+	icon = 'modular_bluemoon/icons/obj/machines/moniq.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_righthand.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_lefthand.dmi'
 	item_state = "moniq"
 	icon_state = "moniq"
 	sign_path = /obj/structure/sign/moniq
@@ -226,7 +226,7 @@
 /obj/structure/sign/moniq
 	name = "Muz-tv"
 	desc = "Самые топовые хиты этого сезона."
-	icon = 'modular_bluemoon/Fink/icons/obj/jukebox.dmi'
+	icon = 'modular_bluemoon/icons/obj/machines/moniq.dmi'
 	icon_state = "moniq_wallmount"
 	verb_say = "states"
 	density = FALSE

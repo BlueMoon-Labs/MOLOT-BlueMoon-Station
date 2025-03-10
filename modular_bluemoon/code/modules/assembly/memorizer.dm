@@ -1,4 +1,3 @@
-
 /obj/item/assembly/flash/memorizer
 	name = "anomaly neutrolizer"
 	desc = "A one-use device capable of instantly neutralizing substances."

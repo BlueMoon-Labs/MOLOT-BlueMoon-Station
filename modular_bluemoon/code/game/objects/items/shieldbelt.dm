@@ -2,8 +2,9 @@
 /obj/item/shieldbelt
 	name = "shielded belt"
 	desc = "A belt with built in energy shielding. Will rapidly recharge when not under fire."
-	icon = 'modular_bluemoon/Fink/icons/obj/shieldbelt.dmi'
-	icon_state = "belt"
+	icon = 'modular_bluemoon/icons/obj/clothing/belts.dmi'
+	icon_state = "shieldbelt"
+	item_state = "belt"
 	slot_flags = ITEM_SLOT_BELT
 	allowed = null
 
