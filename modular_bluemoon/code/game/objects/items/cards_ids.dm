@@ -123,3 +123,39 @@
 /obj/item/card/id/sol/Initialize(mapload)
 	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
 	. = ..()
+
+/obj/item/card/id/heresy
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Occult ID Card"
+	desc = "ID for research related to occult activities whose nature of phenomena is poorly supported by scientific evidence."
+	icon_state = "occult_id"
+	assignment = "Herecit"
+	uses_overlays = FALSE
+	card_sticker = TRUE
+
+/obj/item/card/id/lust
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Sex Worker ID"
+	desc = "ID for employee of Silver Love Co."
+	icon_state = "lust_id"
+	assignment = "Sex worker"
+	uses_overlays = FALSE
+	card_sticker = TRUE
+
+/obj/item/card/id/agony
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Ravenheart Resident ID"
+	desc = "ID for research related to extreme activities whose nature of agony is strictly prohibited by scientific evidence."
+	icon_state = "agony_id"
+	assignment = "Ravenheart Resident"
+	uses_overlays = FALSE
+	card_sticker = TRUE
+
+/obj/item/card/id/muck
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Muck ID Card"
+	desc = "Жрать гавно."
+	icon_state = "muck_id"
+	assignment = "Mucker"
+	uses_overlays = FALSE
+	card_sticker = TRUE

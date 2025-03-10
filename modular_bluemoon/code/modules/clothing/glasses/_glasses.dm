@@ -6,4 +6,3 @@
 	item_state = "geist_gazers"
 	glass_colour_type = /datum/client_colour/glass_colour/green
 	flags_cover = GLASSESCOVERSEYES
-

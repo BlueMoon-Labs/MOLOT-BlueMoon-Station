@@ -371,6 +371,6 @@
 /obj/item/sign/flag/ravenheart/alt
 	name = "rolled banner of the Ravenheart"
 	desc = "Свёрнутый баннер графства \"Воронье Сердце\"."
-	flag_type = "ravenheart_alt"\
+	flag_type = "ravenheart_alt"
 	icon_state = "mini_alt"
 	sign_path = /obj/structure/sign/flag/ravenheart/alt

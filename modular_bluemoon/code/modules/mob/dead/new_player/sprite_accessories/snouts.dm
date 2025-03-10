@@ -56,3 +56,9 @@
 /datum/sprite_accessory/snouts/mam_snouts/acrador/alt/fifth
 	name = "Acrador 5 (Normal) (Noseless)"
 	icon_state = "acrador_5_alt"
+
+/datum/sprite_accessory/snouts/mam_snouts/husky_JAW
+	name = "Husky Jaw"
+	icon = 'modular_bluemoon/icons/mob/mam_snouts.dmi'
+	icon_state = "fhusky"
+	matrixed_sections = MATRIX_RED_GREEN
