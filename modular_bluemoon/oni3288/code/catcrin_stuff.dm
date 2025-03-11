@@ -9,9 +9,7 @@
 	item_state = "mark45_helmet"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_desert
 	name = "Mk. 45 Desert Hunter helmet"
@@ -22,9 +20,7 @@
 	item_state = "mark45_helmet_desert"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_desert"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_anomalist
 	name = "Mk. 45 Anomalist helmet"
@@ -35,9 +31,7 @@
 	item_state = "mark45_helmet_anomalist"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_anomalist"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_combatengineer
 	name = "Mk. 45 Combat engineer helmet"
@@ -48,9 +42,7 @@
 	item_state = "mark45_helmet_combatengineer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_combatengineer"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_support
 	name = "Mk. 45 Support helmet"
@@ -61,9 +53,7 @@
 	item_state = "mark45_helmet_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_support"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_snow
 	name = "Mk. 45 Snow Cover helmet"
@@ -74,9 +64,7 @@
 	item_state = "mark45_helmet_snow"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_snow"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/HoS/mark45_officer
 	name = "Mk. 45 officer helmet"
@@ -99,9 +87,7 @@
 	item_state = "mark45_helmet_ce"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_ce"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/brigdoc/mark45_medic_l
 	name = "Mk. 45 light medic helmet"
@@ -130,9 +116,7 @@
 	item_state = "mark45_armor"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
@@ -143,9 +127,7 @@
 	item_state = "mark45_armor_desert"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_desert"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_snow
 	name = "Mk. 45 Snow Cover Аrmor"
@@ -156,9 +138,7 @@
 	item_state = "mark45_armor_snow"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_snow"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_anomalist
 	name = "Mk. 45 Anomalist Аrmor"
@@ -169,9 +149,7 @@
 	item_state = "mark45_armor_anomalist"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_anomalist"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_combatengineer
 	name = "Mk. 45 Combat engineer Аrmor"
@@ -182,9 +160,7 @@
 	item_state = "mark45_armor_combatengineer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_combatengineer"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_support
 	name = "Mk. 45 Support Аrmor"
@@ -195,9 +171,7 @@
 	item_state = "mark45_armor_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_support"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor_ce //Личный респрайт.
 	name = "Mk. 45 Master Engineer Specialist Armor"
@@ -208,9 +182,7 @@
 	item_state = "mark45_armor_ce"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_ce"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/hos/mark45_armor_officer
 	name = "Mk. 45 Officer Аrmor"
@@ -325,9 +297,7 @@
 	fire_sound = "modular_bluemoon/oni3288/sounds/weapons/frontlineshot.ogg"
 	stock = FALSE
 	extend_sound = 'sound/weapons/batonextend.ogg'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "csfrontline"),
-	)
+	unique_reskin = null
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_icon_state()
 	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
@@ -355,9 +325,7 @@
 	icon_state = "yernela"
 	item_state = "yernela"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/yernelashot.ogg'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "yernela"),
-	)
+	unique_reskin = null
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -533,9 +501,7 @@
 	icon = 'modular_bluemoon/oni3288/icons/weapons/icons/bwal.dmi'
 	icon_state = "bwal"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/bwalshot.ogg'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "bwal"),
-	)
+	unique_reskin = null
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
