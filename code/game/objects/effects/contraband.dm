@@ -889,6 +889,11 @@
 	desc = "Stop the xenophobia! Love Voxes! They are valuable employees! (make sure they don't steal anything)"
 	icon_state = "poster_vlm"
 
+/obj/structure/sign/poster/official/secfish //bluemoon add
+	name = "SharkSEC"
+	desc = "Intruder, remember! You're not immune to big sharks lady."
+	icon_state = "poster_secfish"
+
 ////
 
 /obj/structure/sign/poster/contraband/bread

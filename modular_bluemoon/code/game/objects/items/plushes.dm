@@ -101,6 +101,19 @@
 	'modular_bluemoon/SmiLeY/sounds/tiamat_meow3.ogg' = 1
 	)
 
+/obj/item/toy/plush/bm/manul
+	name = "Medic Ma'Nu"
+	desc = "The label sewn onto the plush tajaran's clothes says, ''Limited edition of the NPC from the medical department.'' The toy smells of pine trees. It is under the pine trees that its owner is." //Rest In Peace, dear friend Manul.
+	icon_state = "manul"
+	item_state = "manul"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list(
+	'modular_bluemoon/SmiLeY/sounds/manul1.ogg' = 1,
+	'modular_bluemoon/SmiLeY/sounds/manul2.ogg' = 1
+	)
+
 /obj/item/toy/plush/bm/stasik
 	name = "Stasik"
 	desc = "Игрушка XXXL размера, на бирке красуется надпись Стасик."
