@@ -385,6 +385,16 @@
 	name = "Saints hat"
 	icon_state = "saints_hat"
 	item_state = "saints_hat"
+	//BLUEMOON ADD рескин под шляпу из Sanabi
+	unique_reskin = list(
+		"Sanabi" = list(
+			RESKIN_ICON_STATE = "sanabi_hat",
+			RESKIN_ITEM_STATE = "sanabi_hat",
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/clothing/hats.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+		)
+	)
+	//BLUEMOON ADD END
 
 /obj/item/clothing/head/allies
 	name = "allies helmet"
