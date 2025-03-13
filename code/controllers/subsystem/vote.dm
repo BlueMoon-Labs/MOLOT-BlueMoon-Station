@@ -324,7 +324,7 @@ SUBSYSTEM_DEF(vote)
 				text += "\nIt should be noted that this is not a raw tally of votes (impossible in ranked choice) but the score determined by the schulze method of voting, so the numbers will look weird!"
 			if(vote_system == HIGHEST_MEDIAN_VOTING)
 				text += "\nThis is the highest median score plus the tiebreaker!"
-		// BLUEMOON EDIT START - отрисовка результатов голосования 
+		// BLUEMOON EDIT START - отрисовка результатов голосования
 		var/total_votes = 0
 		var/votes_left = "<div class='left-column'>"
 		var/votes_right = "<div class='right-column' id='results-container'>"
@@ -345,12 +345,12 @@ SUBSYSTEM_DEF(vote)
 					var/percent = total_votes > 0 ? round((votes_amount / total_votes) * 100, 1) : 0
 					if (percent > 0)
 						votes_right += "<div class='votewrap'><div class='voteresult' style='width: calc([percent]% + 2px);'><span>[percent]%</span></div></div>"
-					else 
+					else
 						votes_right += "<div class='votewrap'><div class='voteresult' style='background-color: rgba(0, 0, 0, 0);'><span>[percent]%</span></div></div>";
 		votes_left += "</div>"
 		votes_right += "</div>"
 		text += "<div class='voteresults'>[votes_left][votes_right]</div>"
-		// BLUEMOON EDIT END 
+		// BLUEMOON EDIT END
 		if(mode != "custom")
 			if(winners.len > 1 && display_votes & SHOW_WINNER) //CIT CHANGE - adds obfuscated votes
 				text = "\n<b>ничья между...</b>"
@@ -681,7 +681,7 @@ SUBSYSTEM_DEF(vote)
 		if(!(mode in roundtypes))
 			roundtypes[mode] = 0
 		roundtypes[mode]++
-		if (roundtypes[mode] >= 3)
+		if (roundtypes[mode] >= 2)
 			return mode
 	return FALSE
 
@@ -735,7 +735,7 @@ SUBSYSTEM_DEF(vote)
 					. += "<br>Последняя вариация: <b>ТИМБАЗА ИЛИ ХАРД</b>."
 				else
 					. += "<br>Последняя вариация: <b>[SSpersistence.last_dynamic_gamemode]</b>."
-			. += "<h4>Если Режим выпадает три раза подряд - форсится обратный.</h4>"
+			. += "<h4>Если Режим выпадает  два раза подряд - форсится обратный.</h4>"
 			if (length(SSpersistence.saved_modes))
 				. += "<br>Последние режимы: <b>[jointext(SSpersistence.saved_modes, ", ")]</b>."
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY))]<hr><ul>"

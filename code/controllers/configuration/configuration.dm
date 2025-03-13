@@ -406,8 +406,8 @@ Example config:
 			M.maximum_players = max_pop[M.config_tag]
 		if(M.can_start())
 			var/final_weight = probabilities[M.config_tag]
-			if(SSpersistence.saved_modes.len == 3 && repeated_mode_adjust.len == 3)
-				var/recent_round = min(SSpersistence.saved_modes.Find(M.config_tag),3)
+			if(SSpersistence.saved_modes.len == 2 && repeated_mode_adjust.len == 2)
+				var/recent_round = min(SSpersistence.saved_modes.Find(M.config_tag),2)
 				var/adjustment = 0
 				while(recent_round)
 					adjustment += repeated_mode_adjust[recent_round]
