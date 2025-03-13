@@ -91,7 +91,7 @@
 	var/exclusive_mail_goodies = FALSE
 
 	//If a job complies with dresscodes, loadout items will not be equipped instead of the job's outfit, instead placing the items into the player's backpack.
-	var/dresscodecompliant = TRUE
+	var/dresscodecompliant = FALSE //BLUEMOON CHANGE ну кмон все и так потом выбрасывают стартовые вещи оставляя свои из лодаута
 	// How much threat this job is worth in dynamic. Is subtracted if the player's not an antag, added if they are.
 	var/threat = 0
 
@@ -245,7 +245,7 @@
 /datum/job/proc/radio_help_message(mob/M)
 	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")
 
-// BLUEMOON ADD 
+// BLUEMOON ADD
 /datum/job/proc/jobname_to_ru(mob/M, jobname)
 	var/static/list/joblist = list()
 // BLUEMOON ADD END
