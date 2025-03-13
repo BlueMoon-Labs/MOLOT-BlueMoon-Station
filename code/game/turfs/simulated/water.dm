@@ -41,3 +41,15 @@
 		unlucky_mob.visible_message(span_danger("[unlucky_mob.name] is shocked by [src]!"), \
 		span_userdanger("You feel a powerful shock course through your body!"), \
 		span_hear("You hear a heavy electrical crack!"))
+
+/turf/open/water/safe/cooling_luiquid
+	name = "cooling luqid"
+	desc = "Supercooled liquid for cooling a nuclear reactor, just looking at it sends a chill down your spine"
+	baseturfs = /turf/open/water/safe/cooling_luiquid
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_temperature = TCMB
+	thermal_conductivity = 0
+	heat_capacity = 700000
+	color = LIGHT_COLOR_DARK_BLUE
+	light_range = 2
+	light_color = LIGHT_COLOR_DARK_BLUE
