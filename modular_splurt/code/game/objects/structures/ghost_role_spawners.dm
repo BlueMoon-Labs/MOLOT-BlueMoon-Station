@@ -271,7 +271,7 @@
 
 	id = /obj/item/card/id/inteq/crew_id
 	backpack_contents = list(/obj/item/paper/fluff/ruins/forgottenship/password)
-	implants = list(/obj/item/implant/deathrattle/inteqcrew)
+	implants = list(/obj/item/implant/deathrattle/inteqcrew, /obj/item/implant/weapons_auth)
 /datum/outfit/inteqspace/inteq_hostage
 	name = "InteQ Hostage"
 
@@ -298,7 +298,7 @@
 
 	id = /obj/item/card/id/inteq/captain_id
 	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)
-	implants = list(/obj/item/implant/deathrattle/inteqcrew)
+	implants = list(/obj/item/implant/deathrattle/inteqcrew, /obj/item/implant/weapons_auth)
 
 // Ghost Cafe Spawner (VR Version)
 

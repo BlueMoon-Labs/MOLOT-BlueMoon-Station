@@ -734,7 +734,7 @@
 	name = "Alta's dogtag"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/tie/dogtag
-	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/oftok
@@ -964,7 +964,7 @@
 	name = "Heavy pocket hammer Kit"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/modkit/hammercrowbar_kit
-	ckeywhitelist = list("allazarius", "hazzi", "devildeadspace", "wangig")
+	ckeywhitelist = list("allazarius", "hazzi", "devildeadspace", "wangig", "wather565")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/dreadmk3_kit
@@ -1231,11 +1231,12 @@
 	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donatom/bm/pet_jruttie
+/datum/gear/donator/bm/pet_jruttie
 	name = "Jruttie Cat"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/choice_beacon/pet/jruttie
 	ckeywhitelist = list("scramblescream", "nai1ten")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/tavern_skirt
 	name = "Tavern skirt"
@@ -1280,3 +1281,10 @@
 	ckeywhitelist = list("finkrld")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/bm/impactbaton_jitte
+	name = "Jitte impact Baton"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/impactbaton_kit
+	ckeywhitelist = list("silverfoxpaws", "nai1ten", "oni3288")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

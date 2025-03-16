@@ -1033,25 +1033,19 @@
 		. = ..()
 
 /obj/item/rack_parts/attack_self(mob/user)
-	// MODULAR_JUICY-ADD
+	// BLUEMOON ADD
 	if(locate(construction_type) in get_turf(user))
 		balloon_alert(user, "не хватает места!")
 		return
-	// MODULAR_JUICY-ADD
+	// BLUEMOON ADD END
 	if(building)
 		return
 	building = TRUE
-	// MODULAR_JUICY-EDIT - Меняем надпись
-	// to_chat(user, "<span class='notice'>You start constructing a rack...</span>")	// ORIGINAL
-	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
-	// MODULAR_JUICY-EDIT
+	to_chat(user, "<span class='notice'>You start assembling [src]...</span>") // BLUEMOON EDIT
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
-		// MODULAR_JUICY-EDIT - Вместо дефолтного пути задаем переменную. Ведь не только шкаф можно создать, но и просто полку на польную
-		// var/obj/structure/rack/R = new /obj/structure/rack(user.loc)	// ORIGINAL
-		var/obj/structure/R = new construction_type(user.loc)
-		// MODULAR_JUICY-EDIT
+		var/obj/structure/R = new construction_type(user.loc) // BLUEMOON EDIT
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
 			</span>", "<span class='notice'>You assemble \a [R].</span>")
 		R.add_fingerprint(user)
