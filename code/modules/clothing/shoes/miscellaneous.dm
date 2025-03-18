@@ -170,6 +170,7 @@
 	name = "Security Jackboots"
 	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots_sec"
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 30, ACID = 50) // BLUEMOON ADD no armor = applying bare wound bonus. These boots now are between CBRN and MOPP
 
 /obj/item/clothing/shoes/jackboots/alliance
 	name = "Alliance Jackboots"

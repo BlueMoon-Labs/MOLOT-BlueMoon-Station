@@ -48,7 +48,7 @@
 		/obj/item/storage/backpack/satchel/sec = 3,
 		/obj/item/storage/backpack/duffelbag/sec = 3,
 		/obj/item/clothing/under/rank/security/officer = 5,
-		/obj/item/clothing/shoes/jackboots = 3,
+		/obj/item/clothing/shoes/jackboots/sec = 3,
 		/obj/item/clothing/shoes/jackboots/tall = 3,
 		/obj/item/clothing/shoes/jackboots/tall_default = 2,
 		/obj/item/clothing/head/beret/sec = 5,

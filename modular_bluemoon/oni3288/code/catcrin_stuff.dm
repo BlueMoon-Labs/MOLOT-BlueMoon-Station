@@ -566,6 +566,8 @@
 /obj/item/clothing/mask/gas/syndicate/cool_version
 	name = "Tactical Catcrin Gasmask"
 	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "syndicate_cool"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	actions_types = list(/datum/action/item_action/maskhalt)
@@ -604,18 +606,24 @@
 /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
 	name = "Tactical combat Catcrin gasmask"
 	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "catcrin_one"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
 	name = "Tactical combat Catcrin gasmask"
 	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "catcrin_two"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
 	name = "Tactical combat Catcrin gasmask"
 	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "catcrin_three"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -623,21 +631,22 @@
 
 /obj/item/storage/box/catcrin_kit
 	name = "Catcrin kit"
-	desc = "Contains a full kit of Catcrin equipment."
-	icon_state = "box"
+	desc = "Military box that contains a full kit of Catcrin equipment."
+	icon_state = "ammobox"
 
 /obj/item/storage/box/catcrin_kit/PopulateContents()
-	new /obj/item/modkit/gewehr550(src)
+	new /obj/item/clothing/accessory/ac_patch(src)
 	new /obj/item/modkit/hwal2572(src)
-	new /obj/item/modkit/karabiner_kit(src)
+	new /obj/item/modkit/bwal2572_kit(src)
 	new /obj/item/modkit/stunspear_kit(src)
+	new /obj/item/modkit/catcrinbaton_kit(src)
+	new /obj/item/modkit/gewehr550(src)
+	new /obj/item/modkit/karabiner_kit(src)
 	new /obj/item/modkit/frontline(src)
 	new /obj/item/modkit/yernela(src)
-	new /obj/item/clothing/accessory/ac_patch(src)
-	new /obj/item/modkit/ffshield(src)
 	new /obj/item/modkit/magplar_kit(src)
 	new /obj/item/modkit/magrrinei_kit(src)
-	new /obj/item/modkit/bwal2572_kit(src)
+	new /obj/item/modkit/ffshield(src)
 	new /obj/item/modkit/hopesh_kit(src)
 
 // Закину коробку с постерами для спратера сюда, чтоб особо не срать.
