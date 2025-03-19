@@ -1,21 +1,24 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 2
 	},
-/turf/open/floor/carpet/royalblack{
-	canSmoothWith = list(/turf/open/floor/carpet/royalblack,/turf/open/floor/carpet/royalblack/airless, /turf/open/floor/pod/dark)
-	},
+/turf/open/floor/plasteel/white/smooth/large,
 /area/survivalpod)
 "ab" = (
-/obj/effect/turf_decal/siding/dark,
-/turf/open/floor/plasteel/white/smooth/half,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/smooth/large,
 /area/survivalpod)
 "ac" = (
 /obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -30,10 +33,10 @@
 /turf/open/floor/grass/grass0,
 /area/survivalpod)
 "ae" = (
-/obj/structure/chair/sofa/corp/corner{
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/corp{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/survivalpod)
 "af" = (
@@ -139,11 +142,13 @@
 /turf/open/floor/wood,
 /area/survivalpod)
 "at" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 4
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
 	},
-/turf/open/floor/plasteel/white/smooth/edge,
+/obj/structure/table/plasmaglass,
+/turf/open/floor/plasteel/white/smooth/corner{
+	dir = 1
+	},
 /area/survivalpod)
 "au" = (
 /obj/effect/turf_decal/siding/wood{
@@ -190,13 +195,20 @@
 /turf/open/floor/plasteel/white/smooth/half,
 /area/survivalpod)
 "aA" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/survival_pod,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/vending/clothing,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "aD" = (
-/obj/machinery/smartfridge/survival_pod,
-/turf/open/floor/pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white/smooth/half,
 /area/survivalpod)
 "aE" = (
 /obj/effect/decal/cleanable/semen,
@@ -300,14 +312,14 @@
 	},
 /area/survivalpod)
 "aS" = (
-/obj/structure/reagent_dispensers/water_cooler,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
 /obj/machinery/light/floor,
+/obj/machinery/vending/snack/random,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/wood,
 /area/survivalpod)
 "aT" = (
@@ -382,8 +394,13 @@
 /turf/open/floor/wood/wood_large,
 /area/survivalpod)
 "bf" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
 /obj/machinery/vending/cigarette/syndicate,
-/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/survivalpod)
 "bg" = (
@@ -407,8 +424,11 @@
 	},
 /area/survivalpod)
 "bk" = (
-/obj/item/gps/computer,
-/turf/open/floor/pod,
+/obj/structure/table/plasmaglass,
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white/smooth/half,
 /area/survivalpod)
 "bm" = (
 /obj/machinery/recharge_station/fullupgrade,
@@ -477,20 +497,31 @@
 	canSmoothWith = list(/turf/open/floor/carpet/royalblue,/turf/open/floor/carpet/royalblue/airless, /turf/open/floor/pod/dark)
 	},
 /area/survivalpod)
+"cd" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_diagonal,
+/area/survivalpod)
 "cp" = (
 /obj/effect/turf_decal/siding/purple,
 /turf/open/floor/plasteel/white/smooth/half,
 /area/survivalpod)
 "cr" = (
-/obj/machinery/vending/snack/random,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/corp/corner{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/survivalpod)
 "cF" = (
-/obj/machinery/vending/donksofttoyvendor,
+/obj/structure/fans,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "dj" = (
@@ -666,6 +697,15 @@
 	},
 /turf/open/floor/wood,
 /area/survivalpod)
+"hr" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/survivalpod)
 "hy" = (
 /obj/structure/chair/stool{
 	dir = 1
@@ -822,13 +862,28 @@
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "lg" = (
-/turf/open/floor/pod,
+/obj/machinery/vr_sleeper,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/purple,
 /area/survivalpod)
 "lA" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white/smooth/half,
+/turf/open/floor/plasteel/white/smooth/edge{
+	dir = 1
+	},
+/area/survivalpod)
+"lC" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/smooth/large,
 /area/survivalpod)
 "lH" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -905,14 +960,28 @@
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "os" = (
-/obj/structure/table/wood/fancy/black,
 /obj/machinery/light/floor,
+/obj/structure/chair/sofa/corp/left{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/survivalpod)
 "ox" = (
 /obj/machinery/door/airlock/survival_pod,
 /obj/machinery/poweredfans,
 /turf/open/floor/pod/dark,
+/area/survivalpod)
+"oF" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/purple/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/smooth/large,
 /area/survivalpod)
 "oM" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -1201,14 +1270,14 @@
 	},
 /area/survivalpod)
 "vP" = (
-/obj/structure/chair/sofa/corp{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/corp/corner{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/survivalpod)
 "vS" = (
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
 /turf/open/floor/carpet/royalblack{
@@ -1220,17 +1289,17 @@
 /turf/closed/wall/mineral/titanium/survival,
 /area/survivalpod)
 "wc" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
 /area/survivalpod)
 "wA" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 2
 	},
 /turf/open/floor/wood/wood_diagonal,
 /area/survivalpod)
@@ -1241,14 +1310,19 @@
 	},
 /area/survivalpod)
 "xt" = (
-/obj/machinery/vr_sleeper{
-	dir = 8
+/obj/machinery/vr_sleeper,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
 	},
-/turf/open/floor/pod,
+/turf/open/floor/carpet/purple,
 /area/survivalpod)
 "xy" = (
-/obj/structure/fans,
-/turf/open/floor/pod,
+/obj/effect/turf_decal/siding/purple{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white/smooth/corner{
+	dir = 4
+	},
 /area/survivalpod)
 "yx" = (
 /obj/machinery/light{
@@ -1295,9 +1369,7 @@
 	},
 /area/survivalpod)
 "zR" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 4
-	},
+/obj/structure/table/wood/fancy/black,
 /turf/open/floor/wood,
 /area/survivalpod)
 "zX" = (
@@ -1328,9 +1400,6 @@
 /turf/open/floor/carpet/royalblack,
 /area/survivalpod)
 "BT" = (
-/obj/machinery/door/window/survival_pod{
-	dir = 8
-	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
@@ -1338,6 +1407,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/purple/corner{
+	dir = 8
+	},
+/obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white/smooth/edge{
@@ -1453,6 +1525,12 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/survivalpod)
+"Gz" = (
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plasteel/white/smooth/edge{
+	dir = 4
+	},
+/area/survivalpod)
 "Hl" = (
 /obj/machinery/light{
 	dir = 4
@@ -1466,6 +1544,12 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
+/area/survivalpod)
+"HB" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
 /area/survivalpod)
 "HE" = (
 /obj/effect/turf_decal/siding/white/corner,
@@ -1556,10 +1640,10 @@
 /turf/open/floor/carpet/royalblue,
 /area/survivalpod)
 "Lx" = (
-/obj/structure/table/survival_pod,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/vending/donksofttoyvendor,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "LT" = (
@@ -1571,10 +1655,11 @@
 /turf/open/floor/grass/grass0,
 /area/survivalpod)
 "MH" = (
-/obj/machinery/vr_sleeper{
-	dir = 4
+/obj/machinery/vr_sleeper,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
-/turf/open/floor/pod,
+/turf/open/floor/carpet/purple,
 /area/survivalpod)
 "MM" = (
 /obj/machinery/poweredfans,
@@ -1588,13 +1673,13 @@
 	},
 /area/survivalpod)
 "Ne" = (
-/obj/structure/chair/sofa/corp/corner{
-	dir = 8
-	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood,
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
 /turf/open/floor/wood,
 /area/survivalpod)
 "Ni" = (
@@ -1635,7 +1720,7 @@
 /turf/open/floor/wood/wood_large,
 /area/survivalpod)
 "On" = (
-/obj/machinery/vending/clothing,
+/obj/item/gps/computer,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "Oz" = (
@@ -1721,8 +1806,10 @@
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/survivalpod)
 "Sv" = (
-/obj/structure/sign/mining/survival,
-/turf/closed/wall/mineral/titanium/survival/pod,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/purple,
 /area/survivalpod)
 "SM" = (
 /obj/machinery/seed_extractor,
@@ -1778,11 +1865,11 @@
 /turf/open/floor/wood/wood_diagonal,
 /area/survivalpod)
 "Wz" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod{
+/obj/machinery/door/window/survival_pod{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 2
 	},
 /turf/open/floor/wood,
 /area/survivalpod)
@@ -1843,6 +1930,17 @@
 	name = "Maid Cleanbot"
 	},
 /turf/open/floor/wood,
+/area/survivalpod)
+"YO" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white/smooth/half{
+	dir = 8
+	},
 /area/survivalpod)
 "YP" = (
 /obj/machinery/light,
@@ -2008,14 +2106,14 @@ bd
 qp
 ro
 bc
-bc
+hr
 cr
 KY
 am
 al
 al
 aw
-wA
+cd
 aU
 gK
 as
@@ -2035,8 +2133,8 @@ vi
 gK
 bc
 YA
-bc
-bf
+Xg
+ae
 KY
 am
 al
@@ -2116,8 +2214,8 @@ CT
 qk
 bc
 bc
-Xg
-vP
+bc
+as
 KY
 el
 px
@@ -2141,7 +2239,7 @@ Jb
 vk
 vW
 aS
-ac
+bf
 ac
 Wz
 Ne
@@ -2168,9 +2266,9 @@ Yk
 Yk
 Yk
 Yk
+Yk
 lH
 Lv
-Yk
 Yk
 Yk
 Yk
@@ -2278,10 +2376,10 @@ Sp
 jK
 ak
 lA
-ab
-Sp
+Gz
+YO
 xy
-MH
+Sp
 MH
 Sv
 vS
@@ -2305,13 +2403,13 @@ Sp
 eX
 uB
 aQ
-ab
-Sp
-aD
-lg
-lg
-aA
 aa
+oF
+aD
+Sp
+lg
+sd
+av
 WJ
 ve
 HI
@@ -2333,11 +2431,11 @@ zx
 OZ
 aR
 ab
-Sp
+lC
 bk
-lg
+zp
 xt
-Lb
+HB
 wc
 WJ
 mc
@@ -2359,9 +2457,9 @@ Sp
 Yx
 jd
 sF
+sF
+jd
 at
-zp
-Sp
 Sp
 Sp
 zp
@@ -2424,7 +2522,7 @@ av
 ax
 sH
 Sp
-Lx
+aA
 aX
 aX
 Lx
