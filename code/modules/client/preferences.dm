@@ -2169,6 +2169,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
 			bal += 1 //max 1 point regardless of how many prosthetics
 	if(bal < 0)
+		to_chat(user, "<span class='danger'>Something goes wrong and quirk balance goes to [bal], quirks reseted.</span>")
 		all_quirks = list()
 		return FALSE
 	return bal
