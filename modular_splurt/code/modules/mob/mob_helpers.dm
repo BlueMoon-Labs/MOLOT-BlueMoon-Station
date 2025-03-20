@@ -15,7 +15,7 @@
 	// Проверка на трейт тяжёлого персонажа
 	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		. += span_warning("Выглядит грузно. Тащить будет сложно.\n")
-	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT))
+	else if (src.mob_weight < MOB_WEIGHT_NORMAL)
 		. += span_info("С виду [t_He] весит весьма немного.\n")
 	// BLUEMOON ADDITION END
 

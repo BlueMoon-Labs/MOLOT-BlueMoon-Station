@@ -404,7 +404,7 @@
 	. = ..()
 	if(in_range(user, src) && isliving(user))
 		var/mob/living/M = user
-		if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && !HAS_TRAIT(M, TRAIT_BLUEMOON_LIGHT)) || M.mob_size > MOB_SIZE_HUMAN))
+		if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && M.mob_weight > MOB_WEIGHT_LIGHT) || M.mob_size > MOB_SIZE_HUMAN))
 			. += span_danger("It looks like it will break if you try to climb on it.")
 		else
 			. += span_notice("It seems that it can be crossed safely.")
@@ -427,7 +427,7 @@
 		check_break(M)
 
 /obj/structure/table/glass/proc/check_break(mob/living/M)
-	if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && !HAS_TRAIT(M, TRAIT_BLUEMOON_LIGHT)) || M.mob_size > MOB_SIZE_HUMAN)) //BLUEMOON ADD столы ломаются при размере 0.81 или если лёгкий, то 1.21
+	if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && M.mob_weight > MOB_WEIGHT_LIGHT) || M.mob_size > MOB_SIZE_HUMAN)) //BLUEMOON ADD столы ломаются при размере 0.81 или если лёгкий, то 1.21
 		table_shatter(M)
 
 /obj/structure/table/glass/proc/table_shatter(mob/living/L)
