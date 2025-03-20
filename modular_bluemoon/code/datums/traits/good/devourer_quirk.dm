@@ -39,7 +39,7 @@
 		species.disliked_food = initial(species.disliked_food)
 
 		//удаляем все модификаторы урона и скорости
-		H.remove_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost)
+		H.remove_movespeed_modifier(/datum/movespeed_modifier/devourer_quirk_boost)
 
 		var/datum/physiology/P = H.physiology
 		if(P)
@@ -67,7 +67,7 @@
 
 		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.8) // убираем 80% от замедления
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/devourer_quirk_boost, TRUE, user_slowdown * -0.8) // убираем 80% от замедления
 
 
 /datum/quirk/bluemoon_devourer/proc/check_mob_size()
@@ -91,28 +91,6 @@
 		qdel(comp)
 	// конец участка
 	update_size_modifiers(get_size(H), 1)
-
-/*
-ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
-*/
-
-/datum/movespeed_modifier/heavy_mob_drag
-	variable = TRUE
-	blacklisted_movetypes = (FLYING|FLOATING)
-
-/datum/movespeed_modifier/heavy_quirk_slowdown
-	variable = TRUE
-
-/datum/movespeed_modifier/giant_quirk_boost
-	variable = TRUE
-	blacklisted_movetypes = (FLYING|FLOATING)
-
-/*
-ПЕРЕМЕННАЯ ДЛЯ ОГРАНИЧЕНИЯ МАКСИМАЛЬНОЙ СКОРОСТИ
-*/
-
-/mob
-	var/movespeed_override = 0
 
 /*
 Действия

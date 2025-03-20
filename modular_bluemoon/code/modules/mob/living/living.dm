@@ -18,11 +18,13 @@
 			throw_speed = 2
 
 	if(searched_slowdown && searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
-		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_weight_slowdown, TRUE, searched_slowdown - user_slowdown)
 		if(new_weight > MOB_WEIGHT_HEAVY)
 			movespeed_override = 3 - (searched_slowdown - user_slowdown)
 	else
-		remove_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown)
+		remove_movespeed_modifier(/datum/movespeed_modifier/heavy_weight_slowdown)
 		if(new_weight > MOB_WEIGHT_HEAVY)
 			movespeed_override = 3
+		else
+			movespeed_override = 0
 
