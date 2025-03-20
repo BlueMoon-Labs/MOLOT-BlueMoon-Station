@@ -140,7 +140,7 @@
 		return TRUE
 	if(ismob(AM))
 		var/mob/M = AM
-		if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		if(M.mob_weight > MOB_WEIGHT_HEAVY)
 			return FALSE
 	if(((fired_broom.obj_flags & EMAGGED) && isliving(AM)) || isdrone(AM) || isswarmer(AM) || isdead(AM) || ismouse(AM) || iscatperson(AM))
 		return TRUE

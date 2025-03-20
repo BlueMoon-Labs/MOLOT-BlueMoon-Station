@@ -144,7 +144,7 @@
 		propability += 0.1
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
-	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(target.mob_weight > MOB_WEIGHT_HEAVY)
 		propability = 0.8
 
 	// Шансы на операции в зависимости от состояния пациента

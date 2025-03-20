@@ -94,7 +94,7 @@
 	// BLUEMOON ADD END
 
 	// BLUEMOON ADD START - запрет на усаживание сверхтяжёлого персонажа посторонними
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые сверхтяжёлые персонажи садятся с особым эффектом
+	if(M.mob_weight > MOB_WEIGHT_HEAVY) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые сверхтяжёлые персонажи садятся с особым эффектом
 		if(istype(src, /obj/structure/bed/roller/heavy)) // простая проверка на предмет, пока не появится необходимость в большем количестве предметов-исключений
 			// Всё в порядке
 		else if(M != usr)
@@ -173,16 +173,16 @@
 			// BLUEMOON CHANGES AHEAD - нарративный комментарий, что садится/ложится сверхтяжёлый персонаж
 			M.visible_message(\
 				"<span class='notice'>[M] занимает место на <b>[src]</b>. \
-				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				[M.mob_weight > MOB_WEIGHT_NORMAL ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='notice'>Вы занимаете место на <b>[src]</b>. \
-				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				[M.mob_weight > MOB_WEIGHT_NORMAL ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
 				"<span class='warning'>[user] размещает <b>[M]</b> на <b>[src]</b>! \
-				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				[M.mob_weight > MOB_WEIGHT_NORMAL ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='warning'>[user] размещает вас на <b>[src]</b>! \
-				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				[M.mob_weight > MOB_WEIGHT_NORMAL ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='italics'>Вы слышите металлический лязг.</span>")
 			// BLUEMOON CHANGES END
 

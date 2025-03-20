@@ -96,7 +96,7 @@
 	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
 
 	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(src.mob_weight > MOB_WEIGHT_HEAVY)
 		if(P.damage_type == STAMINA)
 			totaldamage *= 0.75
 	// BLUEMOON ADD END

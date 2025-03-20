@@ -891,7 +891,7 @@ BLUEMOON REMOVAL END*/
 /datum/dynamic_ruleset/roundstart/bloodsuckers/trim_candidates()
 	. = ..()
 	for(var/mob/P in candidates)
-		if(HAS_TRAIT(P, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+		if(P.mob_weight > MOB_WEIGHT_HEAVY) // никаких сверхтяжёлых кровососов
 			candidates -= P
 		else if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
 			candidates -= P

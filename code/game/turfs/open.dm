@@ -294,14 +294,14 @@
 	var/olddir = C.dir
 	if(!(lube & SLIDE_ICE))
 		// BLUEMOON ADDITION AHEAD - персонаж сверхтяжёлый, потому падать в два раза неприятнее
-		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
+		if(C.mob_weight > MOB_WEIGHT_HEAVY)
 			knockdown_amount *= 2
 		// BLUEMOON ADDITION END
 		C.DefaultCombatKnockdown(knockdown_amount)
 		C.stop_pulling()
 	else
 		// BLUEMOON ADDITION AHEAD - для сверхтяжёлых персонажей, стан в два раза больше
-		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
+		if(C.mob_weight > MOB_WEIGHT_HEAVY)
 			C.Stun(20)
 		// BLUEMOON ADDITION END
 		C.Stun(20)

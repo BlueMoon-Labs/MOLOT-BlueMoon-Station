@@ -105,7 +105,7 @@
 
 // BLUEMOON ADD AHEAD - сверхтяжёлых персонажей нельзя помещать на обычные носилки (предотвращает абуз через толкание + повышает значимость боргов, халков и других сверхтяжёлых персонажей)
 /obj/structure/bed/roller/pre_buckle_mob(mob/living/M)
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(M.mob_weight > MOB_WEIGHT_HEAVY)
 		if(!can_move_superheavy_characters)
 			usr.visible_message(span_warning("[usr] tried to put [M] on [src], but it doesn't lift. Too much weight!."), span_warning("You try to put [M] on [src], but it doesn't lift. Too much weight!"))
 			return FALSE
@@ -230,7 +230,7 @@
 
 // BLUEMOON ADD AHEAD - сверхтяжёлых персонажей нельзя помещать на кроватки для питомцев (потому что эти кроватки можно таскать, прямо как носилки)
 /obj/structure/bed/dogbed/pre_buckle_mob(mob/living/M)
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(M.mob_weight > MOB_WEIGHT_HEAVY)
 		usr.visible_message(span_warning("[usr] tried to put [M] on [src], but it is too small!"), span_warning("You try to put [M] on [src], but it is too small!"))
 		return FALSE
 	. = ..()

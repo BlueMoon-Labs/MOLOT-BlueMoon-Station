@@ -155,7 +155,7 @@
 			return TRUE
 
 	// BLUEMOON ADDITION AHEAD - нельзя поменяться местами со сверхтяжёлым персонажем
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(M.mob_weight > MOB_WEIGHT_HEAVY)
 		return TRUE
 	// BLUEMOON ADDITION END
 
@@ -360,8 +360,8 @@
 				M.show_message("<span class='warning'>[src] has entwined [ru_ego()] tail with yours, pulling you along!</span>", MSG_VISUAL, "<span class='warning'>You feel <b>something</b> coiling around your tail, pulling you along!</span>")
 
 			else // BLUEMOON CHANGES
-				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Looks heavy." : ""]</span>",
-					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "It is hard to pull heavy weight!" : ""]</span>", target = M,
+				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [M.mob_weight > MOB_WEIGHT_NORMAL ? "Looks heavy." : ""]</span>",
+					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [M.mob_weight > MOB_WEIGHT_NORMAL ? "It is hard to pull heavy weight!" : ""]</span>", target = M,
 					target_message = "<span class='warning'>[src] has grabbed you[(zone_selected == "l_arm" || zone_selected == "r_arm")? " by your hands":" passively"]!</span>")
 		if(!iscarbon(src))
 			M.LAssailant = null
@@ -1370,6 +1370,9 @@
 			return TRUE
 		if(NAMEOF(src, size_multiplier))
 			update_size(var_value)
+			return TRUE
+		if(NAMEOF(src, mob_weight)) //BLUEMOON ADD
+			update_weight(var_value) //BLUEMOON ADD END
 			return TRUE
 	. = ..()
 	switch(var_name)

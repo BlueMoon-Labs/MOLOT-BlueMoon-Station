@@ -836,7 +836,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
 						dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
-						dat += "<b>Weight:</b> <a href='?_src_=prefs;preference=body_weight;task=input'>[body_weight]</a><br>" //BLUEMOON ADD вес персонажей
+						dat += "<b>Weight:</b> <a href='?_src_=prefs;preference=body_weight;task=input'>[all_quirks.Find("Пожиратель") ? NAME_WEIGHT_NORMAL : body_weight]</a><br>" //BLUEMOON ADD вес персонажей
 
 					if(!(NOEYES in pref_species.species_traits))
 						dat += "<h3>Eye Type</h3>"
@@ -3717,14 +3717,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				//BLUEMOON ADD выбор веса персонажа, замена квирков на вес
 				if("body_weight")
-					var/new_body_weight = tgui_input_list(user, "Выберите вес персонажа!", "Character Preference", GLOB.mob_sizes)
-					if(new_body_weight)
-						if(tgui_alert(user, "[GLOB.mob_sizes[new_body_weight]]", "Confirm your choice", list("Good", "Nevermind")) == "Good")
-							var/quirk_balance_check = GetQuirkBalance() - mob_size_name_to_quirk_cost(new_body_weight) + mob_size_name_to_quirk_cost(body_weight)
-							if(quirk_balance_check >= 0)
-								body_weight = new_body_weight
-							else
-								tgui_alert(user, "для взятия данного веса нужно ещё [abs(quirk_balance_check)] очков квирков", "Ugh, you cant", list("Ok", "Understood"))
+					if(all_quirks.Find("Пожиратель"))
+						tgui_alert(user, "Квирк Пожиратель несовместим с любым весом кроме стандартного", "Ugh, you cant", list("Ok", "Understood"))
+					else
+						var/new_body_weight = tgui_input_list(user, "Выберите вес персонажа!", "Character Preference", GLOB.mob_sizes)
+						if(new_body_weight)
+							if(tgui_alert(user, "[GLOB.mob_sizes[new_body_weight]]", "Confirm your choice", list("Good", "Nevermind")) == "Good")
+								var/quirk_balance_check = GetQuirkBalance() - mob_size_name_to_quirk_cost(new_body_weight) + mob_size_name_to_quirk_cost(body_weight)
+								if(quirk_balance_check >= 0)
+									body_weight = new_body_weight
+								else
+									tgui_alert(user, "для взятия данного веса нужно ещё [abs(quirk_balance_check)] очков квирков", "Ugh, you cant", list("Ok", "Understood"))
 				//BLUEMOON ADD END
 
 				if("tongue")
@@ -4758,6 +4761,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.fuzzy = fuzzy
 	character.mob_weight = mob_size_name_to_num(body_weight) //BLUEMOON ADD записываем вес персонажа как цифру
 
+	character.update_weight(character.mob_weight)
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)
