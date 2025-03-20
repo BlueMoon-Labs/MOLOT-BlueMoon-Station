@@ -665,6 +665,7 @@
 "bm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Main Hall Access"
 	},
@@ -689,6 +690,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
 	name = "Private Quarters Access";
 	req_access_txt = "150"
@@ -1570,11 +1572,11 @@
 "sD" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/siding/red,
+/obj/effect/turf_decal/trimline/dark_red,
 /obj/machinery/door/airlock/hatch{
 	name = "Cafeteria";
 	req_access_txt = "150"
 	},
-/obj/effect/turf_decal/trimline/dark_red,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "tn" = (
@@ -1915,7 +1917,7 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "BS" = (
 /obj/machinery/defibrillator_mount,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "BZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
