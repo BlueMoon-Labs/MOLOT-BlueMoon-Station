@@ -257,7 +257,7 @@
 			job_on_the_card = card.assignment ? ckey(card.get_job_name()) : ""
 			job_on_the_card = lowertext(job_on_the_card)
 		// Рофлы над сверхтяжёлыми
-		if(HAS_TRAIT(victim, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(victim, TRAIT_BLUEMOON_HEAVY))
+		if(victim.mob_weight > MOB_WEIGHT_NORMAL)
 			spy_phrases = list(
 				"Это ЖИРНАЯ точка в твоей жизни!",
 				"Ну, толстяк, даже не ловко как-то!")

@@ -310,7 +310,7 @@
 			var/def_zone = BODY_ZONE_CHEST
 			if(L.movement_type & (FLYING | FLOATING))
 				snap = FALSE
-			else if(!ignore_weight && (L.mob_size <= MOB_SIZE_TINY || (L.mob_size <= MOB_SIZE_SMALL && HAS_TRAIT(L, TRAIT_BLUEMOON_LIGHT))))
+			else if(!ignore_weight && (L.mob_size <= MOB_SIZE_TINY || (L.mob_size <= MOB_SIZE_SMALL && L.mob_weight < MOB_WEIGHT_NORMAL)))
 				snap = FALSE
 			if(iscarbon(L))
 				var/mob/living/carbon/C = L

@@ -204,11 +204,11 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 	else
 		return read[type]
 	/ BLUEMOON REMOVAL END */
-	// BLUEMOON ADD START - добавлена поддержка квирка на сверхтяжёлого
+	// BLUEMOON ADD START - добавлена поддержка веса персонажа
 	var/value = 0
 	if(read[type])
 		value = read[type]
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER) && floating)
+	if(src.mob_weight > MOB_WEIGHT_HEAVY && floating)
 		value += 1 // сверхтяжёлые персонажи в ином случае летают по вакууму на сверх-скоростях
 	return value
 	// BLUEMOON ADD END

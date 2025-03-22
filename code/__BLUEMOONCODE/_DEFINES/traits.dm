@@ -1,7 +1,4 @@
-#define TRAIT_BLUEMOON_HEAVY				"heavy"
-#define TRAIT_BLUEMOON_HEAVY_SUPER			"heavy_super"
 #define TRAIT_BLUEMOON_DEVOURER				"giant_body"
-#define TRAIT_BLUEMOON_LIGHT				"light"
 #define TRAIT_BLUEMOON_CLEARLY_AUDIBLE		"clearly_audible"
 #define TRAIT_BLUEMOON_ANTI_NORMALIZER		"anti_normalizer"
 #define TRAIT_BLUEMOON_HIGH_PAIN_THRESHOLD	"high_pain_threshold"

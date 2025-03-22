@@ -302,9 +302,9 @@
 				to_chat(M, "<span class='warning'>Для этого вам для начала нужно отстегнуть <b>[src]</b>!")
 				return
 			// BLUEMON ADD START - проверка для сверхтяжёлых персонажей
-			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+			if(src.mob_weight > MOB_WEIGHT_HEAVY)
 				var/can_shake = FALSE
-				if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут поднимать
+				if(M.mob_weight > MOB_WEIGHT_HEAVY) // другие сверхтяжёлые персонажи могут поднимать
 					can_shake = TRUE
 				if(ishuman(M))
 					var/mob/living/carbon/human/user = M

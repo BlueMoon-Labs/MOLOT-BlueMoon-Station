@@ -1115,7 +1115,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/setMovetype(newval)
 	. = ..()
 	// BLUEMOON ADD START - для корректного обновления скорости у парящих сверхтяжёлых персонажей
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(src.mob_weight > MOB_WEIGHT_HEAVY)
 		update_config_movespeed()
 	// BLUEMOON ADD END
 	update_movespeed(FALSE)

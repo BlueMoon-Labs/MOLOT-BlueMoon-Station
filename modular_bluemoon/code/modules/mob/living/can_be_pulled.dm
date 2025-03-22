@@ -20,11 +20,11 @@
 /mob/can_be_pulled(user)
 	if(isliving(user))
 		var/mob/living/user_mob = user
-		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлых персонажей нельзя тащить, не соблюдая определённые условия
+		if(src.mob_weight > MOB_WEIGHT_HEAVY) // сверхтяжёлых персонажей нельзя тащить, не соблюдая определённые условия
 			var/can_pull = FALSE
 			if(user_mob.can_pull_superheavy_entities) // Моб простой и может тащить такого персонажа
 				can_pull = TRUE
-			if(HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY)) // другие сверхтяжёлые или тяжёлые персонажи могут тащить
+			if(user_mob.mob_weight > MOB_WEIGHT_NORMAL) // другие сверхтяжёлые или тяжёлые персонажи могут тащить
 				can_pull = TRUE
 			if(user_mob.mind.martial_art?.id) // обладатели некоторых боевых искусств могут хватать и тащить сверхтяжелых персонажей
 				#define ALLOWED_MARTIAL_ARTS list(MARTIALART_SLEEPINGCARP, MARTIALART_CQC, MARTIALART_PLASMAFIST, MARTIALART_BOUNCER, MARTIALART_RISINGBASS)

@@ -9,14 +9,13 @@
 	//var/t_is = p_are()
 
 	// BLUEMOON ADDITION AHEAD
-	// Проверка на трейт сверхтяжёлого
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-		. += span_warning("Выглядит так, будто весит как машина.\n")
-	// Проверка на трейт тяжёлого персонажа
-	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
-		. += span_warning("Выглядит грузно. Тащить будет сложно.\n")
-	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT))
-		. += span_info("С виду [t_He] весит весьма немного.\n")
+	switch(src.mob_weight)
+		if(MOB_WEIGHT_HEAVY_SUPER)
+			. += span_warning("Выглядит так, будто весит как машина.\n")
+		if(MOB_WEIGHT_HEAVY)
+			. += span_warning("Выглядит грузно. Тащить будет сложно.\n")
+		if(MOB_WEIGHT_LIGHT)
+			. += span_info("С виду [t_He] весит весьма немного.\n")
 	// BLUEMOON ADDITION END
 
 	// Empathy abilities escape clause

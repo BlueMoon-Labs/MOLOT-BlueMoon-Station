@@ -16,7 +16,7 @@
 	if(istype(holder))
 		var/mob/living/living = get_atom_on_turf(micro.loc, /mob/living)
 		var/compare_size = 1
-		if(HAS_TRAIT(micro, TRAIT_BLUEMOON_LIGHT))
+		if(micro.mob_weight < MOB_WEIGHT_NORMAL)
 			compare_size = 0.8
 		if(living && (COMPARE_SIZES(living, micro)) < (compare_size / CONFIG_GET(number/max_pick_ratio)))
 			living.visible_message(span_warning("\The [living] drops [micro] as [micro.p_they()] grow\s too big to carry."),
@@ -29,7 +29,7 @@
 
 /datum/element/mob_holder/micro/on_examine(mob/living/source, mob/user, list/examine_list)
 	var/compare_size = 1
-	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
+	if(source.mob_weight < MOB_WEIGHT_NORMAL)
 		compare_size = 0.8
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (compare_size / CONFIG_GET(number/max_pick_ratio)))
 		examine_list += span_notice("Похоже [source.ru_ego(FALSE)] можно взять в руки через <b>Alt+Click</b> (grab) или раздавить (disarm/harm).")
@@ -72,7 +72,7 @@
 		return FALSE
 	//BLUEMOON ADD лёгких персонажей легче взять
 	var/compare_size = 1
-	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
+	if(source.mob_weight < MOB_WEIGHT_NORMAL)
 		compare_size = 0.8
 	if(COMPARE_SIZES(user, source) < (compare_size / CONFIG_GET(number/max_pick_ratio)))
 	//BLUEMOON ADD END
@@ -91,7 +91,7 @@
 		span_userdanger("[user] starts picking you up!"))
 	source.balloon_alert(user, "picking up")
 	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
-	if(get_size(source) > 0.5 && HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT)) //BLUEMOON ADD лёгкие большие персонажи дольше поднимают тех, кто имеет размер больше 50%
+	if(get_size(source) > 0.5 && user.mob_weight < MOB_WEIGHT_NORMAL) //BLUEMOON ADD лёгкие большие персонажи дольше поднимают тех, кто имеет размер больше 50%
 		time_required += 8 SECONDS //BLUEMOON ADD END
 	if(!do_after(user, time_required, source))
 		return FALSE
@@ -129,7 +129,7 @@
 	var/mob/living/carrier = get_atom_on_turf(src, /mob/living)
 	visible_message(span_warning("[resisting] begins to squirm in [carrier]'s grasp!"))
 	var/time_required = COMPARE_SIZES(carrier, resisting) / 4 SECONDS //Scale how fast the resisting will be depending on size difference
-	if(get_size(resisting) > 0.5 && HAS_TRAIT(carrier, TRAIT_BLUEMOON_LIGHT)) //BLUEMOON ADD персонажу размером больше 50% выбраться из хватки лёгкого большого персонажа достаточно просто
+	if(get_size(resisting) > 0.5 && carrier.mob_weight < MOB_WEIGHT_NORMAL) //BLUEMOON ADD персонажу размером больше 50% выбраться из хватки лёгкого большого персонажа достаточно просто
 		time_required = abs((1 / get_size(resisting))) / 4 SECONDS //BLUEMOON ADD END
 	if(do_after(resisting, time_required, carrier, IGNORE_TARGET_LOC_CHANGE | IGNORE_HELD_ITEM))
 		visible_message(span_warning("[src] escapes [carrier]!"))

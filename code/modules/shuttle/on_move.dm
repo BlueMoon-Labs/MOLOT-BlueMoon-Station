@@ -318,7 +318,7 @@ All ShuttleMove procs go here
 	if(buckled)
 		return
 	// BLUEMOON ADD START - Персонажи с размером более 150% не падают на пол
-	if(get_size(src) >= 1.5 && !HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT))
+	if(get_size(src) >= 1.5 && src.mob_weight > MOB_WEIGHT_LIGHT)
 		to_chat(src, span_notice("Вас тряхнуло, но вы устояли на ногах благодаря своему размеру."))
 		Stun(movement_force["KNOCKDOWN"])
 		return

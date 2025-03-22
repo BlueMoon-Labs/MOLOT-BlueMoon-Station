@@ -56,7 +56,7 @@
 	if(HAS_TRAIT(LM, TRAIT_SILENT_STEP))
 		return
 
-	if(iscarbon(LM) && (!HAS_TRAIT(LM, TRAIT_BLUEMOON_HEAVY) && !HAS_TRAIT(LM, TRAIT_BLUEMOON_HEAVY_SUPER))) // BLUEMOON CHANGES - добавлена проверка для квирков сверхтяжёлого и тяжёлого
+	if(iscarbon(LM) && (LM.mob_weight < MOB_WEIGHT_HEAVY)) // BLUEMOON CHANGES - добавлена проверка для квирков сверхтяжёлого и тяжёлого
 		var/mob/living/carbon/C = LM
 		if(!C.get_bodypart(BODY_ZONE_L_LEG) && !C.get_bodypart(BODY_ZONE_R_LEG))
 			return

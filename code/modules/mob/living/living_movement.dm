@@ -72,33 +72,29 @@
 /mob/living/proc/update_pull_movespeed()
 	// BLUEMOON ADD START
 	var/modified = FALSE
-	if(pulling)
+	if(pulling && isliving(pulling))
+		var/mob/living/L = pulling
 
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверхтяжёлых персонажей очень сложно тянуть
-			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		if(L.mob_weight > MOB_WEIGHT_HEAVY && src.mob_weight < MOB_WEIGHT_HEAVY_SUPER) // Сверхтяжёлых персонажей очень сложно тянуть
+			if(src.mob_weight < MOB_WEIGHT_HEAVY)
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SUPER_SLOWDOWN)
 			else
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
 			modified = TRUE
 
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY) && !(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))) // Тяжёлых персонажей сложнее тянуть, но не для тяжёлых или свертяжёлых
+		if(L.mob_weight > MOB_WEIGHT_NORMAL && src.mob_weight < MOB_WEIGHT_HEAVY) // Тяжёлых персонажей сложнее тянуть, но не для тяжёлых или свертяжёлых
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
 			modified = TRUE
-	// BLUEMOON ADD END
 
-		if(isliving(pulling)) // BLUEMOON EDIT - WAS if(pulling && isliving(pulling))
-			var/mob/living/L = pulling
-			if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
-				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
-				return
+		if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
+			return
 
-			// BLUEMOON ADD START - PULL_SLOWDOWN
-			else if(drag_slowdown && !modified)
-				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/pull_slowdown, multiplicative_slowdown = PULL_SLOWDOWN)
-				modified = TRUE
-			// BLUEMOON ADD END
+		// PULL_SLOWDOWN
+		else if(drag_slowdown && !modified)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/pull_slowdown, multiplicative_slowdown = PULL_SLOWDOWN)
+			modified = TRUE
 
-	// BLUEMOON ADD START
 	if(modified)
 		return
 	remove_movespeed_modifier(/datum/movespeed_modifier/pull_slowdown)

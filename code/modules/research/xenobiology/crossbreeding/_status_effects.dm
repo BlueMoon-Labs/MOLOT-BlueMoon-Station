@@ -959,7 +959,7 @@
 /datum/status_effect/stabilized/lightpink/tick()
 	// BLUEMOON ADD START - умное изменение ускорения на основании размера персонажа
 	var/owner_size = get_size(owner)
-	if(HAS_TRAIT(owner, TRAIT_BLUEMOON_LIGHT) && owner_size > 1) //лёгкие большие персонажи считаются как при размере 1
+	if(owner.mob_weight < MOB_WEIGHT_NORMAL && owner_size > 1) //лёгкие большие персонажи считаются как при размере 1
 		owner_size = 1
 	if(owner_size > 1)
 		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink, multiplicative_slowdown = -2*(1/owner_size)**2) // Спасибо Максималу за формулу
