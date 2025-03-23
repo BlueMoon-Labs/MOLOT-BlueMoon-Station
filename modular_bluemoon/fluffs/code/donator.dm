@@ -1288,3 +1288,13 @@
 	path = /obj/item/modkit/impactbaton_kit
 	ckeywhitelist = list("silverfoxpaws", "nai1ten", "oni3288")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/mengineer_hardhat
+	name = "Master Engineer's Hardhat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/head/hardhat/weldhat/mengineer
+	ckeywhitelist = list("silverfoxpaws")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Station Engineer"
+	restricted_roles = list("Station Engineer")
+	cost = 2
