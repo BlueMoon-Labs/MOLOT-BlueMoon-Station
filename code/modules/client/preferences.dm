@@ -4745,6 +4745,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else if(firstspace == name_length)
 				real_name += "[pick(GLOB.last_names)]"
 
+	character.mob_weight = mob_size_name_to_num(body_weight) //BLUEMOON ADD записываем вес персонажа как цифру
+
 	//reset size if applicable
 	if(character.dna.features["body_size"])
 		var/initial_old_size = character.dna.features["body_size"]
@@ -4759,7 +4761,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.age = age
 
 	character.fuzzy = fuzzy
-	character.mob_weight = mob_size_name_to_num(body_weight) //BLUEMOON ADD записываем вес персонажа как цифру
 
 	character.update_weight(character.mob_weight)
 	character.left_eye_color = left_eye_color
