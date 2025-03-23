@@ -25,3 +25,7 @@
 /datum/gear/shoes/sandals_fancy
 	name = "Fancy sandals"
 	path = /obj/item/clothing/shoes/sandals_fancy
+
+/datum/gear/shoes/legwrap
+	name = "Leg Wrap"
+	path = /obj/item/clothing/shoes/legwrap
