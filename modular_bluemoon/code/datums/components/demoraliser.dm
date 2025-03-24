@@ -111,7 +111,7 @@
 	return FEAR_LEVEL_OTHERS
 
 /datum/mood_event/inteq_scared
-	description = "InteQ на борту!"
+	description = "InteQ на борту!\n"
 	mood_change = -1
 	timeout = 7 MINUTES
 
@@ -140,7 +140,7 @@
 
 
 /datum/mood_event/inteq_happy
-	description = span_greenannounce("Да здравствует Адмирал Браун!")
+	description = span_greenannounce("Да здравствует Адмирал Браун!\n")
 	mood_change = 18
 	timeout = 7 MINUTES
 
