@@ -334,6 +334,7 @@
 	icon_state = "indwelder"
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
+	toolspeed = 0.95 // BLUEMOOD ADD
 
 /obj/item/weldingtool/largetank/cyborg
 	name = "integrated welding tool"
@@ -364,6 +365,7 @@
 	item_state = "upindwelder"
 	max_fuel = 80
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
+	toolspeed = 0.85 // BLUEMOOD ADD
 
 /obj/item/weldingtool/bronze
 	name = "bronze plated welding tool"

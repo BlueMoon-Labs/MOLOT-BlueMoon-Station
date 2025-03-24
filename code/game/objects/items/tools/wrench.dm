@@ -45,7 +45,8 @@
 	attack_verb_continuous = list("devastates", "brutalizes", "commits a war crime against", "obliterates", "humiliates")
 	attack_verb_simple = list("devastate", "brutalize", "commit a war crime against", "obliterate", "humiliate")
 	tool_behaviour = null
-	toolspeed = null
+	toolspeed = 0.9 // BLUEMOOD ADD
+	force = 8 // BLUEMOOD ADD
 
 /obj/item/wrench/combat/Initialize(mapload)
 	. = ..()

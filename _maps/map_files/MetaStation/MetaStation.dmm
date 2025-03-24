@@ -51646,9 +51646,6 @@
 	req_access_txt = "10"
 	},
 /obj/effect/turf_decal/delivery,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
 "fuH" = (
@@ -64998,7 +64995,7 @@
 "lFY" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Gravity Generator Room";
-	req_access_txt = "19;23"
+	req_access_txt = "19;32"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/delivery,
@@ -75886,6 +75883,12 @@
 /obj/machinery/lapvend,
 /turf/open/floor/plasteel/white,
 /area/science/research)
+"qBn" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/gravity_generator)
 "qBq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -135226,7 +135229,7 @@ qIq
 jgc
 gZo
 nPJ
-kCp
+qBn
 qCO
 dKV
 sCL

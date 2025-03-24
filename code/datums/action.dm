@@ -394,6 +394,8 @@
 
 /datum/action/item_action/toggle_welding_screen
 	name = "Toggle Welding Screen"
+	icon_icon = 'icons/obj/clothing/hats.dmi' 	// BLUEMOON ADD
+	button_icon_state = "weldvisor" 			// BLUEMOON ADD for easier indication
 
 /datum/action/item_action/toggle_welding_screen/Trigger()
 	var/obj/item/clothing/head/hardhat/weldhat/H = target

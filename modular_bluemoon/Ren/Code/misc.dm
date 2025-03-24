@@ -17,8 +17,8 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	desc = "Элегантный ящик с инструментами. Ярко оранжевая полоса проходит вдоль стыка крышки, а в центре виднеется голографическая наклейка в виде жёлтого щита."
-	force = 18
-	throwforce = 20
+	force = 15
+	throwforce = 18
 ///Чехол гитары
 /obj/item/storage/backpack/guitarbag
 	name = "Guitar bag"
@@ -45,13 +45,18 @@
 
 /obj/item/crowbar/brown
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	desc = "A small brown crowbar that seems to have extra sharped edges."
 	icon_state = "crowbar_brown"
 	force = 8
+	toolspeed = 0.9
 
 /obj/item/wirecutters/brown
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	desc = "Pair of brown wirecutters with fairly sharp blades."
 	icon_state = "cutters"
 	random_color = FALSE
+	force = 9
+	toolspeed = 0.9
 
 ///шуруповёрт
 /obj/item/screwdriver/power/inteq
@@ -62,7 +67,7 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	force = 20
+	force = 11
 	toolspeed = 0.30
 
 /obj/item/wrench/power/inteq/attack_self(mob/user)
