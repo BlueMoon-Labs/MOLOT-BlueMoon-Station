@@ -2144,21 +2144,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(prob(20))
 		if(ishuman(M))
 			var/mob/living/carbon/human/N = M
-			N.age += 1
-			if(N.age > 70)
+			N.age++ //BLUEMOON EDIT
+			if(N.age == 70) //BLUEMOON EDIT
 				N.facial_hair_color = "ccc"
 				N.hair_color = "ccc"
 				N.update_hair()
-				if(N.age > 100)
+				if(N.age == 100) //BLUEMOON EDIT
 					N.become_nearsighted(type)
 					if(N.gender == MALE)
 						N.facial_hair_style = "Beard (Very Long)"
 						N.update_hair()
-
+/* BLUEMOON DELETE максимальный возраст персонажей у нас 16777216, и не очень круто когда 16776247 из них означают смерть при любом проке этого напитка
 				if(N.age > 969) //Best not let people get older than this or i might incur G-ds wrath
 					M.visible_message("<span class='notice'>[M] becomes older than any man should be.. and crumbles into dust!</span>")
 					M.dust(0,1,0)
-
+*/
 	return ..()
 
 /datum/reagent/consumable/ethanol/rubberneck
