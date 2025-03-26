@@ -19,6 +19,9 @@
 			payload = C
 			to_chat(user, "<span class='notice'>You tangle the [src] around [C]</span>")
 	else if(istype(I,/obj/item/restraints/bondage_rope))
+		if(GLOB.round_type != ROUNDTYPE_EXTENDED)
+			to_chat(user, "<span class='warning'>Today is not the best day to do it.</span>")
+			return
 		var/obj/item/restraints/bondage_rope/R = I
 		if(payload)
 			to_chat(user, "<span class='warning'>[src] already has something in it!</span>")
