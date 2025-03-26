@@ -2141,25 +2141,30 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	value = REAGENT_VALUE_UNCOMMON //Parsnip juice? Really? lol
 
 /datum/reagent/consumable/ethanol/old_timer/on_mob_life(mob/living/carbon/M)
-	if(prob(20))
-		if(ishuman(M))
-			var/mob/living/carbon/human/N = M
-			N.age++ //BLUEMOON EDIT
-			if(N.age == 70) //BLUEMOON EDIT
-				N.facial_hair_color = "ccc"
-				N.hair_color = "ccc"
+	//BLUEMOON REWRITE переписываем код чтобы было красиво
+	. = ..()
+	if(!prob(20))
+		return
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/N = M
+	N.age++
+	switch(N.age)
+		if(70) //используем чёткие цифры, сколько у нас могут быть 2000 летние эльфийки, которые с одного глотка Old Timer не должны сереть
+			N.facial_hair_color = "ccc"
+			N.hair_color = "ccc"
+			N.update_hair()
+		if(100)
+			N.become_nearsighted(type)
+			if(N.gender == MALE)
+				N.facial_hair_style = "Beard (Very Long)"
 				N.update_hair()
-				if(N.age == 100) //BLUEMOON EDIT
-					N.become_nearsighted(type)
-					if(N.gender == MALE)
-						N.facial_hair_style = "Beard (Very Long)"
-						N.update_hair()
-/* BLUEMOON DELETE максимальный возраст персонажей у нас 16777216, и не очень круто когда 16776247 из них означают смерть при любом проке этого напитка
-				if(N.age > 969) //Best not let people get older than this or i might incur G-ds wrath
-					M.visible_message("<span class='notice'>[M] becomes older than any man should be.. and crumbles into dust!</span>")
-					M.dust(0,1,0)
-*/
-	return ..()
+		if(SHORT_REAL_LIMIT + 1 to INFINITY) //Best not let people get older than this or i might incur G-ds wrath
+			M.visible_message("<span class='notice'>[M] becomes older than any man should be.. and crumbles into dust!</span>")
+			M.dust(0,1,0)
+	//BLUEMOON REWRITE END
+
 
 /datum/reagent/consumable/ethanol/rubberneck
 	name = "Rubberneck"
