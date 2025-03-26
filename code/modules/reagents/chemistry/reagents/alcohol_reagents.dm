@@ -2160,7 +2160,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(N.gender == MALE)
 				N.facial_hair_style = "Beard (Very Long)"
 				N.update_hair()
-		if(SHORT_REAL_LIMIT + 1 to INFINITY) //Best not let people get older than this or i might incur G-ds wrath
+		if(AGE_MAX_INPUT + 1 to INFINITY) //Best not let people get older than this or i might incur G-ds wrath
 			M.visible_message("<span class='notice'>[M] becomes older than any man should be.. and crumbles into dust!</span>")
 			M.dust(0,1,0)
 	//BLUEMOON REWRITE END
