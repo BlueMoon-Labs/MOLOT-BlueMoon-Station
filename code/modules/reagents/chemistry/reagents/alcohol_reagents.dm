@@ -2165,7 +2165,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			M.dust(0,1,0)
 	//BLUEMOON REWRITE END
 
-
 /datum/reagent/consumable/ethanol/rubberneck
 	name = "Rubberneck"
 	description = "A quality rubberneck should not contain any gross natural ingredients."
