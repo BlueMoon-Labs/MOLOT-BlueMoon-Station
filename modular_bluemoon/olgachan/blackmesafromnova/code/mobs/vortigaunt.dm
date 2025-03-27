@@ -7,7 +7,7 @@
 	icon_dead = "vortigaunt_dead"
 	icon_gib = null
 	gender = MALE
-	faction = list("neutral")
+	faction = list(FACTION_XEN)
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 1
 	speak_emote = list("galungs")
@@ -30,7 +30,6 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	attack_sound = 'sound/weapons/bite.ogg'
-	gold_core_spawnable = FRIENDLY_SPAWN
 	loot = list(/obj/item/stack/sheet/bone)
 	alert_sounds = list(
 		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert01.ogg',
@@ -61,4 +60,3 @@
 	name = "slave vortigaunt"
 	desc = "Bound by the shackles of a sinister force. He does not want to hurt you."
 	icon_state = "vortigaunt_slave"
-	faction = list(FACTION_XEN)

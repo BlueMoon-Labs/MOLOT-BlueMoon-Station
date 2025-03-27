@@ -7,10 +7,11 @@
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 1
+	recoil = 1
 	fire_delay = 0
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 	automatic_burst_overlay = FALSE
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/9mmhl.ogg'
+	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/9mm.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/hl9mm/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
@@ -27,7 +28,7 @@
 	recoil = 1
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds/m4oa1
-	fire_delay = 30
+	fire_delay = 25
 	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
@@ -74,8 +75,9 @@
 	can_suppress = FALSE
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
-	burst_size = 2
-	burst_shot_delay = 1
+	recoil = 1
+	burst_size = 3
+	burst_shot_delay = 2
 	fire_delay = 3.0 ///Это пиздец!
 	can_bayonet = FALSE
 	automatic_burst_overlay = FALSE
@@ -111,9 +113,10 @@
 	item_state = "spas"
 	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
-	recoil = 5
+	burst_size = 2
+	recoil = 4
 	force = 35
-	fire_delay = 20
+	fire_delay = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/spas
 	pumpsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/shotgun_rack.ogg'
 	weapon_weight = WEAPON_HEAVY
@@ -193,3 +196,69 @@
 	wound_bonus = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/wrenchhit.ogg'
+
+/obj/item/gun/ballistic/automatic/m16a4/mesa
+	name = "\improper old M16 rifle"
+	desc = "Невероятно старая версия М16 с сломанным подствольным гранатомётом и... Большей отдачей что-ли? Держа её в руках, вы чувствуете странные ощущения"
+	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/m16hl.dmi'
+	icon_state = "m16hl"
+	burst_size = 1
+	fire_delay = 3
+	recoil = 1
+	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/m16.ogg'
+
+/obj/item/gun/ballistic/automatic/m16a4/mesa/update_icon_state()
+	if(magazine)
+		icon_state = "m16hl"
+	else
+		icon_state = "m16hl-e"
+
+
+/obj/item/uber_teleporter
+	name = "\improper Nihilanth's Divinity"
+	desc = "It glows harshly, the power of a portal wielding monster lays within."
+	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/plants.dmi'
+	icon_state = "crystal_pylon"
+
+/obj/item/uber_teleporter/attack_self(mob/living/user, modifiers)
+	. = ..()
+	playsound(get_turf(user), 'sound/magic/LightningShock.ogg', 50, TRUE)
+	var/area/area_to_teleport_to = tgui_input_list(usr, "Area to teleport to", "Teleport", GLOB.teleportlocs)
+	if(!area_to_teleport_to)
+		return
+
+	var/area/teleport_area = GLOB.teleportlocs[area_to_teleport_to]
+
+	var/list/possible_turfs = list()
+	for(var/turf/iterating_turf in get_area_turfs(teleport_area.type))
+		if(!iterating_turf.density)
+			var/clear = TRUE
+			for(var/obj/iterating_object in iterating_turf)
+				if(iterating_object.density)
+					clear = FALSE
+					break
+			if(clear)
+				possible_turfs += iterating_turf
+
+	if(!LAZYLEN(possible_turfs))
+		to_chat(user, span_warning("The spell matrix was unable to locate a suitable teleport destination for an unknown reason. Sorry."))
+		return
+
+	if(user.buckled)
+		user.buckled.unbuckle_mob(user, force=1)
+
+	var/list/temp_turfs = possible_turfs
+	var/attempt = null
+	var/success = FALSE
+	while(length(temp_turfs))
+		attempt = pick(temp_turfs)
+		do_teleport(user, attempt, channel = TELEPORT_CHANNEL_FREE)
+		if(get_turf(user) == attempt)
+			success = TRUE
+			break
+		else
+			temp_turfs.Remove(attempt)
+
+	if(!success)
+		do_teleport(user, possible_turfs, channel = TELEPORT_CHANNEL_FREE)
+		playsound(get_turf(user), 'sound/magic/LightningShock.ogg', 50, TRUE)

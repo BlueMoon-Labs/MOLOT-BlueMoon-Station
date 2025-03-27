@@ -330,6 +330,47 @@
 		/obj/item/storage/firstaid/emergency,
 	)
 
+
+/obj/effect/mob_spawn/human/black_mesa/hecu/lost
+	name = "HECU lost grunt"
+	outfit = /datum/outfit/losthecu
+	short_desc = "Ты являешься, скорее всего, одним из немногих обычных пехотинцев, оставшихся в секторе H без какой либо поддержки со стороны правительства."
+	flavour_text = "Ты был отправлен в Чёрную Мезу для выполнения особо важной миссии, но во время начала инструктажа на ваш конвой напали. Ты и немногие выжившие бежали, пока, в конце концов, все, кроме тебя, были убиты местной фауной и чёрными оперативниками. Оставшись один в полуразрушенном туннеле с минимумом боеприпасов и провианта, ты увидел яркий свет. Кажется, это твой шанс покинуть это место... Или нет?."
+	important_info = "Вы можете сразу начать исследовать свою локацию, но заходить дальше Гейтвея до того, как вы встретили исследователей, запрещено. Конфликтовать нежелательно, но если вы решили напасть на исследователей, то вам будет запрещено покинуть гейт и исследовать его дальше. Персонаж НИЧЕГО не знает о устранении свидетелей."
+	roundstart = FALSE
+	death = FALSE
+	density = TRUE
+	category = "offstation"
+/obj/effect/mob_spawn/human/black_mesa/hecu/lost/special(mob/living/carbon/human/spawned_human)
+	. = ..()
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/signlanguage, TRUE, TRUE, LANGUAGE_MIND)
+
+/datum/outfit/losthecu
+	name = "Lost HECU grunt"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	mask = /obj/item/clothing/mask/gas/hecu
+	head = /obj/item/clothing/head/helmet/nvg/hecu
+	suit = /obj/item/clothing/suit/armor/hecu
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/military/assault/hecu
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = /obj/item/reagent_containers/food/drinks/flask
+	r_pocket = /obj/item/flashlight/flare
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4/mesa
+	back = /obj/item/storage/backpack/hecu
+	backpack_contents = list(
+		/obj/item/storage/box/survival/radio,
+		/obj/item/storage/ifak,
+		/obj/item/kitchen/knife/combat,
+		/obj/item/ammo_box/magazine/m16,
+		/obj/item/ammo_box/magazine/m16,
+		/obj/item/ammo_box/magazine/m16,
+	)
+
+
 //Чёрные оперативники
 
 /obj/effect/mob_spawn/human/black_mesa/hecu/blackops
