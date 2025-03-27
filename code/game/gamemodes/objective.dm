@@ -119,7 +119,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 		if(!(possible_target in owners) && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && is_unique_objective(possible_target))
 			if(!(possible_target in blacklist))
 				// BLUEMOON ADD START - если персонаж сверхтяжёлый и установлена настройка, что сверхтяжёлые персонажи не могут быть по заданию, персонажа не добавляет в пулл
-				if(!(!include_superheavy_character && HAS_TRAIT(possible_target.current, TRAIT_BLUEMOON_HEAVY_SUPER)))
+				if(!(!include_superheavy_character && possible_target.current.mob_weight > MOB_WEIGHT_HEAVY))
 					possible_targets += possible_target
 				// BLUEMOON ADD END
 	if(try_target_late_joiners)

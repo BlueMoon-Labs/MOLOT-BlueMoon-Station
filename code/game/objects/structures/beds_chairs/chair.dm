@@ -141,7 +141,7 @@
 	. = ..()
 	handle_layer()
 	// BLUEMOON ADDITION AHEAD - стул ломается при попытке сесть на него сверхтяжёлым персонажем
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(M.mob_weight > MOB_WEIGHT_HEAVY)
 		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
 		playsound(src, 'modular_bluemoon/sound/effects/chair_break.ogg', 70, TRUE)
 		unbuckle_mob(M, TRUE)

@@ -767,20 +767,6 @@
 	text_gain_indication = "<span class='notice'>Ваш зад кажется очень удобным для шлепков.</span>"
 	text_lose_indication = "<span class='danger'>Ваша задница снова чувствует себя нормально.</span>"
 
-
-
-/datum/mutation/human/bm/light
-	name = "Лёгкий"
-	desc = "Вы в разы легче того, чем вы выглядите! Хотя и размеры теперь не особо помогают в выживании."
-	quality = MINOR_NEGATIVE
-	difficulty = 8
-	instability = 0
-	mob_trait = TRAIT_BLUEMOON_LIGHT
-	text_gain_indication = "<span class='notice'>Вы ощущаете себя легче пёрышка!</span>"
-	text_lose_indication = "<span class='danger'>Вы ощёщаете себя тяжелее.</span>"
-
-
-
 /datum/mutation/human/bm/clearly_audible
 	name = "Хорошо слышимый"
 	desc = "Объясняя вашу маленькость вас уж точно услышат (позволяет при маленьком размере иметь хорошо слышимую речь)"

@@ -236,7 +236,7 @@
 		return FALSE
 
 	if(shoving && COOLDOWN_FINISHED(src, shove_cooldown) && !HAS_TRAIT(L, TRAIT_IWASBATONED)) //Rightclicking applies a knockdown, but only once every couple of seconds, based on the cooldown_duration var. If they were recently knocked down, they can't be knocked down again by a baton.
-		if(!HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER)) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
+		if(L.mob_weight < MOB_WEIGHT_HEAVY_SUPER) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
 			L.DefaultCombatKnockdown(50, override_stamdmg = 0)
 			L.apply_status_effect(STATUS_EFFECT_TASED_WEAK_NODMG, status_duration) //Even if they shove themselves up, they're still slowed.
 		// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
@@ -257,7 +257,7 @@
 	L.apply_effect(EFFECT_STUTTER, stamina_loss_amount)
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 	if(user)
-		if(!(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
+		if(L.mob_weight < MOB_WEIGHT_HEAVY_SUPER) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
 			L.Jitter(25)
 			L.Dizzy(25)
 		L.set_last_attacker(user)

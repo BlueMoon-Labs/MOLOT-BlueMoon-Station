@@ -70,7 +70,7 @@
 		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
 			// BLUEMOON ADD START
 			var/can_harm = TRUE
-			if(HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT) && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60%
+			if(user.mob_weight < MOB_WEIGHT_NORMAL && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60%
 				can_harm = FALSE
 			if(target.mind?.martial_art?.id && target.mind.martial_art.can_use(target) && can_harm) // нельзя давить тех, кто обучен и может применять боевые искусства
 			// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
@@ -112,11 +112,12 @@
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 10) //1 second
 				//user.Stun(20)
-				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
-				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
-					user.Immobilize(0.5 SECONDS)
-				else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
-					user.Immobilize(1 SECONDS)
+				// BLUEMOON ADDITION START - тяжёлые персонажи наносят больше урона и на дольше станят, но сами получают стан
+				switch(user.mob_weight)
+					if(MOB_WEIGHT_HEAVY_SUPER)
+						user.Immobilize(1 SECONDS)
+					if(MOB_WEIGHT_HEAVY)
+						user.Immobilize(0.5 SECONDS)
 				// BLUEMOON ADDITION END
 				if(iscarbon(user))
 					if(istype(user) && (user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle"))
@@ -180,13 +181,10 @@
 /mob/living/carbon/proc/sizediffStamLoss(mob/living/carbon/target)
 	var/S = COMPARE_SIZES(src, target) * 5 //macro divided by micro, times 25 // BLUEMOON CHANGES - было 25, стало 5
 	// BLUEMOON ADDITION AHEAD
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT) && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
+	if(src.mob_weight < MOB_WEIGHT_NORMAL && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
 		S = abs((1 / get_size(target))) * 5
-	//усиление конечного результата за наличие квирка на тяжесть или сверхтяжесть
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
-		S *= 1.5 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 15
-	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-		S *= 2 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 20 (у станбатона 35)
+	//изменение конечного результата от веса персонажа
+	S *= (1 + ((src.mob_weight - MOB_WEIGHT_NORMAL) * 0.5))
 	target.apply_damage(S, STAMINA, BODY_ZONE_CHEST) // дополнительный урон по стамине за нерф опрокидывания на пол, т.к. чрезвычайно сильное в оригинале
 	target.Dizzy(5)
 	// BLUEMOON ADDITION END
@@ -197,13 +195,10 @@
 /mob/living/carbon/proc/sizediffStun(mob/living/carbon/target)
 	var/T = COMPARE_SIZES(src, target) * 2 //Macro divided by micro, times 2
 	// BLUEMOON ADDITION AHEAD
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT) && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
+	if(src.mob_weight < MOB_WEIGHT_NORMAL && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
 		T = abs((1 / get_size(target))) * 2
-	//усиление конечного результата за наличие квирка на тяжесть или сверхтяжесть
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
-		T *= 1.5
-	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-		T *= 2
+	//изменение конечного результата от веса персонажа
+	T *= (1 + ((src.mob_weight - MOB_WEIGHT_NORMAL) * 0.5))
 	// BLUEMOON ADDITION END
 	target.Stun(T)
 
@@ -211,13 +206,10 @@
 /mob/living/carbon/proc/sizediffBruteloss(mob/living/carbon/target)
 	var/B = COMPARE_SIZES(src, target) * 3 //macro divided by micro, times 3
 	// BLUEMOON ADDITION AHEAD
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT) && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
+	if(src.mob_weight < MOB_WEIGHT_NORMAL && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
 		B = abs((1 / get_size(target))) * 3
-	//усиление конечного результата за наличие квирка на тяжесть или сверхтяжесть
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
-		B *= 2
-	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-		B *= 3
+	//усиление конечного результата за вес выше среднего
+	B *= max(1, src.mob_weight - MOB_WEIGHT_NORMAL)
 	// BLUEMOON ADDITION END
 	target.adjustBruteLoss(B) //final result in brute loss
 

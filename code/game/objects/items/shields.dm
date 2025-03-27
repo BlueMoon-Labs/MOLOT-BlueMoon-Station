@@ -82,7 +82,7 @@
 	animate(effect, alpha = 0, pixel_x = px * 1.5, pixel_y = py * 1.5, time = 3, flags = ANIMATION_PARALLEL | ANIMATION_RELATIVE)
 
 /obj/item/shield/proc/bash_target(mob/living/user, mob/living/target, bashdir, harmful)
-	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))	// AYE
+	if(target.mob_weight > MOB_WEIGHT_HEAVY)	// AYE
 		// unified stun absorption system when lol вот это бля баг и вызвало
 		target.visible_message("<span class='warning'>[user] slams [target] with [src], but [target] doesn't falter!</span>", "<span class='userdanger'>[user] slams you with [src], but it barely fazes you!</span>")
 		return FALSE

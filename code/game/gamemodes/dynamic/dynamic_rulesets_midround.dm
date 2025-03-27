@@ -1199,7 +1199,7 @@
 			candidates -= player
 		else if(HAS_TRAIT(player, TRAIT_MINDSHIELD)) // никаких кровососов с защитой разума
 			candidates -= player
-		else if(HAS_TRAIT(player, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+		else if(player.mob_weight > MOB_WEIGHT_HEAVY) // никаких сверхтяжёлых кровососов
 			candidates -= player
 		else if(HAS_TRAIT(player, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
 			candidates -= player

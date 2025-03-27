@@ -89,16 +89,6 @@
 		quirk_target.chance = quirk_target.default_chance
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
 
-/datum/quirk/light
-	name = "Лёгкий"
-	desc = "Вы в разы легче того, чем вы выглядите! Хотя и размеры теперь не особо помогают в выживании."
-	value = 0
-	mob_trait = TRAIT_BLUEMOON_LIGHT
-	gain_text = "<span class='notice'>Вы ощущаете себя легче пёрышка!</span>"
-	lose_text = "<span class='danger'>Вы ощёщаете себя тяжелее.</span>"
-	medical_record_text = "Пациент имеет аномально низкий вес."
-	antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.
-
 /datum/quirk/clearly_audible
 	name = "Хорошо слышимый"
 	desc = "Объясняя вашу маленькость вас уж точно услышат (позволяет при маленьком размере иметь хорошо слышимую речь)"
