@@ -349,9 +349,3 @@
 	desc = "Tactical gasmask for Catcrin Foreign Intelligence Service operatives. The compact mask has dark glass and small filters in the front part of the mask with breath venting."
 	icon_state = "syndicate_blackcool"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/mask/gas/syndicate/cool_version/mihana_mask
-	name = "Andromeda Mask"
-	desc = "A close-fitting tactical mask that can be connected to an air supply."
-	icon_state = "mihana_mask"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
