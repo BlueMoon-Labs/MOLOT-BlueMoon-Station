@@ -70,6 +70,7 @@
 	icon_state = "victorianreddress"
 	item_state = "victorianreddress"
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/civilian/victorianblackdress
 	name = "black victorian dress"
@@ -77,6 +78,7 @@
 	icon_state = "victorianblackdress"
 	item_state = "victorianblackdress"
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/civilian/dutch
 	name = "dutch suit"

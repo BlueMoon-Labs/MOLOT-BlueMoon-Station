@@ -6,7 +6,10 @@
 /turf/closed/wall/mineral/gold,
 /area/ruin/space/has_grav/powered)
 "c" = (
-/turf/open/floor/eighties,
+/obj/effect/turf_decal/arrows/red{
+	dir = 1
+	},
+/turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
 "d" = (
 /turf/open/floor/carpet/purple,
@@ -15,33 +18,49 @@
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/ruin/space/has_grav/powered)
 "f" = (
-/turf/open/floor/light/colour_cycle/dancefloor_b,
+/obj/effect/turf_decal/arrows/red{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/clown/corpse,
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/powered)
 "g" = (
-/obj/machinery/computer{
-	name = "Disco Disco Rave";
-	desc = "Unfortunately, the machine seems to be broken..."
+/obj/structure/cursed_slot_machine,
+/obj/effect/turf_decal/bot_red,
+/obj/machinery/light/small{
+	dir = 1
 	},
-/turf/open/floor/eighties,
+/turf/open/indestructible/gold,
 /area/ruin/space/has_grav/powered)
 "h" = (
 /obj/structure/window/reinforced,
-/turf/open/floor/eighties,
+/obj/machinery/computer/arcade{
+	dir = 4;
+	icon_state = "arcade"
+	},
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/powered)
 "i" = (
-/turf/open/floor/plasteel/stairs,
-/turf/open/floor/eighties,
+/obj/machinery/computer/arcade{
+	dir = 4;
+	icon_state = "arcade"
+	},
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/powered)
 "j" = (
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
 "k" = (
-/obj/machinery/computer/arcade,
+/obj/machinery/computer/arcade{
+	dir = 8;
+	icon_state = "arcade"
+	},
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
 "l" = (
 /obj/machinery/computer/slot_machine,
+/obj/machinery/light/small,
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
 "m" = (
@@ -74,9 +93,76 @@
 /obj/item/coin/arcade_token,
 /obj/item/coin/arcade_token,
 /obj/item/coin/arcade_token,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
 "q" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/space/has_grav/powered)
+"r" = (
+/obj/machinery/computer/arcade{
+	dir = 8;
+	icon_state = "arcade"
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/powered)
+"s" = (
+/turf/closed/mineral,
+/area/ruin/space/has_grav/powered)
+"t" = (
+/obj/machinery/computer/arcade{
+	dir = 4;
+	icon_state = "arcade"
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/space/has_grav/powered)
+"u" = (
+/obj/structure/statue/gold/cmo,
+/turf/open/indestructible/gold,
+/area/ruin/space/has_grav/powered)
+"A" = (
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/powered)
+"B" = (
+/obj/effect/turf_decal/arrows/red{
+	dir = 1
+	},
+/turf/open/floor/light/colour_cycle/dancefloor_a,
+/area/ruin/space/has_grav/powered)
+"D" = (
+/obj/structure/window/reinforced,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/powered)
+"H" = (
+/obj/machinery/door/window/westleft,
+/turf/open/floor/carpet/purple,
+/area/ruin/space/has_grav/powered)
+"I" = (
+/obj/machinery/computer/slot_machine,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/powered)
+"J" = (
+/obj/structure/window/reinforced,
+/obj/machinery/computer/arcade{
+	dir = 8;
+	icon_state = "arcade"
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/powered)
+"L" = (
+/obj/machinery/jukebox/disco/indestructible,
+/turf/open/floor/light/colour_cycle/dancefloor_a,
+/area/ruin/space/has_grav/powered)
+"V" = (
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/powered)
+"W" = (
 /obj/structure/closet/crate/freezer{
 	name = "refreshment cooler"
 	},
@@ -96,14 +182,19 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/space_up,
 /obj/item/reagent_containers/food/drinks/soda_cans/space_up,
 /obj/item/reagent_containers/food/drinks/soda_cans/starkist,
+/obj/machinery/light/small,
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
-"r" = (
-/obj/machinery/computer/arcade,
-/turf/open/floor/eighties,
+"Y" = (
+/obj/machinery/door/window/eastright,
+/turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/powered)
-"s" = (
-/turf/closed/mineral,
+"Z" = (
+/obj/structure/statue/gold/hop,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/indestructible/gold,
 /area/ruin/space/has_grav/powered)
 
 (1,1,1) = {"
@@ -165,8 +256,8 @@ a
 a
 a
 a
-s
-s
+a
+a
 a
 a
 a
@@ -186,10 +277,10 @@ a
 a
 a
 a
+a
 s
 s
-s
-s
+a
 a
 a
 a
@@ -209,10 +300,10 @@ j
 j
 j
 b
+b
 s
 s
-s
-s
+a
 a
 a
 "}
@@ -230,8 +321,8 @@ b
 p
 d
 d
+W
 b
-s
 s
 s
 s
@@ -247,13 +338,13 @@ s
 s
 s
 s
-s
+b
 b
 m
 m
-m
+Y
 b
-s
+b
 s
 s
 a
@@ -266,15 +357,15 @@ a
 s
 s
 s
-s
 b
 b
 b
-k
+b
+Z
 d
 d
 d
-k
+t
 b
 b
 s
@@ -287,10 +378,10 @@ a
 s
 s
 s
-s
 b
-r
-r
+b
+i
+i
 h
 d
 d
@@ -299,8 +390,8 @@ d
 d
 l
 b
-a
-a
+b
+b
 a
 a
 "}
@@ -310,19 +401,19 @@ s
 s
 s
 b
-c
-c
-c
-h
+I
+A
+A
+D
 d
 d
+e
+e
+e
 d
 d
-d
-d
-l
-b
-b
+u
+V
 a
 a
 "}
@@ -332,19 +423,19 @@ s
 s
 s
 b
-g
+I
+A
+A
+d
+d
 e
-f
 e
-i
-c
-c
-c
-c
-c
-c
-c
-n
+e
+e
+e
+d
+d
+V
 a
 a
 "}
@@ -356,15 +447,15 @@ s
 b
 g
 f
+d
+d
+c
 e
-f
-i
-c
-c
-c
-c
-c
-c
+B
+L
+e
+B
+d
 c
 n
 a
@@ -376,19 +467,19 @@ a
 s
 s
 b
-g
+I
+A
+A
+d
+d
 e
-f
 e
-i
-c
-c
-c
-c
-c
-c
-c
-n
+e
+e
+e
+d
+d
+V
 a
 a
 "}
@@ -398,19 +489,19 @@ s
 s
 s
 b
-c
-c
-c
-h
+I
+A
+A
+D
 d
 d
+e
+e
+e
 d
 d
-d
-d
-l
-b
-b
+u
+V
 a
 a
 "}
@@ -419,11 +510,11 @@ a
 s
 s
 s
-s
+b
 b
 r
 r
-h
+J
 d
 d
 d
@@ -431,8 +522,8 @@ d
 d
 l
 b
-a
-a
+b
+b
 a
 a
 "}
@@ -442,11 +533,11 @@ s
 s
 s
 s
-s
 b
 b
 b
-k
+b
+Z
 d
 d
 d
@@ -467,13 +558,13 @@ s
 s
 s
 s
-s
+b
 b
 o
-d
 o
+H
 b
-s
+b
 s
 s
 s
@@ -493,12 +584,12 @@ a
 b
 q
 d
-q
+d
+W
 b
 s
 s
-s
-s
+a
 a
 a
 "}
@@ -517,9 +608,9 @@ j
 j
 j
 b
+b
 s
-s
-s
+a
 a
 a
 a

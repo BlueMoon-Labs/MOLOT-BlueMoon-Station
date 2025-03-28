@@ -46,7 +46,10 @@
 
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
-	user.handle_post_sex(NORMAL_LUST*2, CUM_TARGET_HAND, user)
+	var/lust_amount = NORMAL_LUST //если наша цель довести до пика, то не стоит это закрывать за кучей укусов
+	if(HAS_TRAIT(partner, TRAIT_MASO))
+		lust_amount *= 2
+	partner.handle_post_sex(lust_amount, CUM_TARGET_HAND, user)
 
 	if(prob(50 + partner.get_lust()))
 		partner.visible_message("<span class='lewd'><b>\The [partner]</b> [pick("дрожит от боли.",

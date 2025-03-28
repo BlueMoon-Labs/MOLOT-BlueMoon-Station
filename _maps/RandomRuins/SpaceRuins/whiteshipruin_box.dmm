@@ -3,10 +3,43 @@
 /obj/machinery/door/airlock/titanium,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
+"bb" = (
+/obj/structure/salvage/computer{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "whiteshipmain";
+	name = "Windows Control";
+	pixel_x = -5;
+	pixel_y = -24
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
 "bG" = (
-/obj/machinery/door/window/northright,
-/obj/effect/decal/remains/human,
-/turf/open/floor/mineral/titanium/purple,
+/obj/structure/table,
+/obj/item/storage/box/beakers{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"cj" = (
+/obj/effect/spawner/lootdrop/salvage,
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"cW" = (
+/obj/structure/rack,
+/obj/item/melee/classic_baton,
+/turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "ei" = (
 /turf/closed/wall/mineral/titanium,
@@ -16,7 +49,34 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "fa" = (
-/obj/item/multitool,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"fz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/firecloset{
+	anchored = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"gN" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"gX" = (
+/obj/structure/table,
+/obj/item/gps{
+	gpstag = "Nt1ReCC4";
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/obj/item/radio/off{
+	pixel_x = -9;
+	pixel_y = 2
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "he" = (
@@ -25,11 +85,36 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/whiteship/box)
+"iy" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"iL" = (
+/obj/machinery/door/window/northright,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/mineral/titanium/purple,
+/area/ruin/space/has_grav/whiteship/box)
 "jN" = (
 /obj/structure/shuttle/engine/propulsion/left{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/whiteship/box)
+"kg" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"lc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "lC" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -37,22 +122,105 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/whiteship/box)
+"ng" = (
+/turf/open/floor/plating{
+	heat_capacity = 1e+006;
+	icon_state = "platingdmg2"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"op" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"ow" = (
+/obj/structure/rack,
+/obj/item/pda/clear,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"oC" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/decal/remains/human,
+/turf/open/floor/mineral/titanium/purple,
+/area/ruin/space/has_grav/whiteship/box)
 "oG" = (
 /obj/structure/salvage/computer{
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
+"pd" = (
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = -31;
+	pixel_y = 0
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/whiteship/box)
 "ps" = (
-/obj/structure/chair{
+/obj/effect/decal/remains/human,
+/obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
-"qi" = (
+"pt" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
 /obj/structure/table,
-/obj/item/gun/energy/laser/retro,
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/eastright{
+	name = "First-Aid Supplies"
+	},
+/obj/item/storage/box/beakers{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"pZ" = (
+/obj/machinery/door/window,
+/obj/effect/decal/cleanable/vomit/old,
+/mob/living/simple_animal/hostile/zombie{
+	desc = "This undead fiend looks to be badly decomposed.";
+	environment_smash = 0;
+	health = 60;
+	melee_damage_lower = 11;
+	melee_damage_upper = 11;
+	name = "Rotting Carcass";
+	zombiejob = "Assistant"
+	},
+/obj/item/melee/implantarmblade,
+/turf/open/floor/mineral/titanium/purple,
+/area/ruin/space/has_grav/whiteship/box)
+"qi" = (
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "qF" = (
@@ -62,11 +230,11 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/storage/toolbox/mechanical,
+/obj/item/multitool,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "qS" = (
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/mineral/titanium/white,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/whiteship/box)
 "rh" = (
 /obj/structure/light_construct/small,
@@ -80,9 +248,16 @@
 /area/ruin/space/has_grav/whiteship/box)
 "ry" = (
 /obj/structure/table,
-/obj/item/screwdriver,
 /obj/structure/light_construct{
 	dir = 1
+	},
+/obj/item/screwdriver/power,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"rJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard{
+	icon_state = "medium"
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
@@ -101,19 +276,76 @@
 	},
 /turf/open/floor/mineral/titanium/purple,
 /area/ruin/space/has_grav/whiteship/box)
-"uU" = (
+"tK" = (
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery{
+	pixel_y = 4
+	},
+/obj/item/clothing/suit/apron/surgical,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"uu" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/item/reagent_containers/glass/beaker/synthflesh,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"uL" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/space/hardsuit/medical,
-/obj/item/clothing/mask/breath,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"uU" = (
+/obj/machinery/suit_storage_unit/cmo,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"uW" = (
+/mob/living/simple_animal/hostile/zombie{
+	desc = "This undead fiend looks to be badly decomposed.";
+	environment_smash = 0;
+	health = 60;
+	melee_damage_lower = 11;
+	melee_damage_upper = 11;
+	name = "Rotting Carcass"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"uY" = (
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = -30
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"vD" = (
+/obj/structure/tank_dispenser,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "vM" = (
 /obj/structure/table,
 /obj/item/radio/off,
-/turf/open/floor/mineral/titanium/white,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"vQ" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/item/rack_parts,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/space/has_grav/whiteship/box)
 "vR" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"vS" = (
+/obj/effect/decal/remains/human,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "wr" = (
@@ -122,8 +354,37 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
+"xc" = (
+/obj/structure/light_construct,
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"xf" = (
+/obj/effect/spawner/lootdrop/salvage,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
 "xi" = (
 /obj/structure/light_construct,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"xq" = (
+/obj/structure/closet/secure_closet/medical3{
+	anchored = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"xI" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "xV" = (
@@ -133,16 +394,51 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
+"yo" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
 "yu" = (
-/obj/structure/salvage/computer,
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 2;
+	name = "Broken Computer"
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "yv" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/regular{
-	pixel_x = 6;
-	pixel_y = -5
+	pixel_x = 1;
+	pixel_y = 4
 	},
+/obj/item/scalpel{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"yG" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/chlorine{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/bottle/chlorine{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/bottle/chlorine{
+	pixel_x = 1;
+	pixel_y = 0
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"yM" = (
+/obj/machinery/sleeper,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "zA" = (
@@ -150,14 +446,36 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "zF" = (
-/obj/machinery/door/window,
-/turf/open/floor/mineral/titanium/purple,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/ruin/space/has_grav/whiteship/box)
-"Be" = (
-/obj/structure/light_construct{
-	dir = 8
+"Ar" = (
+/obj/effect/decal/remains/human,
+/mob/living/simple_animal/hostile/zombie{
+	desc = "This undead fiend looks to be badly decomposed.";
+	environment_smash = 0;
+	health = 60;
+	melee_damage_lower = 11;
+	melee_damage_upper = 11;
+	name = "Rotting Carcass";
+	zombiejob = "Assistant"
 	},
 /turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Be" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Bt" = (
+/obj/structure/rack,
+/obj/item/paicard,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"By" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ruin/space/has_grav/whiteship/box)
 "BC" = (
 /obj/structure/light_construct{
@@ -166,23 +484,171 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Cb" = (
-/obj/structure/light_construct/small{
-	dir = 4
+/obj/structure/light_construct{
+	dir = 8
+	},
+/obj/machinery/computer{
+	dir = 4;
+	name = "Broken Computer"
 	},
 /turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Db" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "Dg" = (
 /obj/structure/table,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
+"Dh" = (
+/obj/structure/table,
+/obj/item/flashlight/pen{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/paper{
+	pixel_x = -6;
+	pixel_y = 0
+	},
+/obj/item/folder/white{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/obj/item/stock_parts/cell{
+	charge = 100;
+	maxcharge = 15000;
+	pixel_x = 4;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = -7;
+	pixel_y = 12
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Ep" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/item/weldingtool/experimental,
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
 "Ew" = (
-/obj/structure/chair{
+/obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
+"EN" = (
+/obj/machinery/computer/operating,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"ES" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"Fv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"Fw" = (
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 32
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
 "GC" = (
-/obj/structure/chair,
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"GX" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/table/optable,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Ho" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Hr" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"If" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 1;
+	name = "Broken Computer"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Jj" = (
+/obj/effect/spawner/lootdrop/salvage,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"JC" = (
+/obj/structure/light_construct,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"JR" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -4
+	},
+/obj/item/folder/white,
+/obj/item/pen{
+	pixel_x = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Kc" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/structure/table,
+/obj/item/storage/firstaid/brute{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/machinery/door/window/eastleft{
+	name = "First-Aid Supplies"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Kj" = (
+/obj/structure/bed/roller,
+/obj/machinery/iv_drip,
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 30
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Kp" = (
@@ -191,6 +657,13 @@
 	id = "oldship_ruin_gun"
 	},
 /turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"KJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/space/has_grav/whiteship/box)
 "Lf" = (
 /obj/structure/shuttle/engine/heater{
@@ -201,30 +674,128 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/whiteship/box)
+"LI" = (
+/obj/machinery/autodoc,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"LU" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Mx" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"MC" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/emergency,
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"MX" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
 "Nj" = (
 /obj/structure/light_construct{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/ruin/space/has_grav/whiteship/box)
 "NT" = (
 /obj/structure/light_construct,
-/obj/structure/salvage/computer{
-	dir = 1
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 1;
+	name = "Broken Computer"
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Os" = (
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
-"Qs" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
+"OI" = (
+/mob/living/simple_animal/hostile/zombie{
+	desc = "This undead fiend looks to be badly decomposed.";
+	environment_smash = 0;
+	health = 60;
+	melee_damage_lower = 11;
+	melee_damage_upper = 11;
+	name = "Rotting Carcass";
+	zombiejob = "Assistant"
 	},
-/turf/open/floor/mineral/titanium/purple,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Pa" = (
+/obj/machinery/computer{
+	dir = 4;
+	name = "Broken Computer"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Ps" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"PE" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/ammonia{
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/bottle/plushmium{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"PF" = (
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"Qs" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/structure/reagent_dispensers/watertank,
+/obj/effect/turf_decal/bot,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/item/assembly/prox_sensor,
+/obj/item/storage/bag/trash{
+	pixel_x = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"Ri" = (
+/obj/structure/closet/crate/bin,
+/obj/item/trash/pistachios,
+/obj/item/trash/can,
+/obj/item/light/bulb/broken,
+/turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "RD" = (
 /obj/item/shard{
@@ -240,8 +811,49 @@
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
+"SZ" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 1;
+	name = "Broken Computer"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/space/has_grav/whiteship/box)
 "Tc" = (
 /turf/closed/wall/mineral/titanium/interior,
+/area/ruin/space/has_grav/whiteship/box)
+"Tg" = (
+/obj/item/reagent_containers/syringe/heroin{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/obj/effect/decal/remains/human,
+/obj/item/reagent_containers/syringe/heroin{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"TH" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Ul" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"UW" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ruin/space/has_grav/whiteship/box)
 "Wq" = (
 /obj/machinery/mass_driver{
@@ -259,16 +871,24 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Xe" = (
-/obj/item/scalpel,
+/obj/effect/decal/cleanable/flour,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Xp" = (
 /turf/template_noop,
 /area/template_noop)
 "Xq" = (
-/obj/structure/table,
-/obj/item/tank/internals/oxygen,
-/turf/open/floor/mineral/titanium/white,
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whitemain"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/whiteship/box)
+"Xt" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/space/has_grav/whiteship/box)
 "XE" = (
 /obj/machinery/door/airlock/titanium,
@@ -278,18 +898,46 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/salvage/computer,
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 2;
+	name = "Broken Computer"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"YW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Zh" = (
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
-"Zz" = (
-/obj/machinery/sleeper{
-	dir = 8
+"Zj" = (
+/obj/structure/sign/departments/medbay,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/whiteship/box)
+"Zx" = (
+/obj/structure/table,
+/obj/item/gun/energy/laser/retro,
+/obj/item/gun/energy/laser/retro{
+	pixel_x = -2;
+	pixel_y = 9
 	},
-/obj/effect/decal/remains/human,
+/turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"Zy" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/whiteship/box)
+"Zz" = (
 /obj/structure/light_construct,
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 
@@ -304,7 +952,7 @@ Xp
 Xp
 ei
 ei
-XE
+Db
 ei
 ei
 Xp
@@ -327,7 +975,7 @@ Xp
 Xp
 ei
 Tc
-Os
+Zh
 Tc
 ei
 Xp
@@ -349,9 +997,9 @@ Xp
 Xp
 Xp
 ei
-sW
-Os
-Os
+xf
+Zh
+yo
 ei
 Xp
 Xp
@@ -372,9 +1020,9 @@ Xp
 Xp
 Xp
 ei
-Os
-Os
-sW
+Hr
+Zh
+zA
 ei
 Xp
 Xp
@@ -395,9 +1043,9 @@ Xp
 Xp
 Xp
 ei
-Os
-Os
-Os
+kg
+Ps
+kg
 ei
 Xp
 Xp
@@ -418,9 +1066,9 @@ Xp
 Xp
 Xp
 ei
-sW
-Os
-xi
+zA
+Zh
+xc
 ei
 Xp
 Xp
@@ -441,9 +1089,9 @@ Xp
 Xp
 Xp
 ei
-Os
-Os
-Os
+PF
+yo
+vR
 ei
 Xp
 Xp
@@ -464,9 +1112,9 @@ Xp
 Xp
 Xp
 ei
-Os
-Os
-Os
+Qs
+Ps
+vR
 ei
 Xp
 Xp
@@ -487,8 +1135,8 @@ Xp
 Xp
 Xp
 ei
-Os
-Os
+Ep
+Fv
 vR
 ei
 Xp
@@ -511,7 +1159,7 @@ Xp
 Xp
 ei
 Tc
-Os
+Zh
 Tc
 ei
 Xp
@@ -534,7 +1182,7 @@ Xp
 Xp
 ei
 ei
-ak
+Db
 ei
 ei
 Xp
@@ -557,7 +1205,7 @@ Xp
 Xp
 Xp
 ei
-Os
+Zh
 ei
 Xp
 Xp
@@ -570,140 +1218,140 @@ Xp
 Xp
 "}
 (13,1,1) = {"
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
 ei
-ei
-ak
-ei
+jN
+lC
+lC
+lC
 ei
 Xp
 Xp
+ei
+qS
+Db
+qS
+ei
 Xp
 Xp
-Xp
-Xp
-Xp
-Xp
+ei
+lC
+lC
+lC
+he
+ei
 "}
 (14,1,1) = {"
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
 ei
 ei
-Tc
+Lf
+Lf
+Lf
+ei
+ei
+ei
+qS
+qS
 Os
-Tc
+qS
+qS
 ei
 ei
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
-Xp
+ei
+Lf
+Lf
+Lf
+ei
+ei
 "}
 (15,1,1) = {"
-ei
-jN
-lC
-lC
-lC
-he
-Xp
-ei
-Tc
-Os
-Os
-Os
-Tc
-ei
-Xp
-jN
-lC
-lC
-lC
-he
-ei
-"}
-(16,1,1) = {"
-ei
-ei
-Lf
-Lf
-Lf
-ei
-ei
-ei
-Nj
-Os
-Os
-Os
-xi
-ei
-ei
-ei
-Lf
-Lf
-Lf
-ei
-ei
-"}
-(17,1,1) = {"
 Xp
 ei
 Tc
 zA
 Zh
 Tc
-ei
+qS
+qS
+qS
+Jj
+RD
+Be
+qS
+qS
+qS
 Tc
-Os
-Os
-Os
-Os
-Os
-Tc
-ei
-Tc
+Ul
 zA
-zA
 Tc
 ei
+Xp
+"}
+(16,1,1) = {"
+Xp
+Xp
+ei
+Tc
+yo
+rh
+qS
+qS
+Nj
+qi
+Be
+vS
+xi
+qS
+qS
+rn
+yo
+Tc
+ei
+Xp
+Xp
+"}
+(17,1,1) = {"
+Xp
+Xp
+Xp
+ei
+qS
+XE
+qS
+gN
+Os
+Mx
+Os
+Os
+Os
+Be
+qS
+XE
+qS
+ei
+Xp
+Xp
 Xp
 "}
 (18,1,1) = {"
 Xp
 Xp
+Xp
 ei
-Tc
-Zh
-rh
-ei
+qS
 Os
 Os
 Os
+Be
+Os
+Ul
+Os
+Be
 Os
 Os
-Os
+Ul
 qS
 ei
-rn
-Zh
-Tc
-ei
+Xp
 Xp
 Xp
 "}
@@ -712,19 +1360,19 @@ Xp
 Xp
 Xp
 ei
-ei
-XE
-ei
-ei
-ei
-ej
-Sy
-ej
+qS
+Be
+Os
+Os
 ei
 ei
 ei
-XE
 ei
+ei
+ei
+RD
+Be
+qS
 ei
 Xp
 Xp
@@ -735,19 +1383,19 @@ Xp
 Xp
 Xp
 ei
-ei
-Os
-Os
-Os
-Os
-Os
-Os
-Os
-Os
+qS
 sW
 Os
 Os
 ei
+pZ
+Os
+wr
+Os
+ak
+Os
+sW
+qS
 ei
 Xp
 Xp
@@ -757,21 +1405,21 @@ Xp
 Xp
 Xp
 ei
-ei
-Tc
+qS
+qS
 WD
-Os
-Os
-Os
-Os
-BC
-Os
-Os
-Os
-Os
-Os
+vS
+Xe
 ei
+oC
+Os
+RD
+MX
 ei
+Os
+qS
+qS
+qS
 ei
 Xp
 Xp
@@ -780,250 +1428,251 @@ Xp
 Xp
 ei
 ei
-Tc
+qS
+op
+Os
+qi
+JC
+ei
+yG
 Os
 Os
-Os
-Os
-ei
-ei
-ei
-ei
-ei
+td
 ei
 Os
-Os
-ei
-ei
-ei
+Zj
+Kc
+pt
+qS
 ei
 Xp
 "}
 (23,1,1) = {"
-ei
-ei
-ei
-ei
-ei
-ei
-Tc
-Os
-ei
-zF
-Os
-wr
+Xp
+qS
+qS
+qS
+qS
+qS
+qS
 Os
 ak
 Os
+BC
+Os
+iL
+ei
 Os
 ak
 Os
-Tc
+Mx
+qS
 ei
 Xp
 "}
 (24,1,1) = {"
-XE
-Os
-Os
+Xp
+pd
+MC
 uU
 uU
-Tc
+qS
+qS
+Be
 ei
-xi
 ei
-Qs
+ei
+ei
+ei
+ei
 Os
-Xq
-td
-ei
-Nj
-Os
-ei
+Zj
+Dh
 Os
 yv
-ei
+qS
 ei
 "}
 (25,1,1) = {"
-ei
+Xp
+ES
 Os
-Os
-Os
-Os
+fa
+rJ
 qF
-ei
+qS
 Os
-ak
-Os
+fz
+PE
 Cb
-Os
+Pa
 bG
-ei
+lc
+qi
+qS
+Kj
 Os
-Os
-ei
-Os
-Os
-Tc
+LI
+qS
 ei
 "}
 (26,1,1) = {"
 ei
 vM
+LU
+By
+Be
+Xt
+qS
+sW
 Os
 Os
+Mx
 Os
+Ul
 Os
-ei
-Os
-ei
-ei
-ei
-ei
-ei
-ei
-Os
-WD
+sW
 ej
+yM
 Xe
-Os
-Os
+Ar
+uu
 ei
 "}
 (27,1,1) = {"
 ei
 ry
-Os
-Os
+RD
+Ho
 sW
+Be
+Sy
 Os
-ak
-Os
-Os
+RD
 Os
 Be
 Os
-Os
-Os
-Os
-Os
+fa
+Xe
+Mx
 ej
+EN
 Os
-Os
+Mx
 Zz
 ei
 "}
 (28,1,1) = {"
-ei
+Xp
+KJ
 Os
-Os
-Os
-Os
-Os
-ei
-Tc
+Be
+Ho
+Be
+qS
+Ri
 sW
-Os
-Os
-Os
-Os
-Os
+Be
 Os
 fa
+Be
+Be
+LU
 ej
+GX
+vS
 Os
-Os
-Os
+qS
 ei
 "}
 (29,1,1) = {"
-ei
-sW
+Xp
+Zy
+ng
 Os
-Os
-Os
-Tc
-ei
-ei
+vD
+vD
+qS
+qS
+qS
+qS
 ej
-Sy
+TH
 ej
-ei
-ei
-ei
-ei
-ei
-Os
-Os
-Os
-ei
+qS
+qS
+qS
+qS
+xq
+tK
+qS
+Xp
 "}
 (30,1,1) = {"
 ei
-Os
-Os
-Os
-Tc
-ei
-Tc
-Os
-Os
-Os
-Os
-Os
-Os
-Dg
-Dg
-Dg
-ei
-Os
-Os
-Tc
+cj
+YW
+UW
+qS
+qS
+qS
+vQ
+cW
+uL
+Be
+Ho
+Be
+uL
+Bt
+ow
+qS
+qS
+qS
+qS
 ei
 "}
 (31,1,1) = {"
-XE
-Os
-Kp
-Os
 ei
-Tc
+Fw
+Kp
+Be
+qS
+yu
 Os
 Os
 Os
+Mx
 Os
-Os
-Os
-Os
-Os
-Os
-Os
-Tc
-Tc
-oG
+zF
+uW
+Be
+Ho
+Ul
+If
+qS
+ei
 ei
 Xp
 "}
 (32,1,1) = {"
 ei
-ei
-ei
+qS
+qS
 RY
-ei
+qS
 Ya
 Ew
+qi
+OI
+Ho
 Os
 Os
-Os
-Os
-Os
-Os
-Os
+Tg
+Ul
 Os
 GC
 NT
-ei
+qS
 ei
 ei
 Xp
@@ -1031,22 +1680,22 @@ Xp
 (33,1,1) = {"
 Xp
 Xp
-ei
+qS
 Wq
-ei
+qS
 yu
 Ew
-Os
-Os
-Dg
+zF
+Ho
+iy
 ps
-Dg
+iy
 Os
 sW
-Os
-Os
-Tc
-ei
+qi
+GC
+SZ
+qS
 ei
 Xp
 Xp
@@ -1056,19 +1705,19 @@ Xp
 Xp
 ei
 xV
-ei
-Tc
-RD
-Os
-Os
-qi
+qS
+qS
+xI
+JR
+Zx
 oG
+oG
+bb
 Dg
-Os
-Os
-Os
-Tc
-ei
+gX
+uY
+qS
+qS
 ei
 Xp
 Xp
@@ -1080,17 +1729,17 @@ Xp
 Xp
 Xp
 ei
-ei
-ei
-ej
-ej
-ej
-ej
-ej
-ej
-ej
-ei
-ei
+qS
+qS
+Xq
+Xq
+Xq
+Xq
+Xq
+Xq
+Xq
+qS
+qS
 ei
 Xp
 Xp

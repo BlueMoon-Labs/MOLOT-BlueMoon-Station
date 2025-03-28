@@ -16,9 +16,9 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	desc = "Элегантный ящик с инструментами. Ярко оранжевая полоса проходит вдоль стыка крышки, а в центре виднеется галографическая наклейка в виде жёлтого щита."
-	force = 18
-	throwforce = 20
+	desc = "Элегантный ящик с инструментами. Ярко оранжевая полоса проходит вдоль стыка крышки, а в центре виднеется голографическая наклейка в виде жёлтого щита."
+	force = 15
+	throwforce = 18
 ///Чехол гитары
 /obj/item/storage/backpack/guitarbag
 	name = "Guitar bag"
@@ -45,24 +45,29 @@
 
 /obj/item/crowbar/brown
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	desc = "A small brown crowbar that seems to have extra sharped edges."
 	icon_state = "crowbar_brown"
 	force = 8
+	toolspeed = 0.9
 
 /obj/item/wirecutters/brown
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	desc = "Pair of brown wirecutters with fairly sharp blades."
 	icon_state = "cutters"
 	random_color = FALSE
+	force = 9
+	toolspeed = 0.9
 
 ///шуруповёрт
 /obj/item/screwdriver/power/inteq
 	name = "Brown hand Drill"
-	desc = "Карманный электро инструмент. Теперь в элегантной обёртке. Установлена насадка крестовой отвётки."
+	desc = "Карманный электроинструмент. Теперь в элегантной обёртке. Установлена насадка крестовой отвёртки."
 	icon_state = "drill_inteq_screw"
 	item_state = "drill"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	force = 20
+	force = 11
 	toolspeed = 0.30
 
 /obj/item/wrench/power/inteq/attack_self(mob/user)
@@ -74,7 +79,7 @@
 ///гайковёрт
 /obj/item/wrench/power/inteq
 	name = "Brown hand drill"
-	desc = "Карманный электро инструмент. Теперь в элегантной обёртке. Установлена насадка с шестигранником."
+	desc = "Карманный электроинструмент. Теперь в элегантной обёртке. Установлена насадка с шестигранником."
 	icon_state = "drill_inteq_bolt"
 	item_state = "drill"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
@@ -108,7 +113,7 @@
 ///кусачки
 /obj/item/wirecutters/power/inteq
 	name = "jaws of life"
-	desc = "Карманный пневматический инструмент. Нет, мы не украли контейнер клешней с транспортника НТ и просто перекрасили его. Устанановлена насадка кусачек."
+	desc = "Карманный пневматический инструмент. Нет, мы не украли контейнер клешней с транспортника НТ и просто перекрасили его. Установлена насадка кусачек."
 	icon_state = "jaws_inteq_cutter"
 	item_state = "jawsoflife"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
@@ -191,7 +196,7 @@
 	stage2	= list("<span class='danger'>Ваша кожа чернеет и болит так, словно её сдирают заживо.</span>")
 	stage3	= list("<span class='danger'>Твой позвоночник воет от боли словно его пытаются растянуть на дыбе</span>", "<span class='danger'>похоже ты становишься выше.</span>")
 	stage4	= list("<span class='danger'>Что то разрывает твою кожу на спине.</span>")
-	stage5	= list("<span class='danger'>Трансформация завершается. Паразиты глубоко укоренились в теле и теперь не отделимы от него. Вы чувствуете невероятную боль, получив взамен новые возможности.<br><br>Используй Shift+Click, что бы принять вид обьекта или существа.<br>Alt+Click по вентиляции или скраберу, что бы залезть в систему труб.<br>Поедай трупы или используй медицинские нитки для востановления здоровья.<br>Ты можешь выдержать много физических повреждений, но огонь и лазеры для тебя смертельно опасны.</span>")
+	stage5	= list("<span class='danger'>Трансформация завершается. Паразиты глубоко укоренились в теле и теперь не отделимы от него. Вы чувствуете невероятную боль, получив взамен новые возможности.<br><br>Используй Shift+Click, что бы принять вид объекта или существа.<br>Alt+Click по вентиляции или скраберу, что бы залезть в систему труб.<br>Поедай трупы или используй медицинские нитки для восстановления здоровья.<br>Ты можешь выдержать много физических повреждений, но огонь и лазеры для тебя смертельно опасны.</span>")
 	new_form = /mob/living/simple_animal/hostile/morph/sandman
 	infectable_biotypes = MOB_ORGANIC|MOB_MINERAL|MOB_UNDEAD
 //Автохирург
@@ -206,7 +211,7 @@
 //Секретные документы
 /obj/item/documents/inteq
 	name = "orange secret documents"
-	desc = "\"Совершенно Секретно\". Документы, содержащие разрозненые координаты, имена, наборы шифров и схем. Эти документы заверены оранжевой сургучной печатью."
+	desc = "\"Совершенно Секретно\". Документы, содержащие разрозненные координаты, имена, наборы шифров и схем. Эти документы заверены оранжевой сургучной печатью."
 	icon_state = "docs_orange"
 
 /obj/item/folder/inteq
@@ -221,7 +226,7 @@
 //маяк выбора оружия для FTU
 /obj/item/choice_beacon/ftu
 	name = "FTU sec kit"
-	desc = "Маяк для выбора снаряжения охраниками торговых кораблей"
+	desc = "Маяк для выбора снаряжения охранниками торговых кораблей"
 
 /obj/item/choice_beacon/ftu/generate_display_names()
 	var/static/list/ftu_item_list
@@ -250,7 +255,7 @@
 //Энергетический щит
 /obj/item/shield/inteq_energy
 	name = "Old energy shield"
-	desc = "Устаревшая на несколько поколений модель энергетического щита. Использует механические ограничители силового поля и эрганомика немного страдает, но всё ещё является желанным элементом экипировки."
+	desc = "Устаревшая на несколько поколений модель энергетического щита. Использует механические ограничители силового поля и эргономика немного страдает, но всё ещё является желанным элементом экипировки."
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
@@ -301,19 +306,6 @@
 		playsound(user, 'sound/weapons/saberoff.ogg', 35, TRUE)
 		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
 	add_fingerprint(user)
-
-//--------------------------------------------------------------------------------[Ящики карго]------------------------------------------------------------------
-/datum/supply_pack/goody/guitarbag
-	name = "Guitar bag"
-	desc = "Гитара вместе с чехлом. Очень быстро окупит вложеные в неё кредиты."
-	cost = 500
-	contains = list(/obj/item/storage/backpack/guitarbag/loaded)
-
-/datum/supply_pack/goody/cloak
-	name = "Cloak of true miner"
-	desc = "Красный плащ с чёрным силуэтом черепа в очках. Ходят слухи, что он принадлежал величайшему шахтёру, чей бур мог пронзить небеса. А теперь это ещё один символ победившего капитализма."
-	cost = 3000
-	contains = list(/obj/item/clothing/neck/cloak/miner)
 
 //---------------------------------------------------------------------------------------------------------------------------------
 /obj/item/robot_module/inteq_builder

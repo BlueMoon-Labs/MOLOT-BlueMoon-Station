@@ -51646,9 +51646,6 @@
 	req_access_txt = "10"
 	},
 /obj/effect/turf_decal/delivery,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
 "fuH" = (
@@ -52902,14 +52899,14 @@
 /turf/open/floor/plating/airless,
 /area/solars/port/fore)
 "gcE" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
@@ -56413,6 +56410,11 @@
 "hGz" = (
 /turf/open/floor/padded,
 /area/security/prison)
+"hGF" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel,
+/area/cargo/storage)
 "hGX" = (
 /turf/open/floor/engine/co2,
 /area/engineering/atmos)
@@ -57597,9 +57599,11 @@
 /turf/open/floor/wood,
 /area/service/library)
 "igL" = (
-/obj/structure/disposalpipe/segment,
 /obj/structure/chair/office/dark{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
@@ -64991,7 +64995,7 @@
 "lFY" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Gravity Generator Room";
-	req_access_txt = "19;23"
+	req_access_txt = "19;32"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/delivery,
@@ -71213,6 +71217,12 @@
 /obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/maintenance/aft)
+"ozC" = (
+/obj/structure/disposalpipe/junction{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/cargo/storage)
 "ozS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -75873,6 +75883,12 @@
 /obj/machinery/lapvend,
 /turf/open/floor/plasteel/white,
 /area/science/research)
+"qBn" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/gravity_generator)
 "qBq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -76967,6 +76983,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
+"raC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/disposalpipe/sorting/mail{
+	dir = 8;
+	sortType = 3
+	},
+/turf/open/floor/plasteel,
+/area/cargo/storage)
 "rbc" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
 	dir = 1
@@ -83917,6 +83941,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
 /area/engineering/storage/tech)
+"uhq" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/cargo/storage)
 "uhB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -111566,7 +111602,7 @@ mPQ
 pYN
 mPQ
 mMO
-mPQ
+ozC
 gjz
 mPQ
 mPQ
@@ -111821,9 +111857,9 @@ mGQ
 vNU
 doX
 kfS
-mGQ
-glJ
-glJ
+uhq
+hGF
+raC
 glJ
 iYX
 kFi
@@ -112079,7 +112115,7 @@ jwx
 vPR
 teH
 gcE
-mPQ
+mIE
 igL
 eJg
 eAy
@@ -116422,7 +116458,7 @@ aax
 wBB
 cKy
 qIB
-ahx
+ajm
 meF
 vTO
 afc
@@ -116679,7 +116715,7 @@ aax
 wHw
 ajm
 air
-ahx
+ajm
 akv
 alu
 urp
@@ -116929,7 +116965,7 @@ acw
 acL
 kUN
 adx
-abe
+aax
 ael
 aeU
 abe
@@ -117186,7 +117222,7 @@ gmU
 lxV
 ade
 cUU
-abe
+aax
 llY
 aeV
 abe
@@ -117443,7 +117479,7 @@ aax
 acM
 ewU
 ady
-abe
+aax
 abe
 egh
 abe
@@ -135193,7 +135229,7 @@ qIq
 jgc
 gZo
 nPJ
-kCp
+qBn
 qCO
 dKV
 sCL

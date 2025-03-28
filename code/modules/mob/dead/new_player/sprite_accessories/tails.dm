@@ -354,14 +354,14 @@
 	name = "Murid"
 	icon_state = "murid"
 	color_src = MUTCOLORS
-	icon = 'modular_bluemoon/Fink/icons/mob/tails.dmi'
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
 	matrixed_sections = MATRIX_NONE
 
 /datum/sprite_accessory/tails_animated/human/murid // BLUEMOON Fink edited
 	name = "Murid"
 	icon_state = "murid"
 	color_src = MUTCOLORS
-	icon = 'modular_bluemoon/Fink/icons/mob/tails.dmi'
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
 	matrixed_sections = MATRIX_NONE
 
 /datum/sprite_accessory/tails/orca
@@ -894,14 +894,14 @@
 	name = "Murid"
 	icon_state = "murid"
 	color_src = MUTCOLORS
-	icon = 'modular_bluemoon/Fink/icons/mob/tails.dmi'
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
 	matrixed_sections = MATRIX_NONE
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/murid // BLUEMOON Fink edited
 	name = "Murid"
 	icon_state = "murid"
 	color_src = MUTCOLORS
-	icon = 'modular_bluemoon/Fink/icons/mob/tails.dmi'
+	icon = 'modular_bluemoon/icons/mob/bm_tails.dmi'
 	matrixed_sections = MATRIX_NONE
 
 /datum/sprite_accessory/tails/mam_tails/orca

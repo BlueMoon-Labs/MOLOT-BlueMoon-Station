@@ -160,6 +160,13 @@
 /obj/machinery/suit_storage_unit/syndicate/chameleon
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
+//Bluemoon add start - добовляю сьют сторейдж для скафа киберсана
+
+/obj/machinery/suit_storage_unit/syndicate/cybersun
+	suit_type = /obj/item/clothing/suit/space/hardsuit/cybersun
+
+//Bluemoon add end
+
 /obj/machinery/suit_storage_unit/syndicate/softsuit
 	helmet_type =/obj/item/clothing/head/helmet/space/syndicate
 	suit_type = /obj/item/clothing/suit/space/syndicate

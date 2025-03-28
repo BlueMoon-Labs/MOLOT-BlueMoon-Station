@@ -97,6 +97,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/dress/sailor
 	name = "sailor dress"

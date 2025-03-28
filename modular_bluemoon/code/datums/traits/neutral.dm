@@ -154,3 +154,17 @@
 
 	quirk_holder.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 	give_item(/obj/item/clothing/accessory/badge_syndi, quirk_holder)
+
+/datum/quirk/lewdjob
+	name = "Секс это работа"
+	desc = "Ничего личного, просто бизнес. В моменты интимной близости у вас над головой не будут появляться сердечки."
+	mob_trait = TRAIT_LEWD_JOB
+
+/datum/preferences
+	var/summon_nickname = null
+
+/datum/quirk/lewdsummon
+	name = "Призываемый"
+	desc = "Вы были одарены силой демонов похоти или же сами являлись её источником, что давала возможность осмелившимся безумцам призывать вас при помощи рун. Сможете ли вы исполнить их фантазии?."
+	mob_trait = TRAIT_LEWD_SUMMON
+	gain_text = "<span class='notice'>Призываемый - ЕРП квирк. Использование его для абуза механик, будет крайне строго наказываться ©️. </span>"

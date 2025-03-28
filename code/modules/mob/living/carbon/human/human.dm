@@ -882,7 +882,10 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
 	var/carrydelay = 40 //if you have latex you are faster at grabbing
 	var/skills_space = "" //cobby told me to do this
+	var/gloves_used = FALSE
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
+		if(HAS_TRAIT_FROM(src, TRAIT_QUICKER_CARRY, GLOVE_TRAIT))
+			gloves_used = TRUE
 		carrydelay = 20
 		skills_space = "профессионально "
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY) || HAS_TRAIT(target, TRAIT_BLUEMOON_LIGHT))
@@ -896,7 +899,7 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 		visible_message("<span class='notice'>[src] [skills_space]поднимает [target] на свои плечи.</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
-		"<span class='notice'>[carrydelay < 35 ? "Используя перчатки с наночипами, вы" : "Вы"] [skills_space]поднимаете [target] на свои плечи[carrydelay == 40 ? ", всё благодаря наночипов в ваших перчатках..." : "..."]</span>")
+		"<span class='notice'>[gloves_used ? "Используя перчатки с наночипами, вы" : "Вы"] [skills_space]поднимаете [target] на свои плечи.]</span>")
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, target, extra_checks = CALLBACK(src, PROC_REF(can_be_firemanned), target)))
 			//Second check to make sure they're still valid to be carried
@@ -1266,5 +1269,8 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 				to_chat(src, span_warning("\The [S] pulls \the [hand] from your grip!"))
 
 ///Sets up the jump component for the mob. Proc args can be altered so different mobs have different 'default' jump settings
-/mob/living/proc/set_jump_component(duration = 0.5 SECONDS, cooldown = 1 SECONDS, cost = 16, height = 16, sound = null, flags = JUMP_SHADOW, flags_pass = PASSTABLE)
-	AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = cost, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = flags_pass)
+/mob/living/proc/set_jump_component(duration = 0.5 SECONDS, cooldown = 1 SECONDS, cost = 96, height = 16, sound = null, flags = JUMP_SHADOW, flags_pass = PASSTABLE)
+	if(HAS_TRAIT(src, TRAIT_FREERUNNING))
+		AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = 32, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = flags_pass)
+	else
+		AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = cost, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = flags_pass)

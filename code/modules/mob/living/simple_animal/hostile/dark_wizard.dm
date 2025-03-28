@@ -11,6 +11,7 @@
 	ranged_message = "earth bolts"
 	ranged_cooldown_time = 20
 	maxHealth = 50
+	del_on_death = 1
 	health = 50
 	harm_intent_damage = 5
 	obj_damage = 20

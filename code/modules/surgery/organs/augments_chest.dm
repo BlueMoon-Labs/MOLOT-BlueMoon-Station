@@ -227,7 +227,7 @@
 	desc = "This implant can inject limited list of basic reagents into your blood."
 	slot = INTERNAL_ORGAN_CHEM_IMPLANT
 	w_class = WEIGHT_CLASS_TINY
-	icon = 'modular_bluemoon/_medicalAndCyberpunk/icons/internal_HA.dmi'
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi' //BLUEMOON ADD респрайт импланта
 	icon_state = "chem_implant"
 	var/charge_capacity = 4
 	var/charge = 4

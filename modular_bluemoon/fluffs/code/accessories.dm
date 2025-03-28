@@ -176,7 +176,7 @@
 	name = "Scabbard for a officer's cleaver"
 	desc = "The special scabbard is well suited for the officer's cleaver issued to high-ranking Adler officers and their officials. You could call it superfluous, it is made of the skin of some rare creature and perhaps even intelligent, the scabbard itself is attached to the belt in the belt area at the back for the convenience of sharply removing the blade and striking, which is taught to officers when they learn how to use this specialized cleaver. For ordinary people, they are inconvenient and difficult to use."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/belts.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/belts.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/belt.dmi'
 	icon_state = "scabbard"
 	item_state = "scabbard"
 	w_class = WEIGHT_CLASS_BULKY

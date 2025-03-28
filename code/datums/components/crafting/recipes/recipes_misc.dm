@@ -576,6 +576,16 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
 
+/datum/crafting_recipe/egg_bag
+	name = "Egg bag"
+	result = /obj/item/storage/bag/egg
+	tools = list(TOOL_WIRECUTTER)
+	reqs = list(/obj/item/stack/sheet/cloth = 10,
+				/obj/item/stack/sheet/mineral/wood = 3)
+	time = 50
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISCELLANEOUS
+
 //////////////
 //Banners/////
 //////////////

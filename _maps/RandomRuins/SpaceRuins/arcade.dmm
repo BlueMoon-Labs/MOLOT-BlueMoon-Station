@@ -13,31 +13,34 @@
 /area/ruin/powered)
 "e" = (
 /obj/machinery/computer/arcade,
+/obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "f" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/vending/coffee,
-/turf/open/floor/engine,
+/obj/structure/cursed_slot_machine,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/mineral/gold,
 /area/ruin/powered)
 "g" = (
-/obj/item/coin,
-/obj/item/toy/plush/random,
+/obj/item/coin{
+	pixel_x = 7;
+	pixel_y = 0
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "h" = (
 /obj/effect/mob_spawn/human/corpse/assistant,
 /obj/effect/decal/cleanable/blood,
-/obj/item/toy/plush/random,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "i" = (
-/obj/machinery/light{
-	dir = 4
+/obj/item/trash/sosjerky{
+	pixel_x = 1;
+	pixel_y = 20
 	},
-/obj/item/toy/plush/random,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "j" = (
@@ -47,18 +50,28 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "k" = (
-/obj/item/coin/gold,
+/obj/item/coin/gold{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "l" = (
 /turf/open/floor/engine,
 /area/ruin/powered)
 "m" = (
-/obj/item/coin/iron,
+/obj/item/coin/iron{
+	pixel_x = 4;
+	pixel_y = 17
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "n" = (
-/obj/item/toy/plush/random,
+/obj/item/trash/chips{
+	pixel_x = 11;
+	pixel_y = 7
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "o" = (
@@ -66,7 +79,6 @@
 	pixel_x = 5;
 	pixel_y = 11
 	},
-/obj/item/toy/plush/random,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "p" = (
@@ -84,7 +96,10 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "t" = (
-/obj/item/trash/chips,
+/obj/item/trash/chips{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "u" = (
@@ -92,11 +107,16 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "v" = (
-/obj/item/coin,
+/obj/item/coin/gold{
+	pixel_x = 22;
+	pixel_y = 5
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "w" = (
-/obj/item/coin/diamond,
+/obj/item/coin/gold,
+/obj/item/coin/gold,
+/obj/item/coin/gold,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "x" = (
@@ -126,7 +146,10 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "D" = (
-/obj/item/trash/can,
+/obj/item/trash/can{
+	pixel_x = 7;
+	pixel_y = -16
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "E" = (
@@ -138,12 +161,17 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/powered)
 "G" = (
-/obj/structure/chair/sofa/right/brown,
+/obj/item/trash/sosjerky{
+	pixel_x = 7;
+	pixel_y = -8
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "H" = (
-/obj/structure/chair/sofa/left/brown,
-/obj/item/bedsheet/ian,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/gun/energy/pumpaction/toy,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "I" = (
@@ -151,16 +179,70 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "J" = (
-/obj/item/dualsaber/toy,
+/obj/item/dualsaber/toy{
+	pixel_x = -6;
+	pixel_y = 7
+	},
 /turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ruin/powered)
 "K" = (
-/obj/item/gun/energy/pumpaction/toy,
+/obj/item/trash/sosjerky{
+	pixel_x = 6;
+	pixel_y = -8
+	},
+/turf/open/floor/engine,
+/area/ruin/powered)
+"M" = (
+/obj/item/trash/can{
+	pixel_x = -16;
+	pixel_y = -10
+	},
+/turf/open/floor/engine,
+/area/ruin/powered)
+"N" = (
+/obj/item/trash/chips{
+	pixel_x = -9;
+	pixel_y = -4
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "O" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"P" = (
+/obj/item/trash/can{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/turf/open/floor/engine,
+/area/ruin/powered)
+"R" = (
+/obj/item/coin/iron{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/turf/open/floor/engine,
+/area/ruin/powered)
+"T" = (
+/obj/machinery/computer/slot_machine,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"U" = (
+/obj/effect/mob_spawn/human/corpse/assistant,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/light/colour_cycle/dancefloor_a,
+/area/ruin/powered)
+"Y" = (
+/obj/item/toy/plush/random,
+/obj/structure/rack/shelf,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"Z" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/engine,
 /area/ruin/powered)
 
 (1,1,1) = {"
@@ -326,12 +408,12 @@ c
 c
 d
 e
-j
+H
 l
 l
 K
 j
-G
+E
 B
 d
 c
@@ -348,12 +430,12 @@ c
 c
 d
 e
-k
+w
 l
-v
+h
 l
 l
-H
+l
 C
 d
 c
@@ -369,12 +451,12 @@ b
 c
 c
 d
-e
-l
+T
+R
 I
 l
 l
-l
+n
 k
 B
 d
@@ -391,10 +473,10 @@ c
 c
 c
 d
-e
+T
 l
 l
-w
+r
 l
 y
 d
@@ -413,8 +495,8 @@ c
 c
 c
 d
-e
-m
+T
+l
 J
 r
 q
@@ -436,11 +518,11 @@ c
 c
 d
 f
-l
+U
 r
 x
 r
-l
+r
 d
 d
 d
@@ -457,12 +539,12 @@ c
 c
 c
 d
-e
+T
 l
 q
 r
 q
-D
+P
 A
 l
 s
@@ -479,12 +561,12 @@ O
 c
 c
 d
-e
+T
 t
 u
-l
-E
-y
+r
+G
+Z
 d
 d
 p
@@ -501,14 +583,14 @@ b
 c
 c
 d
-e
+T
 g
-n
-t
-k
+l
+N
+v
 l
 l
-B
+Y
 d
 c
 b
@@ -528,9 +610,9 @@ h
 o
 D
 l
-D
+M
 l
-C
+Y
 d
 c
 c
@@ -546,13 +628,13 @@ c
 c
 d
 e
+z
+l
 i
-n
-E
 l
 z
 m
-B
+Y
 d
 c
 c

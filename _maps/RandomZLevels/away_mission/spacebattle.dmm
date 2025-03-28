@@ -2317,7 +2317,12 @@
 /turf/open/floor/wood,
 /area/awaymission/spacebattle/cruiser)
 "hK" = (
-/obj/structure/closet/secure_closet/captains,
+/obj/structure/closet,
+/obj/item/bikehorn/rubberducky/captain,
+/obj/item/clothing/under/rank/captain/utility,
+/obj/item/clothing/under/trek/command/orv/captain,
+/obj/item/pen/fountain/captain,
+/obj/item/tank/jetpack/oxygen/captain,
 /turf/open/floor/wood,
 /area/awaymission/spacebattle/cruiser)
 "hL" = (
@@ -3774,8 +3779,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/spacebattle/syndicate1)
 "oE" = (
-/obj/structure/displaycase,
-/obj/item/fugu_gland,
+/obj/structure/statue/diamond/captain,
 /turf/open/floor/wood,
 /area/awaymission/spacebattle/cruiser)
 "oH" = (
@@ -4473,6 +4477,7 @@
 /area/awaymission/spacebattle/syndicate1)
 "tZ" = (
 /obj/machinery/door/airlock/command,
+/obj/effect/mapping_helpers/airlock/access/any/command/captain,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "ua" = (
@@ -7608,6 +7613,11 @@
 "QV" = (
 /obj/structure/reagent_dispensers/spacecleanertank,
 /turf/closed/wall/mineral/titanium,
+/area/awaymission/spacebattle/cruiser)
+"QW" = (
+/obj/machinery/door/airlock/command,
+/obj/effect/mapping_helpers/airlock/access/any/command/captain,
+/turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "QX" = (
 /obj/structure/girder,
@@ -40047,9 +40057,9 @@ gx
 gI
 oE
 FY
-gy
-NJ
 hE
+NJ
+xu
 hJ
 ht
 cc
@@ -40306,7 +40316,7 @@ gy
 gy
 gy
 gy
-xu
+gy
 gy
 ht
 cp
@@ -40556,7 +40566,7 @@ cp
 yp
 fq
 jO
-yp
+QW
 jR
 gy
 sn

@@ -366,6 +366,11 @@
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/hatch/centcom.dmi'
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/hatch/overlays.dmi'
 
+/obj/machinery/door/airlock/hatch/syndicate
+	doorDeni = 'modular_bluemoon/icons/obj/machines/airlock/access_denied.ogg'
+	doorOpen = 'modular_bluemoon/icons/obj/machines/airlock/airlock_ext_open.ogg'
+	doorClose = 'modular_bluemoon/icons/obj/machines/airlock/airlock_ext_close.ogg'
+
 /obj/machinery/door/airlock/maintenance_hatch
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/hatch/maintenance.dmi'
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/hatch/overlays.dmi'
@@ -381,7 +386,9 @@
 /obj/machinery/door/airlock/multi_tile/metal
 	icon = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/multi_tile.dmi'
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/overlays.dmi'
-
+	doorDeni = 'modular_bluemoon/icons/obj/machines/airlock/access_denied.ogg'
+	doorOpen = 'modular_bluemoon/icons/obj/machines/airlock/airlockopen.ogg'
+	doorClose = 'modular_bluemoon/icons/obj/machines/airlock/airlockclose.ogg'
 
 /obj/machinery/door/airlock/multi_tile/glass
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/multi_tile/multi_tile.dmi'

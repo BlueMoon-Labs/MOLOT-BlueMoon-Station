@@ -46,7 +46,7 @@
 /// Melter
 /obj/item/gun/energy/pulse/pistol/inteq
 	name = "Melter"
-	desc = "<span class='danger'>Не направлять рабочую часть на живых существ</span>"
+	desc = "<span class='danger'>Не направлять рабочую часть на органику</span>"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	icon_state = "melter"
 	charge_delay = 4
@@ -94,7 +94,7 @@
 
 /obj/item/gun/energy/laser/canceller
 	name = "Canceller"
-	desc = "Энергетический пистолет довольно старого образца. Создан для использования спецслужбами Солнечной Федерации, но со временем был замещён более удачными образцами. Выглядит сильно модернезированым."
+	desc = "Энергетический пистолет довольно старого образца. Создан для использования спецслужбами Солнечной Федерации, но со временем был замещён более удачными образцами. Выглядит сильно модернизированным."
 	icon_state = "canceller"
 	item_state = "canceller"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
@@ -241,7 +241,7 @@
 	else
 		..()
 
-/obj/item/gun/energy/m2a100/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params) //what I tried to do here is just add a check to see if the cover is open or not and add an icon_state change because I can't figure out how c-20rs do it with overlays
+/obj/item/gun/energy/m2a100/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)
 	if(cover_open)
 		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
 	else
@@ -252,7 +252,7 @@
 /obj/item/gun/energy/laser/sniper
 
 	name = "Omni rifle"
-	desc = ""
+	desc = "Sniper Energy Rifle against Drones"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/40x32.dmi'
 	icon_state = "railgun"
 	item_state = "railgun"
@@ -379,7 +379,7 @@
 // Сабля Каракурт
 /obj/item/storage/belt/sabre/karakurt
 	name = "Karakurt sheath"
-	desc = "Ножны со встроеным отсеком для ядом. Постоянно поддерживают элегантное оружие в подобающем виде."
+	desc = "Ножны со встроенным отсеком для ядом. Постоянно поддерживают элегантное оружие в подобающем виде."
 	icon_state = "isheath"
 	item_state = "isheath"
 	force = 5

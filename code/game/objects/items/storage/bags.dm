@@ -315,6 +315,7 @@
 	STR.display_numerical_stacking = FALSE
 	STR.can_hold = typecacheof(list(/obj/item/book, /obj/item/storage/book, /obj/item/spellbook))
 
+
 /*
  * Trays - Agouri
  */

@@ -190,7 +190,7 @@
 	loadout_enabled = TRUE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	short_desc = "Вы - Оперативник Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
+	short_desc = "Вы - Оперативник Авангарда InteQ на старом корабле, застрявшем во враждебном космосе."
 	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Почините корабль, найдите способ обеспечить его энергией и выполняйте приказы Капитана."
 	important_info = "Установите полную власть над локальным сектором, защитите корабль и секретные документы в рюкзаке ценой своей жизни."
 	can_load_appearance = TRUE
@@ -228,11 +228,11 @@
 	if(GLOB.master_mode == "Extended")
 		important_info = "Запрещено пытаться сбежать и сопротивляться без веских причин как серьёзная угроза жизни от сотрудников Космической Полиции и Солнечной. Побег только с разрешения администрации."
 		category = "sol"
-		
+
 /obj/effect/mob_spawn/human/inteqspace/captain
 	name = "InteQ Ship Captain"
-	short_desc = "Вы - Лидер Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
-	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Командуйте своим экипажем и исследуйте свой территорию, чтобы закрепить свое местоположение."
+	short_desc = "Вы - Лидер Авангарда InteQ на старом корабле, застрявшем во враждебном космосе."
+	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Командуйте своим экипажем и исследуйте свою территорию, чтобы закрепить свое местоположение."
 	important_info = "Установите полную власть над локальным сектором, защитите корабль и секретные документы в рюкзаке ценой своей жизни."
 	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteqspace/inteq_captain
@@ -271,7 +271,7 @@
 
 	id = /obj/item/card/id/inteq/crew_id
 	backpack_contents = list(/obj/item/paper/fluff/ruins/forgottenship/password)
-
+	implants = list(/obj/item/implant/deathrattle/inteqcrew, /obj/item/implant/weapons_auth)
 /datum/outfit/inteqspace/inteq_hostage
 	name = "InteQ Hostage"
 
@@ -298,6 +298,7 @@
 
 	id = /obj/item/card/id/inteq/captain_id
 	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)
+	implants = list(/obj/item/implant/deathrattle/inteqcrew, /obj/item/implant/weapons_auth)
 
 // Ghost Cafe Spawner (VR Version)
 

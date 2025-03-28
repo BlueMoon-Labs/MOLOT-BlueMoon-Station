@@ -103,10 +103,11 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/donator/bm/Frieren_skirt
-    name = "Frieren skirt"
-    desc = "Изысканный эльфийский наряд, что выполнен из нежной ткани и украшен золотыми нитями."
-    icon_state = "Elf_skirt"
-    item_state = "Elf_skirt"
+	name = "Frieren skirt"
+	desc = "Изысканный эльфийский наряд, что выполнен из нежной ткани и украшен золотыми нитями."
+	icon_state = "Elf_skirt"
+	item_state = "Elf_skirt"
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/donator/bm/Prosecutor_suit
     name = "Prosecutor_suit"
@@ -171,6 +172,7 @@
 	icon_state = "laskaskirt"
 	item_state = "laskaskirt"
 	can_adjust = TRUE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/underwear/briefs/kladmen_panties
 	name = "Panties"
@@ -216,3 +218,24 @@
 	desc = "The dress from the tavern for elves is made of lightweight material that softly fits the figure. This pale green dress highlights the grace and elegance of the Elven people."
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "tavern_skirt"
+	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/donator/bm/ElegantRedDress
+	name = "Элегантное красное платье"
+	desc = "Элегантное кроваво красное платье для вечеринок, принадлежащее одной адской гончей."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "ElegantRedDress"
+
+/obj/item/clothing/under/donator/bm/lotos_skirt
+	name = "Lotos skirt"
+	desc = "Black kitten`s black dress"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 0)
+	always_reskinnable = TRUE
+	icon_state = "Lotos"
+	unique_reskin = list(
+		"Casual" = list("icon_state" = "Lotos"),
+		"Lit" = list("icon_state" = "Lotos-Rykav"),
+		"Strip" = list("icon_state" = "Lotos-Alt"),
+	)
+	fitted = FEMALE_UNIFORM_TOP

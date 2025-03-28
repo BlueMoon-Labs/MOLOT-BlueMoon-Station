@@ -1412,6 +1412,10 @@
 	mob_name = "a Triglav Syndicate representative"
 	outfit = /datum/outfit/ds2/syndicate_command/corporateliaison
 
+/obj/effect/mob_spawn/human/ds2/syndicate_command/comms
+	mob_name = "Syndicate Comms Agent"
+	outfit = /datum/outfit/ds2/syndicate_command/comms
+
 /obj/effect/mob_spawn/human/ds2/syndicate_command/admiral
 	mob_name = "a Triglav Syndicate admiral"
 	outfit = /datum/outfit/ds2/syndicate_command/admiral
@@ -1456,20 +1460,20 @@
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/ds2
-	back = /obj/item/storage/backpack
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/crowbar/red = 1,
 		)
 	id = /obj/item/card/id/syndicate/advanced/black
 	id_trim = /datum/id_trim/syndicom/ds2
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/deepspacecrew)
 
 /datum/outfit/ds2/syndicate/miner
 	name = "DS-2 Mining Officer"
 	uniform = /obj/item/clothing/under/syndicate/overalls
 	belt = /obj/item/storage/bag/ore
-	back = /obj/item/storage/backpack/satchel/explorer
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/crowbar/red = 1,
@@ -1490,7 +1494,7 @@
 /datum/outfit/ds2/syndicate/service
 	name = "DS-2 General Staff"
 	uniform = /obj/item/clothing/under/syndicate
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/soft/mime
 	id = /obj/item/card/id/syndicate/advanced/black/general
@@ -1504,6 +1508,7 @@
 	name = "DS-2 Engine Technician"
 	uniform = /obj/item/clothing/under/syndicate/overalls
 	head = /obj/item/clothing/head/soft/sec/syndicate
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		)
@@ -1525,7 +1530,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 	glasses = /obj/item/clothing/glasses/science
 	gloves = /obj/item/clothing/gloves/color/black
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	id = /obj/item/card/id/syndicate/advanced/black/researcher
 	id_trim = /datum/id_trim/syndicom/ds2/researcher
 
@@ -1539,7 +1544,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/syndicate
 	belt = /obj/item/storage/belt/medolier/full
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	id_trim = /datum/id_trim/syndicom/ds2/medicalofficer
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
@@ -1556,7 +1561,7 @@
 	uniform = /obj/item/clothing/under/syndicate/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	suit = /obj/item/clothing/suit/armor/bulletproof/old
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	head = /obj/item/clothing/head/helmet/swat/ds
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/flashlight/seclite
@@ -1580,13 +1585,13 @@
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/ds2/command
-	back = /obj/item/storage/backpack
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/crowbar/red = 1,
 		/obj/item/lighter/gonzofist = 1)
 	id = /obj/item/card/id/syndicate/advanced/black/command
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/deepspacecrew)
 	id_trim = /datum/id_trim/syndicom/ds2
 
 /obj/item/card/id/syndicate/advanced/black/command
@@ -1600,12 +1605,13 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/satchel/sec
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	r_pocket = /obj/item/flashlight/seclite
 	implants = list(
 		/obj/item/implant/weapons_auth,
-		/obj/item/implant/krav_maga
+		/obj/item/implant/krav_maga,
+		/obj/item/implant/deathrattle/deepspacecrew
 		)
 	id = /obj/item/card/id/syndicate/advanced/black/command/masteratarms
 	id_trim = /datum/id_trim/syndicom/ds2/masteratarms
@@ -1620,11 +1626,31 @@
 	uniform = /obj/item/clothing/under/syndicate/sniper
 	head = /obj/item/clothing/head/fedora
 	shoes = /obj/item/clothing/shoes/laceup
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	id_trim = /datum/id_trim/syndicom/ds2/corporateliasion
+	id = /obj/item/card/id/syndicate/advanced/black/command/corporateliaison
 
 /obj/item/card/id/syndicate/advanced/black/command/corporateliaison
 	assignment = "DS-2 Corporate Liasion"
+	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/datum/outfit/ds2/syndicate_command/comms
+	name = "Space Syndicate Comms Agent"
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/armor/vest
+	mask = /obj/item/clothing/mask/chameleon
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	back = /obj/item/storage/backpack/duffelbag/syndie
+	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	r_pocket = /obj/item/gun/ballistic/automatic/pistol
+	implants = list(/obj/item/implant/weapons_auth)
+	id = /obj/item/card/id/syndicate/advanced/black/comms
+	id_trim = /datum/id_trim/syndicom/ds2/comms
+
+/obj/item/card/id/syndicate/advanced/black/comms
+	assignment = "Space Syndicate Comms Agent"
 	icon_state = "card_black"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
@@ -1633,11 +1659,12 @@
 	uniform = /obj/item/clothing/under/rank/captain/utility/syndicate
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	belt = /obj/item/gun/ballistic/automatic/pistol/APS
 	head = /obj/item/clothing/head/HoS/syndicate
 	id = /obj/item/card/id/syndicate/advanced/black/gold
 	id_trim = /datum/id_trim/syndicom/ds2/stationadmiral
+
 /obj/item/card/id/syndicate/advanced/black/gold
 	assignment = "DS-2 Admiral"
 	icon_state = "gold"
@@ -1704,6 +1731,12 @@
 	assignment = "DS-2 Corporate Liaison"
 	trim_state = "trim_ds2corporateliaison"
 	sechud_icon_state = SECHUD_DS2_CORPLIAISON
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+
+/datum/id_trim/syndicom/ds2/comms
+	assignment = "Space Syndicate Comms Agent"
+	trim_state = "trim_syndicate"
+	sechud_icon_state = SECHUD_SYNDICATE
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
 
 /datum/id_trim/syndicom/ds2/stationadmiral

@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\medical.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\medical.dm'
 /obj/machinery/vending/medical/Initialize()
     var/list/extra_contraband = list(
         /obj/item/storage/pill_bottle/lsdpsych = 3,

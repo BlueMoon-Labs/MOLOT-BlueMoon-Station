@@ -194,59 +194,6 @@
 	icon_state = "russianweb"
 	item_state = "russianweb"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//// Posters and stuff
-
-/obj/item/poster/nri
-	name = "random NRI poster"
-	desc = "An empire based poster, made with non-natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
-	poster_type = /obj/structure/sign/poster/nri/random
-	icon_state = "rolled_legit"
-
-/obj/structure/sign/poster/nri
-	poster_item_name = "nri poster"
-	poster_item_desc = "An empire based poster, made with non-natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
-	poster_item_icon_state = "rolled_legit"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/rus_misc.dmi'
-
-/obj/structure/sign/poster/nri/random
-	name = "random nri poster"
-	icon_state = "random_nri"
-	never_random = TRUE
-	random_basetype = /obj/structure/sign/poster/nri
-	//random_type = POSTER_SUBTYPES
-
-/obj/structure/sign/poster/nri/texto
-	name = "NRI declaration of sovereignity"
-	desc = "This poster references the translated copy of Novaya Rossiyskaya Imperiya's declaration of sovereignity."
-	icon_state = "nri_texto"
-
-/obj/structure/sign/poster/nri/rations
-	name = "NRI military rations advertisement"
-	desc = "This poster presumably is an advertisement for military rations produced by a certain private company as a part of the Defense Collegia's state order. This admiral's right hand man sure does look excited."
-	icon_state = "nri_rations"
-
-/obj/structure/sign/poster/nri/voskhod
-	name = "VOSKHOD combat armor advertisement"
-	desc = "A poster showcasing recently developed VOSKHOD combat armor dedicated for future use by NRI's troops and infantry across the border. The word 'DRIP' is written top to bottom on the left side, presumably boasting about the suit's superior design."
-	icon_state = "nri_voskhod"
-
-/obj/structure/sign/poster/nri/pistol
-	name = "Szabo-Ivanek service pistol technical poster"
-	desc = "This poster seems to be a technical documentation for Szabo-Ivanek service pistol in use by most of the NRI's state police and military institutions. Sadly, it's all written in Pan-Slavic."
-	icon_state = "nri_pistol"
-
-/obj/structure/sign/poster/nri/eng
-	name = "Build, Now"
-	desc = "This poster shows you an imperial combat engineer staring somewhere to the left of the viewer. The words 'Build, Now' are written on top and bottom of the poster."
-	icon_state = "nri_engineer"
-
-/obj/structure/sign/poster/nri/radar
-	name = "Imperial navy enlistment poster"
-	desc = "Enlist with the imperial navy today! See the galaxy, shoot solarians, get PTSD!"
-	icon_state = "nri_radar"
-
 ////////////////////////////////////////////////////////////////////
 
 /// Outfits (ERT military suits were stored in ert.dm)

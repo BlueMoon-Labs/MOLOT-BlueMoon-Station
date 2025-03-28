@@ -194,7 +194,7 @@
 	view_range = 2.5
 	x_offset = 7
 	y_offset = 1
-	designate_time = 500
+	designate_time = 300
 
 /obj/machinery/computer/shuttle/ds_syndicate
 	name = "Starfury Navigation Computer"

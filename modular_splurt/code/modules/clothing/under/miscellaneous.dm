@@ -181,6 +181,7 @@
 	item_state = "brigphysf"
 	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/blueshield
 	name = "blueshield outfit"
@@ -210,6 +211,7 @@
 	icon_state = "blueshieldskirt"
 	item_state = "blueshieldskirt"
 	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/blueshield/skirt
 	name = "blueshield skirt"
@@ -217,6 +219,7 @@
 	icon_state = "hosalt_blue_skirt"
 	item_state = "hosalt_blue_skirt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/plasmaman/security/blueshield
 	name = "blueshield plasma envirosuit"

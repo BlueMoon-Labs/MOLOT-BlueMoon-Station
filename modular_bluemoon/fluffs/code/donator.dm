@@ -734,7 +734,7 @@
 	name = "Alta's dogtag"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/tie/dogtag
-	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/oftok
@@ -964,7 +964,7 @@
 	name = "Heavy pocket hammer Kit"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/modkit/hammercrowbar_kit
-	ckeywhitelist = list("allazarius", "hazzi", "devildeadspace", "wangig")
+	ckeywhitelist = list("allazarius", "hazzi", "devildeadspace", "wangig", "wather565")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/dreadmk3_kit
@@ -1122,7 +1122,7 @@
 /datum/gear/donator/bm/letuale
 	name = "Элегантное красное платье"
 	slot = ITEM_SLOT_ICLOTHING
-	path = /obj/item/clothing/under/rank/civilian/ElegantRedDress
+	path = /obj/item/clothing/under/donator/bm/ElegantRedDress
 	ckeywhitelist = list("loonel")
 
 /datum/gear/donator/bm/papermaskunderhair
@@ -1231,6 +1231,13 @@
 	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/pet_jruttie
+	name = "Jruttie Cat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/choice_beacon/pet/jruttie
+	ckeywhitelist = list("scramblescream", "nai1ten")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/tavern_skirt
 	name = "Tavern skirt"
 	slot = ITEM_SLOT_ICLOTHING
@@ -1243,3 +1250,51 @@
 	path = /obj/item/reagent_containers/glass/beaker/elf_bottle
 	ckeywhitelist = list("fedor1545")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bm/wh_kit
+	name = "A box of Unholy Armor"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/box/donator/bm/wh_kit
+	ckeywhitelist = list("darksungwyndolin")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/lotos_skirt
+	name = "Lotos Skort"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/under/donator/bm/lotos_skirt
+	ckeywhitelist = list("angrylaska")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/bm/copium
+	name = "Copium Bottle"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/reagent_containers/glass/bottle/copium
+	ckeywhitelist = list("angrylaska")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/bm/moniq
+	name = "Muz-TV"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sign/moniq
+	ckeywhitelist = list("finkrld")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/bm/impactbaton_jitte
+	name = "Jitte impact Baton"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/impactbaton_kit
+	ckeywhitelist = list("silverfoxpaws", "nai1ten", "oni3288")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/mengineer_hardhat
+	name = "Master Engineer's Hardhat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/head/hardhat/weldhat/mengineer
+	ckeywhitelist = list("silverfoxpaws")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Station Engineer"
+	restricted_roles = list("Station Engineer")
+	cost = 2

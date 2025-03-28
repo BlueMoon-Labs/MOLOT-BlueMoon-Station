@@ -23,3 +23,23 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
 	strip_delay = 60
 	dog_fashion = null
+
+/obj/item/clothing/head/beret/chronos
+	name = "new mecca beret"
+	desc = "But burning those villages, watching those naked peasants cry..."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "torch_beret"
+
+/obj/item/clothing/head/turban
+	name = "Polychromic Turban"
+	desc = "Идёт караван из Ирана.."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "turban_he"
+	item_state = "turban"
+	var/list/poly_colors = list("#ffffff")
+
+/obj/item/clothing/head/turban/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, poly_colors, 1)

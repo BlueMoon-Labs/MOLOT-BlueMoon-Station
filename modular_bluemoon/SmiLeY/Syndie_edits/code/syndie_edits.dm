@@ -107,6 +107,7 @@
 	icon_state = "syndicate_overallskirt"
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/head/maid/syndicate
 	name = "Tactical Maid Headband"

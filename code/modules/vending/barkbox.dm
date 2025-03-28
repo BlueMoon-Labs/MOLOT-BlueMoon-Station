@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\barkbox.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\barkbox.dm'
 /obj/machinery/vending/barkbox
 	name = "Bark Box"
 	desc = "For all your pet needs!"

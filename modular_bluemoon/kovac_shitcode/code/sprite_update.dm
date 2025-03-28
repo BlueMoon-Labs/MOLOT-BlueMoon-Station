@@ -583,6 +583,21 @@
 	gender = FEMALE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/cat/jruttie
+	name = "Jruttie"
+	desc = "A grey magical cat, full of funnies."
+	icon_state = "jruttie"
+	icon_living = "jruttie"
+	icon_dead = "jruttie_dead"
+	held_icon = "jruttie"
+	unique_pet = TRUE
+	gender = FEMALE
+	speak = list("*meow3", "*meow4", "*meow5", "*mrrp", "*mrrp3", "*purr", "*mew")
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	vocal_bark_id = "meow"
+	speak_chance = 10
+	loot = list(/obj/item/clothing/head/wizard/fake = 1)
+
 ///////////////////
 
 /obj/item/storage/backpack/ert_commander

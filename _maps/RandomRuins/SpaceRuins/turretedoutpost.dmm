@@ -19,17 +19,24 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "af" = (
-/obj/structure/salvage/computer,
+/obj/structure/table/reinforced,
+/obj/item/radio{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/folder/documents{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "ag" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "ah" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
+/mob/living/simple_animal/hostile/russian,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "ai" = (
 /obj/machinery/door/airlock/external,
@@ -52,14 +59,18 @@
 /area/ruin/space/has_grav/turretedoutpost)
 "am" = (
 /obj/structure/table/reinforced,
-/obj/item/folder,
-/obj/item/radio,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = -8;
+	pixel_y = 14
+	},
+/obj/item/reagent_containers/food/snacks/beans{
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "an" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
+/mob/living/simple_animal/hostile/russian/ranged/officer,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "ao" = (
@@ -72,6 +83,7 @@
 /area/ruin/space/has_grav/turretedoutpost)
 "aq" = (
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "ar" = (
@@ -79,6 +91,7 @@
 	name = "Worn-out APC";
 	pixel_y = -24
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "as" = (
@@ -89,6 +102,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/item/camera_bug,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "at" = (
@@ -152,8 +166,6 @@
 /area/ruin/space/has_grav/turretedoutpost)
 "aB" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/ushanka,
-/obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
@@ -163,13 +175,18 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/item/reagent_containers/glass/beaker/waterbottle/wataur,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aC" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
 	},
-/obj/effect/spawner/lootdrop/salvage,
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 2;
+	name = "Broken Computer"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aD" = (
@@ -178,12 +195,26 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/radio,
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aE" = (
-/obj/machinery/vending/clothing,
-/turf/open/floor/plasteel,
+/obj/structure/rack,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/item/clothing/head/welding/tagilla,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aF" = (
 /obj/structure/rack,
@@ -193,6 +224,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/clothing/head/helmet/rus_cap,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aG" = (
@@ -207,11 +239,11 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/firing_pin/clown,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aH" = (
 /obj/structure/rack,
-/obj/item/ammo_box/c9mm,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -222,29 +254,34 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/ammo_box/c9mm,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aI" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/security,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aK" = (
-/obj/structure/bed,
-/obj/item/bedsheet/orange,
-/obj/machinery/light{
-	dir = 4
+/obj/structure/dresser,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 6;
+	pixel_y = 21
+	},
+/obj/item/reagent_containers/food/drinks/britcup{
+	pixel_x = -6;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aL" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/swat,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/clothing/head/ushanka,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aM" = (
@@ -264,18 +301,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aN" = (
-/obj/structure/chair/office/dark,
+/obj/structure/bed,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aO" = (
-/obj/structure/chair/comfy/beige{
-	dir = 4
+/obj/machinery/light{
+	dir = 8
 	},
+/obj/machinery/vending/sovietsoda/waterfuck,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/orange,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aQ" = (
@@ -284,44 +324,44 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aR" = (
-/obj/structure/table/reinforced,
-/obj/item/paper/crumpled,
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
+/obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aS" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light,
-/obj/item/camera_bug,
+/obj/item/paper/crumpled,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aT" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
+/obj/item/pen/blue,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aU" = (
 /obj/structure/table/reinforced,
-/obj/item/pen/blue,
+/obj/item/healthanalyzer/advanced{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/obj/item/storage/firstaid/ancient{
+	pixel_x = 5;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aV" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka{
-	pixel_x = 3
+/obj/item/reagent_containers/food/snacks/beans{
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
@@ -331,6 +371,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/gun/ballistic/automatic/pistol/m9mmpistol,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "aX" = (
@@ -353,35 +394,96 @@
 /area/ruin/space/has_grav/turretedoutpost)
 "aZ" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/riot,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/clothing/head/helmet/russian_green_helmet,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
 "ba" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/breadslice/meat,
-/obj/machinery/light{
-	dir = 8
+/obj/item/reagent_containers/food/snacks/beans{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = -8;
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "ct" = (
-/obj/effect/spawner/lootdrop/salvage,
+/obj/structure/sign/poster/contraband/hiding{
+	pixel_x = 0;
+	pixel_y = -31
+	},
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 4;
+	pixel_y = 19
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
-"tK" = (
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
+"dZ" = (
+/obj/structure/sign/poster/contraband/dancing_honk{
+	pixel_x = -32;
+	pixel_y = 0
 	},
+/obj/machinery/washing_machine,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"if" = (
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"jL" = (
+/obj/structure/dresser,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -2;
+	pixel_y = 15
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"lx" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/item/gun/ballistic/automatic/pistol/m9mmpistol,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/turretedoutpost)
+"tK" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"AG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"GK" = (
+/obj/effect/spawner/lootdrop/salvage,
+/obj/structure/sign/poster/contraband/cai{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"Id" = (
+/obj/structure/chair/office/dark{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
@@ -394,7 +496,15 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/turretedoutpost)
+"Wa" = (
+/obj/structure/salvage/computer,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 
 (1,1,1) = {"
@@ -447,9 +557,9 @@ aa
 al
 al
 al
-al
-al
-al
+Ml
+ac
+ac
 al
 al
 ab
@@ -489,7 +599,7 @@ ad
 ay
 aF
 aL
-aF
+lx
 ad
 ad
 al
@@ -503,7 +613,7 @@ ab
 ab
 ab
 ab
-al
+ac
 ad
 as
 az
@@ -523,16 +633,16 @@ aa
 aa
 ab
 aa
-al
+ac
 ad
 at
-az
+ah
 aG
-aG
+aE
 az
 aX
 ad
-al
+Ml
 ab
 ab
 aa
@@ -543,7 +653,7 @@ aa
 ab
 ab
 aa
-al
+ac
 ad
 au
 az
@@ -552,7 +662,7 @@ aM
 az
 aY
 ad
-al
+ac
 aa
 aa
 aa
@@ -572,7 +682,7 @@ az
 az
 aZ
 ad
-al
+ac
 ab
 aa
 aa
@@ -583,7 +693,7 @@ ab
 aa
 ab
 aa
-al
+ac
 ad
 ad
 aA
@@ -647,8 +757,8 @@ am
 ap
 ad
 aC
-ag
-ag
+Id
+an
 aS
 ad
 Ml
@@ -663,15 +773,15 @@ aa
 ac
 ad
 af
-an
+ag
 aq
 ad
 aD
 ag
-aN
+ag
 aT
 ad
-al
+ac
 aa
 aa
 aa
@@ -682,8 +792,8 @@ aa
 aa
 ac
 ad
-af
-ag
+Wa
+Id
 ag
 aw
 ag
@@ -702,7 +812,7 @@ aa
 ab
 ac
 ad
-af
+if
 ag
 ag
 ad
@@ -722,12 +832,12 @@ aa
 aa
 ac
 ad
-ct
-ag
+GK
+AG
 ag
 ax
 ag
-ag
+dZ
 aO
 aV
 ba
@@ -742,11 +852,11 @@ aa
 ab
 ac
 ad
-ah
+ag
 ag
 ar
 ad
-aE
+ag
 ag
 ag
 ag
@@ -766,7 +876,7 @@ ai
 ai
 ad
 ad
-ad
+ag
 ag
 ag
 ag
@@ -785,12 +895,12 @@ ad
 aj
 ak
 ad
-al
 ad
+aN
 aK
 aP
-aP
-aP
+jL
+aN
 ad
 ac
 aa
@@ -805,7 +915,7 @@ ad
 ak
 ak
 ad
-Ml
+ad
 ad
 ad
 ad

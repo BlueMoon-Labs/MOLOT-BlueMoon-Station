@@ -99,3 +99,63 @@
 		if(src != my_owner?.get_item_by_slot(ITEM_SLOT_ID)) // Если в будущем что-то переделают и карта будет спавниться в отдельной коробке или вроде того
 			visible_message(span_warning("ID карта из лодаута не нашла цель для копирования доступа, сообщите разработчикам."))
 	. = ..()
+
+/obj/item/card/id/nri
+	name = "\improper NRI Military ID"
+	desc = "An Novaya Rossiyskya Imperia Spetsnaz ID card."
+	icon_state = "nri"
+	registered_name = "NRI"
+	assignment = "NRI"
+	uses_overlays = FALSE
+
+/obj/item/card/id/nri/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
+
+/obj/item/card/id/sol
+	name = "\improper SolFed Military ID"
+	desc = "An Solar Federation Military ID card. Provided with special sensors, allowing to unlock all necessary doors for combatants, slightly reminding emag functions."
+	icon_state = "sol"
+	registered_name = "Sol"
+	assignment = "Sol"
+	uses_overlays = FALSE
+
+/obj/item/card/id/sol/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
+
+/obj/item/card/id/heresy
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Occult ID Card"
+	desc = "ID for research related to occult activities whose nature of phenomena is poorly supported by scientific evidence."
+	icon_state = "occult_id"
+	assignment = "Herecit"
+	uses_overlays = FALSE
+	card_sticker = TRUE
+
+/obj/item/card/id/lust
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Sex Worker ID"
+	desc = "ID for employee of Silver Love Co."
+	icon_state = "lust_id"
+	assignment = "Sex worker"
+	uses_overlays = FALSE
+	card_sticker = TRUE
+
+/obj/item/card/id/agony
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Ravenheart Resident ID"
+	desc = "ID for research related to extreme activities whose nature of agony is strictly prohibited by scientific evidence."
+	icon_state = "agony_id"
+	assignment = "Ravenheart Resident"
+	uses_overlays = FALSE
+	card_sticker = TRUE
+
+/obj/item/card/id/muck
+	icon = 'modular_bluemoon/icons/obj/card.dmi'
+	name = "Muck ID Card"
+	desc = "Жрать гавно."
+	icon_state = "muck_id"
+	assignment = "Mucker"
+	uses_overlays = FALSE
+	card_sticker = TRUE

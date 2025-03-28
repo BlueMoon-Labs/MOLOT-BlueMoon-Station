@@ -1,4 +1,4 @@
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\sovietvend.dm'
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\sovietvend.dm'
 /obj/machinery/vending/sovietvend
 	name = "KomradeVendtink"
 	desc = "Rodina-mat' zovyot!"

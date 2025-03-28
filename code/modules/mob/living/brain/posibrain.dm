@@ -206,3 +206,13 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	. = ..()
 	laws = new /datum/ai_laws/syndicate_override()
 	radio.on = 0
+
+/obj/item/mmi/posibrain/inteq
+	name = "InteQ Positronic Brain"
+	desc = "InteQ's own brand of Positronic Brain. It enforces laws designed to help InteQ Operative achieve their goals upon cyborgs and AIs created with it."
+	overrides_aicore_laws = TRUE
+
+/obj/item/mmi/posibrain/inteq/Initialize(mapload)
+	. = ..()
+	laws = new /datum/ai_laws/inteq_override()
+	radio.on = 0

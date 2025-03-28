@@ -1,11 +1,3 @@
-/datum/supply_pack/security/armory/alliance_case
-	name = "Alliance Assasin Cases"
-	desc = "Хранит в себе два женских специализированных боевых костюма. Требует доступ к Арсеналу для открытия ящичка."
-	cost = 49000
-	contains = list(/obj/item/storage/toolbox/infiltrator/alliance,
-					/obj/item/storage/toolbox/infiltrator/alliance)
-	crate_name = "Alliance Assasin Cases Crate"
-
 /obj/item/storage/toolbox/infiltrator/alliance
 	name = "Alliance Assasin Case"
 	desc = "Элегантный кейс с отделкой из кожи и с эмблемой Вселенского Союза. Содержит внутри костюм, разработанный для понижения заметности пользователя в условиях тесных пространств замкнутых помещений. Сам кейс же отлично подходит для переноса всего того арсенала оружия, что ты взял с собой на 'тихую' миссию."

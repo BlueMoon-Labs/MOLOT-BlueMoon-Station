@@ -11,6 +11,7 @@
 	turns_per_move = 1
 	maxHealth = 120
 	health = 120
+	del_on_death = 1
 	see_in_dark = 7
 	response_help_continuous  = "pets"
 	response_disarm_continuous = "pushes aside"

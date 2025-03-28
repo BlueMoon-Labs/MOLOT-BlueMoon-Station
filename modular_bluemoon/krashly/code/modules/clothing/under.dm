@@ -115,6 +115,7 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
 	icon_state = "inteqeng_skirt"
 	item_state = "inteqeng_skirt"
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/inteq/maid
 	name = "brown combat maidsuit"

@@ -1,7 +1,7 @@
 /datum/job/expeditor
 	title = "Expeditor"
 	flag = EXPEDITOR
-	department_head = list("Captain", "RD")
+	department_head = list("Captain", "Research Director")
 	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 4

@@ -14,7 +14,7 @@
 	var/mission = "Защити станцию любой ценой и докажи свою состоятельность!"
 	var/teamsize = 5
 	var/polldesc
-	var/ertphrase = 'modular_bluemoon/kovac_shitcode/sound/ert/ert_yes.ogg'
+	var/ertphrase = 'modular_bluemoon/sound/ert/ert_yes.ogg'
 
 /datum/ert/New()
 	if (!polldesc)
@@ -56,7 +56,7 @@
 	code = "Delta"
 	mission = "Уничтожить Космическую Станцию, включая активы, в том числе весь Экипаж."
 	polldesc = "an elite Nanotrasen Strike Team"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/deathsquad_send_in.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/deathsquad_send_in.ogg"
 
 /datum/ert/asset_protection
 	roles = list(/datum/antagonist/ert/asset_protection)
@@ -65,7 +65,7 @@
 	code = "Epsilon"
 	mission = "Защитите Активы Пакта. Сотрудники Пакта тоже являются Активами Пакта."
 	polldesc = "a Nanotrasen Asset Protection Team"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/asset_protection_send.ogg"
+	ertphrase = "modular_bluemoon/sound/ert/asset_protection_send.ogg"
 
 /datum/ert/syndiesquad
 	roles = list(/datum/antagonist/ert/syndiesquad)
@@ -94,7 +94,7 @@
 	rename_team = "Inquisition"
 	mission = "Уничтожьте любые следы паранормальной активности на борту Космической Станции Тринадцатого Сектора."
 	polldesc = "a Nanotrasen paranormal response team"
-	ertphrase = 'modular_bluemoon/kovac_shitcode/sound/ert/ert_inq_send.ogg'
+	ertphrase = 'modular_bluemoon/sound/ert/ert_inq_send.ogg'
 
 /datum/ert/greybois
 	code = "Green"
@@ -105,4 +105,4 @@
 	leader_role = /datum/antagonist/greybois/greygod
 	rename_team = "Emergency Assistants"
 	polldesc = "an Emergency Assistant"
-	ertphrase = 'modular_bluemoon/kovac_shitcode/sound/ert/ert_rofl.ogg'
+	ertphrase = 'modular_bluemoon/sound/ert/ert_rofl.ogg'

@@ -17,3 +17,16 @@
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stack/sheet/glass = 2)
 	needs_anchored = FALSE
+
+// Плата для генератора полезных для робототехника жидкостей
+/obj/item/circuitboard/machine/robo_liquid_generator
+	name = "RoboLiquid Generator (Machine Board)"
+	icon_state = "science"
+	build_path = /obj/machinery/robo_liquid_generator
+	desc = "Звучит достаточно инновационно?"
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stack/sheet/glass = 1)
+	needs_anchored = FALSE

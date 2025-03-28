@@ -215,3 +215,4 @@
 	slot_flags = ITEM_SLOT_BACK
 	max_charges = 1
 	recharge_rate = 120
+	can_charge = 1
