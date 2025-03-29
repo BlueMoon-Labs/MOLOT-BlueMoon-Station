@@ -33,3 +33,8 @@
 /obj/item/clothing/mask/paper/underhair
 	name = "The paper mask"
 	alternate_worn_layer = BACK_LAYER
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/mihana_mask
+	name = "Andromeda Mask"
+	desc = "A close-fitting tactical mask that can be connected to an air supply."
+	icon_state = "mihana_mask"
