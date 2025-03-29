@@ -424,6 +424,7 @@ GLOBAL_LIST_INIT(clothesmate_socks, list())
 				/obj/item/clothing/shoes/wraps/red = 3,
 				/obj/item/clothing/shoes/wraps/silver = 3,
 				/obj/item/clothing/shoes/yakuza = 7,
+				/obj/item/clothing/shoes/legwrap = 5,
 			),
 		),
 

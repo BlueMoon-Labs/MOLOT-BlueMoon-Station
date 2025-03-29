@@ -137,7 +137,7 @@
 	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
 
 /obj/item/encryptionkey/inteq
-	name = "inteQ Encryption Key"
+	name = "InteQ Encryption Key"
 	icon_state = "inteq_cypherkey"
 	icon = 'modular_bluemoon/icons/obj/radio.dmi'
 	channels = list(RADIO_CHANNEL_INTEQ = 1)

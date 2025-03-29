@@ -146,3 +146,29 @@
 	desc = "A modkit for making an chaplain helmet into The Helmet of the Dark Apostle"
 	product = /obj/item/clothing/head/helmet/chaplain/wh_helmet
 	fromitem = list(/obj/item/clothing/head/helmet/chaplain, /obj/item/clothing/head/helmet/chaplain/bland/horned, /obj/item/clothing/head/helmet/chaplain/bland/winged, /obj/item/clothing/head/helmet/chaplain/bland)
+
+//////////////////////////////////////////////////
+
+/obj/item/clothing/head/hardhat/weldhat/mengineer
+	name = "master engineer's hardhat"
+	desc = "A modified piece of welding hardhat with ear cover. White-yellow coloring seems to indicate some engineering mid-rank, not used by Nanotrasen standarts. You can see personal number engraved inside the hat: KVM:829917."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "hardhat0_mengineer"
+	item_state = "hardhat0_mengineer"
+	hat_type = "mengineer"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_welding_screen)
+	flags_inv = HIDEEYES | HIDEFACE | HIDEEARS
+
+/obj/item/clothing/head/hardhat/weldhat/mengineer/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
+	. = list()
+	SEND_SIGNAL(src, COMSIG_ITEM_WORN_OVERLAYS, isinhands, icon_file, used_state, style_flags, .)
+	if(!isinhands)
+		if(damaged_clothes)
+			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedhelmet")
+		if(blood_DNA)
+			. += mutable_appearance('icons/effects/blood.dmi', "helmetblood", color = blood_DNA_to_color(), blend_mode = blood_DNA_to_blend())
+		if(!up)
+			. += mutable_appearance('icons/mob/clothing/head.dmi', "weldvisor")
+
+/////////////////////////////////////////////////////

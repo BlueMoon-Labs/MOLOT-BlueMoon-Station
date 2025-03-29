@@ -30,7 +30,9 @@
 /obj/item/jukebox/emagged/ui_interact(mob/living/user, datum/tgui/ui)
 	if(!isliving(user))
 		return
-	if(user.key != smileycom && !(user.mind?.antag_datums))
+	if(user.ckey == smileycom || user.mind?.antag_datums)
+		. = ..()
+	else
 		var/message = pick(
 			"Нельзя, запрещено.",
 			"Только для Айко.",
@@ -91,7 +93,6 @@
 		user.adjustFireLoss(rand(25, 50))
 		user.dropItemToGround(src, TRUE)
 		return
-	. = ..()
 
 ///obj/item/jukebox/emag_act(mob/user)
 //	. = ..()
