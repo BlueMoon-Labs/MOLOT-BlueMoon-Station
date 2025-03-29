@@ -592,9 +592,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "bd" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
+/obj/structure/chair/comfy/black,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "be" = (
@@ -948,9 +946,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "cI" = (
@@ -1093,15 +1088,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "gC" = (
-/obj/item/bedsheet/syndie/double{
-	dir = 4
-	},
-/obj/structure/bed/double/pod{
-	dir = 4
-	},
-/obj/effect/mob_spawn/human/lavaland_syndicate/comms{
-	dir = 4
-	},
+/obj/effect/mob_spawn/human/lavaland_syndicate/comms,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "gU" = (
@@ -1266,6 +1253,10 @@
 	},
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle{
 	pixel_y = 8
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
 	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -1464,13 +1455,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "qU" = (
-/obj/item/bedsheet/syndie/double{
-	dir = 1
-	},
 /obj/structure/bed/double/pod{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/lavaland_syndicate/comms{
+/obj/item/bedsheet/black/double{
 	dir = 4
 	},
 /turf/open/floor/carpet/blackred,
@@ -1772,6 +1760,10 @@
 	},
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle{
 	pixel_y = -1
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
 	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -3501,7 +3493,7 @@ ty
 ag
 ty
 ma
-gC
+qU
 qk
 qk
 qk
@@ -3533,11 +3525,11 @@ aF
 dF
 hj
 ag
+gC
 Qe
-Qe
-Qe
+bd
 ag
-Qe
+gC
 Qe
 Qe
 qk
