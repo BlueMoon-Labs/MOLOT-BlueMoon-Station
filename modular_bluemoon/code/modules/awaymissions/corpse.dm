@@ -5,6 +5,10 @@
 	name = "Cook"
 	outfit = /datum/outfit/job/cook
 
+/obj/effect/mob_spawn/human/corpse/doctor
+	name = "Doctor"
+	outfit = /datum/outfit/job/doctor
+
 /obj/effect/mob_spawn/human/corpse/geneticist
 	name = "Geneticist"
 	outfit = /datum/outfit/job/geneticist
