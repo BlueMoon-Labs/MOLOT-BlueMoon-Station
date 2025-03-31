@@ -4,7 +4,7 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files\Mining\Lavaland_novaya.dmm"
+		#include "map_files\Mining\Lavaland.dmm"
 		#include "map_files\debug\runtimestation.dmm"
 		#include "map_files\BoxStation\BoxStation.dmm"
 		#include "map_files\SyndicateStation\SyndicateBoxStation.dmm"
