@@ -138,6 +138,9 @@
 #include "find_reference_sanity.dm"
 #endif
 
+/// BLUEMOON TESTS
+#include "bad_defines_defined.dm"
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #undef TEST_ASSERT_NOTEQUAL
