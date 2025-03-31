@@ -7,4 +7,4 @@
 	#ifdef LOWMEMORYMODE
 	lowmemorymode_check = TRUE
 	#endif
-	TEST_ASSERT_EQUAL(force_map_check + lowmemorymode_check, 0, "used [force_map_check ? "define FORCE_MAP " : ""][lowmemorymode_check ? "define LOWMEMORYMODE " : ""]. UNDEFINE THEM")
+	TEST_ASSERT_EQUAL(force_map_check + lowmemorymode_check, 0, "used [force_map_check ? "define FORCE_MAP" : ""][lowmemorymode_check ? "define LOWMEMORYMODE " : ""]. UNDEFINE THEM")
