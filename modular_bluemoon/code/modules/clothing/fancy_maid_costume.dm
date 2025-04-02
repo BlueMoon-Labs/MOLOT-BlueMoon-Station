@@ -63,8 +63,3 @@
 	new /obj/item/clothing/gloves/fancy_maid_arm_covers(src)
 	new /obj/item/clothing/neck/fancy_maid_neck_cover(src)
 	new /obj/item/clothing/head/fancy_maid_headband(src)
-
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\autodrobe.dm'
-/obj/machinery/vending/autodrobe/Initialize(mapload)
-	products += list(/obj/item/storage/box/fancy_maid_kit = 3)
-	. = ..() */
