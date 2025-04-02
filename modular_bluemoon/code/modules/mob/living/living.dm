@@ -28,3 +28,5 @@
 		else
 			movespeed_override = 0
 
+/mob/living/proc/has_tentacles() // проверка на наличие тентаклей (для ебли)
+	return has_tentacles
