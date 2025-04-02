@@ -1,3 +1,4 @@
+/* UNTICKED
 SUBSYSTEM_DEF(horny_mobs_pool)
 	name = "Horny Mobs Pool"
 	flags = SS_KEEP_TIMING | SS_NO_INIT
@@ -32,3 +33,4 @@ SUBSYSTEM_DEF(horny_mobs_pool)
 
 /datum/controller/subsystem/horny_mobs_pool/proc/invoke_process(mob/living/simple_animal/hostile/tentacles/T)
 	T.do_lewd_action(T.target_sex)
+*/
