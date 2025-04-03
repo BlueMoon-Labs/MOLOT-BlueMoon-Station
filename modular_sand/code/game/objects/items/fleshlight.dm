@@ -637,7 +637,7 @@
 /obj/item/portallight/attackby(obj/item/I, mob/user)  //перезарядка работает как у резака. Можно изменять, сколько требуется плазмы для полного заряда
 	if(istype(I, /obj/item/toy/plush)) // Это делал Рен, но я переделал в лучшую сторону. По хорошему это всё должно лежать в модулях БМа, а не тут.
 		var/obj/item/toy/plush/plush = I
-		if(plush.can_you_fuck_plush == TRUE)
+		if(plush.can_you_fuck_plush)
 			place_toy(I, user)
 
 	if(istype(I, /obj/item/storage/daki))
