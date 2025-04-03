@@ -172,6 +172,7 @@
 	icon_state = "who"
 	attack_verb = list("shot", "nuked", "detonated")
 	squeak_override = list('modular_bluemoon/sound/plush/security_1.ogg' = 9, 'modular_bluemoon/sound/plush/security_2.ogg' = 1)
+	can_you_fuck_plush = FALSE // Стыгся не хотел бы, чтобы его игрушку ебали.
 
 /obj/item/toy/plush/bm/qm
 	name = "supply chief plushie"
