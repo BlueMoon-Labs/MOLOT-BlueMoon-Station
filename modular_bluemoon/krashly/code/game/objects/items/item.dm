@@ -218,9 +218,7 @@
 	icon_state = "toy_ares"
 	max_combat_health = 7 //350 integrity
 
-
-// Лодаут
-
+/// Лодаут
 /datum/gear/accessory/hand_mirror
 	name = "A hand mirror"
 	path = /obj/item/hand_mirror

@@ -35,17 +35,17 @@
 	set category = "Object"
 	set name = "BARK!"
 	set src in usr
-	if(!isliving(usr))
-		return
-	if(!can_use(usr))
-		return
+	if(iscarbon(usr))
+		var/mob/living/carbon/user = usr
+		if(!isliving(user) || !can_use(user) || user.head != src)
+			return
 
-	var/frase
-	frase = input("Какую фразу вы хотите сказать через преобразователь в шлеме?","") as text
+		var/phrase
+		phrase = input("Какую фразу вы хотите сказать через преобразователь в шлеме?","") as text
 
-	if(frase)
-		usr.audible_message("[usr] barks, <font color='red' size='4'><b>[frase]</b></font>")
-		playsound(src.loc, 'modular_bluemoon/fluffs/sound/bark.ogg', 100, 1)
+		if(phrase)
+			user.audible_message("[user] barks, <font color='red' size='4'><b>[phrase]</b></font>")
+			playsound(user.loc, 'modular_bluemoon/fluffs/sound/bark.ogg', 100, 1)
 
 /obj/item/clothing/head/donator/bm/cerberus_helmet/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/cerberbark))

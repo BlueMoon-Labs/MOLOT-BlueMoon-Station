@@ -149,6 +149,13 @@
 	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/belinsky_plushie
+	name = "Belinsky plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/bm/belinsky
+	ckeywhitelist = list("krashly", "stgs")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/atam
 	name = "Atam"
 	slot = ITEM_SLOT_BACKPACK

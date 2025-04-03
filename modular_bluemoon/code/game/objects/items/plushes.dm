@@ -1,3 +1,6 @@
+/obj/item/toy/plush
+	var/can_you_fuck_plush = TRUE // TRUE - Да, можно сунуть в игрушку флешлайт. FALSE - Нет, нельзя. // Сделано чтобы предотвратить "нон-кон" именных игрушек. Ставить по усмотрению автора игрушки.
+
 /obj/item/toy/plush/bm
 	name = "Aiko Wierd Plushie"
 	desc = "Ugh... Something looks wierd."
@@ -75,9 +78,9 @@
 	icon_state = "allta"
 	item_state = "aiko"
 	squeak_override = list(
-	'modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/allta_mew2.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/allta_mew3.ogg' = 1
+		'modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/allta_mew2.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/allta_mew3.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/emma/zlatchek
@@ -92,13 +95,13 @@
 	icon_state = "tiamat"
 	can_random_spawn = FALSE
 	squeak_override = list(
-	'modular_splurt/sound/voice/mrowl.ogg' = 1,
-	'modular_splurt/sound/voice/meow_meme.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_meow2.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_meow3.ogg' = 1
+		'modular_splurt/sound/voice/mrowl.ogg' = 1,
+		'modular_splurt/sound/voice/meow_meme.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_meow2.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_meow3.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/manul
@@ -110,8 +113,8 @@
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 	squeak_override = list(
-	'modular_bluemoon/SmiLeY/sounds/manul1.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/manul2.ogg' = 1
+		'modular_bluemoon/SmiLeY/sounds/manul1.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/manul2.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/stasik
@@ -139,9 +142,9 @@
 	desc = " Мягкая игрушка в форме кошки легко утолит вашу жажду объятий и ласки, от неё вы можете почувствовать легкий аромат пепла и сладковато ягодного вкуса."
 	icon_state = "laska"
 	squeak_override = list(
-	'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
-	'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1
+		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
+		'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/plushy_savannah
@@ -188,9 +191,9 @@
 	desc = "A plush rodent, she smells like cheese and xenobiology!"
 	icon_state = "vance"
 	squeak_override = list(
-	'sound/items/toysqueak1.ogg' = 1,
-	'sound/items/toysqueak2.ogg' = 1,
-	'sound/items/toysqueak3.ogg' = 1
+		'sound/items/toysqueak1.ogg' = 1,
+		'sound/items/toysqueak2.ogg' = 1,
+		'sound/items/toysqueak3.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/omega
@@ -243,12 +246,14 @@
 	desc = "Cмешная плюшевая игрушка в виде забавной кошки, на бирке написано 'Осторожно, дешёвый, радиоактивный материал может вызвать уменьшение члена'."
 	icon_state = "silly_neko_plushie"
 	attack_verb = list("meows", "nya", "purrs")
-	squeak_override = list('modular_bluemoon/sound/plush/nekoark/necoarc-nyeh.ogg',
-'modular_bluemoon/sound/plush/nekoark/necoarc-1.ogg',
-'modular_bluemoon/sound/plush/nekoark/necoarc-2.ogg',
-'modular_bluemoon/sound/plush/nekoark/necoarc-3.ogg',
-'modular_bluemoon/sound/plush/nekoark/necoarc-4.ogg',
-'modular_bluemoon/sound/plush/nekoark/necoarc-5.ogg' = 1)
+	squeak_override = list(
+		'modular_bluemoon/sound/plush/nekoark/necoarc-nyeh.ogg' = 1,
+		'modular_bluemoon/sound/plush/nekoark/necoarc-1.ogg' = 1,
+		'modular_bluemoon/sound/plush/nekoark/necoarc-2.ogg' = 1,
+		'modular_bluemoon/sound/plush/nekoark/necoarc-3.ogg' = 1,
+		'modular_bluemoon/sound/plush/nekoark/necoarc-4.ogg' = 1,
+		'modular_bluemoon/sound/plush/nekoark/necoarc-5.ogg' = 1
+	)
 	always_reskinnable = TRUE
 	unique_reskin = list(
 		BASIC_NEKO_SKIN = list(RESKIN_ICON_STATE = "silly_neko_plushie", RESKIN_ITEM_STATE = "silly_neko_plushie"),
@@ -274,3 +279,17 @@
 
 #undef BASIC_NEKO_SKIN
 #undef ANGRY_NEKO_SKIN
+
+/obj/item/toy/plush/bm/belinsky
+	name = "Belinsky plushie"
+	desc = "A toy that looks a lot like Kolyan Belinsky. Bushy moustache, eye patch, brown turtleneck. Everything in place."
+	icon_state = "belinsky"
+	squeak_override = list('modular_bluemoon/sound/plush/bel1.ogg' = 1, 'modular_bluemoon/sound/plush/bel2.ogg' = 9,)
+	can_you_fuck_plush = FALSE
+
+/obj/item/toy/plush/bm/belinsky/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/M = user
+		if(M.client && M.client.ckey == "krashly")
+			say("Свои! Свои!")

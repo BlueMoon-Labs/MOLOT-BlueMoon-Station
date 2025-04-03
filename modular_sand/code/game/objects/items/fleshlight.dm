@@ -635,17 +635,25 @@
 		useable = FALSE
 
 /obj/item/portallight/attackby(obj/item/I, mob/user)  //перезарядка работает как у резака. Можно изменять, сколько требуется плазмы для полного заряда
-	if(istype(I, /obj/item/toy/plush) || istype(I, /obj/item/storage/daki))
-		lefthand_file = I.lefthand_file
-		righthand_file = I.righthand_file
-		item_state = I.item_state
-		plush_icon = I.icon
-		plush_iconstate = I.icon_state
-		qdel(I)
-		to_chat(user, "<span class='notice'>Ты натягиваешь [I] поверх портального фонарика.</span>")
-		updateplushe()
-	else
-		. = ..()
+	if(istype(I, /obj/item/toy/plush)) // Это делал Рен, но я переделал в лучшую сторону. По хорошему это всё должно лежать в модулях БМа, а не тут.
+		var/obj/item/toy/plush/plush = I
+		if(plush.can_you_fuck_plush == TRUE)
+			place_toy(I, user)
+
+	if(istype(I, /obj/item/storage/daki))
+		place_toy(I, user)
+
+	return . = ..()
+
+/obj/item/portallight/proc/place_toy(obj/item/I, mob/user)
+	lefthand_file = I.lefthand_file
+	righthand_file = I.righthand_file
+	item_state = I.item_state
+	plush_icon = I.icon
+	plush_iconstate = I.icon_state
+	qdel(I)
+	to_chat(user, "<span class='notice'>Ты натягиваешь [I] поверх портального фонарика.</span>")
+	updateplushe()
 
 /obj/item/portallight/proc/updateplushe()
 	cut_overlay(plushe)
@@ -654,8 +662,6 @@
 	plushe.pixel_x = -3
 	plushe.layer = 33
 	add_overlay(plushe)
-
-
 
 /obj/item/portallight/Destroy()
 	if(available_panties.len)
