@@ -12,5 +12,3 @@
 /// BLUEMOON ADDED - to distinguish good from bad moodlets
 #define QMOOD_BAD_TRAINED	"mood_bad_trained"
 #define QMOOD_DUMB_CUM		"mood_dumb4cum"
-
-#define TRAIT_BONDAGED				"bondaged"

@@ -89,16 +89,6 @@
 		quirk_target.chance = quirk_target.default_chance
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
 
-/datum/quirk/light
-	name = "Лёгкий"
-	desc = "Вы в разы легче того, чем вы выглядите! Хотя и размеры теперь не особо помогают в выживании."
-	value = 0
-	mob_trait = TRAIT_BLUEMOON_LIGHT
-	gain_text = "<span class='notice'>Вы ощущаете себя легче пёрышка!</span>"
-	lose_text = "<span class='danger'>Вы ощёщаете себя тяжелее.</span>"
-	medical_record_text = "Пациент имеет аномально низкий вес."
-	antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.
-
 /datum/quirk/clearly_audible
 	name = "Хорошо слышимый"
 	desc = "Объясняя вашу маленькость вас уж точно услышат (позволяет при маленьком размере иметь хорошо слышимую речь)"
@@ -168,3 +158,25 @@
 	desc = "Вы были одарены силой демонов похоти или же сами являлись её источником, что давала возможность осмелившимся безумцам призывать вас при помощи рун. Сможете ли вы исполнить их фантазии?."
 	mob_trait = TRAIT_LEWD_SUMMON
 	gain_text = "<span class='notice'>Призываемый - ЕРП квирк. Использование его для абуза механик, будет крайне строго наказываться ©️. </span>"
+
+/datum/quirk/common_pregnancy
+	name = "Обычная беременность"
+	desc = "Ваша беременность протекает как у нормального млекопитающего и вы не откладываете яйца! Залетев, вы не скоро родите ребёнка!"
+	value = 0
+	mob_trait = TRAIT_COMMON_PREGNANCY
+	gain_text = span_notice("Ваша беременность будет протекать нормально.")
+	lose_text = span_notice("Теперь вы будете откладывать яйца.")
+	medical_record_text = "Беременность у пациента протекает как у нормальных млекопитающих."
+
+/datum/quirk/bondage_lover
+	name = "Любитель бондажа"
+	desc = "Вы обожаете быть связанным! Вам нравится в этом всё, особенно беспомощность!"
+	value = 0
+	mob_trait = TRAIT_BONDAGED
+	gain_text = span_notice("Вы чувствуете что вам хотелось бы быть связанным.")
+	lose_text = span_notice("Вы больше не чувствуете что вам хотелось бы быть связанным.")
+	medical_record_text = "Пациент возможно имеет Стокгольмский синдром."
+
+/datum/quirk/bondage_lover/remove()
+	// Remove mood event
+	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, QMOOD_BONDAGE)

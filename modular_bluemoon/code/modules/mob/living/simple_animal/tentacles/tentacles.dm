@@ -1,22 +1,11 @@
 #define REGENERATION_DELAY 60  // After taking damage, how long it takes for automatic regeneration to begin for tentacles.
 #define REGEN_AMOUNT 6 //How much is healed pre regen cooldown
 
-/mob/living
-	var/has_tentacles = FALSE
-
-/mob/living/proc/has_tentacles()
-	return FALSE
-
-/mob/living/tentacles/has_tentacles()
-	return TRUE
-
 /obj/structure/tentacles/node
 	name = "tentacles node"
 	desc = "Looks like their roots."
 	icon = 'modular_bluemoon/Gardelin0/icons/mob/tentacles.dmi'
 	icon_state = "node"
-	density = 0
-	opacity = 0
 	max_integrity = 200
 	CanAtmosPass = ATMOS_PASS_DENSITY
 

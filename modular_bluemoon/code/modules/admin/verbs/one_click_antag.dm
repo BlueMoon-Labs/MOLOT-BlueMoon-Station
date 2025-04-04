@@ -15,7 +15,7 @@
 			if(temp.age_check(applicant.client))
 				if(!(applicant.job in temp.restricted_jobs))
 					candidates += applicant
-		if(HAS_TRAIT(applicant, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+		if(applicant.mob_weight > MOB_WEIGHT_HEAVY) // никаких сверхтяжёлых кровососов
 			candidates -= applicant
 		else if(HAS_TRAIT(applicant, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
 			candidates -= applicant

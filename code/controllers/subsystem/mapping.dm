@@ -336,7 +336,7 @@ SUBSYSTEM_DEF(mapping)
 
 	// load mining
 	if(config.minetype == "lavaland")
-		LoadGroup(FailedZs, "Lavaland", "map_files/Mining", "Lavaland_novaya.dmm", traits = list(ZTRAITS_LAVALAND, ZTRAITS_LAVALAND_JUNGLE), default_traits = ZTRAITS_LAVALAND)
+		LoadGroup(FailedZs, "Lavaland", "map_files/Mining", "Lavaland.dmm", traits = list(ZTRAITS_LAVALAND_JUNGLE, ZTRAITS_LAVALAND), default_traits = ZTRAITS_LAVALAND)
 	else if (!isnull(config.minetype) && config.minetype != "none")
 		INIT_ANNOUNCE("WARNING: An unknown minetype '[config.minetype]' was set! This is being ignored! Update the maploader code!")
 #endif

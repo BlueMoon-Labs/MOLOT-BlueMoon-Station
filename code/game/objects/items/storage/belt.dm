@@ -103,6 +103,17 @@
 	new /obj/item/multitool(src)
 	new /obj/item/inducer/syndicate(src)
 
+/obj/item/storage/belt/utility/inteq //Ghost InteQ Engineer
+
+/obj/item/storage/belt/utility/inteq/PopulateContents()
+	new /obj/item/screwdriver/nuke/inteq(src)
+	new /obj/item/wrench/combat/inteq(src)
+	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/crowbar/brown(src)
+	new /obj/item/wirecutters/brown(src)
+	new /obj/item/multitool(src)
+	new /obj/item/inducer/inteq(src)
+
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)

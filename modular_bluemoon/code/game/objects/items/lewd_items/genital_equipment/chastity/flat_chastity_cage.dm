@@ -25,9 +25,3 @@
 /obj/item/storage/box/chastity_cage/flat/PopulateContents()
 	var/newkey = new /obj/item/key/chastity_key(src)
 	new /obj/item/genital_equipment/chastity_cage/flat(src, newkey)
-
-/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\code\modules\vending\kinkmate.dm'
-/obj/machinery/vending/kink/Initialize(mapload)
-	products += list(/obj/item/storage/box/chastity_cage/flat = 3)
-	. = ..()
-*/

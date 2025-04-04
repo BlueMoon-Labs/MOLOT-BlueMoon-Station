@@ -43,3 +43,11 @@
 /obj/item/clothing/head/turban/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/polychromic, poly_colors, 1)
+
+/obj/item/clothing/head/cracked_pot
+	name = "Cracked pot"
+	desc = "It looks extremely stupid, but for some reason wearing it makes you feel proud."
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDESNOUT
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "cracked_pot"

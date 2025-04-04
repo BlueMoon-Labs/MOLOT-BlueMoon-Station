@@ -37,11 +37,10 @@
 /datum/component/omen/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_accident))
 	RegisterSignal(parent, COMSIG_ON_CARBON_SLIP, PROC_REF(check_slip))
-	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, PROC_REF(check_bless))
-	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, PROC_REF(check_death))
+	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(check_death))
 
 /datum/component/omen/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_ON_CARBON_SLIP, COMSIG_MOVABLE_MOVED, COMSIG_ADD_MOOD_EVENT, COMSIG_LIVING_DEATH))
+	UnregisterSignal(parent, list(COMSIG_ON_CARBON_SLIP, COMSIG_MOVABLE_MOVED, COMSIG_LIVING_DEATH))
 
 /**
   * check_accident() is called each step we take
@@ -131,13 +130,6 @@
 	/*if (!("blessing" in our_guy.mob_mood.mood_events))
 		return*/
 
-	qdel(src)
-
-/// Hijack the mood system to see if we get the blessing mood event to cancel the omen
-/datum/component/omen/proc/check_bless(mob/living/our_guy, category)
-	if(category != "blessing")
-		return
-	to_chat(our_guy, "<span class='nicegreen'>Вы чувствуете, что проклятье спало с ваших плеч!</span>")
 	qdel(src)
 
 /// Creates a localized explosion that shakes the camera

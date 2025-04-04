@@ -40,7 +40,7 @@
 		return
 
 	//Лёгкие персонажи при всех изменениях хп и скорости считаются как персонаж размером 100%
-	if(HAS_TRAIT(holder, TRAIT_BLUEMOON_LIGHT))
+	if(holder.mob_weight < MOB_WEIGHT_NORMAL)
 		if(HSize > 1)
 			HSize = 1
 		if(old_size > 1)

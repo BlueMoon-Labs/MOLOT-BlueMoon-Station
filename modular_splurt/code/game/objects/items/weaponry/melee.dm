@@ -24,7 +24,7 @@
 		var/atom/throw_target = get_edge_target_turf(target, user.dir)
 		user.DelayNextAction(CLICK_CD_MELEE)
 		// BLUEMOON ADDITION AHEAD - нельзя отправлять в полёт тяжёлых, т.к. у них модификатор к урону и это можно абузить для предотвращения проблем с мобильностью
-		if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY))
+		if(target.mob_weight > MOB_WEIGHT_NORMAL)
 			return
 		// Нельзя отправить в полёт самого себя
 		if(user != target)

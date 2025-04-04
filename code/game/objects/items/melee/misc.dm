@@ -463,7 +463,7 @@
 			var/countered = block_return[BLOCK_RETURN_MITIGATION_PERCENT] > block_percent_to_counter
 			// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 			var/final_stun_damage = stam_dmg
-			if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+			if(target.mob_weight > MOB_WEIGHT_HEAVY)
 				if(!full_effect_on_superheavy_characters)
 					var/target_size_mod = 1
 					if(get_size(target) > 1)

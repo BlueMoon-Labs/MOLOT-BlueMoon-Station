@@ -78,7 +78,7 @@
 
 	else if(isliving(target))
 		var/mob/living/M = target
-		if(M.stat == DEAD && !HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // BLUEMOON CHANGES, даём возможность толкать сверхтяжёлых персонажей
+		if(M.stat == DEAD && M.mob_weight < MOB_WEIGHT_HEAVY_SUPER) // BLUEMOON CHANGES, даём возможность толкать сверхтяжёлых персонажей
 			return
 		if(source.a_intent == INTENT_HARM)
 			M.take_overall_damage(dam_force)

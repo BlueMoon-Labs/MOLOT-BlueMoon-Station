@@ -13,6 +13,9 @@ PORT 3306
 ## Database for all SQL functions, not just feedback.
 FEEDBACK_DATABASE feedback
 
+## Database for all SQL functions, not just feedback.
+FEEDBACK_DATABASE_WHITELIST feedback
+
 ## Prefix to be added to the name of every table, older databases will require this be set to erro_
 ## Note, this does not change the table names in the database, you will have to do that yourself.
 ##IE:

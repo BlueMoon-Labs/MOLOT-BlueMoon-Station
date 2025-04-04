@@ -91,7 +91,7 @@
 		to_chat(user, span_warning("Разницы в росте недостаточно, чтобы раздавить!"))
 		return FALSE
 
-	if(HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT) && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60
+	if(user.mob_weight < MOB_WEIGHT_NORMAL && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60
 		to_chat(user, span_warning("Я вешу слишком мало, чтобы наступить на [target]!"))
 		return FALSE
 

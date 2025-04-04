@@ -1658,19 +1658,14 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "ajM" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance{
-	lootcount = 2;
-	name = "2maintenance loot spawner"
-	},
 /obj/structure/sign/poster/contraband/scum{
 	pixel_y = 32
 	},
 /obj/structure/sign/poster/contraband/scum{
 	pixel_y = 32
 	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/aft)
+/turf/template_noop,
+/area/template_noop)
 "ajN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9046,6 +9041,9 @@
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/carpet,
 /area/service/library)
+"aPh" = (
+/turf/closed/wall/r_wall,
+/area/template_noop)
 "aPk" = (
 /turf/open/floor/plasteel/chapel{
 	dir = 4
@@ -58345,10 +58343,6 @@
 	},
 /turf/open/floor/plating,
 /area/security/office)
-"oEZ" = (
-/obj/effect/spawner/lootdrop/keg,
-/turf/open/floor/plating,
-/area/maintenance/starboard/aft)
 "oFf" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -58586,6 +58580,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
+"oLo" = (
+/obj/effect/landmark/stationroom/maint/threexthree,
+/turf/template_noop,
+/area/template_noop)
 "oLH" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -66508,8 +66506,8 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/aft)
+/turf/template_noop,
+/area/template_noop)
 "tur" = (
 /obj/item/restraints/handcuffs/fake,
 /turf/open/floor/plating,
@@ -71415,6 +71413,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
+"wfn" = (
+/obj/effect/landmark/stationroom/maint/fivexfour,
+/turf/template_noop,
+/area/template_noop)
 "wfC" = (
 /obj/structure/chair/stool{
 	pixel_y = 8
@@ -72649,6 +72651,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"wRV" = (
+/obj/structure/barricade/wooden{
+	name = "wooden barricade (CLOSED)"
+	},
+/turf/open/floor/plasteel/dark,
+/area/hallway/primary/central)
 "wSj" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -103098,11 +103106,11 @@ nVz
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
+aPh
+aPh
+aPh
+aPh
+aPh
 fxV
 yhz
 ouQ
@@ -103355,11 +103363,11 @@ nVz
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
+aPh
+cgI
+cgI
+cgI
+wfn
 fxV
 pQN
 pQN
@@ -103612,11 +103620,11 @@ nVz
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
+aPh
+cgI
+cgI
+cgI
+cgI
 fxV
 pQN
 pQN
@@ -103869,12 +103877,12 @@ nVz
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
-fxV
+aPh
+cgI
+cgI
+cgI
+cgI
+wRV
 pQN
 pQN
 byG
@@ -104126,11 +104134,11 @@ nVz
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
+aPh
+cgI
+cgI
+cgI
+cgI
 fxV
 pQN
 pQN
@@ -104383,11 +104391,11 @@ otC
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
+aPh
+cgI
+cgI
+cgI
+cgI
 fxV
 pQN
 pQN
@@ -104640,11 +104648,11 @@ nVz
 ktS
 ktS
 ktS
-ktS
-ktS
-ktS
-ktS
-ktS
+aPh
+aPh
+aPh
+aPh
+aPh
 fxV
 cmP
 fPM
@@ -122677,9 +122685,9 @@ bHn
 gZa
 tKh
 cNW
-oEZ
-cOe
-cOe
+cgI
+cgI
+oLo
 cNW
 aaa
 aaa
@@ -122935,8 +122943,8 @@ tKh
 tKh
 cNW
 ttL
-cOe
-cOe
+cgI
+cgI
 cNW
 aaa
 fIs
@@ -123192,8 +123200,8 @@ iUz
 mFO
 cNW
 ajM
-cOe
-cOe
+cgI
+cgI
 cNW
 ktS
 aaS

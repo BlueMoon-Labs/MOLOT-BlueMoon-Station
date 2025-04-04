@@ -24,6 +24,16 @@
 	access = list(ACCESS_INTEQ, ACCESS_ROBOTICS, ACCESS_SYNDICATE)
 	uses_overlays = FALSE
 
+/obj/item/card/id/inteq/engineer
+	name = "InteQ Field Engineer ID card"
+	id_type_name = "InteQ ID card"
+	desc = "An ID straight from the InteQ."
+	registered_name = "InteQ"
+	assignment = "InteQ Field Engineer"
+	icon_state = "inteq"
+	access = list(ACCESS_INTEQ, ACCESS_ROBOTICS, ACCESS_SYNDICATE)
+	uses_overlays = FALSE
+
 /obj/item/card/id/inteq/captain_id
 	name = "InteQ Vanguard Leader ID card"
 	id_type_name = "InteQ captain ID card"

@@ -877,7 +877,7 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 	return !incapacitated(ignore_restraints = TRUE) && (istype(target) && target.stat == CONSCIOUS && CHECK_MOBILITY(src, MOBILITY_STAND))
 
 /mob/living/carbon/human/proc/can_be_firemanned(mob/living/carbon/target)
-	return (ishuman(target) && (!CHECK_MOBILITY(target, MOBILITY_STAND) || HAS_TRAIT(target, TRAIT_BLUEMOON_LIGHT))) || ispAI(target)
+	return (ishuman(target) && (!CHECK_MOBILITY(target, MOBILITY_STAND) || target.mob_weight < MOB_WEIGHT_NORMAL)) || ispAI(target)
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
 	var/carrydelay = 40 //if you have latex you are faster at grabbing
@@ -888,11 +888,11 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 			gloves_used = TRUE
 		carrydelay = 20
 		skills_space = "профессионально "
-	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY) || HAS_TRAIT(target, TRAIT_BLUEMOON_LIGHT))
+	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY) || target.mob_weight < MOB_WEIGHT_NORMAL)
 		carrydelay = 30
 		skills_space = "быстро "
 	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
-	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(target.mob_weight > MOB_WEIGHT_NORMAL)
 		to_chat(src, span_warning("You tried to lift [target], but they are too heavy!"))
 		return
 	// BLUEMOON ADDITION END
@@ -919,10 +919,11 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 
 		// BLUEMOON ADDITION START - тяжёлые персонажи дольше забираются на спину
 		var/climb_on_time = 1.5 SECONDS
-		if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-			climb_on_time = 4 SECONDS // Время, чтобы задуматься над смыслом жизни
-		else if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY))
-			climb_on_time = 2.5 SECONDS
+		switch(target.mob_weight)
+			if(MOB_WEIGHT_HEAVY_SUPER)
+				climb_on_time = 4 SECONDS
+			if(MOB_WEIGHT_HEAVY)
+				climb_on_time = 2.5 SECONDS
 		// BLUEMOON ADDITION END
 
 		if(do_after(target, climb_on_time, src, IGNORE_INCAPACITATED, extra_checks = CALLBACK(src, PROC_REF(can_piggyback), target)))
@@ -931,13 +932,13 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")
 					return
 				// BLUEMOON ADDITION START
-				if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+				if(target.mob_weight > MOB_WEIGHT_NORMAL)
 					target.visible_message(span_warning("[target] слишком много весит для [src]!"))
 					var/obj/item/bodypart/affecting = get_bodypart(BODY_ZONE_CHEST)
 					var/wound_bon = 100
 					var/damage = 40
 
-					if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+					if(target.mob_weight > MOB_WEIGHT_HEAVY)
 						wound_bon += 300
 						damage += 120
 						to_chat(src, span_danger("Умные мысли преследуют вас, но вы всегда быстрее!"))
