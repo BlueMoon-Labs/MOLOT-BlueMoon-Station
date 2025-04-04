@@ -67,8 +67,9 @@ export const InteractionsTab = (props, context) => {
                     key={interaction.key}
                     content={interaction.desc}
                     color={interaction.type === INTERACTION_EXTREME ? "red"
-                      : interaction.type ? "pink"
-                        : "default"}
+                      : interaction.type === INTERACTION_UNHOLY ? "orange"
+                        : interaction.type ? "pink"
+                          : "default"}
                     fluid
                     mb={-0.7}
                     onClick={() => act('interact', {
