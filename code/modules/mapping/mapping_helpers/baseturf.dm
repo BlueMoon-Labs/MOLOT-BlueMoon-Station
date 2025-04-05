@@ -81,3 +81,7 @@
 /obj/effect/baseturf_helper/lava_land/surface
 	name = "lavaland baseturf editor"
 	baseturf = /turf/open/lava/smooth/lava_land_surface
+
+/obj/effect/baseturf_helper/beach/black_mesa
+	name = "mesa baseturf editor"
+	baseturf = /turf/open/indestructible/mesasand

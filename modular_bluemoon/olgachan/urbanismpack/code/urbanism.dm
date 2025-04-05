@@ -48,16 +48,20 @@
 /obj/structure/reagent_dispensers/urbanismbarrel/red
 	icon_state = "redbarrel"
 
-/obj/structure/urbanismbarricade
+/obj/structure/barricade/urbanism
 	name = "Barricade"
 	desc = "Basic barricade meant to protect idiots like you from danger."
 	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
 	icon_state = "crowd_barrier"
 	anchored = TRUE
 	density = TRUE
+	pass_flags_self = LETPASSTHROW
+	max_integrity = 280
+	proj_pass_rate = 20
+	climbable = TRUE
 	armor = list(MELEE = 30, BULLET =40, LASER = 10, ENERGY = 10, BOMB = 30, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
 
-/obj/structure/urbanismbarricade/roadblock
+/obj/structure/barricade/urbanism/roadblock
 	resistance_flags = INDESTRUCTIBLE
 	icon_state = "concrete"
 

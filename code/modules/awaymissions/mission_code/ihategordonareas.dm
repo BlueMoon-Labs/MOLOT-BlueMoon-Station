@@ -1,7 +1,7 @@
 /area/awaymission/ihategordon
 	name = "Main sector H complex"
-	shipambience ='modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/main_complex_ambient_ihategordon.ogg'
-	ambientsounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/main_complex_ambient_ihategordon.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/sector_h_ihategordon.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/servers_ihategordon.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/BMAS1.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/BMAS2.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/BMAS3.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/BMAS4.ogg')
+	shipambience ='modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaxenlab.ogg'
+	ambientsounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesainsideambience.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaamb1.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/bmas1.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/bmas2.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/bmas3.ogg' )
 
 /area/awaymission/ihategordon/entrance
 	name = "Facility entrance"
@@ -71,7 +71,7 @@
 	name = "Facility hecu bus stop"
 	icon_state = "awaycontent13"
 
-/area/awaymission/ihategordon/hecu_camp
+/area/awaymission/outsideofmesa/hecu_camp
 	name = "Facility hecu main camp"
 	icon_state = "awaycontent15"
 
@@ -102,8 +102,8 @@
 /area/awaymission/outsideofmesa
 	name = "Outside of facility"
 	icon_state = "awaycontent6"
-	shipambience ='modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/outside of sector h.ogg'
-	ambientsounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/outside of sector h.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/sector h outside ambience.ogg')
+	shipambience ='modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaoutsideambient.ogg'
+	ambientsounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaoutsideambient.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/outsideofcomplex.ogg')
 
 /area/awaymission/ihategordon/secret_rooms
 	name = "secret"
@@ -112,3 +112,23 @@
 /area/awaymission/ihategordon/gonome
 	name = "gonome boss battle"
 	icon_state = "awaycontent29"
+
+/area/awaymission/ihategordon/sectorhnorthoffices
+	name = "sector H north offices"
+	icon_state = "north"
+
+/area/awaymission/ihategordon/sectorhsecoffices
+	name = "sector H security offices"
+	icon_state = "security"
+
+/area/awaymission/ihategordon/opposing
+	name = "east sector H complex entrance"
+	icon_state = "1"
+
+/area/awaymission/ihategordon/opposing/comlpex
+	name = "east sector H complex"
+	icon_state = "2"
+
+/area/awaymission/ihategordon/opposing/end
+	name = "east sector H complex ending"
+	icon_state = "3"

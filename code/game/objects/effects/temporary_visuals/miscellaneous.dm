@@ -555,3 +555,7 @@
 /obj/effect/temp_visual/gib_animation
 	icon = 'icons/mob/mob.dmi'
 	duration = 15
+
+/obj/effect/temp_visual/impact_effect/neurotoxin
+	icon_state = "impact_spit"
+	color = "#5BDD04"

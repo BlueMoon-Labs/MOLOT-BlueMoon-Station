@@ -24,7 +24,6 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	attack_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/attack1.ogg'
-	gold_core_spawnable = HOSTILE_SPAWN
 	minbodytemp = 0
 	maxbodytemp = 1500
 	alert_sounds = list ('modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert1.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert3.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert2.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert4.ogg')

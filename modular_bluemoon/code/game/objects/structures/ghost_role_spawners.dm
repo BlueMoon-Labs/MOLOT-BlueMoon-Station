@@ -33,6 +33,10 @@
 /datum/antagonist/ghost_role/hecu
 	name  = "HECU squad"
 
+/datum/antagonist/ghost_role/losthecu
+	name  = "HECU lost grunt"
+
+
 mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	if(switch_on)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE)
