@@ -362,8 +362,8 @@
 /obj/item/clothing/head/helmet/juggernaut
 	name = "Zeal Team Helmet"
 	desc = "I... am... the... JUGGERNAUT!!!"
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "juggernauthelm"
 	item_state = "juggernauthelm"
 	armor = list(MELEE = 95, BULLET = 80, LASER = 50, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)

@@ -175,7 +175,7 @@
 /obj/item/clothing/head/helmet/sec/rhsa12
 	name = "R-HSA-12"
 	desc = "A helmet from a saboteur light armor. Has a semi-transparent visor to conceal the identity of the saboteur with almost no loss in protective properties. It has a flashlight mount on the side."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/acrador_helmet_32x48.dmi'
 	icon_state = "rhsa12"
 	item_state = "rhsa12"
@@ -234,8 +234,8 @@
 /obj/item/clothing/head/helmet/sec/renegat
 	name = "Peacekeeper Officer's Helmet Renegat"
 	desc = "The helmet of the Adler peacekeepers. There are several patches indicating rank, it looks like it's a uniform for commanders. It is produced by the Adler Military-Industrial complex of the same name. It seems that it can only be worn by high-ranking officials, it looks like it has a special friend-foe identification interface built into it."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "renegat"
 	item_state = "renegat"
 
@@ -253,16 +253,16 @@
 /obj/item/clothing/head/helmet/sec/helmet_shield
 	name = "Heavy Peacekeeper Helmet Shield"
 	desc = "The heavy, armored helmet of Adler's Peacekeepers. It seems to be adapted for long and complex operations, inside there is a soft lining under the armor, outside there are durable plates and a friend-foe identification system. Additional plates are located on the front to protect the head."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "shield"
 	item_state = "shield"
 
 /obj/item/clothing/head/helmet/sec/adler_skull
 	name = "Tactical Skull Helmet"
 	desc = "The tactical helmet of desert hunters from the Russian Empire planet Tyrana-1, a lightweight helmet for action in hot conditions, relatively protects against sandstorms, bullets and monster strikes, but slightly narrows the view. It seems that this option is more like an anthropomorphic, but it is also suitable for an ordinary person. Usually the hunters themselves scratch their initials on them, but this one is not marked in any way."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "adler_skull"
 	item_state = "adler_skull"
 

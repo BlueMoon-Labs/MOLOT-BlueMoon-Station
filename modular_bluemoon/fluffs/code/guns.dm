@@ -730,11 +730,14 @@
 	name = "\improper Законодатель MK3"
 	desc = "Стандартное оружие судей из Мега-Города Солнечной Федерации. Пистолет комплектуется несколькими типами боеприпасов, иногда набор снарядов отличается от стандартного в зависимости от миссии судьи. Оснащён биометрическим датчиком ладони — оружие может применять только судья, а при несанкционированном использовании в рукояти срабатывает взрывное устройство. Этот же пистолет на радость недругов что преступают Закон, со сломанной биометрией ради стандартизации электронных бойков."
 	icon = 'modular_bluemoon/fluffs/icons/obj/dreadmk3.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "dreadmk3"
+	item_state = "caplaser"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/dreadmk3, /obj/item/ammo_casing/energy/laser/hos/dreadmk3, /obj/item/ammo_casing/energy/ion/hos/dreadmk3, /obj/item/ammo_casing/energy/electrode/hos/dreadmk3)
 	ammo_x_offset = 0
-	flight_x_offset = 22
-	flight_y_offset = 5
+	flight_x_offset = 21
+	flight_y_offset = 14
 
 /obj/item/ammo_casing/energy/disabler/dreadmk3
 

@@ -19,8 +19,10 @@
 // .45 (M1911 + C20r)
 
 /obj/item/ammo_casing/c45
-	name = ".45 bullet casing"
+	name = ".45 bullet rubber casing" // BLUEMOON CHANGE adding "rubber" to name
 	desc = "A .45 bullet casing."
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi' // BLUEMOON ADD custom states
+	icon_state = "casing-universal" // BLUEMOON ADD custom states
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/c45
 

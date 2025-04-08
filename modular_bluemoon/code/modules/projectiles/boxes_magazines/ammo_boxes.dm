@@ -34,3 +34,108 @@
 	ammo_type = /obj/item/ammo_casing/a58mm/hollowpoint
 
 ////////////////////////////////////////////////////////////////////
+// 5.56mm boxes
+
+/obj/item/ammo_box/a556
+	name = "ammo box (5.56mm)"
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "5.56mmbox-l"
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 30
+
+/obj/item/ammo_box/a556/rubber
+	name = "ammo box (5.56mm rubber)"
+	icon_state = "5.56mmbox-rub"
+	ammo_type = /obj/item/ammo_casing/a556/rubber
+	max_ammo = 30
+
+/obj/item/ammo_box/a556/hp
+	name = "ammo box (5.56mm hollow-point)"
+	icon_state = "5.56mmbox-l"
+	ammo_type = /obj/item/ammo_casing/a556/hp
+	max_ammo = 30
+
+/obj/item/ammo_box/a556/ap
+	name = "ammo box (5.56mm armor-piercing)"
+	icon_state = "5.56mmbox-l"
+	ammo_type = /obj/item/ammo_casing/a556/ap
+	max_ammo = 30
+
+////////////////////////////////////////////////////////////////////
+// 7.62х39mm boxes
+
+/obj/item/ammo_box/a762x39
+	name = "ammo box (7.62x39)"
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "7.62x39mmbox-l"
+	ammo_type = /obj/item/ammo_casing/a762x39
+	max_ammo = 30
+
+/obj/item/ammo_box/a762x39/rubber
+	name = "ammo box (7.62x39 rubber)"
+	icon_state = "7.62x39mmbox-R"
+	ammo_type = /obj/item/ammo_casing/a762x39/rubber
+	max_ammo = 30
+
+/obj/item/ammo_box/a762x39/hp
+	name = "ammo box (7.62x39 hollow-point)"
+	icon_state = "7.62x39mmbox-l"
+	ammo_type = /obj/item/ammo_casing/a762x39/hp
+	max_ammo = 30
+
+/obj/item/ammo_box/a762x39/ap
+	name = "ammo box (7.62x39 armor-piercing)"
+	icon_state = "7.62x39mmbox-l"
+	ammo_type = /obj/item/ammo_casing/a762x39/ap
+	max_ammo = 30
+
+////////////////////////////////////////////////////////////////////
+// 9mm boxes.
+
+/obj/item/ammo_box/c9mm
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "9mmbox-l"
+
+/obj/item/ammo_box/c9mm/rubber
+	icon_state = "9mmbox-rub"
+
+////////////////////////////////////////////////////////////////////
+// 10mm boxes. Custom icon states mainly
+
+/obj/item/ammo_box/c10mm
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "10mmbox"
+
+/obj/item/ammo_box/c10mm/fire
+	icon_state = "10mmbox"
+
+/obj/item/ammo_box/c10mm/hp
+	icon_state = "10mmbox-hp"
+
+/obj/item/ammo_box/c10mm/ap
+	icon_state = "10mmbox-ap"
+
+/obj/item/ammo_box/c10mm/soporific
+	icon_state = "10mmbox-softp"
+
+////////////////////////////////////////////////////////////////////
+// .45mm boxes
+
+/obj/item/ammo_box/c45
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "45box-rub"
+
+/obj/item/ammo_box/c45/trac
+	icon_state = "45box-rub"
+
+////////////////////////////////////////////////////////////////////
+// .45mm long boxes
+
+/obj/item/ammo_box/g45l
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "45lbox-r"
+
+/obj/item/ammo_box/g45l/lethal
+	icon_state = "45lbox"
+
+////////////////////////////////////////////////////////////////////

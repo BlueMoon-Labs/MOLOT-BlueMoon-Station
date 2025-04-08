@@ -5,7 +5,7 @@
 	toolspeed = 0.9
 	random_color = FALSE
 
-// BLUEMOON FIX of sprite change
+// Fix of sprite change
 /obj/item/wirecutters/power/syndicate/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
 	var/obj/item/crowbar/power/syndicate/pryjaws = new /obj/item/crowbar/power/syndicate(drop_location())

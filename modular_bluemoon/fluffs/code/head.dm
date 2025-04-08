@@ -1,6 +1,6 @@
 /obj/item/clothing/head/donator/bm
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/donator/bm/pt_crown
 	name = "Crown of Pure Tyranny"
@@ -54,8 +54,8 @@
 /obj/item/clothing/head/helmet/space/plasmaman/security/reaper
 	name = "Security Plasma Envirosuit Helmet"
 	desc = "Plasmaman Envirohelmet. Has red markings and reinforced with some composite materials."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "pluto_enviro"
 
 /obj/item/clothing/head/donator/bm/flektarn_beret
@@ -87,18 +87,20 @@
 	desc = "На вид обычная сварочная маска разрисованная с лицевой стороны,особенно выделяется надпись «Убей» под визором."
 	icon_state = "provocateur"
 	item_state = "provocateur"
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/HoS/dread_helmet
 	name = "Шлем Судьи"
 	desc = "Стандартный шлем судьи из Мега-Города Солнечной Федерации. Оснащен слоем кевлара и других материалов что защищают голову и визор что защищает от осколков и вспышек. Имеет встроенный микрофон с динамиком в который непонятно почему вам так и хочется сказать Я! ЗАКОН!"
 	icon_state = "dread_helmet"
 	item_state = "dread_helmet"
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/head_muzzled.dmi'
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEEARS|HIDESNOUT
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/head/donator/bm/royal_hunters
 	name = "Royal hunters hat"
@@ -137,8 +139,8 @@
 /obj/item/clothing/head/helmet/chaplain/wh_helmet
 	name = "The Helmet of the Dark Apostle"
 	desc = "This is the helmet of one of the dark apostles serving the Dark Gods. The face mask is made in the shape of a screaming demon"
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "wh_chaplain"
 
 /obj/item/modkit/whhelmet_kit
@@ -152,8 +154,8 @@
 /obj/item/clothing/head/hardhat/weldhat/mengineer
 	name = "master engineer's hardhat"
 	desc = "A modified piece of welding hardhat with ear cover. White-yellow coloring seems to indicate some engineering mid-rank, not used by Nanotrasen standarts. You can see personal number engraved inside the hat: KVM:829917."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "hardhat0_mengineer"
 	item_state = "hardhat0_mengineer"
 	hat_type = "mengineer"

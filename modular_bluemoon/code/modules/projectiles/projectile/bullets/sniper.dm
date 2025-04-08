@@ -1,7 +1,6 @@
 //Crocine .50 bullet
 /obj/item/projectile/bullet/p50/lewd
 	name =".50 lewd bullet"
-	pixels_per_second = TILES_TO_PIXELS(25)
 	damage = 5
 	knockdown = 100
 	dismemberment = 0

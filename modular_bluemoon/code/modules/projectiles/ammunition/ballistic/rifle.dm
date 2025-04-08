@@ -34,3 +34,50 @@
 	projectile_type = /obj/item/projectile/bullet/a58/he
 
 ////////////////////////////////////////////////////////////////////
+// 5.56mm
+
+/obj/item/ammo_casing/a556
+	name = "5.56mm bullet casing"
+	desc = "A 5.56mm bullet casing."
+	caliber = "a556"
+	projectile_type = /obj/item/projectile/bullet/a556
+
+/obj/item/ammo_casing/a556/rubber
+	name = "5.56mm rubber bullet casing"
+	desc = "A 5.56mm rubber bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a556_rubber
+
+/obj/item/ammo_casing/a556/hp
+	name = "5.56mm hollow-point bullet casing"
+	desc = "A 5.56mm hollow-point bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a556_hp
+
+/obj/item/ammo_casing/a556/ap
+	name = "5.56mm armor-piercing bullet casing"
+	desc = "A 5.56mm armor-piercing bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a556_ap
+
+////////////////////////////////////////////////////////////////////
+// 7.62x39mm
+
+/obj/item/ammo_casing/a762x39
+	name = "7.62x39 bullet casing"
+	desc = "A 7.62x39 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a762x39"
+	projectile_type = /obj/item/projectile/bullet/a762x39
+
+/obj/item/ammo_casing/a762x39/rubber
+	name = "7.62x39 rubber bullet casing"
+	desc = "A 7.62x39 rubber bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a762x39_rubber
+
+/obj/item/ammo_casing/a762x39/hp
+	name = "7.62x39 hollow-point bullet casing"
+	desc = "A 7.62x39 hollow-point bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a762x39_hp
+
+/obj/item/ammo_casing/a762x39/ap
+	name = "7.62x39 armor-piercing bullet casing"
+	desc = "A 7.62x39 armor-piercing bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a762x39_ap

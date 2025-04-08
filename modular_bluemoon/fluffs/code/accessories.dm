@@ -125,6 +125,7 @@
 	item_state = "dread_neck"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	alternate_worn_layer = ABOVE_HEAD_LAYER
 
 ////////////////////////
 

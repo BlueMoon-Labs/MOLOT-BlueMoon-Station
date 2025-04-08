@@ -1,6 +1,8 @@
-///Armory redcode safe
+// Armory redcode safe
 
+//Proc for opening safe via certain condition, using station code in our case.
 /obj/structure/safe/proc/code_opening()
+	SIGNAL_HANDLER
 	return
 
 /obj/structure/safe/floor/syndi
@@ -20,7 +22,6 @@
 	RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, PROC_REF(code_opening))
 
 /obj/structure/safe/floor/syndi/armory/code_opening()
-	SIGNAL_HANDLER
 	if(GLOB.security_level >= SEC_LEVEL_RED)
 		playsound(src, 'modular_bluemoon/sound/effects/opening-gears.ogg', 200, ignore_walls = TRUE)
 		visible_message("<span class='warning'>You hear a loud sound of some servos opening.</span>")

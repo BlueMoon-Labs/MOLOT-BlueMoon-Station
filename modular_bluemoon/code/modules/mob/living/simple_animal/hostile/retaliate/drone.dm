@@ -5,5 +5,5 @@
 			scramble_settings()
 	if(health / maxHealth < 0.5)
 		damage_coeff = list(BRUTE = 0.9, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0)
-	if(health / maxHealth > 0.5)
+	if(health / maxHealth >= 0.5)
 		damage_coeff = list(BRUTE = 1.3, BURN = 0.8, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
