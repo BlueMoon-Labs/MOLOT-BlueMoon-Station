@@ -14,7 +14,7 @@
 
 /obj/structure/safe/floor/syndi/armory
 	name = "Armory Floor Safe"
-	number_of_tumblers = 6
+	number_of_tumblers = 12
 	maxspace = 30
 
 /obj/structure/safe/floor/syndi/armory/Initialize(mapload)
