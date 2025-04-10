@@ -2461,7 +2461,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["silicon_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) //Skyrat edit, uses strip_html_simple()
 
 				if("custom_species_lore")
-					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["custom_species_lore"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["custom_species_lore"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 				// BLUEMOON ADD START - пользовательский эмоут смерти
