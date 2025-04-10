@@ -21,16 +21,6 @@
 	full_name = "Me (emote)"
 	clientside = "me"
 
-/datum/keybinding/client/communication/activity
-	hotkey_keys = list("ShiftM")
-	name = "set_activity"
-	full_name = "Set Activity"
-
-/datum/keybinding/client/communication/activity/down(client/user)
-	var/mob/living/L = user.mob
-	L.set_activity()
-	return TRUE
-
 //indicators
 /datum/keybinding/client/communication/say_with_indicator
 	hotkey_keys = list("T")
@@ -65,7 +55,8 @@
 	clientside = "subtler-anti-ghost"
 
 /datum/keybinding/client/communication/whisper
-	hotkey_keys = list("Y")
+	hotkey_keys = list("CtrlY")
+	classic_keys = list("Unbound")
 	name = "Whisper"
 	full_name = "Whisper"
 	clientside = "whisper"

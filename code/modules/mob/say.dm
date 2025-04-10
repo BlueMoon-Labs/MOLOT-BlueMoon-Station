@@ -79,12 +79,15 @@
 		var/customsayverb = findtext(input, "*")
 		return lowertext(copytext_char(input, 1, customsayverb))
 
+/*
+//This proc is no longer used for a long time.
 /mob/proc/whisper_keybind()
 	client?.last_activity = world.time
 	var/message = input(src, "", "whisper") as text|null
 	if(!length(message))
 		return
 	return whisper_verb(message)
+*/
 
 /mob/verb/whisper_verb(message as text)
 	set name = "Whisper"
