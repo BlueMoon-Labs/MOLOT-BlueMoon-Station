@@ -106,28 +106,26 @@
 
 	if(user == G.owner)
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to insert buttplug inside themselves!"),\
-					span_warning("You try to insert buttplug inside yourself!"))
+			span_warning("You try to insert buttplug inside yourself!"))
 	else
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to insert buttplug inside \the <b>[G.owner]</b>!"),\
-					span_warning("\The <b>[user]</b> is trying to insert buttplug inside you!"))
+			span_warning("\The <b>[user]</b> is trying to insert buttplug inside you!"))
 
 	if(!do_mob(user, G.owner, 5 SECONDS))
 		return FALSE
 
-	if(user == G.owner)
-		to_chat(user, span_userlove("[G] чувствует что-то крупное внутри!"))
-		user.handle_post_sex(NORMAL_LUST*3, null, user)
-		user.plug13_genital_emote(G, NORMAL_LUST*2)
-		user.Jitter(2)
-		playsound(user, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
-		inside = TRUE
-		stuffed_movement(user)
+	to_chat(G.owner, span_userlove("[G] чувствует что-то крупное внутри!"))
+	G.owner.handle_post_sex(NORMAL_LUST*3, null, G.owner)
+	G.owner.plug13_genital_emote(G, NORMAL_LUST*2)
+	G.owner.Jitter(2)
+	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 
 /obj/item/buttplug/proc/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 	to_chat(user, span_userlove("You attach [src] to <b>\The [G.owner]</b>'s [G]."))
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 	inside = TRUE
+	stuffed_movement(G.owner)
 
 /obj/item/buttplug/proc/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
@@ -163,28 +161,26 @@
 
 	if(user == G.owner)
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to insert dildo inside themselves!"),\
-					span_warning("You try to insert dildo inside yourself!"))
+			span_warning("You try to insert dildo inside yourself!"))
 	else
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to insert dildo inside \the <b>[G.owner]</b>!"),\
-					span_warning("\The <b>[user]</b> is trying to insert dildo inside you!"))
+			span_warning("\The <b>[user]</b> is trying to insert dildo inside you!"))
 
 	if(!do_mob(user, G.owner, 5 SECONDS))
 		return FALSE
 
-	if(user == G.owner)
-		to_chat(user, span_userlove("[G] чувствует что-то крупное внутри!"))
-		user.handle_post_sex(NORMAL_LUST*3, null, user)
-		user.plug13_genital_emote(G, NORMAL_LUST*2)
-		user.Jitter(2)
-		playsound(user, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
-		inside = TRUE
-		stuffed_movement(user)
+	to_chat(G.owner, span_userlove("[G] чувствует что-то крупное внутри!"))
+	G.owner.handle_post_sex(NORMAL_LUST*3, null, G.owner)
+	G.owner.plug13_genital_emote(G, NORMAL_LUST*2)
+	G.owner.Jitter(2)
+	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 
 /obj/item/dildo/proc/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 	to_chat(user, span_userlove("You attach [src] to <b>\The [G.owner]</b>'s [G]."))
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 	inside = TRUE
+	stuffed_movement(G.owner)
 
 /obj/item/dildo/proc/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
