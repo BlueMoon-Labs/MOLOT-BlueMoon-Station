@@ -126,6 +126,8 @@ SUBSYSTEM_DEF(ticker)
 				else if(findtext(S, "{") && findtext(S, "}")) // Include songs with curly braces if they are part of a specific category
 					music += S
 			if(1) //sound.ogg -- common sound
+				if(L[1] == "exclude")
+					continue
 				if(!findtext(S, "{") && !findtext(S, "}")) // Exclude songs surrounded by curly braces
 					music += S
 
