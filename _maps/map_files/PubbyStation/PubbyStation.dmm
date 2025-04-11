@@ -2884,9 +2884,6 @@
 /area/security/prison)
 "ahZ" = (
 /obj/structure/table,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 27
-	},
 /obj/item/restraints/handcuffs,
 /obj/item/razor,
 /turf/open/floor/plasteel,
@@ -3042,20 +3039,23 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
+	},
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aiD" = (
 /obj/structure/table,
-/obj/item/storage/box/flashbangs{
-	pixel_x = 6;
-	pixel_y = 3
+/obj/item/storage/lockbox/loyalty{
+	layer = 4
 	},
 /obj/item/storage/box/flashbangs{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/storage/lockbox/loyalty{
-	layer = 4
+/obj/item/storage/box/flashbangs{
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -57584,6 +57584,36 @@
 /turf/open/floor/grass/grass0,
 /area/service/hydroponics/garden/monastery)
 "ncY" = (
+/obj/item/gun/ballistic/automatic/acr5m30,
+/obj/item/gun/ballistic/automatic/acr5m30{
+	pixel_y = -5
+	},
+/obj/item/gun/ballistic/automatic/acr5m30{
+	pixel_y = -10
+	},
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/hp,
+/obj/item/ammo_box/magazine/acr5m30/hp,
+/obj/item/ammo_box/magazine/acr5m30/hp,
+/obj/structure/safe/floor/syndi/armory{
+	pixel_y = 2;
+	dir = 2;
+	pixel_x = -32
+	},
 /obj/machinery/rnd/production/techfab/department/security,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -62795,40 +62825,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
-"uhG" = (
-/obj/structure/safe/floor/syndi/armory{
-	pixel_y = 2;
-	dir = 2
-	},
-/obj/item/gun/ballistic/automatic/acr5m30,
-/obj/item/gun/ballistic/automatic/acr5m30{
-	pixel_y = -5
-	},
-/obj/item/gun/ballistic/automatic/acr5m30{
-	pixel_y = -10
-	},
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/hp,
-/obj/item/ammo_box/magazine/acr5m30/hp,
-/obj/item/ammo_box/magazine/acr5m30/hp,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/red/full,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "uhI" = (
 /obj/machinery/shower{
 	dir = 4
@@ -86592,7 +86588,7 @@ abI
 ahn
 alx
 pPN
-uhG
+aiF
 dLO
 nLC
 ned

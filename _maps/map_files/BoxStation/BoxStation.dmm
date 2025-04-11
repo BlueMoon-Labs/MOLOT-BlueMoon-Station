@@ -38965,10 +38965,20 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "dTy" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/flasher/portable,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
+"dUe" = (
 /obj/structure/safe/floor/syndi/armory{
-	pixel_y = 0;
-	dir = 4;
-	pixel_x = -2
+	pixel_x = 32;
+	pixel_y = 2
 	},
 /obj/item/gun/ballistic/automatic/acr5m30,
 /obj/item/gun/ballistic/automatic/acr5m30{
@@ -38995,8 +39005,8 @@
 /obj/item/ammo_box/magazine/acr5m30/hp,
 /obj/item/ammo_box/magazine/acr5m30/hp,
 /obj/item/ammo_box/magazine/acr5m30/hp,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/red/full,
+/obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "dUj" = (
@@ -102047,7 +102057,7 @@ wLJ
 aaZ
 evB
 hsC
-ahK
+dUe
 ahK
 ahK
 ahK

@@ -86152,38 +86152,14 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "kWE" = (
-/obj/structure/safe/floor/syndi/armory{
-	pixel_y = 0;
-	dir = 4;
-	pixel_x = -2
-	},
-/obj/item/gun/ballistic/automatic/acr5m30,
-/obj/item/gun/ballistic/automatic/acr5m30{
-	pixel_y = -5
-	},
-/obj/item/gun/ballistic/automatic/acr5m30{
-	pixel_y = -10
-	},
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/hp,
-/obj/item/ammo_box/magazine/acr5m30/hp,
-/obj/item/ammo_box/magazine/acr5m30/hp,
 /obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/red/full,
+/obj/machinery/flasher/portable,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "kXt" = (
@@ -90284,15 +90260,39 @@
 /turf/open/floor/plating,
 /area/service/chapel/office)
 "mjK" = (
-/obj/item/radio/intercom{
-	pixel_x = -30
+/obj/item/gun/ballistic/automatic/acr5m30,
+/obj/item/gun/ballistic/automatic/acr5m30{
+	pixel_y = -5
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
+/obj/item/gun/ballistic/automatic/acr5m30{
+	pixel_y = -10
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/hp,
+/obj/item/ammo_box/magazine/acr5m30/hp,
+/obj/item/ammo_box/magazine/acr5m30/hp,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/red/full,
+/obj/structure/safe/floor/syndi/armory{
+	pixel_y = 2;
+	dir = 2;
+	pixel_x = -32
 	},
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "mjT" = (
@@ -98986,6 +98986,13 @@
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
+"oGH" = (
+/obj/item/radio/intercom{
+	pixel_x = -30;
+	pixel_y = -10
+	},
+/turf/closed/wall/r_wall,
+/area/ai_monitored/security/armory)
 "oGU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -187413,7 +187420,7 @@ jHk
 wOr
 jLZ
 vjz
-bLs
+oGH
 wJg
 qLK
 lQq
