@@ -1,6 +1,5 @@
 #define COMSIG_HOSTILE_MOB_LOST_TARGET "hostile_mob_lost_target"
 
-
 /**
  * Follow component
  *
@@ -67,3 +66,5 @@
 
 /datum/component/follow/proc/on_examine(datum/source, mob/examiner, list/examine_text)
 	examine_text += "Alt-click заставит идти за собой!"
+
+#undef COMSIG_HOSTILE_MOB_LOST_TARGET

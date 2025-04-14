@@ -1,7 +1,7 @@
 
 /obj/machinery/power/floodlight/urbanismlight
 	name = "Floodlight"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "oldfloodlight"
 	anchored = TRUE
 	armor = list(MELEE = 30, BULLET =30, LASER = 20, ENERGY = 10, BOMB = 30, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
@@ -16,12 +16,12 @@
 
 /obj/structure/closet/crate/urbanismcrate
 	name = "military crate"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "milcrate"
 
 /obj/structure/closet/crate/large/urbanismcratelarge
 	name = "big box"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "box"
 
 /obj/structure/closet/crate/large/urbanismcratelarge/mil
@@ -31,7 +31,7 @@
 /obj/structure/urbanismdamagedbarrel
 	name = "Old rusty barrel"
 	desc = "An old barrel with some junk in"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "drumfire"
 	anchored = TRUE
 	density = TRUE
@@ -40,7 +40,7 @@
 /obj/structure/reagent_dispensers/urbanismbarrel
 	name = "Barrel"
 	desc = "Typical barrel. Contains... Something"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "barrel"
 	anchored = TRUE
 	armor = list(MELEE = 60, BULLET =50, LASER = 10, ENERGY = 10, BOMB = 30, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
@@ -51,7 +51,7 @@
 /obj/structure/barricade/urbanism
 	name = "Barricade"
 	desc = "Basic barricade meant to protect idiots like you from danger."
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "crowd_barrier"
 	anchored = TRUE
 	density = TRUE
@@ -68,7 +68,7 @@
 /obj/structure/urbanismpile
 	name = "Trash Crate"
 	desc = "Crate full of trash... Found someone?"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "dumpsteropen_halffull"
 	resistance_flags = INDESTRUCTIBLE
 	anchored = TRUE
@@ -77,7 +77,7 @@
 /obj/structure/urbanismtire
 	name = "Tire"
 	desc = "Just tire! Tire for cars and fireplaces"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/icons.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "shina"
 	anchored = TRUE
 	density = TRUE
@@ -86,7 +86,7 @@
 /obj/structure/urbanismpower
 	name = "Power Line"
 	desc = "Эта необычная старая вышка обеспечивает электричеством то место, где вы сейчас находитесь"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/bigsprites.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
 	icon_state = "powerline"
 	anchored = TRUE
 	density = TRUE
@@ -96,13 +96,13 @@
 /obj/structure/urbanismpower/transformer
 	name = "Power transformer"
 	desc = "электротехническое устройство в сетях электроснабжения с двумя или более обмотками, который посредством электромагнитной индукции преобразует одну величину переменного напряжения и тока в другую величину переменного напряжения и тока, той же частоты без изменения её передаваемой мощности"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/bigsprites.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
 	icon_state = "powertransformer"
 
 /obj/structure/urbanismbigcrate
 	name = "Big boxes"
 	desc = "One big box with one smaller on it. Honestly, they are empty"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/bigsprites.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
 	icon_state = "crate"
 	anchored = TRUE
 	density = TRUE
@@ -112,7 +112,7 @@
 /obj/structure/urbanismcars
 	name = "Damaged car"
 	desc = "Just lost in time broken (and bit rusty) vehicle"
-	icon = 'modular_bluemoon/olgachan/urbanismpack/icons/vehicles.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/vehicles140x140.dmi'
 	icon_state = "car_wreck"
 	anchored = TRUE
 	density = TRUE

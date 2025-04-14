@@ -1,10 +1,3 @@
-// Black Mesa away mission factions
-
-#define FACTION_XEN "xen"
-#define FACTION_HECU "hecu"
-#define FACTION_BLACKOPS "blackops"
-#define FACTION_BLACKMESA "blackmesa"
-
 //Персонал чёрной мезы
 
 /obj/effect/mob_spawn/human/black_mesa
@@ -21,6 +14,7 @@
 	category = "offstation"
 	faction = list(FACTION_BLACKMESA)
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
@@ -28,7 +22,6 @@
 
 /datum/outfit/science_team
 	name = "science team member"
-
 	uniform = /obj/item/clothing/under/rank/rnd/scientist/halflife
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
@@ -53,6 +46,7 @@
 	outfit = /datum/outfit/security_guard
 	short_desc = "Ты являешься выжившим охранником чёрной мезы"
 	flavour_text = "Ты один из охранников Чёрной Мезы, а конкретно Сектора H. Твоя работа была размеренной и спокойной, но что-то пошло не так. Теперь ты, оставшись со своим напарником, лежишь без сознания в чудом уцелевшем КПП охраны"
+
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
@@ -103,6 +97,7 @@
 	important_info = "Не пытайся исследовать комплекс до прибытия экспедиционной группы. В случае, когда прошло 20 минут от начала раунда, а исследователи так и не пришли, ты можешь постепенно продвигаться по комплексу."
 	category = "offstation"
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
@@ -110,7 +105,6 @@
 
 /datum/outfit/sectorhdirector
 	name = "Sector H director"
-
 	uniform = /obj/item/clothing/under/rank/rnd/research_director
 	head = /obj/item/clothing/head/beret/sci
 	suit = /obj/item/clothing/suit/toggle/labcoat
@@ -143,6 +137,7 @@
 	density = TRUE
 	category = "offstation"
 	antagonist_type = /datum/antagonist/ghost_role/hecu
+
 /obj/effect/mob_spawn/human/black_mesa/hecu/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
@@ -163,13 +158,13 @@
 	name = "HECU engineer"
 	outfit = /datum/outfit/hecu_engineer
 	short_desc = "Ты являешься профессиональным инженером небольшого отряда поддержки HECU."
+
 /obj/effect/mob_spawn/human/black_mesa/hecu/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.remove_language(/datum/language/common)
 
 /datum/outfit/hecu
 	name = "HECU grunt"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	mask = /obj/item/clothing/mask/gas/hecu
 	head = /obj/item/clothing/head/helmet/hecu
@@ -190,7 +185,6 @@
 
 /datum/outfit/hecu_engineer
 	name = "HECU engineer"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	glasses = /obj/item/clothing/glasses/welding
 	head = /obj/item/clothing/head/helmet/hecu
@@ -216,7 +210,6 @@
 
 /datum/outfit/hecu_breacher
 	name = "HECU breacher"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	mask = /obj/item/clothing/mask/balaclava
 	head = /obj/item/clothing/head/helmet/hecu
@@ -240,7 +233,6 @@
 
 /datum/outfit/hecu_medic
 	name = "HECU medic"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses/hecu
 	head = /obj/item/clothing/head/helmet/hecu
@@ -268,7 +260,6 @@
 
 /datum/outfit/hecu_leader
 	name = "HECU squad leader"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	head = /obj/item/clothing/head/beret/sec
 	suit = /obj/item/clothing/suit/armor/hecu
@@ -308,6 +299,7 @@
 	density = TRUE
 	category = "offstation"
 	antagonist_type = /datum/antagonist/ghost_role/losthecu
+
 /obj/effect/mob_spawn/human/black_mesa/hecu/lost/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
@@ -316,7 +308,6 @@
 
 /datum/outfit/losthecu
 	name = "Lost HECU grunt"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	mask = /obj/item/clothing/mask/gas/hecu
 	head = /obj/item/clothing/head/helmet/nvg/hecu
@@ -337,10 +328,6 @@
 		/obj/item/ammo_box/magazine/m16,
 	)
 
-
-
-
-
 //трупы
 
 /obj/effect/mob_spawn/human/hlscientist
@@ -351,14 +338,12 @@
 	name = "black mesa guard"
 	outfit = /datum/outfit/security_guard
 
-
 /obj/effect/mob_spawn/human/deadhecu
 	name = "hecu grunt"
 	outfit = /datum/outfit/hecudead
 
 /datum/outfit/hecudead
 	name = "dead hecu grunt"
-
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
 	mask = /obj/item/clothing/mask/gas/hecu
 	head = /obj/item/clothing/head/helmet/hecu
@@ -390,6 +375,7 @@
 	important_info = "Не пытайтесь исследовать карту далее основного атриума, комнат с туррелями ( не ломайте стены в комнаты, закрытые ключ картами/заболтироваными дверьми ). Вы можете покинуть гейт/исследовать его ТОЛЬКО В ТОМ СЛУЧАЕ, когда договоритесь с исследовательской командой. Если вы решили враждовать с исследователями, то вам после этого запрещено покидать гейт и как либо пытатся продвигатся далее по локации"
 	category = "offstation"
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+
 /obj/effect/mob_spawn/human/black_mesa/hecu/special(mob/living/carbon/human/spawned_human)
 	. = ..()
 	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
@@ -397,10 +383,8 @@
 	spawned_human.grant_language(/datum/language/signlanguage, TRUE, TRUE, LANGUAGE_MIND)
 	spawned_human.remove_language(/datum/language/common)
 
-
 /datum/outfit/blackops
 	name = "male black operative"
-
 	uniform = /obj/item/clothing/under/syndicate/combat
 	mask = /obj/item/clothing/mask/balaclava/breath
 	glasses = /obj/item/clothing/glasses/night/blackops

@@ -1,6 +1,4 @@
-
 #define COMSIG_QDELETING "parent_qdeleting"
-#define isxenmob(A) (istype(A, /mob/living/simple_animal/hostile/blackmesa/xen))
 
 /obj/structure/shockplant
 	name = "Strange xen plant"
@@ -17,9 +15,7 @@
 	var/shock_range = 6
 	var/shock_cooldown = 3 SECONDS
 	var/shock_power = 10000
-
 	COOLDOWN_DECLARE(shock_cooldown_timer)
-
 
 /obj/structure/shockplant/Initialize(mapload)
 	. = ..()
@@ -254,3 +250,5 @@
 	max_integrity = 9999999
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	invisibility = INVISIBILITY_ABSTRACT
+
+#undef COMSIG_QDELETING
