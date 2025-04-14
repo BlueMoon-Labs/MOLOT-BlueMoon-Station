@@ -174,3 +174,12 @@
 			. += mutable_appearance('icons/mob/clothing/head.dmi', "weldvisor")
 
 /////////////////////////////////////////////////////
+
+/obj/item/clothing/head/HoS/beret/white
+	name = "white beret"
+	desc = "Armored beret in white colors for good boys and girls of NanoTrasen."
+	icon_state = "hos_beret_white"
+	item_state = "hos_beret_white"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

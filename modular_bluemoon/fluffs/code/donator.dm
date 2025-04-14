@@ -1319,3 +1319,27 @@
 	restricted_desc = "Station Engineer"
 	restricted_roles = list("Station Engineer")
 	cost = 2
+
+/datum/gear/donator/bm/panophobia_hos_beret
+	name = "White beret"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/HoS/beret/white
+	ckeywhitelist = list("earthphobia")
+	restricted_roles = list("Head of Security")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/panophobia_hos_trench
+	name = "White armored trenchcoat"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/armor/hos/trenchcoat/white
+	ckeywhitelist = list("earthphobia")
+	restricted_roles = list("Head of Security")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/panophobia_hos_jackboots
+	name = "White jackboots"
+	slot = ITEM_SLOT_FEET
+	path = /obj/item/clothing/shoes/jackboots/sec/white
+	ckeywhitelist = list("earthphobia")
+	restricted_roles = list("Head of Security")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

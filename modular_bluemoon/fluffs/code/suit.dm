@@ -324,3 +324,13 @@
 	desc = "A modkit for making an chaplain armor into The Armor of the Dark Apostle"
 	product = /obj/item/clothing/suit/armor/riot/chaplain/wh_armor
 	fromitem = list(/obj/item/clothing/suit/armor/riot/chaplain, /obj/item/clothing/suit/armor/riot/chaplain/teutonic, /obj/item/clothing/suit/armor/riot/chaplain/teutonic/alt, /obj/item/clothing/suit/armor/riot/chaplain/hospitaller)
+
+/obj/item/clothing/suit/armor/hos/trenchcoat/white
+	name = "white armored trenchcoat"
+	desc = "White armored coat. Armored coat in white colors for good boys and girls of NanoTrasen."
+	icon_state = "hos_trench_white"
+	item_state = "hos_trench_white"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	unique_reskin = list()
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
