@@ -19,9 +19,9 @@
 /obj/item/gun/ballistic/automatic/sniper_rifle/m4oa1
 	name = "m40a1 sniper rifle"
 	desc = "Довольно старая, но верная и мощная снайперская винтовка прямиком из далёкого прошлого"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlguns.dmi'
-	lefthand_file = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hllefthand.dmi'
-	righthand_file = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlrighthand.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "m4oa1"
 	item_state = "m4oa1"
 	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/sniper_fire.ogg'
@@ -49,7 +49,7 @@
 
 /obj/item/ammo_box/magazine/sniper_rounds/m4oa1
 	name = "m4oa1 magazine"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/ammo_boxes.dmi'
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
 	icon_state = "m4oa1"
 	ammo_type = /obj/item/ammo_casing/p50
 	max_ammo = 8
@@ -65,9 +65,9 @@
 /obj/item/gun/ballistic/automatic/mp5
 	name = "MP5 machinegun"
 	desc = "Heckler Koch Mp5 является хоть и устаревшим, но невероятно сильным оружием в виду своей скорострельности. Какой идиот вообще подумал, что будет отличной идеей отобрать его у морпеха Хеку?"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlguns.dmi'
-	lefthand_file = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hllefthand.dmi'
-	righthand_file = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlrighthand.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "mp5"
 	item_state = "mp5"
 	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/mp5.ogg'
@@ -91,7 +91,7 @@
 /obj/item/ammo_box/magazine/mp5
 	name = "MP5 magazine (10mm Auto)"
 	desc = "Magazines taking 10mm ammunition; it fits in the MP5."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/ammo_boxes.dmi'
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
 	icon_state = "mp5"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 30
@@ -106,9 +106,9 @@
 /obj/item/gun/ballistic/shotgun/spas
 	name = "SPAS 12 shotgun"
 	desc = "Этот невероятно старый и брутальный дробовик заставляет вас надеть балаклаву с горнолыжными очками."
-	lefthand_file = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hllefthand.dmi'
-	righthand_file = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlrighthand.dmi'
-	icon =  'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlguns.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "spas"
 	item_state = "spas"
 	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/shotgun.ogg'
@@ -182,25 +182,10 @@
 	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/underbarrel.ogg'
 	pin = /obj/item/firing_pin
 
-
-/obj/item/wrench/shepard
-	name = "Old wrench"
-	desc = "Этот гаечный ключ довольно увесист и излучает... Своеобразную ауру.."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/shepard.dmi'
-	icon_state = "shepard"
-	item_state = "wrench_caravan"
-	force = 40
-	attack_speed = 20
-	throwforce = 45
-	toolspeed = 0.1
-	wound_bonus = 10
-	w_class = WEIGHT_CLASS_NORMAL
-	hitsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/wrenchhit.ogg'
-
 /obj/item/gun/ballistic/automatic/m16a4/mesa
 	name = "\improper old M16 rifle"
 	desc = "Невероятно старая версия М16 с сломанным подствольным гранатомётом и... Большей отдачей что-ли? Держа её в руках, вы чувствуете странные ощущения"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/m16hl.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
 	icon_state = "m16hl"
 	burst_size = 1
 	fire_delay = 3
@@ -217,7 +202,7 @@
 /obj/item/uber_teleporter
 	name = "\improper Nihilanth's Divinity"
 	desc = "It glows harshly, the power of a portal wielding monster lays within."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/plants.dmi'
+	icon = 'modular_bluemoon/icons/obj/structures/mesa_plants.dmi'
 	icon_state = "crystal_pylon"
 
 /obj/item/uber_teleporter/attack_self(mob/living/user, modifiers)

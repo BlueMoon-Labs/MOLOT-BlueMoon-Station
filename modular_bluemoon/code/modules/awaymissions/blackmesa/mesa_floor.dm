@@ -75,7 +75,7 @@
 /turf/open/indestructible/newmesacobble
 	name = "cobblestone"
 	baseturfs = /turf/open/floor/festive/cobblestone
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/cobble.dmi'
+	icon = 'modular_bluemoon/icons/turf/floors/cobble_turf.dmi'
 	icon_state = "unsmooth"
 	canSmoothWith = list(/turf/open/floor/festive/cobblestone)
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS

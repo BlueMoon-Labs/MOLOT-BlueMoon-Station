@@ -19,7 +19,7 @@
 /mob/living/simple_animal/hostile/blackmesa/xen/bullsquid
 	name = "bullsquid"
 	desc = "Противное инопланетное существо прямиком из другого измерения. Его противные глаза уже сверлят вас."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "bullsquid"
 	icon_living = "bullsquid"
 	icon_dead = "bullsquid_dead"
@@ -133,7 +133,7 @@
 /mob/living/simple_animal/hostile/blackmesa/xen/gonome
 	name = "Gonome"
 	desc = "Довольно опасная мутация обычного зомби! Вам точно стоило тратить время на его рассмотрение?"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "gonome"
 	icon_living = "gonome"
 	icon_dead = "gonome_dead"
@@ -171,7 +171,7 @@
 /mob/living/simple_animal/hostile/blackmesa/xen/houndeye
 	name = "houndeye"
 	desc = "Инопланетное существо, отдалённо напоминающее собаку. Очень жаль, что его рвение подбежать к вам приведёт к довольно плачевным последствиям."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "houndeye"
 	icon_living = "houndeye"
 	icon_dead = "houndeye_dead"
@@ -204,7 +204,7 @@
 /mob/living/simple_animal/hostile/blackmesa/xen/snark
 	name = "Snark"
 	desc = "Snarks are small, beetle-like xenian creatures with one beady green eye, an extendable beak, antennae, four legs, and a dark red thick segmented shell"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/snarkicon.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "snark"
 	icon_living = "snark"
 	icon_gib = null
@@ -267,7 +267,7 @@
 /mob/living/simple_animal/hostile/blackmesa/xen/vortigaunt
 	name = "vortigaunt"
 	desc = "There is no distance between us. No false veils of time or space may intervene."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "vortigaunt"
 	icon_living = "vortigaunt"
 	icon_dead = "vortigaunt_dead"

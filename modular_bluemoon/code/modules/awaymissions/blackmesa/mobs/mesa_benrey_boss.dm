@@ -16,7 +16,7 @@
 /mob/living/simple_animal/hostile/boss/benrey
 	name = "Benrey"
 	desc = "WHAT THE ACTUAL HELL"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "security_guard_melee"
 	icon_living = "security_guard_melee"
 	icon_dead = "security_guard_dead"

@@ -21,8 +21,8 @@
 /obj/item/clothing/glasses/night/blackops
 	name = "Black operative night vision goggles"
 	desc = "Линзы этих очков угрожающе горят красным цветом."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/glasses.dmi'
-	mob_overlay_icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mob/hecu_glass.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/glasses.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/eyes.dmi'
 	icon_state = "blackopsnight"
 	item_state = "blackopsnight"
 	darkness_view = 8
@@ -34,8 +34,8 @@
 /obj/item/clothing/suit/blackops
 	name = "Black operative special armor"
 	desc = "Почему нам всегда приходится убирать дерьмо, с которым не могут справиться пехотинцы?"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/blackopssuit.dmi'
-	mob_overlay_icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mob/blackopssuit.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/suit.dmi'
 	icon_state = "blackops"
 	item_state = "blackops"
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
@@ -45,8 +45,8 @@
 //obj/item/clothing/glasses/welding/hecu
 //	name = "welding goggles"
 //	desc = "Защищает твои полные инженерным энтузиазмом глаза от слепоты"
-//	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/glasses.dmi'
-//	mob_overlay_icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mob/hecu_glass.dmi'
+//	icon = 'modular_bluemoon/icons/obj/clothing/glasses.dmi'
+//	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/eyes.dmi'
 //	icon_state = "hecu_engineer"
 //	item_state = "hecu_engineer"
 //Оставил код вырезанных очков (возможно я их когда-то смогу починить)
@@ -64,8 +64,8 @@
 /obj/item/clothing/glasses/hud/security/hecu_ski
 	name = "HECU ski glasses"
 	desc = "Урбанистическая горнолыжная маска с обширным функционалом, разработанная специально для операций в городских местностях. Так-же отлично подходят для совершения военных преступлений на территории чёрной мезы"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/glasses.dmi'
-	mob_overlay_icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mob/hecu_glass.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/glasses.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/eyes.dmi'
 	icon_state = "ski_hecu"
 	item_state = "ski_hecu"
 	alternate_worn_layer = ABOVE_HEAD_LAYER

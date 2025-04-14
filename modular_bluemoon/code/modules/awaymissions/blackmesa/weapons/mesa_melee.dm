@@ -1,8 +1,8 @@
 /obj/item/crowbar/freeman
 	name = "blood soaked crowbar"
 	desc = "A heavy handed crowbar, it drips with blood."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/freeman.dmi'
-	icon_state = "crowbar"
+	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
+	icon_state = "freeman_crowbar"
 	force = 35
 	throwforce = 45
 	toolspeed = 0.1
@@ -19,3 +19,17 @@
 /obj/item/crowbar/freeman/ultimate/Initialize(mapload)
 	. = ..()
 	add_filter("rad_glow", 2, list("type" = "outline", "color" = "#fbff1479", "size" = 2))
+
+/obj/item/wrench/shepard
+	name = "Old wrench"
+	desc = "Этот гаечный ключ довольно увесист и излучает... Своеобразную ауру.."
+	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
+	icon_state = "shepard_wrench"
+	item_state = "wrench_caravan"
+	force = 40
+	attack_speed = 20
+	throwforce = 45
+	toolspeed = 0.1
+	wound_bonus = 10
+	w_class = WEIGHT_CLASS_NORMAL
+	hitsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/wrenchhit.ogg'

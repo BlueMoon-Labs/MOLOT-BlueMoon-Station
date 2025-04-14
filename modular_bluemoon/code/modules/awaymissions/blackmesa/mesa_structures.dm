@@ -3,7 +3,7 @@
 /obj/structure/shockplant
 	name = "Strange xen plant"
 	desc = "Невероятно искрит! Не рекомендую подходить к нему слишком близко"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/plants.dmi'
+	icon = 'modular_bluemoon/icons/obj/structures/mesa_plants.dmi'
 	icon_state = "electric_plant"
 	density = TRUE
 	anchored = TRUE
@@ -92,7 +92,7 @@
 /obj/structure/xen_pylon
 	name = "shield plant"
 	desc = "It seems to be some kind of force field generator."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/plants.dmi'
+	icon = 'modular_bluemoon/icons/obj/structures/mesa_plants.dmi'
 	icon_state = "crystal_pylon"
 	max_integrity = 70
 	density = TRUE
@@ -164,7 +164,7 @@
 /obj/item/grenade/xen_crystal
 	name = "xen crystal"
 	desc = "A crystal with anomalous properties."
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/plants.dmi'
+	icon = 'modular_bluemoon/icons/obj/structures/mesa_plants.dmi'
 	icon_state = "crystal_grenade"
 	/// What range do we effect mobs?
 	var/effect_range = 6

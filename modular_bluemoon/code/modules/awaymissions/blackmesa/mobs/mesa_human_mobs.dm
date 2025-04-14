@@ -5,7 +5,7 @@
 /mob/living/simple_animal/hostile/blackmesa/hecu
 	name = "HECU Grunt"
 	desc = "I didn't sign on for this shit. Monsters, sure, but civilians? Who ordered this operation anyway?"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "hecu_melee"
 	icon_living = "hecu_melee"
 	icon_dead = "hecu_dead"
@@ -71,7 +71,7 @@
 /mob/living/simple_animal/hostile/blackmesa/sec
 	name = "Security Guard"
 	desc = "About that beer I owe'd ya!"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "security_guard_melee"
 	icon_living = "security_guard_melee"
 	icon_dead = "security_guard_dead"
@@ -166,7 +166,7 @@
 /mob/living/simple_animal/hostile/blackmesa/blackops
 	name = "black operative"
 	desc = "Why do we always have to clean up a mess the grunts can't handle?"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "blackops"
 	icon_living = "blackops"
 	icon_dead = "blackops"
@@ -225,7 +225,7 @@
 
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot/hecu
 	name = "\improper HECU tank operator"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/mobs.dmi'
+	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
 	icon_state = "hecu_melee"
 	icon_living = "hecu_melee"
 	icon_dead = "hecu_dead"

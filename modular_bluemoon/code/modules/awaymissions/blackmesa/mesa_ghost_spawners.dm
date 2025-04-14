@@ -77,9 +77,9 @@
 /obj/item/clothing/under/rank/rnd/scientist/halflife
 	name = "science team costume"
 	desc = "Самый обычный костюм работника комплекса чёрной мезы"
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/rnd.dmi'
-	mob_overlay_icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/rndmob.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/olgachan/blackmesafromnova/icons/gear/rnd_digi.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/uniforms.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/uniforms_digi.dmi'
 	icon_state = "hl_scientist"
 	item_state = "hl_scientist"
 	can_adjust = FALSE
