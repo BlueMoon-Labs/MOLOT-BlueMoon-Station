@@ -11,7 +11,7 @@
 	fire_delay = 0
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 	automatic_burst_overlay = FALSE
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/9mm.ogg'
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/9mm.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/hl9mm/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
@@ -24,7 +24,7 @@
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "m4oa1"
 	item_state = "m4oa1"
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/sniper_fire.ogg'
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/sniper_fire.ogg'
 	recoil = 1
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds/m4oa1
@@ -70,7 +70,7 @@
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "mp5"
 	item_state = "mp5"
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/mp5.ogg'
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/mp5.ogg'
 	mag_type = /obj/item/ammo_box/magazine/mp5
 	can_suppress = FALSE
 	weapon_weight = WEAPON_HEAVY
@@ -111,14 +111,14 @@
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "spas"
 	item_state = "spas"
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/shotgun.ogg'
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 2
 	recoil = 4
 	force = 35
 	fire_delay = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/spas
-	pumpsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/shotgun_rack.ogg'
+	pumpsound = 'modular_bluemoon/sound/weapons/mesa/shotgun_rack.ogg'
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/ammo_box/magazine/internal/shot/spas
@@ -179,7 +179,7 @@
 
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/halflife
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/underbarrel.ogg'
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/underbarrel.ogg'
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/m16a4/mesa
@@ -190,7 +190,7 @@
 	burst_size = 1
 	fire_delay = 3
 	recoil = 1
-	fire_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/m16.ogg'
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/m16.ogg'
 
 /obj/item/gun/ballistic/automatic/m16a4/mesa/update_icon_state()
 	if(magazine)

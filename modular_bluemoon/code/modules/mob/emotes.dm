@@ -495,7 +495,7 @@
 	key_third_person = "heavyasses"
 	message = "LITERALLY SAYS <b>\"MY ASS IS HEAVY\"</b>"
 	emote_type = EMOTE_BOTH
-	sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/emote/myassisheavy.ogg'
+	sound = 'modular_bluemoon/sound/emotes/myassisheavy.ogg'
 	emote_cooldown = 3.2 SECONDS
 
 /datum/emote/sound/human/blackops
@@ -503,7 +503,7 @@
 	key_third_person = "blackopsalerted"
 	message = "Says <b>\"i have a target\"</b>"
 	emote_type = EMOTE_BOTH
-	sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/emote/boalert.ogg'
+	sound = 'modular_bluemoon/sound/emotes/boalert.ogg'
 	emote_cooldown = 5 SECONDS
 
 
@@ -512,5 +512,5 @@
 	key_third_person = "higordons"
 	message = "Says <b>\"Hello Gordon\"</b>"
 	emote_type = EMOTE_BOTH
-	sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/emote/hellogordon.ogg'
+	sound = 'modular_bluemoon/sound/emotes/hellogordon.ogg'
 	emote_cooldown = 5 SECONDS

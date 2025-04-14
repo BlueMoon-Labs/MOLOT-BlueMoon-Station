@@ -42,11 +42,11 @@
 	retreat_distance = 4
 	minimum_distance = 4
 	dodging = TRUE
-	projectilesound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/goo_attack3.ogg'
+	projectilesound = 'modular_bluemoon/sound/creatures/mesa/bullsquid/goo_attack3.ogg'
 	melee_damage_upper = 18
-	attack_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/attack1.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/mesa/bullsquid/attack1.ogg'
 	gold_core_spawnable = HOSTILE_SPAWN
-	alert_sounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/detect1.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/detect2.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/detect3.ogg')
+	alert_sounds = list('modular_bluemoon/sound/creatures/mesa/bullsquid/detect1.ogg','modular_bluemoon/sound/creatures/mesa/bullsquid/detect2.ogg','modular_bluemoon/sound/creatures/mesa/bullsquid/detect3.ogg')
 	projectiletype = /obj/item/projectile/neurotox/bullsquid
 
 
@@ -57,8 +57,8 @@
 	damage_type = BURN
 	knockdown = 20
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/neurotoxin
-	hitsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/splat1.ogg'
-	hitsound_wall = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/splat1.ogg'
+	hitsound = 'modular_bluemoon/sound/creatures/mesa/bullsquid/splat1.ogg'
+	hitsound_wall = 'modular_bluemoon/sound/creatures/mesa/bullsquid/splat1.ogg'
 
 /obj/effect/temp_visual/impact_effect/neurotoxin
 	icon_state = "greenglow"
@@ -110,14 +110,14 @@
 
 /obj/structure/bullsquidshot/Destroy()
 	new /obj/effect/temp_visual/impact_effect/neurotoxin(get_turf(src))
-	playsound(src,'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/splat1.ogg',50, 1, -1)
+	playsound(src,'modular_bluemoon/sound/creatures/mesa/bullsquid/splat1.ogg',50, 1, -1)
 	return ..()
 
 /obj/structure/bullsquidshot/Crossed(atom/movable/AM)
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/jungle/leaper))
-			playsound(src,'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/splat1.ogg',50, 1, -1)
+			playsound(src,'modular_bluemoon/sound/creatures/mesa/bullsquid/splat1.ogg',50, 1, -1)
 			L.DefaultCombatKnockdown(50)
 			if(iscarbon(L))
 				var/mob/living/carbon/C = L
@@ -155,10 +155,10 @@
 	harm_intent_damage = 25
 	melee_damage_lower = 30
 	melee_damage_upper = 30
-	attack_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/bullsquid/attack1.ogg'
+	attack_sound = 'modular_bluemoon/sound/creatures/mesa/bullsquid/attack1.ogg'
 	minbodytemp = 0
 	maxbodytemp = 1500
-	alert_sounds = list ('modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert1.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert3.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert2.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/gonome/gonomealert4.ogg')
+	alert_sounds = list ('modular_bluemoon/sound/creatures/mesa/gonome/gonomealert1.ogg','modular_bluemoon/sound/creatures/mesa/gonome/gonomealert3.ogg','modular_bluemoon/sound/creatures/mesa/gonome/gonomealert2.ogg','modular_bluemoon/sound/creatures/mesa/gonome/gonomealert4.ogg')
 	loot = list(/obj/effect/gibspawner/human, /obj/item/wrench/shepard)
 
 // Mesa Headcrab
@@ -197,7 +197,7 @@
 
 	minbodytemp = 0
 	maxbodytemp = 1500
-	alert_sounds = list ('modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/houndeye/he_alert1.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/houndeye/he_alert2.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/houndeye/he_alert3.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/houndeye/he_alert4.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/houndeye/he_alert5.ogg')
+	alert_sounds = list ('modular_bluemoon/sound/creatures/mesa/houndeye/he_alert1.ogg','modular_bluemoon/sound/creatures/mesa/houndeye/he_alert2.ogg','modular_bluemoon/sound/creatures/mesa/houndeye/he_alert3.ogg','modular_bluemoon/sound/creatures/mesa/houndeye/he_alert4.ogg','modular_bluemoon/sound/creatures/mesa/houndeye/he_alert5.ogg')
 
 // Xen Shark
 
@@ -233,8 +233,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	loot = list(/obj/effect/decal/cleanable/insectguts)
-	attack_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/snark/snark4.ogg'
-	alert_sounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/snark/snark1.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/snark/snark2.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/snark/snark3.ogg')
+	attack_sound = 'modular_bluemoon/sound/creatures/mesa/snark/snark4.ogg'
+	alert_sounds = list('modular_bluemoon/sound/creatures/mesa/snark/snark1.ogg','modular_bluemoon/sound/creatures/mesa/snark/snark2.ogg','modular_bluemoon/sound/creatures/mesa/snark/snark3.ogg')
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /mob/living/simple_animal/hostile/blackmesa/xen/snark/OpenFire(atom/A)
@@ -280,7 +280,7 @@
 	speed = 1
 	emote_taunt = list("galalungas", "galungas", "gungs")
 	projectiletype = /obj/item/projectile/beam/emitter/hitscan
-	projectilesound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/attack_shoot4.ogg'
+	projectilesound = 'modular_bluemoon/sound/creatures/mesa/vortigaunt/attack_shoot4.ogg'
 	ranged_cooldown_time = 5 SECONDS
 	ranged_message = "fires"
 	taunt_chance = 100
@@ -298,22 +298,22 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	loot = list(/obj/item/stack/sheet/bone)
 	alert_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert01b.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/alert06.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert01b.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/alert06.ogg',
 	)
 	/// SOunds we play when asked to follow/unfollow.
 	var/list/follow_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/village_argue01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/village_argue02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/village_argue03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/village_argue04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/village_argue05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/vortigaunt/village_argue05a.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/village_argue01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/village_argue02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/village_argue03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/village_argue04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/village_argue05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/vortigaunt/village_argue05a.ogg',
 	)
 	var/follow_speed = 1
 	var/follow_distance = 2

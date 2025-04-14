@@ -37,14 +37,14 @@
 	rapid_melee = 2
 	footstep_type = FOOTSTEP_MOB_SHOE
 	alert_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert06.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert07.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert08.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/hecu/hg_alert10.ogg'
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert06.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert07.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert08.ogg',
+		'modular_bluemoon/sound/creatures/mesa/hecu/hg_alert10.ogg'
 	)
 
 
@@ -101,48 +101,48 @@
 	rapid_melee = 2
 	footstep_type = FOOTSTEP_MOB_SHOE
 	alert_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance06.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance07.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance08.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance09.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/annoyance10.ogg'
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance06.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance07.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance08.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance09.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/annoyance10.ogg'
 	)
 	var/list/follow_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadon01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadon02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadon03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway06.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway07.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/leadtheway08.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/letsgo01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/letsgo02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/letsgo03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadon01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadon02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadon03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway06.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway07.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/leadtheway08.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/letsgo01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/letsgo02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/letsgo03.ogg',
 		)
 	var/list/unfollow_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/holddownspot01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/holddownspot02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/holddownspot03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/holddownspot04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/holddownspot05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/illstayhere01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/illstayhere02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/illstayhere03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/imstickinghere01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/imstickinghere02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/imstickinghere03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/imstickinghere04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/security_guard/imstickinghere05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/holddownspot01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/holddownspot02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/holddownspot03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/holddownspot04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/holddownspot05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/illstayhere01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/illstayhere02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/illstayhere03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/imstickinghere01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/imstickinghere02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/imstickinghere03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/imstickinghere04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/security_guard/imstickinghere05.ogg',
 	)
 	var/follow_speed = 2
 	var/follow_distance = 2
@@ -198,14 +198,14 @@
 	rapid_melee = 2
 	footstep_type = FOOTSTEP_MOB_SHOE
 	alert_sounds = list(
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert01.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert02.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert03.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert04.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert05.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert06.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert07.ogg',
-		'modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/blackops/bo_alert08.ogg'
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert01.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert02.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert03.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert04.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert05.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert06.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert07.ogg',
+		'modular_bluemoon/sound/creatures/mesa/blackops/bo_alert08.ogg'
 	)
 
 
@@ -217,7 +217,7 @@
 	icon_state = "blackops_ranged"
 	icon_living = "blackops_ranged"
 	casingtype = /obj/item/ammo_casing/c10mm
-	projectilesound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/mp5.ogg'
+	projectilesound = 'modular_bluemoon/sound/weapons/mesa/mp5.ogg'
 	attack_sound = 'sound/weapons/cqchit1.ogg'
 	loot = list(/obj/effect/gibspawner/human, /obj/item/ammo_box/magazine/m16)
 	rapid_melee = 1

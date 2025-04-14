@@ -7,8 +7,8 @@
 	throwforce = 45
 	toolspeed = 0.1
 	wound_bonus = 10
-	hitsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/crowbar2.ogg'
-	mob_throw_hit_sound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/crowbar2.ogg'
+	hitsound = 'modular_bluemoon/sound/weapons/mesa/crowbar2.ogg'
+	mob_throw_hit_sound = 'modular_bluemoon/sound/weapons/mesa/crowbar2.ogg'
 	can_force_powered = TRUE
 
 /obj/item/crowbar/freeman/ultimate
@@ -32,4 +32,4 @@
 	toolspeed = 0.1
 	wound_bonus = 10
 	w_class = WEIGHT_CLASS_NORMAL
-	hitsound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/wrenchhit.ogg'
+	hitsound = 'modular_bluemoon/sound/weapons/mesa/wrenchhit.ogg'

@@ -1,7 +1,7 @@
 /area/awaymission/ihategordon
 	name = "Main sector H complex"
-	shipambience ='modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaxenlab.ogg'
-	ambientsounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesainsideambience.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaamb1.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/bmas1.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/bmas2.ogg' , 'modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/bmas3.ogg' )
+	shipambience ='modular_bluemoon/sound/ambience/mesa/mesaxenlab.ogg'
+	ambientsounds = list('modular_bluemoon/sound/ambience/mesa/mesainsideambience.ogg' , 'modular_bluemoon/sound/ambience/mesa/mesaamb1.ogg' , 'modular_bluemoon/sound/ambience/mesa/bmas1.ogg' , 'modular_bluemoon/sound/ambience/mesa/bmas2.ogg' , 'modular_bluemoon/sound/ambience/mesa/bmas3.ogg' )
 
 /area/awaymission/ihategordon/entrance
 	name = "Facility entrance"
@@ -102,8 +102,8 @@
 /area/awaymission/outsideofmesa
 	name = "Outside of facility"
 	icon_state = "awaycontent6"
-	shipambience ='modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaoutsideambient.ogg'
-	ambientsounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/mesaoutsideambient.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/ambience/outsideofcomplex.ogg')
+	shipambience ='modular_bluemoon/sound/ambience/mesa/mesaoutsideambient.ogg'
+	ambientsounds = list('modular_bluemoon/sound/ambience/mesa/mesaoutsideambient.ogg','modular_bluemoon/sound/ambience/mesa/outsideofcomplex.ogg')
 
 /area/awaymission/ihategordon/secret_rooms
 	name = "secret"

@@ -41,7 +41,7 @@
 	attack_sound = 'sound/magic/blink.ogg'
 	var/list/copies = list()
 	footstep_type = FOOTSTEP_MOB_SHOE
-	alert_sounds = list('modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/benrey/benreylaugh.ogg','modular_bluemoon/olgachan/blackmesafromnova/sound/mobs/benrey/youdie.ogg')
+	alert_sounds = list('modular_bluemoon/sound/creatures/mesa/benrey/benreylaugh.ogg','modular_bluemoon/sound/creatures/mesa/benrey/youdie.ogg')
 
 
 /datum/action/boss/benrey_summon_sketelons
@@ -150,7 +150,7 @@
 	attack_verb_continuous = "SWEET VOICES"
 	attack_verb_simple = "SWEET VOICE"
 	deathmessage = "Slowly decays into ashes"
-	projectilesound = 'modular_bluemoon/olgachan/blackmesafromnova/sound/weapons/sweetvoice.ogg'
+	projectilesound = 'modular_bluemoon/sound/weapons/mesa/sweetvoice.ogg'
 	projectiletype = /obj/item/projectile/magic/teleport/benrey
 
 /mob/living/simple_animal/hostile/skeleton/benrey/meteor
