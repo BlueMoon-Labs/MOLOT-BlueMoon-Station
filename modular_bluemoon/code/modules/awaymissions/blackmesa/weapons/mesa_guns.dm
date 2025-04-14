@@ -1,7 +1,7 @@
 /obj/item/gun/ballistic/automatic/pistol/hl9mm
 	name = "9mm pistol"
 	desc = " пистолет Beretta 92FS или же 9mm pistol является довольно распространённым пистолетом у охранников комплекса чёрной мезы... Выглядит невероятно старомодно "
-	icon = 'modular_bluemoon/olgachan/blackmesafromnova/icons/guns/hlguns.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
 	icon_state = "hl9mmpistol"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
