@@ -6,6 +6,6 @@
 	anchored = TRUE
 	density = TRUE
 	max_integrity = 40
-	icon = 'modular_bluemoon/olgachan/inflatables/icons/inflatable.dmi'
+	icon = 'modular_bluemoon/icons/obj/structures/inflatable.dmi'
 	icon_state = "wall"
 	armor = list(MELEE = 0, BULLET =30, LASER = 20, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
