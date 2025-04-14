@@ -1099,18 +1099,12 @@
 		addtimer(CALLBACK(exposed_mob, TYPE_PROC_REF(/mob/living, do_strange_reagent_revival), healing), 7 SECONDS)
 		addtimer(CALLBACK(exposed_mob, TYPE_PROC_REF(/mob/living, do_jitter_animation), 1 SECONDS), 8 SECONDS)
 
-	var/tplus = world.time - exposed_mob.timeofdeath
 	if(exposed_mob.revive())
 		exposed_mob.grab_ghost()
-		var/list/policies = CONFIG_GET(keyed_list/policy)
-		var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
-		var/late = timelimit && (tplus > timelimit)
-		var/policy = policies[POLICYCONFIG_ON_DEFIB_LATE]	//Always causes memory loss due to the nature of strange reagent.
-		if(policy)
-			to_chat(exposed_mob, policy)
-		exposed_mob.log_message("revived using strange reagent, [tplus] deciseconds from time of death, considered late revival due to usage of strange reagent.", LOG_GAME)
-		message_admins("[ADMIN_LOOKUPFLW(exposed_mob)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
-		log_admin("[exposed_mob] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+		// BLUEMOON EDIT START - изменение памяти после смерти
+		exposed_mob.mind?.forget_death(DEATH_FORGETFULNESS_REASON_STRANGE_REAGENT)
+		exposed_mob.mind?.revival_handle_memory("strange reagent")
+		// BLUEMOON EDIT END
 
 	return ..()
 

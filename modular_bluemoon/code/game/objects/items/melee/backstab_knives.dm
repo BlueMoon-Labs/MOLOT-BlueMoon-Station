@@ -237,7 +237,11 @@
 	if(!peaceful && !HAS_TRAIT(victim, TRAIT_DEATHCOMA))
 		ADD_TRAIT(victim, TRAIT_DEATHCOMA, "backstab")
 		enforced_deathcoma = TRUE
-	apply_backstab_effect(victim, user) // Сам эффект ножа, убивающий жертву
+	// Сам эффект ножа, убивающий жертву
+	apply_backstab_effect(victim, user)
+	// Жертва не помнит смерть от мгновенного удара в спину
+	if(victim.stat == DEAD)
+		victim.mind?.forget_death(DEATH_FORGETFULNESS_REASON_IMMEDIATE)
 	if(enforced_deathcoma)
 		REMOVE_TRAIT(victim, TRAIT_DEATHCOMA, "backstab")
 	// Произносим фразу, если спикер включён

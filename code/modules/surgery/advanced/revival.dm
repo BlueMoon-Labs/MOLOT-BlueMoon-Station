@@ -70,7 +70,6 @@
 		"[user] send a powerful shock to [target]'s brain with [tool]...")
 	target.adjustOxyLoss(-50, 0)
 	target.updatehealth()
-	var/tplus = world.time - target.timeofdeath
 	if(target.revive())
 		user.visible_message("...[target] wakes up, alive and aware!", "<span class='notice'><b>IT'S ALIVE!</b></span>")
 		target.visible_message("...[target] wakes up, alive and aware!")
@@ -79,15 +78,9 @@
 		for(var/obj/item/organ/O in target.internal_organs)//zap those buggers back to life!
 			if(O.organ_flags & ORGAN_FAILING)
 				O.applyOrganDamage(-5)
-		var/list/policies = CONFIG_GET(keyed_list/policy)
-		var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
-		var/late = timelimit && (tplus > timelimit)
-		var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
-		if(policy)
-			to_chat(target, policy)
-		target.log_message("revived using surgical revival, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
-		message_admins("[ADMIN_LOOKUPFLW(target)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
-		log_admin("[target] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+		// BLUEMOON EDIT START - изменение памяти после смерти
+		target.mind?.revival_handle_memory("surgical revival")
+		// BLUEMOON EDIT END
 		return TRUE
 	else
 		user.visible_message("...[target.ru_who()] convulses, then lies still.")
