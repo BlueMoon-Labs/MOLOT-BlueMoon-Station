@@ -89,6 +89,9 @@
 		var/obj/item/surgical_drapes/advanced/A = tool
 		advanced_surgeries |= A.get_advanced_surgeries()
 
+	if(HAS_TRAIT(user.mind, TRAIT_KNOW_MED_SURGERY_T2))
+		advanced_surgeries |= KNOW_MED_SURGERY_OPERATIONS
+
 	if(replaced_by in advanced_surgeries)
 		return FALSE
 	if(type in advanced_surgeries)

@@ -1421,19 +1421,6 @@
 	outfit = /datum/outfit/ds2/syndicate_command/admiral
 	starting_money = 10000 // BLUEMOON ADD
 
-// BLUEMOON ADD wires trait system + */special proc place for future coding
-/obj/effect/mob_spawn/human/ds2/syndicate/enginetech/special(mob/living/carbon/human/new_spawn)
-	. = ..()
-	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_ENGI_WIRES, GHOSTROLE_TRAIT)
-	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring))
-
-/obj/effect/mob_spawn/human/ds2/syndicate/researcher/special(mob/living/carbon/human/new_spawn)
-	. = ..()
-	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_CYBORG_WIRES, GHOSTROLE_TRAIT)
-	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/trained, /datum/skill_modifier/job/affinity/wiring))
-
-// BLUEMOON ADD END
-
 /datum/outfit/ds2
 	name = "default ds2 outfit"
 

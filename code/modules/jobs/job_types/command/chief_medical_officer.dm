@@ -31,6 +31,8 @@
 	paycheck_department = ACCOUNT_MED
 	bounty_types = CIV_JOB_MED
 
+	mind_traits = list(TRAIT_REAGENT_EXPERT, TRAIT_QUICK_CARRY) //BLUEMOON ADD use TRAIT system for jobs
+
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 2

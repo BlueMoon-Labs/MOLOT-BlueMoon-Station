@@ -1121,6 +1121,10 @@
 			return TRUE
 	if(isclothing(wear_mask) && (wear_mask.clothing_flags & SCAN_REAGENTS))
 		return TRUE
+	// BLUEMOON ADDITION AHEAD making use of trait system
+	else if (HAS_TRAIT(src.mind, TRAIT_REAGENT_EXPERT))
+		return TRUE
+	// BLUEMOON ADDITION END
 
 /mob/living/carbon/can_hold_items()
 	return TRUE

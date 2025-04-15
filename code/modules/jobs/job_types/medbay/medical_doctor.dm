@@ -19,6 +19,8 @@
 	paycheck_department = ACCOUNT_MED
 	bounty_types = CIV_JOB_MED
 
+	mind_traits = list(TRAIT_KNOW_MED_SURGERY_T2) //BLUEMOON ADD use TRAIT system for jobs
+
 	display_order = JOB_DISPLAY_ORDER_MEDICAL_DOCTOR
 	threat = 0.5
 

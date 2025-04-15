@@ -112,3 +112,21 @@
 	name = "Maid Squad"
 	outfit = /datum/outfit/ert/maid
 	role = "Горничная"
+
+/////////////////////////////////////////
+// Добавление трейтов ОБР ролям в их mind
+/datum/antagonist/ert/engineer_squadleader/apply_innate_effects(mob/living/mob_override)
+	ADD_TRAIT(owner, TRAIT_KNOW_ENGI_WIRES, JOB_TRAIT)
+	ADD_TRAIT(owner, TRAIT_KNOW_CYBORG_WIRES, JOB_TRAIT)
+
+/datum/antagonist/ert/engineer/apply_innate_effects(mob/living/mob_override)
+	ADD_TRAIT(owner, TRAIT_KNOW_ENGI_WIRES, TRAIT_GENERIC)
+	ADD_TRAIT(owner, TRAIT_KNOW_CYBORG_WIRES, TRAIT_GENERIC)
+
+/datum/antagonist/ert/medic/apply_innate_effects(mob/living/mob_override)
+	ADD_TRAIT(owner, TRAIT_QUICK_CARRY, TRAIT_GENERIC)
+	ADD_TRAIT(owner, TRAIT_REAGENT_EXPERT, TRAIT_GENERIC)
+
+/datum/antagonist/ert/hsc/apply_innate_effects(mob/living/mob_override)
+	ADD_TRAIT(owner, TRAIT_QUICK_CARRY, TRAIT_GENERIC)
+	ADD_TRAIT(owner, TRAIT_REAGENT_EXPERT, TRAIT_GENERIC)

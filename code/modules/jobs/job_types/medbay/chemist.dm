@@ -21,6 +21,8 @@
 	bounty_types = CIV_JOB_CHEM
 	departments = DEPARTMENT_BITFLAG_MEDICAL
 
+	mind_traits = list(TRAIT_REAGENT_EXPERT) //BLUEMOON ADD use TRAIT system for jobs
+
 	display_order = JOB_DISPLAY_ORDER_CHEMIST
 	threat = 1.5
 

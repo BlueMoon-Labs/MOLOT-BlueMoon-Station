@@ -239,7 +239,7 @@
 /datum/uplink_item/role_restricted/emitter_cannon
 	name = "Emitter Cannon"
 	desc = "A small emitter fitted into a gun case, do to size constraints and safety it can only shoot about ten times when fully charged."
-	cost = 5 //Low ammo, and deals same as 10mm but emp-able
+	cost = 13 //Low ammo, and deals same as 10mm but emp-able // BLIEMOOD EDIT this rofl about same as 10 mm was fixed, robust weapon
 	item = /obj/item/gun/energy/emitter
 	restricted_roles = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")
 

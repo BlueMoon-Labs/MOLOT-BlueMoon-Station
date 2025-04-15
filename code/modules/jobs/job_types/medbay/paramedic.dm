@@ -19,6 +19,8 @@
 	bounty_types = CIV_JOB_MED
 	departments = DEPARTMENT_BITFLAG_MEDICAL
 
+	mind_traits = list(TRAIT_QUICK_CARRY) //BLUEMOON ADD use TRAIT system for jobs
+
 	display_order = JOB_DISPLAY_ORDER_PARAMEDIC
 
 	threat = 0.5

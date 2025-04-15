@@ -13,7 +13,7 @@
 
 /obj/item/modkit/impactbaton_kit
 	name = "Impact Baton Kit"
-	desc = "A modkit for making a police baton into an impact baton."
+	desc = "A modkit for making a police baton into a jitte baton."
 	product = /obj/item/melee/classic_baton/impactbaton_jitte
 	fromitem = list(/obj/item/melee/classic_baton)
 
@@ -29,7 +29,7 @@
 
 /obj/item/modkit/catcrinbaton_kit
 	name = "3/51-H Telescopic Baton Kit"
-	desc = "A modkit for making a police baton into an impact baton."
+	desc = "A modkit for making a telescopic baton into an impact baton."
 	product = /obj/item/melee/classic_baton/telescopic/catcrin
 	fromitem = list(/obj/item/melee/classic_baton/telescopic)
 

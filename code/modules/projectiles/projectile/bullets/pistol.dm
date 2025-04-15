@@ -30,7 +30,7 @@
 /obj/item/projectile/bullet/c10mm_hp
 	name = "10mm hollow-point bullet"
 	damage = 40
-	armour_penetration = -50
+	armour_penetration = -25 // BLUEMOON EDIT balancing, was -50
 
 /obj/item/projectile/bullet/incendiary/c10mm
 	name = "10mm incendiary bullet"

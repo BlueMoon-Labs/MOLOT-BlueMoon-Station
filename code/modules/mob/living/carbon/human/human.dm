@@ -886,10 +886,15 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
 		if(HAS_TRAIT_FROM(src, TRAIT_QUICKER_CARRY, GLOVE_TRAIT))
 			gloves_used = TRUE
-		carrydelay = 20
+		carrydelay = 15 // BLUEMOON EDIT making this a little bit useful
 		skills_space = "профессионально "
+	// BLUEMOON ADDITION AHEAD making mind-based condition for job-specific qualification
+	else if(HAS_TRAIT(src.mind, TRAIT_QUICK_CARRY))
+		carrydelay = 20
+		skills_space = "оперативно "
+	// BLUEMOON ADDITION END
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY) || target.mob_weight < MOB_WEIGHT_NORMAL)
-		carrydelay = 30
+		carrydelay = 25 // BLUEMOON EDIT making this a little bit useful
 		skills_space = "быстро "
 	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
 	if(target.mob_weight > MOB_WEIGHT_NORMAL)
@@ -899,7 +904,7 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 		visible_message("<span class='notice'>[src] [skills_space]поднимает [target] на свои плечи.</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
-		"<span class='notice'>[gloves_used ? "Используя перчатки с наночипами, вы" : "Вы"] [skills_space]поднимаете [target] на свои плечи.]</span>")
+		"<span class='notice'>[gloves_used ? "Используя перчатки с наночипами, вы" : "Вы"] [skills_space]поднимаете [target] на свои плечи.</span>")
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, target, extra_checks = CALLBACK(src, PROC_REF(can_be_firemanned), target)))
 			//Second check to make sure they're still valid to be carried

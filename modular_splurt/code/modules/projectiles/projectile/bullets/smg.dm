@@ -17,9 +17,9 @@
 
 /obj/item/projectile/bullet/c45/hydra
 	name = ".45 Hydra-shock bullet"
-	damage = 15
+	damage = 30 // BLUEMOON CHANGE balancing, was 15
 	stamina = 0
-	armour_penetration = -65
+	armour_penetration = -20 // BLUEMOON CHANGE balancing, was -65
 	sharpness = SHARP_EDGED
 	wound_bonus = 30 // 30 WTF
 	bare_wound_bonus = 30 // 30 WTF
