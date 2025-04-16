@@ -82,7 +82,7 @@
 	desc = "A box of 5.8x40 mm  armour piercing titanium bullets. 30 cartridges total."
 	id = "box_acr5_ap"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 24000, /datum/material/titanium = 1000, silver = 500)
+	materials = list(/datum/material/iron = 24000, /datum/material/titanium = 1000, /datum/material/silver = 500)
 	build_path = /obj/item/ammo_box/magazine/acr5m30/ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
