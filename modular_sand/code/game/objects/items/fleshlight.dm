@@ -550,8 +550,7 @@
 
 /obj/item/portallight/proc/updatesleeve()
 	//get their looks and vagina colour!
-	cut_overlay(sleeve)//remove current overlays
-	cut_overlay(organ)
+	cut_overlays()
 
 	var/mob/living/carbon/human/H = null
 	if(portalunderwear && ishuman(portalunderwear.loc))
@@ -799,10 +798,11 @@
 			update_portal()
 			UnregisterSignal(user, COMSIG_PARENT_QDELETING)
 
-/obj/item/clothing/underwear/briefs/panties/portalpanties/dropped(mob/user)
-	UnregisterSignal(user, COMSIG_PARENT_QDELETING)
-	. = ..()
-	update_portal()
+// already processed in /equipped()
+// /obj/item/clothing/underwear/briefs/panties/portalpanties/dropped(mob/user)
+// 	UnregisterSignal(user, COMSIG_PARENT_QDELETING)
+// 	. = ..()
+// 	update_portal()
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/Destroy()
 	if(portallight.len)
