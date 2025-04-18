@@ -1,7 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
 /obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien{
+/mob/living/simple_animal/hostile/alien/sentinel{
+	del_on_death = 1;
+	loot = list(/obj/effect/gibspawner/xeno);
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -49,6 +51,7 @@
 	pixel_x = -6;
 	pixel_y = -21
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/mineral/plastitanium/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "aY" = (
@@ -93,7 +96,7 @@
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
-/obj/machinery/suit_storage_unit/open,
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "bJ" = (
@@ -115,6 +118,17 @@
 	icon_state = "larva_head_s"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"cc" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "cj" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -158,7 +172,32 @@
 /obj/effect/turf_decal{
 	dir = 8
 	},
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"cI" = (
+/obj/machinery/power/smes{
+	charge = 5e+006
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"cM" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor1-old"
+	},
+/obj/structure/sink/directional{
+	pixel_x = 0;
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "cP" = (
 /obj/machinery/door/poddoor{
@@ -178,7 +217,6 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
 "df" = (
@@ -207,7 +245,6 @@
 	pixel_x = -8;
 	pixel_y = 11
 	},
-/obj/structure/table_frame/wood,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "dn" = (
@@ -219,6 +256,7 @@
 	icon_state = "warningline_white";
 	dir = 1
 	},
+/obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "dq" = (
@@ -229,6 +267,10 @@
 	dir = 8
 	},
 /obj/structure/alien/egg/burst,
+/obj/structure/sign/warning/enginesafety{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
 "dx" = (
@@ -306,26 +348,40 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/powered/infestedship)
+"eO" = (
+/obj/item/storage/box/monkeycubes{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/storage/box/ingredients/american{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/obj/structure/rack/shelf,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/space/has_grav/powered/infestedship)
 "eX" = (
 /obj/structure/table/glass,
 /obj/item/pen{
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/phone{
-	layer = 3.1
-	},
 /obj/item/paper/crumpled/muddy/fluff/elephant_graveyard/rnd_notes{
 	default_raw_text = "<b>STERILIZATION ORDERS</b> <BR><BR><i>Detailed findings:</i><BR><BR>A biological research lab within the HD-10180 system has suffered from a complete containment failure. The SYN-C Brutus is to deliver a nuclear payload via strike team. Everything inside and outside the facility is to be killed on sight, including any research staff. Nuclear authentication codes have been sent via red phone, as have other detailed orders.<BR><BR><b>The rest of the documents are maps and mundane information regarding the crew's destination.</b>";
 	name = "STERILIZATION ORDERS";
 	desc = "These are particularly boring for what they entail."
 	},
+/obj/effect/spawner/lootdrop/trader/hardsuit{
+	lootcount = 1
+	},
+/obj/item/phone{
+	layer = 3.1;
+	pixel_x = -7;
+	pixel_y = 11
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "eZ" = (
-/obj/item/clothing/mask/facehugger/impregnated,
-/obj/item/storage/box/ingredients/american,
-/obj/item/storage/box/monkeycubes,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/infestedship)
 "fc" = (
@@ -360,14 +416,41 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "fM" = (
-/obj/structure/door_assembly/door_assembly_ext,
-/turf/template_noop,
-/area/template_noop)
-"fX" = (
-/obj/structure/toilet{
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular,
+/obj/item/assembly/flash/handheld,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"fQ" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/remains/xeno,
+/obj/item/organ/alien/plasmavessel/small,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/infestedship)
+"fU" = (
+/obj/effect/decal/remains/xeno,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/infestedship)
+"fX" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/infestedship)
+"gm" = (
+/turf/closed/wall/r_wall/syndicate{
+	smooth = 2
+	},
+/area/ruin/space/has_grav/powered/infestedship)
+"gq" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/ruin/space/has_grav/powered/infestedship)
 "gW" = (
 /obj/effect/turf_decal{
@@ -401,23 +484,17 @@
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/ruin/space/has_grav/powered/infestedship)
 "hB" = (
-/obj/item/chair/stool{
-	dir = 1
-	},
 /obj/effect/turf_decal{
 	icon_state = "warninglinecorner_white";
 	dir = 4
 	},
-/obj/effect/turf_decal{
-	icon_state = "warningline_white";
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/effect/turf_decal{
-	icon_state = "warningline_white"
-	},
-/obj/item/ammo_casing/spent,
-/obj/item/ammo_casing/spent,
-/turf/open/floor/mineral/plastitanium/yellow,
+/obj/effect/turf_decal/tile/bar,
+/turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "hI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -439,15 +516,19 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"hQ" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/has_grav/powered/infestedship)
 "hW" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal{
-	icon_state = "warningline_white";
-	dir = 1
-	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
@@ -514,6 +595,7 @@
 /obj/structure/door_assembly/door_assembly_ext{
 	anchored = 1
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "jx" = (
@@ -568,8 +650,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "kw" = (
-/obj/machinery/vending/boozeomat/syndicate_access,
-/turf/open/floor/plasteel/freezer,
+/turf/closed/wall,
 /area/ruin/space/has_grav/powered/infestedship)
 "kS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -577,6 +658,7 @@
 	welded = 1;
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/ruin/space/has_grav/powered/infestedship)
 "kT" = (
@@ -597,6 +679,14 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
+"kZ" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/infestedship)
 "lx" = (
 /obj/structure/barricade/security,
 /obj/effect/decal/cleanable/blood/gibs{
@@ -605,6 +695,9 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"lO" = (
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "lU" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -620,6 +713,37 @@
 	icon_state = "warningline_white";
 	dir = 8
 	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"lX" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "caravansyndicate3_bolt_starboard";
+	name = "External Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -24;
+	pixel_y = -6;
+	req_access_txt = "150";
+	specialfunctions = 4
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"ma" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/crowbar/red,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "mk" = (
@@ -639,6 +763,10 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"mv" = (
+/obj/structure/girder,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/infestedship)
 "mw" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -654,11 +782,22 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "mG" = (
-/obj/effect/decal/cleanable/blood{
-	icon_state = "floor1-old"
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/infestedship)
+"mN" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
 	},
-/obj/structure/sink/directional/south,
-/turf/open/floor/plating,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/under/inteq,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "nk" = (
 /obj/item/clothing/glasses/hud/health/night,
@@ -679,6 +818,34 @@
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
+"nl" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "caravansyndicate3_bridge";
+	name = "Bridge Blast Door Control";
+	pixel_x = -5;
+	pixel_y = 5;
+	req_access_txt = "150"
+	},
+/obj/machinery/button/door{
+	id = "caravansyndicate3_bolt_bridge";
+	name = "Bridge Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -5;
+	pixel_y = -5;
+	req_access_txt = "150";
+	specialfunctions = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "nm" = (
 /obj/machinery/vending/cigarette/syndicate,
 /obj/effect/turf_decal{
@@ -686,6 +853,15 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/infestedship)
+"nF" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "nG" = (
 /mob/living/simple_animal/hostile/alien{
@@ -710,6 +886,33 @@
 	layer = 3.1
 	},
 /obj/item/gun/ballistic/automatic/pistol/modular,
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"nV" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/inteq,
+/obj/item/clothing/glasses/night,
+/obj/item/gun/ballistic/automatic/pistol/modular,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"nY" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/ruin/space/has_grav/powered/infestedship)
 "oj" = (
@@ -785,6 +988,26 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/powered/infestedship)
+"pL" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/emergency,
+/obj/item/wrench,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "qb" = (
 /obj/effect/turf_decal{
 	dir = 8
@@ -809,11 +1032,6 @@
 	icon_state = "floor7-old"
 	},
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/button/door/directional/north{
-	name = "prisoner isolation shutter";
-	id = "captivity";
-	layer = 3.4
-	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "qC" = (
@@ -822,10 +1040,6 @@
 	},
 /obj/effect/turf_decal/tile/bar,
 /obj/structure/table/wood,
-/obj/effect/turf_decal{
-	icon_state = "warninglinecorner_white";
-	dir = 4
-	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "qE" = (
@@ -837,12 +1051,25 @@
 /obj/item/ammo_casing/spent,
 /turf/template_noop,
 /area/template_noop)
+"qG" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "qJ" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/clothing/mask/facehugger/toy,
-/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/item/storage/box/inteq_box,
+/turf/open/floor/engine/hull,
+/area/ruin/space/has_grav/powered/infestedship)
 "qR" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/plastitanium/airless,
@@ -905,7 +1132,7 @@
 	icon_state = "warningline_red";
 	dir = 10
 	},
-/obj/machinery/vending/inteq_vendomat,
+/obj/structure/table/reinforced,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "so" = (
@@ -919,6 +1146,18 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"sz" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/vomit/old{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "sA" = (
 /obj/item/clothing/mask/surgical,
@@ -960,6 +1199,34 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/ruin/space/has_grav/powered/infestedship)
+"tc" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/structure/sign/warning/vacuum{
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/shoes/sneakers/black,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"tg" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "ti" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -975,6 +1242,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "ug" = (
@@ -1018,15 +1286,27 @@
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "vj" = (
+/obj/structure/window/plastitanium/pirate,
 /obj/machinery/door/poddoor{
 	id = "Brutusexterior";
 	closingLayer = 2.65
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
+"vk" = (
+/obj/machinery/door/airlock/hatch{
+	id_tag = "caravansyndicate3_bolt_port";
+	name = "External Airlock";
+	normalspeed = 0;
+	req_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
 "vm" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "vo" = (
@@ -1095,7 +1375,6 @@
 	loot = list(/obj/effect/gibspawner/xeno);
 	faction = list("syndicate","xenomorph")
 	},
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
 "wi" = (
@@ -1138,6 +1417,11 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/powered/infestedship)
+"ws" = (
+/obj/structure/lattice,
+/obj/item/restraints/legcuffs/beartrap/energy,
+/turf/template_noop,
+/area/template_noop)
 "wt" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -1196,12 +1480,36 @@
 /obj/structure/sign/poster/contraband/inteq/inteq_better_dead,
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"wS" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/alien{
+	faction = list("syndicate","xenomorph")
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "wX" = (
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/template_noop,
 /area/template_noop)
 "xi" = (
 /turf/open/floor/mineral/plastitanium/airless,
+/area/ruin/space/has_grav/powered/infestedship)
+"xm" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "xo" = (
 /obj/effect/decal/cleanable/glass,
@@ -1234,12 +1542,22 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal{
-	icon_state = "warningline_white";
-	dir = 1
+/obj/item/chair{
+	dir = 8;
+	pixel_x = 5;
+	pixel_y = -3
 	},
-/obj/item/chair/greyscale,
+/obj/item/bodypart/head,
 /turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/space/has_grav/powered/infestedship)
+"xI" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 1;
+	icon_state = "standard_lethal";
+	mode = 1;
+	faction = list("InteQ")
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/powered/infestedship)
 "xR" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -1252,17 +1570,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal{
-	icon_state = "warningline_white";
-	dir = 8
-	},
-/obj/effect/turf_decal{
-	icon_state = "warningline_white"
-	},
-/obj/effect/turf_decal{
-	icon_state = "warninglinecorner_white";
-	dir = 4
-	},
 /obj/item/ammo_casing/spent,
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
@@ -1270,13 +1577,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/yellow,
+/turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "yb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/syndicate_present,
-/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/trader/weapons{
 	lootcount = 2
 	},
@@ -1287,11 +1592,15 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/structure/table/reinforced,
 /obj/structure/sign/poster/contraband/inteq/inteq_no_sex{
 	pixel_y = 33
 	},
+/obj/machinery/vending/boozeomat/syndicate_access,
 /turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/space/has_grav/powered/infestedship)
+"yw" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "yx" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -1299,7 +1608,16 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"yA" = (
+/obj/item/clothing/mask/facehugger/impregnated{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/structure/rack/shelf,
+/turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/infestedship)
 "yG" = (
 /obj/effect/decal/cleanable/robot_debris{
@@ -1335,6 +1653,16 @@
 "yZ" = (
 /obj/structure/window/shuttle/survival_pod/spawner,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"zf" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/clothing/under/inteq,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "zg" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1375,10 +1703,6 @@
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "Ah" = (
-/obj/effect/turf_decal{
-	icon_state = "warn_end_white";
-	dir = 4
-	},
 /obj/effect/decal/cleanable/blood/gibs/old{
 	icon_state = "gib4-old"
 	},
@@ -1391,7 +1715,11 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
-/turf/open/floor/mineral/plastitanium/yellow,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/bar,
+/turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "Ai" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1414,12 +1742,35 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"An" = (
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/space/has_grav/powered/infestedship)
 "AM" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"AN" = (
+/obj/structure/grille,
+/obj/structure/window/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "caravansyndicate3_bridge"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"AW" = (
+/obj/effect/turf_decal{
+	icon_state = "warningline_white"
+	},
+/obj/machinery/vending/inteq_vendomat,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/infestedship)
+"Be" = (
+/obj/structure/alien/weeds,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "Bh" = (
 /obj/effect/turf_decal{
@@ -1460,9 +1811,50 @@
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"BO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "BR" = (
 /obj/structure/lattice,
 /turf/template_noop,
+/area/ruin/space/has_grav/powered/infestedship)
+"Ce" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/table,
+/obj/item/clothing/glasses/welding,
+/turf/open/floor/engine/hull,
+/area/ruin/space/has_grav/powered/infestedship)
+"Cj" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/clothing/shoes/jackboots,
+/obj/item/crowbar/red,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Ck" = (
+/obj/machinery/door/window/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
 /area/ruin/space/has_grav/powered/infestedship)
 "Cp" = (
 /obj/item/coin/antagtoken{
@@ -1501,6 +1893,20 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"Dt" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/sign/warning/vacuum{
+	pixel_y = -32
+	},
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/storage/belt/military,
+/obj/item/clothing/under/inteq,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "DR" = (
 /obj/effect/turf_decal{
 	dir = 1
@@ -1508,13 +1914,35 @@
 /obj/effect/turf_decal,
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Ea" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "Eg" = (
 /obj/item/stack/rods,
 /turf/template_noop,
 /area/template_noop)
+"Ep" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/alien/sentinel{
+	del_on_death = 1;
+	loot = list(/obj/effect/gibspawner/xeno);
+	faction = list("syndicate","xenomorph")
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "Er" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -1533,7 +1961,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/structure/table/reinforced,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "Ez" = (
@@ -1569,7 +1997,6 @@
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "EQ" = (
-/obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
 	},
@@ -1580,10 +2007,7 @@
 /obj/machinery/door/poddoor/shutters/window/preopen{
 	id = "captivity"
 	},
-/mob/living/carbon/alien/larva{
-	faction = list("syndicate","xenomorph")
-	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "ER" = (
 /mob/living/simple_animal/hostile/alien/sentinel{
@@ -1593,6 +2017,11 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"EU" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "Ff" = (
 /obj/effect/decal/cleanable/glass,
@@ -1628,6 +2057,20 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
+"Fu" = (
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"FE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "FJ" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal{
@@ -1662,11 +2105,24 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
+"GJ" = (
+/obj/structure/bed/matress,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/infestedship)
+"GR" = (
+/obj/item/bodypart/head,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "Hc" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "larva_chest_s"
 	},
-/mob/living/simple_animal/hostile/alien{
+/mob/living/simple_animal/hostile/alien/sentinel{
+	del_on_death = 1;
+	loot = list(/obj/effect/gibspawner/xeno);
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
@@ -1703,7 +2159,6 @@
 	icon_state = "floor1-old"
 	},
 /obj/structure/bed/nest,
-/obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
 "HA" = (
@@ -1713,6 +2168,11 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"Im" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/powered/infestedship)
 "Iu" = (
 /obj/effect/turf_decal{
 	icon_state = "delivery_red"
@@ -1720,6 +2180,21 @@
 /obj/effect/turf_decal,
 /obj/structure/mecha_wreckage/hermes,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Iw" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Iz" = (
+/obj/machinery/airalarm/syndicate{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/ruin/space/has_grav/powered/infestedship)
 "IC" = (
 /obj/effect/turf_decal{
@@ -1742,7 +2217,22 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
+/mob/living/simple_animal/hostile/alien{
+	faction = list("syndicate","xenomorph")
+	},
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"IU" = (
+/obj/machinery/door/airlock/hatch{
+	id_tag = "caravansyndicate3_bolt_starboard";
+	name = "External Airlock";
+	normalspeed = 0;
+	req_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
 "Jh" = (
 /obj/effect/turf_decal{
@@ -1779,10 +2269,16 @@
 	loot = list(/obj/item/reagent_containers/hypospray/medipen/magillitis = 2, /obj/item/storage/box/syndie_kit/space = 3, /obj/item/storage/toolbox/syndicate = 5, /obj/item/clothing/shoes/chameleon/noslip = 6, /obj/item/grenade/clusterbuster/soap/inteq = 6, /obj/item/soap/syndie = 8, /obj/item/pen/sleepy = 12, /obj/item/storage/backpack/duffelbag/syndie = 3, /obj/item/storage/box/syndie_kit/chameleon = 4, /obj/item/storage/toolbox/inteq = 1, /obj/item/storage/backpack/duffelbag/syndie/inteq = 1, /obj/item/storage/box/syndie_kit/space/inteq = 1, /obj/item/soap/inteq = 4, /obj/item/sign/flag/inteq = 1, /obj/item/storage/fancy/cigarettes/cigpack_inteq = 1);
 	lootcount = 3
 	},
+/obj/item/book/granter/crafting_recipe/trash_cannon{
+	pixel_x = 10;
+	pixel_y = -2
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "Jx" = (
-/mob/living/simple_animal/hostile/alien{
+/mob/living/simple_animal/hostile/alien/sentinel{
+	del_on_death = 1;
+	loot = list(/obj/effect/gibspawner/xeno);
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1802,15 +2298,47 @@
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"JQ" = (
+/obj/structure/closet/secure_closet/freezer/gulag_fridge,
+/obj/item/bodypart/head,
+/obj/item/bodypart/head,
+/obj/item/bodypart/head,
+/obj/item/bodypart/head,
+/obj/item/bodypart/head,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/space/has_grav/powered/infestedship)
 "JZ" = (
-/obj/item/shard{
-	icon_state = "titaniumtiny"
+/obj/machinery/power/smes,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"Kg" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Ready Room";
+	req_access_txt = "150"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "Kl" = (
 /obj/structure/mecha_wreckage/ares,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Kp" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/space/has_grav/powered/infestedship)
 "KA" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1861,6 +2389,11 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/button/door/directional/north{
+	name = "prisoner isolation shutter";
+	id = "captivity";
+	layer = 3.4
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "KG" = (
@@ -1924,19 +2457,21 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"LY" = (
+/obj/machinery/airalarm/syndicate{
+	dir = 4;
+	pixel_x = -24
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "Ml" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/item/bodypart/head,
-/obj/item/bodypart/head,
-/obj/item/bodypart/head,
-/obj/structure/closet/secure_closet/freezer/gulag_fridge{
-	locked = 0
-	},
-/obj/item/bodypart/head,
 /obj/machinery/light/broken/directional/north,
+/obj/structure/table/reinforced,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "Mp" = (
@@ -1945,6 +2480,11 @@
 	},
 /obj/effect/turf_decal{
 	icon_state = "bot_right_red"
+	},
+/mob/living/simple_animal/hostile/alien/sentinel{
+	del_on_death = 1;
+	loot = list(/obj/effect/gibspawner/xeno);
+	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
@@ -1970,6 +2510,7 @@
 	icon_state = "plasmasmall"
 	},
 /obj/structure/alien/egg/burst,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "MH" = (
@@ -2006,6 +2547,16 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
+"MV" = (
+/mob/living/carbon/alien/larva{
+	faction = list("syndicate","xenomorph")
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = 10;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/infestedship)
 "MW" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -2030,6 +2581,11 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"NR" = (
+/obj/effect/decal/remains/xeno,
+/obj/structure/alien/weeds,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "NU" = (
 /obj/effect/turf_decal{
@@ -2069,6 +2625,12 @@
 	},
 /obj/item/folder/inteq,
 /turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/infestedship)
+"Oa" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "Or" = (
 /obj/item/stack/rods{
@@ -2169,12 +2731,43 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"Qx" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/hatch{
+	id_tag = "caravansyndicate3_bolt_bridge";
+	name = "Bridge";
+	req_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
 "QA" = (
 /obj/effect/turf_decal{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/open,
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Rd" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 2;
+	icon_state = "standard_lethal";
+	mode = 1;
+	faction = list("InteQ")
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/powered/infestedship)
 "Ru" = (
 /obj/effect/turf_decal/delivery,
@@ -2196,9 +2789,6 @@
 /obj/item/clothing/head/collectable/xenom,
 /obj/item/xenos_claw,
 /obj/item/toy/toy_xeno,
-/obj/effect/spawner/lootdrop/trader/hardsuit{
-	lootcount = 1
-	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)
 "Rw" = (
@@ -2266,6 +2856,21 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
+"Sx" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "caravansyndicate3_bolt_port";
+	name = "External Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -24;
+	pixel_y = 6;
+	req_access_txt = "150";
+	specialfunctions = 4
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "SB" = (
 /obj/structure/shuttle/engine/large{
 	dir = 8
@@ -2277,6 +2882,22 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"SF" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 8;
+	name = "Syndicate Drop Ship APC";
+	pixel_x = -25
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "SL" = (
 /obj/machinery/iv_drip,
@@ -2328,11 +2949,12 @@
 	icon_state = "warningline_white";
 	dir = 4
 	},
-/obj/effect/turf_decal{
-	icon_state = "warn_end_white";
+/obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium/yellow,
+/obj/effect/turf_decal/tile/bar,
+/obj/item/bodypart/head,
+/turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "Tb" = (
 /obj/machinery/light/small/red/dim/directional/south,
@@ -2389,6 +3011,16 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
+"UA" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/infestedship)
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/egg/burst,
@@ -2408,6 +3040,31 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"UY" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/box/monkeycubes{
+	pixel_x = -1;
+	pixel_y = -6
+	},
+/obj/item/storage/box/monkeycubes{
+	pixel_x = 4;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ruin/space/has_grav/powered/infestedship)
+"UZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "Vb" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 10;
@@ -2415,6 +3072,20 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/infestedship)
+"Vc" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/syndicate{
+	anchored = 1
+	},
+/obj/item/clothing/shoes/jackboots,
+/obj/item/storage/belt/military,
+/obj/item/crowbar/red,
+/obj/item/clothing/under/inteq,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "Vf" = (
 /obj/effect/turf_decal{
@@ -2424,14 +3095,28 @@
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"Vn" = (
+/obj/machinery/door/poddoor{
+	id = "Brutusexterior";
+	closingLayer = 2.65
+	},
+/obj/structure/window/plastitanium/pirate,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
 "Vt" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	desc = "Your instincts say you shouldn't be following these.";
 	icon_state = "ltrails_1";
 	dir = 10
 	},
-/obj/machinery/light/small/broken/directional/south,
+/obj/item/clothing/mask/facehugger/impregnated,
 /turf/open/floor/plasteel/freezer,
+/area/ruin/space/has_grav/powered/infestedship)
+"Vy" = (
+/obj/structure/shuttle/engine/propulsion/burst/right{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "VQ" = (
 /obj/structure/table/glass,
@@ -2462,6 +3147,17 @@
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/ruin/space/has_grav/powered/infestedship)
+"VY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "Wk" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass{
@@ -2481,8 +3177,31 @@
 /obj/item/toy/figure,
 /obj/item/toy/figure/inteq,
 /obj/item/toy/plush/bm/hank,
-/obj/item/book/granter/crafting_recipe/trash_cannon,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"Wo" = (
+/obj/machinery/door/poddoor{
+	id = "caravansyndicate3_bridge"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"Wt" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/alien/sentinel{
+	del_on_death = 1;
+	loot = list(/obj/effect/gibspawner/xeno);
+	faction = list("syndicate","xenomorph")
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "WG" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -2503,17 +3222,25 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
 "WS" = (
-/obj/item/stack/rods{
-	amount = 50
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
 	},
-/turf/template_noop,
-/area/template_noop)
-"WW" = (
-/obj/structure/window/shuttle/survival_pod/spawner,
-/obj/effect/spawner/lootdrop/grille_or_trash{
-	lootcount = 15
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
 	},
+/obj/item/wrench,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"WW" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/infestedship)
 "Xc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2562,6 +3289,19 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/infestedship)
+"XP" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/mob/living/simple_animal/hostile/alien{
+	faction = list("syndicate","xenomorph")
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
 "Yd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/egg/burst,
@@ -2570,6 +3310,45 @@
 	},
 /obj/structure/sign/poster/contraband/inteq/inteq_no_peace{
 	pixel_y = 32
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"Yg" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/infestedship)
+"YD" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/closet/crate,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass{
+	amount = 10
+	},
+/obj/item/stack/sheet/mineral/plastitanium{
+	amount = 20
+	},
+/obj/item/storage/box/lights/bulbs,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 20
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/infestedship)
+"YH" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/ruin/space/has_grav/powered/infestedship)
@@ -2592,9 +3371,6 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
-/obj/item/chair{
-	dir = 1
-	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/space/has_grav/powered/infestedship)
 "YY" = (
@@ -2608,19 +3384,19 @@
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "Ze" = (
-/obj/item/shard{
-	icon_state = "titaniumtiny"
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/powered/infestedship)
+"Zm" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
 	},
-/obj/structure/alien/weeds,
-/obj/machinery/power/smes,
-/turf/open/floor/plating,
+/turf/open/floor/engine/hull,
 /area/ruin/space/has_grav/powered/infestedship)
 "Zp" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/structure/closet/crate/bin,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -2637,6 +3413,13 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/infestedship)
+"Zu" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "ZI" = (
 /obj/structure/girder/reinforced,
@@ -2701,28 +3484,26 @@ fl
 fl
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+hm
+xt
+SB
+xR
+qJ
+Zm
+Ck
+Zm
+Ce
+xR
+xt
+SB
+hm
 fl
 fl
 "}
 (3,1,1) = {"
 fl
 fl
-fl
-fl
-fl
+sT
 fl
 fl
 fl
@@ -2732,24 +3513,24 @@ fl
 Jy
 WP
 xt
-SB
-xR
-fl
-xR
-xt
-SB
 WP
-fl
-fl
+WP
+WP
+WP
+WP
+WP
+WP
+WP
+WP
+xt
+WP
 fl
 fl
 "}
 (4,1,1) = {"
 fl
-fl
-fl
-fl
-fl
+sT
+sT
 fl
 fl
 fl
@@ -2758,59 +3539,61 @@ fl
 fl
 fl
 WP
-xt
+WP
+WP
+gm
+gm
+gm
+gm
+gm
+gm
 WP
 WP
 WP
 WP
-WP
-xt
-WP
-fl
-fl
 fl
 fl
 "}
 (5,1,1) = {"
 fl
+sT
 fl
 fl
 fl
 fl
+BR
 fl
 fl
 fl
-fl
-fl
-fl
-hm
 WP
-WP
-WP
+sz
+GJ
+gm
+Ze
 IN
 JZ
 Ze
-WP
-WP
-WP
+gm
+eO
+eZ
+UY
 hm
-fl
 fl
 fl
 "}
 (6,1,1) = {"
 fl
+sT
 fl
 fl
 fl
 fl
+BR
 fl
 fl
 fl
-fl
-fl
-fl
-WP
+hm
+MV
 fX
 WP
 KG
@@ -2818,10 +3601,10 @@ cU
 Wk
 dq
 WP
-WP
+JQ
 eZ
+yA
 WP
-fl
 fl
 fl
 "}
@@ -2831,13 +3614,13 @@ fl
 fl
 fl
 fl
-fl
-fl
-fl
+BR
+BR
 fl
 fl
 fl
 WP
+cM
 mG
 WP
 bJ
@@ -2847,8 +3630,8 @@ KZ
 WP
 ef
 Vt
+An
 WP
-fl
 fl
 fl
 "}
@@ -2858,12 +3641,12 @@ fl
 fl
 fl
 fl
-fl
-fl
+BR
+BR
 Or
 fl
 fl
-fl
+WP
 WP
 EQ
 WP
@@ -2872,10 +3655,10 @@ SM
 ME
 KT
 WP
-kw
+WP
 Po
 WP
-fl
+WP
 fl
 fl
 "}
@@ -2884,9 +3667,9 @@ fl
 fl
 fl
 fl
-fl
-fl
-fl
+BR
+fQ
+BR
 fl
 fl
 fl
@@ -2910,11 +3693,11 @@ fl
 fl
 fl
 fl
-fl
-fl
-fl
-fl
-fl
+BR
+mv
+mv
+mv
+kw
 fl
 fl
 fl
@@ -2930,19 +3713,19 @@ Ux
 zg
 WP
 fl
-fl
+sT
 fl
 "}
 (11,1,1) = {"
 fl
 fl
+BR
+BR
+kw
+Be
+yw
+kw
 fl
-fl
-fl
-fl
-fl
-fl
-wX
 fl
 fl
 Qg
@@ -2957,22 +3740,22 @@ yt
 YW
 vj
 fl
-fl
+sT
 fl
 "}
 (12,1,1) = {"
 fl
+BR
+BR
+lO
+Be
+NR
+lO
+kw
+BR
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 yJ
 WP
 WP
@@ -2985,21 +3768,21 @@ di
 vj
 fl
 fl
-fl
+sT
 "}
 (13,1,1) = {"
 fl
 fl
+BR
+yw
+Be
+Be
+Be
+kw
+BR
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 OC
 OC
 qE
@@ -3017,16 +3800,16 @@ fl
 (14,1,1) = {"
 fl
 fl
+kw
+Be
+Be
+Be
+Be
+mv
+BR
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 xp
 ab
 oV
@@ -3043,20 +3826,20 @@ fl
 "}
 (15,1,1) = {"
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+kw
+lO
+Be
+lO
+kw
+fU
+BR
+BR
 CE
 fl
-vj
+Vn
 Ez
-Jx
 oV
+GR
 mp
 ti
 Qg
@@ -3065,18 +3848,18 @@ hB
 xB
 vj
 fl
-fl
+aB
 fl
 "}
 (16,1,1) = {"
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+BR
+BR
+fU
+Be
+yw
+BR
+BR
+BR
 fl
 fl
 fl
@@ -3096,16 +3879,16 @@ fl
 fl
 "}
 (17,1,1) = {"
+BR
+BR
+BR
+BR
+BR
+BR
 fl
 fl
 fl
-WS
 fl
-fl
-fl
-qJ
-fl
-sT
 Vb
 Qg
 nN
@@ -3123,14 +3906,14 @@ fl
 fl
 "}
 (18,1,1) = {"
+BR
+fl
+BR
+BR
+BR
 fl
 fl
 fl
-fl
-fl
-fl
-fl
-fM
 fl
 fl
 sT
@@ -3196,7 +3979,7 @@ TL
 bS
 dn
 WP
-oV
+EU
 tO
 WG
 yx
@@ -3206,12 +3989,12 @@ fl
 (21,1,1) = {"
 fl
 fl
+sT
 fl
 fl
 fl
 fl
-fl
-fl
+aB
 fl
 Eg
 fl
@@ -3233,7 +4016,7 @@ fl
 (22,1,1) = {"
 fl
 fl
-fl
+sT
 fl
 qF
 aB
@@ -3260,6 +4043,8 @@ fl
 (23,1,1) = {"
 fl
 fl
+sT
+sT
 fl
 fl
 fl
@@ -3267,19 +4052,17 @@ fl
 fl
 fl
 fl
-fl
-fl
-vj
+Vn
 EL
 yP
 Nu
 hI
 wJ
 mk
-Jx
+oV
 lU
 Rx
-vj
+Vn
 fl
 fl
 fl
@@ -3288,7 +4071,7 @@ fl
 fl
 fl
 fl
-fl
+sT
 fl
 EB
 fl
@@ -3296,17 +4079,17 @@ CE
 fl
 fl
 fl
-vj
+Vn
 ug
 Nu
 oV
 uG
 pk
 Fs
-oV
+GR
 iy
 IC
-vj
+Vn
 fl
 fl
 fl
@@ -3315,15 +4098,15 @@ fl
 fl
 fl
 fl
+sT
 fl
 fl
 fl
+sT
 fl
 fl
 fl
-fl
-fl
-vj
+Vn
 YV
 Er
 WP
@@ -3333,7 +4116,7 @@ WP
 WP
 iL
 nm
-vj
+Vn
 fl
 fl
 fl
@@ -3342,11 +4125,11 @@ fl
 fl
 fl
 fl
+sT
 fl
 fl
 fl
-fl
-fl
+ws
 fl
 fl
 fl
@@ -3373,8 +4156,8 @@ fl
 fl
 fl
 fl
-fl
-fl
+sT
+sT
 fl
 fl
 Vb
@@ -3401,7 +4184,7 @@ fl
 fl
 fl
 fl
-fl
+sT
 fl
 fl
 fl
@@ -3430,12 +4213,12 @@ fl
 fl
 fl
 fl
-fl
+sT
 fl
 WP
 bD
 WP
-zV
+AW
 kS
 vo
 WP
@@ -3448,6 +4231,7 @@ fl
 "}
 (30,1,1) = {"
 fl
+sT
 fl
 fl
 fl
@@ -3456,8 +4240,7 @@ fl
 fl
 fl
 fl
-fl
-fl
+sT
 fl
 WP
 CK
@@ -3470,12 +4253,12 @@ Zt
 WP
 fl
 fl
-fl
+aB
 fl
 "}
 (31,1,1) = {"
 fl
-fl
+sT
 fl
 fl
 fl
@@ -3502,6 +4285,7 @@ fl
 "}
 (32,1,1) = {"
 fl
+sT
 fl
 fl
 fl
@@ -3509,11 +4293,10 @@ fl
 fl
 fl
 fl
+ws
+sT
 fl
-fl
-fl
-fl
-vj
+Vn
 Bw
 ip
 BA
@@ -3531,16 +4314,16 @@ fl
 fl
 fl
 fl
+gq
+Oa
+Oa
+Kp
+Vy
 fl
 fl
+sT
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 HA
 oV
 Td
@@ -3557,17 +4340,17 @@ fl
 (34,1,1) = {"
 fl
 fl
+WP
+WW
+WW
+WW
+WW
+hQ
+WP
 fl
+sT
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 vM
 WP
 WP
@@ -3578,23 +4361,23 @@ oV
 vj
 fl
 fl
-fl
+sT
 fl
 "}
 (35,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+Qg
+Qg
+cI
+YD
+WS
+Qg
+Qg
 fl
 wX
 fl
-vj
+Vn
 oV
 WP
 jy
@@ -3604,24 +4387,24 @@ WP
 oV
 vj
 fl
-fl
-fl
+sT
+sT
 fl
 "}
 (36,1,1) = {"
 fl
 fl
+Qg
+SF
+UZ
+Fu
+Yg
+UA
+Qg
 fl
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 oV
 WP
 Jp
@@ -3638,17 +4421,17 @@ fl
 (37,1,1) = {"
 fl
 fl
+Qg
+kZ
+qG
+wS
+Yg
+cc
+Qg
 fl
+aB
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-vj
+Vn
 KK
 WP
 eX
@@ -3665,13 +4448,13 @@ fl
 (38,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+Qg
+Ea
+XP
+nY
+VY
+Zu
+Qg
 fl
 fl
 fl
@@ -3680,7 +4463,7 @@ af
 Qg
 yZ
 pl
-WW
+yZ
 Qg
 sE
 Qg
@@ -3692,13 +4475,13 @@ fl
 (39,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+Qg
+mN
+Vc
+nY
+nV
+ma
+Qg
 fl
 fl
 fl
@@ -3719,13 +4502,13 @@ fl
 (40,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+xI
+Qg
+Qg
+Kg
+Qg
+Qg
+Rd
 fl
 fl
 fl
@@ -3746,13 +4529,13 @@ fl
 (41,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+vk
+Sx
+LY
+nY
+YH
+lX
+IU
 fl
 fl
 fl
@@ -3773,13 +4556,13 @@ fl
 (42,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+Qg
+tc
+zf
+BO
+Cj
+Dt
+Qg
 fl
 fl
 fl
@@ -3800,13 +4583,13 @@ fl
 (43,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+Qg
+Qg
+Qg
+Qx
+Qg
+Qg
+Qg
 fl
 fl
 fl
@@ -3827,13 +4610,13 @@ fl
 (44,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+Qg
+tg
+Iz
+Wt
+xm
+pL
+Qg
 fl
 fl
 fl
@@ -3847,20 +4630,20 @@ Bh
 gW
 WP
 fl
-fl
-fl
+ws
+sT
 fl
 "}
 (45,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+AN
+nl
+nF
+oV
+Iw
+fM
+AN
 fl
 fl
 fl
@@ -3874,20 +4657,20 @@ oj
 WP
 hm
 fl
-fl
-fl
+sT
+sT
 fl
 "}
 (46,1,1) = {"
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+AN
+Im
+FE
+Kp
+Ep
+AN
+AN
 fl
 fl
 fl
@@ -3902,30 +4685,30 @@ fl
 fl
 fl
 fl
-fl
-fl
+sT
+sT
 "}
 (47,1,1) = {"
 fl
 fl
 fl
+AN
+xt
+xt
+gq
+Wo
+fl
+sT
+sT
+sT
+fl
+fl
+sT
+sT
 fl
 fl
 fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
-fl
+aB
 fl
 fl
 fl
@@ -3944,13 +4727,13 @@ fl
 fl
 fl
 fl
+ws
+sT
 fl
 fl
-fl
-fl
-fl
-fl
-fl
+sT
+sT
+sT
 fl
 fl
 fl
@@ -3962,7 +4745,7 @@ fl
 (49,1,1) = {"
 fl
 fl
-fl
+aB
 fl
 fl
 fl
@@ -3970,12 +4753,12 @@ fl
 Or
 fl
 fl
+sT
 fl
 fl
 fl
 fl
-fl
-fl
+sT
 fl
 fl
 fl
