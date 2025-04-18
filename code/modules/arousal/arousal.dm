@@ -133,15 +133,48 @@
 			// sandstorm edit - advanced cum drip
 			var/amount_to_transfer = R.total_volume * (spill ? sender.fluid_transfer_factor : 1)
 			var/mob/living/carbon/human/cummed_on = target
-			if(istype(cummed_on))
+			if(istype(cummed_on))	//if human
 				var/datum/reagents/copy = new()
 				R.copy_to(copy, R.total_volume)
-				if(istype(sender, /obj/item/organ/genital/penis))
-					R.trans_to(target, amount_to_transfer, log = TRUE)
-					// Nope, on the mouth doesn't count.
-					if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))	//проблема с портальными трусами, работает 50/50
-						if(copy.total_volume > 0)
-							cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
+
+				if(istype(receiver, /obj/item/organ/stomach))	//in mouth
+					if(istype(cummed_on.wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties as a mask
+						var/obj/item/portallight/plight = get_active_held_item()
+						if(istype(plight) && (sender.name == plight.targetting))	//only acting organ will be transfering fluids
+							R.trans_to(target, amount_to_transfer, log = TRUE)
+					else
+						switch(sender.type)
+							if(/obj/item/organ/genital/penis)
+								if(src.last_lewd_datum?.required_from_user_exposed == INTERACTION_REQUIRE_PENIS && src.last_lewd_datum?.required_from_target == INTERACTION_REQUIRE_MOUTH)	//panel user is sender
+									R.trans_to(target, amount_to_transfer, log = TRUE)
+								else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_PENIS)	//panel user is receiver
+									R.trans_to(target, amount_to_transfer, log = TRUE)
+							if(/obj/item/organ/genital/vagina)
+								if(src.last_lewd_datum?.required_from_user_exposed == INTERACTION_REQUIRE_VAGINA && src.last_lewd_datum?.required_from_target == INTERACTION_REQUIRE_MOUTH)
+									R.trans_to(target, amount_to_transfer, log = TRUE)
+								else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_VAGINA)
+									R.trans_to(target, amount_to_transfer, log = TRUE)
+							//most likely not needed here
+							// if(/obj/item/organ/genital/breasts)
+							// 	if(src.last_lewd_datum?.required_from_user_exposed == INTERACTION_REQUIRE_BREASTS && src.last_lewd_datum?.required_from_target == INTERACTION_REQUIRE_MOUTH)
+							// 		R.trans_to(target, amount_to_transfer, log = TRUE)
+							// 	else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_BREASTS)
+							// 		R.trans_to(target, amount_to_transfer, log = TRUE)
+				else if(istype(sender, /obj/item/organ/genital/penis))	//not in mouth and penis orgasm
+					if(istype(cummed_on.w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties
+						var/obj/item/portallight/plight = get_active_held_item()
+						if(istype(plight) && (sender.name == plight.targetting))	//only acting organ will be transfering fluids
+							R.trans_to(target, amount_to_transfer, log = TRUE)
+							if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))
+								if(copy.total_volume > 0)
+									cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
+					else
+						R.trans_to(target, amount_to_transfer, log = TRUE)
+						if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))
+							if(copy.total_volume > 0)
+								cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
+			else	//not human
+				R.trans_to(target, amount_to_transfer, log = TRUE)
 		//
 	sender.last_orgasmed = world.time
 	R.clear_reagents()
