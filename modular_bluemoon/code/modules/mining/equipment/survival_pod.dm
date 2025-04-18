@@ -23,3 +23,13 @@
 	desc = "Lustwish-issued shelter capsule, for 'relaxation' during off-duty."
 	template_id = "shelter_sexdom"
 In all honesty i'm out of ideas rn so this will 'show up' somewhen in the future. Supposed to be repurposed luxurious capsule but with kink-warden-dom stuff. */
+
+/obj/structure/window/reinforced/survival_pod/tinted
+	name = "tinted pod window"
+	color = "#505050"
+	opacity = 1
+
+/obj/structure/window/shuttle/survival_pod/tinted
+	name = "tinted pod window"
+	color = "#505050"
+	opacity = 1
