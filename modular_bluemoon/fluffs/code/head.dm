@@ -174,3 +174,27 @@
 			. += mutable_appearance('icons/mob/clothing/head.dmi', "weldvisor")
 
 /////////////////////////////////////////////////////
+
+/obj/item/clothing/head/hardhat/weldhat/hahun
+	name = "welding hood"
+	desc = "A part of field technician suit, covers ears of wearer and provide a welding  visor if needed, have a built-in flashlight."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/large-worn-icons/32x48/head.dmi'
+	icon_state = "hardhat0_hahun_helmet"
+	item_state = "hardhat0_hahun_helmet"
+	hat_type = "hahun_helmet"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_welding_screen)
+	flags_inv = HIDEEYES | HIDEFACE | HIDEEARS
+
+/obj/item/clothing/head/hardhat/weldhat/hahun/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
+	. = list()
+	SEND_SIGNAL(src, COMSIG_ITEM_WORN_OVERLAYS, isinhands, icon_file, used_state, style_flags, .)
+	if(!isinhands)
+		if(damaged_clothes)
+			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedhelmet")
+		if(blood_DNA)
+			. += mutable_appearance('icons/effects/blood.dmi', "helmetblood", color = blood_DNA_to_color(), blend_mode = blood_DNA_to_blend())
+		if(!up)
+			. += mutable_appearance('modular_bluemoon/fluffs/icons/mob/large-worn-icons/32x48/head.dmi', "hahun_visor")
+
+/////////////////////////////////////////////////////

@@ -217,3 +217,27 @@
 	icon_state = "pier"
 	slot_flags = ITEM_SLOT_SOCKS
 	body_parts_covered = 0
+
+////////////////////////
+
+/obj/item/clothing/neck/tie/hahun_cape
+	name = "Praxil Mk.6"
+	desc = "A cape that awarded to trusted agents of Syndicate, pleasant to the touch and look very stylish, doesn't even restrict movement"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/accessories_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/accessories_right.dmi'
+	icon_state = "hahun_cape"
+	item_state = "hahun_cape"
+
+/obj/item/clothing/gloves/color/latex/nitrile/hahun_eidolon
+	name = "Eidolon's gloves"
+	desc = "Medical gloves with Eidolon Corporation markings, have a built-in computer with information, that tied with medical scan and huds. Have distinctive red-green coloring."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "hahun_gloves"
+	item_state = "hahun_gloves"
+
+////////////////////////

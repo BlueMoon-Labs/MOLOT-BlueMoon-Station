@@ -324,3 +324,41 @@
 	desc = "A modkit for making an chaplain armor into The Armor of the Dark Apostle"
 	product = /obj/item/clothing/suit/armor/riot/chaplain/wh_armor
 	fromitem = list(/obj/item/clothing/suit/armor/riot/chaplain, /obj/item/clothing/suit/armor/riot/chaplain/teutonic, /obj/item/clothing/suit/armor/riot/chaplain/teutonic/alt, /obj/item/clothing/suit/armor/riot/chaplain/hospitaller)
+
+////////////////////////
+
+/obj/item/clothing/suit/hazardvest/hahun_vest
+	name = "field technician suit"
+	desc = "A modified Irellian engineering suit with extra layers to protect wearer from electrical shock and cold weather, have a built-in third arm and a welding hood"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "hahun_vest"
+	item_state = "hahun_vest"
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/hahun_exosuit
+	name = "praxil Mk.6"
+	desc = "A lightweight exosuit designed for high agility and rapid response. The Praxil Mk.6 is coated in a matte green bio-reactive material that adjusts its \
+			texture for optimal movement and environmental adaptation. The suit is streamlined, with minimal external seams, creating a seamless look that enhances \
+			the wearer’s speed and flexibility. Integrated neural interfaces allow for direct mind-to-suit control, making every action instinctual."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/large-worn-icons/32x48/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	tail_suit_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/tails_digi.dmi'
+	tail_state = "hahun_exosuit"
+	icon_state = "hahun_exosuit"
+	item_state = "hahun_exosuit"
+	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDETAUR
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/hahun_exohood
+
+/obj/item/clothing/head/hooded/winterhood/hahun_exohood
+	name = "Praxil exosuit hood"
+	desc = "An Praxil exosuit hood, coloured green."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = null
+	icon_state = "hahun_exosuit_hood"
+	alternate_worn_layer = ABOVE_HEAD_LAYER
+
+////////////////////////

@@ -48,6 +48,7 @@
 	icon_state = "ac_tanktop"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
+	unique_reskin = null
 
 /obj/item/clothing/under/rank/security/officer/ac/ac_combatuni
 	name = "AC Combat Uniform"

@@ -1256,7 +1256,7 @@
 	name = "Jruttie Cat"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/choice_beacon/pet/jruttie
-	ckeywhitelist = list("scramblescream", "nai1ten")
+	ckeywhitelist = list("scramblescream", "nai1ten", "discord980")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/tavern_skirt
@@ -1303,6 +1303,8 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
+/////////////////////////////////////
+
 /datum/gear/donator/bm/impactbaton_jitte
 	name = "Jitte impact Baton"
 	slot = ITEM_SLOT_BACKPACK
@@ -1319,3 +1321,98 @@
 	restricted_desc = "Station Engineer"
 	restricted_roles = list("Station Engineer")
 	cost = 2
+
+/////////////////////////////////////
+
+/datum/gear/donator/bm/hahun_vest
+	name = "Field technician suit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/hazardvest/hahun_vest
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Station Engineer"
+	restricted_roles = list("Station Engineer")
+
+/datum/gear/donator/bm/hahun_hardhat
+	name = "Welding hood"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/head/hardhat/weldhat/hahun
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Station Engineer"
+	restricted_roles = list("Station Engineer")
+	cost = 2
+
+/datum/gear/donator/bm/hahun_exosuit
+	name = "Praxil Mk.6 Exosuit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/hooded/wintercoat/medical/hahun_exosuit
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Medical Department"
+	restricted_roles = list("Chief Medical Officer","Medical Doctor","Chemist","Virologist","Paramedic","Geneticist")
+
+/datum/gear/donator/bm/hahun_gloves
+	name = "Eidolon's gloves"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/gloves/color/latex/nitrile/hahun_eidolon
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "MD, Paramedic, CMO, Brig Physician"
+	restricted_roles = list("Chief Medical Officer", "Medical Doctor", "Paramedic", "Brig Physician")
+	cost = 2
+
+/datum/gear/donator/bm/hahun_medvest
+	name = "Rescue task force vest"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/belt/medical/hahun_medvest
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "MD, Paramedic, CMO"
+	restricted_roles = list("Chief Medical Officer", "Medical Doctor", "Paramedic")
+	cost = 3
+
+/datum/gear/donator/bm/hahun_bag
+	name = "Unloading bag"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/backpack/satchel/hahun_bag
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/hahun_case
+	name = "Irellian rescue compartment case"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/storage/backpack/case/medical/hahun
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	cost = 5
+
+/datum/gear/donator/bm/hahun_uniform
+	name = "Irellian combat uniform"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/under/syndicate/tacticool/hahun_uniform
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/hahun_mask
+	name = "MI13 infiltrator mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/gas/syndicate/hahun_mask
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/hahun_mask_2
+	name = "EIDOVOX Type-3 mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/gas/syndicate/hahun_mask/eidovox
+	ckeywhitelist = list("dolbajob", "enigma418", "silverfoxpaws")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/hahun_cape
+	name = "MI13 cape"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/neck/tie/hahun_cape
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/////////////////////////////////////

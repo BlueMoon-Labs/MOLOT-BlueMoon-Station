@@ -239,3 +239,15 @@
 		"Strip" = list("icon_state" = "Lotos-Alt"),
 	)
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/syndicate/tacticool/hahun_uniform
+	name = "Irellian combat uniform"
+	desc = "Black turtleneck with camouflaged combat pants"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/under_digi.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "hahununiform"
+	item_state = "hahununiform"
+	can_adjust = TRUE

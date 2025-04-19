@@ -241,6 +241,7 @@
 	icon_state = "hardsuit0-sec_mark46"
 	item_state = "hardsuit0-sec_mark46"
 	hardsuit_type = "sec_mark46"
+	unique_reskin = null
 
 /obj/item/clothing/suit/space/hardsuit/security/mark46_sec
 	name = "Mk.46-SS"
@@ -256,6 +257,7 @@
 	tail_state = "sec_mark46_catcrin"
 	hardsuit_type = "sec_mark46"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/mark46_sec
+	unique_reskin = null
 
 /obj/item/clothing/suit/space/hardsuit/security/mark46_sec/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
     var/mob/living/carbon/human/M = loc
@@ -631,7 +633,7 @@
 	frase = input("Какую фразу вы хотите сказать через преобразователь в маске?","") as text
 
 	if(frase)
-		usr.audible_message("[usr] exclaims, <font color='red' size='4'><b>[frase]</b></font>")
+		usr.audible_message("<b>[usr]</b> exclaims, \"<font color='red' size='4'><b>[frase]</b></font>\"")
 		switch(rand(0,3))
 			if(0)
 				playsound(src.loc, 'modular_bluemoon/oni3288/sounds/misc/catcrin_halt0.ogg', 100, 1)
