@@ -242,7 +242,6 @@
 	sleep(30)
 	playsound(C, 'sound/machines/defib_zap.ogg', 50, FALSE)
 	if(check_revivable())
-		var/tplus = world.time - C.timeofdeath
 		playsound(C, 'sound/machines/defib_success.ogg', 50, FALSE)
 		C.set_heartattack(FALSE)
 		var/oxydamage = C.getOxyLoss()
@@ -253,15 +252,9 @@
 		C.emote("gasp")
 		C.Jitter(100)
 		SEND_SIGNAL(C, COMSIG_LIVING_MINOR_SHOCK)
-		var/list/policies = CONFIG_GET(keyed_list/policy)
-		var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
-		var/late = timelimit && (tplus > timelimit)
-		var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
-		if(policy)
-			to_chat(C, policy)
-		C.log_message("has been successfully defibrillated by nanites, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
-		message_admins("[ADMIN_LOOKUPFLW(C)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
-		log_admin("[C] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+		// BLUEMOON EDIT START - изменение памяти после смерти
+		C.mind?.revival_handle_memory("nanite defibrillation")
+		// BLUEMOON EDIT END
 	else
 		playsound(C, 'sound/machines/defib_failed.ogg', 50, FALSE)
 

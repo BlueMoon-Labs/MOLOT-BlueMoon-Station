@@ -362,3 +362,13 @@
 	alternate_worn_layer = ABOVE_HEAD_LAYER
 
 ////////////////////////
+
+/obj/item/clothing/suit/armor/hos/trenchcoat/white
+	name = "white armored trenchcoat"
+	desc = "White armored coat. Armored coat in white colors for good boys and girls of NanoTrasen."
+	icon_state = "hos_trench_white"
+	item_state = "hos_trench_white"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	unique_reskin = list()
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

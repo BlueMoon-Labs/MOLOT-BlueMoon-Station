@@ -121,7 +121,6 @@
 				borrowed_health += (preheal_brute - C.getBruteLoss()) + (preheal_burn - C.getFireLoss()) + (preheal_tox - C.getToxLoss()) + ((preheal_oxy - C.getOxyLoss()) / 2)	//Ironically this means that while slimes get damaged by the toxheal, it will reduce borrowed health and longterm effects. Funky!
 				C.updatehealth()
 				if(data["grown_volume"] > 135 && ((C.health + C.oxyloss)>=80))
-					var/tplus = world.time - M.timeofdeath
 					if(C.can_revive(ignore_timelimit = TRUE, maximum_brute_dam = MAX_REVIVE_BRUTE_DAMAGE / 2, maximum_fire_dam = MAX_REVIVE_FIRE_DAMAGE / 2, ignore_heart = TRUE) && C.revive())
 						C.grab_ghost()
 						C.emote("gasp")
@@ -129,15 +128,10 @@
 						if(borrowed_health < 100)
 							borrowed_health = 100
 						log_combat(C, C, "revived", src)
-						var/list/policies = CONFIG_GET(keyed_list/policy)
-						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
-						var/late = timelimit && (tplus > timelimit)
-						var/policy = policies[POLICYCONFIG_ON_DEFIB_LATE]	//Always causes memory loss due to the nature of synthtissue
-						if(policy)
-							to_chat(C, policy)
-						C.log_message("revived using synthtissue, [tplus] deciseconds from time of death, considered late revival due to usage of synthtissue.", LOG_GAME)
-						message_admins("[ADMIN_LOOKUPFLW(C)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
-						log_admin("[C] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+						// BLUEMOON EDIT START - изменение памяти после смерти
+						C.mind?.forget_death(DEATH_FORGETFULNESS_REASON_SYNTHTISSUE)
+						C.mind?.revival_handle_memory("synthtissue")
+						// BLUEMOON EDIT END
 			else
 				var/preheal_brute = C.getBruteLoss()
 				var/preheal_burn = C.getFireLoss()

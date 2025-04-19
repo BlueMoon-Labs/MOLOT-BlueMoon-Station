@@ -38,19 +38,12 @@
 		"[user] initiates a reboot in [target]'s posibrain...")
 	target.adjustOxyLoss(-50, 0)
 	target.updatehealth()
-	var/tplus = world.time - target.timeofdeath
 	if(target.revive())
 		target.visible_message("...[target]'s posibrain flickers to life once again!")
 		target.emote("ping")
-		var/list/policies = CONFIG_GET(keyed_list/policy)
-		var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
-		var/late = timelimit && (tplus > timelimit)
-		var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
-		if(policy)
-			to_chat(target, policy)
-		target.log_message("revived using surgical revival, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
-		message_admins("[ADMIN_LOOKUPFLW(target)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
-		log_admin("[target] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+		// BLUEMOON EDIT START - изменение памяти после смерти
+		target.mind?.revival_handle_memory("force reboot")
+		// BLUEMOON EDIT END
 		return TRUE
 	else
 		target.visible_message("...[target]'s posibrain flickers a few times, before the lights fade yet again...")
