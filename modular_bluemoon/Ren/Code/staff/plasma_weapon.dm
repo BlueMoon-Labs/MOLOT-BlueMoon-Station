@@ -77,10 +77,10 @@
 
 //Плазма коса
 /obj/item/plasmascythe
-	name = "Plasma scythe"
+	name = "plasma axe"
 	desc = "Handle with care."
-	icon_state = "plasma_scythe"
-	var/icon_state_on = "plasma_scythe_on"
+	icon_state = "plasma_axealt"	// Прошло голосование за смену спрайта с аниме косы на топор
+	var/icon_state_on = "plasma_axealt_on"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/64_64_l.dmi'
 	righthand_file =  'modular_bluemoon/Ren/Icons/Mob/64_64_r.dmi'
@@ -116,9 +116,10 @@
 	var/wielded = FALSE // track wielded status on item
 	var/slowdown_wielded = 0
 	unique_reskin = list(
-		"12000 kelvin" = list(icon_state_on = "plasma_scythe_blue_on", light_color = "#20214f" ),
-		"30000 kelvin" = list(icon_state_on = "plasma_scythe_green_on", light_color = "#1c542d" ),
-		"axe" = list(icon_state_on = "plasma_axe_on", light_color = "#FF3900", icon_state = "plasma_axe" )
+		"scythe" = list(name = "plasma scythe", icon_state_on = "plasma_scythe_on", icon_state = "plasma_scythe", light_color = "#FF3900" ), // Прошло голосование за смену спрайта с аниме косы на топор
+		"old axe" = list(icon_state_on = "plasma_axe_on", light_color = "#FF3900", icon_state = "plasma_axe" ),
+		"12000 kelvin scythe" = list(icon_state_on = "plasma_scythe_blue_on", icon_state = "plasma_scythe", light_color = "#20214f" ),
+		"30000 kelvin scythe" = list(icon_state_on = "plasma_scythe_green_on", icon_state = "plasma_scythe", light_color = "#1c542d" )
 	)
 
 /obj/effect/temp_visual/scythe_block
@@ -226,6 +227,8 @@
 	item_flags &= ~(ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 	if(icon_state_on == "plasma_axe_on")
 		icon_state = "plasma_axe"
+	else if(icon_state_on == "plasma_scythe_on" || icon_state_on == "plasma_scythe_blue_on" || icon_state_on == "plasma_scythe_green_on")
+		icon_state = "plasma_scythe"
 
 /obj/item/plasmascythe/Destroy()
 	STOP_PROCESSING(SSobj, src)
