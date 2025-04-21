@@ -18,6 +18,10 @@
 	fire_delay = 2
 	fire_sound = "modular_bluemoon/sound/weapons/acr_fire.ogg"
 
+/obj/item/gun/ballistic/automatic/acr5m30/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
 /obj/item/gun/ballistic/automatic/acr5m30/update_icon_state()
 	..()
 	icon_state = "acr5[magazine ? "-[CEILING(((get_ammo(FALSE) / magazine.max_ammo) * 30) /5, 1)*5]" : ""]"

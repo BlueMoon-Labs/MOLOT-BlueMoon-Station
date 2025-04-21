@@ -184,7 +184,7 @@
 	item_state = "hardhat0_hahun_helmet"
 	hat_type = "hahun_helmet"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_welding_screen)
-	flags_inv = HIDEEYES | HIDEFACE | HIDEEARS
+	flags_inv = HIDEEYES | HIDEFACE | HIDEEARS | HIDEHAIR
 
 /obj/item/clothing/head/hardhat/weldhat/hahun/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
 	. = list()

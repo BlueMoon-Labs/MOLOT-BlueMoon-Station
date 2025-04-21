@@ -117,8 +117,15 @@
 	. = ..()
 	empty_alarm()
 
+// BLUEMOON ADD START enabling unused nomag sprite
+/obj/item/gun/ballistic/automatic/wt550/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+// BLUEMOON ADD END
+
 /obj/item/gun/ballistic/automatic/wt550/update_icon_state()
 	icon_state = "wt550[magazine ? "-[CEILING(((get_ammo(FALSE) / magazine.max_ammo) * 20) /4, 1)*4]" : "-0"]" //Sprites only support up to 20.
+	item_state = "wt550[magazine ? "" : "e"]" // BLUEMOON ADD enabling unused nomag sprite
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "\improper Type U3 Uzi"

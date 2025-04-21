@@ -1415,6 +1415,13 @@
 	ckeywhitelist = list("dolbajob", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/hahun_jukebox
+	name = "Irrelian Jukebox"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/hahun_jukebox
+	ckeywhitelist = list("dolbajob", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /////////////////////////////////////
 
 /datum/gear/donator/bm/panophobia_hos_beret

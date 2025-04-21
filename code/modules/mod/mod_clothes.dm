@@ -1,9 +1,14 @@
 /obj/item/clothing/head/mod
 	name = "MOD helmet"
 	desc = "A helmet for a MODsuit."
-	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
+	/*	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi' // BLUEMOON COMMENTING OUT saving old code lines
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi' */
+// BLUEMOON ADDITION AHEAD custom sprite states
+	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+// BLUEMOON ADDITION END
 	icon_state = "helmet"
 	item_state = "helmet"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, FIRE = 25, ACID = 25, WOUND = 10)
@@ -35,9 +40,14 @@
 /obj/item/clothing/suit/mod
 	name = "MOD chestplate"
 	desc = "A chestplate for a MODsuit."
-	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
+	/*	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi' // BLUEMOON COMMENTING OUT saving old code lines
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi' */
+// BLUEMOON ADDITION AHEAD custom sprite states
+	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+// BLUEMOON ADDITION END
 	icon_state = "chestplate"
 	item_state = "chestplate"
 	tail_state = ""
@@ -68,8 +78,14 @@
 /obj/item/clothing/gloves/mod
 	name = "MOD gauntlets"
 	desc = "A pair of gauntlets for a MODsuit."
-	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
+	/*	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi' // BLUEMOON COMMENTING OUT saving old code lines
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
+	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi' */
+// BLUEMOON ADDITION AHEAD custom sprite states
+	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+// BLUEMOON ADDITION END
 	icon_state = "gauntlets"
 	item_state = "gauntlets"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, FIRE = 25, ACID = 25, WOUND = 10)
@@ -104,9 +120,14 @@
 /obj/item/clothing/shoes/mod
 	name = "MOD boots"
 	desc = "A pair of boots for a MODsuit."
-	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
+	/*	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi' // BLUEMOON COMMENTING OUT saving old code lines
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+	anthro_mob_worn_overlay = 'icons/mob/clothing/modsuit/mod_clothing_anthro.dmi' */
+// BLUEMOON ADDITION AHEAD custom sprite states
+	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+// BLUEMOON ADDITION END
 	icon_state = "boots"
 	item_state = "boots"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, FIRE = 25, ACID = 25, WOUND = 10)

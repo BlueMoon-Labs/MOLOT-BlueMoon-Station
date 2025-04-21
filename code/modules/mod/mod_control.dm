@@ -2,8 +2,13 @@
 /obj/item/mod
 	name = "Base MOD"
 	desc = "You should not see this, yell at a coder!"
-	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
+	/*	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi' // BLUEMOON COMMENTING OUT saving old code lines
+	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi' */
+// BLUEMOON ADDITION AHEAD custom sprite states
+	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+// BLUEMOON ADDITION END
 	icon_state = "standard-control"
 	item_state = "standard-control"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

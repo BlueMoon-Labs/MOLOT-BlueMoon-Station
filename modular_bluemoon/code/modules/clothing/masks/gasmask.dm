@@ -36,7 +36,15 @@
 
 	if(frase)
 		usr.audible_message("<b>[usr]</b> halting, \"<font color='red' size='4'><b>[frase]</b></font>\"")
-		playsound(src.loc, 'modular_bluemoon/sound/effects/hahun_halt.ogg', 100, 0)
+		switch(rand(0,3))
+			if(0)
+				playsound(src.loc, 'modular_bluemoon/sound/effects/hahun_halt.ogg', 100, 0)
+			if(1)
+				playsound(src.loc, 'modular_bluemoon/sound/effects/hahun_dontmove.ogg', 100, 0)
+			if(2)
+				playsound(src.loc, 'modular_bluemoon/sound/effects/hahun_hold.ogg', 100, 0)
+			if(3)
+				playsound(src.loc, 'modular_bluemoon/sound/effects/hahun_verdict.ogg', 100, 0)
 
 /obj/item/clothing/mask/gas/syndicate/hahun_mask/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/masktakedown))
