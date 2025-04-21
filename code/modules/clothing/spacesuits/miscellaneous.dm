@@ -235,6 +235,8 @@ Contains:
 	icon_state = "hardsuit0-ert_engineer"
 	item_state = "hardsuit0-ert_engineer"
 	hardsuit_type = "ert_engineer"
+	armor = list(MELEE = 60, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 80, WOUND = 30) // BLUEMOON CHANGE rig rebalance
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT // BLUEMOON CHANGE rig rebalance
 
 /obj/item/clothing/suit/space/hardsuit/ert/engi
 	desc = "Standard issue engineer suit for the ERT."
@@ -242,6 +244,8 @@ Contains:
 	item_state = "ert_engineer"
 	tail_state = "ert-engineer"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/engi
+	armor = list(MELEE = 60, BULLET = 45, LASER = 45, ENERGY = 45, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 80, WOUND = 30) // BLUEMOON CHANGE rig rebalance
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT // BLUEMOON CHANGE rig rebalance
 
 	//ERT Medical
 /obj/item/clothing/head/helmet/space/hardsuit/ert/med
@@ -256,6 +260,20 @@ Contains:
 	item_state = "ert_medical"
 	tail_state = "ert-medical"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/med
+
+// BLUEMOOD ADD medhuds for medical ERT hardhelmet
+/obj/item/clothing/head/helmet/space/hardsuit/ert/med/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+		DHUD.add_hud_to(user)
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/med/dropped(mob/living/carbon/human/user)
+	..()
+	if (user.head == src)
+		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+		DHUD.remove_hud_from(user)
+// BLUEMOON ADD end
 
 	//Red alert ERT
 
