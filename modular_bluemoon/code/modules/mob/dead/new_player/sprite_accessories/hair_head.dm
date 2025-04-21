@@ -77,7 +77,7 @@
 /datum/sprite_accessory/hair/hair_ponytail_11
 	icon = 'modular_bluemoon/icons/mob/hair.dmi'
 	name = "Ponytail 11"
-	icon_state = "hair_hair_ponytail_11"
+	icon_state = "hair_ponytail_11"
 
 /datum/sprite_accessory/hair/ponytail_12
 	icon = 'modular_bluemoon/icons/mob/hair.dmi'
