@@ -193,6 +193,7 @@
 	item_state = "mark45_armor_officer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_l
 	name = "Mk. 45 medic's combat coat"
@@ -201,6 +202,7 @@
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45medic.dmi'
 	icon_state = "mark45_armor_medic_l"
 	item_state = "mark45_armor_medic_l"
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_h
 	name = "Mk. 45 heavy combat medic Аrmor"
@@ -209,6 +211,7 @@
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45medic.dmi'
 	icon_state = "mark45_armor_medic_h"
 	item_state = "mark45_armor_medic_h"
+	unique_reskin = null
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Слот одежды.
 
@@ -325,6 +328,7 @@
 	icon_state = "csfrontline"
 	item_state = "csfrontline"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/frontlineshot.ogg'
+	unique_reskin = null
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_overlays()
 	. = ..()
