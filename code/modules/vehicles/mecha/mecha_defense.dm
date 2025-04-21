@@ -311,7 +311,12 @@
 			return
 		user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to [src].</span>")
 		obj_integrity += min(10, max_integrity-obj_integrity)
-		user.DelayNextAction(20) // BLUEMOON ADD balancing instarepair abuse
+		// BLUEMOON ADDITION AHEAD balancing instarepair abuse
+		if(HAS_TRAIT(user.mind, TRAIT_MECHA_EXPERT))
+			user.DelayNextAction(10)
+		else
+			user.DelayNextAction(20)
+		// BLUEMOON ADDITION END
 		if(obj_integrity == max_integrity)
 			to_chat(user, "<span class='notice'>It looks to be fully repaired now.</span>")
 		return

@@ -659,6 +659,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 //BLUEMOON ADD SKILLS START
 #define TRAIT_REAGENT_EXPERT "reagent_expert"
+#define TRAIT_MECHA_EXPERT "mecha_expert"
 //BLUEMOON ADD SKILLS END
 
 ///Movement type traits for movables. See elements/movetype_handler.dm

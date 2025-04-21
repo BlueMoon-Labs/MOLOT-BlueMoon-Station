@@ -37,7 +37,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_RESEARCH_DIRECTOR
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/basic) //BLUEMOON CHANGE job/level to basic
-	mind_traits = list(TRAIT_KNOW_CYBORG_WIRES) //BLUEMOON ADD use #define TRAIT system
+	mind_traits = list(TRAIT_KNOW_CYBORG_WIRES, TRAIT_MECHA_EXPERT) //BLUEMOON ADD use #define TRAIT system
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 5
 

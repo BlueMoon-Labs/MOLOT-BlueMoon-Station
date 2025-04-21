@@ -165,6 +165,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 /obj/effect/mob_spawn/human/ds2/syndicate/researcher/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_CYBORG_WIRES, GHOSTROLE_TRAIT)
+	ADD_TRAIT(new_spawn.mind, TRAIT_MECHA_EXPERT, GHOSTROLE_TRAIT)
 	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/trained, /datum/skill_modifier/job/affinity/wiring))
 
 /obj/effect/mob_spawn/human/ds2/syndicate/stationmed/special(mob/living/carbon/human/new_spawn)
@@ -172,5 +173,11 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_MED_SURGERY_T2, GHOSTROLE_TRAIT)
 	ADD_TRAIT(new_spawn.mind, TRAIT_QUICK_CARRY, GHOSTROLE_TRAIT)
 	ADD_TRAIT(new_spawn.mind, TRAIT_REAGENT_EXPERT, GHOSTROLE_TRAIT)
+
+/obj/effect/mob_spawn/human/inteqspace/engineer/special(mob/living/carbon/human/new_spawn)
+	. = ..()
+	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_ENGI_WIRES, GHOSTROLE_TRAIT)
+	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_CYBORG_WIRES, GHOSTROLE_TRAIT)
+	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring))
 
 ////////////////////////////////////

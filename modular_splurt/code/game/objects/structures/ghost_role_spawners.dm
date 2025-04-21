@@ -208,13 +208,6 @@
 	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteqspace/inteq_engineer
 
-// BLUEMOON ADD wires trait system
-/obj/effect/mob_spawn/human/inteqspace/engineer/special(mob/living/carbon/human/new_spawn)
-	. = ..()
-	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_ENGI_WIRES, GHOSTROLE_TRAIT)
-	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_CYBORG_WIRES, GHOSTROLE_TRAIT)
-	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring))
-
 /datum/outfit/inteqspace/inteq_crew/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_INTEQ
 

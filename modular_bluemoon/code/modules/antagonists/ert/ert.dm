@@ -115,18 +115,26 @@
 
 /////////////////////////////////////////
 // Добавление трейтов ОБР ролям в их mind
-/datum/antagonist/ert/engineer_squadleader/apply_innate_effects(mob/living/mob_override)
+/datum/antagonist/ert/engineer_squadleader/on_gain()
+	. = ..()
 	ADD_TRAIT(owner, TRAIT_KNOW_ENGI_WIRES, JOB_TRAIT)
 	ADD_TRAIT(owner, TRAIT_KNOW_CYBORG_WIRES, JOB_TRAIT)
+	ADD_TRAIT(owner, TRAIT_MECHA_EXPERT, TRAIT_GENERIC)
 
-/datum/antagonist/ert/engineer/apply_innate_effects(mob/living/mob_override)
+/datum/antagonist/ert/engineer/on_gain()
+	. = ..()
 	ADD_TRAIT(owner, TRAIT_KNOW_ENGI_WIRES, TRAIT_GENERIC)
 	ADD_TRAIT(owner, TRAIT_KNOW_CYBORG_WIRES, TRAIT_GENERIC)
+	ADD_TRAIT(owner, TRAIT_MECHA_EXPERT, TRAIT_GENERIC)
 
-/datum/antagonist/ert/medic/apply_innate_effects(mob/living/mob_override)
+/datum/antagonist/ert/medic/on_gain()
+	. = ..()
 	ADD_TRAIT(owner, TRAIT_QUICK_CARRY, TRAIT_GENERIC)
 	ADD_TRAIT(owner, TRAIT_REAGENT_EXPERT, TRAIT_GENERIC)
 
-/datum/antagonist/ert/hsc/apply_innate_effects(mob/living/mob_override)
+/datum/antagonist/ert/hsc/on_gain()
+	. = ..()
 	ADD_TRAIT(owner, TRAIT_QUICK_CARRY, TRAIT_GENERIC)
 	ADD_TRAIT(owner, TRAIT_REAGENT_EXPERT, TRAIT_GENERIC)
+
+/////////////////////////////////////////
