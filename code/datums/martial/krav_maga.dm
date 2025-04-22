@@ -118,6 +118,7 @@
 					  	"<span class='userdanger'>[A] leg sweeps you!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, 1, -1)
 	D.apply_damage(damage, STAMINA, affecting, armor_block)
+	D.Paralyze(1.2 SECONDS) // BLUEMOON ADD balancing
 	D.DefaultCombatKnockdown(80, override_hardstun = 1, override_stamdmg = 0)
 	log_combat(A, D, "leg sweeped")
 	return TRUE
@@ -131,7 +132,7 @@
 	playsound(get_turf(A), 'sound/effects/hit_punch.ogg', 50, 1, -1)
 	if(D.losebreath <= 10)
 		D.losebreath = clamp(D.losebreath + 5, 0, 10)
-	D.adjustOxyLoss(damage + 5)
+	D.adjustOxyLoss(damage + 10) // BLUEMOON ADD balancing
 	log_combat(A, D, "quickchoked")
 	return TRUE
 
