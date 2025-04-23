@@ -217,6 +217,8 @@
 		var/obj/item/bodypart/BP = X
 		BP.update_limb()
 
+	icon_render_key = generate_icon_render_key()	//we need this here since update_limb() updates body_markings_list and changes icons
+
 	//LOAD ICONS
 	if(limb_icon_cache[icon_render_key])
 		load_limb_from_cache()
