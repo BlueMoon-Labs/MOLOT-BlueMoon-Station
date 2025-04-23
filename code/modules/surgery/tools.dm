@@ -353,6 +353,11 @@
 	icon_state = "surgical_drapes"
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("slapped")
+	// BLUEMOON ADDITION AHEAD custom states IN HANDS
+	item_state = "surgical_drapes"
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_righthand.dmi'
+	// BLUEMOON ADDITION END
 
 /obj/item/surgical_drapes/Initialize(mapload)
 	. = ..()
@@ -372,6 +377,13 @@
 	name = "smart surgical drapes"
 	desc = "A smart set of drapes with wireless synchronization to the station's research networks, with an integrated display allowing users to execute advanced surgeries without the aid of an operating computer."
 	var/datum/techweb/linked_techweb
+	// BLUEMOON ADDITION AHEAD custom states IN HANDS + ICON
+	icon_state = "surgical_drapes_adv"
+	item_state = "surgical_drapes_adv"
+	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_righthand.dmi'
+	// BLUEMOON ADDITION END
 
 /obj/item/surgical_drapes/advanced/Initialize(mapload)
 	. = ..()
