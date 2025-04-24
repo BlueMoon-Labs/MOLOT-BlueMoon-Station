@@ -168,7 +168,7 @@
 
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
-	if(M.bodytemperature < T0C)
+	if(M.bodytemperature < T0C && M.IsSleeping()) // BLUEMOON ADD now target is required to be asleep for healing process
 		M.adjustOxyLoss(-4 * power, 0)
 		M.adjustBruteLoss(-2 * power, 0)
 		M.adjustFireLoss(-2 * power, 0)
