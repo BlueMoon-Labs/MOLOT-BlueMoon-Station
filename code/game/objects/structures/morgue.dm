@@ -263,6 +263,19 @@ GLOBAL_LIST_EMPTY(crematoriums)
 			if (M.stat != DEAD)
 				if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
 					M.emote("scream")
+		// BLUEMOON ADDITION AHEAD changeling scream when cremated
+			if (M.mind.has_antag_datum(/datum/antagonist/changeling))
+				switch(rand(0,2))
+					if(0)
+						playsound(loc, 'modular_bluemoon/sound/creatures/changeling/changeling_cremation1.ogg', 100, 0.1, ignore_walls = TRUE)
+					if(1)
+						playsound(loc, 'modular_bluemoon/sound/creatures/changeling/changeling_cremation2.ogg', 100, 0.1, ignore_walls = TRUE)
+					if(2)
+						playsound(loc, 'modular_bluemoon/sound/creatures/changeling/changeling_cremation3.ogg', 100, 0.1, ignore_walls = TRUE)
+				visible_message("<font color='red' size='5'><b>You shiver from this unnatural scream</b></font>")
+				for(var/mob/living/Living in view(5, get_turf(M))) // effects on nearby mobs
+					Living.jitteriness += rand(3, 5) // you will shiver from it
+		// BLUEMOON ADDITION END
 			if(user)
 				log_combat(user, M, "cremated")
 			else
