@@ -759,17 +759,17 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/pedantcape
-	name = "Crovus Pendant"
+	name = "Corvus Pendant"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/neck/tie/pedantcape
-	ckeywhitelist = list("smol42", "weirdbutton", "sage4o")
+	ckeywhitelist = list("smol42", "weirdbutton", "sage4or")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/tricorne
 	name = "Tricorne"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/head/tricorne
-	ckeywhitelist = list("smol42", "weirdbutton", "sage4o")
+	ckeywhitelist = list("smol42", "weirdbutton", "sage4or")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/oftok

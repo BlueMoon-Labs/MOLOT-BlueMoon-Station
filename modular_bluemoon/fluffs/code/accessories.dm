@@ -96,19 +96,19 @@
 
 ////////////////////////
 
-/obj/item/clothing/neck/tie/pedantcape
-	name = "Crovus Pendant"
+/obj/item/clothing/neck/tie/pendantcape
+	name = "Corvus Pendant"
 	desc = "Ravens in black with eyes so keen, steal pendants bright with silver sheen."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
 	icon_state = "cp" //Сделано специально, человек попросил защиту от хамелионки.
 	item_state = "cp"
 	unique_reskin = list(
-		"Pedant" = list(
-			RESKIN_ICON_STATE = "pedant",
-			RESKIN_ITEM_STATE = "pedant"
+		"Corvus Pendant" = list(
+			RESKIN_ICON_STATE = "pendant",
+			RESKIN_ITEM_STATE = "pendant"
 		),
-		"Cape" = list(
+		"Corvus Cape" = list(
 			RESKIN_ICON_STATE = "cape",
 			RESKIN_ITEM_STATE = "cape"
 		)
