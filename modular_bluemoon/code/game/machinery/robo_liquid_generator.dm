@@ -189,7 +189,11 @@
 		selected_production = null
 		updateUsrDialog()
 		return
-	R.add_reagent(reagent_type, processing_amount)
+	// Кровь работает через костыли, поэтому мы тоже будем работать через костыли
+	if(reagent_type == /datum/reagent/blood/oil)
+		R.add_reagent(/datum/reagent/blood, processing_amount, list("donor"=null,"viruses"=null,"blood_DNA"=null,"bloodcolor"=bloodtype_to_color("HF"), "bloodblend" = BLEND_MULTIPLY, "blood_type"="HF","resistances"=null,"trace_chem"=null))
+	else
+		R.add_reagent(reagent_type, processing_amount)
 	playsound(src, 'sound/effects/bubbles.ogg', 25)
 	updateUsrDialog()
 
