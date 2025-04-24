@@ -37,7 +37,7 @@
 
 /datum/reagent/blood/oil
 	data = list("donor"=null,"viruses"=null,"blood_DNA"="REPLICATED", "bloodcolor" = BLOOD_COLOR_OIL, "bloodblend" = BLEND_MULTIPLY, "blood_type"="HF","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null)
-	name = "Hydraulic Liquid"
+	name = "Synthesized Hydraulic Liquid"
 	description = "Hydraulic liquid for synthetic crewmembers."
 	taste_description = "oil"
 	color = BLOOD_COLOR_OIL
