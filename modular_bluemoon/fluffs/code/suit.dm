@@ -372,3 +372,13 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
 	unique_reskin = list()
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/echoes_jacket
+    name = "Technical Jacket"
+    desc = "Exoskeleton with Triglav's Syndicate officer jacket."
+    icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+    mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+    icon_state = "echoes_jacket"
+    item_state = "echoes_jacket"
+    body_parts_covered = CHEST
+    mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
