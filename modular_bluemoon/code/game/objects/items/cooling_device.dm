@@ -9,8 +9,10 @@
 	icon = 'modular_bluemoon/icons/obj/cooling_device.dmi'
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/back.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/back.dmi'
-
-	icon_state = "suitcooler0"
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/clothing_righthand.dmi'
+	icon_state = "suitcooler"
+	item_state = "suitcooler"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING // Можно вешать на спину и на грудь (а также в слот хранилища некоторых костюмов)
 
 	flags_1 = CONDUCT_1
@@ -34,6 +36,8 @@
 /obj/item/device/cooler/charged // Заряжённый при размещении
 	roundstart_charged = TRUE
 
+///////////////////////////////////////////////////////////////////////////
+
 /obj/item/device/cooler/lavaland // Специальный для шахтёров и планетоидов
 	name = "mining cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
@@ -50,6 +54,8 @@
 /obj/item/device/cooler/lavaland/charged // Заряжённый при размещении (выдаётся при спавне шахтёрам-синтетикам в том числе)
 	roundstart_charged = TRUE
 
+///////////////////////////////////////////////////////////////////////////
+
 /obj/item/device/cooler/ui_action_click(mob/living/user)
 	toggle(usr)
 
@@ -64,6 +70,7 @@
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/device/cooler/process()
+	update_icon()
 	if(charge <= 0) // Если заряда нет, выключаемся и выдаём сообщение об аварии
 		turn_off(1)
 		return
@@ -85,7 +92,6 @@
 	H.bodytemperature -= temp_adj
 
 	charge -= charge_usage
-	update_icon()
 
 /obj/item/device/cooler/emp_act(severity)
 	. = ..()
@@ -99,6 +105,7 @@
 	charge -= severity * rand(20, 25)
 	if(charge < 0)
 		charge = 0
+	update_icon()
 
 // Checks whether the cooling unit is being worn on the back/suit slot.
 // That way you can't carry it in your hands while it's running to cool yourself down.
@@ -221,7 +228,7 @@
 
 /obj/item/device/cooler/update_icon()
 	cut_overlays()
-	icon_state = "suitcooler0"
+	icon_state = "suitcooler"
 
 	if(!on)
 		return
@@ -259,7 +266,48 @@
 
 	. += span_info("Вы можете называть это \"ПОУ\" или \"PCU\".") // Распространяем терминологию через IC
 
+///////////////////////////////////////////////////////////////////////////
 
+/obj/item/device/cooler/advanced // Улучшенный кулер меньших размеров
+	name = "advanced PCU"
+	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
+	This is modernized version designed for mobility, holding on a belt and storing in your backpack storage. \
+	Carrying uranium elements feels to be oddly unhealthy... Not for a synths, though?"
+	w_class = WEIGHT_CLASS_NORMAL
+	icon_state = "suitcooler_adv"
+	item_state = "suitcooler_adv"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	alternate_worn_layer = ABOVE_HEAD_LAYER
+	force = 6
+	custom_materials = list(/datum/material/iron = 45000, /datum/material/glass = 3000, /datum/material/gold = 11000, /datum/material/uranium = 1000)
+
+/obj/item/device/cooler/advanced/update_icon()
+	cut_overlays()
+	icon_state = "suitcooler_adv"
+
+	if(!on)
+		return
+
+	switch(round(100*charge/max_charge))
+		if(86 to INFINITY)
+			overlays.Add("battery_adv-0")
+		if(69 to 85)
+			overlays.Add("battery_adv-1")
+		if(52 to 68)
+			overlays.Add("battery_adv-2")
+		if(35 to 51)
+			overlays.Add("battery_adv-3")
+		if(18 to 34)
+			overlays.Add("battery_adv-4")
+		if(4 to 17)
+			overlays.Add("battery_adv-5")
+		if(-INFINITY to 4)
+			overlays.Add("battery_adv-6")
+
+/obj/item/device/cooler/advanced/charged
+	roundstart_charged = TRUE
+
+///////////////////////////////////////////////////////////////////////////
 /*
 Сборка через техфаб
 */
@@ -282,3 +330,13 @@
 	build_path = /obj/item/device/cooler/lavaland
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/cooler/advanced
+	name = "Advanced Portable Cooling Unit"
+	desc = "Well known portable heat sink, now sized to oxygen tank dimensions. Fittable for backpacks."
+	id = "cooler_advanced"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 62000, /datum/material/glass = 7200, /datum/material/gold = 15200, /datum/material/uranium = 1600)
+	build_path = /obj/item/device/cooler/advanced
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY
