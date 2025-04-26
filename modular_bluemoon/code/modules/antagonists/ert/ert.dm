@@ -2,12 +2,14 @@
 	name = "Officer Tribunal Ordinator"
 	outfit = /datum/outfit/lfwb_ordinator/officer
 	role = "Офицер"
+	leader = TRUE
 
 /datum/antagonist/ert/lfwb_ordinator
 	name = "Tribunal Ordinator"
 	outfit = /datum/outfit/lfwb_ordinator
 	role = "Солдат"
 
+//////////////////////////////
 /datum/antagonist/ert/security/rabbit
 	role = "Specialist"
 	outfit = /datum/outfit/ert/security/rabbit
@@ -15,7 +17,9 @@
 /datum/antagonist/ert/commander/rabbit
 	role = "Lieutenant"
 	outfit = /datum/outfit/ert/commander/rabbit
+	leader = TRUE
 
+//////////////////////////////
 /datum/antagonist/ert/firesquad
 	name = "Firesquad Trooper"
 	outfit = /datum/outfit/ert/firesquad_trooper
@@ -25,21 +29,25 @@
 	name = "Firesquad Commander"
 	outfit = /datum/outfit/ert/firesquad_commander
 	role = "Командир"
+	leader = TRUE
+
 //////////////////////////////
 /datum/antagonist/ert/heavysquad
-	name = "Heavy Squad"
+	name = "Emergency Heavy Squad"
 	outfit = /datum/outfit/ert/heavysquad_trooper
 	role = "Пехотинец"
 
 /datum/antagonist/ert/heavysquad/machinegun
-	name = "Heavy Squad"
+	name = "Emergency Heavy Squad"
 	outfit = /datum/outfit/ert/heavysquad_machinegun
 	role = "Пулеметчик"
 
 /datum/antagonist/ert/heavysquad/leader
-	name = "Heavy Squad"
+	name = "Emergency Heavy Squad"
 	outfit = /datum/outfit/ert/heavysquad_commander
 	role = "Командир"
+	leader = TRUE
+
 ///////////////////////////
 /datum/antagonist/ert/zeal_team
 	name = "Zeal Team Squad"
@@ -50,6 +58,8 @@
 	name = "Zeal Team Squad"
 	outfit = /datum/outfit/zeal_team/officer
 	role = "Командир"
+	leader = TRUE
+
 ///////////////////////////
 /datum/antagonist/ert/russian_ert
 	name = "NRI Spetsnaz Squad"
@@ -65,6 +75,8 @@
 	name = "NRI Spetsnaz Squad"
 	outfit = /datum/outfit/ert/ert_russian_leader
 	role = "Полковник"
+	leader = TRUE
+
 /////////////////////////
 /datum/antagonist/ert/sol_ert
 	name = "SolFed Squad"
@@ -85,12 +97,15 @@
 	name = "SolFed Squad"
 	outfit = /datum/outfit/ert/sol_soldier_leader
 	role = "Капитан"
+	leader = TRUE
 
 /////////////////////////////////////////
 /datum/antagonist/ert/engineer_squadleader
 	role = "Бригадир"
 	outfit = /datum/outfit/ert/engineer/alert
 	skill_modifiers = list(/datum/skill_modifier/job/level/wiring)
+	leader = TRUE
+
 /////////////////////////////////////////
 /datum/antagonist/ert/ntr_ert_agent
 	name = "Internal Affairs Squad"
@@ -101,12 +116,14 @@
 	name = "Internal Affairs Squad"
 	outfit = /datum/outfit/ert/ntr_ert_leader
 	role = "Следователь"
+	leader = TRUE
 
 //////////////////////////////////////////
 /datum/antagonist/ert/maid_leader
 	name = "Maid Squad"
 	outfit = /datum/outfit/ert/maid_leader
 	role = "Старшая горничная"
+	leader = TRUE
 
 /datum/antagonist/ert/maid
 	name = "Maid Squad"

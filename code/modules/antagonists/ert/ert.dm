@@ -100,6 +100,7 @@
 /datum/antagonist/ert/commander
 	role = "Командир"
 	outfit = /datum/outfit/ert/commander
+	leader = TRUE // BLUEMOON CHANGE enabling greet "if" condition for ERT leaders
 
 /datum/antagonist/ert/commander/amber
 	outfit = /datum/outfit/ert/commander/alert
@@ -153,16 +154,19 @@
 	name = "Deathsquad Officer"
 	outfit = /datum/outfit/death_commando/officer
 	role = "Офицер"
+	leader = TRUE // BLUEMOON CHANGE enabling greet "if" condition for ERT leaders
 
 /datum/antagonist/ert/asset_protection/leader
 	name = "Asset Protection Team Officer"
 	outfit = /datum/outfit/death_commando/officer
 	role = "Офицер"
+	leader = TRUE // BLUEMOON CHANGE enabling greet "if" condition for ERT leaders
 
 /datum/antagonist/ert/syndiesquad/leader
 	name = "Syndiesquad Specialist"
 	outfit = /datum/outfit/syndicate/syndiesquad
 	role = "Мастер-Специалист"
+	leader = TRUE // BLUEMOON CHANGE enabling greet "if" condition for ERT leaders
 
 /datum/antagonist/ert/create_team(datum/team/ert/new_team)
 	if(istype(new_team))
@@ -182,33 +186,38 @@
 	if(!ert_team)
 		return
 
-	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-
-	var/missiondesc = "Your squad is being sent on a mission to [station_name()] by Nanotrasen's Security Division."
+// BLUEMOON EDIT AHEAD - changing desc for beautiful structured box + localisation
+	var/missiondesc = ""
+	missiondesc += "<p class='medium'><B><font size=3 color=red>Вы – [name].</font></B><BR></p>\n"
+	missiondesc += "<p>Ваш отряд отправляется на объект \"[station_name()]\" Отделом Обеспечения Безопасности Nanotrasen.</p>"
+	missiondesc += "<p>Ваша роль в отряде: <font size=3 color=green><b>[role]</b></font></p>"
 	if(leader) //If Squad Leader
-		missiondesc += " Lead your squad to ensure the completion of the mission. Board the shuttle when your team is ready."
+		missiondesc += "<li>Командуйте вашим отрядом для успешного выполнения миссии. Погрузитесь в шаттл по готовности вашей команды.</li>"
 	else
-		missiondesc += " Follow orders given to you by your squad leader."
-
-		missiondesc += "Avoid civilian casualites when possible."
-
-	missiondesc += "<BR><B>Your Mission</B> : [ert_team.mission.explanation_text]"
-	to_chat(owner,missiondesc)
+		missiondesc += "<li>Следуйте приказам, отданным лидером вашего отряда.</li>"
+	missiondesc += "\n<li>Избегайте жертв среди гражданских, когда это возможно.</li>"
+	missiondesc += "\n<li>Префиксы наушника <b>:y</b> и <b>:н</b> <font color='red'>отвечают за связь</font> через CentCom радиоканал <font color='red'>вашего отряда</font> и <font color='red'>вашего начальства</font>.</li>"
+	missiondesc += "<p><B>Ваша миссия</B>: [ert_team.mission.explanation_text]</p>"
+	to_chat(owner, examine_block(missiondesc))
+// BLUEMOON EDIT END
 
 /datum/antagonist/ert/deathsquad/greet()
 	if(!ert_team)
 		return
 
-	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-
-	var/missiondesc = "Your squad is being sent on a mission to [station_name()] by Nanotrasen's Security Division."
+// BLUEMOON EDIT AHEAD - changing desc for beautiful structured box + localisation
+	var/missiondesc = ""
+	missiondesc += "<p class='medium'><B><font size=3 color=red>Вы – [name].</font></B><BR></p>\n"
+	missiondesc += "<p>Ваш отряд отправляется на объект \"[station_name()]\" Отделом Специальных Операций Пакта.</p>"
+	missiondesc += "<p>Ваша роль в отряде: <font size=3 color=green><b>[role]</b></font></p>"
 	if(leader) //If Squad Leader
-		missiondesc += " Lead your squad to ensure the completion of the mission. Board the shuttle when your team is ready."
+		missiondesc += "<li>Командуйте вашим отрядом для успешного выполнения миссии. Погрузитесь в шаттл по готовности вашей команды.</li>"
 	else
-		missiondesc += " Follow orders given to you by your squad leader."
-
-	missiondesc += "<BR><B>Your Mission</B> : [ert_team.mission.explanation_text]"
-	to_chat(owner,missiondesc)
+		missiondesc += "<li>Следуйте приказам, отданным лидером вашего отряда.</li>"
+	missiondesc += "\n<li>Префиксы наушника <b>:y</b> и <b>:н</b> <font color='red'>отвечают за связь</font> через CentCom радиоканал <font color='red'>вашего отряда</font> и <font color='red'>начальства</font>.</li>"
+	missiondesc += "<p><B>Ваша миссия</B>: [ert_team.mission.explanation_text]</p>"
+	to_chat(owner, examine_block(missiondesc))
+// BLUEMOON EDIT END
 
 /datum/antagonist/ert/families
 	name = "Space Police Responder"
