@@ -12,23 +12,23 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
 /proc/get_security_level()
 	switch(GLOB.security_level)
 		if(SEC_LEVEL_GREEN)
-			return "ЗЕЛЁНЫЙ"
+			return "<font color=#b2ff59>ЗЕЛЁНЫЙ</font>"
 		if(SEC_LEVEL_BLUE)
-			return "СИНИЙ"
+			return "<font color=#99ccff>СИНИЙ</font>"
 		if(SEC_LEVEL_ORANGE)
-			return "ОРАНЖЕВЫЙ"
+			return "<font color=fc7d15>ОРАНЖЕВЫЙ</font>"
 		if(SEC_LEVEL_VIOLET)
-			return "ФИОЛЕТОВЫЙ"
+			return "<font color=#a059fe>ФИОЛЕТОВЫЙ</font>"
 		if(SEC_LEVEL_AMBER)
-			return "ЯНТАРНЫЙ"
+			return "<font color=#ffae42>ЯНТАРНЫЙ</font>"
 		if(SEC_LEVEL_RED)
-			return "КРАСНЫЙ"
+			return "<font color=#ff3f34>КРАСНЫЙ</font>"
 		if(SEC_LEVEL_LAMBDA)
-			return "ЛЯМБДА"
+			return "<font color=#ffffff>ЛЯМБДА</font>"
 		if(SEC_LEVEL_EPSILON)
-			return "ЭПСИЛОН"
+			return "<font color=#ffffff>ЭПСИЛОН</font>"
 		if(SEC_LEVEL_DELTA)
-			return "ДЕЛЬТА"
+			return "<font color=purple>ДЕЛЬТА</font>"
 
 /*
   * All security levels, per ascending alert. Nothing too fancy, really.
