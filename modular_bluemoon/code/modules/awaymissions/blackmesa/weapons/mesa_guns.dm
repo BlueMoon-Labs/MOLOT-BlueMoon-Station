@@ -106,7 +106,7 @@
 /obj/item/gun/ballistic/shotgun/spas
 	name = "SPAS 12 shotgun"
 	desc = "Этот невероятно старый и брутальный дробовик заставляет вас надеть балаклаву с горнолыжными очками."
-	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "spas"
