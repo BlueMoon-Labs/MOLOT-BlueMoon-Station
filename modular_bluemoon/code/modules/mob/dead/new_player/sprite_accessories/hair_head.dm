@@ -234,9 +234,9 @@
 	name = "Over Ear (Alt)"
 	icon_state = "hair_over_ear_2"
 
-/datum/sprite_accessory/hair/over_eye
+/datum/sprite_accessory/hair/sunny
 	icon = 'modular_bluemoon/icons/mob/hair.dmi'
-	name = "Over Eye"
+	name = "Sunny"
 	icon_state = "hair_over_eye"
 
 /datum/sprite_accessory/hair/strict
