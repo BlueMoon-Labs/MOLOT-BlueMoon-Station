@@ -8,11 +8,13 @@
 	mob_trait = TRAIT_AWOO
 	var/timer
 	var/timer_trigger
+	var/min_trigger_time = 6000		//10 minutes
+	var/max_trigger_time = 12000	//20 minutes
 	var/last_awoo
 	mood_quirk = TRUE
 
 /datum/quirk/awoo/add()
-	timer_trigger = rand(6000, 12000)	//10-20 minutes
+	timer_trigger = rand(min_trigger_time, max_trigger_time)
 	timer = addtimer(CALLBACK(src, PROC_REF(do_awoo)), timer_trigger, TIMER_STOPPABLE)
 	last_awoo = world.time
 	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, PROC_REF(awoo_emote))
@@ -32,15 +34,15 @@
  * If do_awoo() is no longer being triggered by external source (other mobs), check audio file paths for "awoo" and "howl" emotes and make proper corrections in /playsound_local().
 */
 /datum/quirk/awoo/proc/do_awoo()
-	if((last_awoo + 10 SECONDS) > world.time)
-		return
-	if(quirk_holder.stat == CONSCIOUS)
-		last_awoo = world.time	//let the cycle be discontinued.
-		quirk_holder.nextsoundemote = world.time - 10
-		addtimer(CALLBACK(quirk_holder, TYPE_PROC_REF(/mob, emote), pick("awoo", "howl")), rand(10,30))
+	if((last_awoo + 10 SECONDS) < world.time)
+		if(quirk_holder.stat == CONSCIOUS)
+			last_awoo = world.time	//let the cycle be discontinued.
+			quirk_holder.nextsoundemote = world.time - 10
+			addtimer(CALLBACK(quirk_holder, TYPE_PROC_REF(/mob, emote), pick("awoo", "howl")), rand(10,30))
+	//We don't care if mob has awoo'ed or not. It either did it right now or it can't do it anytime soon. We update timer anyway.
 	deltimer(timer)
 	timer = null
-	timer_trigger = rand(6000, 12000)	//10-20 minutes
+	timer_trigger = rand(min_trigger_time, max_trigger_time)
 	timer = addtimer(CALLBACK(src, PROC_REF(do_awoo)), timer_trigger, TIMER_STOPPABLE)
 
 /datum/emote/sound/human/awoo
