@@ -886,7 +886,7 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
 		if(HAS_TRAIT_FROM(src, TRAIT_QUICKER_CARRY, GLOVE_TRAIT))
 			gloves_used = TRUE
-		carrydelay = 15 // BLUEMOON EDIT making this a little bit useful
+		carrydelay = 20
 		skills_space = "профессионально "
 	// BLUEMOON ADDITION AHEAD making mind-based condition for job-specific qualification
 	else if(HAS_TRAIT(src.mind, TRAIT_QUICK_CARRY))
@@ -894,7 +894,7 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 		skills_space = "оперативно "
 	// BLUEMOON ADDITION END
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY) || target.mob_weight < MOB_WEIGHT_NORMAL)
-		carrydelay = 25 // BLUEMOON EDIT making this a little bit useful
+		carrydelay = 27.5 // BLUEMOON EDIT making this a little bit useful
 		skills_space = "быстро "
 	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
 	if(target.mob_weight > MOB_WEIGHT_NORMAL)
