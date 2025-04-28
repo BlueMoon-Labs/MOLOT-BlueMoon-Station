@@ -136,6 +136,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	automatic_burst_overlay = FALSE
 	spread = 8 //You are shooting a full power catraige from a light automatic rifle, what do you expect?
+	can_suppress = FALSE // BLUEMOON ADD fixing the sprite
 
 /obj/item/gun/ballistic/automatic/fal/nomag
 	spawnwithmagazine = FALSE
