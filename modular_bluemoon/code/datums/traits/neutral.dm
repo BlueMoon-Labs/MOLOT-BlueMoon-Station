@@ -1,3 +1,4 @@
+// TRAIT_AWOO BEGIN
 /datum/quirk/awoo
 	name = "Неконтролируемый вой"
 	desc = "Вам иногда нравиться завывать, есть ли на то причиниа или нет. Также вы не можете удержаться перед воем других."
@@ -5,89 +6,57 @@
 	gain_text = "<span class='notice'>Иногда так хочется повыть...</span>"
 	lose_text = "<span class='notice'>Я больше не хочу выть.</span>"
 	mob_trait = TRAIT_AWOO
-	//var/timer	//можно через таймеры, но я бы предпочел псевдорандом
-	//var/timer_trigger = 1 MINUTES
+	var/timer
+	var/timer_trigger
 	var/last_awoo
-	var/default_chance = 0.01 //одна сотая процента
-	var/chance = 0.01
-	processing_quirk = TRUE
 	mood_quirk = TRUE
 
 /datum/quirk/awoo/add()
-	// Set timer
-	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
+	timer_trigger = rand(6000, 12000)	//10-20 minutes
+	timer = addtimer(CALLBACK(src, PROC_REF(do_awoo)), timer_trigger, TIMER_STOPPABLE)
 	last_awoo = world.time
-	chance = default_chance
+	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, PROC_REF(awoo_emote))
 
-//datum/quirk/awoo/remove()
-	// Remove timer
-	//deltimer(timer)
+/datum/quirk/awoo/remove()
+	deltimer(timer)
+	UnregisterSignal(quirk_holder, COMSIG_MOB_EMOTE)
 
-/datum/quirk/awoo/on_process()
-	if(prob(chance))
-		if((last_awoo + 5 SECONDS) > world.time)
-			return
-		// Check if conscious
-		if(quirk_holder.stat == CONSCIOUS)
-			// Display emote
-			quirk_holder.nextsoundemote = world.time - 10
-			addtimer(CALLBACK(quirk_holder, TYPE_PROC_REF(/mob, emote), pick("awoo", "howl")), rand(10,30))
-			chance = default_chance
-	if(chance < 100)
-		chance += 0.001
+/datum/quirk/awoo/proc/awoo_emote(datum/source, datum/emote/emote)
+	SIGNAL_HANDLER
+	if(findtext(emote.key, "awoo") || findtext(emote.key, "howl"))
+		last_awoo = world.time
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
 
+/** Triggers on timer and when certain audio file has been heard by this mob.
+ * Audio file is being checked in sound.dm in the middle of /playsound_local(). Not convenient but necessary.
+ * If do_awoo() is no longer being triggered by external source (other mobs), check audio file paths for "awoo" and "howl" emotes and make proper corrections in /playsound_local().
+*/
 /datum/quirk/awoo/proc/do_awoo()
-	if(quirk_holder)
-		if((last_awoo + 10 SECONDS) > world.time)
-			return
-		// Check if conscious
-		if(quirk_holder.stat == CONSCIOUS)
-			// Display emote
-			quirk_holder.nextsoundemote = world.time - 10
-			addtimer(CALLBACK(quirk_holder, TYPE_PROC_REF(/mob, emote), pick("awoo", "howl")), rand(10,30))
-			chance = default_chance
-			//timer_trigger = 1 MINUTES
-		//else
-			//timer_trigger = 5 MINUTES
-	// Remove timer
-	//deltimer(timer)
-	//timer = null
-	// Add new timer
-	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
+	if((last_awoo + 10 SECONDS) > world.time)
+		return
+	if(quirk_holder.stat == CONSCIOUS)
+		last_awoo = world.time	//let the cycle be discontinued.
+		quirk_holder.nextsoundemote = world.time - 10
+		addtimer(CALLBACK(quirk_holder, TYPE_PROC_REF(/mob, emote), pick("awoo", "howl")), rand(10,30))
+	deltimer(timer)
+	timer = null
+	timer_trigger = rand(6000, 12000)	//10-20 minutes
+	timer = addtimer(CALLBACK(src, PROC_REF(do_awoo)), timer_trigger, TIMER_STOPPABLE)
 
 /datum/emote/sound/human/awoo
 	emote_volume = 100
 	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
 	emote_falloff_exponent = 1
 	emote_distance_multiplier_min_range = 12
-
-/datum/emote/sound/human/awoo/run_emote(mob/user, params)
-	. = ..()
-	if(!.)
-		return
-	if (HAS_TRAIT(user, TRAIT_AWOO))
-		var/mob/living/carbon/M = user
-		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
-		quirk_target.last_awoo = world.time
-		quirk_target.chance = quirk_target.default_chance
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+	emote_ignore_walls = TRUE
 
 /datum/emote/sound/human/howl
 	emote_volume = 100
 	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
 	emote_falloff_exponent = 1
 	emote_distance_multiplier_min_range = 12
-
-/datum/emote/sound/human/howl/run_emote(mob/user, params)
-	. = ..()
-	if(!.)
-		return
-	if (HAS_TRAIT(user, TRAIT_AWOO))
-		var/mob/living/carbon/M = user
-		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
-		quirk_target.last_awoo = world.time
-		quirk_target.chance = quirk_target.default_chance
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+	emote_ignore_walls = TRUE
+// TRAITT_AWOO END
 
 /datum/quirk/clearly_audible
 	name = "Хорошо слышимый"
