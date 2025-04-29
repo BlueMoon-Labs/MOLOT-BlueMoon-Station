@@ -32,6 +32,15 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("double pod bed", /obj/structure/bed/double/pod, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	)), \
 		//SPLURT CHANGE END
+	//BLUEMOON ADD гигансткие кровати для гигантских персон
+	new/datum/stack_recipe_list("gaint beds", list( \
+		new/datum/stack_recipe("gaint bed (corner)", /obj/structure/bed/gaint, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("gaint bed (side)", /obj/structure/bed/gaint/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("gaint bed (pillow corner)", /obj/structure/bed/gaint/pillow, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("gaint bed (pillow side)", /obj/structure/bed/gaint/pillow/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("gaint bed (middle)", /obj/structure/bed/gaint/middle, 4, one_per_turf = TRUE, on_floor = TRUE), \
+	)), \
+	//BLUEMOON END
 	//CIT CHANGE - adds sofas to metal recipe list
 	new/datum/stack_recipe_list("sofas", list( \
 		new /datum/stack_recipe("sofa (middle)", /obj/structure/chair/sofa, one_per_turf = TRUE, on_floor = TRUE), \
