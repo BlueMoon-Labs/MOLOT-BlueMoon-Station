@@ -33,12 +33,12 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	)), \
 		//SPLURT CHANGE END
 	//BLUEMOON ADD гигансткие кровати для гигантских персон
-	new/datum/stack_recipe_list("gaint beds", list( \
-		new/datum/stack_recipe("gaint bed (corner)", /obj/structure/bed/gaint, 4, one_per_turf = TRUE, on_floor = TRUE), \
-		new/datum/stack_recipe("gaint bed (side)", /obj/structure/bed/gaint/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
-		new/datum/stack_recipe("gaint bed (pillow corner)", /obj/structure/bed/gaint/pillow, 4, one_per_turf = TRUE, on_floor = TRUE), \
-		new/datum/stack_recipe("gaint bed (pillow side)", /obj/structure/bed/gaint/pillow/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
-		new/datum/stack_recipe("gaint bed (middle)", /obj/structure/bed/gaint/middle, 4, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe_list("giant beds", list( \
+		new/datum/stack_recipe("giant bed (corner)", /obj/structure/bed/giant, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (side)", /obj/structure/bed/giant/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (pillow corner)", /obj/structure/bed/giant/pillow, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (pillow side)", /obj/structure/bed/giant/pillow/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (middle)", /obj/structure/bed/giant/middle, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	)), \
 	//BLUEMOON END
 	//CIT CHANGE - adds sofas to metal recipe list
