@@ -179,6 +179,10 @@
 	var/target
 	var/mob/living/carbon/human/portal_target = ishuman(portalunderwear.loc) && (portalunderwear.current_equipped_slot & (ITEM_SLOT_UNDERWEAR | ITEM_SLOT_MASK)) ? portalunderwear.loc : null
 
+	// Fluid tranfser inside partner. Also if it is FALSE, it nullifies "orifice" variable in handle_post_sex() to make it work properly, since "cum_inside" variable actually doesn't work correctly today.
+	var/p_to_f = FALSE	//from panties to fleshlight
+	var/f_to_p = FALSE	//from fleshlight to panties
+
 	// This list is structured as [M's longname, M's shortname, wearer's longname, wearer's shortname]
 	var/penis_names = list()
 	if(plush_icon != NONE)
@@ -215,18 +219,21 @@
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
+									f_to_p = TRUE
 								if(CUM_TARGET_ANUS)
 									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает анальное кольцо кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в анал"
 									target_message = "трахает твой анал с помощью [penis_names[1]] [penis_names[2]]"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
+									f_to_p = TRUE
 								if(CUM_TARGET_MOUTH)
 									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает ротик кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в ротик"
 									target_message = "трахает твой ротик с помощью [penis_names[1]] [penis_names[2]]"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = LOW_LUST
+									f_to_p = TRUE
 								if(CUM_TARGET_URETHRA)
 									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает уретру кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с уретрой на другой стороне, таким образом причмокивая в процессе"
 									target_message = "трахает твою уретру с помощью [penis_names[1]] [penis_names[2]]"
@@ -244,6 +251,7 @@
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
+									p_to_f = TRUE
 								if(CUM_TARGET_VAGINA)
 									user_message = (user == M) ? "потирает [M.ru_ego()] киску прямо о <b>'[src]'</b>, таким образом стимулирая киску на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует киску кого-то на другой стороне киской <b>[M]</b>"
 									target_message = "потирает свою киску прямо о твою собственную"
@@ -262,6 +270,7 @@
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = LOW_LUST
+									f_to_p = TRUE
 								/* // i don't know how this would work
 								if(CUM_TARGET_URETHRA)
 									user_message = (user == M) ? "fucking urethra" : "force someone to fuck urethra"
@@ -281,6 +290,7 @@
 									target = CUM_TARGET_ANUS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
+									p_to_f = TRUE
 								if(CUM_TARGET_VAGINA)
 									user_message = (user == M) ? "потирает [M.ru_ego()] анус прямо о <b>'[src]'</b>, таким образом стимулирая киску кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне киской <b>[M]</b>"
 									target_message = "потирает свой анус прямо о твою киску"
@@ -321,12 +331,14 @@
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = LOW_LUST
 							target_lust_amt = NORMAL_LUST
+							p_to_f = TRUE
 						if(CUM_TARGET_VAGINA)
 							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и стимулирует киску кого-то на другой стороне своим ротиком" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне слюнявым ротиком <b>[M]</b>"
 							target_message = "потирает твою киску"
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = LOW_LUST
 							target_lust_amt = NORMAL_LUST
+							p_to_f = TRUE
 						if(CUM_TARGET_ANUS)
 							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне своим ротиком" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне слюнявым ротиком <b>[M]</b>"
 							target_message = "потирает твой анус"
@@ -444,7 +456,7 @@
 	if(user_message)
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
-			if(M.can_penetrating_genital_cum() && M.handle_post_sex(user_lust_amt, portalunderwear.targetting, portal_target, target, TRUE, TRUE))
+			if(M.can_penetrating_genital_cum() && M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, f_to_p, TRUE))
 				switch(target)
 					if(CUM_TARGET_PENIS)
 						switch(portalunderwear.targetting)
@@ -488,7 +500,7 @@
 					playlewdinteractionsound(loc, 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 
 			to_chat(portal_target, "<span class='lewd'>Кто-то использует сопряжённый <b>'[name]'</b>, этот кто-то [target_message].</span>")
-			if(portal_target.handle_post_sex(target_lust_amt, target, M, portalunderwear.targetting, TRUE, TRUE))
+			if(portal_target.handle_post_sex(target_lust_amt, p_to_f ? target : null, M, portalunderwear.targetting, p_to_f, TRUE))
 
 				switch(portalunderwear.targetting)
 					if(CUM_TARGET_VAGINA)
@@ -732,8 +744,6 @@
 	if(istype(I, /obj/item/portallight))
 		var/obj/item/portallight/P = I
 		if(!(P in portallight))
-			if(!portallight.len)
-				RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(drop_out))
 			portallight += P //pair the fleshlight
 			P.available_panties += src
 			P.portalunderwear = src
@@ -750,8 +760,6 @@
 				P.updateplushe()
 				P.icon_state = "unpaired"
 			to_chat(user, "<span class='notice'>[P] был успешно отвязан.</span>")
-			if(!portallight.len)
-				UnregisterSignal(user, COMSIG_PARENT_QDELETING)
 	else
 		..() //just allows people to hit it with other objects, if they so wished.
 
@@ -787,13 +795,13 @@
 	. = ..()
 	switch(slot)
 		if(ITEM_SLOT_UNDERWEAR, ITEM_SLOT_MASK)
+			RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(drop_out))
 			if(!portallight.len)
 				audible_message("[icon2html(src, hearers(src))] *beep* *beep* *beep*")
 				playsound(src, 'sound/machines/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)
 				to_chat(user, "<span class='notice'>Трусики не связаны с Портальным Фонариком.</span>")
 			else
 				update_portal()
-				RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(drop_out))
 		else
 			update_portal()
 			UnregisterSignal(user, COMSIG_PARENT_QDELETING)
