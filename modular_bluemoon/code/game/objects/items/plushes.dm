@@ -300,3 +300,9 @@
 	desc = "От неё исходит характерный металлический запах.."
 	icon_state = "iris"
 	can_you_fuck_plush = FALSE
+
+/obj/item/toy/plush/bm/millie
+	name = "Millie plush"
+	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
+	icon_state = "millie"
+	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)

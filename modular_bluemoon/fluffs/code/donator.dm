@@ -1500,3 +1500,9 @@
     ckeywhitelist = list("xaeshkavd")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/millie_plushe
+	name = "Millie plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/bm/millie
+	ckeywhitelist = list("pingvas")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
