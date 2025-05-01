@@ -458,6 +458,7 @@
 		R.reveal()
 		investigate_log("Experimentor has revealed a relic with <span class='danger'>[R.realProc]</span> effect.", INVESTIGATE_EXPERIMENTOR)
 		ejectItem()
+		SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = pick(1500, 1750, 2000))) //BLUEMOON ADD награда за изучение
 
 	//Global reactions
 	if(prob(EFFECT_PROB_VERYLOW-badThingCoeff) && loaded_item)
