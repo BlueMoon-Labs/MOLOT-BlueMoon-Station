@@ -455,10 +455,11 @@
 		visible_message("[src] scans the [exp_on], revealing its true nature!")
 		playsound(src, 'sound/effects/supermatter.ogg', 50, 3, -1)
 		var/obj/item/relic/R = loaded_item
+		if(!R.revealed) //BLUEMOON ADD награда за изучение
+			SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = pick(1500, 1750, 2000))) //BLUEMOON ADD END
 		R.reveal()
 		investigate_log("Experimentor has revealed a relic with <span class='danger'>[R.realProc]</span> effect.", INVESTIGATE_EXPERIMENTOR)
 		ejectItem()
-		SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = pick(1500, 1750, 2000))) //BLUEMOON ADD награда за изучение
 
 	//Global reactions
 	if(prob(EFFECT_PROB_VERYLOW-badThingCoeff) && loaded_item)
