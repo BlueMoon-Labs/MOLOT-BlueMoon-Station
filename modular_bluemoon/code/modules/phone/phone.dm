@@ -674,13 +674,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_transmit = list(PHONE_NET_INTEQ)
 
 ///admins can call anywhere anytime.
-/obj/structure/transmitter/centcomm
+/obj/structure/transmitter/centcom
 	phone_category = PHONE_NET_CENTCOMM
 	networks_receive = list(PHONE_NET_CENTCOMM)
 	networks_transmit = list(PHONE_NET_PUBLIC, PHONE_NET_COMMAND, PHONE_NET_SYNDICATE, PHONE_NET_INTEQ, PHONE_NET_CENTCOMM)
 	can_rename = TRUE
 
-/obj/structure/transmitter/centcomm/AltClick(mob/user)
+/obj/structure/transmitter/centcom/AltClick(mob/user)
 	var/input_name = stripped_input(user, "Rename this phone?", "Rename this phone", name, MAX_NAME_LEN)
 	if(input_name)
 		name = input_name
