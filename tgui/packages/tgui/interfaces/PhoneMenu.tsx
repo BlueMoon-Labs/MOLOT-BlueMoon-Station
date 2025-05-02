@@ -1,6 +1,19 @@
-import { useBackend, useLocalState } from '../backend';
-import { Stack, Section, Tabs, Input, Button } from '../components';
-import { Window } from '../layouts';
+import { useLocalState } from '../backend';
+import { useBackend } from 'tgui/backend';
+import { Button, Input, Section, Stack, Tabs } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+
+type Data = {
+  availability: number;
+  last_caller: string | null;
+  available_transmitters: string[];
+  transmitters: {
+    phone_category: string;
+    phone_color: string;
+    phone_id: string;
+    phone_icon: string;
+  }[];
+};
 
 export const PhoneMenu = (props, context) => {
   const { act, data } = useBackend(context);
@@ -14,26 +27,14 @@ export const PhoneMenu = (props, context) => {
 };
 
 const GeneralPanel = (props, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend<Data>(context);
   const { availability, last_caller } = data;
   const available_transmitters = Object.keys(data.available_transmitters);
   const transmitters = data.transmitters.filter((val1) =>
-    available_transmitters.includes(val1.phone_id)
+    available_transmitters.includes(val1.phone_id),
   );
 
-  const [currentSearch, setSearch] = useLocalState(
-    context,
-    'current_search',
-    ''
-  );
-
-  const [selectedPhone, setSelectedPhone] = useLocalState(
-    context,
-    'selected_phone',
-    null
-  );
-
-  const categories = [];
+  const categories: string[] = [];
   for (let i = 0; i < transmitters.length; i++) {
     let data = transmitters[i];
     if (categories.includes(data.phone_category)) continue;
@@ -41,6 +42,16 @@ const GeneralPanel = (props, context) => {
     categories.push(data.phone_category);
   }
 
+  const [currentSearch, setSearch] = useLocalState(
+    context,
+    'current_search',
+    ''
+  );
+  const [selectedPhone, setSelectedPhone] = useLocalState(
+    context,
+    'selected_phone',
+    null
+  );
   const [currentCategory, setCategory] = useLocalState(
     context,
     'current_category',
@@ -71,7 +82,8 @@ const GeneralPanel = (props, context) => {
               <Tabs.Tab
                 selected={val === currentCategory}
                 onClick={() => setCategory(val)}
-                key={val}>
+                key={val}
+              >
                 {val}
               </Tabs.Tab>
             ))}
@@ -86,7 +98,7 @@ const GeneralPanel = (props, context) => {
           />
         </Stack.Item>
         <Stack.Item grow>
-          <Section fill scrollable onComponentDidMount={(node) => node.focus()}>
+          <Section fill scrollable>
             <Tabs vertical>
               {transmitters.map((val) => {
                 if (
@@ -109,10 +121,11 @@ const GeneralPanel = (props, context) => {
                     color={val.phone_color}
                     onFocus={() =>
                       document.activeElement
-                        ? document.activeElement.blur()
+                        ? (document.activeElement as HTMLElement).blur()
                         : false
                     }
-                    icon={val.phone_icon}>
+                    icon={val.phone_icon}
+                  >
                     {val.phone_id}
                   </Tabs.Tab>
                 );
@@ -123,18 +136,18 @@ const GeneralPanel = (props, context) => {
         {!!selectedPhone && (
           <Stack.Item>
             <Button
-              content="Dial"
               color="good"
               fluid
               textAlign="center"
               onClick={() => act('call_phone', { phone_id: selectedPhone })}
-            />
+            >
+              Dial
+            </Button>
           </Stack.Item>
         )}
         {!!last_caller && <Stack.Item>Last Caller: {last_caller}</Stack.Item>}
         <Stack.Item>
           <Button
-            content="Do Not Disturb"
             color="red"
             tooltip={dnd_tooltip}
             disabled={dnd_locked === 'Yes'}
@@ -142,7 +155,9 @@ const GeneralPanel = (props, context) => {
             fluid
             textAlign="center"
             onClick={() => act('toggle_dnd')}
-          />
+          >
+            Do Not Disturb
+          </Button>
         </Stack.Item>
       </Stack>
     </Section>

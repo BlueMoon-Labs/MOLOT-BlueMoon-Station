@@ -2954,6 +2954,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 5
 	},
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "clY" = (
@@ -5943,6 +5946,12 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
+"eNG" = (
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/smooth/large,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "ePW" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -10011,6 +10020,10 @@
 /obj/effect/turf_decal/tile/dark{
 	dir = 4
 	},
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_y = 25;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "igj" = (
@@ -11118,6 +11131,9 @@
 	dir = 1;
 	color = "#800000"
 	},
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "jig" = (
@@ -12003,6 +12019,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/structure/transmitter/syndicate{
+	pixel_y = 8
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/lavaland/unpowered/deepspaceone/comms_officer)
@@ -13526,6 +13545,9 @@
 "kWS" = (
 /obj/machinery/shower{
 	pixel_y = 16
+	},
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -21309,6 +21331,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_y = 25
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/lavaland/unpowered/deepspaceone/security)
 "qOx" = (
@@ -21516,6 +21541,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
+"qWd" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/transmitter/mounted/syndicate{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
+/area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "qWD" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -44370,7 +44406,7 @@ noo
 bep
 ktX
 wjW
-bed
+qWd
 owA
 uog
 fRe
@@ -44383,7 +44419,7 @@ ear
 qHq
 oKc
 hyK
-bsk
+eNG
 drD
 bsk
 hyK
