@@ -3749,6 +3749,9 @@
 	id = "Secure Brig Control";
 	name = "brig shutters"
 	},
+/obj/structure/desk_bell{
+	pixel_x = -10
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "aqt" = (
@@ -13648,6 +13651,9 @@
 	id = "robotics";
 	name = "robotics lab shutters"
 	},
+/obj/structure/desk_bell{
+	pixel_x = -10
+	},
 /turf/open/floor/plating,
 /area/science/robotics/lab)
 "bhA" = (
@@ -13680,6 +13686,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "rnd";
 	name = "research lab shutters"
+	},
+/obj/structure/desk_bell{
+	pixel_x = -10
 	},
 /turf/open/floor/plating,
 /area/science/research)
@@ -16015,6 +16024,9 @@
 	name = "Cargo Desk";
 	req_access_txt = "50"
 	},
+/obj/structure/desk_bell{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "boT" = (
@@ -16087,6 +16099,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "hop";
 	name = "Privacy Shutters"
+	},
+/obj/structure/desk_bell{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/hop)
@@ -48282,6 +48297,10 @@
 /area/security/prison/cells)
 "jeZ" = (
 /obj/structure/table/reinforced,
+/obj/structure/desk_bell{
+	pixel_x = 8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "jfL" = (
