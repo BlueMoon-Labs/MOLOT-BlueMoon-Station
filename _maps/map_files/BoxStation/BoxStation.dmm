@@ -631,9 +631,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/structure/transmitter/mounted{
-	pixel_y = 25
-	},
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aen" = (
@@ -2015,9 +2012,6 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4
-	},
-/obj/structure/transmitter/mounted{
-	pixel_x = 20
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
@@ -39595,6 +39589,9 @@
 /obj/item/screwdriver{
 	pixel_y = 10
 	},
+/obj/structure/transmitter/mounted{
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel,
 /area/security/office)
 "ekT" = (
@@ -66150,18 +66147,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
-"tgB" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/structure/transmitter/mounted{
-	pixel_y = 25
-	},
-/turf/open/floor/plasteel,
-/area/security/office)
 "tgH" = (
 /obj/structure/filingcabinet/employment,
 /turf/open/floor/wood,
@@ -71624,6 +71609,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit)
+"wib" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/structure/transmitter/mounted{
+	pixel_x = -20
+	},
+/turf/open/floor/plasteel,
+/area/security/brig)
 "wiR" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/loot_pile/maint,
@@ -102673,7 +102673,7 @@ agT
 eUa
 eUa
 ikf
-ikf
+wib
 ikf
 dRo
 ene
@@ -107550,7 +107550,7 @@ lrs
 adn
 duY
 abq
-tgB
+nuo
 pID
 kge
 iEV

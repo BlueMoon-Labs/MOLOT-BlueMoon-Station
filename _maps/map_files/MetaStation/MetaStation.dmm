@@ -26872,11 +26872,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/sign/warning/nosmoking{
-	pixel_y = 28
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
+	},
+/obj/structure/transmitter/mounted{
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
@@ -29578,9 +29578,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/transmitter/mounted{
-	pixel_x = -20
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/cryo)
 "coI" = (
@@ -39841,9 +39838,6 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/structure/transmitter/mounted{
-	pixel_x = 20
-	},
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "cJR" = (
@@ -43827,9 +43821,6 @@
 "cZH" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
-	},
-/obj/structure/transmitter/mounted{
-	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark/corner{
 	dir = 1
@@ -49290,6 +49281,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 8
+	},
+/obj/structure/transmitter/mounted{
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
@@ -75467,9 +75461,6 @@
 	},
 /obj/structure/table/glass,
 /obj/item/toy/figure/engineer,
-/obj/structure/transmitter{
-	pixel_x = -8
-	},
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "qnH" = (
@@ -79535,9 +79526,6 @@
 "sdi" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
-	},
-/obj/structure/transmitter/mounted{
-	pixel_x = -20
 	},
 /turf/open/floor/plasteel,
 /area/science/circuit)
@@ -86319,6 +86307,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/structure/transmitter,
 /turf/open/floor/plasteel,
 /area/science/mixing)
 "vhM" = (
