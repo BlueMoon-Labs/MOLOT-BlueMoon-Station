@@ -108,7 +108,7 @@
 	var/resulthealth = (M.health / maxi_health) * 100
 	switch(resulthealth)
 		if(100 to INFINITY)
-			return "health100"
+			return
 		if(90.625 to 100)
 			return "health93.75"
 		if(84.375 to 90.625)
