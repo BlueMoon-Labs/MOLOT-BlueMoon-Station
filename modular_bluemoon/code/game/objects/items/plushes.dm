@@ -36,9 +36,10 @@
 
 /obj/item/toy/plush/bm/kiirava
 	name = "Kiirava Plushie"
-	desc = "Плюшевая игрушка зеленоватой ящерки."
+	desc = "Выглядит как ящерка с телом оливково-зеленого цвета. У нее непропорционально большая голова с двумя огромными глазами: один черный, а другой розовый. У ящерки маленькие треугольные рожки по бокам головы и крошечный рот, который почти незаметен."
 	icon_state = "kiirava"
-	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
 
 /obj/item/toy/plush/bm/emma
 	name = "Emma plushie"
