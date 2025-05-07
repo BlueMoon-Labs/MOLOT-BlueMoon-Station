@@ -21,6 +21,14 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	shipambience = 'sound/ambience/zone/beach.ogg'
 	ambientsounds = list('sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg','sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
 
+/area/awaymission/beachhotel
+	name = "Beach hotel"
+	icon_state = "crew_quarters"
+	has_gravity = STANDARD_GRAVITY
+	shipambience = 'sound/ambience/zone/beach.ogg'
+	ambientsounds = list('sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg','sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
+
+
 /area/awaymission/errorroom
 	name = "Super Secret Room"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
