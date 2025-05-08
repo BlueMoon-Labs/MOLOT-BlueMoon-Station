@@ -127,6 +127,11 @@
 	path = /obj/item/clothing/under/bm/gift_ribbon
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
+/datum/gear/uniform/latex_uniform
+	name = "latex bodysuit"
+	path = /obj/item/clothing/under/latex_bodysuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
 /datum/gear/uniform/solfed_formal
 	name = "SolFed Formal Uniform"
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
