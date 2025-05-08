@@ -485,7 +485,7 @@
 /datum/gear/donator/luckyjack
 	name = "Lucky Jackboots"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/shoes/lucky
+	path = /obj/item/clothing/shoes/jackboots/lucky
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
@@ -566,12 +566,12 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-/datum/gear/donator/fritzplush
-	name = "Fritz Plushie"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/mammal/dog/fritz
-	ckeywhitelist = list()
-	donator_group_id = DONATOR_GROUP_TIER_1
+//datum/gear/donator/fritzplush
+//	name = "Fritz Plushie"
+//	slot = ITEM_SLOT_BACKPACK
+//	path = /obj/item/toy/plush/mammal/dog/fritz
+//	ckeywhitelist = list()
+//	donator_group_id = DONATOR_GROUP_TIER_1			//Нету у нас этого в спрайтах
 
 /datum/gear/donator/kimono
 	name = "Kimono"

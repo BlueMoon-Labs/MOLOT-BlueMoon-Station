@@ -1,41 +1,46 @@
 GLOBAL_LIST_EMPTY(sechailers)
 
 /datum/action/item_action/dispatch
-	name = "Signal Dispatch"
-	desc = "Открывает колесо быстрого выбора для сообщения о преступлениях, включая ваше текущее местоположение."
-	icon_icon = 'icons/mob/actions/actions.dmi'
-	button_icon_state = "dispatch"
+    name = "Signal Dispatch"
+    desc = "Открывает колесо быстрого выбора для сообщения о преступлениях, включая ваше текущее местоположение."
+    icon_icon = 'icons/mob/actions/actions.dmi'
+    button_icon_state = "dispatch"
 
 /obj/item/clothing/mask/gas/sechailer/proc/dispatch(mob/user)
-	var/area/A = get_area(src)
-	if(world.time < last_dispatch + dispatch_cooldown)
-		to_chat(user, span_notice("Система Уведомления находится на перезарядке."))
-		return FALSE
-	var/list/options = list()
-	for(var/option in list("69", "187", "404", "505", "996", "211")) //Just hardcoded for now!
-		options[option] = image(icon = 'icons/effects/aiming.dmi', icon_state = option)
-	var/message = show_radial_menu(user, user, options)
-	if(!message)
-		return FALSE
-	var/new_message
-	switch(message)
-		if("69")
-			new_message = "69 (Акты Сексуального Характера)"
-		if("187")
-			new_message = "187 (Убийство)"
-		if("404")
-			new_message = "404 (Нарушитель)"
-		if("505")
-			new_message = "505 (Вооружённый Нарушитель)"
-		if("996")
-			new_message = "996 (Взрывчатка)"
-		if("211")
-			new_message = "211 (Проникновение/Ограбление)"
-	radio.talk_into(src, "Центр, Код [new_message], 10-20: [A], [A.x], [A.y], [A.z]. Офицеру [user] требуется поддержка.", radio_channel)
-	last_dispatch = world.time
-	for(var/atom/movable/hailer in GLOB.sechailers)
-		if(hailer.loc &&ismob(hailer.loc))
-			playsound(hailer.loc, "sound/voice/dispatch_hailer.ogg", 100, FALSE)
+    var/area/A = get_area(src)
+
+    // Проверка на кулдаун
+    if(world.time < src.last_dispatch + src.dispatch_cooldown)
+        to_chat(user, span_notice("Система Уведомления находится на перезарядке."))
+        return FALSE
+    var/list/options = list()
+    for(var/option in list("69", "187", "404", "505", "996", "211"))  //Just hardcoded for now!
+        options[option] = image(icon = 'icons/effects/aiming.dmi', icon_state = option)
+    var/message = show_radial_menu(user, user, options)
+    if(!message)
+        return FALSE
+
+    var/new_message
+    switch(message)
+        if("69")
+            new_message = "69 (Акты Сексуального Характера)"
+        if("187")
+            new_message = "187 (Убийство)"
+        if("404")
+            new_message = "404 (Нарушитель)"
+        if("505")
+            new_message = "505 (Вооружённый Нарушитель)"
+        if("996")
+            new_message = "996 (Взрывчатка)"
+        if("211")
+            new_message = "211 (Проникновение/Ограбление)"
+
+    if(src.radio)
+        radio.talk_into(src, "Центр, Код [new_message], 10-20: [A], [A.x], [A.y], [A.z]. Офицеру [user] требуется поддержка.", src.radio_channel)
+    src.last_dispatch = world.time
+    for(var/atom/movable/hailer in GLOB.sechailers)
+        if(hailer.loc && ismob(hailer.loc))
+            playsound(hailer.loc, "sound/voice/dispatch_hailer.ogg", 100, FALSE)
 
 
 // **** Security gas mask ****
