@@ -63,6 +63,8 @@
 			"name" = "Latex and Fetish",
 			"icon" = "grip-lines",
 			"products" = list(
+				/obj/item/clothing/under/latex = 10,
+				/obj/item/clothing/under/latex/half = 5,
 				/obj/item/clothing/under/misc/latex_catsuit = 10,
 				/obj/item/clothing/shoes/latex_socks = 10,
 				/obj/item/clothing/shoes/latexheels = 10,
