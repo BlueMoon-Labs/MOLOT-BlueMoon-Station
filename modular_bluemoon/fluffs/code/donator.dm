@@ -1559,3 +1559,10 @@
 	path = /obj/item/modkit/fluff_m_9922_kit
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/dark_montur
+    name = "Dark Montur"
+    slot = ITEM_SLOT_OCLOTHING
+    path = /obj/item/clothing/suit/donator/bm/dark_montur
+    ckeywhitelist = list("enigma418", "dolbajob")
+    subcategory = LOADOUT_SUBCATEGORIES_DON02
