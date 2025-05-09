@@ -16,6 +16,55 @@
 	attack_verb = list("gnawed", "gnashed", "chewed")
 	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
 
+/obj/item/toy/plush/bm/shark_grey
+	name = "Shark Grey Plushie"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-grey"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
+/obj/item/toy/plush/bm/shark_purple
+	name = "Shark Purple Plushie"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-purple"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
+/obj/item/toy/plush/bm/shark_orange
+	name = "Shark Orange Plushie"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-orange"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
+/obj/item/toy/plush/bm/shark_yellow
+	name = "Shark Yellow Plushie"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-yellow"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
+/obj/item/toy/plush/bm/shark_red
+	name = "Shark Red Plushie"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-red"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
+/obj/item/toy/plush/bm/shark_green
+	name = "Shark Green Plushie"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-green"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
+/obj/item/toy/plush/bm/shark_green
+	name = "Judas Shark Plush"
+	desc = "A soft shark plushie for soft men. Mostly known as 'Blahaj', but some call it 'The IKEA shark'."
+	icon_state = "blahaj-judas"
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
+
 /obj/item/toy/plush/bm/rouny
 	name = "Rouny Plushie"
 	desc = "A plushie depicting a xenomorph runner, made to commemorate the centenary of the Battle of LV-426. Much cuddlier than the real thing."
@@ -26,12 +75,6 @@
 	name = "Ada plushie"
 	desc = "Плюшевая игрушка серой кошки с яркими, как изумруды, глазками. Язык прикреплён небрежно. Крылья в комплект не входят."
 	icon_state = "ada"
-	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
-
-/obj/item/toy/plush/bm/jay
-	name = "Jay Plushie"
-	desc = "Плюшевая игрушка фиолетовой ящерки."
-	icon_state = "jay"
 	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
 
 /obj/item/toy/plush/bm/kiirava
