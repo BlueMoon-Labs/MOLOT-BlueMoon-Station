@@ -1566,3 +1566,10 @@
     path = /obj/item/clothing/suit/donator/bm/dark_montur
     ckeywhitelist = list("enigma418", "dolbajob")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/MI13_uniform
+	name = "MI13 combat uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/MI13_uniform
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

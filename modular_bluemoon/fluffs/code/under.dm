@@ -261,3 +261,11 @@
 	icon_state = "srt_suit"
 	item_state = "srt_suit"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/MI13_uniform
+	name = "MI13 combat uniform"
+	desc = "Black turtleneck with camouflaged combat pants, maded for MI13 agents in the field."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
+	icon_state = "srt_suit"
+	can_adjust = FALSE
