@@ -1545,3 +1545,10 @@
 	path = /obj/item/toy/plush/bm/millie
 	ckeywhitelist = list("pingvas")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/praxil_seven
+	name = "Praxil-7 Mark II Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/fluff_praxil_seven_kit
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

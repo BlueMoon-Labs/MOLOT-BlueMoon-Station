@@ -58,3 +58,33 @@
 	fromitem = list(/obj/item/clothing/suit/space/hardsuit/security)
 
 ////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/head/helmet/space/hardsuit/engine/fluff_praxil_seven
+	name = "Praxil-7 Mark II suit"
+	desc = "A robust, cutting-edge space suit designed for arirals, that are working in hazardous environments. \
+			It features reinforced armor plating, modular tools for maintenance and construction, and a power-assisted \
+			frame that enhances the wearer's strength and endurance. Ideal for high-risk operations in space or industrial zones, \
+			the suit offers protection against extreme temperatures, radiation, and debris."
+	icon_state = "hardsuit0-praxil_seven"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
+	hardsuit_type = "praxil_seven"
+
+/obj/item/clothing/suit/space/hardsuit/engine/fluff_praxil_seven
+	name = "Praxil-7 Mark II  helm"
+	desc = "The ariral helmet is a sleek, high-tech design with an integrated visor that offers 360-degree vision and advanced HUD display. \
+			Equipped with a filtration system for breathable air in toxic atmospheres, it also has reinforced shielding against impacts and radiation. \
+			The helmet is compatible with a communication system for secure, real-time team coordination."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	tail_suit_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/tails_digi.dmi'
+	icon_state = "praxil_seven_engi"
+	tail_state = "praxil_seven_engi"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/fluff_praxil_seven
+	mutantrace_variation = NONE
+
+/obj/item/modkit/fluff_praxil_seven_kit
+	name = "Praxil-7 Mark II engi Kit"
+	desc = "A modkit for making a engineering hardsuit into a Praxil-7 Mark II."
+	product = /obj/item/clothing/suit/space/hardsuit/engine/fluff_praxil_seven
+	fromitem = list(/obj/item/clothing/suit/space/hardsuit/engine)
