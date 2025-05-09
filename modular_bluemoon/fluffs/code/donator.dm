@@ -1411,6 +1411,7 @@
 	path = /obj/item/storage/box/hahun_eidolon
 	ckeywhitelist = list("dolbajob", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	cost = 0
 
 /datum/gear/donator/bm/hahun_medvest
 	name = "Rescue task force vest"
@@ -1549,6 +1550,7 @@
 	path = /obj/item/modkit/fluff_praxil_seven_kit
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	cost = 0
 
 /datum/gear/donator/bm/m_9922
 	name = "M-9922 Kit"
@@ -1556,6 +1558,7 @@
 	path = /obj/item/storage/box/fluff_m_9922_kit
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	cost = 0
 
 /datum/gear/donator/bm/dark_montur
     name = "Dark Montur"
