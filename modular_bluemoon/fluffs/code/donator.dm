@@ -1406,14 +1406,11 @@
 	restricted_roles = list("Chief Medical Officer","Medical Doctor","Chemist","Virologist","Paramedic","Geneticist")
 
 /datum/gear/donator/bm/hahun_gloves
-	name = "Eidolon's gloves"
+	name = "Eidolon's gloves kits"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/gloves/color/latex/nitrile/hahun_eidolon
+	path = /obj/item/storage/box/hahun_eidolon
 	ckeywhitelist = list("dolbajob", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	restricted_desc = "MD, Paramedic, CMO, Brig Physician"
-	restricted_roles = list("Chief Medical Officer", "Medical Doctor", "Paramedic", "Brig Physician")
-	cost = 2
 
 /datum/gear/donator/bm/hahun_medvest
 	name = "Rescue task force vest"
@@ -1556,7 +1553,7 @@
 /datum/gear/donator/bm/m_9922
 	name = "M-9922 Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/modkit/fluff_m_9922_kit
+	path = /obj/item/storage/box/fluff_m_9922_kit
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
