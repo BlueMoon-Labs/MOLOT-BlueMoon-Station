@@ -1272,7 +1272,7 @@
 /datum/gear/donator/bm/savannah_tailbow
 	name = "tailbow"
 	path = /obj/item/clothing/wrists/donator/bm/savannah_tailbow
-	ckeywhitelist = list("n1ght1ngale", "winterschock")
+	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/savannah_piercing
@@ -1568,5 +1568,19 @@
 	name = "MI13 combat uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/MI13_uniform
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/eidolon_cape
+	name = "Eidolon officer cape"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/eidolon_cape
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/eo95_mask
+	name = "EO-95 mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/gas/syndicate/cool_version/eo95_mask
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02

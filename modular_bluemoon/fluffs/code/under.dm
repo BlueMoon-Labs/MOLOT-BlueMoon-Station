@@ -267,5 +267,5 @@
 	desc = "Black turtleneck with camouflaged combat pants, maded for MI13 agents in the field."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
-	icon_state = "srt_suit"
+	icon_state = "MI13_uniform"
 	can_adjust = FALSE
