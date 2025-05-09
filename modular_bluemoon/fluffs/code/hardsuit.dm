@@ -84,7 +84,39 @@
 	mutantrace_variation = NONE
 
 /obj/item/modkit/fluff_praxil_seven_kit
-	name = "Praxil-7 Mark II engi Kit"
+	name = "Praxil-7 Mark II engi hardsuit Kit"
 	desc = "A modkit for making a engineering hardsuit into a Praxil-7 Mark II."
 	product = /obj/item/clothing/suit/space/hardsuit/engine/fluff_praxil_seven
 	fromitem = list(/obj/item/clothing/suit/space/hardsuit/engine)
+
+/obj/item/clothing/head/helmet/space/hardsuit/medical/fluff_m_9922
+	name = "M-9922 space suit"
+	desc = "A medical-grade helmet designed to suit the unique physiology of the Ariral, this piece combines sleek aesthetics with advanced functionality. \
+			Its smooth dome is finished in a radiant white with subtle accents of cool blue—a color associated with purity and care in Ariral culture.<br>\
+			A semi-transparent visor, softly lit from within by a pale blue glow, adapts to varying light conditions and displays biometric readouts directly \
+			onto its surface. Internally, integrated interfaces monitor vital signs and project critical data into the medic’s field of vision.<br>\
+			Elegant blue lines trace the helmet’s sides—these are cooling channels and dispersal pathways for medical aerosols. \
+			A sealed module at the rear houses communication systems, transmitting real-time data to the central medical hub aboard a ship or station."
+	icon_state = "hardsuit0-m_9922"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
+	hardsuit_type = "m_9922"
+
+/obj/item/clothing/suit/space/hardsuit/medical/fluff_m_9922
+	name = "M-9922 helmet"
+	desc = "Crafted for the medics of the Ariral, this suit is a seamless fusion of protection, mobility, and advanced support systems. \
+			Its sleek silhouette follows the elegant contours of the wearer, accentuating the grace and biomechanics of the Ariral physique. \
+			The primary hue is a sterile white, accented with iridescent blue panels tracing the joints, ribs, and spine."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	tail_suit_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/tails_digi.dmi'
+	icon_state = "m_9922_medical"
+	tail_state = "m_9922_medical"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/fluff_praxil_seven
+	mutantrace_variation = NONE
+
+/obj/item/modkit/fluff_m_9922_kit
+	name = "M-9922 med hardsuit Kit"
+	desc = "A modkit for making a medical hardsuit into a M-9922."
+	product = /obj/item/clothing/suit/space/hardsuit/medical/fluff_m_9922
+	fromitem = list(/obj/item/clothing/suit/space/hardsuit/medical)

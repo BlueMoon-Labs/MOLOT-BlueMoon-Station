@@ -1552,3 +1552,10 @@
 	path = /obj/item/modkit/fluff_praxil_seven_kit
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/m_9922
+	name = "M-9922 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/fluff_m_9922_kit
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
