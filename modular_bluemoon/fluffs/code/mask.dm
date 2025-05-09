@@ -47,7 +47,7 @@
 	icon_state = "srt_mask"
 	item_state = "srt_mask"
 
-/obj/item/clothing/mask/gas/syndicate/cool_version/eo95_mask
+/obj/item/clothing/mask/gas/syndicate/hahun_mask/eo95_mask
 	name = "EO-95 mask"
 	desc = "A mask with ariral design, emits  a strange purple particles around it, allow the user to breath more cleaner air, \
 			that would be safer for it's owner because of anatomy of arirals."

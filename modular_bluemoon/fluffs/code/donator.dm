@@ -1584,6 +1584,6 @@
 /datum/gear/donator/bm/eo95_mask
 	name = "EO-95 mask"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/mask/gas/syndicate/cool_version/eo95_mask
+	path = /obj/item/clothing/mask/gas/syndicate/hahun_mask/eo95_mask
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
