@@ -128,8 +128,8 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/latex_uniform
-	name = "latex bodysuit"
-	path = /obj/item/clothing/under/latex_bodysuit
+	name = "latex uniform bodysuit"
+	path = /obj/item/clothing/under/latex
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/solfed_formal
