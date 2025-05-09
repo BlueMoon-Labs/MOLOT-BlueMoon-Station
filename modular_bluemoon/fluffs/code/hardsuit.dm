@@ -109,8 +109,11 @@
 			The primary hue is a sterile white, accented with iridescent blue panels tracing the joints, ribs, and spine."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
 	tail_suit_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/tails_digi.dmi'
 	icon_state = "m_9922_medical"
+	item_state = "m_9922_medical"
 	tail_state = "m_9922_medical"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/fluff_praxil_seven
 	mutantrace_variation = NONE
