@@ -1272,7 +1272,7 @@
 /datum/gear/donator/bm/savannah_tailbow
 	name = "tailbow"
 	path = /obj/item/clothing/wrists/donator/bm/savannah_tailbow
-	ckeywhitelist = list("n1ght1ngale", "winterschock")
+	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/savannah_piercing
@@ -1406,14 +1406,12 @@
 	restricted_roles = list("Chief Medical Officer","Medical Doctor","Chemist","Virologist","Paramedic","Geneticist")
 
 /datum/gear/donator/bm/hahun_gloves
-	name = "Eidolon's gloves"
+	name = "Eidolon's gloves kits"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/gloves/color/latex/nitrile/hahun_eidolon
+	path = /obj/item/storage/box/hahun_eidolon
 	ckeywhitelist = list("dolbajob", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	restricted_desc = "MD, Paramedic, CMO, Brig Physician"
-	restricted_roles = list("Chief Medical Officer", "Medical Doctor", "Paramedic", "Brig Physician")
-	cost = 2
+	cost = 0
 
 /datum/gear/donator/bm/hahun_medvest
 	name = "Rescue task force vest"
@@ -1544,4 +1542,48 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/toy/plush/bm/millie
 	ckeywhitelist = list("pingvas")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/praxil_seven
+	name = "Praxil-7 Mark II Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/fluff_praxil_seven_kit
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	cost = 0
+
+/datum/gear/donator/bm/m_9922
+	name = "M-9922 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/box/fluff_m_9922_kit
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	cost = 0
+
+/datum/gear/donator/bm/dark_montur
+    name = "Dark Montur"
+    slot = ITEM_SLOT_OCLOTHING
+    path = /obj/item/clothing/suit/donator/bm/dark_montur
+    ckeywhitelist = list("enigma418", "dolbajob")
+    subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/MI13_uniform
+	name = "MI13 combat uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/MI13_uniform
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/eidolon_cape
+	name = "Eidolon officer cape"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/eidolon_cape
+	ckeywhitelist = list("enigma418", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/eo95_mask
+	name = "EO-95 mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/gas/syndicate/hahun_mask/eo95_mask
+	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02

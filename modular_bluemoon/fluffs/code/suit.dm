@@ -401,3 +401,13 @@
     item_state = "echoes_jacket"
     body_parts_covered = CHEST
     mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/dark_montur
+	name = "Dark Montur"
+	desc = "Reserved yet commanding, this uniform of MI13 is tailored from a heavy, matte fabric of deep coal-blue, absorbing ambient light. \
+			The form-fitting cut enhances the wearer’s silhouette without restricting movement."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "dark_montur"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
