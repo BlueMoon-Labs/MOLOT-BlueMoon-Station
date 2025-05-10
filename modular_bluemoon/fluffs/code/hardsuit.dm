@@ -69,6 +69,7 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	hardsuit_type = "praxil_seven"
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/space/hardsuit/engine/fluff_praxil_seven
 	name = "Praxil-7 Mark II  suit"
@@ -100,6 +101,7 @@
 	icon_state = "m_9922_medical"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
+	mutantrace_variation = NONE
 
 /obj/item/modkit/fluff_m_9922_helmet_kit
 	name = "M-9922 paramedic helmet Kit"
@@ -120,6 +122,7 @@
 	icon_state = "m_9922_medical"
 	item_state = "m_9922_medical"
 	tail_state = "m_9922_medical"
+	mutantrace_variation = NONE
 
 /obj/item/modkit/fluff_m_9922_suit_kit
 	name = "M-9922 paramedic space suit Kit"
