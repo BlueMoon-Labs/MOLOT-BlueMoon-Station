@@ -620,14 +620,14 @@ SUBSYSTEM_DEF(vote)
 					for(var/A in GLOB.display_vote_settings)
 						var/toggletext
 						var/bitflag = GLOB.display_vote_settings[A]
-						toggletext = "[toggles & bitflag ? "Show" : "Hide"] [A]"
+						toggletext = "[A] [toggles & bitflag ? "- Shown" : "- Hidden"]"
 						choices[toggletext] = bitflag
 					var/chosen = input(usr, "Toggle vote display settings. Cancel to finalize.", toggles) as null|anything in choices
 					if(!chosen)
 						keep_going = FALSE
 					else
 						toggles ^= choices[chosen]
-				display_votes = ~toggles
+				display_votes = toggles
 			else
 				return FALSE
 		mode = vote_type
