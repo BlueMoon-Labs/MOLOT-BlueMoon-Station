@@ -1587,3 +1587,10 @@
 	path = /obj/item/clothing/mask/gas/syndicate/hahun_mask/eo95_mask
 	ckeywhitelist = list("enigma418", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/snakeplushie
+	name = "snake plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/snakeplushie
+	ckeywhitelist = list("herobrine998")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
