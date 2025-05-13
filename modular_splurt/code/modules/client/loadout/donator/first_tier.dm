@@ -1,5 +1,5 @@
 //Misc
-/datum/gear/donator/portallight
+/datum/gear/donator/portallight_box
 	name = "Portal Fleshlight and Underwear"
 	path = /obj/item/storage/box/portallight
 	ckeywhitelist = list()
