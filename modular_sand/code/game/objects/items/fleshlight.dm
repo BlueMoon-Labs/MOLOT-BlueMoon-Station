@@ -726,8 +726,10 @@
 	
 	if (targetting == CUM_TARGET_MOUTH)
 		name = replacetext(name, "Трусики", "Маска")
+		name = replacetext(name, "Портальные", "Портальная")
 	else
 		name = replacetext(name, "Маска", "Трусики")
+		name = replacetext(name, "Портальная", "Портальные")
 
 	to_chat(user, "<span class='notice'>Теперь при надевании портал будет обращен к вашему [targetting].</span>")
 	update_portal()
