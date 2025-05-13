@@ -41,6 +41,11 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
 
 /datum/gear/backpack/portallight
+	name = "Портальный Фонарик"
+	path = /obj/item/portallight
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+
+/datum/gear/backpack/portallight_box
 	name = "Portal Fleshlight and Underwear"
 	path = /obj/item/storage/box/portallight
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
