@@ -307,3 +307,10 @@
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
 	icon_state = "millie"
 	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)
+
+/obj/item/toy/plush/bm/lissara
+	name = "Lissara plush"
+	desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
+	icon_state = "lissara"
+	attack_verb = list("bitten", "hissed", "tail slapped")
+	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 1)
