@@ -1594,3 +1594,10 @@
 	path = /obj/item/toy/plush/snakeplushie
 	ckeywhitelist = list("herobrine998")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/lissara_plushe
+	name = "Lissara plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/bm/lissara
+	ckeywhitelist = list("herobrine998")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
