@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(autotransfer)
 		return
 	SSticker.midround_record_check()
 	if(maxvotes == NO_MAXVOTES_CAP || maxvotes > curvotes)
-		SSvote.initiate_vote("transfer","server", votesystem=APPROVAL_VOTING, vote_time = 1800)
+		SSvote.initiate_vote("transfer","server", votesystem=APPROVAL_VOTING, vote_time = 1800, UseVotePower = TRUE)
 		targettime = targettime + voteinterval
 		curvotes++
 	else

@@ -502,31 +502,35 @@ SUBSYSTEM_DEF(vote)
 	if(mode)
 		if(CONFIG_GET(flag/no_dead_vote) && usr.stat == DEAD && !usr.client.holder)
 			return FALSE
+		if(use_vote_power)
+			if(!users_vote_power[usr.ckey])
+				users_vote_power[usr.ckey] = get_vote_power_by_role(usr.client)
+			vote_power = users_vote_power[usr.ckey]
 		if(vote && ISINRANGE(vote, 1, choices.len))
 			switch(vote_system)
 				if(PLURALITY_VOTING)
 					if(usr.ckey in voted)
-						choices[choices[voted[usr.ckey]]]--
+						choices[choices[voted[usr.ckey]]] -= vote_power
 						voted[usr.ckey] = vote
-						choices[choices[vote]]++
+						choices[choices[vote]] += vote_power
 						return vote
 					else
 						voted += usr.ckey
 						voted[usr.ckey] = vote
-						choices[choices[vote]]++	//check this
+						choices[choices[vote]] += vote_power	//check this
 						return vote
 				if(APPROVAL_VOTING)
 					if(usr.ckey in voted)
 						if(vote in voted[usr.ckey])
 							voted[usr.ckey] -= vote
-							choices[choices[vote]]--
+							choices[choices[vote]] -= vote_power
 						else
 							voted[usr.ckey] += vote
-							choices[choices[vote]]++
+							choices[choices[vote]] += vote_power
 					else
 						voted += usr.ckey
 						voted[usr.ckey] = list(vote)
-						choices[choices[vote]]++
+						choices[choices[vote]] += vote_power
 						return vote
 				if(SCHULZE_VOTING,INSTANT_RUNOFF_VOTING)
 					if(usr.ckey in voted)
