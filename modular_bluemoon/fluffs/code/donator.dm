@@ -268,20 +268,6 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67", "devildeadspace", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/aviator_helmet
-	name = "Aviator Helmet"
-	slot = ITEM_SLOT_HEAD
-	path = /obj/item/clothing/head/helmet/aviator_helmet/no_armor
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/bm/old_wrappings
-	name = "Old Wrappings"
-	slot = ITEM_SLOT_NECK
-	path = /obj/item/clothing/neck/mantle/cowboy
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/flektarn
 	name = "Flektarn Combat Uniform"
 	slot = ITEM_SLOT_ICLOTHING
