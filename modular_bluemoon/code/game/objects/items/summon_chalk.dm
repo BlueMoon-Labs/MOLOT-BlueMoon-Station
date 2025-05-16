@@ -86,7 +86,11 @@
 			return
 
 	to_chat(M, span_lewd("Something is happening!"))
-	var/old_pos = target.loc
+	var/old_pos = get_turf(target)
+	if(istype(get_area(target), /area/hilbertshotel)) // Отель сворачивается когда в нём нету людей = телепортация в космос = плохо
+		var/area/hilbertshotel/Hhotel = get_area(target)
+		if(Hhotel.parentSphere)
+			old_pos = get_turf(Hhotel.parentSphere)
 	var/summon_nickname = "unus ex satellitibus tuis"
 	if(M.client.prefs.summon_nickname)
 		summon_nickname = M.client.prefs.summon_nickname
@@ -99,10 +103,10 @@
 		new /obj/effect/temp_visual/yellowsparkles(src.loc)
 		return
 	to_chat(target, span_hypnophrase("You are turning on!"))
-	new /obj/effect/summon_rune/return_rune(src.loc, target, old_pos)
+	new /obj/effect/summon_rune/return_rune(src.loc, target, old_pos, src)
 	qdel(src)
 
-/obj/effect/summon_rune/proc/teleport_summoned(mob/living/carbon/target, pos_to_teleport, switch_summoned = FALSE, nude_target = TRUE)
+/obj/effect/summon_rune/proc/teleport_summoned(mob/living/carbon/target, pos_to_teleport, switch_summoned = FALSE, transfer_target_items = TRUE)
 	if(!target || !pos_to_teleport)
 		return FALSE
 	if(switch_summoned)
@@ -115,8 +119,8 @@
 
 	playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 	new /obj/effect/temp_visual/yellowsparkles(target.loc)
-	if(nude_target)
-		nuding(target)
+	if(transfer_target_items)
+		transfer_items(target)
 	do_teleport(target, pos_to_teleport, channel = TELEPORT_CHANNEL_MAGIC, forced = TRUE)
 	if(!HAS_TRAIT(target, TRAIT_LEWD_SUMMONED) && switch_summoned && target.mind?.has_antag_datum(/datum/antagonist/ghost_role/ghost_cafe))
 		var/datum/antagonist/ghost_role/ghost_cafe/GC = target.mind?.has_antag_datum(/datum/antagonist/ghost_role/ghost_cafe)
@@ -127,11 +131,17 @@
 /obj/effect/summon_rune/return_rune
 	var/mob/living/carbon/returner
 	var/return_pos
+	var/list/listed_items = list() // Вещи, которые должны телепортироваться обратно во время возврата
 
-/obj/effect/summon_rune/return_rune/Initialize(mapload, mob/living/carbon/mob_to_return, var/pos_to_return)
+/obj/effect/summon_rune/return_rune/Initialize(mapload, mob/living/carbon/mob_to_return, var/pos_to_return, obj/effect/summon_rune/OldRune)
 	. = ..()
 	returner = mob_to_return
 	return_pos = pos_to_return
+	for(var/obj/item/I in mob_to_return.contents)
+		listed_items += I
+	for(var/obj/item/I in OldRune.contents)
+		listed_items += I
+		I.forceMove(src)
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/summon_rune/return_rune/process()
@@ -162,7 +172,9 @@
 	if(returner)
 		teleport_summoned(returner, return_pos, TRUE)
 
-/obj/effect/summon_rune/proc/nuding(mob/living/carbon/human/target)
+//Проклятые техники телепортации
+//При телепортации мы помещаем всё "нежелательное" (контейнеры) в руну призыва, а после, когда появляется руна возврата - всё перенесётся в неё (в процессе return_rune/Initialize)
+/obj/effect/summon_rune/proc/transfer_items(mob/living/carbon/human/target)
 	// Деактивируем модсьют во избежание багов
 	var/obj/item/mod/control/modsuit = target.get_item_by_slot(ITEM_SLOT_BACK)
 	if(modsuit && istype(modsuit) && modsuit.active)
@@ -172,17 +184,29 @@
 		modsuit.conceal(target, target.gloves)
 		if(istype(target.head, /obj/item/clothing/head/mod))
 			modsuit.conceal(target, target.head)
-	if(target.back)
-		target.dropItemToGround(target.back, TRUE)
-	if(target.shoes)
-		target.dropItemToGround(target.shoes, TRUE)
-	if(target.gloves)
-		target.dropItemToGround(target.gloves, TRUE)
-	if(target.w_uniform)
-		target.dropItemToGround(target.w_uniform, TRUE)
-	if(target.wear_suit)
-		target.dropItemToGround(target.wear_suit, TRUE)
-	if(target.wear_neck)
-		target.dropItemToGround(target.wear_neck, TRUE)
-	if(target.head)
-		target.dropItemToGround(target.head, TRUE)
+		target.transferItemToLoc(modsuit, src, TRUE)
+
+	if(target.back && istype(target.back, /obj/item/storage))
+		target.transferItemToLoc(target.back, src, TRUE)
+	if(target.belt && istype(target.belt, /obj/item/storage))
+		target.transferItemToLoc(target.belt, src, TRUE)
+
+/obj/effect/summon_rune/return_rune/transfer_items(mob/living/carbon/human/target)
+	// Деактивируем модсьют во избежание багов
+	var/obj/item/mod/control/modsuit = target.get_item_by_slot(ITEM_SLOT_BACK)
+	if(modsuit && istype(modsuit) && modsuit.active)
+		modsuit.toggle_activate(target, TRUE)
+		modsuit.conceal(target, target.shoes)
+		modsuit.conceal(target, target.wear_suit)
+		modsuit.conceal(target, target.gloves)
+		if(istype(target.head, /obj/item/clothing/head/mod))
+			modsuit.conceal(target, target.head)
+
+	for(var/obj/item/I in target.contents)
+		if(I in listed_items)
+			listed_items -= I
+		else
+			target.dropItemToGround(I, TRUE)
+	if(listed_items.len)
+		for(var/obj/item/I in listed_items)
+			I.forceMove(return_pos)
