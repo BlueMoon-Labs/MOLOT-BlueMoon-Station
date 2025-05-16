@@ -103,3 +103,13 @@
 	new /obj/item/clothing/suit/hooded/wintercoat/medical/hahun_exosuit(src)
 
 /////////////////////////////////////////////////////
+
+/obj/item/storage/backpack/satchel/dilivery_bag
+	name = "Delivery Bag"
+	desc = "A food delivery service backpack with aluminum foiling on the inside, which sustains heat. Smells oddly like fried chicken."
+	icon = 'modular_bluemoon/fluffs/icons/obj/storage.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/storage.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/storage_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/storage_righthand.dmi'
+	icon_state = "dilivery_bag"
+	item_state = "dilivery_bag"
