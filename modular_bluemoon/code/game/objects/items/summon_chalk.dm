@@ -185,6 +185,7 @@
 		if(istype(target.head, /obj/item/clothing/head/mod))
 			modsuit.conceal(target, target.head)
 		target.transferItemToLoc(modsuit, src, TRUE)
+
 	if(target.back && istype(target.back, /obj/item/storage))
 		target.transferItemToLoc(target.back, src, TRUE)
 	if(target.belt && istype(target.belt, /obj/item/storage))
@@ -200,11 +201,7 @@
 		modsuit.conceal(target, target.gloves)
 		if(istype(target.head, /obj/item/clothing/head/mod))
 			modsuit.conceal(target, target.head)
-		target.dropItemToGround(modsuit, TRUE)
-	if(target.back && istype(target.back, /obj/item/storage))
-		target.dropItemToGround(target.back, TRUE)
-	if(target.belt && istype(target.belt, /obj/item/storage))
-		target.dropItemToGround(target.belt, TRUE)
+
 	for(var/obj/item/I in target.contents)
 		if(I in listed_items)
 			listed_items -= I
