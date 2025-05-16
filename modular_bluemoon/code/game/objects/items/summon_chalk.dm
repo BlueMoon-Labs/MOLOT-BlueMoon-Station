@@ -86,7 +86,11 @@
 			return
 
 	to_chat(M, span_lewd("Something is happening!"))
-	var/old_pos = target.loc
+	var/old_pos = get_turf(target)
+	if(istype(get_area(target), /area/hilbertshotel)) // Отель сворачивается когда в нём нету людей = телепортация в космос = плохо
+		var/area/hilbertshotel/Hhotel = get_area(target)
+		if(Hhotel.parentSphere)
+			old_pos = get_turf(Hhotel.parentSphere)
 	var/summon_nickname = "unus ex satellitibus tuis"
 	if(M.client.prefs.summon_nickname)
 		summon_nickname = M.client.prefs.summon_nickname
