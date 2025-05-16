@@ -1600,7 +1600,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/toy/plush/bm/lissara
 	ckeywhitelist = list("herobrine998")
-  	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/dilivery_bag
 	name = "Delivery Bag"
