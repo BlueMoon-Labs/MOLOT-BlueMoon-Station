@@ -4171,8 +4171,8 @@
 "ask" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hydroponics{
-	req_access_txt = "35;28";
-	name = "Hydroponics"
+	name = "Hydroponics";
+	req_one_access_txt = "35;28"
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/kitchen)
@@ -12193,13 +12193,6 @@
 /area/command/heads_quarters/captain)
 "bcR" = (
 /obj/structure/chair/stool,
-/obj/machinery/button/door{
-	id = "Disposal Exit";
-	name = "Disposal Vent Control";
-	pixel_x = -25;
-	pixel_y = 4;
-	req_access_txt = "12"
-	},
 /obj/machinery/button/massdriver{
 	id = "trash";
 	pixel_x = -26;
@@ -37282,7 +37275,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/freezer{
 	name = "Kitchen cold room";
-	req_access_txt = "28"
+	req_one_access_txt = "28"
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/kitchen)
@@ -42307,6 +42300,15 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison/upper)
+"fME" = (
+/obj/machinery/conveyor{
+	id = "garbage"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/maintenance/disposal)
 "fMJ" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Permanent Cell 1";
@@ -45164,8 +45166,15 @@
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
 "hmr" = (
-/turf/open/floor/plating/airless,
-/area/maintenance/port/aft)
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "garbage"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/maintenance/disposal)
 "hmB" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger{
@@ -52515,6 +52524,10 @@
 /obj/structure/sign/warning/securearea{
 	name = "\improper STAY CLEAR HEAVY MACHINERY";
 	pixel_y = 32
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "garbage"
 	},
 /turf/open/floor/plating,
 /area/maintenance/disposal)
@@ -62760,7 +62773,7 @@
 /obj/machinery/door/window/southright{
 	dir = 4;
 	name = "Bar Door";
-	req_one_access_txt = "28"
+	req_one_access_txt = "25;28"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
@@ -67819,6 +67832,10 @@
 /obj/machinery/atmospherics/pipe/manifold/purple/visible,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
+"uev" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "ueS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -85810,7 +85827,7 @@ bcl
 bsa
 bxB
 bhI
-bhI
+fME
 bhI
 wNK
 ugq
@@ -86321,7 +86338,7 @@ bHE
 bZm
 bHE
 beO
-beP
+hmr
 gHl
 ibw
 bRl
@@ -87347,7 +87364,7 @@ cyE
 bCq
 ckv
 bZm
-bHE
+uev
 lcf
 bRg
 aTt
@@ -93256,9 +93273,9 @@ bCq
 kWy
 beQ
 cTF
-hmr
+bHE
 puz
-hmr
+bHE
 cTF
 bZm
 bCq
