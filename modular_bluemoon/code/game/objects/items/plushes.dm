@@ -317,7 +317,7 @@
 
 /obj/item/toy/plush/bm/araminta
 	name = "Araminta plush"
-	desc = "В разработке"
+	desc = "Плюшевая игрушка, вооруженная белыми лапками, готова совершить величайшее ограбление — украсть ваше свободное время."
 	icon_state = "araminta"
 	attack_verb = list("meow", "nya", "purrs")
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
