@@ -37603,8 +37603,12 @@
 /turf/open/floor/carpet/royalblack,
 /area/service/library)
 "djg" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/closed/wall,
+/obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/preopen{
+	id = "barShutters";
+	name = "privacy shutters"
+	},
+/turf/open/floor/plating,
 /area/service/kitchen)
 "djp" = (
 /obj/structure/flora/junglebush/large,
@@ -42300,15 +42304,6 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison/upper)
-"fME" = (
-/obj/machinery/conveyor{
-	id = "garbage"
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/maintenance/disposal)
 "fMJ" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Permanent Cell 1";
@@ -45166,15 +45161,9 @@
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
 "hmr" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "garbage"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating,
-/area/maintenance/disposal)
+/area/maintenance/port/aft)
 "hmB" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger{
@@ -48092,11 +48081,11 @@
 /turf/open/floor/wood,
 /area/command/meeting_room)
 "iYr" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "barShutters";
 	name = "privacy shutters"
 	},
+/obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/service/kitchen)
 "iYv" = (
@@ -52986,7 +52975,7 @@
 /turf/closed/wall,
 /area/security/prison/cells)
 "lJQ" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/service/bar)
 "lJS" = (
@@ -57955,6 +57944,16 @@
 	},
 /turf/open/floor/plating,
 /area/security/prison)
+"osy" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "garbage"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/maintenance/disposal)
 "osH" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Blueshield's Office Maintenance";
@@ -64306,6 +64305,15 @@
 "sad" = (
 /turf/open/floor/wood/wood_diagonal,
 /area/service/park)
+"saI" = (
+/obj/machinery/conveyor{
+	id = "garbage"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/maintenance/disposal)
 "saK" = (
 /obj/structure/closet/crate,
 /obj/item/target/alien,
@@ -65734,6 +65742,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"sTK" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/medical/medbay/central)
 "sUa" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner,
 /turf/open/floor/plasteel,
@@ -67832,10 +67844,6 @@
 /obj/machinery/atmospherics/pipe/manifold/purple/visible,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"uev" = (
-/obj/effect/decal/cleanable/vomit/old,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "ueS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -85827,7 +85835,7 @@ bcl
 bsa
 bxB
 bhI
-fME
+saI
 bhI
 wNK
 ugq
@@ -86338,7 +86346,7 @@ bHE
 bZm
 bHE
 beO
-hmr
+osy
 gHl
 ibw
 bRl
@@ -87364,7 +87372,7 @@ cyE
 bCq
 ckv
 bZm
-uev
+hmr
 lcf
 bRg
 aTt
@@ -111756,7 +111764,7 @@ eoX
 sHy
 uWN
 tGH
-bog
+sTK
 hEo
 fjq
 fjq
@@ -112784,7 +112792,7 @@ bhi
 rww
 rOb
 tGH
-bog
+sTK
 eyi
 oqq
 ygQ
@@ -113557,10 +113565,10 @@ nzR
 hrI
 bof
 bof
-bog
+sTK
 gYI
 fvM
-bog
+sTK
 bof
 tBV
 oAo
