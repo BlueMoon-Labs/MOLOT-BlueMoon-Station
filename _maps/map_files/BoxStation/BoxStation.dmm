@@ -4171,8 +4171,8 @@
 "ask" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hydroponics{
-	req_access_txt = "35;28";
-	name = "Hydroponics"
+	name = "Hydroponics";
+	req_one_access_txt = "35;28"
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/kitchen)
@@ -12193,13 +12193,6 @@
 /area/command/heads_quarters/captain)
 "bcR" = (
 /obj/structure/chair/stool,
-/obj/machinery/button/door{
-	id = "Disposal Exit";
-	name = "Disposal Vent Control";
-	pixel_x = -25;
-	pixel_y = 4;
-	req_access_txt = "12"
-	},
 /obj/machinery/button/massdriver{
 	id = "trash";
 	pixel_x = -26;
@@ -37282,7 +37275,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/freezer{
 	name = "Kitchen cold room";
-	req_access_txt = "28"
+	req_one_access_txt = "28"
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/kitchen)
@@ -37610,8 +37603,12 @@
 /turf/open/floor/carpet/royalblack,
 /area/service/library)
 "djg" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/closed/wall,
+/obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/preopen{
+	id = "barShutters";
+	name = "privacy shutters"
+	},
+/turf/open/floor/plating,
 /area/service/kitchen)
 "djp" = (
 /obj/structure/flora/junglebush/large,
@@ -45164,7 +45161,8 @@
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
 "hmr" = (
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating,
 /area/maintenance/port/aft)
 "hmB" = (
 /obj/structure/table/wood,
@@ -48083,11 +48081,11 @@
 /turf/open/floor/wood,
 /area/command/meeting_room)
 "iYr" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "barShutters";
 	name = "privacy shutters"
 	},
+/obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/service/kitchen)
 "iYv" = (
@@ -52516,6 +52514,10 @@
 	name = "\improper STAY CLEAR HEAVY MACHINERY";
 	pixel_y = 32
 	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "garbage"
+	},
 /turf/open/floor/plating,
 /area/maintenance/disposal)
 "lth" = (
@@ -52973,7 +52975,7 @@
 /turf/closed/wall,
 /area/security/prison/cells)
 "lJQ" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/service/bar)
 "lJS" = (
@@ -57942,6 +57944,16 @@
 	},
 /turf/open/floor/plating,
 /area/security/prison)
+"osy" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "garbage"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/maintenance/disposal)
 "osH" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Blueshield's Office Maintenance";
@@ -62760,7 +62772,7 @@
 /obj/machinery/door/window/southright{
 	dir = 4;
 	name = "Bar Door";
-	req_one_access_txt = "28"
+	req_one_access_txt = "25;28"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
@@ -64293,6 +64305,15 @@
 "sad" = (
 /turf/open/floor/wood/wood_diagonal,
 /area/service/park)
+"saI" = (
+/obj/machinery/conveyor{
+	id = "garbage"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/maintenance/disposal)
 "saK" = (
 /obj/structure/closet/crate,
 /obj/item/target/alien,
@@ -65721,6 +65742,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"sTK" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/medical/medbay/central)
 "sUa" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner,
 /turf/open/floor/plasteel,
@@ -85810,7 +85835,7 @@ bcl
 bsa
 bxB
 bhI
-bhI
+saI
 bhI
 wNK
 ugq
@@ -86321,7 +86346,7 @@ bHE
 bZm
 bHE
 beO
-beP
+osy
 gHl
 ibw
 bRl
@@ -87347,7 +87372,7 @@ cyE
 bCq
 ckv
 bZm
-bHE
+hmr
 lcf
 bRg
 aTt
@@ -93256,9 +93281,9 @@ bCq
 kWy
 beQ
 cTF
-hmr
+bHE
 puz
-hmr
+bHE
 cTF
 bZm
 bCq
@@ -111739,7 +111764,7 @@ eoX
 sHy
 uWN
 tGH
-bog
+sTK
 hEo
 fjq
 fjq
@@ -112767,7 +112792,7 @@ bhi
 rww
 rOb
 tGH
-bog
+sTK
 eyi
 oqq
 ygQ
@@ -113540,10 +113565,10 @@ nzR
 hrI
 bof
 bof
-bog
+sTK
 gYI
 fvM
-bog
+sTK
 bof
 tBV
 oAo
