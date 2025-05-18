@@ -313,7 +313,7 @@
 	desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
 	icon_state = "lissara"
 	attack_verb = list("bitten", "hissed", "tail slapped")
-	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 9,
+	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 6,
 	'modular_splurt/sound/voice/raptor_purr.ogg' = 1
 	)
 
