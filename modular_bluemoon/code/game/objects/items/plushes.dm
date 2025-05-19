@@ -323,5 +323,5 @@
 	icon_state = "araminta"
 	attack_verb = list("meow", "nya", "purrs")
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
-	'modular_bluemoon/sound/voice/short_purr.ogg' = 1
+	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
 	)
