@@ -76,14 +76,16 @@
 		return
 
 	var/massage_time = world.time + 1 SECONDS //Поглощаем энтропию и теорио вероятности тыкнуть энтер в момент появления
+	var/summoned_approve = TRUE
 	if(tgui_alert(target, "You have been summoned! Do you want to answer?", "Do you want to answer?", list("Yes", "No")) != "Yes")
-		to_chat(M, span_userdanger("It refuses to answer!"))
-		return
-
-	if(massage_time > world.time)
+		summoned_approve = FALSE
+	else if(massage_time > world.time)
 		if(tgui_alert(target, "Too quick! You are really want to answer?", "Do you really want to answer the summon?", list("Yes", "No")) != "Yes")
-			to_chat(M, span_userdanger("It refuses to answer!"))
-			return
+			summoned_approve = FALSE
+	if(!summoned_approve)
+		var/excuses = tgui_input_text(target, "Do you want to tell the summoner the reason for the refusal?", "Say Text", "", MAX_MESSAGE_LEN, encode = FALSE)
+		to_chat(M, span_userdanger(excuses ? "You can hear at the edge of your hearing, it says, \"[excuses]\"</span>" : "It refuses to answer!"))
+		return
 
 	if(istype(get_area(src), /area/hilbertshotelstorage)) // Отель свернулся = телепортация в подсобку 3 на 3 без воможности выбраться = плохо
 		to_chat(target, span_warning("The hotel administration apologizes, the room you tried to teleport already been collapsed."))
