@@ -85,23 +85,27 @@
 			to_chat(M, span_userdanger("It refuses to answer!"))
 			return
 
-	to_chat(M, span_lewd("Something is happening!"))
+	if(istype(get_area(src), /area/hilbertshotelstorage)) // Отель свернулся = телепортация в подсобку 3 на 3 без воможности выбраться = плохо
+		to_chat(target, span_warning("The hotel administration apologizes, the room you tried to teleport already been collapsed."))
+		return
+
 	var/old_pos = get_turf(target)
 	if(istype(get_area(target), /area/hilbertshotel)) // Отель сворачивается когда в нём нету людей = телепортация в космос = плохо
 		var/area/hilbertshotel/Hhotel = get_area(target)
 		if(Hhotel.parentSphere)
 			old_pos = get_turf(Hhotel.parentSphere)
+
+	to_chat(M, span_lewd("Something is happening!"))
 	var/summon_nickname = "unus ex satellitibus tuis"
 	if(M.client.prefs.summon_nickname)
 		summon_nickname = M.client.prefs.summon_nickname
-	var/phrase = pick("O magne Asmodee! Quaeso inducere [summon_nickname] ad me!", \
-					  "Coniuro te, daemon luxuriae! Utinam [summon_nickname] mea vota persolvat!", \
-					  "Cupidus meus ardet, magne! Amor [summon_nickname] me moveat affectus!")
-	M.say(phrase)
 	if(!teleport_summoned(target, src.loc, TRUE, TRUE))
 		to_chat(M, span_userdanger("Something went wrong in summoning ritual!"))
 		new /obj/effect/temp_visual/yellowsparkles(src.loc)
 		return
+	M.say(pick("O magne Asmodee! Quaeso inducere [summon_nickname] ad me!", \
+				"Coniuro te, daemon luxuriae! Utinam [summon_nickname] mea vota persolvat!", \
+				"Cupidus meus ardet, magne! Amor [summon_nickname] me moveat affectus!"))
 	to_chat(target, span_hypnophrase("You are turning on!"))
 	new /obj/effect/summon_rune/return_rune(src.loc, target, old_pos, src)
 	qdel(src)
