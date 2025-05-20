@@ -135,7 +135,6 @@
 		if(ishuman(M) && load_character)
 			var/mob/living/carbon/human/H = M
 			if (H.client)
-				SSlanguage.AssignLanguage(H, H.client)
 				if (loadout_enabled == TRUE)
 					SSjob.equip_loadout(null, H)
 					SSjob.post_equip_loadout(null, H)
@@ -178,6 +177,8 @@
 		if(make_bank_account)
 			handlebank(M, starting_money)
 		special_post_appearance(M, name) // BLUEMOON ADD
+		if(M.client && ishuman(M) && load_character)
+			SSlanguage.AssignLanguage(M, M.client)
 	if(uses > 0)
 		uses--
 	if(!permanent && !uses)
