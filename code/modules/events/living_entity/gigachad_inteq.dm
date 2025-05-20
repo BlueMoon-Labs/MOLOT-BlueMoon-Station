@@ -102,10 +102,11 @@
 
 
 /mob/living/simple_animal/hostile/gigachad_inteq/shooter/sniper
+	name = "InteQ Buffed sniper"
 	casingtype = /obj/item/ammo_casing/p50
 	rapid = 1
-	maxHealth = 760
-	health = 760
+	maxHealth = 500
+	health = 500
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	projectilesound = "sound/weapons/noscope.ogg"
 	ranged_cooldown = 150
