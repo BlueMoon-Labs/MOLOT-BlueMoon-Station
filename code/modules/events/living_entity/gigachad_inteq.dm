@@ -95,14 +95,17 @@
 	health = 600
 	ranged = 1
 	rapid = 3
+	projectilesound = "sound/weapons/shot.ogg"
 	speak = list("БЕГАЮЩАЯ МИШЕНЬ И БЕСПЛАТНО!!!", "БЕГИ, СУКА, БЕГИ!!!", "КАК АРБУЗ МАГНУМОМ ЛОПНУ!!!")
-	casingtype = /obj/item/ammo_casing/c10mm
+	projectile_type = /obj/item/projectile/bullet/n762
 	retreat_distance = 5
 	minimum_distance = 5
 
 
 /mob/living/simple_animal/hostile/gigachad_inteq/shooter/sniper
 	name = "InteQ Buffed sniper"
+	icon_state = "gigachad_sniper"
+	icon_living = "gigachad_sniper"
 	casingtype = /obj/item/ammo_casing/p50
 	rapid = 1
 	maxHealth = 500
