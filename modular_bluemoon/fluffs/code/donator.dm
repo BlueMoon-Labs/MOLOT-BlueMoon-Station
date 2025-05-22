@@ -1621,4 +1621,5 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/book_of_stealing
 	ckeywhitelist = list("deadlizard")
+	cost = 3
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
