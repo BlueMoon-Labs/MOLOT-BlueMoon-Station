@@ -1615,3 +1615,10 @@
 	path = /obj/item/storage/backpack/satchel/dilivery_bag
 	ckeywhitelist = list("troubleneko17th", "dimofon", "hazzi", "cupteazee", "kolhozniik", "dimakr")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/bishop_mitre
+	name = "Book of stealing"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/book_of_stealing
+	ckeywhitelist = list("deadlizard")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
