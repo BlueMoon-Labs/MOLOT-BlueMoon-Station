@@ -97,7 +97,7 @@
 	rapid = 3
 	projectilesound = "sound/weapons/shot.ogg"
 	speak = list("БЕГАЮЩАЯ МИШЕНЬ И БЕСПЛАТНО!!!", "БЕГИ, СУКА, БЕГИ!!!", "КАК АРБУЗ МАГНУМОМ ЛОПНУ!!!")
-	projectile_type = /obj/item/projectile/bullet/n762
+	casingtype = /obj/item/projectile/bullet/n762
 	retreat_distance = 5
 	minimum_distance = 5
 
