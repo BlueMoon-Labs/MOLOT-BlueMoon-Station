@@ -198,3 +198,7 @@
 /datum/gear/uniform/boobsuit
 	name = "Custom-Tailored Suit"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/boobsuit
+
+/datum/gear/uniform/draculass
+	name = "Draculass coat"
+	path = /obj/item/clothing/under/costume/draculass
