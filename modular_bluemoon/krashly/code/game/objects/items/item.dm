@@ -318,11 +318,3 @@
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
-/datum/gear/donator/bm/armyknife
-	name = "Army Knife"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/armyknife
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION

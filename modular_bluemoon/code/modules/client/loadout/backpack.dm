@@ -137,3 +137,8 @@
 	name = "NRI poster"
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 	path = /obj/item/poster/nri
+
+/datum/gear/backpack/armyknife
+	name = "Army Multitool"
+	path = /obj/item/armyknife
+	cost = 3
