@@ -387,7 +387,7 @@ There are several things that need to be remembered:
 			var/icon_chosen = 'icons/mob/clothing/hands.dmi'
 			if(dna.species.icon_hands)
 				icon_chosen = dna.species.icon_hands
-			overlays_standing[GLOVES_LAYER] = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_chosen)
+			overlays_standing[GLOVES_LAYER] = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_chosen, use_mob_overlay_icon = dna.species.icon_hands ? FALSE : TRUE)	//костыльный метод попытки починить тешарям униформы
 			gloves_overlay = overlays_standing[GLOVES_LAYER]
 			if(OFFSET_GLOVES in dna.species.offset_features)
 				gloves_overlay.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
@@ -451,7 +451,7 @@ There are several things that need to be remembered:
 				var/icon_chosen = 'icons/mob/clothing/eyes.dmi'
 				if(dna.species.icon_eyes)
 					icon_chosen = dna.species.icon_eyes
-				overlays_standing[GLASSES_LAYER] = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_chosen, override_state = glasses.icon_state)
+				overlays_standing[GLASSES_LAYER] = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_chosen, override_state = glasses.icon_state, use_mob_overlay_icon = dna.species.icon_eyes ? FALSE : TRUE)
 			var/mutable_appearance/glasses_overlay = overlays_standing[GLASSES_LAYER]
 			if(glasses_overlay)
 				if(OFFSET_GLASSES in dna.species.offset_features)
