@@ -37,3 +37,12 @@
 			A.UpdateButtons()
 		to_chat(user, "<span class='notice'>Your SMART-fabric boatcloak now has a [choice] design!</span>")
 		return TRUE
+
+/obj/item/clothing/neck/eidolon_cape
+	name = "Eidolon officer cape"
+	desc = "A cape of MI13 operatives who have proven themself in Eidolon corporation, \
+			infused with purple energy it looks very stylish and even do not restrict movement."
+	icon_state = "eidolon_cape"
+	item_state = "eidolon_cape"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'

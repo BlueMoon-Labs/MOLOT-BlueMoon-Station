@@ -638,7 +638,11 @@
 			if(CUM_TARGET_URETHRA)
 				organ = mutable_appearance('modular_sand/icons/obj/fleshlight.dmi', "portal_anus") // i refuse to even attempt spriting this, have a placeholder
 				organ.color = G.color
-		name = portalunderwear.targetting == CUM_TARGET_PENIS ? "Портальный Дилдо" : "Портальный Фонарик"
+
+		if (portalunderwear.targetting == CUM_TARGET_PENIS)
+			name = replacetext(name, "Фонарик", "Дилдо")
+		else
+			name = replacetext(name, "Дилдо", "Фонарик")
 
 		useable = TRUE
 		add_overlay(organ)
@@ -719,7 +723,13 @@
 	slot_flags         = targetting == CUM_TARGET_MOUTH ? ITEM_SLOT_MASK  : ITEM_SLOT_UNDERWEAR
 	flags_cover        = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
 	visor_flags_cover  = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
-	name               = targetting == CUM_TARGET_MOUTH ? "Портальная Маска"   : "Портальные Трусики"
+	
+	if (targetting == CUM_TARGET_MOUTH)
+		name = replacetext(name, "Трусики", "Маска")
+		name = replacetext(name, "Портальные", "Портальная")
+	else
+		name = replacetext(name, "Маска", "Трусики")
+		name = replacetext(name, "Портальная", "Портальные")
 
 	to_chat(user, "<span class='notice'>Теперь при надевании портал будет обращен к вашему [targetting].</span>")
 	update_portal()

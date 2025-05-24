@@ -15,26 +15,26 @@
 	var/cooldown_time = 100
 
 	var/static/list/possible_answers = list(
-		"It is certain",
-		"It is decidedly so",
-		"Without a doubt",
-		"Yes definitely",
-		"You may rely on it",
-		"As I see it, yes",
-		"Most likely",
-		"Outlook good",
-		"Yes",
-		"Signs point to yes",
-		"Reply hazy try again",
-		"Ask again later",
-		"Better not tell you now",
-		"Cannot predict now",
-		"Concentrate and ask again",
-		"Don't count on it",
-		"My reply is no",
-		"My sources say no",
-		"Outlook not so good",
-		"Very doubtful")
+		"Бесспорно",
+		"Предрешено",
+		"Без сомнений",
+		"Определённо да",
+		"Можешь быть уверен в этом",
+		"Мне кажется — да",
+		"Вероятнее всего",
+		"Хорошие перспективы",
+		"Возможно",
+		"Похоже, что да",
+		"Пока не ясно",
+		"Спроси позже",
+		"Лучше не рассказывать",
+		"Сейчас нельзя",
+		"Повтори опять",
+		"Даже не думай",
+		"Не рассчитывай на это",
+		"Лучше даже не пробовать",
+		"Перспективы не очень хорошие",
+		"Весьма сомнительно")
 
 /obj/item/toy/eightball/Initialize(mapload)
 	. = ..()
@@ -80,6 +80,15 @@
 /obj/item/toy/eightball/proc/clear_cooldown()
 	on_cooldown = FALSE
 
+// bluemoon tooyy!!
+
+/obj/item/toy/eightball/science
+	name = "reality sensor"
+	desc = "A high-tech device designed to monitor and analyze the parameters of the surrounding space for its compliance with the expected physical and metaphysical laws. It is used in scientific experiments, converting data into voice reports after activation by physical impact (shaking), which provides intuitive interaction without interfaces."
+
+	icon = 'icons/obj/toys/toy.dmi'
+	icon_state = "science_toy"
+
 // A broken magic eightball, it only says "YOU SUCK" over and over again.
 
 /obj/item/toy/eightball/broken
@@ -108,30 +117,30 @@
 	var/list/voted = list()
 	var/static/list/haunted_answers = list(
 		"yes" = list(
-			"It is certain",
-			"It is decidedly so",
-			"Without a doubt",
-			"Yes definitely",
-			"You may rely on it",
-			"As I see it, yes",
-			"Most likely",
-			"Outlook good",
-			"Yes",
-			"Signs point to yes"
+			"Бесспорно",
+			"Предрешено",
+			"Без сомнений",
+			"Определённо да",
+			"Можешь быть уверен в этом",
+			"Мне кажется — да",
+			"Вероятнее всего",
+			"Хорошие перспективы",
+			"Возможно",
+			"Похоже, что да",
 		),
 		"maybe" = list(
-			"Reply hazy try again",
-			"Ask again later",
-			"Better not tell you now",
-			"Cannot predict now",
-			"Concentrate and ask again"
+			"Пока не ясно",
+			"Спроси позже",
+			"Лучше не рассказывать",
+			"Сейчас нельзя",
+			"Повтори опять",
 		),
 		"no" = list(
-			"Don't count on it",
-			"My reply is no",
-			"My sources say no",
-			"Outlook not so good",
-			"Very doubtful"
+			"Даже не думай",
+			"Не рассчитывай на это",
+			"Лучше даже не пробовать",
+			"Перспективы не очень хорошие",
+			"Весьма сомнительно"
 		)
 	)
 

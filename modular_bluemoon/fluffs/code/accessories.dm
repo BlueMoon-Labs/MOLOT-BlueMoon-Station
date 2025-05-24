@@ -260,6 +260,33 @@
 	icon_state = "hahun_gloves"
 	item_state = "hahun_gloves"
 
+/obj/item/modkit/hahun_eidolon_nitrile
+	name = "Eidolon medical gloves Kit"
+	desc = "A modkit for making a nitrile gloves into a Eidolon's gloves."
+	product = /obj/item/clothing/gloves/color/latex/nitrile/hahun_eidolon
+	fromitem = list(/obj/item/clothing/gloves/color/latex/nitrile)
+
+/obj/item/clothing/gloves/color/yellow/hahun_eidolon
+	name = "Eidolon engineering gloves"
+	desc = "Engineering gloves with Eidolon Corporation markings, have a built-in computer with information, \
+			that tied with wire scan and meson huds. Have distinctive red-black coloring"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "hahun_gloves"
+	item_state = "hahun_gloves"
+
+/obj/item/modkit/hahun_eidolon_isulated
+	name = "Eidolon engineering gloves Kit"
+	desc = "A modkit for making a Insulated Gloves into a Eidolon engineering gloves."
+	product = /obj/item/clothing/gloves/color/yellow/hahun_eidolon
+	fromitem = list(/obj/item/clothing/gloves/color/yellow)
+
+/obj/item/storage/box/hahun_eidolon/PopulateContents()
+	new /obj/item/modkit/hahun_eidolon_nitrile(src)
+	new /obj/item/modkit/hahun_eidolon_isulated(src)
+
 ////////////////////////
 
 /obj/item/storage/belt/military/srt_chesrig
@@ -270,4 +297,24 @@
 	icon_state = "srt_chestrig"
 	item_state = "srt_chestrig"
 
-////////////////////////
+//////////////////////// БАНЕРЫ
+
+/obj/item/banner/irellia
+	name = "Banner of the Irellia"
+	icon = 'modular_bluemoon/fluffs/icons/obj/accessories.dmi'
+	icon_state = "banner-irellia"
+	desc = "Banner of the Irellia"
+
+/obj/item/banner/rohai
+	name = "Banner of the Rohai empire"
+	icon = 'modular_bluemoon/fluffs/icons/obj/accessories.dmi'
+	icon_state = "banner-rohai"
+	desc = "Banner of the Rohai empire"
+
+/obj/item/banner/norn
+	name = "Banner of kingdom Norn"
+	icon = 'modular_bluemoon/fluffs/icons/obj/accessories.dmi'
+	icon_state = "banner-norn"
+	desc = "Banner of kingdom Norn"
+
+//////////////////////// БАНЕРЫ

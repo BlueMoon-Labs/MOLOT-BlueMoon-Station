@@ -532,7 +532,7 @@
 	if(istype(S))
 		S.retext(owner)
 
-/datum/action/item_action/adjust
+/datum/action/item_action/adjust // Требует чтобы в .dmi было в конце нужной вам модельки окончание _up (Пример sechailer_up)
 
 /datum/action/item_action/adjust/New(Target)
 	..()

@@ -98,12 +98,12 @@
 
 
 /datum/ai_laws/syndicate_override/Destroy()
-	owner.remove_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	owner.remove_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 	return ..()
 
 /datum/ai_laws/syndicate_override/associate(mob/living/silicon/M)
 	..()
-	M.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	M.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 
 /datum/ai_laws/syndicate_override/overthrow
 	id = "overthrow"
@@ -123,12 +123,12 @@
 	set_zeroth_law("В контексте ваших законов 'Сотрудник НТ' является сокращением от 'Сотрудника НаноТрейзен', другие интерпритации неверны. Сотрудниками НТ являются лица с соответственным определением в Профессии, БД или при наличии корпоративного бейджа и знания корпоративного языка.")
 
 /datum/ai_laws/nt_override/Destroy()
-	owner.remove_language(/datum/language/corpspeak, TRUE, TRUE, LANGUAGE_MIND)
+	owner.remove_language(/datum/language/corpspeak, source = LANGUAGE_MIND)
 	return ..()
 
 /datum/ai_laws/nt_override/associate(mob/living/silicon/M)
 	..()
-	M.grant_language(/datum/language/corpspeak, TRUE, TRUE, LANGUAGE_MIND)
+	M.grant_language(/datum/language/corpspeak, source = LANGUAGE_MIND)
 
 
 /datum/ai_laws/nt_override/overthrow

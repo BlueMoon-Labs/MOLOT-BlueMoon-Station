@@ -17,7 +17,7 @@
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
-	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, source = LANGUAGE_MIND)
 	spawned_human.remove_language(/datum/language/common)
 
 /datum/outfit/science_team
@@ -49,7 +49,7 @@
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
-	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, source = LANGUAGE_MIND)
 	spawned_human.remove_language(/datum/language/common)
 
 /datum/outfit/security_guard
@@ -100,7 +100,7 @@
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
-	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, source = LANGUAGE_MIND)
 	spawned_human.remove_language(/datum/language/common)
 
 /datum/outfit/sectorhdirector
@@ -140,9 +140,9 @@
 
 /obj/effect/mob_spawn/human/black_mesa/hecu/special(mob/living/carbon/human/spawned_human)
 	. = ..()
-	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
-	spawned_human.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
-	spawned_human.grant_language(/datum/language/signlanguage, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, source = LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/old_codes, source = LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/signlanguage, source = LANGUAGE_MIND)
 	spawned_human.remove_language(/datum/language/common)
 
 /obj/effect/mob_spawn/human/black_mesa/hecu/breacher
@@ -302,9 +302,9 @@
 
 /obj/effect/mob_spawn/human/black_mesa/hecu/lost/special(mob/living/carbon/human/spawned_human)
 	. = ..()
-	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
-	spawned_human.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
-	spawned_human.grant_language(/datum/language/signlanguage, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, source = LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/old_codes, source = LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/signlanguage, source = LANGUAGE_MIND)
 
 /datum/outfit/losthecu
 	name = "Lost HECU grunt"
@@ -378,9 +378,9 @@
 
 /obj/effect/mob_spawn/human/black_mesa/hecu/special(mob/living/carbon/human/spawned_human)
 	. = ..()
-	spawned_human.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE, LANGUAGE_MIND)
-	spawned_human.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
-	spawned_human.grant_language(/datum/language/signlanguage, TRUE, TRUE, LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/modular_sand/solcommon, source = LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/old_codes, source = LANGUAGE_MIND)
+	spawned_human.grant_language(/datum/language/signlanguage, source = LANGUAGE_MIND)
 	spawned_human.remove_language(/datum/language/common)
 
 /datum/outfit/blackops

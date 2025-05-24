@@ -46,3 +46,11 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/mask.dmi'
 	icon_state = "srt_mask"
 	item_state = "srt_mask"
+
+/obj/item/clothing/mask/gas/syndicate/hahun_mask/eo95_mask
+	name = "EO-95 mask"
+	desc = "A mask with ariral design, emits  a strange purple particles around it, allow the user to breath more cleaner air, \
+			that would be safer for it's owner because of anatomy of arirals."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/mask.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/mask.dmi'
+	icon_state = "eo-95_mask"

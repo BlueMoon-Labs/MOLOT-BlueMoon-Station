@@ -2,6 +2,7 @@
 	name = "Gift ribbon"
 	desc = "You know how to use it, right? You know... right?"
 	icon_state = "gift_ribbon"
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/bm/sigu
 	name = "SIGU"

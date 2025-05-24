@@ -36,9 +36,10 @@
 
 /obj/item/toy/plush/bm/kiirava
 	name = "Kiirava Plushie"
-	desc = "Плюшевая игрушка зеленоватой ящерки."
+	desc = "Выглядит как ящерка с телом оливково-зеленого цвета. У нее непропорционально большая голова с двумя огромными глазами: один черный, а другой розовый. У ящерки маленькие треугольные рожки по бокам головы и крошечный рот, который почти незаметен."
 	icon_state = "kiirava"
-	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
+	attack_verb = list("gnawed", "gnashed", "chewed")
+	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
 
 /obj/item/toy/plush/bm/emma
 	name = "Emma plushie"
@@ -300,3 +301,27 @@
 	desc = "От неё исходит характерный металлический запах.."
 	icon_state = "iris"
 	can_you_fuck_plush = FALSE
+
+/obj/item/toy/plush/bm/millie
+	name = "Millie plush"
+	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
+	icon_state = "millie"
+	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)
+
+/obj/item/toy/plush/bm/lissara
+	name = "Lissara plush"
+	desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
+	icon_state = "lissara"
+	attack_verb = list("bitten", "hissed", "tail slapped")
+	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 6,
+	'modular_splurt/sound/voice/raptor_purr.ogg' = 1
+	)
+
+/obj/item/toy/plush/bm/araminta
+	name = "Araminta plush"
+	desc = "Плюшевая игрушка, вооруженная белыми лапками, готова совершить величайшее ограбление — украсть ваше свободное время."
+	icon_state = "araminta"
+	attack_verb = list("meow", "nya", "purrs")
+	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
+	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
+	)

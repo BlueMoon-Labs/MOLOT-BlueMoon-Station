@@ -969,6 +969,7 @@
 		SSjob.equip_loadout(null, new_spawn)
 		SSjob.post_equip_loadout(null, new_spawn)
 		SSquirks.AssignQuirks(new_spawn, new_spawn.client, TRUE, TRUE, null, FALSE, new_spawn)
+		SSlanguage.AssignLanguage(new_spawn, new_spawn.client)
 		new_spawn.ghost_cafe_traits(TRUE, GC.adittonal_allowed_area)
 		to_chat(new_spawn,"<span class='boldwarning'>Ghosting is free!</span>")
 
@@ -1366,14 +1367,14 @@
 
 /obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/carbon/human/new_spawn)
 	. = ..()
-	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/carbon/human/new_spawn)
 	. = ..()
-	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
 	ghost_anchor.implant(new_spawn, null, TRUE)

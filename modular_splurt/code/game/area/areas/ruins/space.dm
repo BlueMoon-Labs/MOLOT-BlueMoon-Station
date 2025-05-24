@@ -43,7 +43,7 @@
 	has_gravity = STANDARD_GRAVITY
 /*
 /obj/effect/mob_spawn/human/space/syndicate/special(mob/living/new_spawn)
-	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 
 /obj/effect/mob_spawn/human/space/syndicate/comms
 	name = "Syndicate Comms Agent"
