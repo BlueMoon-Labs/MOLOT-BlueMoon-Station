@@ -256,28 +256,12 @@
 	throwforce = 2
 
 /obj/item/storage/wallet/cat_alch
-	name = "Alchemist's Neko Wallet"
+	name = "Neko Wallet"
 	desc = "Этот кот просит денег."
 	icon = 'modular_bluemoon/krashly/icons/obj/alchemist.dmi'
-	icon_state = "maneki-neko"
+	icon_state = "wallet"
 
 // Шмотки в конкретный лодаут по Кею.
-
-/datum/gear/donator/bm/book_alch
-	name = "Alchemist's Book"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/paper/book_alch
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
-/datum/gear/donator/bm/cat_alch
-	name = "Neko Wallet"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/storage/wallet/cat_alch
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/vape
 	name = "Vape"
@@ -315,6 +299,3 @@
 	name = "Coconut Bong"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bong/coconut
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
