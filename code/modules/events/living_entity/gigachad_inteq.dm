@@ -100,7 +100,7 @@
 	maxHealth = 600
 	health = 600
 	ranged = 1
-	rapid = 3
+	rapid = 5
 	projectilesound = 'sound/weapons/shot.ogg'
 	speak = list("БЕГАЮЩАЯ МИШЕНЬ И БЕСПЛАТНО!!!", "БЕГИ, СУКА, БЕГИ!!!", "КАК АРБУЗ МАГНУМОМ ЛОПНУ!!!")
 	casingtype = /obj/item/ammo_casing/n762
