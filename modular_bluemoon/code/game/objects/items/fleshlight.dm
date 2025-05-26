@@ -2,6 +2,7 @@ GLOBAL_LIST_EMPTY(portalpanties)
 GLOBAL_LIST_EMPTY(fleshlight_portallight)
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties
+	body_parts_covered = NONE	// Коль что сами через настройки выставят для себя
 	var/seamless = FALSE 		// Закрытие трусиков на латексный ключ
 	var/free_use = FALSE 		// Общий доступ для использования
 	var/last_free_use_change	// Последнее изменение общего доступа у трусиков
@@ -226,5 +227,3 @@ GLOBAL_LIST_EMPTY(fleshlight_portallight)
 	chameleon_action.chameleon_type = /obj/item/clothing/underwear/briefs
 	chameleon_action.chameleon_name = "Panties"
 	chameleon_action.initialize_disguises()
-	if(icon_state == "portalpanties")
-		body_parts_covered = null
