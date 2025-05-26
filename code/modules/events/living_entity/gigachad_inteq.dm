@@ -114,8 +114,8 @@
 	icon_living = "gigachad_sniper"
 	casingtype = /obj/item/ammo_casing/p50/inteqsniper
 	rapid = 1
-	maxHealth = 400
-	health = 400
+	maxHealth = 350
+	health = 350
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	projectilesound = "sound/weapons/noscope.ogg"
 	ranged_cooldown = 150
