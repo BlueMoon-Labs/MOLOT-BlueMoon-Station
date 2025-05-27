@@ -148,22 +148,6 @@
 	if(available_panties.len)
 		. += "Alt-Click to choose panties."
 
-/obj/item/portallight/AltClick(mob/user)
-	. = ..()
-	var/obj/item/clothing/underwear/briefs/panties/portalpanties/to_connect
-	if(available_panties.len)
-		to_connect = tgui_input_list(user, "Choose...", "Available panties", available_panties, null)
-	if(to_connect)
-		if(!to_connect.free_use)
-			to_chat(usr, "They have public mode turned off!")
-			return FALSE
-		portalunderwear = to_connect //pair the panties on the fleshlight.
-		to_connect.update_portal()
-		to_connect.portallight += src //pair the fleshlight
-		icon_state = "paired"
-		update_appearance()
-		playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
-
 /obj/item/portallight/update_appearance(updates)
 	. = ..()
 	updatesleeve()
@@ -723,7 +707,7 @@
 	slot_flags         = targetting == CUM_TARGET_MOUTH ? ITEM_SLOT_MASK  : ITEM_SLOT_UNDERWEAR
 	flags_cover        = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
 	visor_flags_cover  = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
-	
+
 	if (targetting == CUM_TARGET_MOUTH)
 		name = replacetext(name, "Трусики", "Маска")
 		name = replacetext(name, "Портальные", "Портальная")

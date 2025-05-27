@@ -175,6 +175,7 @@ GLOBAL_LIST_EMPTY(fleshlight_portallight)
 			P.available_panties += src
 	else
 		to_chat(usr, "[src] are no longer public. All connected devices have been disconnected.")
+		LAZYCLEARLIST(portallight)
 		for(var/obj/item/portallight/P in GLOB.fleshlight_portallight)
 			P.available_panties -= src
 			if(P.portalunderwear == src)
@@ -220,10 +221,42 @@ GLOBAL_LIST_EMPTY(fleshlight_portallight)
 	if(input)
 		name = input
 
-// Маскировка трусиков
+// Маскировка трусиков под маску и трусики
 /obj/item/clothing/underwear/briefs/panties/portalpanties/Initialize(mapload)
 	. = ..()
-	var/datum/action/item_action/chameleon/change/chameleon_action = new(src)
-	chameleon_action.chameleon_type = /obj/item/clothing/underwear/briefs
-	chameleon_action.chameleon_name = "Panties"
-	chameleon_action.initialize_disguises()
+	var/datum/action/item_action/chameleon/change/chameleon_panties = new(src)
+	chameleon_panties.chameleon_type = /obj/item/clothing/underwear/briefs
+	chameleon_panties.chameleon_name = "Panties"
+	chameleon_panties.initialize_disguises()
+	var/datum/action/item_action/chameleon/change/chameleon_mask = new(src)
+	chameleon_mask.chameleon_type = /obj/item/clothing/mask
+	chameleon_mask.chameleon_name = "Mask"
+	chameleon_mask.initialize_disguises()
+
+// многие ко многим ©ICE-IS-NICE
+/obj/item/portallight/AltClick(mob/user)
+	. = ..()
+	var/obj/item/clothing/underwear/briefs/panties/portalpanties/to_connect
+	if(available_panties.len)
+		to_connect = tgui_input_list(user, "Choose...", "Available panties", available_panties, null)
+	if(!to_connect)
+		return FALSE
+
+	if(to_connect == portalunderwear)
+		to_chat(usr, "Conntection terminated!")
+		portalunderwear = null
+		to_connect.portallight -= src //upair the fleshlight
+		to_connect.update_portal()
+		icon_state = "unpaired"
+		update_appearance()
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
+		return FALSE
+	if(!to_connect.free_use)
+		to_chat(usr, "They have public mode turned off!")
+		return FALSE
+	portalunderwear = to_connect //pair the panties on the fleshlight.
+	to_connect.update_portal()
+	to_connect.portallight += src //pair the fleshlight
+	icon_state = "paired"
+	update_appearance()
+	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
