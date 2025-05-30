@@ -17,6 +17,5 @@
 	owner.visible_message(
 			span_warning("[stripper] is using [held_item] on [owner]'s [name]."),
 			span_userdanger("[stripper] is using [held_item] on your [name]."),
-			ignored_mobs = stripper,
 		)
 	attackby(held_item, owner) //WARNING! We pretend wearer is using item to prevent errors. We adjust this proc to already existing mechanics.
