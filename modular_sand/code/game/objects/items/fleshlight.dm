@@ -174,7 +174,7 @@
 	for(var/mob/living/carbon/human/person in list(M, portal_target))
 		if(person.has_penis())
 			var/obj/item/organ/genital/penis/person_penis = person.getorganslot(ORGAN_SLOT_PENIS)
-			LAZYADD(penis_names, "[person_penis.length]-см [lowertext(person_penis.shape)]")
+			LAZYADD(penis_names, "[round(person_penis.length * (person ? get_size(person) : 1), 0.25)]-см [lowertext(person_penis.shape)]")
 			LAZYADD(penis_names, "penis")
 		else if(person.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/person_strapon = person.get_strapon()
