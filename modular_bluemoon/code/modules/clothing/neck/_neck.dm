@@ -72,3 +72,12 @@
 	if((current_equipped_slot == ITEM_SLOT_NECK) && (type in list(/obj/item/clothing/neck/petcollar, /obj/item/clothing/neck/petcollar/locked, /obj/item/clothing/neck/necklace/cowbell)))
 		var/mob/living/carbon/human/H = user
 		UnregisterSignal(H, COMSIG_MOVABLE_MOVED)
+
+/obj/item/clothing/neck/petcollar/locked
+	interactable_in_strip_menu = TRUE
+
+/obj/item/clothing/neck/petcollar/locked/equipped(mob/user, slot)
+	. = ..()
+	if(lock)
+		if(slot == ITEM_SLOT_NECK)
+			ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)

@@ -220,9 +220,13 @@
 		if(lock != FALSE)
 			to_chat(user, "<span class='warning'>With a click the collar unlocks!</span>")
 			lock = FALSE
+			if(HAS_TRAIT(src, TRAIT_NODROP))
+				REMOVE_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 		else
 			to_chat(user, "<span class='warning'>With a click the collar locks!</span>")
 			lock = TRUE
+			if(current_equipped_slot == ITEM_SLOT_NECK)
+				ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 	return
 
 /obj/item/clothing/neck/petcollar/locked/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)

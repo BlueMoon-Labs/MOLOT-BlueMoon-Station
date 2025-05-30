@@ -444,28 +444,39 @@
 						return
 
 					strippable_item.finish_equip(owner, held_item, user)
-			else if (strippable_item.try_unequip(owner, user))
-				LAZYORASSOCLIST(interactions, user, key)
+			else
+				//stripper is trying to use item in his hand on owner's worn item, directly, as it is still on owner.
+				//only certain items can be interacted with while being worn by owner: set "interactable_in_strip_menu" flag.
+				//if held item has been used on worn item we just cancel stripping process.
+				if(istype(item, /obj/item) && ismob(owner))
+					var/obj/item/selected_item = item
+					var/obj/item/held_item = user.get_active_held_item()
+					if(istype(held_item))
+						if(selected_item.use_item_on_strippable(user, owner, held_item))
+							return
 
-				var/should_unequip = strippable_item.start_unequip(owner, user)
+				if (strippable_item.try_unequip(owner, user))
+					LAZYORASSOCLIST(interactions, user, key)
 
-				LAZYREMOVEASSOC(interactions, user, key)
+					var/should_unequip = strippable_item.start_unequip(owner, user)
 
-				// Yielding call
-				if (!should_unequip)
-					return
+					LAZYREMOVEASSOC(interactions, user, key)
 
-				if (QDELETED(src) || QDELETED(owner))
-					return
+					// Yielding call
+					if (!should_unequip)
+						return
 
-				// They changed the item in the meantime
-				if (strippable_item.get_item(owner) != item)
-					return
+					if (QDELETED(src) || QDELETED(owner))
+						return
 
-				if (!user.Adjacent(owner))
-					return
+					// They changed the item in the meantime
+					if (strippable_item.get_item(owner) != item)
+						return
 
-				strippable_item.finish_unequip(owner, user)
+					if (!user.Adjacent(owner))
+						return
+
+					strippable_item.finish_unequip(owner, user)
 		if ("alt")
 			var/key = params["key"]
 			var/datum/strippable_item/strippable_item = strippable.items[key]

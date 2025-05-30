@@ -51,7 +51,7 @@
 			user_disrobed = TRUE
 
 			// Drop the target item
-			dropItemToGround(item_worn, TRUE)
+			dropItemToGround(item_worn, FALSE)
 
 			// Throw item to a random spot
 			if(throw_clothes)
