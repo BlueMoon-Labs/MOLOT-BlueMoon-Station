@@ -193,11 +193,6 @@
 	dir = 8
 	},
 /obj/item/gun/ballistic/automatic/ak12/pindicate{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/automatic/ak12/pindicate,
-/obj/item/gun/ballistic/automatic/ak12/pindicate{
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -209,16 +204,12 @@
 	pixel_x = 32
 	},
 /obj/item/gun/ballistic/automatic/ak12/pindicate{
-	pixel_x = 5;
-	pixel_y = -5
+	pixel_x = 1;
+	pixel_y = 1
 	},
 /obj/item/gun/ballistic/automatic/ak12/pindicate{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/gun/ballistic/automatic/ak12/pindicate{
-	pixel_x = 5;
-	pixel_y = -5
+	pixel_x = 7;
+	pixel_y = 12
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_vault)
@@ -989,6 +980,10 @@
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bar)
+"fv" = (
+/obj/item/rack_parts,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "fy" = (
 /obj/structure/sign/poster/contraband/inteq/inteq_better_dead{
 	pixel_x = -32
@@ -1418,6 +1413,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "hS" = (
 /mob/living/simple_animal/hostile/nanotrasen/elite,
+/obj/item/rack_parts,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "hV" = (
@@ -2122,9 +2118,6 @@
 /area/ruin/space)
 "lQ" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/power/emitter/prototype{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -4010,6 +4003,7 @@
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "vF" = (
+/obj/item/rack_parts,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -4117,6 +4111,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "wp" = (
+/obj/structure/rack/shelf,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006;
 	icon_state = "platingdmg2"
@@ -4274,7 +4269,6 @@
 	},
 /obj/item/gun/ballistic/automatic/ak12/r,
 /obj/item/binoculars,
-/obj/item/card/emag,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "xa" = (
@@ -4996,6 +4990,10 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
+"AF" = (
+/obj/structure/rack/shelf,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "AH" = (
 /obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "152"
@@ -5866,13 +5864,13 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = "colossus_port"
-	},
 /obj/effect/turf_decal/stripes{
 	dir = 1
 	},
 /obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "Fj" = (
@@ -6710,6 +6708,10 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "JR" = (
 /turf/open/floor/engine/vacuum,
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
+"JS" = (
+/obj/item/rack_parts,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "JV" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -8477,7 +8479,6 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Uc" = (
 /obj/structure/closet/syndicate/inteq/personal,
-/obj/item/inteq/uplink/radio,
 /obj/item/flashlight/seclite,
 /obj/item/crowbar/red,
 /obj/item/clothing/under/inteq/skirt,
@@ -13245,7 +13246,7 @@ lK
 hS
 SX
 SX
-SX
+JS
 SX
 SX
 SX
@@ -13324,8 +13325,8 @@ gB
 QQ
 mH
 lK
-SX
-SX
+AF
+JS
 wp
 aZ
 aZ
@@ -13570,7 +13571,7 @@ og
 ty
 mH
 rL
-uI
+fv
 dR
 Vy
 qN
@@ -13734,7 +13735,7 @@ Cn
 ty
 mH
 rL
-uI
+fv
 uI
 aZ
 aZ
@@ -13816,8 +13817,8 @@ ol
 WQ
 Vk
 lK
-uI
-uI
+fv
+fv
 vF
 aZ
 aZ
@@ -13899,9 +13900,9 @@ Xz
 XK
 lK
 JZ
-uI
+fv
 ms
-uI
+fv
 uI
 uI
 JZ
