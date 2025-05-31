@@ -86,7 +86,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 		M.apply_status_effect(/datum/status_effect/chem/astral_insurance)
 		var/datum/status_effect/chem/astral_insurance/AI = M.has_status_effect(/datum/status_effect/chem/astral_insurance)
 		AI.original = M
-		AI.originalmind = M.mind
+		AI.originalmind = M.last_mind
 
 	if(overdosed)
 		if(prob(50))
