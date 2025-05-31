@@ -682,6 +682,13 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/p940_g22
+	name = "P940 G22 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/pf940_kit_g22
+	ckeywhitelist = list("leony24")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/p940_g22
 	name = "Shotgun into KS-23M Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/ks23_kit
