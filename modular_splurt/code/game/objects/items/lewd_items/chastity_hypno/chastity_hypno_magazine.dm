@@ -25,8 +25,9 @@
 	if(!CHECK_BITFIELD(reader.client?.prefs.cit_toggles, HYPNO))
 		to_chat(reader, "<span class='notice'>You skim the magazine, but the images seem oddly covered by twisting spirals that cover the <i>most interesting</i> bits. You were only reading it for the articles anyways...</span>")
 		return
-
+	var/list/stashed_choices = choices
 	hypno(reader)
+	choices = stashed_choices
 
 /obj/item/chastity_hypno/magazine/save()
 	. = ..()
