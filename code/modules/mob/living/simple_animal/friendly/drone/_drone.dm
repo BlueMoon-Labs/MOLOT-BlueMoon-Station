@@ -38,7 +38,7 @@
 	speak_emote = list("chirps")
 	speech_span = SPAN_ROBOT
 	bubble_icon = "machine"
-	initial_language_holder = /datum/language_holder
+	initial_language_holder = /datum/language_holder/drone
 	access_card = /obj/item/card/id
 	mob_size = MOB_SIZE_SMALL
 	silicon_privileges = PRIVILEGES_DRONE
