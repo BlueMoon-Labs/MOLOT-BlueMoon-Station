@@ -211,7 +211,7 @@
 		return
 	if(mb_time)
 		to_chat(src,"<span class='userlove'>Вы начали [G.masturbation_verb] прямо над <b>[container]</b>. [G.ru_name_capital] в готовности к этому...</span>")
-		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
+		if(!do_after(src, mb_time, target = src, timed_action_flags = (IGNORE_HELD_ITEM|IGNORE_INCAPACITATED)) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
 	to_chat(src,"<span class='userlove'>[G.ru_name_capital] стимулируется вашими же усилиями, вы пытаетесь наполнить <b>[container]</b>.</span>")
 	message_admins("[ADMIN_LOOKUPFLW(src)] использует [ru_ego()] [G.name], чтобы наполнить <b>[container]</b> [G.get_fluid_name()].")
