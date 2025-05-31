@@ -53,22 +53,24 @@
 	)
 	return ..()
 
-/datum/job/engineer
-	alt_titles = list(
+/datum/job/engineer/New()
+	alt_titles += list(
 		"GEC Engineer" // - add nta_of
 		)
+	return ..()
 
 //Service
-/datum/job/assistant
-	alt_titles = list(
-		"Civilian",
-		"Visitor",
-		"Businessman",
-		"Trader",
+/datum/job/assistant/New()
+	alt_titles += list(
+		// "Civilian",
+		// "Visitor",
+		// "Businessman",
+		// "Trader",
 		"Intern",
 		"Off-Duty Civilian",
 		"Fraudster" // - add nta_of
 		)
+	return ..()
 
 /datum/job/bartender/New()
 	alt_titles += list(
@@ -76,9 +78,9 @@
 	)
 	return ..()
 
-/datum/job/chaplain
-	alt_titles = list(
-		"Priest",
+/datum/job/chaplain/New()
+	alt_titles += list(
+		// "Priest",
 		"Shaman",
 		"Pope",
 		"Voodo Sorcerer",
@@ -87,24 +89,26 @@
 		"Theologist", // - add nta_of
 		"Psychic" // Это экстрасен! - add nta_of
 		)
+	return ..()
 
 /datum/job/cook/New()
-	alt_titles = list(
-		"Culinary Artist",
-		"Butcher",
+	alt_titles += list(
+		// "Culinary Artist",
+		// "Butcher",
 		"Chef",
-		"Nutritionist"
+		// "Nutritionist"
 	)
 	return ..()
 
-/datum/job/curator
-	alt_titles = list(
+/datum/job/curator/New()
+	alt_titles += list(
 		"Reporter",
 		"Correspondent",
 		"Newsman",
 		"Questioner",
 		"Occultism Fan"
 		)
+	return ..()
 
 /datum/job/hydro/New()
 	alt_titles += list(
@@ -119,11 +123,12 @@
 	)
 	return ..()
 
-/datum/job/scientist
-	alt_titles = list(
+/datum/job/scientist/New()
+	alt_titles += list(
 		"Thaumaturge", // Да, Тауматург, вопросы? - add nta_of
 		"Anomalist" // - add nta_of
 		)
+	return ..()
 
 /datum/job/doctor/New()
 	alt_titles += list(
