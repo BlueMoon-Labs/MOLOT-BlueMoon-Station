@@ -287,16 +287,16 @@
 		interact(user)
 
 /obj/structure/chair/milking_machine/AltClick(mob/user)
-	if(!LAZYLEN(buckled_mobs) || !(user in buckled_mobs) || !isliving(user))
-		return ..()
+	if(!LAZYLEN(buckled_mobs) || (user in buckled_mobs) || !isliving(user))
+		return
 	user_unbuckle_mob(buckled_mobs[1], user)
 
 // Attack handler for various item
 /obj/structure/chair/milking_machine/attackby(obj/item/used_item, mob/user)
-	if(!istype(used_item, /obj/item/reagent_containers) || (used_item.item_flags & ABSTRACT) || !used_item.is_open_container())
+	if(!istype(used_item, /obj/item/reagent_containers/glass) || (used_item.item_flags & ABSTRACT) || !used_item.is_open_container())
 		return ..()
 
-	var/obj/item/reagent_containers/used_container = used_item
+	var/obj/item/reagent_containers/glass/used_container = used_item
 	if(!user.transferItemToLoc(used_container, src))
 		return FALSE
 
@@ -305,7 +305,7 @@
 	return TRUE
 
 // Beaker change handler
-/obj/structure/chair/milking_machine/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
+/obj/structure/chair/milking_machine/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/glass/new_beaker)
 	if(!user || (!beaker && !new_beaker))
 		return FALSE
 
