@@ -554,7 +554,21 @@
 	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
 	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
+/obj/item/modkit/pf940_kit_g22
+	name = "PF940 G22 Kit"
+	desc = "A modkit for making a G22 into a PF940."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
+
 /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	name = "\improper PF940"
+	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .45, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "pf940"
+	can_suppress = FALSE
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/pf940_shoot.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/g22/pf940
 	name = "\improper PF940"
 	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .45, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
