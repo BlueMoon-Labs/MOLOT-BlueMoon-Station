@@ -12,7 +12,7 @@
 	. = ..()
 	if(.)
 		return
-	if(((GLOB.master_mode != "Extended"))&&(user.mind?.antag_datums))
+	if((GLOB.master_mode != "Extended" && user.mind?.antag_datums ) || (GLOB.master_mode != "Extended" && (HAS_MIND_TRAIT(user, TRAIT_MINDSHIELD))))
 		if(user.mind?.has_antag_datum(/datum/antagonist/ghost_role))
 			return promptAndCheckIn(user, user)
 		if(user.mind?.has_antag_datum(/datum/antagonist/ashwalker))
