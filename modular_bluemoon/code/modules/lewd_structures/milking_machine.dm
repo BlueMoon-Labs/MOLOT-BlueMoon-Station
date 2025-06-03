@@ -103,7 +103,6 @@
 /obj/structure/chair/milking_machine/examine(mob/user)
 	. = ..()
 	. += span_purple("What are these metal mounts on the armrests for...?")
-	. += span_notice("Alt+Click to unbuckle mob.")
 	. += span_notice("[src] can be disassembled by using Ctrl+Shift+Click.")
 
 /obj/structure/chair/milking_machine/Destroy()
@@ -287,9 +286,7 @@
 		interact(user)
 
 /obj/structure/chair/milking_machine/AltClick(mob/user)
-	if(!LAZYLEN(buckled_mobs) || (user in buckled_mobs) || !isliving(user))
-		return
-	user_unbuckle_mob(buckled_mobs[1], user)
+	return
 
 // Attack handler for various item
 /obj/structure/chair/milking_machine/attackby(obj/item/used_item, mob/user)
@@ -367,7 +364,8 @@
 		return FALSE
 
 	// var/fluid_multiplier = 1
-	// var/static/list/fluid_retrieve_amount = list("off" = 0, "low" = 1, "medium" = 2, "hard" = 3)
+	var/static/list/fluid_retrieve_amount = list("off" = 0, "low" = 1, "medium" = 2, "hard" = 3)
+	var/static/list/pleasure_amounts = list("off" = 0, "low" = LOW_LUST, "medium" = NORMAL_LUST, "hard" = HIGH_LUST)
 
 	// var/datum/component/mood/mood_comp = current_mob.GetComponent(/datum/component/mood)
 	// if("orgasm" in mood_comp.mood_events)
@@ -386,18 +384,23 @@
 	if(!target_container || !current_selected_organ.climaxable(silent = TRUE))
 		return FALSE
 
-	if(current_mob?.getPercentAroused() > 80)
-		current_mob?.mob_fill_container(current_selected_organ, target_container, 0/*, fluid_retrieve_amount[current_mode] * fluid_multiplier * delta_time*/)
-		return TRUE
+	if(istype(current_selected_organ, /obj/item/organ/genital/breasts))
+		if(current_selected_organ.fluid_id)
+			target_container.reagents.add_reagent(current_selected_organ.fluid_id, fluid_retrieve_amount[current_mode] * rand(1,3 * current_breasts.get_lactation_amount_modifier()))
+	current_mob.last_genital = current_selected_organ
+	current_mob.handle_post_sex(pleasure_amounts[current_mode] * delta_time, null, target_container, current_selected_organ.slot)
+	// else if(current_mob.getPercentAroused() > 80)
+	// 	current_mob.mob_fill_container(current_selected_organ, target_container, 0/*, fluid_retrieve_amount[current_mode] * fluid_multiplier * delta_time*/)
+	return TRUE
 
 // Handling the process of the impact of the machine on the organs of the mob
 /obj/structure/chair/milking_machine/proc/increase_current_mob_arousal(delta_time)
-	var/static/list/arousal_amounts = list("off" = 0, "low" = 1, "medium" = 2, "hard" = 3)
-	var/static/list/pleasure_amounts = list("off" = 0, "low" = 5, "medium" = 10, "hard" = 20)
+	var/static/list/arousal_amounts = list("off" = 0, "low" = 5, "medium" = 15, "hard" = 25)
+	// var/static/list/pleasure_amounts = list("off" = 0, "low" = LOW_LUST, "medium" = NORMAL_LUST, "hard" = HIGH_LUST)
 	// var/static/list/pain_amounts = list("off" = 0, "low" = 0, "medium" = 0.2, "hard" = 0.5)
 
 	current_mob?.adjust_arousal(arousal_amounts[current_mode] * delta_time)
-	current_mob?.add_lust(pleasure_amounts[current_mode] * delta_time)
+	// current_mob?.add_lust(pleasure_amounts[current_mode] * delta_time)
 	// current_mob.adjust_pain(pain_amounts[current_mode] * delta_time)
 
 /obj/structure/chair/milking_machine/CtrlShiftClick(mob/user)
