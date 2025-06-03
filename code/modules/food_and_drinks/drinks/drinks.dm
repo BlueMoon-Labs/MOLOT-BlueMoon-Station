@@ -540,8 +540,8 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'><b>[user]</b> is trying to eat \the <b>[src]</b>! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	new /obj/item/trash/can(user.loc)
-	// crushed_can.icon_state = icon_state
+	var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(user.loc)
+	crushed_can.icon_state = icon_state
 	qdel(src)
 	return BRUTELOSS
 
@@ -550,7 +550,7 @@
 		user.visible_message("<span class='warning'><b>[user]</b> давит банку '<b>[src]</b>' об свою голову. Круто!</span>", "<span class='notice'>Вы раздавили банку с '<b>[src]</b>' об свою голову. Круто!</span>")
 		playsound(user.loc,'sound/weapons/pierce.ogg', rand(10,50), 1)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(user.loc)
-		// crushed_can.icon_state = icon_state
+		crushed_can.icon_state = icon_state
 		M.dropItemToGround(src)
 		M.put_in_active_hand(crushed_can)
 		return qdel(src)
