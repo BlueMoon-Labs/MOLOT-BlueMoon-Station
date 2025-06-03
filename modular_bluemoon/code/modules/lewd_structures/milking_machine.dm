@@ -386,7 +386,7 @@
 
 	if(istype(current_selected_organ, /obj/item/organ/genital/breasts))
 		if(current_selected_organ.fluid_id)
-			target_container.reagents.add_reagent(current_selected_organ.fluid_id, fluid_retrieve_amount[current_mode] * rand(1,3 * current_breasts.get_lactation_amount_modifier()))
+			target_container.reagents.add_reagent(current_selected_organ.fluid_id, (fluid_retrieve_amount[current_mode] * rand(1,3 * current_breasts.get_lactation_amount_modifier()) * delta_time))
 	current_mob.last_genital = current_selected_organ
 	current_mob.handle_post_sex(pleasure_amounts[current_mode] * delta_time, null, target_container, current_selected_organ.slot)
 	// else if(current_mob.getPercentAroused() > 80)
