@@ -18,7 +18,6 @@
 	var/list/queuedplaylist = list()
 	var/queuecooldown //This var exists solely to prevent accidental repeats of John Mulaney's 'What's New Pussycat?' incident. Intentional, however......
 	var/repeat = FALSE //BLUEMOON ADD зацикливание плейлистов
-	var/one_area_play = FALSE //BLUEMOON ADD переменная проигрыша джукбокса в одной зоне (для инфдорм)
 
 /obj/item/jukebox/emagged
 	name = "Handled Jukebox"
@@ -250,7 +249,7 @@
 		return FALSE
 	// BLUEMOON ADD END
 	playing = queuedplaylist[1]
-	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
+	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35)
 	if(jukeboxslottotake)
 		active = TRUE
 		update_icon()
