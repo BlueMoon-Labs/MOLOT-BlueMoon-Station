@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(jukeboxes)
 		var/area/mob_area = get_area(M)
 		if(mob_area.jukebox_silent) // Джукбокс заглушен в зоне игрока на начало игры музыки
 			continue
-		else if(mob_area.jukebox_privatized_by != jukebox) // Стационарные джукбоксы имеют приоритет игры в своей зоне и все кто в ней сидят не слышат иных джукбоксов
+		else if(mob_area.jukebox_privatized_by && mob_area.jukebox_privatized_by != jukebox) // Стационарные джукбоксы имеют приоритет игры в своей зоне и все кто в ней сидят не слышат иных джукбоксов
 			continue
 		else if(one_area_play)
 			if(isnum(one_area_play)) // Если число, то оно обозначает номер комнаты (мы не хотим чтобы из одних инфинити слышали в других)

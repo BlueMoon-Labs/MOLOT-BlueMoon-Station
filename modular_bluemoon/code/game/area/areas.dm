@@ -5,3 +5,6 @@
 
 /area/hilbertshotel
 	jukebox_restrain = TRUE
+
+/area/start
+	jukebox_silent = TRUE
