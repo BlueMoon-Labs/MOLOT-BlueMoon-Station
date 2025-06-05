@@ -315,7 +315,15 @@
 	if(!dna || !dna.species)
 		return ..()
 	var/list/L = dna.species.mutant_bodyparts		// caches list because i refuse to type it out and because performance
-	return (L["mam_tail"] && (L["mam_tail"] != "None")) || (L["tail_human"] && (L["tail_human"] != "None")) || (L["tail_lizard"] && (L["tail_lizard"] != "None"))
+	// BLUEMOON CHANGE учитываем хвосты наг и features
+	if((L["mam_tail"] && (L["mam_tail"] != "None")) || (L["tail_human"] && (L["tail_human"] != "None")) || (L["tail_lizard"] && (L["tail_lizard"] != "None")))
+		return TRUE
+	L = dna.features // теперь ищем в фичурсах персонажа (это безумие)
+	if((L["mam_tail"] && (L["mam_tail"] != "None")) || (L["tail_human"] && (L["tail_human"] != "None")) || (L["tail_lizard"] && (L["tail_lizard"] != "None")))
+		return TRUE
+	if(L["taur"] == "Naga" || L["taur"] == "Naga (coiled)")
+		return TRUE
+	// BLUEMOON CHANGE END
 
 /mob/living/start_pulling(atom/movable/AM, state, force = pull_force, supress_message = FALSE)
 	if(!AM || !src)

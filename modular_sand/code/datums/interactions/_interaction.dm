@@ -19,6 +19,10 @@
 		. += "...обладает руками."
 	if(has_mouth())
 		. += "...обладает [mouth_is_free() ? "неприкрытым" : "прикрытым"] ртом."
+	// BLUEMOON ADD хвостики!
+	if(has_tail())
+		. += "...обладает хвостом."
+	// BLUEMOON ADD END
 
 /// The base of all interactions
 /datum/interaction

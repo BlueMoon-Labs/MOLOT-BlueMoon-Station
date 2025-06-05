@@ -137,6 +137,10 @@
 		required_from_user |= INTERACTION_REQUIRE_TOPLESS
 	if(self.is_bottomless())
 		required_from_user |= INTERACTION_REQUIRE_BOTTOMLESS
+	// BLUEMOON ADD
+	if(self.has_tail())
+		required_from_user |= INTERACTION_REQUIRE_TAIL
+	// BLUEMOON ADD
 	.["required_from_user"] = required_from_user
 
 	var/required_from_user_exposed = NONE
@@ -279,6 +283,10 @@
 			required_from_target |= INTERACTION_REQUIRE_TOPLESS
 		if(target.is_bottomless())
 			required_from_target |= INTERACTION_REQUIRE_BOTTOMLESS
+		// BLUEMOON ADD
+		if(target.has_tail())
+			required_from_target |= INTERACTION_REQUIRE_TAIL
+		// BLUEMOON ADD
 		.["required_from_target"] = required_from_target
 
 		var/required_from_target_exposed = NONE
