@@ -78,6 +78,64 @@
 	speak = list("БЕГАЮЩИЕ ГВОЗДИ!!!", "БЕГИ, СУКА, БЕГИ!!!", "КАК ОРЕХ ЩА РАСКОЛЮ!!!")
 	loot = list(/obj/item/storage/belt/military/inteq, /obj/item/clothing/head/helmet/swat/inteq, /obj/item/clothing/shoes/combat/coldres, /obj/effect/gibspawner/generic, /obj/effect/gibspawner/generic/animal, /obj/effect/gibspawner/human/bodypartless, /obj/effect/gibspawner/human)
 
+/mob/living/simple_animal/hostile/gigachad_inteq/space
+	name = "InteQ Space Agent"
+	maxHealth = 1400
+	health = 1400
+	melee_damage_lower = 30
+	melee_damage_upper = 20
+	attack_verb_continuous = "smashes his hands into"
+	attack_verb_simple = "smashes hands into"
+	icon_state = "gigachad_inteq_space"
+	icon_living = "gigachad_inteq_space"
+	attack_sound = 'sound/weapons/smash.ogg'
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	spacewalk = TRUE
+
+/mob/living/simple_animal/hostile/gigachad_inteq/shooter
+	name = "InteQ Machinegunner"
+	icon_state = "gigachad_machinegun"
+	icon_living = "gigachad_machinegun"
+	maxHealth = 600
+	health = 600
+	ranged = 1
+	rapid = 5
+	projectilesound = 'sound/weapons/shot.ogg'
+	speak = list("БЕГАЮЩАЯ МИШЕНЬ И БЕСПЛАТНО!!!", "БЕГИ, СУКА, БЕГИ!!!", "КАК АРБУЗ МАГНУМОМ ЛОПНУ!!!")
+	casingtype = /obj/item/ammo_casing/n762
+	retreat_distance = 5
+	minimum_distance = 5
+
+
+/mob/living/simple_animal/hostile/gigachad_inteq/shooter/sniper
+	name = "InteQ Buffed sniper"
+	icon_state = "gigachad_sniper"
+	icon_living = "gigachad_sniper"
+	casingtype = /obj/item/ammo_casing/p50/inteqsniper
+	rapid = 1
+	maxHealth = 350
+	health = 350
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	projectilesound = "sound/weapons/noscope.ogg"
+	ranged_cooldown = 150
+	check_friendly_fire = 1
+	speak = list("ДА ЁБ ТВОЮ МАТЬ! ОПЯТЬ КЛИН!!!", "А ЭТО ЧЁ? ПРОБИВНЫЕ? ЭТО НАМ НАДО!!!", "МАГАЗИН ГДЕ? БЛЯ! ГДЕ МАГАЗИН МОЙ!!!")
+
+/obj/item/ammo_casing/p50/inteqsniper
+	name = "cheap .50 bullet casing"
+	desc = "A cheap .50 bullet casing."
+	projectile_type = /obj/item/projectile/bullet/p50/inteqsniper
+
+/obj/item/projectile/bullet/p50/inteqsniper
+	name ="cheap .50 bullet"
+	damage = 40
+	knockdown = 80
+	dismemberment = 40
+	armour_penetration = 30
+	zone_accuracy_factor = 70
+	wound_bonus = 10
+	bare_wound_bonus = 5
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
