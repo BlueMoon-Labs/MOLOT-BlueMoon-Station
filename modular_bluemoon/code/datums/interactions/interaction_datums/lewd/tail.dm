@@ -2,14 +2,23 @@
 /datum/interaction/tailhug
 	description = "Обнять хвостом."
 	simple_message = "USER обнимает хвостом TARGET."
+	simple_style = "lewd"
 	required_from_user = INTERACTION_REQUIRE_TAIL
 	write_log_user = "tailhug"
 	write_log_target = "tailhuged by"
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
+/datum/interaction/tailhug/display_interaction(mob/living/user, mob/living/target)
+	..()
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(target, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(target.loc)
+
 /datum/interaction/tailweave
 	description = "Сплестись хвостами."
 	simple_message = "USER сплетается с хвостом TARGET."
+	simple_style = "lewd"
 	required_from_user = INTERACTION_REQUIRE_TAIL
 	required_from_target = INTERACTION_REQUIRE_TAIL
 	write_log_user = "tailweaved"
@@ -22,6 +31,10 @@
 		target.emote("blush")
 	if(HAS_TRAIT(user, TRAIT_SHY) && prob(10))
 		user.emote("blush")
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(target, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(target.loc)
 
 /datum/interaction/selfhugtail
 	description = "Обнять свой хвост."
@@ -200,7 +213,7 @@
 	interaction_flags = INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	write_log_user = "tailfucked own ass"
 	write_log_target = null
-	start_text	= "USER проталкивается в свой зад собственый хвостик."
+	start_text	= "USER проталкивает хвостик в свой зад."
 	help_text	= "USER скользит внутри своего кишечника при помощи хвоста."
 	grab_text	= "USER активно вбивается хвостом внутрь собственного ануса."
 	harm_text	= "USER насилует свой зад хвостом, словно стараясь прошить себя насквозь."
