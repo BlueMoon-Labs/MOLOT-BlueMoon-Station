@@ -122,6 +122,10 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 									ass = new
 									ass.Insert(partner)
 								ass.climax_modify_size(src, getorganslot(ORGAN_SLOT_PENIS))
+					// BLUEMOON ADD хвостики!
+					if(CUM_TARGET_TAIL)
+						message = "кончает на хвост <b>[partner]</b>!"
+					// BLUEMOON ADD END
 
 		else
 			switch(last_genital.type)
@@ -189,6 +193,10 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 										ass = new
 										ass.Insert(partner)
 									ass.climax_modify_size(src, last_genital)
+						// BLUEMOON ADD хвостики!
+						if(CUM_TARGET_TAIL)
+							message = "кончает на собственный хвост!"
+						// BLUEMOON ADD END
 		if(iswendigo(partner) && partner.pulling == src)
 			var/mob/living/carbon/wendigo/W = partner
 			W.slaves |= src
