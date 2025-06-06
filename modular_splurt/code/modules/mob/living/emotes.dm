@@ -117,6 +117,7 @@ To add randomization to your emote, copy and paste this line of code:
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
+/* - REDMOON REMOVAL START - убираем отвратительные эмоуты
 /datum/emote/sound/human/fart
 	key = "fart"
 	key_third_person = "farts"
@@ -186,7 +187,7 @@ To add randomization to your emote, copy and paste this line of code:
 	for(var/atom/A in get_turf(user))
 		farted_on_something = A.fart_act(user) || farted_on_something
 	. = ..()
-
+- REDMOON REMOVAL END */
 /datum/emote/sound/human/cackle
 	key = "cackle"
 	key_third_person = "cackles"
@@ -264,7 +265,7 @@ To add randomization to your emote, copy and paste this line of code:
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/meow_meme.ogg'
 	emote_cooldown = 1 SECONDS
-
+/* - REDMOON REMOVAL START - убираем отвратительные эмоуты
 /datum/emote/sound/human/burp
 	key = "burp"
 	key_third_person = "burps"
@@ -283,6 +284,7 @@ To add randomization to your emote, copy and paste this line of code:
 	)
 	sound = pick(burp_noises)
 	. = ..()
+- REDMOON REMOVAL END*/
 
 /datum/emote/sound/human/bleat
 	key = "bleat"

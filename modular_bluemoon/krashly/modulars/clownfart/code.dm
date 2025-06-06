@@ -1,3 +1,4 @@
+/* - REDMOON REMOVAL START - убираем отвратительные эмоуты
 /datum/emote/sound/human/fart/run_emote(mob/living/user, params, type_override, intentional)
 	. = ..()
 	if(!farted_on_something)
@@ -7,6 +8,7 @@
 			for(var/A in user.reagents.reagent_list)
 				var/datum/reagent/reagent = A
 				user.reagents.remove_reagent(reagent.type, 2)
+- REDMOON REMOVAL END*/
 
 /proc/confettigibs(atom/location)
 	new /obj/effect/gibspawner/confetti(get_turf(location))
