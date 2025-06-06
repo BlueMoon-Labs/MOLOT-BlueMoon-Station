@@ -760,7 +760,7 @@
 	icon_state = "institute"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/institute, /obj/item/ammo_casing/energy/laser/institute)
 	ammo_x_offset = 1
-	charge_sections = 3
+	charge_sections = 4
 
 /obj/item/ammo_casing/energy/disabler/institute
 	fire_sound = 'sound/weapons/laserinstitute.ogg'
