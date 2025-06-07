@@ -19,6 +19,7 @@
 	description = "Сплестись хвостами."
 	simple_message = "USER сплетается с хвостом TARGET."
 	simple_style = "lewd"
+	big_user_target_text = TRUE
 	required_from_user = INTERACTION_REQUIRE_TAIL
 	required_from_target = INTERACTION_REQUIRE_TAIL
 	write_log_user = "tailweaved"
@@ -48,6 +49,7 @@
 /datum/interaction/lewd/slap/tail
 	description = "Хвост. Шлёпнуть по заднице хвостом."
 	simple_message = "USER с силой шлёпает задницу TARGET своим хвостом!"
+	big_user_target_text = TRUE
 	required_from_user = INTERACTION_REQUIRE_TAIL
 	write_log_user = "tail-ass-slapped"
 	write_log_target = "was tail-ass-slapped by"
@@ -59,6 +61,7 @@
 /datum/interaction/lewd/tail
 	description = "Хвост. Подрочить член."
 	simple_style = "lewd"
+	big_user_target_text = TRUE
 	required_from_user = INTERACTION_REQUIRE_TAIL
 	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
 	p13target_emote = PLUG13_EMOTE_PENIS
@@ -254,18 +257,19 @@
 	if(partner.getOxyLoss() > 40) //задушить и руками можно, это чисто ЕРП эмоут
 		oxy_damage = 0
 	if(user.a_intent == INTENT_HARM)
-		message = "грубо обхватывает своим хвостом шею [partner] стараясь перекрыть доступ к кислороду"
-		if(partner.is_fucking(partner, CUM_TARGET_TAIL))
+		message = "грубо обхватывает своим хвостом шею <b>\the [partner]</b> стараясь перекрыть доступ к кислороду"
+		if(partner.is_fucking(user, CUM_TARGET_TAIL))
 			var/affecting = partner.get_bodypart(BODY_ZONE_HEAD)
 			partner.apply_damage(1, BRUTE, affecting, partner.run_armor_check(affecting, MELEE))
-			message = "стягивая хвост вокруг шеи [partner] уже до хруста, активно меж тем стараясь не дать продохнуть"
+			message = "стягивая хвост вокруг шеи <b>\the [partner]</b> уже до хруста, активно меж тем стараясь не дать продохнуть"
 	else
-		message = "захватывает глотку [partner] своим хвостом стараясь перекрывать доступ к кислороду"
-		if(partner.is_fucking(partner, CUM_TARGET_TAIL))
-			message = "стягивает всё сильнее глотку [partner] своим хвостом в попытке перекрыть доступ к кислороду"
+		message = "захватывает глотку <b>\the [partner]</b> своим хвостом стараясь перекрывать доступ к кислороду"
+		if(partner.is_fucking(user, CUM_TARGET_TAIL))
+			message = "стягивает всё сильнее глотку <b>\the [partner]</b> своим хвостом в попытке перекрыть доступ к кислороду"
 
 	if(!HAS_TRAIT(partner, TRAIT_NOBREATH) && oxy_damage)
 		partner.apply_damage(oxy_damage, OXY)
+	partner.set_is_fucking(user, CUM_TARGET_TAIL)
 	user.visible_message(span_danger("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 	var/lust_amount = NORMAL_LUST //если наша цель довести до пика, то не стоит это закрывать за попытками увести в крит от удушья
