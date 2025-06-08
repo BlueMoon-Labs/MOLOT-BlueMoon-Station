@@ -63,6 +63,8 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	var/customized
 	/// sigh, fine.
 	var/datum/song/holoparasite/music_datum
+	/// is not null only when it has been created with default "deck of tarot cards"
+	var/was_randomized = null
 
 /mob/living/simple_animal/hostile/guardian/Initialize(mapload, theme)
 	GLOB.parasites += src
@@ -183,11 +185,12 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 			forceMove(summoner.loc)
 			to_chat(src, "<span class='danger'>Your summoner has died!</span>")
 			visible_message("<span class='danger'><B>\The [src] dies along with its user!</B></span>")
-			summoner.visible_message("<span class='danger'><B>[summoner]'s body is completely consumed by the strain of sustaining [src]!</B></span>")
-			for(var/obj/item/W in summoner)
-				if(!summoner.dropItemToGround(W))
-					qdel(W)
-			summoner.dust()
+			if(!was_randomized)
+				summoner.visible_message("<span class='danger'><B>[summoner]'s body is completely consumed by the strain of sustaining [src]!</B></span>")
+				for(var/obj/item/W in summoner)
+					if(!summoner.dropItemToGround(W))
+						qdel(W)
+				summoner.dust()
 			death(TRUE)
 			qdel(src)
 	else
@@ -292,7 +295,10 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 /mob/living/simple_animal/hostile/guardian/gib(no_brain, no_organs, no_bodyparts, datum/explosion/was_explosion)
 	if(summoner)
 		to_chat(summoner, "<span class='danger'><B>Your [src] was blown up!</span></B>")
-		summoner.gib(was_explosion = was_explosion)
+		if(was_randomized)
+			summoner.death()
+		else
+			summoner.gib(was_explosion = was_explosion)
 	ghostize()
 	qdel(src)
 
@@ -541,6 +547,14 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	if(used == TRUE)
 		to_chat(user, "[used_message]")
 		return
+	if(type == /obj/item/guardiancreator)
+		switch(alert(user, "Желаете ли вы выбрать тип защитника? Однако в этом случае ваше тело рассыпется в прах при вашей смерти.",, "Да", "Пусть решит судьба", "Отмена призыва"))
+			if("Да")
+				random = FALSE
+			if("Пусть решит судьба")
+				random = TRUE
+			if("Отмена призыва")
+				return
 	used = TRUE
 	to_chat(user, "[use_message]")
 	var/list/mob/candidates = pollGhostCandidates("Do you want to play as the [mob_name] of [user.real_name]?", ROLE_PAI, null, FALSE, 100, POLL_IGNORE_HOLOPARASITE)
@@ -609,6 +623,8 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	G.summoner = user
 	G.key = key
 	G.mind.enslave_mind_to_creator(user)
+	if(type == /obj/item/guardiancreator)
+		G.was_randomized = random
 	log_game("[key_name(user)] has summoned [key_name(G)], a [guardiantype] holoparasite.")
 	switch(theme)
 		if("tech")
