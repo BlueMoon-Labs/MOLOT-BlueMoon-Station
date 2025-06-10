@@ -5,7 +5,7 @@
 /datum/uplink_item/mod/core //
 	name = "InteQ MOD"
 	desc = "A highly advanced combat suit,decorated with a sinister-looking dark blue colors, manufactured and crafted for special operations mercenaries. The design is a streamlined layered construction composed of molded plasteel and composite ceramics, while the undersuit is lined with lightweight kevlar and hybrid duratri weave. A small tag hangs on it that reads: Made by Fox and Ghost inc cooperation. All rights reserved, tampering with the suit's design will result in immediate suit annihilation."
-	item = /obj/item/mod/control/pre_equipped/InteQ
+	item = /obj/item/mod/control/pre_equipped/inteq
 	cost = 18 // 39 ---> 18
 	purchasable_from = (UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
