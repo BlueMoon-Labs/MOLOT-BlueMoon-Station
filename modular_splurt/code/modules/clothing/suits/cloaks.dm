@@ -152,6 +152,41 @@
 	name = "dark aesthetic cloak"
 	icon_state = "tesh_cloak_dretrowave"
 
+/obj/item/clothing/neck/cloak/teshari/standard/cleanercloak
+	name = "cleanercloak"
+	desc = "For most cleanest teshari on station"
+	icon_state = "cleanercloak"
+
+/obj/item/clothing/neck/cloak/teshari/standard/fishingcloak
+	name = "fishingcloak"
+	desc = "For most luckiest teshari who can fish even in toilets"
+	icon_state = "fishingcloak"
+
+/obj/item/clothing/neck/cloak/teshari/standard/gamercloak
+	name = "gamercloak"
+	desc = "For teshari who spend time for play games"
+	icon_state = "gamercloak"
+
+/obj/item/clothing/neck/cloak/teshari/standard/minercloak
+	name = "minercloak"
+	desc = "For most Baddas teshari who don't fear killing Mega-fauna"
+	icon_state = "minercloak"
+
+/obj/item/clothing/neck/cloak/teshari/standard/smithingcloak
+	name = "smithingcloak"
+	desc = "For teshari who know how to deal with hammer and steel"
+	icon_state = "smithingcloak"
+
+/obj/item/clothing/neck/cloak/teshari/standard/productioncloak
+	name = "productioncloak"
+	desc = "For most productive and fast teshari workers who know how to deal with any problem"
+	icon_state = "productioncloak"
+
+/obj/item/clothing/neck/cloak/teshari/standard/playercloak
+	name = "playercloak"
+	desc = "For most stylest teshari and who want Taste the Rainbow"
+	icon_state = "playercloak"
+
 /obj/item/clothing/neck/cloak/teshari/standard/black_glow
 	name = "black and glowing cloak"
 	icon_state = "tesh_cloak_bglowing"
@@ -160,7 +195,7 @@
 // Job Cloaks
 /obj/item/clothing/neck/cloak/teshari/jobs/cap
 	name = "site manager cloak"
-	desc = "A soft Teshari cloak made for the Site Manager"
+	desc = "A soft Teshari cloak made for the Captain"
 	icon_state = "tesh_cloak_cap"
 
 //Cargo
@@ -556,6 +591,8 @@
 	desc = "A more ridged and stylized Teshari cloak."
 	icon = 'modular_splurt/icons/mob/clothing/species/teshari/tesh_items.dmi'
 	icon_state = "tesh_beltcloak_bo"
+	body_parts_covered = CHEST|GROIN|ARMS
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter,/obj/item/clothing/gloves/color/yellow)
 
 
 
@@ -667,70 +704,84 @@
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/mining
 	name = "mining belted cloak"
-	desc = "A soft Teshari cloak made for Mining"
+	desc = "A mining padded Teshari cloak made for Mining"
 	icon_state = "tesh_beltcloak_mine"
+	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 20, BIO = 0, RAD = 0, FIRE = 70, ACID = 0)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/command
 	name = "command belted cloak"
-	desc = "A soft Teshari cloak made for the Command department"
+	desc = "A premium armor padded Teshari cloak made for Captain."
 	icon_state = "tesh_beltcloak_comm"
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 50, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 30)
+	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/flashlight, /obj/item/analyzer, /obj/item/radio, /obj/item/gun, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/reagent_containers/hypospray, /obj/item/hypospray, /obj/item/healthanalyzer, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/glass/bottle/vial, /obj/item/reagent_containers/glass/beaker, /obj/item/storage/pill_bottle, /obj/item/taperecorder)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/ce
 	name = "chief engineer belted cloak"
-	desc = "A soft Teshari cloak made the Chief Engineer"
+	desc = "A soft Teshari cloak made the Chief Engineer with special rad and fire alloy"
 	icon_state = "tesh_beltcloak_ce"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 5, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 30, FIRE = 35, ACID = 45)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/engineer
 	name = "engineering belted cloak"
-	desc = "A soft Teshari cloak made for the Engineering department"
+	desc = "A soft Teshari cloak made for the Engineering department with standart rad and fire alloy"
 	icon_state = "tesh_beltcloak_engie"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 20, FIRE = 30, ACID = 45)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/atmos
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/engineer/atmos
 	name = "atmospherics belted cloak"
-	desc = "A soft Teshari cloak made for the Atmospheric Technician"
+	desc = "A soft Teshari cloak made for the Atmospheric Technician with standart rad and fire alloy"
 	icon_state = "tesh_beltcloak_atmos"
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/cmo
 	name = "chief medical officer belted  cloak"
 	desc = "A soft Teshari cloak made the Chief Medical Officer"
 	icon_state = "tesh_beltcloak_cmo"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 50)
+	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/hypospray/mkii, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical
 	name = "medical belted cloak"
 	desc = "A soft Teshari cloak made for the Medical department"
 	icon_state = "tesh_beltcloak_doc"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 50)
+	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/hypospray/mkii, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/chemistry
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/chemistry
 	name = "chemist belted cloak"
 	desc = "A soft Teshari cloak made for the Chemist"
 	icon_state = "tesh_beltcloak_chem"
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/viro
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/viro
 	name = "virologist belted cloak"
 	desc = "A soft Teshari cloak made for the Virologist"
 	icon_state = "tesh_beltcloak_viro"
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/para
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/para
 	name = "paramedic belted cloak"
 	desc = "A soft Teshari cloak made for the Paramedic"
 	icon_state = "tesh_beltcloak_para"
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/sci
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/sci
 	name = "scientist belted cloak"
 	desc = "A soft Teshari cloak made for the Science department"
 	icon_state = "tesh_beltcloak_sci"
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/robo
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/robo
 	name = "roboticist belted cloak"
 	desc = "A soft Teshari cloak made for the Roboticist"
 	icon_state = "tesh_beltcloak_robo"
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/sec
 	name = "security belted cloak"
-	desc = "A soft Teshari cloak made for the Security department"
+	desc = "A armor padded Teshari cloak made for the Security department"
 	icon_state = "tesh_beltcloak_sec"
+	armor = list(MELEE = 35, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
+	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/flashlight, /obj/item/analyzer, /obj/item/radio, /obj/item/gun, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/reagent_containers/hypospray, /obj/item/hypospray, /obj/item/healthanalyzer, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/glass/bottle/vial, /obj/item/reagent_containers/glass/beaker, /obj/item/storage/pill_bottle, /obj/item/taperecorder)
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/qm
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/qm
 	name = "quartermaster belted cloak"
 	desc = "A soft Teshari cloak made for the Quartermaster"
 	icon_state = "tesh_beltcloak_qm"
@@ -739,23 +790,27 @@
 	name = "service belted cloak"
 	desc = "A soft Teshari cloak made for the Service department"
 	icon_state = "tesh_beltcloak_serv"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 10, RAD = 0, FIRE = 0, ACID = 0)
+	allowed = list(/obj/item/toy, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/storage/fancy/cigarettes, /obj/item/lighter,/obj/item/grenade/chem_grenade,/obj/item/lightreplacer,/obj/item/flashlight,/obj/item/reagent_containers/glass/beaker,/obj/item/reagent_containers/glass/bottle,/obj/item/reagent_containers/spray,/obj/item/soap,/obj/item/holosign_creator,/obj/item/key/janitor,/obj/item/melee/flyswatter,/obj/item/paint/paint_remover,/obj/item/storage/bag/trash,/obj/item/reagent_containers/glass/bucket,/obj/item/t_scanner/dirt_scanner)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/iaa
 	name = "internal affairs belted cloak"
 	desc = "A soft Teshari cloak made for the Internal Affairs Agent"
 	icon_state = "tesh_beltcloak_iaa"
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/wrdn
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/sec/wrdn
 	name = "warden belted cloak"
-	desc = "A soft Teshari cloak made for the Warden"
+	desc = "A armor padded Teshari cloak made for the Warden"
 	icon_state = "tesh_beltcloak_wrdn"
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/hos
 	name = "security chief belted cloak"
-	desc = "A soft Teshari cloak made for the Head of Security"
+	desc = "A hard armor padded Teshari cloak made for the Head of Security"
 	icon_state = "tesh_beltcloak_hos"
+	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 20)
+	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/flashlight, /obj/item/analyzer, /obj/item/radio, /obj/item/gun, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/reagent_containers/hypospray, /obj/item/hypospray, /obj/item/healthanalyzer, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/glass/bottle/vial, /obj/item/reagent_containers/glass/beaker, /obj/item/storage/pill_bottle, /obj/item/taperecorder)
 
-/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/jani
+/obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/service/jani
 	name = "janitor belted cloak"
 	desc = "A soft Teshari cloak made for the Janitor"
 	icon_state = "tesh_beltcloak_jani"

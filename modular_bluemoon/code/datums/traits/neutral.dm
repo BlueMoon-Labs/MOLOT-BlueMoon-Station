@@ -100,7 +100,7 @@
 /datum/quirk/nt_employee/on_spawn()
 	. = ..()
 
-	quirk_holder.grant_language(/datum/language/corpspeak, TRUE, TRUE, LANGUAGE_MIND)
+	quirk_holder.grant_language(/datum/language/corpspeak, source = LANGUAGE_MIND)
 	give_item(/obj/item/clothing/accessory/badge_nt, quirk_holder)
 
 /datum/quirk/syndi_employee
@@ -113,7 +113,7 @@
 /datum/quirk/syndi_employee/on_spawn()
 	. = ..()
 
-	quirk_holder.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	quirk_holder.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)
 	give_item(/obj/item/clothing/accessory/badge_syndi, quirk_holder)
 
 /datum/quirk/lewdjob

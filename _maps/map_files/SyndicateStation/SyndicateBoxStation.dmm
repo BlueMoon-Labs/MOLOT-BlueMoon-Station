@@ -3666,7 +3666,7 @@
 	pixel_y = 32
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/maintenance/starboard/aft)
 "ajN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -22316,7 +22316,7 @@
 "bqD" = (
 /obj/effect/landmark/stationroom/maint/fivexfour,
 /turf/template_noop,
-/area/template_noop)
+/area/hallway/primary/central)
 "bqK" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Teleporter Maintenance";
@@ -45717,7 +45717,7 @@
 "cZB" = (
 /obj/effect/landmark/stationroom/maint/threexthree,
 /turf/template_noop,
-/area/template_noop)
+/area/maintenance/starboard/aft)
 "daq" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 1
@@ -46215,6 +46215,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/blue/fourcorners,
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/surgery)
 "drG" = (
@@ -53247,6 +53250,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
 /area/construction/mining/aux_base)
+"iCi" = (
+/turf/template_noop,
+/area/hallway/primary/central)
 "iDa" = (
 /obj/structure/table/wood/fancy,
 /obj/item/reagent_containers/food/condiment/peppermill{
@@ -58883,10 +58889,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/science)
 "mEM" = (
-/turf/closed/wall/r_wall/syndicate{
-	smooth = 2
-	},
-/area/template_noop)
+/turf/template_noop,
+/area/maintenance/starboard/aft)
 "mFo" = (
 /obj/machinery/meter{
 	target_layer = 1
@@ -62097,6 +62101,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/zone2)
 "oQp" = (
@@ -64352,6 +64357,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/blue/fourcorners,
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/surgery)
 "qEm" = (
@@ -68072,7 +68080,7 @@
 	pixel_y = 32
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/maintenance/starboard/aft)
 "ttP" = (
 /obj/structure/table,
 /obj/machinery/light{
@@ -71207,6 +71215,9 @@
 	req_one_access_txt = "25;26;35;28";
 	name = "Service Hall"
 	},
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/secondary/service)
 "vEM" = (
@@ -73427,6 +73438,7 @@
 	req_one_access_txt = "25;26;35;28";
 	name = "Service Hall"
 	},
+/obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/secondary/service)
 "xkZ" = (
@@ -102934,11 +102946,11 @@ nVz
 ktS
 ktS
 ktS
-mEM
-mEM
-mEM
-mEM
-mEM
+fxV
+fxV
+fxV
+fxV
+fxV
 fxV
 yhz
 ouQ
@@ -103191,10 +103203,10 @@ nVz
 ktS
 ktS
 ktS
-mEM
-cgI
-cgI
-cgI
+fxV
+iCi
+iCi
+iCi
 bqD
 fxV
 pQN
@@ -103448,11 +103460,11 @@ nVz
 ktS
 ktS
 ktS
-mEM
-cgI
-cgI
-cgI
-cgI
+fxV
+iCi
+iCi
+iCi
+iCi
 fxV
 pQN
 pQN
@@ -103705,11 +103717,11 @@ nVz
 ktS
 ktS
 ktS
-mEM
-cgI
-cgI
-cgI
-cgI
+fxV
+iCi
+iCi
+iCi
+iCi
 omE
 pQN
 pQN
@@ -103962,11 +103974,11 @@ nVz
 ktS
 ktS
 ktS
-mEM
-cgI
-cgI
-cgI
-cgI
+fxV
+iCi
+iCi
+iCi
+iCi
 fxV
 pQN
 pQN
@@ -104219,11 +104231,11 @@ otC
 ktS
 ktS
 ktS
-mEM
-cgI
-cgI
-cgI
-cgI
+fxV
+iCi
+iCi
+iCi
+iCi
 fxV
 pQN
 pQN
@@ -104476,11 +104488,11 @@ nVz
 ktS
 ktS
 ktS
-mEM
-mEM
-mEM
-mEM
-mEM
+fxV
+fxV
+fxV
+fxV
+fxV
 fxV
 cmP
 fPM
@@ -122513,8 +122525,8 @@ wRw
 uiA
 gel
 kfS
-cgI
-cgI
+mEM
+mEM
 cZB
 kfS
 aaa
@@ -122771,8 +122783,8 @@ gel
 gel
 kfS
 ttL
-cgI
-cgI
+mEM
+mEM
 kfS
 aaa
 fIs
@@ -123028,8 +123040,8 @@ qnW
 uho
 kfS
 ajM
-cgI
-cgI
+mEM
+mEM
 kfS
 ktS
 aaS

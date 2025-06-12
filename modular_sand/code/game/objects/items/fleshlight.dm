@@ -148,22 +148,6 @@
 	if(available_panties.len)
 		. += "Alt-Click to choose panties."
 
-/obj/item/portallight/AltClick(mob/user)
-	. = ..()
-	var/obj/item/clothing/underwear/briefs/panties/portalpanties/to_connect
-	if(available_panties.len)
-		to_connect = tgui_input_list(user, "Choose...", "Available panties", available_panties, null)
-	if(to_connect)
-		if(!to_connect.free_use)
-			to_chat(usr, "They have public mode turned off!")
-			return FALSE
-		portalunderwear = to_connect //pair the panties on the fleshlight.
-		to_connect.update_portal()
-		to_connect.portallight += src //pair the fleshlight
-		icon_state = "paired"
-		update_appearance()
-		playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
-
 /obj/item/portallight/update_appearance(updates)
 	. = ..()
 	updatesleeve()
@@ -190,7 +174,7 @@
 	for(var/mob/living/carbon/human/person in list(M, portal_target))
 		if(person.has_penis())
 			var/obj/item/organ/genital/penis/person_penis = person.getorganslot(ORGAN_SLOT_PENIS)
-			LAZYADD(penis_names, "[person_penis.length]-см [lowertext(person_penis.shape)]")
+			LAZYADD(penis_names, "[round(person_penis.length * (person ? get_size(person) : 1), 0.25)]-см [lowertext(person_penis.shape)]")
 			LAZYADD(penis_names, "penis")
 		else if(person.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/person_strapon = person.get_strapon()
@@ -638,7 +622,11 @@
 			if(CUM_TARGET_URETHRA)
 				organ = mutable_appearance('modular_sand/icons/obj/fleshlight.dmi', "portal_anus") // i refuse to even attempt spriting this, have a placeholder
 				organ.color = G.color
-		name = portalunderwear.targetting == CUM_TARGET_PENIS ? "Портальный Дилдо" : "Портальный Фонарик"
+
+		if (portalunderwear.targetting == CUM_TARGET_PENIS)
+			name = replacetext(name, "Фонарик", "Дилдо")
+		else
+			name = replacetext(name, "Дилдо", "Фонарик")
 
 		useable = TRUE
 		add_overlay(organ)
@@ -719,7 +707,13 @@
 	slot_flags         = targetting == CUM_TARGET_MOUTH ? ITEM_SLOT_MASK  : ITEM_SLOT_UNDERWEAR
 	flags_cover        = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
 	visor_flags_cover  = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
-	name               = targetting == CUM_TARGET_MOUTH ? "Портальная Маска"   : "Портальные Трусики"
+
+	if (targetting == CUM_TARGET_MOUTH)
+		name = replacetext(name, "Трусики", "Маска")
+		name = replacetext(name, "Портальные", "Портальная")
+	else
+		name = replacetext(name, "Маска", "Трусики")
+		name = replacetext(name, "Портальная", "Портальные")
 
 	to_chat(user, "<span class='notice'>Теперь при надевании портал будет обращен к вашему [targetting].</span>")
 	update_portal()
@@ -730,15 +724,8 @@
 		. += "<span class='notice'>Устройство не сопряжено, для сопряжения проведите фонариком по этой паре портальных трусиков (TM) или переведите устройство в <b>публичный режим</b> и ожидайте. </span>"
 	else
 		. += "<span class='notice'>Устройство сопряжено и ожидает использования по прямому назначению. Количество сопряженных устройств: <b>[portallight.len]</b>.</span>"
-	if(free_use)
-		. += "<span class='notice'>Публичный доступ к устройству <b>включен</b>. (Alt+Click для смены режима)</span>"
-	else
-		. += "<span class='notice'>Публичный доступ к устройству <b>отключен</b>. (Alt+Click для смены режима)</span>"
-
-/obj/item/clothing/underwear/briefs/panties/portalpanties/AltClick(mob/user)
-	. = ..()
-	if(do_mob(user, src, 2 SECONDS))
-		free_use()
+	. += "<span class='notice'>Публичный доступ к устройству <b>[free_use ? "включен" : "отключен"]</b>. (Alt+Click для смены режима)</span>"
+	. += span_notice("Использование \"Latex Adjustment Override\" переключает возможность снятия предмета.")
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attackby(obj/item/I, mob/living/user) //pairing
 	if(istype(I, /obj/item/portallight))

@@ -31,6 +31,12 @@
 	full_name = "Subtler Anti-Ghost Emote (with indicator)"
 	clientside = "subtler-anti-ghost-indicatored"
 
+/datum/keybinding/client/communication/subtler_indicatored/down(client/user)
+	var/mob/living/L = user.mob
+	if(istype(L))
+		L.subtler_indicatored()
+	return TRUE
+
 /datum/emote/sound/human/subtle
 	emote_cooldown = 0
 

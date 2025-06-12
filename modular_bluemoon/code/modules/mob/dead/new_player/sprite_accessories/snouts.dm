@@ -62,3 +62,9 @@
 	icon = 'modular_bluemoon/icons/mob/mam_snouts.dmi'
 	icon_state = "fhusky"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/mouse
+	name = "Mouse Alt"
+	icon = 'modular_bluemoon/icons/mob/snout.dmi'
+	icon_state = "mouse"
+	matrixed_sections = MATRIX_ALL

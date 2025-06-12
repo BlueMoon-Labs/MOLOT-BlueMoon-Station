@@ -1,5 +1,8 @@
 /obj/item/organ/genital/womb
 	name = "womb"
+	ru_name = "матка"
+	ru_name_v = "матке"
+	ru_name_capital = "Матка"
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = "womb"

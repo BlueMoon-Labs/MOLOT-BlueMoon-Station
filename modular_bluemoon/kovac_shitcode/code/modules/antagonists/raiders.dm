@@ -128,7 +128,7 @@
 
 /obj/effect/mob_spawn/human/raider/special(mob/living/new_spawn)
 	new_spawn.mind.add_antag_datum(/datum/antagonist/raiders)
-	new_spawn.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/old_codes, source = LANGUAGE_MIND)
 
 /obj/effect/mob_spawn/human/raider/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())

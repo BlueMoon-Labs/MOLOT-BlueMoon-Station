@@ -149,3 +149,129 @@
 /datum/gear/suit/suspenders
 	name = "Suspenders"
 	path = /obj/item/clothing/suit/suspenders
+
+/datum/gear/suit/hooded/teshari/beltcloak
+	name = "Black belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/command
+	name = "Command belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/command
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Captain")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/ce
+	name = "Chief Engineer belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/ce
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Engineer")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/engineer
+	name = "Engineer belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/engineer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Engineer","Station Engineer","Atmospheric Technician")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/atmos
+	name = "Atmos belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/engineer/atmos
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Engineer","Atmospheric Technician","Station Engineer")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/cmo
+	name = "Chief Medical Officer belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/cmo
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Medical Officer")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical
+	name = "Medic belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Medical Officer","Medical Doctor","Virologist","Paramedic","Psychologist","Chemist")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical/chemistry
+	name = "Chemist belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/chemistry
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Medical Officer","Medical Doctor","Virologist","Paramedic","Psychologist","Chemist")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical/viro
+	name = "Virologist belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/viro
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Medical Officer","Medical Doctor","Virologist","Paramedic","Psychologist","Chemist")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical/para
+	name = "Paramedic belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/para
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Chief Medical Officer","Medical Doctor","Virologist","Paramedic","Psychologist","Chemist")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical/sci
+	name = "Scientist belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/sci
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Roboticist","Scientist","Research Director","Geneticist")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical/robo
+	name = "Roboticist belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/robo
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Roboticist","Scientist","Research Director")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/medical/qm
+	name = "Quartermaster belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical/qm
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Quartermaster")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/cargo
+	name = "Cargo Worker belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/cargo
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Quartermaster","Cargo Technician")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/mining
+	name = "Mining belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/mining
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Shaft Miner")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/service
+	name = "Service belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/service
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Bartender","Botanist","Bouncer","Entertainer","Cook","Janitor")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/service/jani
+	name = "Service belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/service/jani
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Janitor")
+
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/iaa
+	name = "IAA belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/iaa
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("NanoTrasen Representative","Internal Affairs Agent")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/sec
+	name = "Security belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/sec
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Head of Security","Security Officer","Warden","Peacekeeper")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/wrdn
+	name = "Warden belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/sec/wrdn
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Head of Security","Warden")
+
+/datum/gear/suit/hooded/teshari/beltcloak/jobs/hos
+	name = "Head of Security belted cloak"
+	path = /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/hos
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	restricted_roles = list("Head of Security")

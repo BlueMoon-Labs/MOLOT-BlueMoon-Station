@@ -22,7 +22,7 @@
 				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 				audible_message("[icon2html(src, hearers(src))] *[ttone]*", null, 3)
 			new_alert = TRUE
-			update_icon(TRUE)
+			update_icon()
 			// Return with no other effects
 			return
 

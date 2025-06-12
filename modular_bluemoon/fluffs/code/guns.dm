@@ -730,18 +730,18 @@
 	name = "\improper Законодатель MK3"
 	desc = "Стандартное оружие судей из Мега-Города Солнечной Федерации. Пистолет комплектуется несколькими типами боеприпасов, иногда набор снарядов отличается от стандартного в зависимости от миссии судьи. Оснащён биометрическим датчиком ладони — оружие может применять только судья, а при несанкционированном использовании в рукояти срабатывает взрывное устройство. Этот же пистолет на радость недругов что преступают Закон, со сломанной биометрией ради стандартизации электронных бойков."
 	icon = 'modular_bluemoon/fluffs/icons/obj/dreadmk3.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "dreadmk3"
-	item_state = "caplaser"
+	item_state = "dreadmk3"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/dreadmk3, /obj/item/ammo_casing/energy/laser/hos/dreadmk3, /obj/item/ammo_casing/energy/ion/hos/dreadmk3, /obj/item/ammo_casing/energy/electrode/hos/dreadmk3)
-	ammo_x_offset = 0
+	ammo_x_offset = 2
+	charge_sections = 3
 	flight_x_offset = 21
 	flight_y_offset = 14
 
 /obj/item/ammo_casing/energy/disabler/dreadmk3
 
 /obj/item/ammo_casing/energy/laser/hos/dreadmk3
+	fire_sound = 'sound/weapons/lasgun.ogg'
 
 /obj/item/ammo_casing/energy/ion/hos/dreadmk3
 
@@ -753,6 +753,54 @@
 	product = /obj/item/gun/energy/e_gun/hos/dreadmk3
 	fromitem = list(/obj/item/gun/energy/e_gun/hos)
 
+////////////////////////////////////////////////////////////////////////////////////////
+/obj/item/gun/energy/e_gun/institute
+	name = "\improper Карабин Института"
+	desc = "Институтский лазер — это оружейная система, разработанная Институтом после его изоляции с началом Великой войны. Все синты служащие в качестве солдат, рабочих или охотников, а также человеческие учёные организации, получают пистолет или винтовку собственного дизайна организации, сконструированные Высшими системами и массово производимые на заводе, расположенном в их штаб-квартире. На данный момент такая модель считается устаревшей, Механизмы батареи на ядерной энергии заменены на внутренние, однако она всё еще достойно работает и по сей день."
+	icon_state = "institute"
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/institute, /obj/item/ammo_casing/energy/laser/institute)
+	ammo_x_offset = 1
+	charge_sections = 4
+
+/obj/item/ammo_casing/energy/disabler/institute
+	fire_sound = 'sound/weapons/laserinstitute.ogg'
+
+/obj/item/ammo_casing/energy/laser/institute
+	fire_sound = 'sound/weapons/laserinstitute.ogg'
+
+/obj/item/modkit/institute_kit
+	name = "Карабин Института Kit"
+	desc = "A modkit for making a Energy Gun into Карабин Института."
+	product = /obj/item/gun/energy/e_gun/institute
+	fromitem = list(/obj/item/gun/energy/e_gun)
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/gun/energy/laser/carbine/old
+	name = "\improper Лазер AER9"
+	desc = "В AER9 не использовались передовые довоенные технологии, что значительно повысило её надежность. Эта модель представляет собой обычный твердотельный импульсный лазер, активная среда которого (кристалл), заключена в титановый корпус, что позволяет выдерживать годы воздействия окружающей среды без потери технических характеристик. На данный момент такая модель считается устаревшей, Механизмы батареи на ядерной энергии заменены на внутренние, однако она всё еще достойно работает и по сей день."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/old)
+	icon_state = "lasernew_alt"
+	item_state = "laser_old-wielded"
+
+/obj/item/ammo_casing/energy/laser/old
+	fire_sound = 'sound/weapons/riflelaserold.ogg'
+
+/obj/item/modkit/old_laser_kit
+	name = "Лазер AER9 Kit"
+	desc = "A modkit for making a laser carbine into Лазер AER9."
+	product = /obj/item/gun/energy/laser/carbine/old
+	fromitem = list(/obj/item/gun/energy/laser/carbine/nopin, /obj/item/gun/energy/laser/carbine)
+////////////////////////////////////////////////////////////////////////////////////////
+/obj/item/storage/box/old_world_kit
+	name = "Old Wolrd Blues Kit"
+	desc = "Military box that contains a full kit of Old World Equipment."
+	icon_state = "ammobox"
+
+/obj/item/storage/box/old_world_kit/PopulateContents()
+	new /obj/item/modkit/old_laser_kit(src)
+	new /obj/item/modkit/institute_kit(src)
+	new /obj/item/modkit/t51armor_kit(src)
 ////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/crowbar/large/heavy/hammercrowbar

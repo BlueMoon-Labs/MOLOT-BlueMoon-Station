@@ -330,7 +330,7 @@
 	activators = list("stun" = IC_PINTYPE_PULSE_IN, "on success" = IC_PINTYPE_PULSE_OUT, "on fail" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 2000
-	cooldown_per_use = 5000
+	cooldown_per_use = 250
 	ext_cooldown = 25
 
 

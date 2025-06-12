@@ -662,3 +662,8 @@
 	set name = "< Отрицательный сигнал >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("negative")
+
+/mob/living/verb/emote_owl()
+	set name = "< Ухухать как сова >"
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("owl")

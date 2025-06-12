@@ -64,8 +64,8 @@
 	description = "Помахать рукой."
 	simple_message = "USER приветливо машет TARGET."
 	required_from_user = INTERACTION_REQUIRE_HANDS
-	required_from_target = INTERACTION_REQUIRE_HANDS
 	max_distance = 25
+	interaction_flags = NONE
 
 /datum/interaction/bird
 	description = "Показать Средний Палец"

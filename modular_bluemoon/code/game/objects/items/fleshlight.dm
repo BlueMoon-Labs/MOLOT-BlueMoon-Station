@@ -1,6 +1,17 @@
+GLOBAL_LIST_EMPTY(portalpanties)
+GLOBAL_LIST_EMPTY(fleshlight_portallight)
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties
+	body_parts_covered = NONE	// Коль что сами через настройки выставят для себя
+	var/seamless = FALSE 		// Закрытие трусиков на латексный ключ
+	var/free_use = FALSE 		// Общий доступ для использования
+	var/last_free_use_change	// Последнее изменение общего доступа у трусиков
+	interactable_in_strip_menu = TRUE
+
 /mob/living/carbon/human
 	var/fleshlight_nickname //Используется для анонимизации персонажа
 
+// Использование эмоутов через фонарик
 /obj/item/portallight/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Возможен более точный <b>контроль ситуации</b>. (Ctrl+Click для кастомного эмоута)</span>"
@@ -45,7 +56,7 @@
 	var/mob/living/carbon/human/H_user = user
 
 	var/list/select = list()
-	for(var/obj/item/I in H_user.held_items)
+	for(var/obj/item/I in H_user.held_items + H_user.r_store + H_user.l_store)
 		if(istype(I, /obj/item/portallight))
 			select |= I
 	if(H_user.wear_mask && istype(H_user.wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))
@@ -117,3 +128,146 @@
 	for(var/i in show_to)
 		var/mob/M = i
 		M.show_message(message)
+
+// Закрытие трусиков на латексные ключ
+/obj/item/clothing/underwear/briefs/panties/portalpanties/attack_hand(mob/user)
+	if(!ishuman(user))
+		return ..()
+	if(seamless && (user.get_item_by_slot(ITEM_SLOT_UNDERWEAR) == src || user.get_item_by_slot(ITEM_SLOT_MASK) == src))
+		to_chat(user, span_purple(pick("You pull your panties as you search for some sort of escape.",
+									"You can't find any leverage to remove these panties!",
+									"Your pointless clawing seems to only make things more skin tight")))
+		return
+	return ..()
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/MouseDrop(atom/over_object)
+	return FALSE // Грубоватый запрет снять вещь перетягиванием в руки (да без учётов других возможных штук с этим, УВЫ)
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/attackby(obj/item/K, mob/user, params)
+	if(istype(K, /obj/item/key/latex))
+		seamless = !seamless
+		to_chat(user, span_warning("The panties suddenly [seamless ? "tighten" : "loosen"]!"))
+		if(HAS_TRAIT(src, TRAIT_NODROP))
+			REMOVE_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+		else if(current_equipped_slot == ITEM_SLOT_UNDERWEAR || current_equipped_slot == ITEM_SLOT_MASK)
+			ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	return ..()
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/equipped(mob/user, slot)
+	. = ..()
+	if(seamless)
+		if(slot == ITEM_SLOT_UNDERWEAR || slot == ITEM_SLOT_MASK)
+			ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+// Приватный режим с переключением на AltClick
+/obj/item/clothing/underwear/briefs/panties/portalpanties/verb/free_use()
+	set name = "Switch Privacy"
+	set category = "Object"
+	set src in usr
+
+	if(!iscarbon(usr))
+		return FALSE
+
+	if(usr.get_item_by_slot(ITEM_SLOT_UNDERWEAR) == src)
+		to_chat(usr, span_purple("You must take them off first!"))
+		return FALSE
+
+	if(last_free_use_change + 30 SECONDS >= world.time)
+		to_chat(usr, span_warning("You need wait a bit before change public use for [src]!"))
+		return FALSE
+
+	free_use = !free_use
+	last_free_use_change = world.time
+	if(free_use)
+		to_chat(usr, "[src] are now public!")
+		for(var/obj/item/portallight/P in GLOB.fleshlight_portallight)
+			P.audible_message("[icon2html(P, hearers(P))] *beep* *beep* *beep* - New public device is found!", hearing_distance = 2)
+			playsound(P, 'sound/machines/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)
+			P.available_panties += src
+	else
+		to_chat(usr, "[src] are no longer public. All connected devices have been disconnected.")
+		LAZYCLEARLIST(portallight)
+		for(var/obj/item/portallight/P in GLOB.fleshlight_portallight)
+			P.available_panties -= src
+			if(P.portalunderwear == src)
+				P.portalunderwear = null
+				P.updatesleeve()
+				P.icon_state = "unpaired"
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/AltClick(mob/user)
+	. = ..()
+	if(do_mob(user, src, 2 SECONDS))
+		free_use()
+
+// Да, можно сделать красивее, но текущая имплиментация работает, so go on
+/obj/item/portallight/New()
+	..()
+	GLOB.fleshlight_portallight += src
+	for(var/obj/item/clothing/underwear/briefs/panties/portalpanties/P in GLOB.portalpanties)
+		if(P.free_use)
+			available_panties += P
+
+/obj/item/portallight/Destroy()
+	..()
+	GLOB.fleshlight_portallight -= src
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/New()
+	..()
+	GLOB.portalpanties += src
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/Destroy()
+	..()
+	GLOB.portalpanties -= src
+
+// Переименование трусиков
+/obj/item/clothing/underwear/briefs/panties/portalpanties/verb/rename()
+	set name = "Rename panties"
+	set category = "Object"
+	set src in usr
+	if(iscarbon(usr) && usr.get_item_by_slot(ITEM_SLOT_UNDERWEAR) == src)
+		to_chat(span_purple("You must take them off first!"))
+		return
+
+	var/input = input("How do you wish to name it?") as text
+	if(input)
+		name = input
+
+// Маскировка трусиков под маску и трусики
+/obj/item/clothing/underwear/briefs/panties/portalpanties/Initialize(mapload)
+	. = ..()
+	var/datum/action/item_action/chameleon/change/chameleon_panties = new(src)
+	chameleon_panties.chameleon_type = /obj/item/clothing/underwear/briefs
+	chameleon_panties.chameleon_name = "Panties"
+	chameleon_panties.initialize_disguises()
+	var/datum/action/item_action/chameleon/change/chameleon_mask = new(src)
+	chameleon_mask.chameleon_type = /obj/item/clothing/mask
+	chameleon_mask.chameleon_name = "Mask"
+	chameleon_mask.initialize_disguises()
+
+// многие ко многим ©ICE-IS-NICE
+/obj/item/portallight/AltClick(mob/user)
+	. = ..()
+	var/obj/item/clothing/underwear/briefs/panties/portalpanties/to_connect
+	if(available_panties.len)
+		to_connect = tgui_input_list(user, "Choose...", "Available panties", available_panties, null)
+	if(!to_connect)
+		return FALSE
+
+	if(to_connect == portalunderwear)
+		to_chat(usr, "Conntection terminated!")
+		portalunderwear = null
+		to_connect.portallight -= src //upair the fleshlight
+		to_connect.update_portal()
+		icon_state = "unpaired"
+		update_appearance()
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
+		return FALSE
+	if(!to_connect.free_use)
+		to_chat(usr, "They have public mode turned off!")
+		return FALSE
+	portalunderwear = to_connect //pair the panties on the fleshlight.
+	to_connect.update_portal()
+	to_connect.portallight += src //pair the fleshlight
+	icon_state = "paired"
+	update_appearance()
+	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)

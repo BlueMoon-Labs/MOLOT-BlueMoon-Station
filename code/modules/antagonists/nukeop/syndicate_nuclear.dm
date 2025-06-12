@@ -512,4 +512,4 @@
 	E.implant(H)
 	H.update_icons()
 
-	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
+	H.grant_language(/datum/language/codespeak, source = LANGUAGE_MIND)

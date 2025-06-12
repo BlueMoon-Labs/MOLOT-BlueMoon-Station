@@ -30,3 +30,8 @@
 	name = "Blumenland Citizen ID"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/card/id/blumenland_citizen
+
+/datum/gear/hands/donator/bm/cat_alch
+	name = "Neko Wallet"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/wallet/cat_alch

@@ -37,6 +37,10 @@
 	if(HAS_TRAIT(action_owner, TRAIT_DISTANT))
 		REMOVE_TRAIT(action_owner, TRAIT_DISTANT, ROUNDSTART_TRAIT)
 		to_chat(action_owner, span_notice("You let your headpat-guard down!"))
+		button_icon_state = "pain_medium" // BLUEMOON ADD
 	else
 		ADD_TRAIT(action_owner, TRAIT_DISTANT, ROUNDSTART_TRAIT)
 		to_chat(action_owner, span_warning("You let your headpat-guard up!"))
+		button_icon_state = "pain_max" // BLUEMOON ADD
+
+	UpdateButtons() // BLUEMOON ADD

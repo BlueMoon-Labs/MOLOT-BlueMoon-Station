@@ -103,7 +103,7 @@
 	flash_lighting_fx(FLASH_LIGHT_RANGE, light_power, light_color)
 	times_used++
 	flash_recharge()
-	update_icon(TRUE)
+	update_icon()
 	if(user && !clown_check(user))
 		return FALSE
 	return TRUE

@@ -5,8 +5,8 @@
 	/*	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi' // BLUEMOON COMMENTING OUT saving old code lines
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi' */
 // BLUEMOON ADDITION AHEAD custom sprite states
-	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi.dmi'
-	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
 // BLUEMOON ADDITION END
 	icon_state = "standard-control"

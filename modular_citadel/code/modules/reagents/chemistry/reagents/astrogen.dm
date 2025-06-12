@@ -86,7 +86,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 		M.apply_status_effect(/datum/status_effect/chem/astral_insurance)
 		var/datum/status_effect/chem/astral_insurance/AI = M.has_status_effect(/datum/status_effect/chem/astral_insurance)
 		AI.original = M
-		AI.originalmind = M.mind
+		AI.originalmind = M.last_mind
 
 	if(overdosed)
 		if(prob(50))
@@ -105,6 +105,8 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 	if(!(G?.mind))
 		if(!G)
 			qdel(G)
+		if(M.mind && M.mind == originalmind)
+			M.remove_status_effect(/datum/status_effect/chem/astral_insurance)
 		return  ..()
 	if(M.mind) //Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
 		var/mob/living/simple_animal/astral/G2 = new(get_turf(M))

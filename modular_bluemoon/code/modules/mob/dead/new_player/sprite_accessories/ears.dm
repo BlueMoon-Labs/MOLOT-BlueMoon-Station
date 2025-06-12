@@ -31,3 +31,9 @@
 /datum/sprite_accessory/ears/mam_ears/acrador/short/side_alt_2
 	name = "Acrador Short Side (Alt 2)"
 	icon_state = "acrador_short_side_alt_2"
+
+/datum/sprite_accessory/ears/mam_ears/mouse
+	name = "Mouse Alt"
+	icon = 'modular_bluemoon/icons/mob/ears.dmi'
+	icon_state = "mouse"
+	matrixed_sections = MATRIX_ALL

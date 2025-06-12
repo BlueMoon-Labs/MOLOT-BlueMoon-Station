@@ -528,3 +528,10 @@
 	emote_type = EMOTE_BOTH
 	sound = 'modular_bluemoon/sound/emotes/hellogordon.ogg'
 	emote_cooldown = 5 SECONDS
+
+/datum/emote/sound/human/owl
+	key = "owl"
+	key_third_person = "owl"
+	message = "OvO"
+	sound = 'modular_bluemoon/sound/emotes/owl.ogg'
+	emote_cooldown = 3 SECONDS

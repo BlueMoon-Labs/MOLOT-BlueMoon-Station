@@ -1248,3 +1248,33 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 	color[2] = color[1] * cm[4] + color[2] * cm[5] + color[3] * cm[6] + cm[11] * 255
 	color[3] = color[1] * cm[7] + color[2] * cm[8] + color[3] * cm[9] + cm[12] * 255
 	return rgb(color[1], color[2], color[3])
+
+/**
+ * Helper proc to generate a cutout alpha mask out of an icon.
+ *
+ * Why is it a helper if it's so simple?
+ *
+ * Because BYOND's documentation is hot garbage and I don't trust anyone to actually
+ * figure this out on their own without sinking countless hours into it. Yes, it's that
+ * simple, now enjoy.
+ *
+ * But why not use filters?
+ *
+ * Filters do not allow for masks that are not the exact same on every dir. An example of a
+ * need for that can be found in [/proc/generate_left_leg_mask()].
+ *
+ * Arguments:
+ * * icon_to_mask - The icon file you want to generate an alpha mask out of.
+ * * icon_state_to_mask - The specific icon_state you want to generate an alpha mask out of.
+ *
+ * Returns an `/icon` that is the alpha mask of the provided icon and icon_state.
+ */
+/proc/generate_icon_alpha_mask(icon_to_mask, icon_state_to_mask)
+	var/icon/mask_icon = icon(icon_to_mask, icon_state_to_mask)
+	// I hate the MapColors documentation, so I'll explain what happens here.
+	// Basically, what we do here is that we invert the mask by using none of the original
+	// colors, and then the fourth group of number arguments is actually the alpha values of
+	// each of the original colors, which we multiply by 255 and subtract a value of 255 to the
+	// result for the matching pixels, while starting with a base color of white everywhere.
+	mask_icon.MapColors(0,0,0,0, 0,0,0,0, 0,0,0,0, 255,255,255,-255, 1,1,1,1)
+	return mask_icon

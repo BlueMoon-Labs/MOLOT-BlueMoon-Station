@@ -12,7 +12,7 @@
 	var/icon_base = "magicwand"
 	var/on = 0
 	var/mode = 2
-	var/intencity
+	var/intencity = 12
 
 /obj/item/magicwand/update_icon()
 	if(on)
@@ -51,13 +51,12 @@
 				update_icon()
 				to_chat(user, span_notice("You twist the switch of [src], setting it to the low setting."))
 				return
+		intencity = 6*mode
 
 /obj/item/magicwand/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	if(!on)
 		to_chat(usr, "может стоит включить [src]?.")
 		return
-
-	intencity = 6*mode
 
 	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
@@ -106,8 +105,6 @@
 	if(!on)
 		to_chat(usr, "может стоит включить [src]?.")
 		return
-
-	intencity = 6*mode
 
 	var/message = ""
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
