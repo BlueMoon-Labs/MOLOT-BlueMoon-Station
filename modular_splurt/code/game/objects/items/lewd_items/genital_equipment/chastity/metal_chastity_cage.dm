@@ -21,6 +21,7 @@
 	H.add_overlay(skin_overlay)
 
 /obj/item/genital_equipment/chastity_cage/metal/proc/on_move(atom/old_loc, dir)
+	SIGNAL_HANDLER
 	var/mob/living/carbon/human/H = equipment.holder_genital.owner
 	if(H.stat == CONSCIOUS && prob(jingle_chance))
 		H.visible_message("<span class='warning'>[H.name] jingles slightly somewhere below their waist as they move.</span>",

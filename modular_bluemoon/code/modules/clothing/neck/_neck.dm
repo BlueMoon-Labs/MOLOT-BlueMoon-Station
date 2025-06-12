@@ -63,6 +63,7 @@
 		RegisterSignal(H, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
 /obj/item/clothing/neck/petcollar/proc/on_move(atom/old_loc, dir)
+	SIGNAL_HANDLER
 	if((current_equipped_slot == ITEM_SLOT_NECK))
 		if(prob(25)) //roughly every 4th step
 			playsound(loc, pick('modular_bluemoon/sound/items/collarbell1.ogg','modular_bluemoon/sound/items/collarbell2.ogg','modular_bluemoon/sound/items/collarbell3.ogg', 'modular_bluemoon/sound/items/collarbell4.ogg'), 10)

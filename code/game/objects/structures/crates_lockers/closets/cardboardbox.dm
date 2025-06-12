@@ -16,6 +16,8 @@
 	delivery_icon = "deliverybox"
 	anchorable = FALSE
 	door_anim_time = 0 // no animation
+	open_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	close_sound = 'sound/items/handling/cardboardbox_drop.ogg'
 	var/move_speed_multiplier = 1
 	var/move_delay = FALSE
 	var/egged = 0
@@ -192,6 +194,7 @@
 	move_speed_multiplier = 2
 	cutting_tool = TOOL_WELDER
 	open_sound = 'sound/machines/click.ogg'
+	close_sound = 'sound/machines/closet_close.ogg'
 	material_drop = /obj/item/stack/sheet/plasteel
 
 /obj/structure/closet/cardboard/metal/GetFront()
