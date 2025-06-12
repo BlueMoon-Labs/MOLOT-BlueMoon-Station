@@ -7,7 +7,9 @@
 
 	dir = SOUTH
 	initialize_directions = SOUTH
+	pipe_flags = 0
 
+	construction_type = /obj/item/pipe/directional
 	layer = HIGH_OBJ_LAYER
 	device_type = TRINARY
 	pipe_state = "multiz"
@@ -25,7 +27,7 @@
 	pipe = mutable_appearance(icon, "pipe-[piping_layer]")
 	return ..()
 
-/obj/machinery/atmospherics/pipe/simple/multiz/proc/set_init_directions()
+/obj/machinery/atmospherics/pipe/simple/multiz/SetInitDirections()
 	initialize_directions = dir
 
 /obj/machinery/atmospherics/pipe/simple/multiz/update_overlays()
@@ -46,14 +48,23 @@
 // 	add_overlay(multiz_overlay_node)
 
 ///Attempts to locate a multiz pipe that's above us, if it finds one it merges us into its pipenet
-/obj/machinery/atmospherics/pipe/simple/multiz/pipeline_expansion()
-	icon = 'icons/obj/atmos.dmi' //Just to refresh.
+// BLUEMOON CHANGE Переписываем чтобы работало КрАсИвО
+/obj/machinery/atmospherics/pipe/simple/multiz/atmosinit(list/node_connects)
+	..()
+	for(var/obj/machinery/atmospherics/target in get_step(src, initialize_directions))
+		if(can_be_node(target, 1))
+			nodes[1] = target
+			break
 	var/turf/T = get_turf(src)
-	var/obj/machinery/atmospherics/pipe/simple/multiz/above = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(SSmapping.get_turf_above(T))
-	var/obj/machinery/atmospherics/pipe/simple/multiz/below = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(SSmapping.get_turf_below(T))
-	if(below)
-		below.pipeline_expansion() //If we've got one below us, force it to add us on facebook
-	if(above)
-		nodes += above
-		above.nodes += src //Two way travel :)
-	return ..()
+	for(var/obj/machinery/atmospherics/pipe/simple/multiz/above in SSmapping.get_turf_above(T))
+		if(!isConnectable(above, piping_layer))
+			continue
+		nodes[2] = above
+		break
+	for(var/obj/machinery/atmospherics/pipe/simple/multiz/below in SSmapping.get_turf_below(T))
+		if(!isConnectable(below, piping_layer))
+			continue
+		nodes[3] = below
+		break
+	update_icon()
+// BLUEMOON CHANGE END

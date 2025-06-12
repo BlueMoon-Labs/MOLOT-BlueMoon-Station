@@ -183,7 +183,7 @@
 		knew_encoded = FALSE
 	if (!knew_encoded)
 		to_chat(M, "<span class='nicegreen'>Вы, наконец, знаете закодированный язык. Как вы раньше без него могли называть себя роботом?</span>")
-		M.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND)
+		M.grant_language(/datum/language/machine, source = LANGUAGE_MIND)
 
 /datum/reagent/consumable/synthdrink/synthanol/trinary/synthetic_on_life(mob/living/carbon/human/M)
 	. = ..()

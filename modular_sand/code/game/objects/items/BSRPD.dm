@@ -20,6 +20,7 @@ GLOBAL_LIST_INIT(bsatmos_pipe_recipes, list(
 		new /datum/pipe_info/pipe("4-Way Manifold",		/obj/machinery/atmospherics/pipe/manifold4w),
 		new /datum/pipe_info/pipe("Layer Manifold",		/obj/machinery/atmospherics/pipe/layer_manifold),
 		new /datum/pipe_info/pipe("Bluespace Pipe",		/obj/machinery/atmospherics/pipe/bluespace),
+		new /datum/pipe_info/pipe("Multi-Deck Adapter", /obj/machinery/atmospherics/pipe/simple/multiz),
 	),
 	"Devices" = list(
 		new /datum/pipe_info/pipe("Connector",			/obj/machinery/atmospherics/components/unary/portables_connector),

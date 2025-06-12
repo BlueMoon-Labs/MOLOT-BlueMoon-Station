@@ -244,7 +244,6 @@ GLOBAL_LIST_INIT(autodrobe_premium_items, list(
 	/obj/item/clothing/under/costume/lobster = 1,
 	/obj/item/clothing/head/lobsterhat = 1,
 	/obj/item/clothing/suit/dracula = 1,
-	/obj/item/clothing/under/costume/draculass = 1,
 	/obj/item/clothing/accessory/sweater/uglyxmas = 3,
 	/obj/item/clothing/head/beanie/christmas = 3,
 	/obj/item/clothing/neck/scarf/christmas = 3,

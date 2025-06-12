@@ -53,7 +53,7 @@
 
 /obj/effect/mob_spawn/human/ash_walkers_slave/special_post_appearance(mob/living/new_spawn)
 	. = ..()
-	new_spawn.grant_language(/datum/language/draconic, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/draconic, source = LANGUAGE_MIND)
 	if(!HAS_TRAIT(new_spawn, TRAIT_ROBOTIC_ORGANISM))
 		var/obj/item/organ/lungs/ashwalker/lungs = new /obj/item/organ/lungs/ashwalker()
 		lungs.Insert(new_spawn, drop_if_replaced = FALSE)
@@ -225,7 +225,7 @@
 
 /obj/effect/mob_spawn/human/inteqspace/special(mob/living/new_spawn)
 	. = ..()
-	new_spawn.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/old_codes, source = LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
 	ghost_anchor.implant(new_spawn, null, TRUE)
@@ -365,6 +365,7 @@
 		SSjob.equip_loadout(null, new_spawn)
 		SSjob.post_equip_loadout(null, new_spawn)
 		SSquirks.AssignQuirks(new_spawn, new_spawn.client, TRUE, TRUE, null, FALSE, new_spawn)
+		SSlanguage.AssignLanguage(new_spawn, new_spawn.client)
 		ADD_TRAIT(new_spawn, TRAIT_SIXTHSENSE, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_EXEMPT_HEALTH_EVENTS, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_NO_MIDROUND_ANTAG, GHOSTROLE_TRAIT) //The mob can't be made into a random antag, they are still eligible for ghost roles popups.

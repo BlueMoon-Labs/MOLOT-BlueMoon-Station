@@ -127,6 +127,11 @@
 	path = /obj/item/clothing/under/bm/gift_ribbon
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
+/datum/gear/uniform/latex_uniform
+	name = "latex uniform bodysuit"
+	path = /obj/item/clothing/under/latex
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
 /datum/gear/uniform/solfed_formal
 	name = "SolFed Formal Uniform"
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
@@ -193,3 +198,8 @@
 /datum/gear/uniform/boobsuit
 	name = "Custom-Tailored Suit"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/boobsuit
+
+/datum/gear/uniform/draculass
+	name = "Draculass coat"
+	path = /obj/item/clothing/under/costume/draculass
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

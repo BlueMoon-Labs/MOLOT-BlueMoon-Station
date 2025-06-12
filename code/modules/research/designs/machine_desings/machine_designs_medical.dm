@@ -47,14 +47,14 @@
 	desc = "The circuit board for a portable chem dispenser."
 	id = "chem_dispenser"
 	build_path = /obj/item/circuitboard/machine/chem_dispenser
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 	category = list ("Medical Machinery")
 
 /datum/design/board/chem_master
 	name = "Machine Design (Chem Master Board)"
 	desc = "The circuit board for a Chem Master 3000."
 	id = "chem_master"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 	build_path = /obj/item/circuitboard/machine/chem_master
 	category = list ("Medical Machinery")
 
@@ -62,7 +62,7 @@
 	name = "Machine Design (Chemical Heater Board)"
 	desc = "The circuit board for a chemical heater."
 	id = "chem_heater"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 	build_path = /obj/item/circuitboard/machine/chem_heater
 	category = list ("Medical Machinery")
 
@@ -72,7 +72,7 @@
 	id = "smoke_machine"
 	build_path = /obj/item/circuitboard/machine/smoke_machine
 	category = list ("Medical Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/clonecontrol
 	name = "Computer Design (Cloning Machine Console)"

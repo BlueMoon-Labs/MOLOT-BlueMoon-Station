@@ -143,16 +143,27 @@
 	return connection_check(target, piping_layer)
 
 //Find a connecting /obj/machinery/atmospherics in specified direction
+// BLUEMOON CHANGE перенос проков с ново тг
 /obj/machinery/atmospherics/proc/findConnecting(direction, prompted_layer)
 	for(var/obj/machinery/atmospherics/target in get_step(src, direction))
-		if(target.initialize_directions & get_dir(target,src))
-			if(connection_check(target, prompted_layer))
-				return target
+		if(!(target.initialize_directions & get_dir(target,src)) && !istype(target, /obj/machinery/atmospherics/pipe/simple/multiz))
+			continue
+		if(connection_check(target, prompted_layer))
+			return target
 
 /obj/machinery/atmospherics/proc/connection_check(obj/machinery/atmospherics/target, given_layer)
-	if(isConnectable(target, given_layer) && target.isConnectable(src, given_layer) && (target.initialize_directions & get_dir(target,src)))
-		return TRUE
-	return FALSE
+	if(src == target)
+		return FALSE
+	//if target is not multiz then we have to check if the target & src connect in the same direction
+	if(!istype(target, /obj/machinery/atmospherics/pipe/simple/multiz) && !((initialize_directions & get_dir(src, target)) && (target.initialize_directions & get_dir(target, src))))
+		return FALSE
+
+	//both target & src can't be connected either way
+	if(!isConnectable(target, given_layer) && target.isConnectable(src, given_layer))
+		return FALSE
+
+	return TRUE
+// BLUEMOON CHANGE END
 
 /obj/machinery/atmospherics/proc/isConnectable(obj/machinery/atmospherics/target, given_layer)
 	if(isnull(given_layer))

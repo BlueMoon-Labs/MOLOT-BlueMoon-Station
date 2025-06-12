@@ -1,7 +1,7 @@
 /obj/item/chastity_hypno
 	name = "Chastity Hypno"
 	var/list/available_modes = list("None", "Impotent", "Edging-Only", "Disappointing-Orgasm", "Overstimulated", "Hyper-Sensitive")
-	var/list/choices = list("Анус" = "None", "Грудь" = "None", "Член" = "None", "Вагина" = "None")
+	var/list/choices = list("Anus" = "None", "Breasts" = "None", "Penis" = "None", "Vagina" = "None")
 
 /obj/item/chastity_hypno/proc/hypno(mob/target)
 	if(!iscarbon(target) || !choices || !(target.client?.prefs.cit_toggles & HYPNO) || choices == initial(choices))
@@ -15,7 +15,7 @@
 		if(choices[G] == "None")
 			continue
 
-		if(G == "Анус" && C.has_anus(REQUIRE_ANY))
+		if(G == "Anus" && C.has_anus(REQUIRE_ANY))
 			if(!C.dna.features["has_anus"])
 				var/trait_flag
 				switch(choices[G])
@@ -94,7 +94,7 @@
 		ENABLE_BITFIELD(genital_organ.genital_flags, hypno_flag)
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "hypno", /datum/mood_event/hypnosis)
-	choices = list("Анус" = "None", "Грудь" = "None", "Член" = "None", "Вагина" = "None")
+	choices = list("Anus" = "None", "Breasts" = "None", "Penis" = "None", "Vagina" = "None")
 
 /mob/living/carbon/proc/remove_chastity_hypno_effects()
 	var/datum/component/mood/mood_comp = GetComponent(/datum/component/mood)

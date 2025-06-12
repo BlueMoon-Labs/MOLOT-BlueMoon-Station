@@ -1993,6 +1993,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				user.emote("scream")
 			return FALSE
 		// BLUEMOON EDIT END
+		if(iscatperson(target))
+			target.emote(pick("nya","meow"))
 		//SPLURT ADDITION START
 		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
 			if(!COOLDOWN_FINISHED(src, ass))

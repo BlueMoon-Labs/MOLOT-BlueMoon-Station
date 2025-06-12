@@ -307,3 +307,27 @@
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
 	icon_state = "millie"
 	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)
+
+/obj/item/toy/plush/bm/lissara
+	name = "Lissara plush"
+	desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
+	icon_state = "lissara"
+	attack_verb = list("bitten", "hissed", "tail slapped")
+	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 6,
+	'modular_splurt/sound/voice/raptor_purr.ogg' = 1
+	)
+
+/obj/item/toy/plush/bm/araminta
+	name = "Araminta plush"
+	desc = "Плюшевая игрушка, вооруженная белыми лапками, готова совершить величайшее ограбление — украсть ваше свободное время."
+	icon_state = "araminta"
+	attack_verb = list("meow", "nya", "purrs")
+	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
+	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
+	)
+
+/obj/item/toy/plush/bm/stasik/artemq
+	name = "Artems toy plush"
+	desc = "Вы видите игрушку,одетую в стандатную форму inteQ. Смотря в удивленное плюшевое лицо,она вам подозрительно кого-то напоминает. Точно можно сказать что игрушка кого то испугалась. Но кого мог испугаться плюшевый интековец?"
+	icon_state = "artems"
+	squeak_override = list('modular_bluemoon/sound/voice/graysonplush.ogg' = 2, 'modular_bluemoon/sound/voice/stasik_volcahara.ogg' = 1,)

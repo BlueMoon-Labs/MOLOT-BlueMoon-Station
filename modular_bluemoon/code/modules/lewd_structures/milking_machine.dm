@@ -46,7 +46,7 @@
 	/// What organ is fluid being extracted from?
 	var/obj/item/organ/genital/current_selected_organ = null
 	/// What beaker is liquid being outputted to?
-	var/obj/item/reagent_containers/cup/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 	/// What human mob is currently buckled to the machine?
 	var/mob/living/carbon/human/current_mob = null
 	/// What is the current breast organ of the buckled mob?
@@ -99,12 +99,18 @@
 	populate_milkingmachine_designs()
 	START_PROCESSING(SSobj, src)
 
+// Additional examine text
+/obj/structure/chair/milking_machine/examine(mob/user)
+	. = ..()
+	. += span_purple("What are these metal mounts on the armrests for...?")
+	. += span_notice("[src] can be disassembled by using Ctrl+Shift+Click.")
+
 /obj/structure/chair/milking_machine/Destroy()
 	if(current_mob)
 		if(current_mob.handcuffed)
 			current_mob.handcuffed.dropped(current_mob)
 		current_mob.handcuffed = null
-		current_mob.update_abstract_handcuffed()
+		current_mob.update_handcuffed()
 		current_mob.layer = initial(current_mob.layer)
 
 	if(beaker)
@@ -120,11 +126,6 @@
 	STOP_PROCESSING(SSobj, src)
 	unbuckle_all_mobs()
 	return ..()
-
-// Additional examine text
-/obj/structure/chair/milking_machine/examine(mob/user)
-	. = ..()
-	. += span_notice("What are these metal mounts on the armrests for...?")
 
 // formerly NO_DECONSTRUCTION
 /obj/structure/chair/milking_machine/wrench_act(mob/living/user, obj/item/weapon)
@@ -157,6 +158,8 @@
 /obj/structure/chair/milking_machine/proc/check_menu(mob/living/user)
 	if(!istype(user))
 		return FALSE
+	if(user.incapacitated())
+		return FALSE
 	return TRUE
 
 // Another plug to disable rotation
@@ -186,7 +189,8 @@
 		var/obj/item/restraints/handcuffs/milker/cuffs = new (victim)
 		current_mob.handcuffed = cuffs
 		cuffs.parent_chair = WEAKREF(src)
-		current_mob.update_abstract_handcuffed()
+		current_mob.update_handcuffed()
+		current_mob.clear_alert("handcuffed")
 
 	update_overlays()
 	affected_mob.layer = BELOW_MOB_LAYER
@@ -215,7 +219,7 @@
 
 	if(current_mob.handcuffed)
 		current_mob.handcuffed.dropped(current_mob)
-		current_mob.update_abstract_handcuffed()
+		current_mob.update_handcuffed()
 
 	current_mob = null
 	current_selected_organ = null
@@ -225,22 +229,11 @@
 
 	return
 
-/obj/structure/chair/milking_machine/buckle_mob(mob/living/target, force, check_loc)
+/obj/structure/chair/milking_machine/pre_buckle_mob(mob/living/M)
 	. = ..()
-
-	if(!. || !ishuman(target))
+	if(!. || !ishuman(M))
 		return FALSE
-
 	return TRUE
-
-
-//for chair handcuffs, no alerts
-/mob/living/carbon/proc/update_abstract_handcuffed()
-	if(handcuffed)
-		drop_all_held_items()
-		stop_pulling()
-
-	update_hud_handcuffed()
 
 /obj/item/restraints/handcuffs/milker
 	name = "chair cuffs"
@@ -273,7 +266,7 @@
 	if(!affected_mob || affected_mob != user)
 		return ..()
 
-	if(affected_mob.lust >= 60 && (current_mode != MILKING_PUMP_MODE_OFF) && (current_mode != MILKING_PUMP_MODE_LOW))
+	if(affected_mob.getPercentAroused() >= 25 && (current_mode != MILKING_PUMP_MODE_OFF) && (current_mode != MILKING_PUMP_MODE_LOW))
 		to_chat(affected_mob, span_purple("You are too horny to try to get out!"))
 		return FALSE
 
@@ -288,20 +281,19 @@
 */
 
 // Empty Hand Attack Handler
-/obj/structure/chair/milking_machine/CtrlClick(mob/user)
-	. = ..()
-	if(!LAZYLEN(buckled_mobs) || !(user in buckled_mobs))
-		return ..()
+/obj/structure/chair/milking_machine/attack_hand(mob/user)
+	if(ishuman(user))
+		interact(user)
 
-	user_unbuckle_mob(user, user)
-	return FALSE
+/obj/structure/chair/milking_machine/AltClick(mob/user)
+	return
 
 // Attack handler for various item
 /obj/structure/chair/milking_machine/attackby(obj/item/used_item, mob/user)
-	if(!istype(used_item, /obj/item/reagent_containers) || (used_item.item_flags & ABSTRACT) || !used_item.is_open_container())
+	if(!istype(used_item, /obj/item/reagent_containers/glass) || (used_item.item_flags & ABSTRACT) || !used_item.is_open_container())
 		return ..()
 
-	var/obj/item/reagent_containers/used_container = used_item
+	var/obj/item/reagent_containers/glass/used_container = used_item
 	if(!user.transferItemToLoc(used_container, src))
 		return FALSE
 
@@ -310,7 +302,7 @@
 	return TRUE
 
 // Beaker change handler
-/obj/structure/chair/milking_machine/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
+/obj/structure/chair/milking_machine/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/glass/new_beaker)
 	if(!user || (!beaker && !new_beaker))
 		return FALSE
 
@@ -341,7 +333,7 @@
 	return TRUE
 
 // Machine Workflow Processor
-/obj/structure/chair/milking_machine/process(seconds_per_tick)
+/obj/structure/chair/milking_machine/process(delta_time)
 	if(!current_mob || !current_selected_organ || current_mode == MILKING_PUMP_MODE_OFF)
 		if(pump_state != MILKING_PUMP_STATE_OFF)
 			pump_state = MILKING_PUMP_STATE_OFF
@@ -359,23 +351,25 @@
 	if(pump_state != MILKING_PUMP_STATE_ON)
 		pump_state = MILKING_PUMP_STATE_ON
 
-	retrieve_liquids_from_selected_organ(seconds_per_tick)
-	increase_current_mob_arousal(seconds_per_tick)
+	retrieve_liquids_from_selected_organ(delta_time)
+	increase_current_mob_arousal(delta_time)
 
 	update_all_visuals()
 	return TRUE
 
 // Liquid intake handler
 
-/obj/structure/chair/milking_machine/proc/retrieve_liquids_from_selected_organ(seconds_per_tick)
+/obj/structure/chair/milking_machine/proc/retrieve_liquids_from_selected_organ(delta_time)
 	if(!current_mob || !current_selected_organ)
 		return FALSE
 
-	var/fluid_multiplier = 1
+	// var/fluid_multiplier = 1
 	var/static/list/fluid_retrieve_amount = list("off" = 0, "low" = 1, "medium" = 2, "hard" = 3)
+	var/static/list/pleasure_amounts = list("off" = 0, "low" = LOW_LUST, "medium" = NORMAL_LUST, "hard" = HIGH_LUST)
 
-	if(current_mob.do_climax())
-		fluid_multiplier = CLIMAX_RETRIEVE_MULTIPLIER
+	// var/datum/component/mood/mood_comp = current_mob.GetComponent(/datum/component/mood)
+	// if("orgasm" in mood_comp.mood_events)
+	// 	fluid_multiplier = CLIMAX_RETRIEVE_MULTIPLIER
 
 	var/obj/item/reagent_containers/target_container
 
@@ -387,29 +381,39 @@
 		if(/obj/item/organ/genital/testicles)
 			target_container = semen_vessel
 
-	if(!target_container || current_selected_organ.fluid_max_volume <= 0)
+	if(!target_container || !current_selected_organ.climaxable(silent = TRUE))
 		return FALSE
 
-	current_mob.mob_fill_container(current_mob, target_container.reagents, fluid_retrieve_amount[current_mode] * fluid_multiplier * seconds_per_tick)
+	if(istype(current_selected_organ, /obj/item/organ/genital/breasts))
+		if(current_selected_organ.fluid_id)
+			target_container.reagents.add_reagent(current_selected_organ.fluid_id, (fluid_retrieve_amount[current_mode] * rand(1,3 * current_breasts.get_lactation_amount_modifier()) * delta_time))
+	current_mob.last_genital = current_selected_organ
+	current_mob.handle_post_sex(pleasure_amounts[current_mode] * delta_time, null, target_container, current_selected_organ.slot)
+	// else if(current_mob.getPercentAroused() > 80)
+	// 	current_mob.mob_fill_container(current_selected_organ, target_container, 0/*, fluid_retrieve_amount[current_mode] * fluid_multiplier * delta_time*/)
 	return TRUE
 
 // Handling the process of the impact of the machine on the organs of the mob
-/obj/structure/chair/milking_machine/proc/increase_current_mob_arousal(seconds_per_tick)
-	var/static/list/arousal_amounts = list("off" = 0, "low" = 1, "medium" = 2, "hard" = 3)
+/obj/structure/chair/milking_machine/proc/increase_current_mob_arousal(delta_time)
+	var/static/list/arousal_amounts = list("off" = 0, "low" = 5, "medium" = 15, "hard" = 25)
+	// var/static/list/pleasure_amounts = list("off" = 0, "low" = LOW_LUST, "medium" = NORMAL_LUST, "hard" = HIGH_LUST)
+	// var/static/list/pain_amounts = list("off" = 0, "low" = 0, "medium" = 0.2, "hard" = 0.5)
 
-	current_mob.adjust_arousal(arousal_amounts[current_mode] * seconds_per_tick)
+	current_mob?.adjust_arousal(arousal_amounts[current_mode] * delta_time)
+	// current_mob?.add_lust(pleasure_amounts[current_mode] * delta_time)
+	// current_mob.adjust_pain(pain_amounts[current_mode] * delta_time)
 
 /obj/structure/chair/milking_machine/CtrlShiftClick(mob/user)
 	to_chat(user, span_notice("You begin to disassemble [src]..."))
 	if(!do_after(user, 8 SECONDS, src))
 		to_chat(user, span_warning("You fail to disassemble [src]!"))
-		return FALSE
+		return
 
 	deconstruct(TRUE)
 	to_chat(user, span_notice("You disassemble [src]."))
 
 // Machine deconstruction process handler
-/obj/structure/chair/milking_machine/deconstruct(disassembled)
+/obj/structure/chair/milking_machine/deconstruct()
 	if(beaker)
 		beaker.forceMove(drop_location())
 		adjust_item_drop_location(beaker)
@@ -542,7 +546,7 @@
 	var/list/data = list()
 
 	data["mobName"] = current_mob ? current_mob.name : null
-	data["mobCanLactate"] = current_breasts ? current_breasts.fluid_rate : null
+	data["mobCanLactate"] = current_breasts ? current_breasts.climaxable(silent = TRUE) : null
 	data["beaker"] = beaker ? beaker : null
 	data["BeakerName"] = beaker ? beaker.name : null
 	data["beakerMaxVolume"] = beaker ? beaker.volume : null
@@ -557,17 +561,17 @@
 	data["current_vessel"] = current_vessel ? current_vessel : null
 	data["current_selected_organ"] = current_selected_organ ? current_selected_organ : null
 	data["current_selected_organ_name"] = current_selected_organ ? current_selected_organ.name : null
-	if(current_mob?.is_topless() || current_breasts?.genital_flags == GENITAL_THROUGH_CLOTHES)
+	if(current_mob?.is_topless() || CHECK_BITFIELD(current_breasts?.genital_flags, GENITAL_THROUGH_CLOTHES))
 		data["current_breasts"] = current_breasts ? current_breasts : null
 	else
 		data["current_breasts"] = null
 
-	if(current_mob?.is_bottomless() || current_testicles?.genital_flags == GENITAL_THROUGH_CLOTHES)
+	if(current_mob?.is_bottomless() || CHECK_BITFIELD(current_testicles?.genital_flags, GENITAL_THROUGH_CLOTHES))
 		data["current_testicles"] = current_testicles ? current_testicles : null
 	else
 		data["current_testicles"] = current_testicles = null
 
-	if(current_mob?.is_bottomless() || current_vagina?.genital_flags == GENITAL_THROUGH_CLOTHES)
+	if(current_mob?.is_bottomless() || CHECK_BITFIELD(current_vagina?.genital_flags, GENITAL_THROUGH_CLOTHES))
 		data["current_vagina"] = current_vagina ? current_vagina : null
 	else
 		data["current_vagina"] = current_vagina = null
@@ -671,10 +675,6 @@
 		current_vessel.reagents?.trans_to(beaker, amount)
 		update_all_visuals()
 		return TRUE
-
-/obj/structure/chair/milking_machine/examine(mob/user)
-	. = ..()
-	. += span_purple("[src] can be disassembled by using Ctrl+Shift+Click")
 
 #undef MILKING_PUMP_MODE_OFF
 #undef MILKING_PUMP_MODE_LOW

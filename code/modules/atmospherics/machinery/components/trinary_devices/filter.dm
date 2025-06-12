@@ -133,6 +133,8 @@
 		return
 	switch(action)
 		if("power")
+			if(islist(filter_type)) // BLUEMOON FIX итак, заметка мапперам криворучкам, пихать листы в места где их не должно быть приводить к взрыву сервера
+				filter_type = null // BLIEMOON FIX END
 			on = !on
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE

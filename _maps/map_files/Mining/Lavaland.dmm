@@ -175,19 +175,6 @@
 /obj/structure/closet/crate/necropolis,
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
-"agl" = (
-/obj/machinery/power/rtg/advanced,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "agp" = (
 /obj/structure/dresser,
 /turf/open/floor/mineral/plastitanium,
@@ -2157,6 +2144,9 @@
 "bED" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -4747,7 +4737,10 @@
 	dir = 9
 	},
 /obj/structure/cable/yellow{
-	icon_state = "1-4"
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -4853,7 +4846,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "dNb" = (
@@ -6412,13 +6405,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "fgQ" = (
 /obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 4
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -6578,8 +6565,11 @@
 /turf/open/floor/plasteel/dark/textured/large,
 /area/mine/xenoarch_area_c)
 "fnD" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
@@ -8217,6 +8207,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "gHW" = (
@@ -8316,8 +8309,8 @@
 	dir = 8
 	},
 /obj/machinery/power/rtg/advanced,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
@@ -9803,9 +9796,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "syndicatedunereactorshutters"
 	},
@@ -10823,11 +10813,10 @@
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "iSv" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 0
-	},
 /obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "iSE" = (
@@ -11194,9 +11183,6 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -12757,7 +12743,7 @@
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -14196,11 +14182,11 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "lwR" = (
-/obj/machinery/atmospherics/components/unary/portables_connector,
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/turf_decal/bot_white{
 	name = "storage marker"
 	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "lxi" = (
@@ -14413,22 +14399,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/item/holosign_creator/atmos{
-	pixel_x = 2;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/snacks/syndicake,
-/obj/structure/table/reinforced,
-/obj/item/storage/box/stockparts/deluxe,
-/obj/item/storage/box/stockparts/deluxe,
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = -5
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 4
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -18050,9 +18023,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "ojs" = (
@@ -18373,7 +18343,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -18396,12 +18366,6 @@
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
 "ovB" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "ovQ" = (
@@ -18637,9 +18601,6 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/stripes/corner,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "oEz" = (
@@ -18731,8 +18692,11 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "oFC" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
@@ -18826,11 +18790,10 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "1-4";
-	tag = ""
+	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -19264,9 +19227,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "pcj" = (
@@ -19463,7 +19423,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "pqf" = (
@@ -19728,6 +19687,12 @@
 /area/mine/storage)
 "pGg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -20662,11 +20627,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/lavaland/unpowered/deepspaceone/virology)
 "qmw" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
 /obj/machinery/power/terminal{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
@@ -22840,6 +22805,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "rWR" = (
@@ -22979,11 +22947,10 @@
 /turf/open/floor/grass/grass0,
 /area/mine/xenoarch_area_c)
 "sfr" = (
-/obj/machinery/atmospherics/components/trinary/filter{
-	dir = 1;
-	filter_type = list()
-	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/atmospherics/components/trinary/filter{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "sfL" = (
@@ -23514,12 +23481,11 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "sDT" = (
-/obj/machinery/atmospherics/components/trinary/filter{
-	dir = 1;
-	filter_type = list()
-	},
 /obj/effect/turf_decal/bot,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/atmospherics/components/trinary/filter{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "sDX" = (
@@ -24469,9 +24435,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "syndicatedunereactorshutters"
 	},
@@ -24784,9 +24747,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "tCV" = (
@@ -27457,14 +27417,27 @@
 	},
 /area/mine/xenoarch_area_b)
 "vLD" = (
+/obj/structure/table/reinforced,
+/obj/item/holosign_creator/atmos{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/storage/box/stockparts/deluxe,
+/obj/item/storage/box/stockparts/deluxe,
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 4
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/snacks/syndicake,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-8";
+	cable_color = "yellow"
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 0
+	icon_state = "1-8"
 	},
-/obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "vMq" = (
@@ -29766,13 +29739,6 @@
 /obj/item/cultivator,
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
-"xyw" = (
-/obj/structure/cable{
-	icon_state = "2-4";
-	color = "#ff1616"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "xyJ" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -30002,11 +29968,8 @@
 /area/mine/xenoarch_area_c)
 "xFj" = (
 /obj/machinery/power/rtg/advanced,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
@@ -52895,7 +52858,7 @@ ruo
 ruo
 wFm
 mhO
-agl
+xFj
 fnD
 gHO
 kSv
@@ -59582,7 +59545,7 @@ baK
 nnP
 uEf
 ouv
-uEf
+mwi
 pbP
 vGj
 mwi
@@ -59839,8 +59802,8 @@ uKB
 fep
 pGg
 dIt
+fgQ
 mwi
-rQZ
 wml
 tru
 tru
@@ -60095,8 +60058,8 @@ lVi
 naV
 wHC
 qmw
-fgQ
-xyw
+rQZ
+qmw
 ovB
 qDd
 loU

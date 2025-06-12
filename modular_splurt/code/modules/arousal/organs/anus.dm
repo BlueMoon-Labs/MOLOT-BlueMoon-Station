@@ -1,6 +1,9 @@
 // TEH DONUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /obj/item/organ/genital/anus
-	name = "Анус"
+	name = "anus"
+	ru_name = "анус"
+	ru_name_v = "анусе"
+	ru_name_capital = "Анус"
 	desc = "You see their squishy donut pucker parting their asscheeks"
 	icon_state = "anus"
 	zone = BODY_ZONE_PRECISE_GROIN

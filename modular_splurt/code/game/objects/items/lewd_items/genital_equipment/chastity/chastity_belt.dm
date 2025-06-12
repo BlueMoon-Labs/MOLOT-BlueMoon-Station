@@ -7,7 +7,7 @@
 	var/obj/item/genital_equipment/chastity_cage/belt
 	var/obj/item/organ/genital/bepis
 	var/break_require = TOOL_WIRECUTTER //Which tool is required to break the chastity_cage
-	var/break_time = 25 SECONDS
+	interactable_in_strip_menu = TRUE
 
 /obj/item/clothing/underwear/chastity_belt/Initialize(mapload, obj/item/genital_equipment/chastity_cage/initial_belt)
 	if(initial_belt)
@@ -33,28 +33,23 @@
 			belt.belt = src
 			belt.forceMove(src)
 
-	if(belt && loc == user && current_equipped_slot && current_equipped_slot != ITEM_SLOT_HANDS)
+	if(belt && loc == user && current_equipped_slot == ITEM_SLOT_UNDERWEAR)
 		if(current_equipped_slot in user.check_obscured_slots())
 			to_chat(user, "<span class='warning'>You are unable to unequip that while wearing other garments over it!</span>")
 			return FALSE
 		//var/mob/living/carbon/human/H = istype(G) ? G.owner : G["wearer"]
-		var/obj/item/I = user.get_active_held_item()
-		if(!I)
-			to_chat(user, "<span class='warning'>You need \a [break_require] or its key to take it off!</span>")
-			return FALSE
-		if(I == belt.key)
-			to_chat(user, "<span class='warning'>You wield \the [I.name] and unlock the belt!</span>")
+		if(W == belt.key)
+			to_chat(user, "<span class='warning'>You wield \the [W.name] and unlock the belt!</span>")
+			REMOVE_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 			src.dropped(user)
 			user.dropItemToGround(src)
-		else if(break_require == TOOL_WIRECUTTER && I.tool_behaviour == break_require)
-			if(!do_mob(user, src, break_time))
-				return FALSE
-			else
-				to_chat(user, "<span class='warning'>You manage to break \the [src] with \the [I.name]!</span>")
-				src.dropped(user)
-				qdel(src)
+		else if(W.tool_behaviour == break_require)
+			to_chat(user, "<span class='warning'>You manage to break \the [src] with \the [W.name]!</span>")
+			REMOVE_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+			src.dropped(user)
+			qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You can't take it off with \the [I.name]</span>")
+			to_chat(user, "<span class='warning'>You can't take it off with \the [W.name]</span>")
 			return FALSE
 	. = ..()
 
@@ -111,6 +106,7 @@
 	if(belt)
 		belt.item_inserted(belt, bepis, null)
 		belt.equipment.holder_genital = bepis
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 	. = ..()
 
 /obj/item/clothing/underwear/chastity_belt/dropped(mob/user)
@@ -153,6 +149,8 @@
 		to_chat(user, "<span class='warning'>You need \a [break_require] or its key to take it off!</span>")
 		return FALSE
 	. = ..()
+
+/obj/item/clothing/underwear/chastity_belt/MouseDrop(atom/over_object)
 
 /obj/item/clothing/underwear/chastity_belt/proc/handle_cage_dropping(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE

@@ -116,21 +116,22 @@ SUBSYSTEM_DEF(vote)
 			greatest_votes = votes
 //BLUEMOON ADD START - пропуск эксты, если у неё голосов меньше, чем у остальных вариантов (чтобы голоса динамиков считались вместе)
 //Повторный ролл вариантов нужен, чтобы голоса за вариации динамика и эксты успели сформироваться
-	var/second_round_votes = 0 //голоса между вариациями
-	for(var/option in choices)
-		var/votes = choices[option]
-		if(extended_votes <= dynamic_votes)
-			if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_DYNAMIC_LIGHT) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-				continue
-			if(votes > second_round_votes)
-				greatest_votes = votes
-			second_round_votes += votes
-		else
-			if(option == ROUNDTYPE_DYNAMIC || option == ROUNDTYPE_DYNAMIC_TEAMBASED) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-				continue
-			if(votes > second_round_votes)
-				greatest_votes = votes
-			second_round_votes += votes
+	if(mode == "roundtype" || mode == "dynamic")
+		var/second_round_votes = 0 //голоса между вариациями
+		for(var/option in choices)
+			var/votes = choices[option]
+			if(extended_votes <= dynamic_votes)
+				if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_DYNAMIC_LIGHT) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+					continue
+				if(votes > second_round_votes)
+					greatest_votes = votes
+				second_round_votes += votes
+			else
+				if(option == ROUNDTYPE_DYNAMIC || option == ROUNDTYPE_DYNAMIC_TEAMBASED) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+					continue
+				if(votes > second_round_votes)
+					greatest_votes = votes
+				second_round_votes += votes
 //BLUEMOON ADD END
 	//default-vote for everyone who didn't vote
 	if(!CONFIG_GET(flag/default_no_vote) && choices.len)
@@ -156,12 +157,13 @@ SUBSYSTEM_DEF(vote)
 		for(var/option in choices)
 //BLUEMOON ADD START - костыль, чтобы вариации эксты не была победителем, если у неё голосов больше, чем у одного из других вариантов
 //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-			if(extended_votes <= dynamic_votes)
-				if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_DYNAMIC_LIGHT) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-					continue
-			else
-				if(option == ROUNDTYPE_DYNAMIC || option ==  ROUNDTYPE_DYNAMIC_TEAMBASED) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-					continue
+			if(mode == "roundtype" || mode == "dynamic")
+				if(extended_votes <= dynamic_votes)
+					if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_DYNAMIC_LIGHT) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+						continue
+				else
+					if(option == ROUNDTYPE_DYNAMIC || option ==  ROUNDTYPE_DYNAMIC_TEAMBASED) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+						continue
 //BLUEMOON ADD END
 			if(choices[option] == greatest_votes)
 				. += option
@@ -500,31 +502,35 @@ SUBSYSTEM_DEF(vote)
 	if(mode)
 		if(CONFIG_GET(flag/no_dead_vote) && usr.stat == DEAD && !usr.client.holder)
 			return FALSE
+		if(use_vote_power)
+			if(!users_vote_power[usr.ckey])
+				users_vote_power[usr.ckey] = get_vote_power_by_role(usr.client)
+			vote_power = users_vote_power[usr.ckey]
 		if(vote && ISINRANGE(vote, 1, choices.len))
 			switch(vote_system)
 				if(PLURALITY_VOTING)
 					if(usr.ckey in voted)
-						choices[choices[voted[usr.ckey]]]--
+						choices[choices[voted[usr.ckey]]] -= vote_power
 						voted[usr.ckey] = vote
-						choices[choices[vote]]++
+						choices[choices[vote]] += vote_power
 						return vote
 					else
 						voted += usr.ckey
 						voted[usr.ckey] = vote
-						choices[choices[vote]]++	//check this
+						choices[choices[vote]] += vote_power	//check this
 						return vote
 				if(APPROVAL_VOTING)
 					if(usr.ckey in voted)
 						if(vote in voted[usr.ckey])
 							voted[usr.ckey] -= vote
-							choices[choices[vote]]--
+							choices[choices[vote]] -= vote_power
 						else
 							voted[usr.ckey] += vote
-							choices[choices[vote]]++
+							choices[choices[vote]] += vote_power
 					else
 						voted += usr.ckey
 						voted[usr.ckey] = list(vote)
-						choices[choices[vote]]++
+						choices[choices[vote]] += vote_power
 						return vote
 				if(SCHULZE_VOTING,INSTANT_RUNOFF_VOTING)
 					if(usr.ckey in voted)
@@ -612,13 +618,13 @@ SUBSYSTEM_DEF(vote)
 						break
 					choices.Add(option)
 				var/keep_going = TRUE
-				var/toggles = SHOW_RESULTS|SHOW_VOTES|SHOW_WINNER
+				var/toggles = SHOW_RESULTS|SHOW_VOTES|SHOW_WINNER|SHOW_ABSTENTION
 				while(keep_going)
 					var/list/choices = list()
 					for(var/A in GLOB.display_vote_settings)
 						var/toggletext
 						var/bitflag = GLOB.display_vote_settings[A]
-						toggletext = "[toggles & bitflag ? "Show" : "Hide"] [A]"
+						toggletext = "[A] [toggles & bitflag ? "- Shown" : "- Hidden"]"
 						choices[toggletext] = bitflag
 					var/chosen = input(usr, "Toggle vote display settings. Cancel to finalize.", toggles) as null|anything in choices
 					if(!chosen)

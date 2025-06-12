@@ -35,16 +35,24 @@
 		visible_message("<span class='notice'>[usr] закручивает бутылочку, но жидкость внутри не дает ей вращаться.</span>")
 		return
 
-	var/list/names = list()
-	names += "пустоту"
-	for(var/mob/living/carbon/m in oview(1,src))
-		names += m.name
+	var/list/mobs_around = list()
+	mobs_around += "пустоту"
+	for(var/mob/living/L in oview(1,src))
+		mobs_around += L
 	visible_message("<span class='notice'>[usr] тянется к бутылочке и закручивает ее...</span>")
 	src.SpinAnimation(2,9)
-	M.Turn(rand(-170,170))
+	var/mob/living/chosen_mob = pick(mobs_around)
+	var/chosen_mob_name
+	if(istype(chosen_mob))
+		chosen_mob_name = chosen_mob.name
+		M = turn(matrix(), 0)
+		M.Turn(Get_Angle(src, chosen_mob))
+	else
+		chosen_mob_name = chosen_mob
+		M.Turn(rand(-170,170))
 	transform = M
 	playsound(src, 'sound/effects/rollingbottle.ogg', 30, TRUE)
-	visible_message("<span class='notice'>Бутылочка указывает на [pick(names)].</span>")
+	visible_message("<span class='notice'>Бутылочка указывает на [chosen_mob_name].</span>")
 
 /obj/item/reagent_containers/food/drinks/bottle/CtrlShiftClick(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
