@@ -560,6 +560,11 @@
 	suffix = "5x3_spareparts.dmm"
 	name = "Maint spareparts"
 
+/datum/map_template/ruin/station/maint/fivexthree/ghostlibrary
+	id = "ghostlibrary"
+	suffix = "5x3_ghostlibrary.dmm"
+	name = "Maint ghostlibrary"
+
 ///The base for the 5x4 rooms.
 /datum/map_template/ruin/station/maint/fivexfour
 	prefix = "_maps/RandomRuins/StationRuins/maint/5x4/"
