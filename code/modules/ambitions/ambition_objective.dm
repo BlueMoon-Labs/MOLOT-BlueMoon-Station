@@ -128,7 +128,7 @@
 //выдача рандома, проверка на повторы
 /datum/ambition_objective/proc/random_choose(list_for_pick, list/choose_list)
 	if (list_for_pick == "random_crew")
-      		return get_mob_by_ckey(pick(GLOB.joined_player_list))
+		return get_mob_by_ckey(pick(GLOB.joined_player_list))
 
 	var/picked = pick_list("ambitions/randoms.json", list_for_pick)
 
