@@ -16,6 +16,34 @@
 	attack_verb = list("gnawed", "gnashed", "chewed")
 	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
 
+/obj/item/toy/plush/bm/shark/grey
+	name = "Shark Grey Plushie"
+	icon_state = "blahaj-grey"
+
+/obj/item/toy/plush/bm/shark/purple
+	name = "Shark Purple Plushie"
+	icon_state = "blahaj-purple"
+
+/obj/item/toy/plush/bm/shark/orange
+	name = "Shark Orange Plushie"
+	icon_state = "blahaj-orange"
+
+/obj/item/toy/plush/bm/shark/yellow
+	name = "Shark Yellow Plushie"
+	icon_state = "blahaj-yellow"
+
+/obj/item/toy/plush/bm/shark/red
+	name = "Shark Red Plushie"
+	icon_state = "blahaj-red"
+
+/obj/item/toy/plush/bm/shark/green
+	name = "Shark Green Plushie"
+	icon_state = "blahaj-green"
+
+/obj/item/toy/plush/bm/shark/judas
+	name = "Judas Shark Plush"
+	icon_state = "blahaj-judas"
+
 /obj/item/toy/plush/bm/rouny
 	name = "Rouny Plushie"
 	desc = "A plushie depicting a xenomorph runner, made to commemorate the centenary of the Battle of LV-426. Much cuddlier than the real thing."
@@ -26,12 +54,6 @@
 	name = "Ada plushie"
 	desc = "Плюшевая игрушка серой кошки с яркими, как изумруды, глазками. Язык прикреплён небрежно. Крылья в комплект не входят."
 	icon_state = "ada"
-	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
-
-/obj/item/toy/plush/bm/jay
-	name = "Jay Plushie"
-	desc = "Плюшевая игрушка фиолетовой ящерки."
-	icon_state = "jay"
 	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
 
 /obj/item/toy/plush/bm/kiirava
