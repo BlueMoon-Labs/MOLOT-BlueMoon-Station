@@ -208,7 +208,7 @@
 	pixel_y = 1
 	},
 /obj/item/gun/ballistic/automatic/ak12/pindicate{
-	pixel_x = 7;
+	pixel_x = -2;
 	pixel_y = 12
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1804,8 +1804,35 @@
 	dir = 1;
 	icon_state = "delivery_red"
 	},
-/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
-/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_y = 12;
+	pixel_x = 10
+	},
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_y = 12
+	},
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_y = 10;
+	pixel_x = -7
+	},
+/obj/item/ammo_box/magazine/ak12/ap,
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_x = -10
+	},
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_x = 9
+	},
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_y = -6;
+	pixel_x = 10
+	},
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_y = -7
+	},
+/obj/item/ammo_box/magazine/ak12/ap{
+	pixel_y = -8;
+	pixel_x = -7
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_vault)
 "kj" = (
@@ -3691,7 +3718,9 @@
 "tH" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/machinery/door/poddoor{
-	id = ''stvorki''
+	id = "Scomroom";
+	name = "Command blast door";
+	state_open = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
@@ -4172,6 +4201,14 @@
 /obj/item/ammo_box/shotgun/loaded/stunslug,
 /obj/item/ammo_box/shotgun/loaded/stunslug,
 /obj/item/gun/ballistic/shotgun/automatic/combat,
+/obj/item/clothing/suit/space/hardsuit/iron_tombstone{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/space/hardsuit/iron_tombstone{
+	pixel_y = -6;
+	pixel_x = -10
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_vault)
 "wH" = (
@@ -5435,6 +5472,17 @@
 /obj/machinery/light,
 /obj/item/mmi/posibrain/inteq,
 /obj/item/mmi/posibrain/inteq,
+/obj/item/grenade/frag/mega{
+	pixel_x = 12;
+	pixel_y = 12
+	},
+/obj/item/grenade/frag/mega{
+	pixel_x = 12;
+	pixel_y = 6
+	},
+/obj/item/grenade/frag/mega{
+	pixel_x = 12
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_vault)
 "CP" = (
@@ -7180,6 +7228,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	id = "Scomroom";
+	name = "Room shutters control";
+	pixel_x = 30;
+	pixel_y = 3;
+	req_one_access_txt = "152"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "LQ" = (
@@ -7299,10 +7354,6 @@
 "MD" = (
 /obj/structure/chair/wood/normal{
 	dir = 4
-	},
-/obj/machinery/button/door{
-	id = ''stvorki'';
-	pixel_y = 31
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
@@ -7479,6 +7530,13 @@
 "Nz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow,
+/obj/machinery/button/door{
+	id = "Scomroom";
+	name = "Room shutters control";
+	pixel_x = 30;
+	pixel_y = 3;
+	req_one_access_txt = "152"
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "NA" = (
@@ -7780,14 +7838,9 @@
 /obj/structure/rack{
 	dir = 8
 	},
-/obj/item/ammo_box/magazine/ak12,
-/obj/item/ammo_box/magazine/ak12,
-/obj/item/ammo_box/magazine/ak12,
 /obj/structure/sign/flag/inteq{
 	pixel_x = -32
 	},
-/obj/item/ammo_box/magazine/ak12,
-/obj/item/ammo_box/magazine/ak12,
 /obj/item/storage/belt/military/inteq,
 /obj/item/storage/belt/military/inteq,
 /obj/item/storage/belt/military/inteq,
@@ -8375,6 +8428,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/toy/plush/bm/stasik/artemq,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "Tg" = (

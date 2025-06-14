@@ -6773,25 +6773,18 @@
 /obj/item/ammo_box/shotgun/loaded/buckshot,
 /obj/item/ammo_box/shotgun/loaded/buckshot,
 /obj/item/ammo_box/shotgun/loaded/buckshot,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/gun/ballistic/automatic/m16a4/tactical,
-/obj/item/ammo_box/magazine/m16/rubber,
-/obj/item/ammo_box/magazine/m16/rubber,
-/obj/item/ammo_box/magazine/m16/rubber,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
+/obj/item/ammo_box/magazine/acr5m30/ap,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "AI" = (
@@ -8337,10 +8330,12 @@
 /obj/machinery/light/dim/directional/west,
 /obj/structure/rack,
 /obj/item/gun/energy/lasercannon{
-	pixel_y = 6
+	pixel_y = 8
 	},
 /obj/item/gun/ballistic/shotgun/automatic/combat,
-/obj/item/gun/energy/e_gun/stun,
+/obj/item/gun/energy/e_gun/stun{
+	pixel_y = -9
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "Hh" = (
@@ -9565,21 +9560,6 @@
 	dir = 9
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
-/obj/item/ammo_box/magazine/acr5m30/ap,
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon = 'icons/obj/closet.dmi';
@@ -9587,6 +9567,16 @@
 	name = "armory munitions locker";
 	req_access_txt = "151"
 	},
+/obj/item/gun/ballistic/automatic/m16a4/tactical,
+/obj/item/ammo_box/magazine/m16/rubber,
+/obj/item/ammo_box/magazine/m16/rubber,
+/obj/item/ammo_box/magazine/m16/rubber,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "Mg" = (
