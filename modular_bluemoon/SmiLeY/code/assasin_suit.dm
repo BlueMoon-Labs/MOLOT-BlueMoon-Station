@@ -4,8 +4,8 @@
 	icon_state = "infiltrator_case_alliance"
 	item_state = "infiltrator_case_alliance"
 	icon = 'modular_bluemoon/SmiLeY/icons/obj/assasin/assasin_case.dmi'
-	lefthand_file = 'modular_bluemoon/SmiLeY/icons/obj/items_left.dmi'
-	righthand_file = 'modular_bluemoon/SmiLeY/icons/obj/items_right.dmi'
+	lefthand_file = 'modular_bluemoon/SmiLeY/icons/mob/inhands/items/case_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/SmiLeY/icons/mob/inhands/items/case_righthand.dmi'
 
 /obj/item/storage/toolbox/infiltrator/alliance/PopulateContents()
 	new /obj/item/clothing/head/helmet/infiltrator/alliance(src)

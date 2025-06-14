@@ -4,6 +4,8 @@
 	icon = 'modular_sand/icons/obj/storage.dmi'
 	icon_state = "infiltrator_case_basic"
 	item_state = "infiltrator_case_basic"
+	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/case_lefthand.dmi'
+	righthand_file = 'modular_sand/icons/mob/inhands/equipment/case_righthand.dmi'
 	slot_flags = null
 
 /obj/item/storage/backpack/case/ComponentInitialize()

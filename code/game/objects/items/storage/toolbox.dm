@@ -305,6 +305,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	desc = "Bearing the emblem of the Syndicate, this case contains a full infiltrator stealth suit, and has enough room to fit weaponry if necessary while being quite the heavy bludgeoning implement when in a pinch."
 	icon_state = "infiltrator_case"
 	item_state = "infiltrator_case"
+	lefthand_file = 'icons/mob/inhands/equipment/case_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/case_righthand.dmi'
 	force = 12
 	throwforce = 16
 	w_class = WEIGHT_CLASS_NORMAL
