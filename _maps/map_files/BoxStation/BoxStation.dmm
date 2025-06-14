@@ -344,9 +344,9 @@
 /turf/open/floor/plasteel/dark/textured/large,
 /area/command/heads_quarters/hos)
 "acN" = (
-/obj/effect/spawner/structure/window/reinforced{
-	electrochromatic_id = "BarPrivate";
-	electrochromatic = 1
+/obj/machinery/door/airlock{
+	id_tag = "BarPrivate";
+	name = "Private Room"
 	},
 /turf/open/floor/plating,
 /area/service/bar)
@@ -53856,9 +53856,7 @@
 /turf/open/floor/carpet/red,
 /area/command/heads_quarters/hos)
 "lrW" = (
-/obj/structure/chair/sofa/left/brown{
-	dir = 2
-	},
+/obj/structure/chair/sofa/corner/brown,
 /turf/open/floor/carpet/red,
 /area/service/bar)
 "lsh" = (
@@ -55983,8 +55981,8 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "mvU" = (
-/obj/structure/chair/sofa/right/brown{
-	dir = 1
+/obj/structure/chair/sofa/corner/brown{
+	dir = 8
 	},
 /turf/open/floor/carpet/red,
 /area/service/bar)
@@ -56102,15 +56100,15 @@
 /turf/open/floor/plating,
 /area/construction)
 "mzT" = (
-/obj/machinery/door/airlock{
-	id_tag = "BarPrivate";
-	name = "Private Room"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced{
+	electrochromatic_id = "BarPrivate";
+	electrochromatic = 1
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/bar)
@@ -60281,6 +60279,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
 	},
+/obj/structure/table/wood,
 /turf/open/floor/carpet/red,
 /area/service/bar)
 "oId" = (
@@ -60505,7 +60504,6 @@
 /turf/open/floor/grass,
 /area/service/park)
 "oPi" = (
-/obj/structure/table/wood,
 /obj/machinery/button/door{
 	id = "BarPrivate";
 	name = "Private Bolt Control";
@@ -60521,6 +60519,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/chair/sofa/middle/brown{
+	dir = 8
 	},
 /turf/open/floor/carpet/red,
 /area/service/bar)
@@ -66386,6 +66387,17 @@
 	dir = 4
 	},
 /area/commons/dorms)
+"seA" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/textured/half{
+	dir = 8
+	},
+/area/hallway/secondary/exit)
 "seU" = (
 /obj/structure/flora/rock/pile,
 /obj/structure/disposalpipe/segment{
@@ -72245,17 +72257,6 @@
 	dir = 8
 	},
 /area/hallway/primary/central)
-"vuf" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/textured/half{
-	dir = 8
-	},
-/area/hallway/secondary/exit)
 "vuo" = (
 /obj/item/beacon,
 /turf/open/floor/carpet/royalblack,
@@ -128985,7 +128986,7 @@ aNa
 iCb
 aNa
 dNt
-vuf
+seA
 kJl
 whj
 kJl
