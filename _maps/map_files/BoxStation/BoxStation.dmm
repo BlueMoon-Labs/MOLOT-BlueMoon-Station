@@ -348,6 +348,9 @@
 	id_tag = "BarPrivate";
 	name = "Private Room"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/service/bar)
 "acR" = (
@@ -42921,8 +42924,8 @@
 /obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
 	},
 /turf/open/floor/carpet/red,
 /area/service/bar)
@@ -49460,10 +49463,7 @@
 /area/service/chapel/main)
 "jdV" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/service/bar)
@@ -56100,12 +56100,6 @@
 /turf/open/floor/plating,
 /area/construction)
 "mzT" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
 /obj/effect/spawner/structure/window/reinforced{
 	electrochromatic_id = "BarPrivate";
 	electrochromatic = 1
@@ -60273,13 +60267,8 @@
 /turf/open/floor/plasteel/dark/textured/large,
 /area/commons/dorms)
 "oHP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 9
-	},
 /obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/carpet/red,
 /area/service/bar)
 "oId" = (
@@ -62107,6 +62096,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/ce)
+"pMo" = (
+/obj/machinery/door/airlock{
+	id_tag = "BarPrivate";
+	name = "Private Room"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/service/bar)
 "pMB" = (
 /obj/machinery/status_display/evac{
 	layer = 4;
@@ -63607,7 +63606,9 @@
 /area/maintenance/port/fore)
 "qGA" = (
 /obj/structure/chair/sofa/right/brown,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
 /turf/open/floor/carpet/red,
 /area/service/bar)
 "qGI" = (
@@ -65912,6 +65913,17 @@
 	dir = 8
 	},
 /area/medical/medbay/central)
+"rRl" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/textured/half{
+	dir = 8
+	},
+/area/hallway/secondary/exit)
 "rRT" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -66387,17 +66399,6 @@
 	dir = 4
 	},
 /area/commons/dorms)
-"seA" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/textured/half{
-	dir = 8
-	},
-/area/hallway/secondary/exit)
 "seU" = (
 /obj/structure/flora/rock/pile,
 /obj/structure/disposalpipe/segment{
@@ -72644,6 +72645,13 @@
 	dir = 8
 	},
 /area/service/park)
+"vDy" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/service/bar)
 "vDX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -75739,6 +75747,13 @@
 	dir = 1
 	},
 /area/security/prison/cells)
+"xeU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/service/bar)
 "xfs" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
@@ -112020,9 +112035,9 @@ asu
 iVr
 ros
 aJC
-kZs
+vDy
 jdV
-xEd
+xeU
 bge
 pZw
 pZw
@@ -112277,7 +112292,7 @@ sYZ
 aAh
 aAh
 aJC
-acN
+pMo
 mzT
 acN
 aJC
@@ -128986,7 +129001,7 @@ aNa
 iCb
 aNa
 dNt
-seA
+rRl
 kJl
 whj
 kJl
