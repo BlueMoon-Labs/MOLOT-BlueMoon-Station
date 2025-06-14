@@ -1,5 +1,5 @@
-/obj/item/mod/control/pre_equipped/InteQ
-	theme = /datum/mod_theme/InteQ
+/obj/item/mod/control/pre_equipped/inteq
+	theme = /datum/mod_theme/inteq
 	cell = /obj/item/stock_parts/cell/bluespace
 	initial_modules = list(
 		/obj/item/mod/module/storage,
