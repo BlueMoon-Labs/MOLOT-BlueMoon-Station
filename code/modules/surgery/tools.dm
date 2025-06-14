@@ -506,3 +506,30 @@
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "bone setter_bone"
 	toolspeed = 0.85
+
+/obj/item/robotic_processor
+	name = "\improper Robotic Processor"
+	desc = "A device for scanning and initiating new synthetic parts to help fix problems even for unqualified personnel."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "roboscan"
+	item_flags = NOBLUDGEON | SURGICAL_TOOL
+	slot_flags = ITEM_SLOT_BELT
+	var/const/tmp_qualification = QUALIFIED_ROBOTIC_MAINTER
+	var/list/already_notified = list()         // для pickup
+	var/list/dropped_notified = list()         // для dropped
+
+/obj/item/robotic_processor/pickup(mob/user)
+	. = ..()
+	if(user?.mind && !HAS_TRAIT(user.mind, tmp_qualification))
+		ADD_TRAIT(user.mind, tmp_qualification, src)
+		if(!(user.mind in already_notified))
+			to_chat(user, "<span class='notice' style='font-size:125%'>С помощью [src] вы теперь можете обслуживать синтетиков со сложным техобслуживанием.</span>")
+			already_notified += user.mind
+
+/obj/item/robotic_processor/dropped(mob/user)
+	. = ..()
+	if(user?.mind && HAS_TRAIT(user.mind, tmp_qualification))
+		REMOVE_TRAIT(user.mind, tmp_qualification, src)
+		if(!(user.mind in dropped_notified))
+			to_chat(user, "<span class='warning' style='font-size:125%'>Без [src] вы больше не можете обслуживать синтетиков со сложным техобслуживанием.</span>")
+			dropped_notified += user.mind

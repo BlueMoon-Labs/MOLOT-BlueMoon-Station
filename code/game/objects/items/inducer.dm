@@ -1,5 +1,5 @@
 /obj/item/inducer
-	name = "inducer"
+	name = "Engineer inducer"
 	desc = "A tool for inductively charging internal power cells."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "inducer-engi"
@@ -175,7 +175,16 @@
 	else
 		. += "inducer-bat"
 
+/obj/item/inducer/dry
+	cell_type = null
+	opened = TRUE
+
+/obj/item/inducer/dry/Initialize(mapload) //Just in case
+	. = ..()
+	update_icon()
+
 /obj/item/inducer/sci
+	name = "Science inducer"
 	icon_state = "inducer-sci"
 	item_state = "inducer-sci"
 	desc = "A tool for inductively charging internal power cells. This one has a science color scheme, and is less potent than its engineering counterpart."
@@ -188,10 +197,12 @@
 	update_icon()
 
 /obj/item/inducer/sci/combat
+	name = "Combat inducer"
 	icon_state = "inducer-combat"
 	item_state = "inducer-combat"
 	slot_flags = ITEM_SLOT_BELT
-	desc = "A tool for inductively charging internal power cells. This one has been modified and upgraded to be able to charge into guns as well as normal electronics."
+	w_class = WEIGHT_CLASS_NORMAL
+	desc = "A tool for inductively charging internal power cells. This one has been modified and upgraded, but cost weight to be able to charge into guns as well as normal electronics."
 	cell_type = /obj/item/stock_parts/cell/hyper
 	powertransfer = 1300
 	opened = FALSE
@@ -214,8 +225,17 @@
 	cell_type = /obj/item/stock_parts/cell/inducer_supply
 
 /obj/item/inducer/syndicate
+	name = "Syndicate inducer"
 	icon_state = "inducer-syndi"
 	item_state = "inducer-syndi"
 	desc = "A tool for inductively charging internal power cells. This one has a suspicious colour scheme, and seems to be rigged to transfer charge at a much faster rate."
 	powertransfer = 2000
 	cell_type = /obj/item/stock_parts/cell/super
+
+/obj/item/inducer/syndicate/dry
+	cell_type = null
+	opened = TRUE
+
+/obj/item/inducer/syndicate/dry/Initialize(mapload)
+	. = ..()
+	update_icon()

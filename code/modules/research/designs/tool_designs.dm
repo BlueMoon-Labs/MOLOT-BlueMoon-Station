@@ -284,3 +284,13 @@
 	build_path = /obj/item/scalpel/advanced
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/robotic_processor
+	name = "Robotic Processor"
+	desc = "A device for scanning and initiating new synthetic parts to help fix problems even for unqualified personnel"
+	id = "robotic_pr"
+	build_type = PROTOLATHE
+	build_path = /obj/item/robotic_processor
+	materials = list(/datum/material/iron = 4500, /datum/material/glass = 4500, /datum/material/silver = 4500, /datum/material/gold = 2500, /datum/material/diamond = 1500)
+	category = list("Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
