@@ -38,6 +38,7 @@
 	. = ..()
 	if(H.mind)
 		H.mind.isholy = TRUE
+		ADD_TRAIT(H.mind, TRAIT_ANTIMAGIC_NO_SELFBLOCK, JOB_TRAIT) // BLUEMOON ADD trait system
 
 	var/obj/item/storage/book/bible/booze/B = new
 
