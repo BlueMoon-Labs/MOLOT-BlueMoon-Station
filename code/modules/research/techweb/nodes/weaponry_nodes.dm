@@ -4,7 +4,7 @@
 	id = "weaponry"
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new to weaponize just about everything now."
-	prereq_ids = list("engineering")
+	prereq_ids = list("sec_basic", "engineering") // BLUEMOON ADD sec_basic for order consistency
 	design_ids = list("pin_testing", "tele_shield", "lasercarbine")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 

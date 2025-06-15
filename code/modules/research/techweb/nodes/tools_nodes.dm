@@ -28,7 +28,7 @@
 	id = "janitor"
 	display_name = "Advanced Sanitation Technology"
 	description = "Clean things better, faster, stronger, and harder!"
-	prereq_ids = list("adv_engi")
+	prereq_ids = list("basic_tools", "adv_engi") // BLUEMOON ADD basic_tools for order consistency
 	design_ids = list("advmop", "advbroom", "buffer", "light_replacer", "spraybottle", "beartrap", "ci-janitor", "paint_remover")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1750) // No longer has its bag
 
@@ -45,7 +45,7 @@
 	display_name = "Experimental Tools"
 	description = "Highly advanced construction tools."
 	design_ids = list("exwelder", "jawsoflife", "handdrill", "holosigncombifan", "ranged_analyzer", "tricorder")
-	prereq_ids = list("adv_engi")
+	prereq_ids = list("basic_tools", "adv_engi") // BLUEMOON ADD basic_tools for order consistency
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2750)
 
 /datum/techweb_node/sec_basic
