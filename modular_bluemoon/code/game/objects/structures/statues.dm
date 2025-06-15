@@ -1,3 +1,45 @@
+/obj/structure/carving_block/ComponentInitialize()
+	. = ..()
+	var/rotation_flags = ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS
+	AddComponent(/datum/component/simple_rotation, rotation_flags, null, CALLBACK(src, PROC_REF(can_be_rotated)))
+
+/obj/structure/carving_block/proc/can_be_rotated(mob/user, rotation_type)
+	if(anchored)
+		to_chat(user, "<span class='warning'>[src] cannot be rotated while it is fastened to the floor!</span>")
+		return FALSE
+	return TRUE
+
+/obj/structure/carving_block/attackby(obj/item/W, mob/living/user, params)
+	add_fingerprint(user)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(default_unfasten_wrench(user, W))
+			return
+		if(W.tool_behaviour == TOOL_WELDER)
+			if(!W.tool_start_check(user, amount=0))
+				return FALSE
+
+			user.visible_message(span_notice("[user] is slicing apart the [name]."), \
+								span_notice("You are slicing apart the [name]..."))
+			if(W.use_tool(src, user, 40, volume=50))
+				user.visible_message(span_notice("[user] slices apart the [name]."), \
+									span_notice("You slice apart the [name]!"))
+				deconstruct(TRUE)
+			return
+	return ..()
+
+/obj/structure/carving_block/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/amount_mod = disassembled ? 0 : -2
+		for(var/mat in custom_materials)
+			var/datum/material/custom_material = SSmaterials.GetMaterialRef(mat)
+			var/amount = max(0,round(custom_materials[mat]/MINERAL_MATERIAL_AMOUNT) + amount_mod)
+			if(amount > 0)
+				new custom_material.sheet_type(drop_location(),amount)
+	qdel(src)
+
+/obj/structure/carving_block/AltClick(mob/user)
+	return ..() // This hotkey is BLACKLISTED since it's used by /datum/component/simple_rotation
+
 // LifeWeb Statues integrated in BM
 /obj/item/choice_beacon/box/creepy_statue_kit
 	name = "Creepy statue construction kit"
