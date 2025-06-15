@@ -1174,10 +1174,6 @@
 	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
-"gA" = (
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/nanotrasen,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "gB" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
@@ -2251,10 +2247,6 @@
 /obj/item/clothing/under/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
-"ms" = (
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech/nanotrasen,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "mu" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
@@ -7298,6 +7290,9 @@
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light{
 	dir = 1
+	},
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech/nanotrasen{
+	faction = list("deathsquad")
 	},
 /turf/open/floor/mineral/plastitanium/yellow{
 	icon_state = "plastitanium"
@@ -13662,7 +13657,7 @@ cO
 SB
 Jh
 Yr
-gA
+Cn
 Xk
 Cn
 Cn
@@ -14005,7 +14000,7 @@ XK
 lK
 JZ
 GT
-ms
+uI
 fv
 uI
 fQ
