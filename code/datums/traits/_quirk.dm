@@ -28,6 +28,8 @@
 	/// The base weight for the each quirk's mail goodies list to be selected is 5
 	/// then the item selected is determined by pick(selected_quirk.mail_goodies)
 	var/list/mail_goodies = list()
+	// Отвечает за то не пишется-ли данный квирк на медсканерах и худах (FALSE = пишется)
+	var/flavor_quirk = FALSE
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
 	if(!quirk_mob || (human_only && !ishuman(quirk_mob)) || quirk_mob.has_quirk(type))
@@ -91,11 +93,14 @@
 		return
 	on_process()
 
-/mob/living/proc/get_trait_string(medical) //helper string. gets a string of all the traits the mob has
+//BLUEMOON CHANGE добавляем "укороченную" версию текста для медсканеров и делаем текстик медзаписей красиво
+/mob/living/proc/get_trait_string(medical, short) //helper string. gets a string of all the traits the mob has
 	var/list/dat = list()
 	if(!medical)
 		for(var/V in roundstart_quirks)
 			var/datum/quirk/T = V
+			if(short && T.flavor_quirk)
+				continue
 			dat += T.name
 		if(!dat.len)
 			return "Отсутствуют"
@@ -103,10 +108,14 @@
 	else
 		for(var/V in roundstart_quirks)
 			var/datum/quirk/T = V
-			dat += T.medical_record_text
+			if(T.medical_record_text)
+				dat += T.medical_record_text
+			else
+				continue
 		if(!dat.len)
-			return "Отсутствуют"
-		return dat.Join("<br>")
+			return FALSE
+		return dat.Join(" ; ")
+//BLUEMOON CHANGE END
 
 /mob/living/proc/cleanse_trait_datums() //removes all trait datums
 	for(var/V in roundstart_quirks)

@@ -561,7 +561,7 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
 
-	var/traitstring = get_trait_string()
+	var/traitstring = get_trait_string(FALSE, TRUE)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
