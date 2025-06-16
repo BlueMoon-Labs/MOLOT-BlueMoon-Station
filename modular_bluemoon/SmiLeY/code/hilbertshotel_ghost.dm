@@ -112,3 +112,9 @@
 /datum/map_template/hilbertshotel/apartment/capsule
 	name = "Apartment_winter"
 	mappath = '_maps/templates/apartment_capsule.dmm'
+
+/datum/map_template/hilbertshotel/apartment/train
+	name = "Apartment_train"
+	mappath = '_maps/templates/apartment_train.dmm'
+	landingZoneRelativeX = 6
+	landingZoneRelativeY = 1
