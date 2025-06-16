@@ -2,6 +2,7 @@
 	name = "Лишний Вес"
 	desc = "Вы обожаете еду и появляетесь на смене с лишним весом."
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = span_notice("Вы чувствуете себя толстым!")
 	//no lose_text cause why would there be?
 

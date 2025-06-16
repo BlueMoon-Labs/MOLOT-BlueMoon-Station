@@ -4,6 +4,7 @@
 	desc = "Вы трёхглавое создание. Оформите имя, как (Ваня-Саня-Даня)."
 	value = 0
 	mob_trait = TRAIT_HYDRA_HEADS
+	flavor_quirk = TRUE
 	gain_text = span_notice("Вы слышите два других голоса внутри головы(ов).")
 	lose_text = span_danger(" становится единым.")
 	medical_record_text = "Пациент имеет несколько голов и личностей, присоединенных к телу."

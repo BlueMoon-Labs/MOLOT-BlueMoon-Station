@@ -6,6 +6,7 @@
 	gain_text = "<span class='notice'>Иногда так хочется повыть...</span>"
 	lose_text = "<span class='notice'>Я больше не хочу выть.</span>"
 	mob_trait = TRAIT_AWOO
+	flavor_quirk = TRUE
 	var/timer
 	var/timer_trigger
 	var/min_trigger_time = 6000		//10 minutes
@@ -65,6 +66,7 @@
 	desc = "Объясняя вашу маленькость вас уж точно услышат (позволяет при маленьком размере иметь хорошо слышимую речь)"
 	value = 0
 	mob_trait = TRAIT_BLUEMOON_CLEARLY_AUDIBLE
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Ваш голос звучит ещё более звонко!</span>"
 	lose_text = "<span class='danger'>Кхе-кхе...</span>"
 
@@ -88,12 +90,14 @@
 	name = "Колючий"
 	desc = "Ваше тело частично или полностью покрыто острыми иглами. Любой, кто попытается вас потрогать, рискует пораниться."
 	value = 0
+	flavor_quirk = TRUE
 	mob_trait = TRAIT_SPIKY
 
 /datum/quirk/nt_employee
 	name = "Сотрудник НаноТрейзен"
 	desc = "Вы обычный сотрудник НаноТрейзен. В начале смены вы получаете корпоративный бейдж и знание корпоративного языка."
 	value = 0
+	flavor_quirk = TRUE
 	mood_quirk = FALSE
 	processing_quirk = FALSE
 
@@ -107,6 +111,7 @@
 	name = "Сотрудник Синдиката"
 	desc = "Вы обычный сотрудник Синдиката. В начале смены вы получаете корпоративный бейдж и знание кодового языка."
 	value = 0
+	flavor_quirk = TRUE
 	mood_quirk = FALSE
 	processing_quirk = FALSE
 
@@ -119,6 +124,7 @@
 /datum/quirk/lewdjob
 	name = "Секс это работа"
 	desc = "Ничего личного, просто бизнес. В моменты интимной близости у вас над головой не будут появляться сердечки."
+	flavor_quirk = TRUE
 	mob_trait = TRAIT_LEWD_JOB
 
 /datum/preferences
@@ -135,6 +141,7 @@
 	desc = "Ваша беременность протекает как у нормального млекопитающего и вы не откладываете яйца! Залетев, вы не скоро родите ребёнка!"
 	value = 0
 	mob_trait = TRAIT_COMMON_PREGNANCY
+	flavor_quirk = TRUE
 	gain_text = span_notice("Ваша беременность будет протекать нормально.")
 	lose_text = span_notice("Теперь вы будете откладывать яйца.")
 	medical_record_text = "Беременность у пациента протекает как у нормальных млекопитающих."
@@ -144,6 +151,7 @@
 	desc = "Вы обожаете быть связанным! Вам нравится в этом всё, особенно беспомощность!"
 	value = 0
 	mob_trait = TRAIT_BONDAGED
+	flavor_quirk = TRUE
 	gain_text = span_notice("Вы чувствуете что вам хотелось бы быть связанным.")
 	lose_text = span_notice("Вы больше не чувствуете что вам хотелось бы быть связанным.")
 	medical_record_text = "Пациент возможно имеет Стокгольмский синдром."

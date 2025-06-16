@@ -60,6 +60,7 @@
 	desc = "Вы владелец реликвии, передающейся из поколения в поколение. Её нужно беречь!"
 	value = -1
 	mood_quirk = TRUE
+	flavor_quirk = TRUE
 	medical_record_text = "Пациент демонстрирует неестественную привязанность к семейной реликвии."
 	var/obj/item/heirloom
 	var/where
@@ -150,6 +151,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	desc = "Вы спите как убитый! Ваш сон длится чуть дольше."
 	value = -1
 	mob_trait = TRAIT_HEAVY_SLEEPER
+	flavor_quirk = TRUE
 	gain_text = "<span class='danger'>Вы чувствуете сонливость.</span>"
 	lose_text = "<span class='notice'>Вы снова чувствуете себя бодрым!.</span>"
 	medical_record_text = "Пациент показал аномальные результаты во время исследования сна - его гораздо сложнее разбудить."
@@ -189,6 +191,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Никтофобия"
 	desc = "Вы боитесь тьмы и осторожничаете, пребывая в ней."
 	value = -1
+	flavor_quirk = TRUE
 	medical_record_text = "Пациент боится темноты."
 
 /datum/quirk/nyctophobia/add()
@@ -324,6 +327,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	desc = "Ваши навыки обращения с оружием не позволяют точно прицелиться даже для того, чтобы спасти свою жизнь. Стрельба с двух рук даже не обсуждается."
 	value = -1
 	mob_trait = TRAIT_POOR_AIM
+	flavor_quirk = TRUE
 	medical_record_text = "Обе руки пациента подвержены тремору."
 
 /datum/quirk/prosopagnosia
@@ -367,6 +371,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/phobia
 	name = "Фобия"
 	desc = "Прошлое нанесло вам травму на всю жизнь и продолжает преследовать, когда вы встречаетесь с величайшими из своих страхов."
+	flavor_quirk = TRUE
 	value = -2 // It can hardstun you. You can be a job that your phobia targets...
 	gain_text = "<span class='danger'>Вы начинаете трястись, когда всепоглощающий страх захватывает ваш разум.</span>"
 	lose_text = "<span class='notice'>Ваша уверенность сметает страх, что терзал вас долгое время.</span>"

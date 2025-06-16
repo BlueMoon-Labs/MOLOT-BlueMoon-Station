@@ -2,6 +2,7 @@
 	name = "Гиперчувствительность"
 	desc = "Всё вокруг влияет на ваше настроение больше, чем должно."
 	value = -1
+	flavor_quirk = TRUE
 	gain_text = "<span class='danger'>Вы делаете из мухи слона.</span>"
 	lose_text = "<span class='notice'>Вы больше не преувеличиваете значимость событий вокруг вас.</span>"
 	mood_quirk = TRUE //yogs
