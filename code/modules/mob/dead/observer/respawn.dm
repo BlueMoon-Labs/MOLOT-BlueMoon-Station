@@ -132,6 +132,11 @@
 		to_chat(src, "<span class='danger'>You cannot respawn as you have enabled DNR.</span>")
 		return
 
+	// BLUEMOON ADD я не знаю почему бан респавна не банил респавн
+	if(jobban_isbanned(src, ROLE_RESPAWN))
+		to_chat(src, "You cannot respawn (banned).")
+		return
+	// BLUEMOON ADD END
 	var/roundstart_timeleft = (SSticker.round_start_time + (CONFIG_GET(number/respawn_minimum_delay_roundstart) * 600)) - world.time
 	if(roundstart_timeleft > 0)
 		to_chat(src, "<span class='warning'>It's been too short of a time since the round started! Please wait [CEILING(roundstart_timeleft / 600, 0.1)] more minutes.</span>")
