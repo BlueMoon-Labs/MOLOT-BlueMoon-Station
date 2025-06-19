@@ -6062,10 +6062,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/science/hall)
-"bds" = (
-/obj/structure/sign/plaques,
-/turf/closed/mineral/random/snow,
-/area/icemoon/surface/outdoors)
 "bdu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -13449,6 +13445,34 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/service/chapel/main)
+"ctT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/structure/sign/directions/bar{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = -23
+	},
+/obj/structure/sign/directions/dormsdirection{
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = -29
+	},
+/turf/open/floor/plasteel/smooth/edge{
+	dir = 1
+	},
+/area/hallway/primary/starboard)
 "ctV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/insectguts,
@@ -16170,34 +16194,6 @@
 	dir = 2
 	},
 /area/science)
-"cQV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/structure/sign/directions/bar{
-	dir = 4;
-	pixel_x = 0;
-	pixel_y = -23
-	},
-/obj/structure/sign/directions/dormsdirection{
-	dir = 8;
-	pixel_x = 0;
-	pixel_y = -29
-	},
-/turf/open/floor/plasteel/smooth/edge{
-	dir = 1
-	},
-/area/hallway/primary/starboard)
 "cRa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/firecloset/full,
@@ -26331,9 +26327,7 @@
 /area/engineering/lobby/upper)
 "eDF" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	dir = 1
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/science)
 "eDG" = (
@@ -32268,6 +32262,13 @@
 /obj/item/stack/sheet/mineral/wood/twenty,
 /turf/open/floor/wood/wood_large,
 /area/service/sauna)
+"fHK" = (
+/obj/structure/cable{
+	icon_state = "1-4";
+	tag = ""
+	},
+/turf/open/floor/plating,
+/area/service/chapel/main)
 "fHS" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/vending/coffee,
@@ -48188,6 +48189,12 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/openspace/icemoon,
 /area/command/bridge/upper)
+"iDU" = (
+/obj/structure/ladder{
+	pixel_y = 8
+	},
+/turf/open/floor/plating,
+/area/service/chapel/main)
 "iDV" = (
 /obj/structure/cable{
 	icon_state = "0-2";
@@ -55618,6 +55625,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/aft)
+"jSF" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/turf/open/floor/plating,
+/area/service/chapel/main)
 "jSL" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -71313,12 +71324,11 @@
 /area/engineering/lobby/upper)
 "mGX" = (
 /obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 0
-	},
 /obj/machinery/power/smes{
 	charge = 5e+006
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/service/chapel/main)
@@ -79931,7 +79941,10 @@
 /turf/open/floor/catwalk_floor/iron,
 /area/science/circuit)
 "oiA" = (
-/obj/machinery/space_heater,
+/obj/machinery/power/deck_relay,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/service/chapel/main)
 "oiE" = (
@@ -85424,6 +85437,12 @@
 	dir = 4
 	},
 /area/science)
+"phf" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/service/chapel/main)
 "phi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -87413,6 +87432,10 @@
 	dir = 8
 	},
 /area/ruin/icemoon/unpowered/glacier/engineering)
+"pAF" = (
+/obj/structure/sign/plaques,
+/turf/closed/mineral/random/snow,
+/area/icemoon/surface/outdoors)
 "pAH" = (
 /obj/structure/closet/emcloset,
 /turf/open/floor/plating,
@@ -97672,6 +97695,16 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hop)
+"rqu" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/turf/open/floor/plating,
+/area/service/chapel/main)
 "rqv" = (
 /obj/structure/chair/wood/normal{
 	dir = 4
@@ -111604,22 +111637,6 @@
 	},
 /turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main/monastery)
-"tQO" = (
-/obj/structure/sign/directions/cryo{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = 7
-	},
-/obj/structure/sign/directions/security{
-	pixel_x = 0;
-	pixel_y = 1
-	},
-/obj/structure/sign/directions/command{
-	pixel_x = 0;
-	pixel_y = -5
-	},
-/turf/closed/wall,
-/area/hallway/secondary/exit/departure_lounge)
 "tQR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -116989,6 +117006,13 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4";
+	tag = ""
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/service/chapel/main)
 "uLX" = (
@@ -122029,12 +122053,10 @@
 /area/hallway/primary/aft)
 "vLS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	dir = 1
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/catwalk_floor,
 /area/science)
 "vLW" = (
@@ -126034,6 +126056,22 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/science/xenobiology)
+"wwX" = (
+/obj/structure/sign/directions/cryo{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/structure/sign/directions/security{
+	pixel_x = 0;
+	pixel_y = 1
+	},
+/obj/structure/sign/directions/command{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/turf/closed/wall,
+/area/hallway/secondary/exit/departure_lounge)
 "wwY" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -129795,6 +129833,7 @@
 	dir = 1;
 	name = "Air Out"
 	},
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/service/chapel/main)
 "xfU" = (
@@ -243877,7 +243916,7 @@ uya
 paR
 gAV
 gAV
-ssT
+tjB
 ssT
 ssT
 ssT
@@ -244134,7 +244173,7 @@ gAV
 paR
 wGw
 uya
-ssT
+tjB
 ssT
 ssT
 ssT
@@ -244391,7 +244430,7 @@ uya
 paR
 gAV
 gAV
-ssT
+tjB
 ssT
 ssT
 ssT
@@ -244648,7 +244687,7 @@ paR
 paR
 gAV
 gAV
-ssT
+tjB
 ssT
 ssT
 ssT
@@ -244905,7 +244944,7 @@ gAV
 uya
 gAV
 tjB
-ssT
+tjB
 ssT
 ssT
 ssT
@@ -245412,7 +245451,7 @@ uya
 gAV
 gAV
 rRb
-gAV
+paR
 uya
 gAV
 gAV
@@ -245669,7 +245708,7 @@ gAV
 gAV
 gAV
 gAV
-gAV
+paR
 gAV
 gAV
 gAV
@@ -245926,7 +245965,7 @@ gAV
 gAV
 gAV
 gAV
-gAV
+paR
 wGw
 gAV
 tjB
@@ -246183,7 +246222,7 @@ gAV
 uya
 uya
 gAV
-uya
+wws
 gAV
 gAV
 tjB
@@ -246440,7 +246479,7 @@ gAV
 gAV
 gAV
 gAV
-gAV
+paR
 gAV
 tjB
 tjB
@@ -246697,7 +246736,7 @@ gAV
 uya
 gAV
 gAV
-gAV
+paR
 gAV
 tjB
 ssT
@@ -246954,7 +246993,7 @@ gAV
 uya
 gAV
 gAV
-gAV
+paR
 tWw
 tjB
 ssT
@@ -247211,14 +247250,14 @@ rRb
 gAV
 hMB
 uya
-gAV
+paR
 gAV
 tjB
 tjB
-ssT
-ssT
-ssT
-ssT
+tjB
+tjB
+tjB
+tjB
 ssT
 ssT
 ssT
@@ -247468,14 +247507,14 @@ gAV
 gAV
 gAV
 gAV
+paR
 gAV
-gAV
-gAV
+pxU
+pxU
+pxU
+pxU
+pxU
 tjB
-ssT
-ssT
-ssT
-ssT
 ssT
 ssT
 ssT
@@ -247725,14 +247764,14 @@ gAV
 gAV
 uya
 gAV
-gAV
-uya
-gAV
+paR
+wws
+phf
+jSF
+jSF
+fHK
+pxU
 tjB
-tjB
-ssT
-ssT
-ssT
 ssT
 ssT
 ssT
@@ -247984,12 +248023,12 @@ gAV
 gAV
 uya
 gAV
-gAV
-gAV
+pxU
+ntd
+iDU
+oiA
+pxU
 tjB
-ssT
-ssT
-ssT
 ssT
 ssT
 ssT
@@ -248241,12 +248280,12 @@ uya
 gAV
 gAV
 gAV
-uya
-uya
+pxU
+pxU
+pxU
+pxU
+pxU
 tjB
-tjB
-ssT
-ssT
 ssT
 ssT
 ssT
@@ -248499,11 +248538,11 @@ gAV
 gAV
 xQE
 gAV
-gAV
-gAV
 tjB
 tjB
-ssT
+tjB
+tjB
+tjB
 ssT
 ssT
 ssT
@@ -249268,7 +249307,7 @@ ssT
 ssT
 tjB
 tjB
-tjB
+gAV
 gAV
 gAV
 uya
@@ -249524,7 +249563,7 @@ ssT
 ssT
 ssT
 ssT
-ssT
+tjB
 tjB
 gAV
 gAV
@@ -300371,7 +300410,7 @@ hUr
 wDP
 gee
 vjG
-tQO
+wwX
 bcz
 bcz
 njv
@@ -306157,7 +306196,7 @@ tjB
 tjB
 tjB
 tjB
-bds
+pAF
 tjB
 tjB
 tjB
@@ -307460,7 +307499,7 @@ uya
 phi
 bFD
 axH
-cQV
+ctT
 xzk
 xzk
 xzk
@@ -313265,7 +313304,7 @@ gLg
 uMb
 dMM
 roH
-uLT
+rqu
 uLT
 pxU
 hAY
@@ -313522,7 +313561,7 @@ kJW
 cdh
 xfO
 qTX
-ntd
+iDU
 oiA
 pxU
 hAY
