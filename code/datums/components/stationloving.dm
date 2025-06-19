@@ -75,7 +75,7 @@
 
 /// Checks whether a given destination is within bounds. Returns TRUE if it is, FALSE if it isn't.
 /datum/component/stationloving/proc/destination_in_bounds(atom/destination)
-	var/static/list/allowed_shuttles = typecacheof(list(/area/shuttle/syndicate, /area/shuttle/escape, /area/shuttle/pod_1, /area/shuttle/pod_2, /area/shuttle/pod_3, /area/shuttle/pod_4))
+	var/static/list/allowed_shuttles = typecacheof(list(/area/shuttle/syndicate, /area/shuttle/escape, /area/shuttle/pod_1, /area/shuttle/pod_2, /area/shuttle/pod_3, /area/shuttle/pod_4, /area/shuttle/snowtaxi))
 	var/static/list/disallowed_centcom_areas = typecacheof(list(/area/abductor_ship, /area/awaymission/errorroom))
 	var/turf/destination_turf = get_turf(destination)
 	if (!destination_turf)

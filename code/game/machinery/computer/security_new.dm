@@ -1,3 +1,4 @@
+/* UNTICKED SEE code\game\machinery\computer\security.dm
 #define SEC_DATA_R_LIST	1	// Record list
 #define SEC_DATA_MAINT	2	// Records maintenance
 #define SEC_DATA_RECORD	3	// Record
@@ -517,3 +518,4 @@
 #undef SEC_DATA_MAINT
 #undef SEC_DATA_RECORD
 #undef SEC_FIELD
+*/

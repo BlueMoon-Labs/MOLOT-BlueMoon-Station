@@ -1469,7 +1469,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock,
 /obj/effect/turf_decal/trimline/green,
 /obj/effect/turf_decal/bot_white{
 	name = "storage marker"
@@ -1480,7 +1479,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/access/any/service,
+/obj/machinery/door/airlock/service{
+	req_one_access_txt = "25;26;35;28";
+	name = "Service Hall"
+	},
 /turf/open/floor/plasteel,
 /area/maintenance/disposal)
 "anO" = (
@@ -2595,7 +2597,6 @@
 	name = "storage marker"
 	},
 /obj/machinery/door/airlock/rd,
-/obj/effect/mapping_helpers/airlock/access/all/science/rd,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/rd)
@@ -4601,9 +4602,9 @@
 "aRL" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Maintenance Hatch";
-	req_access_txt = "12"
+	req_access_txt = "12";
+	req_one_access_txt = "25;26;35;28"
 	},
-/obj/effect/mapping_helpers/airlock/access/any/service,
 /turf/open/floor/plating,
 /area/maintenance/disposal)
 "aRP" = (
@@ -6061,6 +6062,10 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/science/hall)
+"bds" = (
+/obj/structure/sign/plaques,
+/turf/closed/mineral/random/snow,
+/area/icemoon/surface/outdoors)
 "bdu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8532,7 +8537,6 @@
 /turf/open/floor/catwalk_floor,
 /area/maintenance/department/electrical)
 "bAM" = (
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 1
@@ -8545,6 +8549,7 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Bridge Maintenance"
 	},
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/command/bridge)
 "bAV" = (
@@ -11118,12 +11123,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/unpowered/glacier/cafeteria)
 "bZs" = (
-/obj/machinery/power/floodlight/lamppost/snow/one{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2";
 	pixel_y = 0
+	},
+/obj/machinery/power/floodlight/lamppost/snow/one{
+	layer = 5.2
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors)
@@ -11418,6 +11423,10 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/sign/directions/dormsdirection{
+	dir = 8;
+	pixel_y = 21
 	},
 /turf/open/floor/plasteel/smooth/edge{
 	dir = 2
@@ -13605,13 +13614,14 @@
 /obj/effect/turf_decal/tile/dark{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
 /obj/machinery/button/door/directional/north{
 	pixel_y = 26;
 	id = "mech bay shutters";
-	name = "mech bay shutters"
-	},
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
+	name = "mech bay shutters";
+	req_access_txt = "29"
 	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
@@ -14460,6 +14470,9 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/stripes/white/line,
+/obj/effect/turf_decal/caution/white{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 2
 	},
@@ -15927,7 +15940,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
@@ -15935,6 +15947,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plasteel/dark/textured,
 /area/engineering/main)
 "cPf" = (
@@ -16157,6 +16170,34 @@
 	dir = 2
 	},
 /area/science)
+"cQV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/structure/sign/directions/bar{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = -23
+	},
+/obj/structure/sign/directions/dormsdirection{
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = -29
+	},
+/turf/open/floor/plasteel/smooth/edge{
+	dir = 1
+	},
+/area/hallway/primary/starboard)
 "cRa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/firecloset/full,
@@ -18335,6 +18376,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /turf/open/floor/plasteel/white/smooth/edge{
 	dir = 4
 	},
@@ -20037,7 +20079,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 5;
-	name = "South Taxi Port";
+	name = "Sec; Docking Port";
 	roundstart_template = /datum/map_template/shuttle/ice_taxi;
 	width = 7;
 	shuttle_id = "snaxi_s"
@@ -20942,10 +20984,20 @@
 /area/medical/medbay/aft)
 "dHb" = (
 /obj/structure/sign/directions/engineering{
-	pixel_y = 5
+	pixel_y = 11;
+	pixel_x = 0
 	},
 /obj/structure/sign/directions/supply{
-	pixel_y = -4
+	pixel_y = 5;
+	pixel_x = 0
+	},
+/obj/structure/sign/directions/bar{
+	pixel_x = 0;
+	pixel_y = -7
+	},
+/obj/structure/sign/directions/dormsdirection{
+	pixel_x = 0;
+	pixel_y = -1
 	},
 /turf/closed/wall/r_wall,
 /area/security/checkpoint/escape)
@@ -25917,11 +25969,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plasteel/dark/textured,
 /area/engineering/main)
 "eAA" = (
@@ -30138,6 +30190,7 @@
 	name = "storage marker"
 	},
 /obj/effect/turf_decal/trimline/yellow,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
 /turf/open/floor/plasteel/textured,
 /area/engineering/atmos/aftair)
 "fpU" = (
@@ -31335,7 +31388,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/science/rd,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/rd)
@@ -32279,6 +32331,7 @@
 /obj/effect/turf_decal/bot_white{
 	name = "storage marker"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
 /turf/open/floor/plasteel/textured,
 /area/engineering/atmos)
 "fIv" = (
@@ -32410,10 +32463,20 @@
 /area/engineering/atmos/upper)
 "fJQ" = (
 /obj/structure/sign/directions/command{
-	pixel_y = -4
+	pixel_y = -2;
+	pixel_x = 0
 	},
 /obj/structure/sign/directions/security{
-	pixel_y = 5
+	pixel_y = 4;
+	pixel_x = 0
+	},
+/obj/structure/sign/directions/evac{
+	pixel_x = 0;
+	pixel_y = 10
+	},
+/obj/structure/sign/directions/cryo{
+	pixel_x = 0;
+	pixel_y = -8
 	},
 /turf/closed/wall/r_wall,
 /area/hallway/primary/starboard)
@@ -37149,7 +37212,16 @@
 	pixel_y = 5
 	},
 /obj/structure/sign/directions/command{
-	pixel_y = -4
+	pixel_y = -1;
+	pixel_x = 0
+	},
+/obj/structure/sign/directions/evac{
+	pixel_x = 0;
+	pixel_y = 11
+	},
+/obj/structure/sign/directions/cryo{
+	pixel_x = 0;
+	pixel_y = -7
 	},
 /turf/closed/wall,
 /area/hallway/primary/fore)
@@ -37773,11 +37845,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 9
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "gIV" = (
@@ -39183,7 +39255,7 @@
 	dwidth = 3;
 	height = 5;
 	shuttle_id = "snaxi_nw";
-	name = "Northwest Taxi Port";
+	name = "Med; Sci Port";
 	width = 7
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -42945,6 +43017,9 @@
 	dir = 5
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "hFM" = (
@@ -45499,6 +45574,7 @@
 	name = "Science External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/department/science/mid)
 "idw" = (
@@ -47153,7 +47229,7 @@
 	dwidth = 3;
 	height = 5;
 	shuttle_id = "snaxi_ne";
-	name = "Northeast Taxi Port";
+	name = "Eng; Service; Cargo Port";
 	width = 7
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -51098,6 +51174,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/multi_tile/glass,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/plasteel/smooth/edge{
 	dir = 4
 	},
@@ -51626,7 +51703,6 @@
 /obj/effect/turf_decal/siding/dark_blue/corner{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -51642,6 +51718,7 @@
 	name = "bridge blast door"
 	},
 /obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -57314,6 +57391,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/trimline/blue,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /turf/open/floor/plasteel/white,
 /area/medical/paramedic)
 "khB" = (
@@ -64353,7 +64431,8 @@
 /obj/machinery/button/door/directional/south{
 	pixel_y = -26;
 	id = "mech bay shutters";
-	name = "mech bay shutters"
+	name = "mech bay shutters";
+	req_access_txt = "29"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -65953,6 +66032,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/caution/white,
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
@@ -69856,7 +69936,6 @@
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/effect/turf_decal/trimline/darkblue/end{
 	dir = 4
 	},
@@ -69871,6 +69950,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -84064,6 +84144,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/caution/white,
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
@@ -84567,6 +84648,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/airlock/access/all/science/general,
 /turf/open/floor/plasteel,
 /area/science)
 "pbf" = (
@@ -87523,11 +87605,11 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Engineering Maintenance"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering,
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/catwalk_floor/iron,
 /area/maintenance/department/electrical)
 "pCH" = (
@@ -87975,6 +88057,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "pHc" = (
@@ -89842,7 +89927,6 @@
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/effect/turf_decal/trimline/darkblue/end{
 	dir = 8
 	},
@@ -89856,6 +89940,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/plasteel,
 /area/command/bridge)
 "pYf" = (
@@ -90166,7 +90251,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/trimline/darkblue/end{
 	dir = 4
@@ -90181,6 +90265,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/plasteel,
 /area/command/bridge)
 "qbl" = (
@@ -90299,6 +90384,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/maintenance/department/science/mid)
 "qcl" = (
@@ -93694,6 +93780,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/caution/white,
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
@@ -94987,8 +95074,8 @@
 	dir = 1
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/airlock/access/all/engineering,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/catwalk_floor/iron,
 /area/maintenance/department/electrical)
 "qTt" = (
@@ -95337,6 +95424,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/airlock/access/all/science/general,
 /turf/open/floor/plasteel,
 /area/science)
 "qWm" = (
@@ -96875,7 +96963,6 @@
 /obj/effect/turf_decal/siding/dark_blue/corner{
 	dir = 2
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/effect/turf_decal/trimline/darkblue/end{
 	dir = 4
 	},
@@ -96888,6 +96975,7 @@
 	name = "bridge blast door"
 	},
 /obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -102255,7 +102343,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/science/rd,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/science/hall)
@@ -107791,6 +107878,11 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/door/airlock/research{
+	name = "Robotics Lab";
+	req_access_txt = "29"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/science/robotics,
 /turf/open/floor/plasteel/dark/side{
 	dir = 2
 	},
@@ -109613,10 +109705,20 @@
 /area/ruin/icemoon/unpowered/glacier/medbay)
 "tzH" = (
 /obj/structure/sign/directions/engineering{
-	pixel_y = 5
+	pixel_y = 11;
+	pixel_x = 0
 	},
 /obj/structure/sign/directions/supply{
-	pixel_y = -4
+	pixel_y = 5;
+	pixel_x = 0
+	},
+/obj/structure/sign/directions/dormsdirection{
+	pixel_x = 0;
+	pixel_y = -1
+	},
+/obj/structure/sign/directions/bar{
+	pixel_x = 0;
+	pixel_y = -7
 	},
 /turf/closed/wall,
 /area/hallway/primary/fore)
@@ -111502,6 +111604,22 @@
 	},
 /turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main/monastery)
+"tQO" = (
+/obj/structure/sign/directions/cryo{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/structure/sign/directions/security{
+	pixel_x = 0;
+	pixel_y = 1
+	},
+/obj/structure/sign/directions/command{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/turf/closed/wall,
+/area/hallway/secondary/exit/departure_lounge)
 "tQR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -116290,6 +116408,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/door/airlock/research{
+	name = "Robotics Lab";
+	req_access_txt = "29"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/science/robotics,
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
@@ -116332,7 +116455,6 @@
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -116348,6 +116470,7 @@
 	name = "bridge blast door"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -116554,7 +116677,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -116562,6 +116684,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "uIp" = (
@@ -120430,6 +120553,7 @@
 	dir = 1
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/department/science/mid)
 "vwD" = (
@@ -130128,6 +130252,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/structure/sign/directions/bar{
+	pixel_x = 32;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/smooth/edge{
 	dir = 8
 	},
@@ -134988,6 +135116,7 @@
 /obj/effect/turf_decal/bot_white{
 	name = "storage marker"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
 /turf/open/floor/plasteel/textured,
 /area/engineering/atmos)
 "ygn" = (
@@ -248209,8 +248338,8 @@ uya
 uya
 tjB
 tjB
-tjB
-tjB
+gAV
+gAV
 wGw
 gAV
 gAV
@@ -248466,8 +248595,8 @@ gAV
 uya
 gAV
 gAV
-tjB
-tjB
+gAV
+gAV
 gAV
 uya
 gAV
@@ -300242,7 +300371,7 @@ hUr
 wDP
 gee
 vjG
-neY
+tQO
 bcz
 bcz
 njv
@@ -306028,7 +306157,7 @@ tjB
 tjB
 tjB
 tjB
-tjB
+bds
 tjB
 tjB
 tjB
@@ -307331,7 +307460,7 @@ uya
 phi
 bFD
 axH
-dyL
+cQV
 xzk
 xzk
 xzk
