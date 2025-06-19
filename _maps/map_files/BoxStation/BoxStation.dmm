@@ -15498,10 +15498,22 @@
 /turf/open/floor/plasteel/dark/textured/large,
 /area/hallway/primary/central)
 "bkX" = (
-/obj/machinery/door/airlock/hop,
-/obj/effect/turf_decal/tile/dark_blue/full,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/command/meeting_room)
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured/half{
+	dir = 1
+	},
+/area/command/bridge)
 "bkY" = (
 /obj/effect/turf_decal/tile/dark_blue/full,
 /obj/effect/turf_decal/siding/dark_blue{
@@ -38635,6 +38647,24 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/factory)
+"cYD" = (
+/obj/effect/turf_decal/tile/neutral/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/corner,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/command/bridge)
 "cZn" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 9
@@ -39182,6 +39212,13 @@
 /obj/item/storage/bag/tray/cafeteria,
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison/upper)
+"djV" = (
+/obj/effect/turf_decal/tile/neutral/half,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
+/area/command/bridge)
 "dka" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -47198,9 +47235,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
 	},
@@ -47210,6 +47244,9 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
 /obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/textured/half{
 	dir = 4
 	},
@@ -57709,23 +57746,6 @@
 	dir = 8
 	},
 /area/security/brig)
-"mDl" = (
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark/textured/half{
-	dir = 1
-	},
-/area/command/bridge)
 "mDm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -63103,9 +63123,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
 	},
@@ -63119,6 +63136,9 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
 /obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/textured/half{
 	dir = 4
 	},
@@ -64442,13 +64462,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space,
 /area/solars/port/fore)
-"qhE" = (
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/textured/half,
-/area/command/bridge)
 "qip" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -68199,13 +68212,17 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/corner{
-	dir = 4
+	dir = 1
 	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/corner,
+/obj/effect/turf_decal/trimline/dark_blue/filled/corner{
+	dir = 8
+	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 4
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/command/bridge)
 "shp" = (
@@ -73642,6 +73659,11 @@
 	dir = 1
 	},
 /area/science/xenobiology)
+"vaG" = (
+/obj/machinery/door/airlock/hop,
+/obj/effect/turf_decal/tile/dark_blue/full,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/command/meeting_room)
 "vbi" = (
 /obj/structure/table,
 /obj/item/instrument/guitar{
@@ -76474,28 +76496,6 @@
 	},
 /turf/open/floor/plating,
 /area/service/library)
-"wrT" = (
-/obj/effect/turf_decal/tile/neutral/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/textured/large,
-/area/command/bridge)
 "wrX" = (
 /obj/structure/window,
 /obj/structure/window{
@@ -106278,7 +106278,7 @@ bgI
 bdF
 bdF
 bdF
-bkX
+vaG
 bnO
 bpb
 bqz
@@ -108578,7 +108578,7 @@ oxV
 hsu
 bax
 jmc
-qhE
+djV
 cCv
 aDp
 sEv
@@ -108587,7 +108587,7 @@ bpk
 uJf
 bee
 aZq
-wrT
+sgr
 uTO
 aIU
 bcc
@@ -109101,9 +109101,9 @@ bbm
 bdh
 bef
 aLK
-sgr
+cYD
 baK
-mDl
+bkX
 bcZ
 bcZ
 fvU
