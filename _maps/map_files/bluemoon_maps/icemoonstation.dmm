@@ -16529,11 +16529,11 @@
 /obj/effect/turf_decal/trimline/brown,
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/door/airlock/mining/glass{
-	name = "Cargo Bay";
-	req_access_txt = "31"
+	name = "Cargo Bay"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/supply/general,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/any/supply/general,
+/obj/effect/mapping_helpers/airlock/access/any/supply/mining,
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "cUj" = (
@@ -38177,8 +38177,7 @@
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/door/airlock{
 	name = "Kitchen";
-	req_access_txt = "28";
-	req_one_access_txt = "25;35"
+	req_one_access_txt = "25;35;28"
 	},
 /obj/effect/landmark/navigate_destination/kitchen,
 /obj/machinery/door/firedoor,
@@ -48122,7 +48121,7 @@
 	icon_state = "stairs_t"
 	},
 /obj/structure/railing,
-/turf/closed/wall,
+/turf/open/floor/plating,
 /area/mine/lobby)
 "iDp" = (
 /obj/effect/turf_decal/tile/neutral,
@@ -67150,8 +67149,8 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Mech Bay Maintenance"
 	},
-/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/science/robotics,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/science/robotics/mechbay)
 "lUw" = (
@@ -72608,7 +72607,7 @@
 	c_tag = "Virology Break Room";
 	network = list("ss13","medbay")
 	},
-/obj/structure/table,
+/obj/machinery/vending/wardrobe/engi_wardrobe,
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
@@ -100722,8 +100721,8 @@
 /area/command/bridge)
 "rTe" = (
 /obj/machinery/mineral/ore_redemption{
-	input_dir = 4;
-	output_dir = 8;
+	input_dir = 8;
+	output_dir = 4;
 	dir = 8
 	},
 /obj/effect/turf_decal/delivery,
