@@ -172,14 +172,7 @@
 	if (length(status_examines))
 		. += status_examines
 	//Approximate character height based on current sprite scale
-	var/dispSize = round(12*get_size(src)) // gets the character's sprite size percent and converts it to the nearest half foot
-	if(dispSize % 2) // returns 1 or 0. 1 meaning the height is not exact and the code below will execute, 0 meaning the height is exact and the else will trigger.
-		dispSize = dispSize - 1 //makes it even
-		dispSize = dispSize / 2 //rounds it out
-		. += "[t_on], кажется, чуть выше или около [dispSize] футов в высоту."
-	else
-		dispSize = dispSize / 2
-		. += "[t_on], кажется, около [dispSize] футов в высоту."
+	. += "[t_on], кажется, около [round(180*get_size(src))] сантиметров в высоту."
 	if(has_status_effect(/datum/status_effect/pregnancy))
 		. += "<b>[t_on] имеет выступающую часть на уровне живота. Кажется, это беременность.\n</b>"
 	//CIT CHANGES START HERE - adds genital details to examine text
