@@ -938,9 +938,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "eR" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
+/turf/template_noop,
+/area/space/nearstation)
 "eY" = (
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
@@ -1523,6 +1522,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "iw" = (
@@ -1623,11 +1623,16 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_vault)
 "jo" = (
-/obj/machinery/porta_turret/inteq{
-	pixel_y = 32
+/obj/machinery/power/apc/inteq{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 37;
+	start_charge = 35
 	},
-/turf/closed/mineral/random/high_chance,
-/area/ruin/space)
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "jp" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
@@ -4593,6 +4598,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 6
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "yi" = (
@@ -4826,6 +4832,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/card/emag{
+	uses = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bar)
 "zA" = (
@@ -5778,12 +5787,6 @@
 "El" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/inteq{
-	dir = 1;
-	name = "InteQ Post APC";
-	pixel_y = 32;
-	start_charge = 35
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8;
@@ -7647,15 +7650,6 @@
 /obj/structure/table/reinforced{
 	color = "#777777"
 	},
-/obj/item/clothing/suit/armor/heavy/juggernaut{
-	name = "Самодельный бронекостюм";
-	desc = "Артем психанул и заперся на неделю.ОН ВЫШЕЛ ЗЛЫМ!!!";
-	slowdown = 3
-	},
-/obj/item/clothing/head/helmet/juggernaut{
-	desc = "Артем психанул и заперся на неделю.ОН ВЫШЕЛ ЗЛЫМ!!!";
-	name = "Самодельный бронешлем"
-	},
 /obj/item/clothing/under/inteq/honorable_vanguard,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
@@ -8038,9 +8032,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "Rd" = (
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/nanotrasen,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
+/turf/template_noop,
+/area/ruin/space)
 "Rf" = (
 /obj/item/kirbyplants/hedge{
 	anchored = 1
@@ -8204,11 +8197,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "RX" = (
-/obj/machinery/light/small{
-	dir = 8
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech/nanotrasen{
+	faction = list("deathsquad")
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "Sb" = (
 /turf/open/floor/plating{
 	heat_capacity = 1e+006;
@@ -9976,8 +9969,8 @@ Jc
 ye
 Jc
 Jc
-Hb
-xR
+Rd
+sz
 sz
 sz
 sz
@@ -10016,8 +10009,8 @@ sz
 ye
 ye
 Jc
-Hb
-xR
+Jc
+sz
 sz
 sz
 sz
@@ -10305,8 +10298,8 @@ lO
 lO
 Jc
 Jc
-vx
-xR
+sz
+sz
 ye
 ye
 sz
@@ -10904,8 +10897,8 @@ sz
 sz
 sz
 sz
-vt
-xR
+eR
+sz
 sz
 sz
 sz
@@ -12626,8 +12619,8 @@ sz
 sz
 sz
 Jc
-Hb
-jo
+Jc
+ye
 ye
 ye
 ye
@@ -12814,7 +12807,7 @@ nt
 nt
 ev
 XZ
-eR
+WJ
 lv
 WJ
 WJ
@@ -13014,8 +13007,8 @@ Jh
 Jh
 Jh
 dZ
+RX
 QN
-Rd
 kp
 Hg
 Jh
@@ -13470,7 +13463,7 @@ zO
 Vd
 WJ
 XZ
-eR
+WJ
 st
 zP
 qF
@@ -13493,7 +13486,7 @@ eY
 rj
 gB
 gB
-DL
+jo
 iX
 yd
 DL
@@ -13677,7 +13670,7 @@ Mg
 oG
 hq
 Os
-RX
+sz
 sz
 sz
 sz
