@@ -28,13 +28,28 @@
 
 /datum/interaction/headpat
 	description = "Погладить по голове"
-	simple_message = "USER headpats TARGET!"
+	simple_message = "USER гладит TARGET по голове." //BLUEMOON EDIT
 	required_from_user = INTERACTION_REQUIRE_HANDS
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
 	p13target_emote = PLUG13_EMOTE_BASIC
 	p13target_strength = PLUG13_STRENGTH_LOW_PLUS
 	p13target_duration = PLUG13_DURATION_SHORT
+
+//BLUEMOON ADD START
+/datum/interaction/headpat/post_interaction(mob/living/user, mob/living/target)
+	. = ..()
+	if(HAS_TRAIT(target, TRAIT_HEADPAT_SLUT))
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
+		target.handle_post_sex(5, null, target)
+	else
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
+
+/datum/interaction/headpat/display_interaction(mob/living/user, mob/living/target)
+	. = ..()
+	if(HAS_TRAIT(target, TRAIT_HEADPAT_SLUT))
+		new /obj/effect/temp_visual/heart(target.loc)
+//BLUEMOON ADD END
 
 /datum/interaction/fistbump
 	description = "Удариться кулачками!"
