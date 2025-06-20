@@ -73,8 +73,11 @@
 /area/hilbertshotel)
 "iB" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/ladder/unbreakable/hotel{
-	id = "exit"
+/obj/hotel_things/train/fake_door{
+	pixel_x = 0;
+	pixel_y = -32;
+	teleport_y = -6;
+	teleport_x = -6
 	},
 /turf/open/floor/plasteel/rivets/half{
 	dir = 1
@@ -101,8 +104,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/ladder/unbreakable/hotel{
-	id = "exit"
+/obj/hotel_things/train/fake_door{
+	pixel_x = 0;
+	pixel_y = -32;
+	teleport_y = -2;
+	teleport_x = -6
 	},
 /turf/open/floor/plasteel/rivets/half{
 	dir = 1
@@ -112,17 +118,11 @@
 /obj/effect/turf_decal/arrows{
 	dir = 4
 	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "train2";
-	pixel_x = 33;
-	pixel_y = 0
-	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "trainloop";
-	alpha = 0;
-	mouse_opacity = 0;
-	pixel_x = 0;
-	pixel_y = 0
+/obj/hotel_things/train/fake_door{
+	pixel_x = 32;
+	pixel_y = 0;
+	teleport_x = -13;
+	teleport_y = -6
 	},
 /turf/open/floor/plasteel/rivets/edge{
 	dir = 4
@@ -184,6 +184,7 @@
 	},
 /area/hilbertshotel)
 "pd" = (
+/obj/projector,
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 1
 	},
@@ -193,8 +194,11 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "exit"
+/obj/hotel_things/train/fake_door{
+	pixel_x = 0;
+	pixel_y = 32;
+	teleport_y = -10;
+	teleport_x = -6
 	},
 /turf/open/floor/plasteel/rivets/half{
 	dir = 1
@@ -220,12 +224,8 @@
 	},
 /area/hilbertshotel)
 "qw" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "trainloop"
-	},
+/obj/effect/turf_decal/siding/wood,
+/obj/projector,
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "rA" = (
@@ -270,6 +270,16 @@
 /obj/structure/bed/pod,
 /turf/open/floor/plasteel/rivets/half,
 /area/hilbertshotel)
+"wE" = (
+/obj/machinery/computer{
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/projector{
+	dir = 1
+	},
+/turf/open/floor/plasteel/rivets/large,
+/area/hilbertshotel)
 "xv" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -298,6 +308,9 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
+/obj/projector{
+	dir = 1
+	},
 /turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "As" = (
@@ -309,6 +322,9 @@
 /area/hilbertshotel)
 "BZ" = (
 /obj/structure/table/reinforced,
+/obj/projector{
+	dir = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "CC" = (
@@ -327,15 +343,12 @@
 	},
 /area/hilbertshotel)
 "Dc" = (
-/obj/effect/turf_decal/arrows{
-	dir = 4
+/obj/structure/table/wood/fancy,
+/obj/effect/turf_decal/siding/wood,
+/obj/projector{
+	dir = 1
 	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "train3"
-	},
-/turf/open/floor/plasteel/rivets/edge{
-	dir = 4
-	},
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "De" = (
 /obj/machinery/vending/snack/orange{
@@ -369,17 +382,19 @@
 	},
 /area/hilbertshotel)
 "DA" = (
+/obj/projector{
+	dir = 1
+	},
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 8
 	},
 /area/hilbertshotel)
 "DN" = (
-/obj/structure/ladder/unbreakable/hotel{
-	id = "exit"
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/turf/open/floor/plating/dirt/dark/jungle{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
-	},
+/obj/projector,
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "DX" = (
 /obj/structure/chair/stool{
@@ -408,6 +423,18 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/turf/open/floor/wood/wood_large,
+/area/hilbertshotel)
+"Ga" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/hotel_things/train/fake_door{
+	pixel_x = -32;
+	pixel_y = 0;
+	teleport_x = 13;
+	teleport_y = 1
 	},
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
@@ -440,6 +467,9 @@
 	pixel_x = -8;
 	pixel_y = 0
 	},
+/obj/projector{
+	dir = 1
+	},
 /turf/open/floor/plasteel/rivets,
 /area/hilbertshotel)
 "JC" = (
@@ -451,12 +481,26 @@
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
 /area/hilbertshotel)
+"KB" = (
+/obj/hotel_things/train/fake_door{
+	pixel_x = 0;
+	pixel_y = 32;
+	teleport_x = 6;
+	teleport_y = 10
+	},
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
+/area/hilbertshotel)
 "Ld" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "train2"
+/obj/hotel_things/train/fake_door{
+	pixel_x = -32;
+	pixel_y = 0;
+	teleport_x = 13;
+	teleport_y = 6
 	},
 /turf/open/floor/wood,
 /area/hilbertshotel)
@@ -472,6 +516,12 @@
 "MC" = (
 /turf/open/floor/plasteel/rivets,
 /area/hilbertshotel)
+"MQ" = (
+/turf/closed/indestructible/syndicate{
+	icon = 'modular_splurt/icons/turf/smooth/_smooth.dmi';
+	icon_state = "grass"
+	},
+/area/hilbertshotel)
 "Ng" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -485,6 +535,20 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
+/area/hilbertshotel)
+"Nu" = (
+/obj/effect/turf_decal/arrows{
+	dir = 4
+	},
+/obj/hotel_things/train/fake_door{
+	pixel_x = 32;
+	pixel_y = 0;
+	teleport_x = -5;
+	teleport_y = -5
+	},
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 4
 	},
 /area/hilbertshotel)
 "Og" = (
@@ -530,6 +594,11 @@
 "QO" = (
 /turf/open/floor/plasteel/rivets/corner,
 /area/hilbertshotel)
+"Sp" = (
+/turf/closed/indestructible/fakedoor{
+	name = "Train Door"
+	},
+/area/hilbertshotel)
 "Su" = (
 /obj/structure/chair/pew/right,
 /turf/open/floor/plating/dirt/dark/jungle{
@@ -540,8 +609,11 @@
 /obj/effect/turf_decal/arrows{
 	dir = 8
 	},
-/obj/structure/ladder/unbreakable/hotel{
-	id = "train3"
+/obj/hotel_things/train/fake_door{
+	pixel_x = -32;
+	pixel_y = 0;
+	teleport_x = 5;
+	teleport_y = 5
 	},
 /turf/open/floor/plasteel/rivets/edge{
 	dir = 8
@@ -574,7 +646,25 @@
 "TX" = (
 /obj/structure/chair/stool/bar/directional,
 /obj/effect/turf_decal/siding/wood,
+/obj/projector{
+	dir = 1
+	},
 /turf/open/floor/wood,
+/area/hilbertshotel)
+"Um" = (
+/obj/effect/turf_decal/caution,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/hotel_things/train/fake_door{
+	pixel_x = 0;
+	pixel_y = 32;
+	teleport_y = -4;
+	teleport_x = -6
+	},
+/turf/open/floor/plasteel/rivets/half{
+	dir = 1
+	},
 /area/hilbertshotel)
 "Uq" = (
 /obj/machinery/door/airlock/centcom,
@@ -652,18 +742,18 @@ zU
 zU
 yr
 zU
-zU
-zU
-zU
-zU
-zU
+MQ
+MQ
+MQ
+MQ
+MQ
 "}
 (2,1,1) = {"
 zU
 pO
 rE
 zU
-qw
+Ga
 TO
 zU
 Qt
@@ -674,7 +764,7 @@ Nl
 Po
 Po
 lC
-zU
+MQ
 "}
 (3,1,1) = {"
 zU
@@ -682,17 +772,17 @@ Iy
 MC
 Uq
 Mt
-dl
+qw
 zU
-rA
+Dc
 We
-PZ
+DN
 zU
 Po
 Dx
 Nl
 Po
-zU
+MQ
 "}
 (4,1,1) = {"
 zU
@@ -710,7 +800,7 @@ pR
 Vt
 JY
 Po
-zU
+MQ
 "}
 (5,1,1) = {"
 zU
@@ -728,7 +818,7 @@ Po
 kY
 JY
 Po
-zU
+MQ
 "}
 (6,1,1) = {"
 zU
@@ -746,7 +836,7 @@ Po
 Su
 JY
 lC
-zU
+MQ
 "}
 (7,1,1) = {"
 zU
@@ -778,11 +868,11 @@ WS
 Ex
 PZ
 zU
-DN
+KB
 JY
 JY
 Po
-zU
+MQ
 "}
 (9,1,1) = {"
 zU
@@ -826,11 +916,11 @@ Ah
 Ex
 aO
 Mt
-dl
+qw
 zU
 TX
 yV
-PZ
+DN
 zU
 fN
 DX
@@ -875,14 +965,14 @@ CR
 zU
 "}
 (14,1,1) = {"
-yr
+Sp
 pM
 br
 nb
 br
 iB
 yr
-pM
+Um
 nb
 kf
 yr
@@ -901,11 +991,11 @@ br
 bH
 zU
 xv
-Dc
+Nu
 bH
 zU
 zU
-ag
+wE
 ag
 zU
 zU
