@@ -1334,7 +1334,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
 /area/service/kitchen)
@@ -7158,7 +7158,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 2
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
 /area/service/kitchen)
@@ -15636,7 +15636,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
 /area/service/kitchen)
@@ -30609,7 +30609,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/turf/open/floor/plasteel/airless/white/side,
+/turf/open/floor/plasteel/white/side,
 /area/service/kitchen)
 "ftN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -51656,7 +51656,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/turf/open/floor/plasteel/airless/white/corner{
+/turf/open/floor/plasteel/white/corner{
 	dir = 1
 	},
 /area/service/kitchen)
@@ -53942,9 +53942,6 @@
 /turf/open/floor/plating,
 /area/engineering/teg)
 "jEh" = (
-/obj/machinery/camera{
-	c_tag = "Bar North"
-	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
@@ -53962,6 +53959,9 @@
 	color = "#ad7617"
 	},
 /obj/machinery/light_switch/directional/north,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/service/bar)
 "jEi" = (
@@ -55347,7 +55347,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
-/turf/open/floor/plasteel/airless/white/corner,
+/turf/open/floor/plasteel/white/corner,
 /area/service/kitchen)
 "jQK" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
@@ -60634,6 +60634,10 @@
 	pixel_x = 24
 	},
 /obj/machinery/vending/boozeomat,
+/obj/machinery/camera{
+	c_tag = "Bar";
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/service/bar)
 "kLN" = (
@@ -62856,7 +62860,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
 /area/service/kitchen)
@@ -63772,7 +63776,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 2
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
 /area/service/kitchen)
@@ -74974,6 +74978,13 @@
 	c_tag = "Cargo Bay South";
 	dir = 1
 	},
+/obj/machinery/button/door{
+	id = "QMLoaddoor2";
+	layer = 4;
+	name = "Loading Doors";
+	pixel_x = -7;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "nng" = (
@@ -78175,6 +78186,9 @@
 /obj/item/kirbyplants/random{
 	pixel_y = 6
 	},
+/obj/machinery/camera{
+	c_tag = "Bar North"
+	},
 /turf/open/floor/wood,
 /area/service/bar)
 "nTi" = (
@@ -81129,7 +81143,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
-/turf/open/floor/plasteel/airless/white/corner{
+/turf/open/floor/plasteel/white/corner{
 	dir = 8
 	},
 /area/service/kitchen)
@@ -86824,9 +86838,8 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 8
 	},
-/obj/machinery/camera{
-	c_tag = "Bar";
-	dir = 8
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/grimy,
 /area/service/bar)
@@ -90334,21 +90347,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/maintenance/port/fore)
-"qbQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark,
-/obj/structure/chair/stool/bar/directional/west{
-	dir = 4;
-	pixel_y = 9;
-	pixel_x = 1
-	},
-/turf/open/floor/wood,
-/area/service/bar)
 "qbU" = (
 /obj/effect/turf_decal/trimline/white/filled/line{
 	dir = 2
@@ -91860,20 +91858,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/maintenance/department/science)
-"qph" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark,
-/obj/structure/chair/stool/bar/directional/west{
-	dir = 2;
-	pixel_y = 9
-	},
-/turf/open/floor/wood,
-/area/service/bar)
 "qpl" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -98263,7 +98247,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
 /area/service/kitchen)
@@ -103988,7 +103972,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/turf/open/floor/plasteel/airless/white/corner{
+/turf/open/floor/plasteel/white/corner{
 	dir = 4
 	},
 /area/service/kitchen)
@@ -114432,8 +114416,7 @@
 	req_access_txt = "50"
 	},
 /obj/machinery/door/window/southleft{
-	dir = 4;
-	req_access_txt = "50"
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
@@ -117625,7 +117608,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 2
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
 /area/service/kitchen)
@@ -121763,17 +121746,6 @@
 /obj/effect/turf_decal/siding/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/unpowered/glacier/cafeteria)
-"vIW" = (
-/obj/machinery/button/door{
-	id = "QMLoaddoor2";
-	layer = 4;
-	name = "Loading Doors";
-	pixel_x = 24;
-	pixel_y = 8
-	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/cargo/storage)
 "vIX" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 1
@@ -132610,7 +132582,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 2
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
 /area/service/kitchen)
@@ -134305,7 +134277,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/airless/white/side,
+/turf/open/floor/plasteel/white/side,
 /area/service/kitchen)
 "xXP" = (
 /obj/structure/cable{
@@ -310099,7 +310071,7 @@ hoB
 wXr
 wXr
 rPY
-vIW
+gbi
 gAV
 uya
 uya
@@ -311365,7 +311337,7 @@ amH
 cMG
 jhK
 xUY
-qph
+xaC
 fyo
 bfK
 jmL
@@ -311622,7 +311594,7 @@ gMT
 hur
 gHm
 qAG
-qbQ
+xaC
 nzy
 bfK
 jQS
