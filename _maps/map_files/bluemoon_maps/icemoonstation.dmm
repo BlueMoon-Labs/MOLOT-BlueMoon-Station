@@ -53942,9 +53942,6 @@
 /turf/open/floor/plating,
 /area/engineering/teg)
 "jEh" = (
-/obj/machinery/camera{
-	c_tag = "Bar North"
-	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
@@ -53962,6 +53959,9 @@
 	color = "#ad7617"
 	},
 /obj/machinery/light_switch/directional/north,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/service/bar)
 "jEi" = (
@@ -60634,6 +60634,10 @@
 	pixel_x = 24
 	},
 /obj/machinery/vending/boozeomat,
+/obj/machinery/camera{
+	c_tag = "Bar";
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/service/bar)
 "kLN" = (
@@ -78182,6 +78186,9 @@
 /obj/item/kirbyplants/random{
 	pixel_y = 6
 	},
+/obj/machinery/camera{
+	c_tag = "Bar North"
+	},
 /turf/open/floor/wood,
 /area/service/bar)
 "nTi" = (
@@ -86831,9 +86838,8 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 8
 	},
-/obj/machinery/camera{
-	c_tag = "Bar";
-	dir = 8
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/grimy,
 /area/service/bar)
@@ -90341,21 +90347,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/maintenance/port/fore)
-"qbQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark,
-/obj/structure/chair/stool/bar/directional/west{
-	dir = 4;
-	pixel_y = 9;
-	pixel_x = 1
-	},
-/turf/open/floor/wood,
-/area/service/bar)
 "qbU" = (
 /obj/effect/turf_decal/trimline/white/filled/line{
 	dir = 2
@@ -91867,20 +91858,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/maintenance/department/science)
-"qph" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark,
-/obj/structure/chair/stool/bar/directional/west{
-	dir = 2;
-	pixel_y = 9
-	},
-/turf/open/floor/wood,
-/area/service/bar)
 "qpl" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -311360,7 +311337,7 @@ amH
 cMG
 jhK
 xUY
-qph
+xaC
 fyo
 bfK
 jmL
@@ -311617,7 +311594,7 @@ gMT
 hur
 gHm
 qAG
-qbQ
+xaC
 nzy
 bfK
 jQS
