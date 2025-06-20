@@ -93,7 +93,7 @@
 			genital_entry["fluid"] = fluids
 
 		//equipments
-		if(genital.is_exposed())
+		if(genital.is_exposed() || genital.always_accessible) //BLUEMOON EDIT
 			var/list/equipments = list()
 			for(var/obj/equipment in genital.contents)
 				var/list/equipment_entry = list()
