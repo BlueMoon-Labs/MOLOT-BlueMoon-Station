@@ -46,9 +46,9 @@
 	name = "Bra (alt)"
 	path = /obj/item/clothing/underwear/shirt/bra/alt
 
-/datum/gear/shirt/bra_adjustable
+/datum/gear/shirt/bra/bra_adjustable
 	name = "Adjustable bra"
-	path = /obj/item/clothing/underwear/shirt/bra_adjustable
+	path = /obj/item/clothing/underwear/shirt/bra/bra_adjustable
 
 /datum/gear/shirt/bra/babydoll
 	name = "Babydoll Bra"
