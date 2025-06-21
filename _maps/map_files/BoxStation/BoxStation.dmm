@@ -12862,27 +12862,10 @@
 /turf/open/floor/wood/wood_parquet,
 /area/command/heads_quarters/hop)
 "bde" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/line,
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/textured/half,
+/obj/machinery/door/airlock/hop,
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/tile/dark_blue/full,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/maintenance/central)
 "bdf" = (
 /obj/effect/landmark/blobstart,
@@ -43871,10 +43854,27 @@
 /turf/open/floor/plating/rust,
 /area/maintenance/starboard/aft)
 "fAj" = (
-/obj/machinery/door/airlock/hop,
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/tile/dark_blue/full,
-/turf/open/floor/plasteel/dark/textured/large,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/line,
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
 /area/maintenance/central)
 "fAp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -60535,7 +60535,7 @@
 	pixel_y = 16
 	},
 /obj/item/soap/deluxe,
-/obj/item/bikehorn/rubberducky/captain,
+/obj/item/bikehorn/rubberducky,
 /turf/open/floor/plasteel/showroomfloor/shower,
 /area/command/heads_quarters/captain)
 "oaa" = (
@@ -61865,29 +61865,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/port)
-"oHg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/sign/warning/securearea{
-	pixel_y = -32
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/line,
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/textured/half,
-/area/maintenance/central)
 "oHn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -74649,6 +74626,29 @@
 	},
 /turf/open/floor/plasteel/kitchen,
 /area/service/kitchen)
+"vAJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_y = -32
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/line,
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
+/area/maintenance/central)
 "vAU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
@@ -106112,7 +106112,7 @@ boY
 qal
 aYp
 bjz
-bde
+fAj
 baI
 bmr
 bda
@@ -106626,7 +106626,7 @@ aPR
 jwW
 aPR
 bjz
-oHg
+vAJ
 bmr
 lbV
 bcN
@@ -106884,7 +106884,7 @@ mHT
 raE
 bjz
 aZC
-fAj
+bde
 wdS
 aFU
 bdI
