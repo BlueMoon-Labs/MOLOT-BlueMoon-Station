@@ -16,6 +16,11 @@
 	//These are already defined under the parent ring, but I wanna leave em here for reference purposes
 
 /obj/item/clothing/proc/clothing_size_normalize(mob/living/user, slot, slot_to_check)
+	var/used_size
+	if(ishuman(user))
+		var/mob/living/carbon/human/M = user
+		if(M?.dna?.features["normalized_size"])
+			used_size = M.dna.features["normalized_size"]
 	if(slot_to_check && slot != slot_to_check)
 		return FALSE
 
@@ -29,7 +34,7 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		return FALSE
 
-	user.AddComponent(/datum/component/size_normalized, wear=src)
+	user.AddComponent(/datum/component/size_normalized, wear=src, size_to_use = used_size)
 
 /obj/item/clothing/proc/clothing_size_un_normalize(mob/living/user)
 	var/datum/component/size_normalized/comp = user.GetComponent(/datum/component/size_normalized)
