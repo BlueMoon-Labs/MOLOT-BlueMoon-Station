@@ -6,6 +6,7 @@
 
 	S["silicon_lawset"] >> silicon_lawset
 	S["body_weight"] >> body_weight
+	S["normalized_size"] >> features["normalized_size"]
 
 	pda_style = sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color = sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
@@ -13,7 +14,8 @@
 	// pda_ringtone = ??? // none for now
 
 	silicon_lawset = sanitize_inlist(silicon_lawset, CONFIG_GET(keyed_list/choosable_laws), null)
-	body_weight = sanitize_inlist(body_weight, GLOB.mob_sizes, NAME_WEIGHT_NORMAL) //BLUEMOON ADD
+	body_weight = sanitize_inlist(body_weight, GLOB.mob_sizes, NAME_WEIGHT_NORMAL)
+	features["normalized_size"] = sanitize_num_clamp(features["normalized_size"], 0.81, 1.2, 1)
 
 /datum/preferences/proc/bluemoon_character_pref_save(savefile/S) //TODO: modularize our other savefile edits... maybe?
 	WRITE_FILE(S["pda_style"], pda_style)
@@ -23,6 +25,7 @@
 
 	WRITE_FILE(S["silicon_lawset"], silicon_lawset)
 	WRITE_FILE(S["body_weight"], body_weight)
+	WRITE_FILE(S["normalized_size"], features["normalized_size"])
 
 /obj/item/pda/proc/update_style(client/C)
 	background_color = C.prefs.pda_color

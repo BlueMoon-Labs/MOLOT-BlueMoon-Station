@@ -6,10 +6,12 @@
 	var/recorded_size //the user's height prior to equipping
 
 //Set up the linked clothing
-/datum/component/size_normalized/Initialize(obj/item/clothing/wear)
+/datum/component/size_normalized/Initialize(obj/item/clothing/wear, size_to_use)
 	. = ..()
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
+	if(size_to_use)
+		normal_resize = size_to_use
 	attached_wear = wear
 
 //Normalize the mob on add in case it's necessary

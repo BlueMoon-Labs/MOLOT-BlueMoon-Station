@@ -1,5 +1,6 @@
 /datum/preferences
-	var/body_weight = NAME_WEIGHT_NORMAL //BLUEMOON ADD вес персонажей
+	var/body_weight = NAME_WEIGHT_NORMAL
+	var/normalized_size = RESIZE_NORMAL
 
 #define ACTION_HEADSHOT_LINK_NOOP 0
 #define ACTION_HEADSHOT_LINK_REMOVE -1

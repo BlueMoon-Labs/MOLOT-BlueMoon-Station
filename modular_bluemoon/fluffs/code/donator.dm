@@ -1669,3 +1669,18 @@
 	path = /obj/item/paper/book_alch
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/bm/ouroboroswinterschock
+	name = "Ouroboros"
+	slot = ITEM_SLOT_GLOVES
+	path = /obj/item/clothing/accessory/ring/syntech/winterschock
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	ckeywhitelist = list("winterschock")
+
+/datum/gear/donator/bm/ouroboroswinterschock/on_spawn(mob/living/carbon/human/user, obj/item/clothing/accessory/ring/syntech/winterschock/I)
+	if(!istype(user))
+		return
+	I.owner = user
+	if(user.dna?.features["normalized_size"])
+		I.current_normalized_size = user.dna.features["normalized_size"]
+		I.try_update_size(user, TRUE)
