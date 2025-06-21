@@ -11650,9 +11650,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/warning/securearea{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
@@ -11781,6 +11778,10 @@
 /obj/effect/turf_decal/tile/dark_blue/full,
 /obj/effect/turf_decal/bot,
 /obj/structure/plasticflaps/opaque,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge blast";
+	name = "bridge blast door"
+	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/maintenance/central)
 "aZR" = (
@@ -43870,6 +43871,9 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/textured/half,
 /area/maintenance/central)
 "fAp" = (
@@ -55861,29 +55865,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plasteel/dark/textured/large,
 /area/service/bar)
-"lMg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/line,
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/textured/half,
-/area/maintenance/central)
 "lMJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -74645,6 +74626,29 @@
 	},
 /turf/open/floor/plasteel/kitchen,
 /area/service/kitchen)
+"vAJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_y = -32
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/line,
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
+/obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured/half,
+/area/maintenance/central)
 "vAU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
@@ -105594,7 +105598,7 @@ aVv
 mNn
 aYn
 bjz
-fAj
+aZy
 bjz
 bcY
 bdX
@@ -105851,7 +105855,7 @@ aVb
 aWH
 aYm
 bjz
-fAj
+aZy
 bjz
 bmr
 azK
@@ -106108,7 +106112,7 @@ boY
 qal
 aYp
 bjz
-lMg
+fAj
 baI
 bmr
 bda
@@ -106365,7 +106369,7 @@ lAg
 mBv
 nPx
 bjz
-fAj
+aZy
 bmr
 bmr
 bdY
@@ -106622,7 +106626,7 @@ aPR
 jwW
 aPR
 bjz
-aZy
+vAJ
 bmr
 lbV
 bcN
