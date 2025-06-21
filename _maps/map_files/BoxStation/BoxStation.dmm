@@ -7292,6 +7292,12 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/command/meeting_room)
+"aGB" = (
+/obj/machinery/door/airlock/hop,
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/tile/dark_blue/full,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/command/heads_quarters/hop)
 "aGE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -11658,6 +11664,9 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/textured/half,
 /area/maintenance/central)
 "aZz" = (
@@ -12383,11 +12392,8 @@
 	},
 /area/hallway/primary/central)
 "bbW" = (
-/obj/machinery/door/airlock/hop,
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/tile/dark_blue/full,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/command/heads_quarters/hop)
+/turf/closed/wall,
+/area/maintenance/central)
 "bbX" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
@@ -12828,13 +12834,6 @@
 	pixel_y = 25;
 	req_access_txt = "57"
 	},
-/obj/machinery/button/door{
-	id = "hop";
-	name = "Privacy Shutters Control";
-	pixel_x = 6;
-	pixel_y = 25;
-	req_access_txt = "57"
-	},
 /obj/machinery/light_switch{
 	pixel_x = -4;
 	pixel_y = 36
@@ -12843,6 +12842,13 @@
 	id = "hopflash";
 	pixel_x = 6;
 	pixel_y = 36
+	},
+/obj/machinery/button/door{
+	id = "hop";
+	name = "Privacy Shutters Control";
+	pixel_x = 6;
+	pixel_y = 25;
+	req_access_txt = "57"
 	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/command/heads_quarters/hop)
@@ -12876,9 +12882,6 @@
 	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner,
 /obj/effect/turf_decal/trimline/dark_blue/filled/mid_joiner{
-	dir = 1
-	},
-/obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark/textured/half,
@@ -105591,7 +105594,7 @@ aVv
 mNn
 aYn
 bjz
-aZy
+bde
 bjz
 bcY
 bdX
@@ -105848,7 +105851,7 @@ aVb
 aWH
 aYm
 bjz
-aZy
+bde
 bjz
 bmr
 azK
@@ -106105,7 +106108,7 @@ boY
 qal
 aYp
 bjz
-bde
+aZy
 baI
 bmr
 bda
@@ -106362,7 +106365,7 @@ lAg
 mBv
 nPx
 bjz
-aZy
+bde
 bmr
 bmr
 bdY
@@ -106877,7 +106880,7 @@ mHT
 raE
 bjz
 aZC
-bbW
+aGB
 wdS
 aFU
 bdI
@@ -107394,7 +107397,7 @@ bbh
 bmr
 bdd
 cVs
-bmr
+bmo
 tNX
 bmo
 bfy
@@ -107648,10 +107651,10 @@ jWz
 aPR
 bjz
 bdq
-bmr
-bmr
-bmr
-bmr
+bmo
+bmo
+bmo
+bmo
 qdq
 bmo
 bwl
@@ -107908,7 +107911,7 @@ bbj
 bce
 bdf
 beb
-bmr
+bmo
 bnY
 bmo
 oJp
@@ -108164,8 +108167,8 @@ aZS
 tJw
 iLN
 awn
-bjz
-bjz
+bbW
+bbW
 btI
 aDp
 aDp
@@ -108419,9 +108422,9 @@ kLo
 aPR
 bjz
 ndp
-bjz
-bjz
-bjz
+bbW
+bbW
+bbW
 atJ
 pux
 gKX
