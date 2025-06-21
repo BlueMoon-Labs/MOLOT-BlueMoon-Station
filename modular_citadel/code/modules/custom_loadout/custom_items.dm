@@ -367,6 +367,7 @@
 	desc = "Heavenly robes of the kitsune Luna Pumpkin,you can feel radiance coming from them."
 	item_state = "Divine_robes"
 	icon_state = "Divine_robes"
+	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/custom/leoskimpy
