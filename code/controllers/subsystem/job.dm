@@ -819,6 +819,8 @@ SUBSYSTEM_DEF(job)
 				if(!i[LOADOUT_CUSTOM_NAME])
 					var/list/family_name = splittext(M.real_name, " ")
 					I.name = "\improper [family_name[family_name.len]] family [I.name]"
+			// Эффект при спавне
+			G.on_spawn(M, I)
 			// BLUEMOON ADD END
 
 
@@ -907,6 +909,8 @@ SUBSYSTEM_DEF(job)
 				if(!i[LOADOUT_CUSTOM_NAME])
 					var/list/family_name = splittext(M.real_name, " ")
 					I.name = "\improper [family_name[family_name.len]] family [I.name]"
+			// Эффект при спавне
+			G.on_spawn(M, I)
 			// BLUEMOON ADD END
 
 /datum/controller/subsystem/job/proc/FreeRole(rank)
