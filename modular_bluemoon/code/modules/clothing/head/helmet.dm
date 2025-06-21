@@ -48,3 +48,30 @@
 			RESKIN_ITEM_STATE = "hephaestus_multicam"
 		),
 	)
+
+/obj/item/clothing/head/helmet/biker
+	name = "biker helmet"
+	desc = "A durable biker helmet. You suddenly get unusual subtle neon retrowave vibes with a smell of blood."
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "biker"
+	item_state = "biker"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	flags_cover = HEADCOVERSEYES|HEADCOVERSMOUTH
+	color = "#66FFFF"
+
+/obj/item/clothing/head/helmet/biker/Initialize(mapload)
+	. = ..()
+	update_icon()
+
+/obj/item/clothing/head/helmet/biker/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+
+/obj/item/clothing/head/helmet/biker/update_overlays()
+	. = ..()
+	var/mutable_appearance/biker_overlay = mutable_appearance(icon='modular_bluemoon/icons/obj/clothing/hats.dmi', icon_state = "biker_overlay")
+	biker_overlay.appearance_flags = RESET_COLOR
+	. += biker_overlay
