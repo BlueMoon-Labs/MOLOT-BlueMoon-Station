@@ -27,6 +27,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	desc = "The finger plate is a little stiff."
 	anchored = TRUE
 	layer = OBJ_LAYER + 0.01
+	pass_flags = PASSTABLE
 	var/phone_category = PHONE_NET_PUBLIC
 	var/phone_color = "white"
 	var/phone_id = "Telephone"
