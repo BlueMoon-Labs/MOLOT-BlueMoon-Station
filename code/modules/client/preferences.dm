@@ -3737,7 +3737,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("normalized_size")
 					var/max_size = 	min(CONFIG_GET(number/body_size_max), 1.2)	// Магическая цифра (предел MOB_SIZE_HUMAN по proc/adjust_mobsize)
 					var/min_size =	max(CONFIG_GET(number/body_size_min), 0.81)	// Магическая цифра (предел MOB_SIZE_HUMAN по proc/adjust_mobsize)
-					var/new_normialzed_size = input(user, "Choose your desired normalized size: ([min_size]-[max_size]%)\nUsed with normalizer stuff", "Character Preference", features["normalized_size"]*100) as num|null
+					var/new_normialzed_size = input(user, "Choose your desired normalized size: ([min_size * 100]-[max_size * 100]%)\nUsed with normalizer stuff", "Character Preference", features["normalized_size"]*100) as num|null
 					if(new_normialzed_size)
 						features["normalized_size"] = clamp(new_normialzed_size * 0.01, min_size, max_size)
 
