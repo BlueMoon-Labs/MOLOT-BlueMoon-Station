@@ -27,7 +27,7 @@
 
 /datum/reagent/medicine/spermatex
 	name = "Spermatex"
-	description = "Destroys sperm and removes from the patient's bloodstream without affecting other chemicals. It is not a means of contraception!"
+	description = "Destroys sperm and removes from the patient's body without affecting other chemicals. It is not a means of contraception!"
 	reagent_state = LIQUID
 	color = "#ffffd0"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
