@@ -148,6 +148,7 @@
 				/obj/item/genital_equipment/condom = 10,
 				/obj/item/storage/box/bulk_condoms = 10,
 				/obj/item/pregnancytest = 10,
+				/obj/item/storage/pill_bottle/spermatex = 10,
 				/obj/item/storage/pill_bottle/penis_enlargement = 10,
 				/obj/item/storage/pill_bottle/breast_enlargement = 10,
 				/obj/item/storage/pill_bottle/butt_enlargement = 10,
