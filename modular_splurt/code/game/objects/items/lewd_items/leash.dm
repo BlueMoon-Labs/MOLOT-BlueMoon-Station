@@ -83,8 +83,13 @@ Icons, maybe?
 	if(istype(leash_pet))
 		. += span_notice("Activate in hand to tug the pet closer to you.")
 
+/obj/item/leash/Destroy()
+	sever_leash()
+	. = ..()
+
 /obj/item/leash/process(delta_time)
 	if(!leash_pet) //No pet, break loop
+		sever_leash()
 		return PROCESS_KILL
 	if(!(leash_pet.get_item_by_slot(ITEM_SLOT_NECK))) //The pet has slipped their collar and is not the pet anymore.
 		leash_pet.visible_message(
