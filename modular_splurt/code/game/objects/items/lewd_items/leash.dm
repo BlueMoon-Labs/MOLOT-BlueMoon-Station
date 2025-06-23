@@ -27,9 +27,10 @@ Icons, maybe?
 // 	desc = "You're on a leash, but you've no master. If anyone grabs the leash they'll gain control!"
 // 	icon_state = "leash_freepet"
 
-// /datum/status_effect/leash_pet
-// 	id = "leashed"
-// 	status_type = STATUS_EFFECT_UNIQUE
+/datum/status_effect/leash_pet
+	id = "leashed"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
 // 	var/mob/redirect_component
 // 	alert_type = /atom/movable/screen/alert/status_effect/leash_pet
 
@@ -116,9 +117,9 @@ Icons, maybe?
 	if(leash_pet)
 		UnregisterSignal(leash_pet, COMSIG_MOVABLE_MOVED)
 		leash_pet.remove_movespeed_modifier(/datum/movespeed_modifier/leash)
+		leash_pet.remove_status_effect(/datum/status_effect/leash_pet)
 	if(leash_master)
 		UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
-	// leash_pet.remove_status_effect(/datum/status_effect/leash_pet)
 	// leash_pet.remove_status_effect(/datum/status_effect/leash_freepet)
 	// leash_master?.remove_status_effect(/datum/status_effect/leash_dom)
 	QDEL_NULL(leash_beam)
@@ -134,7 +135,7 @@ Icons, maybe?
 
 //Called when someone is clicked with the leash
 /obj/item/leash/attack(mob/living/carbon/C, mob/living/user, attackchain_flags, damage_multiplier) //C is the target, user is the one with the leash
-	if(C == leash_pet) //If the pet is already leashed, do not leash them. For the love of god.
+	if(C == leash_pet)	//we set our pet free.
 		C.visible_message(
 			span_warning("The leash on [C]'s collar is gone."),
 			span_warning("Master frees you from the leash."),
@@ -143,6 +144,12 @@ Icons, maybe?
 		)
 		sever_leash()
 		return
+	else if(istype(leash_pet))	//we can't have 2 pets on the same leash.
+		to_chat(user, "You already have a pet on that leath.")
+		return
+	if(C.has_status_effect(/datum/status_effect/leash_pet)) //If the pet is already leashed, do not leash them. For the love of god.
+		to_chat(user, span_notice("[C] has already been leashed."))
+		return
 	if(istype(C.get_item_by_slot(ITEM_SLOT_NECK), /obj/item/clothing/neck/petcollar) || istype(C.get_item_by_slot(ITEM_SLOT_NECK), /obj/item/electropack/shockcollar) || istype(C.get_item_by_slot(ITEM_SLOT_NECK), /obj/item/clothing/neck/necklace/cowbell) || istype(C.get_item_by_slot(ITEM_SLOT_NECK), /obj/item/clothing/neck/maid))
 		var/leashtime = 50
 		if(C.handcuffed)
@@ -150,7 +157,7 @@ Icons, maybe?
 		if(do_mob(user, C, leashtime)) //do_mob adds a progress bar, but then we also check to see if they have a collar
 			w_class = WEIGHT_CLASS_HUGE
 			log_combat(user, C, "leashed", addition="playfully")
-			// C.apply_status_effect(/datum/status_effect/leash_pet)//Has now been leashed
+			C.apply_status_effect(/datum/status_effect/leash_pet)//Has now been leashed
 			// user.apply_status_effect(/datum/status_effect/leash_dom) //Is the leasher
 			leash_pet = C //Save pet reference for later
 			// if(leash_pet.has_status_effect(/datum/status_effect/leash_dom)) //Pet leashed themself. They are not the dom
