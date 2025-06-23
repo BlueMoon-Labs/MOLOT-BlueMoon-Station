@@ -6,8 +6,8 @@
 	return TRUE
 
 /obj/item/restraints/bondage_rope/proc/customize_rope_length(mob/living/user)
-	if(rope_state != ROPE_STATE_UNTIED)
-		to_chat(user, "<span class='warning'>You can only customize an untied rope.</span>")
+	if(user == roped_mob)
+		to_chat(user, "<span class='warning'>You can't customize rope that restraints you.</span>")
 		return
 
 	if(src && !user.incapacitated() && in_range(user, src))

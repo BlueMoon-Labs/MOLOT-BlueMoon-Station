@@ -285,8 +285,9 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	if(distance > rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 		tugged_flag = TRUE
 		apply_tug_mob_to_mob(roped_mob, roped_master, rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
-		if (prob(30))
+		if (prob(30) && roped_master.a_intent == INTENT_HARM) //BLUEMOON EDIT
 			roped_mob.apply_effect(20, EFFECT_KNOCKDOWN, 0)
+	stoplag(3) //BLUEMOON ADD
 	if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 		snap_rope()
 
@@ -300,6 +301,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 		apply_tug_mob_to_object(roped_mob, roped_object, min(ROPE_MAX_DISTANCE_OBJECT,rope_length)) //BLUEMOON EDIT min(..,rope_length)
 		if (prob(30))
 			roped_mob.apply_effect(20, EFFECT_KNOCKDOWN, 0)
+	stoplag(3) //BLUEMOON ADD
 	if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 		snap_rope()
 
@@ -327,6 +329,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 						if(roped_master == null)
 							return
 						distance = get_dist(roped_mob.loc, roped_master.loc)
+					stoplag(3) //BLUEMOON ADD
 				if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 					snap_rope()
 			else
@@ -334,6 +337,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 				if(distance > rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 					apply_tug_object_to_mob(src, roped_mob, rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 					distance = get_dist(roped_mob.loc, src.loc)
+				stoplag(3) //BLUEMOON ADD
 				if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 					snap_rope()
 
@@ -348,6 +352,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 					tugged_flag = TRUE
 					apply_tug_mob_to_object(roped_mob, roped_object, min(ROPE_MAX_DISTANCE_OBJECT, rope_length)) //BLUEMOON EDIT min(..,rope_length)
 				distance = get_dist(roped_mob.loc, roped_object.loc)
+			stoplag(3) //BLUEMOON ADD
 			if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 				snap_rope()
 
