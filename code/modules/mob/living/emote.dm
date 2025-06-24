@@ -360,9 +360,17 @@
 				return
 		else if(ishumanbasic(C))
 			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
-				playsound(C, pick('sound/voice/human/womanlaugh.ogg', 'sound/voice/female_laugh1.ogg', 'sound/voice/female_laugh2.ogg', 'sound/voice/female_laugh3.ogg'), 50, 1)
+				//BLUEMOON EDIT START
+				if(key == "laugh_soft")
+					playsound(C, 'sound/voice/human/womanlaugh.ogg', 50, 1)
+				else
+					playsound(C, pick('sound/voice/human/womanlaugh.ogg', 'sound/voice/female_laugh1.ogg', 'sound/voice/female_laugh2.ogg', 'sound/voice/female_laugh3.ogg'), 50, 1)
 			else
-				playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg', 'sound/voice/laugh_m1.ogg', 'sound/voice/laugh_m2.ogg', 'sound/voice/laugh_m3.ogg'), 50, 1)
+				if(key == "laugh_soft")
+					playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg'), 50, 1)
+				else
+					playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg', 'sound/voice/laugh_m1.ogg', 'sound/voice/laugh_m2.ogg', 'sound/voice/laugh_m3.ogg'), 50, 1)
+				//BLUEMOON EDIT END
 
 /datum/emote/sound/human_emote/chitter
 	key = "chitter"
