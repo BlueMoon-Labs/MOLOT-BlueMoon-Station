@@ -181,7 +181,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
 		do_sparks(3, FALSE, get_turf(user))
 		user.forceMove(locate(roomReservation.bottom_left_coords[1] + mapTemplate.landingZoneRelativeX, roomReservation.bottom_left_coords[2] + mapTemplate.landingZoneRelativeY, roomReservation.bottom_left_coords[3]))
-		return TRUE
+		return TRU
 	else
 		return FALSE
 
