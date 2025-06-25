@@ -2392,21 +2392,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "on" = (
+/obj/structure/table/plasmaglass,
 /obj/machinery/button/door{
 	id = "a2window";
-	name = "privacy button";
-	normaldoorcontrol = 1;
-	pixel_y = 0;
-	specialfunctions = 4;
+	name = "Privacy Shutters";
+	pixel_y = 32;
 	pixel_x = 24
 	},
-/obj/structure/bed/double{
-	dir = 2
-	},
-/obj/item/bedsheet/purple/double{
-	dir = 2
-	},
-/obj/item/toy/plush/slimeplushie,
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "or" = (
@@ -5017,6 +5009,11 @@
 	specialfunctions = 4;
 	pixel_x = -24
 	},
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Ed" = (
@@ -6029,7 +6026,9 @@
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Li" = (
 /obj/item/kirbyplants/hedge{
-	pixel_y = 28
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -6797,7 +6796,9 @@
 	dir = 4
 	},
 /obj/item/kirbyplants/hedge{
-	pixel_y = 28
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -7837,8 +7838,8 @@
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "UI" = (
-/obj/item/kirbyplants/hedge,
-/turf/open/floor/carpet/black,
+/obj/item/skub,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "UJ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -8057,10 +8058,8 @@
 /obj/structure/dresser,
 /obj/machinery/button/door{
 	id = "a4window";
-	name = "privacy button";
-	normaldoorcontrol = 1;
-	pixel_y = 24;
-	specialfunctions = 4
+	name = "Privacy Shutters";
+	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -8144,7 +8143,6 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "WF" = (
-/obj/item/skub,
 /obj/effect/spawner/bundle/costume/nyangirl,
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 3;
@@ -12251,8 +12249,8 @@ sj
 hA
 vh
 WF
-vh
 UI
+vh
 DZ
 ID
 Pt
@@ -12729,8 +12727,8 @@ vh
 vh
 vh
 vh
+fl
 on
-Gp
 Hc
 Gp
 fl
