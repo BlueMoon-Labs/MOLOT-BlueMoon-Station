@@ -760,5 +760,15 @@
 					return FALSE
 			prefs.save_preferences()
 			return TRUE
+		if("genitals_menu")
+			switch(params["who"])
+				if("user")
+					if(iscarbon(parent_mob))
+						var/mob/living/carbon/C = parent_mob
+						C.genital_menu()
+				if("target")
+					if(iscarbon(target))
+						var/mob/living/carbon/C = target
+						C.genital_menu()
 
 #undef INTERACTION_UNHOLY //SPLURT Edit
