@@ -1,5 +1,5 @@
 // Train appartment stuff
-/obj/projector
+/obj/effect/projector
 	name = "fake window projector"
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "arrows_red"
@@ -10,17 +10,26 @@
 	var/list/viewers = list()
 	var/projection_pixel_y_offset = 0
 	var/projection_pixel_x_offset = 0
+	var/projection_icon = 'modular_bluemoon/icons/projection/grass.dmi'
+	var/projection_icon_state = "grass"
+	var/area/hilbertshotel/own_area
+	color = "#777777"
 
-/obj/projector/Initialize(mapload)
+/obj/effect/projector/head
+	projection_icon = 'modular_bluemoon/icons/projection/rails.dmi'
+	projection_icon_state = "rails"
+
+/obj/effect/projector/Initialize(mapload)
 	if(istype(get_area(src), /area/hilbertshotel))
 		var/area/hilbertshotel/HILBERT = get_area(src)
+		own_area = HILBERT
 		HILBERT.projectors += src
 	update_icon(UPDATE_OVERLAYS)
 	return ..()
 
-/obj/projector/update_overlays()
+/obj/effect/projector/update_overlays()
 	. = ..()
-	projection = image('modular_bluemoon/icons/screen/grass.dmi', src, "grass_[moving ? "moving" : "stand"]", ABOVE_MOB_LAYER)
+	projection = image(projection_icon, src, "[projection_icon_state]_[moving ? "moving" : "stand"]", ABOVE_MOB_LAYER)
 	projection.plane =	EMISSIVE_BLOCKER_PLANE
 	projection.color = color
 	projection.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -38,41 +47,63 @@
 /area/hilbertshotel
 	var/list/projectors = list()
 
+/obj/effect/projector/proc/on_mob_login(mob/viewer)
+	SIGNAL_HANDLER
+	AddProjection(viewer, FALSE)
+
 ///Makes the mind able to see this effect
-/obj/projector/proc/AddProjection(mob/viewer)
-	viewers |= viewer
+/obj/effect/projector/proc/AddProjection(mob/viewer, add_to_viewers)
+	if(!projection)
+		update_icon(UPDATE_OVERLAYS)
+	if(add_to_viewers)
+		viewers |= viewer
 	if(viewer.client)
 		viewer.client.images |= projection
 
 ///Makes the mind not able to see this effect
-/obj/projector/proc/RemoveProjection(mob/viewer)
-	viewers -= viewer
+/obj/effect/projector/proc/RemoveProjection(mob/viewer)
+	if(viewer in viewers)
+		LAZYREMOVE(viewers, viewer)
+		UnregisterSignal(viewer, COMSIG_MOB_CLIENT_LOGIN)
 	if(viewer.client)
 		viewer.client.images -= projection
 
-/obj/projector/Destroy()
+/obj/effect/projector/Destroy()
 	for(var/mob/M in viewers)
 		RemoveProjection(M)
 
 	viewers = null
 	projection = null
-
-/area/hilbertshotel/Entered(atom/movable/M, atom/OldLoc)
+	if(own_area)
+		LAZYREMOVE(own_area.projectors, src)
 	. = ..()
-	if(projectors.len && isliving(M))
-		var/mob/living/L = M
+
+/obj/effect/projector/forcemove(atom/destination)
+	..()
+	var/area/current_area = get_area(src)
+	if(own_area && istype(current_area, /area/hilbertshotelstorage))
+		LAZYREMOVE(own_area.projectors, src)
+		own_area = null
+	else if(istype(current_area, /area/hilbertshotelstorage))
+		var/area/hilbertshotel/HILBERT = get_area(src)
+		own_area = HILBERT
+		HILBERT.projectors += src
+
+/area/hilbertshotel/Entered(mob/living/L, atom/OldLoc)
+	. = ..()
+	if(projectors.len && istype(L))
 		if(!L.mind)
 			return
-		for(var/obj/projector/P in projectors)
+		for(var/obj/effect/projector/P in projectors)
+			P.RegisterSignal(L, COMSIG_MOB_CLIENT_LOGIN, TYPE_PROC_REF(/obj/effect/projector, on_mob_login))
 			P.AddProjection(L)
 
-/area/hilbertshotel/Exited(atom/movable/M)
+/area/hilbertshotel/Exited(mob/living/L)
 	. = ..()
-	if(projectors.len && isliving(M))
-		var/mob/living/L = M
+	if(projectors.len && istype(L))
 		if(!L.mind)
 			return
-		for(var/obj/projector/P in projectors)
+		for(var/obj/effect/projector/P in projectors)
 			P.RemoveProjection(L)
 
 
@@ -123,3 +154,28 @@
 /obj/hotel_things/train/fake_door/attack_ghost(mob/dead/observer/user)
 	use(user, TRUE)
 	return ..()
+
+/obj/structure/window/plastitanium/train_fake
+	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	density = FALSE
+	canSmoothWith = list(/obj/effect/glass_smooth, /obj/structure/window/plastitanium/train_fake)
+
+/obj/structure/grille/indestructable/fake
+	density = FALSE
+
+/obj/structure/curtain/fake
+	alpha = 128
+	layer = 3.21
+
+/obj/structure/curtain/fake/update_icon_state()
+	switch(open)
+		if(TRUE)
+			icon_state = replacetext(initial(icon_state), "open", "closed")
+		if(FALSE)
+			icon_state = replacetext(initial(icon_state), "closed", "open")
+
+/obj/effect/glass_smooth
+	invisibility = 100
+	icon = 'icons/turf/decals.dmi'
+	icon_state = "arrows_red"
