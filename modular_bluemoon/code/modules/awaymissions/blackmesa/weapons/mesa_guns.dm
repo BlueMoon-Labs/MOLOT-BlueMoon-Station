@@ -19,7 +19,7 @@
 /obj/item/gun/ballistic/automatic/sniper_rifle/m4oa1
 	name = "m40a1 sniper rifle"
 	desc = "Довольно старая, но верная и мощная снайперская винтовка прямиком из далёкого прошлого"
-	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
+	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "m4oa1"
