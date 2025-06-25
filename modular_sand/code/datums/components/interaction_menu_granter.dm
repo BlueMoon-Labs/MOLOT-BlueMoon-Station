@@ -766,9 +766,17 @@
 					if(iscarbon(parent_mob))
 						var/mob/living/carbon/C = parent_mob
 						C.genital_menu()
+						return TRUE
+					else
+						to_chat(parent_mob, span_warning("Unavailable for this mob."))
+						return FALSE
 				if("target")
 					if(iscarbon(target))
 						var/mob/living/carbon/C = target
 						C.genital_menu()
+						return TRUE
+					else
+						to_chat(parent_mob, span_warning("Unavailable for this mob."))
+						return FALSE
 
 #undef INTERACTION_UNHOLY //SPLURT Edit
