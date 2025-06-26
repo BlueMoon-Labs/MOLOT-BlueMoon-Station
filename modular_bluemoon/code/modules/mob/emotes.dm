@@ -135,7 +135,7 @@
 /datum/emote/sound/human/cheekybreeky
 	key = "cheekybreeky"
 	key_third_person = "cheekybreeky"
-	message = "кричик: <b>'А НУ-У, ЧИКИ БРИКИ И В ДАМКИ!'</b>"
+	message = "кричит: <b>'А НУ-У, ЧИКИ-БРИКИ И В ДАМКИ!'</b>"
 	message_mime = null
 	sound = 'sound/voice/human/cheekibreeki.ogg'
 	emote_cooldown = 5 SECONDS

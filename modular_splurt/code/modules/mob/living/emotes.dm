@@ -562,8 +562,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "mygod"
 	key_third_person = "omgs"
 	name = "oooh my god"
-	message = "взывает к Иисусу Христу."
-	message_mime = "безмолвной молитвой взывает к Иисусу Христу."
+	message = "взывает к Космическому Мессии Иисусу Христу."
+	message_mime = "безмолвной молитвой взывает к Космическому Мессии Иисусу Христу."
 	emote_type = EMOTE_OMNI
 	sound = 'modular_splurt/sound/voice/OMG.ogg'
 	emote_cooldown = 1.6 SECONDS
@@ -582,7 +582,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "fusrodah"
 	key_third_person = "furodahs"
 	message = "кричит, \"<b>FUS RO DAH!!!</b>\""
-	message_mime = "издаёт драконий крик."
+	message_mime = "изображает драконий крик."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/fusrodah.ogg'
 	emote_cooldown = 7 SECONDS
@@ -1270,7 +1270,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "slaves"
 	key_third_person = "slaves"
 	name = "gachi slaves"
-	message = "попускает рабов!"
+	message = "клянёт рабов!"
 	message_mime = "безмолвно бранит рабов!"
 	sound = 'modular_splurt/sound/voice/gachi/fokensleves.ogg'
 	emote_type = EMOTE_AUDIBLE

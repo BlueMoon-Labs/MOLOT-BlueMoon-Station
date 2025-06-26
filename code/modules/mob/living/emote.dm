@@ -484,7 +484,7 @@
 	stat_allowed = SOFT_CRIT // BLUEMOON EDIT - некоторые эмоуты можно использовать в софткрите
 
 /datum/emote/sound/human/smirk
-	key = ""
+	key = "smirk"
 	key_third_person = "smirks"
 	message = "ухмыляется."
 	stat_allowed = SOFT_CRIT // BLUEMOON EDIT - некоторые эмоуты можно использовать в софткрите
@@ -772,9 +772,9 @@
 /datum/emote/inhale
 	key = "inhale"
 	key_third_person = "inhales"
-	message = "вдыхает воздух."
+	message = "вдыхает."
 
 /datum/emote/exhale
 	key = "exhale"
 	key_third_person = "exhales"
-	message = "выдыхает воздух."
+	message = "выдыхает."
