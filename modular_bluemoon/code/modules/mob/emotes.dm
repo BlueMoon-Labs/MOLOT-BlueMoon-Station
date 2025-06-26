@@ -1,8 +1,8 @@
 /datum/emote/sound/human/growl
 	key = "growl"
 	key_third_person = "growl"
-	message = "growl!"
-	message_mime = "growl."
+	message = "рычит!"
+	message_mime = "безмолвно рычит."
 	sound = 'sound/voice/growl.ogg'
 	emote_cooldown = 4 SECONDS
 
@@ -25,22 +25,22 @@
 /datum/emote/sound/human/trills
 	key = "trills"
 	key_third_person = "trills"
-	message = "trills!"
-	message_mime = "trills."
+	message = "издаёт трель!"
+	message_mime = "изображает трель."
 	sound = 'sound/voice/trills.ogg'
 	emote_cooldown = 4 SECONDS
 
 /datum/emote/sound/human/woof
 	key = "woof"
 	key_third_person = "woofs"
-	message = "lets out a woof."
-	message_mime = "lets out a woof."
+	message = "вуфает."
+	message_mime = "изображает вуфанье."
 	sound = 'sound/voice/woof.ogg'
 
 /datum/emote/sound/human/cloaker1
 	key = "cloaker"
 	key_third_person = "cloaker"
-	message = "aggressively approaching."
+	message = "агрессивно приближается."
 	message_mime = null
 	sound = 'sound/voice/cloaker1.ogg'
 	emote_cooldown = 10 SECONDS
@@ -48,7 +48,7 @@
 /datum/emote/sound/human/cloaker2
 	key = "cloaker2"
 	key_third_person = "cloaker2"
-	message = "clearly demands to stop beating yourself."
+	message = "даёт прямое требование перестать себя бить."
 	message_mime = null
 	sound = 'sound/voice/cloaker2.ogg'
 	emote_cooldown = 10 SECONDS
@@ -56,7 +56,7 @@
 /datum/emote/sound/human/cloaker3
 	key = "cloaker3"
 	key_third_person = "cloaker3"
-	message = "explains the reason for the detention."
+	message = "объясняет причину задержания."
 	message_mime = null
 	sound = 'sound/voice/cloaker3.ogg'
 	emote_cooldown = 10 SECONDS
@@ -64,7 +64,7 @@
 /datum/emote/sound/human/cloaker4
 	key = "cloaker4"
 	key_third_person = "cloaker4"
-	message = "approves the Safe Word."
+	message = "одобряет Стоп Слово."
 	message_mime = null
 	sound = 'sound/voice/cloaker4.ogg'
 	emote_cooldown = 10 SECONDS
@@ -72,7 +72,7 @@
 /datum/emote/sound/human/cluwne
 	key = "cluwne"
 	key_third_person = "cluwnes"
-	message = "clowning around; laughs terribly..."
+	message = "клоуничает; ужасно плохо смеётся..."
 	message_mime = null
 	sound = 'sound/voice/cluwnelaugh1.ogg'
 	emote_cooldown = 10 SECONDS
@@ -87,7 +87,7 @@
 /datum/emote/sound/human/suka1
 	key = "suka"
 	key_third_person = "suka"
-	message = "seems to be very angry."
+	message = "выглядит очень злым."
 	message_mime = null
 	sound = 'sound/voice/human/bear_fight.ogg'
 	emote_cooldown = 10 SECONDS
@@ -95,7 +95,7 @@
 /datum/emote/sound/human/suka2
 	key = "suka2"
 	key_third_person = "suka2"
-	message = "seems to be very angry."
+	message = "выглядит <b>очень</b> злым."
 	message_mime = null
 	sound = 'sound/voice/bear_fight2.ogg'
 	emote_cooldown = 10 SECONDS
@@ -103,7 +103,7 @@
 /datum/emote/sound/human/jacket1
 	key = "jacket"
 	key_third_person = "jacket"
-	message = "speaking: <b>'Do you know what time is it?'</b>"
+	message = "говорит: <b>'Ты знаешь что сейчас за время?'</b>"
 	message_mime = null
 	sound = 'sound/voice/jacket1.ogg'
 	emote_cooldown = 10 SECONDS
@@ -111,7 +111,7 @@
 /datum/emote/sound/human/jacket2
 	key = "jacket2"
 	key_third_person = "jacket2"
-	message = "speaking: <b>'Help Is On The Way!'</b>"
+	message = "говорит: <b>'Помощь в пути!'</b>"
 	message_mime = null
 	sound = 'sound/voice/jacket2.ogg'
 	emote_cooldown = 10 SECONDS
@@ -119,7 +119,7 @@
 /datum/emote/sound/human/bulldozer1
 	key = "bulldozer"
 	key_third_person = "bulldozer"
-	message = "yelling: <b>'You're up against the wall and I am the fucking wall!'</b>"
+	message = "кричит: <b>'Ты напротив стены и Я - эта ёбанная стена!'</b>"
 	message_mime = null
 	sound = 'sound/voice/bulldozer1.ogg'
 	emote_cooldown = 10 SECONDS
@@ -127,7 +127,7 @@
 /datum/emote/sound/human/bulldozer2
 	key = "bulldozer2"
 	key_third_person = "bulldozer2"
-	message = "yelling: <b>'Please, stay alive a little bit longer, so I can kill you myself!!'</b>"
+	message = "кричит: <b>'Пожалуйста, оставайтесь живыми подольше, чтобы я прикончил вас собственноручно!!'</b>"
 	message_mime = null
 	sound = 'sound/voice/bulldozer2.ogg'
 	emote_cooldown = 10 SECONDS
@@ -135,7 +135,7 @@
 /datum/emote/sound/human/cheekybreeky
 	key = "cheekybreeky"
 	key_third_person = "cheekybreeky"
-	message = "yells: <b>'Cheeky Breeky and v Damke!'</b>"
+	message = "кричик: <b>'А НУ-У, ЧИКИ БРИКИ И В ДАМКИ!'</b>"
 	message_mime = null
 	sound = 'sound/voice/human/cheekibreeki.ogg'
 	emote_cooldown = 5 SECONDS
@@ -143,7 +143,7 @@
 /datum/emote/sound/human/anyo
 	key = "anyo"
 	key_third_person = "anyo"
-	message = "lets out a <b>anyo!</b>"
+	message = "издаёт <b>аньо!</b>"
 	message_mime = null
 	sound = 'sound/voice/anyo.ogg'
 	emote_cooldown = 3 SECONDS
@@ -151,7 +151,7 @@
 /datum/emote/sound/human/ura1
 	key = "ura"
 	key_third_person = "ura"
-	message = "lets out a <b>ura!</b>"
+	message = "кричит '<b>ура!</b>'"
 	message_mime = null
 	sound = 'sound/voice/ura1.ogg'
 	emote_cooldown = 5 SECONDS
@@ -159,7 +159,7 @@
 /datum/emote/sound/human/ura2
 	key = "ura2"
 	key_third_person = "ura2"
-	message = "lets out a <b>mega-ura!</b>"
+	message = "издаёт <b>мега-ура!</b>"
 	message_mime = null
 	sound = 'sound/voice/ura2.ogg'
 	emote_cooldown = 10 SECONDS
@@ -167,7 +167,7 @@
 /datum/emote/sound/human/ura3
 	key = "ura3"
 	key_third_person = "ura3"
-	message = "lets out a <b>mega-ultra-URAAAAAAAAAA!</b>"
+	message = "издаёт <b>мега-ультра-УРАААААААА!</b>"
 	message_mime = null
 	sound = 'sound/voice/ura3.ogg'
 	emote_cooldown = 15 SECONDS
@@ -175,7 +175,7 @@
 /datum/emote/sound/human/uwu
 	key = "uwu"
 	key_third_person = "uwu"
-	message = "lets out an <b>~UwU~</b>"
+	message = "издаёт звук - <b>~UwU~</b>"
 	message_mime = null
 	sound = 'sound/voice/uwu1.ogg'
 	emote_cooldown = 3 SECONDS
@@ -284,7 +284,7 @@
 /datum/emote/sound/human/cat_snores
 	key = "catsnore"
 	key_third_person = "catsnores"
-	message = "храпит."
+	message = "глупенько храпит."
 	message_mime = "храпит с необычным звуком."
 	sound = 'sound/voice/snore_mimimimimimi.ogg'
 	emote_cooldown = 1 SECONDS
@@ -324,16 +324,16 @@
 /datum/emote/sound/human/mrrp3
 	key = "mrrp3"
 	key_third_person = "mrrp3"
-	message = "mrrp's."
-	message_mime = "silently mrrp's."
+	message = "муркает."
+	message_mime = "безмолвно муркает."
 	sound = 'modular_bluemoon/sound/emotes/mrrps3.ogg'
 	emote_cooldown = 0.5 SECONDS
 
 /datum/emote/sound/human/girlymoan
 	key = "girlymoan"
 	key_third_person = "girlymoan"
-	message = "softly moans."
-	message_mime = "silently moans."
+	message = "мягко стонет."
+	message_mime = "безмолвно стонет."
 	sound = 'modular_bluemoon/sound/emotes/softmoan6.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.8 SECONDS
@@ -346,8 +346,8 @@
 /datum/emote/sound/human/squeal
 	key = "squeal"
 	key_third_person = "squeal"
-	message = "squeals."
-	message_mime = "silently squeals."
+	message = "пищит."
+	message_mime = "безмолвно попискивает."
 	sound = 'modular_bluemoon/sound/emotes/squeal.ogg'
 	emote_cooldown = 0.75 SECONDS
 
@@ -359,31 +359,31 @@
 /datum/emote/sound/human/meow4
 	key = "meow4"
 	key_third_person = "meow4"
-	message = "meows."
-	message_mime = "silently meows."
+	message = "мяукает."
+	message_mime = "безмолвно мяукает."
 	sound = 'modular_bluemoon/sound/emotes/meow4.ogg'
 	emote_cooldown = 0.5 SECONDS
 
 /datum/emote/sound/human/meow5
 	key = "meow5"
 	key_third_person = "meow5"
-	message = "meows."
-	message_mime = "silently meows."
+	message = "мяукает."
+	message_mime = "безмолвно мяукает."
 	sound = 'modular_bluemoon/sound/emotes/meow5.ogg'
 	emote_cooldown = 0.5 SECONDS
 
 /datum/emote/sound/human/meow6
 	key = "meow6"
 	key_third_person = "meow6"
-	message = "meows."
-	message_mime = "silently meows."
+	message = "мяукает."
+	message_mime = "безмолвно мяукает."
 	sound = 'modular_bluemoon/sound/emotes/meow6.ogg'
 	emote_cooldown = 0.5 SECONDS
 
 /datum/emote/sound/human/catscream1
 	key = "catscream1"
 	key_third_person = "catscreams1"
-	message = "Screams!"
+	message = "кричит как кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream1.ogg'
 	emote_cooldown = 1 SECONDS // I love felinid
 	emote_pitch_variance = FALSE
@@ -391,7 +391,7 @@
 /datum/emote/sound/human/catscream2
 	key = "catscream2"
 	key_third_person = "catscreams2"
-	message = "Screams!"
+	message = "кричит как кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream2.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -399,7 +399,7 @@
 /datum/emote/sound/human/catscream3
 	key = "catscream3"
 	key_third_person = "catscreams3"
-	message = "Screams!"
+	message = "кричит как кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream3.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -407,7 +407,7 @@
 /datum/emote/sound/human/catscream
 	key = "catscream"
 	key_third_person = "catscreams"
-	message = "Screams!"
+	message = "кричит как кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream1.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -419,7 +419,7 @@
 /datum/emote/sound/human/horse_snort
 	key = "horsesnort"
 	key_third_person = "horsesnort"
-	message = "Snort like a horse!"
+	message = "фыркает как лошадь!"
 	sound = 'modular_bluemoon/sound/emotes/snort.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -427,7 +427,7 @@
 /datum/emote/sound/human/horse_neigh
 	key = "horseneigh"
 	key_third_person = "horseneigh"
-	message = "Neighs like a horse!"
+	message = "ржёт как лошадь!"
 	sound = 'modular_bluemoon/sound/emotes/neigh.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -507,7 +507,7 @@
 /datum/emote/sound/human/hecu
 	key = "heavyass"
 	key_third_person = "heavyasses"
-	message = "LITERALLY SAYS <b>\"MY ASS IS HEAVY\"</b>"
+	message = "LITERALLY SAYS, <b>\"MY ASS IS HEAVY\"</b>"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_bluemoon/sound/emotes/myassisheavy.ogg'
 	emote_cooldown = 3.2 SECONDS
@@ -515,7 +515,7 @@
 /datum/emote/sound/human/blackops
 	key = "blackopsalert"
 	key_third_person = "blackopsalerted"
-	message = "Says <b>\"i have a target\"</b>"
+	message = "говорит <b>\"I have a target\"</b>"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_bluemoon/sound/emotes/boalert.ogg'
 	emote_cooldown = 5 SECONDS
@@ -524,7 +524,7 @@
 /datum/emote/sound/human/higordon
 	key = "higordon"
 	key_third_person = "higordons"
-	message = "Says <b>\"Hello Gordon\"</b>"
+	message = "говорит, <b>\"Hello Gordon\"</b>"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_bluemoon/sound/emotes/hellogordon.ogg'
 	emote_cooldown = 5 SECONDS

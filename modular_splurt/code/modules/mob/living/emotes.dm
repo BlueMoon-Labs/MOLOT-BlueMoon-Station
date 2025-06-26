@@ -101,19 +101,19 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/tilt
 	key = "tilt"
 	key_third_person = "tilts"
-	message = "tilts their head."
+	message = "клонит голову вбок."
 	emote_type = EMOTE_VISIBLE
 
 /datum/emote/sound/human/squint
 	key = "squint"
 	key_third_person = "squints"
-	message = "squints their eyes." // i dumb
+	message = "щурит глаза." // i dumb
 	emote_type = EMOTE_VISIBLE
 
 /datum/emote/sound/human/ruffle
 	key = "ruffle"
 	key_third_person = "ruffles"
-	message = "ruffles their wings for a moment."
+	message = "на секунду взъерошивает свои крылья."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
@@ -190,7 +190,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/cackle
 	key = "cackle"
 	key_third_person = "cackles"
-	message = "cackles hysterically!"
+	message = "надрывно гогочет!"
 	message_mime = "cackles silently!"
 	sound = 'modular_splurt/sound/voice/cackle_yeen.ogg'
 	emote_type = EMOTE_AUDIBLE
@@ -241,8 +241,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/chirp
 	key = "chirp"
 	key_third_person = "chirps"
-	message = "chirps!"
-	message_mime = "chirps silently!"
+	message = "щебечет!"
+	message_mime = "безмолвно щебечет!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/chirp.ogg'
 	emote_cooldown = 0.2 SECONDS
@@ -250,8 +250,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/caw
 	key = "caw"
 	key_third_person = "caws"
-	message = "caws!"
-	message_mime = "caws silently!"
+	message = "каркает!"
+	message_mime = "безмолвно каркает!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/caw.ogg'
 	emote_cooldown = 0.35 SECONDS
@@ -259,8 +259,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/mew
 	key = "mew"
 	key_third_person = "mews"
-	message = "mews hysterically!"
-	message_mime = "makes a cat face!"
+	message = "истерично мяучит!"
+	message_mime = "строит кошачью мордочку!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/meow_meme.ogg'
 	emote_cooldown = 1 SECONDS
@@ -287,8 +287,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/bleat
 	key = "bleat"
 	key_third_person = "bleats"
-	message = "bleats loudly!"
-	message_mime = "bleats silently!"
+	message = "громко блеёт!"
+	message_mime = "безмолвно блеёт!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/bleat.ogg'
 	emote_cooldown = 0.7 SECONDS
@@ -296,8 +296,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/chitter2
 	key = "chitter2"
 	key_third_person = "chitters2"
-	message = "chitters."
-	message_mime = "chitters silently!"
+	message = "стрекочет."
+	message_mime = "безмолвно стрекочет!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/moth/mothchitter2.ogg'
 	emote_cooldown = 0.3 SECONDS
@@ -305,7 +305,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/monkeytwerk
 	key = "twerk"
 	key_third_person = "twerks"
-	message = "shakes it harder than James Russle himself!"
+	message = "трясёт покруче самого Джеймса Рассела!"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/misc/monkey_twerk.ogg'
 	emote_cooldown = 3.2 SECONDS
@@ -409,8 +409,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/ffff
 	key = "ffff"
 	key_third_person = "ffffs"
-	message = "spews something softly."
-	message_mime = "spews something silently."
+	message = "что-то приглушённо бурчит под нос."
+	message_mime = "безмолвно бурчит под нос."
 	muzzle_ignore = TRUE
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/bababooey/ffff.ogg'
@@ -447,8 +447,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "eyebrow2"
 	key_third_person = "eyebrows2"
 	name = "raise eyebrow"
-	message = "<b>raises an eyebrow.</b>"
-	message_mime = "<b>raises an eyebrow with quaking force!</b>"
+	message = "<b>поднимает бровь.</b>"
+	message_mime = "<b>поднимает бровь с сотрясающей силой!</b>"
 	emote_type = EMOTE_VISIBLE
 	sound = 'modular_splurt/sound/voice/vineboom.ogg'
 	emote_cooldown = 2.9 SECONDS
@@ -457,7 +457,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "eyebrow3"
 	key_third_person = "eyebrows3"
 	name = "eyebrow quizzaciously"
-	message = "raises an eyebrow <i>quizzaciously</i>."
+	message = "поднимает бровь <i>вопросительно</i>."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/moonmen.ogg'
 	emote_cooldown = 7 SECONDS
@@ -466,8 +466,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "blink2"
 	key_third_person = "blinks2"
 	name = "blink expressively"
-	message = "blinks."
-	message_mime = "blinks expressively."
+	message = "моргает."
+	message_mime = "выразительно моргает."
 	emote_type = EMOTE_VISIBLE
 	sound = 'modular_splurt/sound/voice/blink.ogg'
 	emote_cooldown = 0.25 SECONDS
@@ -476,8 +476,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "laugh2"
 	key_third_person = "laughs2"
 	name = "king laugh"
-	message = "laughs like a king."
-	message_mime = "acts out laughing like a king."
+	message = "смеётся по-королевски."
+	message_mime = "изображет королевский смех."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/laugh_king.ogg'
 	// No cooldown var required
@@ -486,8 +486,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "laugh3"
 	key_third_person = "laughs3"
 	name = "silly laugh"
-	message = "laughs silly."
-	message_mime = "acts out laughing silly."
+	message = "заливается глупейшим смехом."
+	message_mime = "изображает глупейший смех."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/lol.ogg'
 	emote_cooldown = 6.1 SECONDS
@@ -496,8 +496,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "laugh4"
 	key_third_person = "laughs4"
 	name = "burst laughter"
-	message = "burst into laughter!"
-	message_mime = "acts out bursting into laughter."
+	message = "прорывается на ржач!"
+	message_mime = "изображает лютый смех."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/laugh_muta.ogg'
 	emote_cooldown = 3 SECONDS
@@ -506,8 +506,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "laugh5"
 	key_third_person = "laughs5"
 	name = "scottish laugh"
-	message = "laughs in Scottish."
-	message_mime = "acts out laughing in Scottish."
+	message = "смеётся по-шотландски."
+	message_mime = "изображает шотландский смех."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/laugh_deman.ogg'
 	emote_cooldown = 2.75 SECONDS
@@ -516,8 +516,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "laugh6"
 	key_third_person = "laughs6"
 	name = "kettle laugh"
-	message = "laughs like a kettle!"
-	message_mime = "acts out laughing like a kettle."
+	message = "смеётся как кипящий чайник!"
+	message_mime = "изображает смех, похожий на кипение чайника."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/laugh6.ogg'
 	emote_cooldown = 4.45 SECONDS
@@ -525,7 +525,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/breakbad
 	key = "breakbad"
 	key_third_person = "breakbads"
-	message = "stares intensively with determination."
+	message = "интенсивно смотрит с решимостью в глазах."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/breakbad.ogg'
 	emote_cooldown = 6.4 SECONDS
@@ -534,7 +534,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "lawyerup"
 	key_third_person = "lawyerups"
 	name = "aura expertise"
-	message = "emits an aura of expertise."
+	message = "излучает ауру компетентности."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/lawyerup.ogg'
 	emote_cooldown = 7.5 SECONDS
@@ -543,8 +543,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "damn"
 	key_third_person = "damns"
 	name = "gah damn"
-	message = "is in utter stupor."
-	message_mime = "appears to be in utter stupor."
+	message = "находится в полном ступоре."
+	message_mime = "всем видом показывает полный ступор."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/god_damn.ogg'
 	emote_cooldown = 1.25 SECONDS
@@ -562,8 +562,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "mygod"
 	key_third_person = "omgs"
 	name = "oooh my god"
-	message = "invokes the presence of Jesus Christ."
-	message_mime = "invokes the presence of Jesus Christ through silent prayer."
+	message = "взывает к Иисусу Христу."
+	message_mime = "безмолвной молитвой взывает к Иисусу Христу."
 	emote_type = EMOTE_OMNI
 	sound = 'modular_splurt/sound/voice/OMG.ogg'
 	emote_cooldown = 1.6 SECONDS
@@ -581,8 +581,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/fusrodah
 	key = "fusrodah"
 	key_third_person = "furodahs"
-	message = "yells, \"<b>FUS RO DAH!!!</b>\""
-	message_mime = "acts out a dragon shout."
+	message = "кричит, \"<b>FUS RO DAH!!!</b>\""
+	message_mime = "издаёт драконий крик."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/fusrodah.ogg'
 	emote_cooldown = 7 SECONDS
@@ -591,8 +591,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "skibidi"
 	key_third_person = "skibidis"
 	name = "skibidi bop mm dada"
-	message = "yells, \"<b>Skibidi bop mm dada!</b>\""
-	message_mime = "makes incoherent mouth motions."
+	message = "кричит, \"<b>Skibidi bop mm dada!</b>\""
+	message_mime = "бессвязно двигает губами."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/skibidi.ogg'
 	emote_cooldown = 1.1 SECONDS
@@ -600,8 +600,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/fbi
 	key = "fbi"
 	key_third_person = "fbis"
-	message = "yells, \"<b>FBI OPEN UP!</b>\""
-	message_mime = "acts out being the FBI."
+	message = "кричит, \"<b>FBI OPEN UP!</b>\""
+	message_mime = "изображает из себя FBI."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/fbi.ogg'
 	emote_cooldown = 2 SECONDS
@@ -609,7 +609,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/illuminati
 	key = "illuminati"
 	key_third_person = "illuminatis"
-	message = "exudes a mysterious aura!"
+	message = "источает мистическую ауру!"
 	emote_type = EMOTE_OMNI
 	sound = 'modular_splurt/sound/voice/illuminati.ogg'
 	emote_cooldown = 7.8 SECONDS
@@ -617,8 +617,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/bonerif
 	key = "bonerif"
 	key_third_person = "bonerifs"
-	message = "riffs!"
-	message_mime = "riffs silently!"
+	message = "выдаёт рифф!"
+	message_mime = "выдаёт безмолвный рифф!"
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 	sound = 'modular_splurt/sound/voice/bonerif.ogg'
@@ -628,8 +628,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "cry2"
 	key_third_person = "cries2"
 	name = "king cry"
-	message = "cries like a king."
-	message_mime = "acts out crying like a king."
+	message = "плачет по-королевски."
+	message_mime = "изображает королевский плач."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/cry_king.ogg'
 	emote_cooldown = 1.6 SECONDS // Uses longest sound's time
@@ -644,8 +644,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/choir
 	key = "choir"
 	key_third_person = "choirs"
-	message = "let out a choir!"
-	message_mime = "acts out a choir."
+	message = "издаёт хор!"
+	message_mime = "изображает хор."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/choir.ogg'
 	emote_cooldown = 6 SECONDS
@@ -653,8 +653,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/agony
 	key = "agony"
 	key_third_person = "agonys"
-	message = "let out a choir of agony!"
-	message_mime = "is visibly in agony."
+	message = "издаёт хор агонии!"
+	message_mime = "заметно агонизирует."
 	emote_type = EMOTE_OMNI
 	sound = 'modular_splurt/sound/voice/agony.ogg'
 	emote_cooldown = 7 SECONDS
@@ -662,8 +662,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/wtune
 	key = "whistletune"
 	key_third_person = "whistletunes"
-	message = "whistles a tune."
-	message_mime = "makes an expression as if whistling."
+	message = "насвистывает мелодию."
+	message_mime = "изображает свист."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/wtune1.ogg'
 	emote_cooldown = 4.55 SECONDS // Uses longest sound's time.
@@ -678,9 +678,9 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/fiufiu
 	key = "wolfwhistle"
 	key_third_person = "wolfwhistles"
-	message = "wolf-whistles!" // i am not creative
+	message = "<i>свистит</i>!" // i am not creative
 	message_param = "audibly approves %t's appearance."
-	message_mime = "makes an expression as if <i>inappropriately</i> whistling."
+	message_mime = "изображает жест <i>неуместного</i> свиста."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/wolfwhistle.ogg'
 	emote_cooldown = 0.78 SECONDS
@@ -689,8 +689,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "terror"
 	key_third_person = "terrors"
 	name = "dreadful tune"
-	message = "whistles some dreadful tune..."
-	message_mime = "stares with aura full of dread..."
+	message = "насвистывает пугающую мелодию..."
+	message_mime = "пялится с пугающей аурой..."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/terror1.ogg'
 	emote_cooldown = 13.07 SECONDS // Uses longest sound's time.
@@ -705,7 +705,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/deathglare
 	key = "glare2"
 	key_third_person = "glares2"
-	message = "<b><i>glares</b></i>."
+	message = "<b><i>смотрит</b></i>."
 	message_param = "<b><i>glares</b></i> at %t."
 	emote_type = EMOTE_VISIBLE
 	sound = 'modular_splurt/sound/voice/deathglare.ogg'
@@ -722,8 +722,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/chill
 	key = "chill"
 	key_third_person = "chills"
-	message = "feels a chill running down their spine..."
-	message_mime = "acts out a chill running down their spine..."
+	message = "чувствует холодок, бегущий по спине..."
+	message_mime = "изображает бегущий по спине холодок..."
 	emote_type = EMOTE_VISIBLE
 	sound = 'modular_splurt/sound/voice/waterphone.ogg'
 	emote_cooldown = 3.4 SECONDS
@@ -732,7 +732,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "tt"
 	key_third_person = "taunts"
 	name = "strike pose"
-	message = "strikes a pose!"
+	message = "позирует!"
 	message_param = "taunts %t!"
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
@@ -749,8 +749,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "weh2"
 	key_third_person = "wehs2"
 	name = "weh 2"
-	message = "let out a weh!"
-	message_mime = "acts out a weh!"
+	message = "издаёт \"weh\"!"
+	message_mime = "изображает \"weh\"!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/weh2.ogg'
 	emote_cooldown = 0.25 SECONDS
@@ -759,8 +759,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "weh3"
 	key_third_person = "wehs3"
 	name = "weh 3"
-	message = "let out a weh!"
-	message_mime = "acts out a weh!"
+	message = "издаёт \"weh\"!"
+	message_mime = "изображает \"weh\"!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/weh3.ogg'
 	emote_cooldown = 0.25 SECONDS
@@ -769,8 +769,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "weh4"
 	key_third_person = "wehs4"
 	name = "surprised weh"
-	message = "let out a surprised weh!"
-	message_mime = "acts out a surprised weh!"
+	message = "издаёт удивлённый \"weh\"!"
+	message_mime = "изображает удивлённый \"weh\"!"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/weh_s.ogg'
 	emote_cooldown = 0.35 SECONDS
@@ -788,8 +788,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "bark2"
 	key_third_person = "barks2"
 	name = "bark 2"
-	message = "barks!"
-	message_mime = "acts out a bark!"
+	message = "лает!"
+	message_mime = "изображает лай!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/bark_alt.ogg'
 	emote_cooldown = 0.35 SECONDS
@@ -815,8 +815,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/bork
 	key = "bork"
 	key_third_person = "borks"
-	message = "borks!"
-	message_mime = "acts out a bork!"
+	message = "тяфкает!"
+	message_mime = "изображает тяфканье!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/bork.ogg'
 	emote_cooldown = 0.4 SECONDS
@@ -824,8 +824,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/woof
 	key = "woof"
 	key_third_person = "woofs"
-	message = "woofs!"
-	message_mime = "acts out a woof!"
+	message = "вуфает!"
+	message_mime = "изображает вуфанье!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/woof.ogg'
 	emote_cooldown = 0.71 SECONDS
@@ -841,8 +841,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/howl
 	key = "howl"
 	key_third_person = "howls"
-	message = "howls!"
-	message_mime = "acts out a howl!"
+	message = "воет!"
+	message_mime = "изображает вой!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 2.04 SECONDS
@@ -851,8 +851,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "coyhowl"
 	key_third_person = "coyhowls"
 	name = "coyote howl"
-	message = "howls like coyote!"
-	message_mime = "acts out a coyote's howl!"
+	message = "воет как койот!"
+	message_mime = "изображает вой койота!"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/coyotehowl.ogg'
 	emote_cooldown = 2.94 SECONDS // Uses longest sound's time
@@ -864,15 +864,15 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/mlem
 	key = "mlem"
 	key_third_person = "mlems"
-	message = "sticks their tongue for a moment. Mlem!"
+	message = "на секунду показывает язык. Млем!"
 	emote_type = EMOTE_VISIBLE
 
 /datum/emote/sound/human/snore/snore2
 	key = "snore2"
 	key_third_person = "snores2"
 	name = "earthshaking snore"
-	message = "lets out an <b>earthshaking</b> snore"
-	message_mime = "lets out an <b>inaudible</b> snore!"
+	message = "издаёт <b>зубодробительный</b> храп!"
+	message_mime = "издаёт <b>неслышимый</b> храп!"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/aauugghh1.ogg'
 	emote_cooldown = 2.1 SECONDS
@@ -881,8 +881,8 @@ To add randomization to your emote, copy and paste this line of code:
 	var/datum/dna/D = user.has_dna()
 	var/say_mod = (D ? D.species.say_mod : "says")
 	var/list/aaauughh = list(
-		"lets out an <b>earthshaking</b> snore.",
-		"lets out what sounds like a <b>painful</b> snore.",
+		"издаёт <b>зубодробительный</b> храп.",
+		"издаёт что-то похожее на <b>болезненный</b> храп.",
 		"[say_mod], <b>\"AAAAAAUUUUUUGGGHHHHH!!!\"</b>"
 	)
 	message = pick(aaauughh)
@@ -901,10 +901,10 @@ To add randomization to your emote, copy and paste this line of code:
 
 /datum/emote/sound/human/pant/run_emote(mob/user, params, type_override, intentional)
 	var/list/pants = list(
-		"pants!",
-		"pants like a dog.",
-		"lets out soft pants.",
-		"pulls [user.p_their()] tongue out, panting."
+		"пыхтит ртом!",
+		"дышит как пёсик.",
+		"издаёт мягкое пыхтение.",
+		"высовывает свой язык, дыша."
 	)
 	message = pick(pants)
 	. = ..()
@@ -931,8 +931,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "ara"
 	key_third_person = "aras"
 	name = "ara ara"
-	message = "coos with sultry surprise~..."
-	message_mime = "exudes a sultry aura~"
+	message = "воркует со страстным удивлением~..."
+	message_mime = "излучает страстную ауру~"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/ara-ara.ogg'
 	emote_cooldown = 1.25 SECONDS
@@ -946,8 +946,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/missouri
 	key = "missouri"
 	key_third_person = "missouris"
-	message = "has relocated to Missouri."
-	message_mime = "starts thinking about Missouri."
+	message = "переместился в Миссури."
+	message_mime = "начинает думать о Миссури..."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/missouri.ogg'
 	emote_cooldown = 3.4 SECONDS
@@ -1023,9 +1023,9 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "rizz"
 	key_third_person = "rizzes"
 	name = "THE LOOK"
-	message = "gives <b>\[<u><i>The Look</i></u>\]</b>."
+	message = "одаривает <b>\[<u><i>Взглядом</i></u>\]</b>."
 	message_param = "looks at %t with bedroom eyes."
-	message_mime = "makes bedroom eyes."
+	message_mime = "чарующе смотрит."
 	emote_type = EMOTE_VISIBLE
 	sound = 'modular_splurt/sound/voice/rizz.ogg'
 	emote_cooldown = 1.43 SECONDS
@@ -1034,7 +1034,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "buff"
 	key_third_person = "buffs"
 	name = "show muscles"
-	message = "shows off their muscles."
+	message = "демонстрирует мускулы."
 	message_param = "shows off their muscles to %t."
 	emote_type = EMOTE_VISIBLE
 	sound = 'modular_splurt/sound/voice/buff.ogg'
@@ -1053,8 +1053,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/hoot
 	key = "hoot"
 	key_third_person = "hoots"
-	message = "hoots!"
-	message_mime = "acts out a hoot!"
+	message = "ухает!"
+	message_mime = "изображает уханье!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/hoot.ogg'
 	emote_cooldown = 2.4 SECONDS
@@ -1062,8 +1062,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/wurble
 	key = "wurble"
 	key_third_person = "wurbles"
-	message = "wurbles!"
-	message_mime = "acts out a wurbling!"
+	message = "урчит!"
+	message_mime = "изображает урчание!"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/wurble.ogg'
 	emote_cooldown = 2.3 SECONDS
@@ -1071,8 +1071,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/warble
 	key = "warble"
 	key_third_person = "warbles"
-	message = "warbles!"
-	message_mime = "acts out a warbling!"
+	message = "издаёт трель!"
+	message_mime = "изображает трель!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/warble.ogg'
 	emote_cooldown = 0.4 SECONDS
@@ -1082,8 +1082,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "trill2"
 	key_third_person = "trills2"
 	name = "trill"
-	message = "trills!"
-	message_mime = "acts out a trilling!"
+	message = "издаёт трель!"
+	message_mime = "изображает трель!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/trill.ogg'
 	emote_cooldown = 1 SECONDS
@@ -1091,8 +1091,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/rattlesnek
 	key = "rattle"
 	key_third_person = "rattles"
-	message = "rattles!"
-	message_mime = "acts like a rattling snake."
+	message = "гремит как змея!"
+	message_mime = "изображает гремучую змею."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/rattle.ogg'
 	emote_cooldown = 4 SECONDS
@@ -1101,8 +1101,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "rpurr"
 	key_third_person = "rpurrs"
 	name = "raptor purr"
-	message = "purrs like raptor!"
-	message_mime = "acts like a purring raptor."
+	message = "хищно мурлычет!"
+	message_mime = "изображает мурлыканье хищника."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/raptor_purr.ogg'
 	emote_cooldown = 1.5 SECONDS
@@ -1110,8 +1110,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/bawk
 	key = "bawk"
 	key_third_person = "bawks"
-	message = "bawks!"
-	message_mime = "acts like a bawking chicken."
+	message = "кудахчет!"
+	message_mime = "изображает кудахчащую курицу."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/bawk.ogg'
 	emote_cooldown = 0.5 SECONDS
@@ -1119,8 +1119,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/moo
 	key = "moo"
 	key_third_person = "moos"
-	message = "moos!"
-	message_mime = "acts like a mooing cow."
+	message = "мычит!"
+	message_mime = "изображает мычащую корову."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/moo.ogg'
 	emote_cooldown = 1.7 SECONDS
@@ -1128,8 +1128,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/coo
 	key = "coo"
 	key_third_person = "coos"
-	message = "coos."
-	message_mime = "acts like a cooing pidgeon."
+	message = "воркует."
+	message_mime = "изображает воркующего голубя."
 	emote_volume = 30
 	sound = 'modular_splurt/sound/voice/coo.ogg'
 	emote_type = EMOTE_AUDIBLE
@@ -1139,8 +1139,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "goosehonk"
 	key_third_person = "goosehonks"
 	name = "goose honk"
-	message = "honks!"
-	message_mime = "looks like a duck from hell!"
+	message = "кричит как гусь!"
+	message_mime = "походит на адского гуся!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/goosehonk/sfx_goose_honk_b_01.ogg'
 	emote_cooldown = 0.8 SECONDS
@@ -1153,8 +1153,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "scream2"
 	key_third_person = "screams2"
 	name = "silly scream"
-	message = "screams!"
-	message_mime = "acts out a rather silly scream!"
+	message = "кричит!"
+	message_mime = "издаёт довольно глупый крик!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/cscream1.ogg'
 	emote_cooldown = 3.3 SECONDS // Uses longest sound's time.
@@ -1169,8 +1169,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "scream3"
 	key_third_person = "screams3"
 	name = "gachi scream"
-	message = "screams manly!"
-	message_mime = "acts out a rather manly scream!"
+	message = "маскулинно кричит!"
+	message_mime = "изображает довольно маскулинный крик!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/gachi/scream1.ogg'
 	emote_cooldown = 4.64 SECONDS // Uses longest sound's time.
@@ -1183,8 +1183,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "moan2"
 	key_third_person = "moans2"
 	name = "gachi moan"
-	message = "moans somewhat manly!"
-	message_mime = "acts out a rather manly moan!"
+	message = "стонет как настоящий мужик!"
+	message_mime = "изображает мужицкий стон!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/gachi/moan1.ogg'
 	emote_cooldown = 2.7 SECONDS // Uses longest sound's time.
@@ -1217,7 +1217,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "sorry"
 	key_third_person = "sorrys"
 	name = "gachi sorry"
-	message = "exclaims, \"Oh shit, I am sorry!\""
+	message = "восклицает, \"Oh shit, I am sorry!\""
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/gachi/sorry.ogg'
 	emote_cooldown = 1.3 SECONDS
@@ -1226,7 +1226,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "sorryfor"
 	key_third_person = "sorrysfor"
 	name = "gachi for what?"
-	message = "asks, \"Sorry for what?\""
+	message = "спрашивает, \"Sorry for what?\""
 	sound = 'modular_splurt/sound/voice/gachi/sorryfor.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.9 SECONDS
@@ -1235,9 +1235,9 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "fuckyou"
 	key_third_person = "fuckyous"
 	name = "gachi fuck you"
-	message = "curses someone!"
+	message = "посылает кого-то!"
 	message_param = "curses %t!"
-	message_mime = "silently curses someone!"
+	message_mime = "безмолвно кого-то шлёт!"
 	sound = 'modular_splurt/sound/voice/gachi/fockyou1.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.18 SECONDS // Uses longest sound's time.
@@ -1250,7 +1250,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "go"
 	key_third_person = "goes"
 	name = "gachi come on"
-	message = "yells, \"Come on, lets go!\""
+	message = "кричит, \"Come on, lets go!\""
 	message_mime = "motions moving forward!"
 	sound = 'modular_splurt/sound/voice/gachi/go.ogg'
 	emote_type = EMOTE_BOTH
@@ -1260,8 +1260,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "chuckle2"
 	key_third_person = "chuckles2"
 	name = "gachi chuckle"
-	message = "chuckles."
-	message_mime = "chuckles silently."
+	message = "посмеивается."
+	message_mime = "безмолвно посмеивается."
 	sound = 'modular_splurt/sound/voice/gachi/chuckle.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.01 SECONDS
@@ -1270,8 +1270,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "slaves"
 	key_third_person = "slaves"
 	name = "gachi slaves"
-	message = "curses slaves!"
-	message_mime = "silently curses slaves!"
+	message = "попускает рабов!"
+	message_mime = "безмолвно бранит рабов!"
 	sound = 'modular_splurt/sound/voice/gachi/fokensleves.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.2 SECONDS
@@ -1280,9 +1280,9 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "assback"
 	key_third_person = "assbacks"
 	name = "gachi ass back"
-	message = "demands someone's ass to get back here!"
+	message = "требует чью-то задницу вернуться назад!"
 	message_param = "demands %t's ass to get back here!"
-	message_mime = "motions for someone's ass to get back here!"
+	message_mime = "жестикулирует чтобы чья-то задница вернулась сюда!"
 	sound = 'modular_splurt/sound/voice/gachi/assback.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.9 SECONDS
@@ -1291,8 +1291,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "boss"
 	key_third_person = "boss"
 	name = "gachi boss of this gym"
-	message = "seeks the boss of this place!"
-	message_mime = "stares at the potential boss of this place!"
+	message = "ищет босса этого места!"
+	message_mime = "бурит взглядом возможного босса этого места!"
 	sound = 'modular_splurt/sound/voice/gachi/boss.ogg'
 	emote_type = EMOTE_VISIBLE
 	emote_cooldown = 1.68 SECONDS
@@ -1301,8 +1301,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "attention"
 	key_third_person = "attentions"
 	name = "atteeention"
-	message = "demands an attention!"
-	message_mime = "seems to be looking for an attention."
+	message = "требует внимания!"
+	message_mime = "судя по всему, хочет внимания."
 	emote_volume = 100
 	sound = 'modular_splurt/sound/voice/gachi/attention.ogg'
 	emote_type = EMOTE_AUDIBLE
@@ -1312,8 +1312,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "ah"
 	key_third_person = "ahs"
 	name = "gachi ah"
-	message = "ahs!"
-	message_mime = "ahs silently!"
+	message = "ахает!"
+	message_mime = "безмолвно ахает!"
 	sound = 'modular_splurt/sound/voice/gachi/ah.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.67 SECONDS
@@ -1323,8 +1323,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "ammo"
 	key_third_person = "ammos"
 	name = "more boolets"
-	message = "is requesting ammo!"
-	message_mime = "seem to ask for ammo!"
+	message = "запрашивает боеприпасы!"
+	message_mime = "кажется, просит боеприпасы!"
 	sound = 'modular_splurt/sound/voice/gachi/boolets.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.1 SECONDS // Uses longest sound's time.
@@ -1338,8 +1338,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "wepon"
 	key_third_person = "wepons"
 	name = "bigger wepons"
-	message = "is requesting bigger weapons!"
-	message_mime = "seem to ask for weapons!"
+	message = "запрашивает пушки побольше!"
+	message_mime = "кажется, запрашивает пушек!"
 	sound = 'modular_splurt/sound/voice/gachi/wepons.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.07 SECONDS
@@ -1349,8 +1349,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "sciteam"
 	key_third_person = "sciteams"
 	name = "Science Team"
-	message = "exclaims, \"I am with the <b>Science</b> team!\""
-	message_mime = "gestures being with the Science team!"
+	message = "восклицает, \"I am with the <b>Science</b> team!\""
+	message_mime = "жестикулирует как член Science team!"
 	sound = 'modular_splurt/sound/voice/sciteam.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.32 SECONDS
@@ -1399,8 +1399,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/bazinga
 	key = "bazinga"
 	key_third_person = "bazingas"
-	message = "exclaims, \"<i>Bazinga!</i>\""
-	message_mime = "fools someone, silently."
+	message = "восклицает, \"<i>Bazinga!</i>\""
+	message_mime = "одурачивает кого-то, безмолвно."
 	sound = 'modular_splurt/sound/voice/bazinga.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.65 SECONDS
@@ -1421,7 +1421,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/yooo
 	key = "yooo"
 	key_third_person = "yooos"
-	message = "thinks they are part of Kabuki play."
+	message = "считает себя частью театра Кабуки."
 	sound = 'modular_splurt/sound/voice/yooo.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 2.54 SECONDS
@@ -1429,7 +1429,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/buzzer_correct
 	key = "correct"
 	key_third_person = "corrects"
-	message = "thinks someone is correct."
+	message = "думает, что кто-то прав."
 	message_param = "thinks %t is correct."
 	sound = 'modular_splurt/sound/voice/buzzer_correct.ogg'
 	emote_type = EMOTE_OMNI
@@ -1438,7 +1438,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/buzzer_incorrect
 	key = "incorrect"
 	key_third_person = "incorrects"
-	message = "thinks someone is incorrect."
+	message = "думает, что кто-то неправ."
 	message_param = "thinks %t is incorrect."
 	sound = 'modular_splurt/sound/voice/buzzer_incorrect.ogg'
 	emote_type = EMOTE_OMNI
@@ -1450,7 +1450,7 @@ To add randomization to your emote, copy and paste this line of code:
 	name = "OBJECTION!!"
 	message = "<b><i>\<\< OBJECTION!! \>\></i></b>"
 	message_param = "<b><i>\<\< %t \>\></i></b>" // Allows for custom objections, but alas only in lowercase.
-	message_mime = "points their finger with determination!"
+	message_mime = "решительно указывает пальцем!"
 	sound = 'modular_splurt/sound/voice/ace/ace_objection_generic.ogg'
 	emote_type = EMOTE_OMNI
 	emote_cooldown = 6.0 SECONDS // This is regardless of sound's length.
@@ -1515,7 +1515,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/realize
 	key = "realize"
 	key_third_person = "realizes"
-	message = "realizes something."
+	message = "осознаёт что-то."
 	sound = 'modular_splurt/sound/voice/ace/ace_realize.ogg'
 	emote_type = EMOTE_VISIBLE
 	emote_cooldown = 1.19 SECONDS
@@ -1524,7 +1524,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "smirk2"
 	key_third_person = "smirks2"
 	name = "smirk 2"
-	message = "<i>smirks</i>."
+	message = "<i>ухмыляется</i>."
 	sound = 'modular_splurt/sound/voice/ace/ace_wubs.ogg'
 	emote_type = EMOTE_VISIBLE
 	emote_cooldown = 0.84 SECONDS
@@ -1532,7 +1532,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/nani
 	key = "nani"
 	key_third_person = "nanis"
-	message = "seems confused."
+	message = "выглядит в недоумении."
 	sound = 'modular_splurt/sound/voice/nani.ogg'
 	emote_type = EMOTE_VISIBLE
 	emote_cooldown = 0.5 SECONDS
@@ -1541,7 +1541,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "2099"
 	key_third_person = "canons"
 	name = "canon event"
-	message = "thinks this is a canon event."
+	message = "считает, что наступило каноническое событие."
 	sound = 'modular_splurt/sound/voice/canon_event.ogg'
 	emote_type = EMOTE_OMNI
 	emote_cooldown = 5.0 SECONDS
@@ -1550,7 +1550,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/meow
 	key = "meow"
 	key_third_person = "meows"
-	message = "meows!"
+	message = "мяукает!"
 	emote_type = EMOTE_AUDIBLE // No reason mimes shouldn't meow.
 	restraint_check = FALSE
 	sound = 'modular_splurt/sound/voice/catpeople/cat_meow1.ogg'
@@ -1566,8 +1566,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "meow2"
 	key_third_person = "meows2"
 	name = "meow 2"
-	message = "mews!"
-	message_mime = "mews silently!"
+	message = "мяучит!"
+	message_mime = "безмолвно мяучит!"
 	sound = 'modular_splurt/sound/voice/catpeople/cat_mew1.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.8 SECONDS // mrrp mrrp meow
@@ -1580,7 +1580,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/meow3
 	key = "meow3"
 	key_third_person = "meows3"
-	message = "meows!"
+	message = "мяукает!"
 	sound = 'modular_citadel/sound/voice/meow1.ogg'
 	emote_cooldown = 0.25 // the longest audio is 1 second but who gives a fuck mrrp mrrp meow
 	emote_pitch_variance = FALSE // why would you
@@ -1588,8 +1588,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/mrrp
 	key = "mrrp"
 	key_third_person = "mrrps"
-	message = "trills like a cat!"
-	message_mime = "trills silently!"
+	message = "муркает как кошка!"
+	message_mime = "безмолвно муркает!"
 	sound = 'modular_splurt/sound/voice/catpeople/cat_mrrp1.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.8 SECONDS // mrrp mrrp meow
@@ -1620,7 +1620,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/flabbergast
 	key = "flabbergast"
 	key_third_person = "is flabbergasted"
-	message = "looks flabbergasted!"
+	message = "выглядит в ошеломлении!"
 	sound = 'modular_splurt/sound/voice/flabbergasted.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 3.0 SECONDS
@@ -1641,7 +1641,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/sadness
 	key = "sadness"
 	key_third_person = "feels sadness"
-	message = "is experiencing <b><i>Profound Sadness</i></b>!"
+	message = "испытывает <b><i>Глубокую Печаль</i></b>!"
 	sound = 'modular_splurt/sound/voice/sadness.ogg'
 	emote_cooldown = 4 SECONDS
 	vary = FALSE
@@ -1651,16 +1651,16 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "squirm"
 	key_third_person = "squirm"
 	name = "squirm"
-	message = "squirms in place!"
-	message_mime = "squirms in place!"
+	message = "извивается на месте!"
+	message_mime = "извивается на месте!"
 	emote_type = EMOTE_VISIBLE
 	emote_cooldown = 0.8 SECONDS
 
 /datum/emote/sound/human/malaysia
 	key = "malaysia"
 	key_third_person = "admits to blowing up Malaysia!"
-	message = "admits to blowing up Malaysia!"
-	message_mime = "silently explains they blew up Malaysia!"
+	message = "признаётся в подрыве Малайзии!"
+	message_mime = "безмолвно сознаётся о подрыве Малайзии!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/malaysia.ogg'
 	emote_cooldown = 2 SECONDS
