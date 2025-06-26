@@ -3,13 +3,14 @@
 	name = "fake window projector"
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "arrows_red"
-	invisibility = 100 // показывваем только избранным
+	invisibility = 100					// показывваем только избранным
 	flags_1 = NO_SCREENTIPS_1
 	var/image/projection
-	var/moving = FALSE
-	var/list/viewers = list()
-	var/projection_pixel_y_offset = 0
-	var/projection_pixel_x_offset = 0
+	var/projection_state = "stand"		// если null (ну или FALSE), то принимается название для спрайта без приписки и лишних _
+	var/list/viewers = list()			// зрители проекции
+	var/projection_pixel_y_offset = 0	// офсетт от стандартных штук, надстройка just_in_case
+	var/projection_pixel_x_offset = 0	// офсетт от стандартных штук, надстройка just_in_case
+	var/list/valid_area = list(/area/hilbertshotelstorage)	// зона в которой мы не показываем проекцию и не удаляемся
 	var/projection_icon = 'modular_bluemoon/icons/projection/grass.dmi'
 	var/projection_icon_state = "grass"
 	var/area/hilbertshotel/own_area
@@ -29,7 +30,7 @@
 
 /obj/effect/projector/update_overlays()
 	. = ..()
-	projection = image(projection_icon, src, "[projection_icon_state]_[moving ? "moving" : "stand"]", ABOVE_MOB_LAYER)
+	projection = image(projection_icon, src, "[projection_icon_state][projection_state ? "_[projection_state]" : ""]", ABOVE_MOB_LAYER)
 	projection.plane =	EMISSIVE_BLOCKER_PLANE
 	projection.color = color
 	projection.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -72,22 +73,27 @@
 	for(var/mob/M in viewers)
 		RemoveProjection(M)
 
-	viewers = null
+	viewers = null	// проверяем дважды, да
 	projection = null
 	if(own_area)
 		LAZYREMOVE(own_area.projectors, src)
 	. = ..()
 
-/obj/effect/projector/forcemove(atom/destination)
-	..()
-	var/area/current_area = get_area(src)
-	if(own_area && istype(current_area, /area/hilbertshotelstorage))
-		LAZYREMOVE(own_area.projectors, src)
-		own_area = null
-	else if(istype(current_area, /area/hilbertshotelstorage))
-		var/area/hilbertshotel/HILBERT = get_area(src)
-		own_area = HILBERT
-		HILBERT.projectors += src
+/obj/effect/projector/forceMove(atom/destination)
+	. = ..()
+	var/area/hilbertshotel/current_area = get_area(src)
+	if(current_area == own_area)
+		return
+
+	if(istype(current_area))
+		own_area = current_area
+		current_area.projectors += src
+		return
+
+	if(current_area.type in valid_area)
+		return
+	// Значит мы не в допустимой для проектора зоне, **ВЗРЫВ**
+	qdel(src)
 
 /area/hilbertshotel/Entered(mob/living/L, atom/OldLoc)
 	. = ..()

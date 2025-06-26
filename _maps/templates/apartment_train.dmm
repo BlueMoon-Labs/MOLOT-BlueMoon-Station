@@ -116,10 +116,6 @@
 	dir = 1
 	},
 /area/hilbertshotel)
-"he" = (
-/obj/structure/flora/tree/jungle/small,
-/turf/closed/indestructible/syndicate,
-/area/hilbertshotel)
 "hq" = (
 /obj/machinery/computer{
 	dir = 8;
@@ -145,6 +141,9 @@
 	alpha = 0;
 	pixel_y = -32;
 	invisibility = 100
+	},
+/obj/effect/projector{
+	projection_pixel_x_offset = -64
 	},
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
@@ -260,20 +259,21 @@
 	},
 /area/hilbertshotel)
 "lI" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/projector,
-/obj/structure/grille/indestructable/fake{
-	pixel_y = -32
+/obj/effect{
+	color = "#dbd1b4";
+	icon = 'modular_splurt/icons/turf/smooth/_smooth.dmi';
+	icon_state = "grass";
+	pixel_x = 32;
+	name = "grass patch"
 	},
-/obj/structure/window/plastitanium/train_fake{
+/obj/structure/flora/tree/jungle/small{
 	pixel_x = 0;
-	pixel_y = -32
+	pixel_y = 0;
+	density = 0
 	},
-/obj/structure/curtain/fake{
-	color = "#292929";
-	pixel_y = -32
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
-/turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "lT" = (
 /obj/structure/chair/sofa/corp/left{
@@ -391,22 +391,15 @@
 	},
 /area/hilbertshotel)
 "qw" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/projector{
-	projection_pixel_x_offset = 96
+/obj/structure/flora/tree/jungle/small{
+	pixel_y = 0;
+	pixel_x = 0
 	},
-/obj/structure/grille/indestructable/fake{
-	pixel_y = -32
+/turf/closed/indestructible/syndicate{
+	icon = 'modular_splurt/icons/turf/smooth/_smooth.dmi';
+	icon_state = "grass";
+	color = "#dbd1b4"
 	},
-/obj/structure/window/plastitanium/train_fake{
-	pixel_x = 0;
-	pixel_y = -32
-	},
-/obj/structure/curtain/fake{
-	color = "#292929";
-	pixel_y = -32
-	},
-/turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "rc" = (
 /obj/structure/window/plastitanium/train_fake{
@@ -527,20 +520,6 @@
 "xv" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "1-w";
-	pixel_x = 32;
-	name = "wall";
-	pixel_y = 32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "2-i";
-	pixel_x = 32;
-	name = "wall";
-	pixel_y = 32
 	},
 /turf/open/floor/plasteel/rivets/half{
 	dir = 1
@@ -705,29 +684,11 @@
 /obj/effect/projector{
 	dir = 1
 	},
-/obj/effect/spawner/structure/window/fake{
-	pixel_x = 0;
-	pixel_y = 32
-	},
 /obj/structure/grille/indestructable/fake{
 	pixel_y = 32
 	},
 /obj/structure/window/plastitanium/train_fake{
 	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "3-w";
-	pixel_x = 32;
-	name = "wall";
-	pixel_y = 32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "1-w";
-	pixel_x = 32;
-	name = "wall";
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/rivets/corner{
@@ -1077,63 +1038,18 @@
 	},
 /turf/open/floor/plasteel/rivets/corner,
 /area/hilbertshotel)
-"Rn" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "4-e";
-	pixel_x = 0;
-	name = "wall";
-	pixel_y = -32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "3-w";
-	pixel_x = 0;
-	name = "wall";
-	pixel_y = -32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "3-w";
-	pixel_x = 32;
-	name = "wall";
-	pixel_y = -32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "4-i";
-	pixel_x = 32;
-	name = "wall";
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
-	},
-/area/hilbertshotel)
 "RC" = (
+/obj/machinery/light,
+/obj/effect/turf_decal/siding/wood,
 /obj/structure/window/plastitanium/train_fake{
 	alpha = 0;
 	pixel_y = -32;
 	invisibility = 100
 	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "4-i";
-	pixel_x = 0;
-	name = "wall";
-	pixel_y = -32
+/obj/effect/projector{
+	projection_pixel_x_offset = 96
 	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "3-w";
-	pixel_x = 0;
-	name = "wall";
-	pixel_y = -32
-	},
-/turf/closed/indestructible/syndicate,
+/turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "RD" = (
 /obj/structure/grille/indestructable/fake{
@@ -1216,20 +1132,6 @@
 	},
 /obj/structure/curtain/fake{
 	color = "#292929";
-	pixel_y = -32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "4-e";
-	pixel_x = -32;
-	name = "wall";
-	pixel_y = -32
-	},
-/obj/effect{
-	icon = 'icons/turf/walls/plastitanium_wall.dmi';
-	icon_state = "3-i";
-	pixel_x = -32;
-	name = "wall";
 	pixel_y = -32
 	},
 /turf/open/floor/wood/wood_large,
@@ -1433,7 +1335,7 @@ Iy
 MC
 Uq
 Mt
-lI
+dl
 zU
 Dc
 We
@@ -1530,10 +1432,10 @@ Ex
 PZ
 zU
 KB
-nL
+lI
 nL
 ZR
-MQ
+qw
 "}
 (9,1,1) = {"
 zU
@@ -1541,17 +1443,17 @@ GV
 zU
 zU
 Fu
-hA
+RC
 zU
 De
 Ex
 As
 zU
 zU
-he
+zU
 yr
 zU
-he
+zU
 "}
 (10,1,1) = {"
 zU
@@ -1577,7 +1479,7 @@ Ah
 Ex
 aO
 Mt
-qw
+dl
 zU
 TX
 yV
@@ -1613,7 +1515,7 @@ GV
 zU
 zU
 lj
-RC
+ez
 zU
 GV
 zU
@@ -1653,7 +1555,7 @@ bH
 zU
 xv
 Nu
-Rn
+bH
 zU
 GV
 ag
