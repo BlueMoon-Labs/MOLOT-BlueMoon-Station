@@ -48758,10 +48758,14 @@
 "iJT" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/obj/item/multitool,
+/obj/item/multitool{
+	pixel_x = 7;
+	pixel_y = 10
+	},
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
+/obj/structure/transmitter,
 /turf/open/floor/plasteel/textured/half{
 	dir = 8
 	},
@@ -52341,10 +52345,6 @@
 	departmentType = 2;
 	pixel_x = -27;
 	pixel_y = 5
-	},
-/obj/structure/transmitter/mounted{
-	pixel_x = -11;
-	pixel_y = 29
 	},
 /turf/open/floor/plasteel/textured/corner,
 /area/cargo/office)
