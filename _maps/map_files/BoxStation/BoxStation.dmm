@@ -27053,11 +27053,6 @@
 	},
 /turf/open/floor/plating,
 /area/security/range)
-"cbQ" = (
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
-/obj/effect/landmark/latejoin,
-/turf/open/floor/plating,
-/area/maintenance/aft)
 "cbR" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -43098,9 +43093,6 @@
 	},
 /area/security/prison/cells)
 "fXG" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
 	},
@@ -55302,16 +55294,12 @@
 /area/cargo/miningdock)
 "lTL" = (
 /obj/structure/table,
-/obj/machinery/light_switch{
-	pixel_x = 35;
-	pixel_y = 3
-	},
 /obj/item/folder/yellow,
 /obj/machinery/power/apc{
 	areastring = "/area/cargo/office";
 	name = "Cargo Office APC";
-	pixel_x = 23;
-	pixel_y = 1;
+	pixel_x = 24;
+	pixel_y = 0;
 	dir = 4
 	},
 /obj/structure/cable{
@@ -55320,6 +55308,10 @@
 /obj/effect/turf_decal/tile/brown/anticorner,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/textured/corner{
 	dir = 1
@@ -121230,7 +121222,7 @@ bzs
 cAe
 ogk
 cne
-cbQ
+ogk
 oLT
 sov
 sGK
