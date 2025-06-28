@@ -17,7 +17,7 @@
 	blockade_warning = "Bluespace instability detected. Delivery impossible."
 	req_access = list(ACCESS_CARGO)
 	is_express = TRUE
-	icon_screen = "CargoExpress"
+	icon_screen = "supply_express"
 
 	var/message
 	var/printed_beacons = 0 //number of beacons printed. Used to determine beacon names.
@@ -96,6 +96,12 @@
 			"id" = pack,
 			"desc" = P.desc || P.name // If there is a description, use it. Otherwise use the pack's name.
 		))
+
+/obj/machinery/computer/cargo/express/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CargoExpress", name)
+		ui.open()
 
 /obj/machinery/computer/cargo/express/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
