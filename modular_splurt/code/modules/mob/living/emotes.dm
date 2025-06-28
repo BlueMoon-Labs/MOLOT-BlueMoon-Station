@@ -1611,7 +1611,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/gay
 	key = "gay"
 	key_third_person = "points at a player"
-	message = "увидел нечто гейское."
+	message = "наблюдает нечто гейское."
 	sound = 'modular_splurt/sound/voice/gay-echo.ogg'
 	emote_type = EMOTE_BOTH
 	emote_cooldown = 0.95 SECONDS
