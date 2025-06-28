@@ -9,8 +9,8 @@
 /datum/emote/sound/human/wurble
 	key = "wurble"
 	key_third_person = "wurble"
-	message = "wurble!"
-	message_mime = "wurble."
+	message = "урчит!"
+	message_mime = "изображает урчание."
 	sound = 'sound/voice/wurble.ogg'
 	emote_cooldown = 4 SECONDS
 
@@ -359,7 +359,7 @@
 /datum/emote/sound/human/meow4
 	key = "meow4"
 	key_third_person = "meow4"
-	message = "мяукает."
+	message = "кротко мяукает."
 	message_mime = "безмолвно мяукает."
 	sound = 'modular_bluemoon/sound/emotes/meow4.ogg'
 	emote_cooldown = 0.5 SECONDS
@@ -375,7 +375,7 @@
 /datum/emote/sound/human/meow6
 	key = "meow6"
 	key_third_person = "meow6"
-	message = "мяукает."
+	message = "натужно мяукает."
 	message_mime = "безмолвно мяукает."
 	sound = 'modular_bluemoon/sound/emotes/meow6.ogg'
 	emote_cooldown = 0.5 SECONDS
@@ -391,7 +391,7 @@
 /datum/emote/sound/human/catscream2
 	key = "catscream2"
 	key_third_person = "catscreams2"
-	message = "кричит как кошка!"
+	message = "кричит как раздражённая кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream2.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -399,7 +399,7 @@
 /datum/emote/sound/human/catscream3
 	key = "catscream3"
 	key_third_person = "catscreams3"
-	message = "кричит как кошка!"
+	message = "кричит как обиженная кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream3.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -407,7 +407,7 @@
 /datum/emote/sound/human/catscream
 	key = "catscream"
 	key_third_person = "catscreams"
-	message = "кричит как кошка!"
+	message = "кричит будто раненая кошка!"
 	sound = 'modular_bluemoon/sound/emotes/catscream1.ogg'
 	emote_cooldown = 1 SECONDS
 	emote_pitch_variance = FALSE
@@ -507,7 +507,7 @@
 /datum/emote/sound/human/hecu
 	key = "heavyass"
 	key_third_person = "heavyasses"
-	message = "LITERALLY SAYS, <b>\"MY ASS IS HEAVY\"</b>"
+	message = "БУКВАЛЬНО ГОВОРИТ, <b>\"MY ASS IS HEAVY\"</b>"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_bluemoon/sound/emotes/myassisheavy.ogg'
 	emote_cooldown = 3.2 SECONDS

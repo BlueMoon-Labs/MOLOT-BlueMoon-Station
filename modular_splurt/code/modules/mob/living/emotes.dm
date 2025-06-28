@@ -191,7 +191,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "cackle"
 	key_third_person = "cackles"
 	message = "надрывно гогочет!"
-	message_mime = "cackles silently!"
+	message_mime = "тихонечко гогочет!"
 	sound = 'modular_splurt/sound/voice/cackle_yeen.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1.6 SECONDS
@@ -200,7 +200,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "speen"
 	key_third_person = "speens"
 	message = "speeeeens!"
-	message_mime = "speeeeens silently!"
+	message_mime = "speeeeens! Беззвучно."
 	restraint_check = TRUE
 	mob_type_allowed_typecache = list(/mob/living)
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
@@ -305,7 +305,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/monkeytwerk
 	key = "twerk"
 	key_third_person = "twerks"
-	message = "трясёт покруче самого Джеймса Рассела!"
+	message = "трясёт покруче самого Рикардо Милоса!"
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/misc/monkey_twerk.ogg'
 	emote_cooldown = 3.2 SECONDS
@@ -313,8 +313,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/bruh
 	key = "bruh"
 	key_third_person = "bruhs"
-	message = "thinks this is a bruh moment."
-	message_mime = "silently acknowledges the bruh moment."
+	message = "думает, произошёл bruh moment..."
+	message_mime = "безмолвно признаёт bruh moment произошедшего..."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/bruh.ogg'
 	emote_cooldown = 0.6 SECONDS
@@ -428,8 +428,8 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/boowomp
 	key = "boowomp"
 	key_third_person = "boowomps"
-	message = "produces a sad boowomp."
-	message_mime = "produces a silent boowomp."
+	message = "производит грустный boowomp."
+	message_mime = "производит тихий boowomp."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/boowomp.ogg'
 	emote_cooldown = 0.4 SECONDS
@@ -572,8 +572,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "wth"
 	key_third_person = "wths"
 	name = "whut the heeell"
-	message = "condemns the abysses of hell!"
-	message_mime = "silently condemns the abysses of hell!"
+	message = "сокрушается именем адских преисподней!"
+	message_mime = "безмолвно сокрушается именем адских преисподней!"
 	emote_type = EMOTE_OMNI
 	sound = 'modular_splurt/sound/voice/WTH.ogg'
 	emote_cooldown = 4.4 SECONDS
@@ -1045,7 +1045,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "merowr"
 	key_third_person = "merowrs"
 	message = "merowrs!"
-	message_mime = "acts out a merowr!"
+	message_mime = "изображает merowr!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/merowr.ogg'
 	emote_cooldown = 1.2 SECONDS
@@ -1101,8 +1101,8 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "rpurr"
 	key_third_person = "rpurrs"
 	name = "raptor purr"
-	message = "хищно мурлычет!"
-	message_mime = "изображает мурлыканье хищника."
+	message = "хищно урчит!"
+	message_mime = "изображает урчание хищника."
 	emote_type = EMOTE_BOTH
 	sound = 'modular_splurt/sound/voice/raptor_purr.ogg'
 	emote_cooldown = 1.5 SECONDS
@@ -1251,7 +1251,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key_third_person = "goes"
 	name = "gachi come on"
 	message = "кричит, \"Come on, lets go!\""
-	message_mime = "motions moving forward!"
+	message_mime = "сигналит продвигаться вперёд!"
 	sound = 'modular_splurt/sound/voice/gachi/go.ogg'
 	emote_type = EMOTE_BOTH
 	emote_cooldown = 1.6 SECONDS
@@ -1260,7 +1260,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "chuckle2"
 	key_third_person = "chuckles2"
 	name = "gachi chuckle"
-	message = "посмеивается."
+	message = "маскулинно посмеивается."
 	message_mime = "безмолвно посмеивается."
 	sound = 'modular_splurt/sound/voice/gachi/chuckle.ogg'
 	emote_type = EMOTE_AUDIBLE
@@ -1550,7 +1550,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/meow
 	key = "meow"
 	key_third_person = "meows"
-	message = "мяукает!"
+	message = "жалобно мяукает!"
 	emote_type = EMOTE_AUDIBLE // No reason mimes shouldn't meow.
 	restraint_check = FALSE
 	sound = 'modular_splurt/sound/voice/catpeople/cat_meow1.ogg'
@@ -1602,7 +1602,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/mrowl
 	key = "mrowl"
 	key_third_person = "mrowls"
-	message = "mrowls."
+	message = "глупенько мяучит."
 	sound = 'modular_splurt/sound/voice/mrowl.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.95 SECONDS
@@ -1611,7 +1611,7 @@ To add randomization to your emote, copy and paste this line of code:
 /datum/emote/sound/human/gay
 	key = "gay"
 	key_third_person = "points at a player"
-	message = "saw something gay."
+	message = "увидел нечто гейское."
 	sound = 'modular_splurt/sound/voice/gay-echo.ogg'
 	emote_type = EMOTE_BOTH
 	emote_cooldown = 0.95 SECONDS
