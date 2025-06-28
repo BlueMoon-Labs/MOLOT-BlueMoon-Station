@@ -338,10 +338,11 @@
 
 /obj/item/reagent_containers/glass/bucket/attackby(obj/O, mob/user, params)
 	if(istype(O, /obj/item/mop))
+		var/obj/item/mop/MOP = O
 		if(reagents.total_volume < 1)
 			to_chat(user, "<span class='warning'>[src] is out of water!</span>")
 		else
-			reagents.trans_to(O, 5, log = "reagentcontainer-bucket fill mop")
+			reagents.trans_to(O, MOP.mopcap, log = "reagentcontainer-bucket fill mop")
 			to_chat(user, "<span class='notice'>You wet [O] in [src].</span>")
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 	else if(isprox(O))
