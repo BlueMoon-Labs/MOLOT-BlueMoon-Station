@@ -34,3 +34,13 @@
 	build_path = /obj/item/assembly/control
 	category = list("initial", "Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/janicart_uprgade_omni
+	name = "(janicart) vacuum + floor buffer Upgrade"
+	desc = "A dual upgrade that can be attached to vehicular janicarts."
+	id = "omni_janicart"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 6000, /datum/material/glass = 400, /datum/material/silver = 500)
+	build_path = /obj/item/janicart_upgrade/omni
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
