@@ -1047,9 +1047,7 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "aQK" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Shuttle Security Airlock";
@@ -2006,9 +2004,6 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/security)
@@ -6584,7 +6579,8 @@
 /area/mine/xenoarch_area_b)
 "fqp" = (
 /obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24
+	pixel_x = -25;
+	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -11399,9 +11395,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24
-	},
+/obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -12840,9 +12834,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/airlock/hatch/syndicate,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "kvU" = (
@@ -18603,6 +18594,15 @@
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
+"oDQ" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/security/glass{
+	name = "Labor Camp Shuttle Security Airlock";
+	req_access_txt = "2"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plasteel/dark,
+/area/mine/laborcamp)
 "oEz" = (
 /obj/machinery/light,
 /obj/structure/sign/flag/syndicate{
@@ -20939,7 +20939,6 @@
 	},
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/airlock/hatch/syndicate,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "qDk" = (
@@ -22033,12 +22032,12 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "rre" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Shuttle Security Airlock";
 	req_access_txt = "2"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
@@ -26809,8 +26808,7 @@
 "vly" = (
 /obj/structure/cable/yellow,
 /obj/machinery/power/apc/auto_name/south{
-	cell_type = /obj/item/stock_parts/cell/high/empty;
-	pixel_y = -24
+	cell_type = /obj/item/stock_parts/cell/high/empty
 	},
 /turf/open/floor/plasteel,
 /area/mine/storage)
@@ -28043,9 +28041,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/lavaland/unpowered/deepspaceone/security)
 "wqR" = (
@@ -28974,11 +28969,11 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "wWh" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Shuttle Prisoner Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
@@ -122645,7 +122640,7 @@ rRb
 rRb
 rRb
 rRb
-aQK
+oDQ
 wjg
 rre
 nCA

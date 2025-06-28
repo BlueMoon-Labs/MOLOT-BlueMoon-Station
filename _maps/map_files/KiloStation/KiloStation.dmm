@@ -12103,6 +12103,8 @@
 "avj" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/donut_box,
+/obj/item/storage/photo_album/Captain,
+/obj/item/camera,
 /turf/open/floor/carpet,
 /area/command/heads_quarters/captain)
 "avk" = (
@@ -44695,10 +44697,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/item/storage/lockbox/medal,
 /obj/item/storage/secure/briefcase{
 	pixel_x = 5;
 	pixel_y = 5
+	},
+/obj/item/storage/secure/briefcase/permits{
+	pixel_x = 5;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/captain)
@@ -46598,14 +46603,13 @@
 	dir = 8
 	},
 /obj/structure/table/wood,
-/obj/item/storage/photo_album/Captain,
-/obj/item/camera,
 /obj/machinery/newscaster/security_unit{
 	pixel_x = 28
 	},
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/storage/lockbox/medal,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/captain)
 "bzQ" = (
@@ -59256,6 +59260,10 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 6
+	},
+/obj/item/storage/secure/briefcase/permits{
+	pixel_x = 1;
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
@@ -83121,6 +83129,16 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
+"ilI" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/storage/secure/briefcase/permits{
+	pixel_x = 6;
+	pixel_y = 17
+	},
+/turf/open/floor/carpet,
+/area/command/heads_quarters/hos)
 "iqd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 8
@@ -84075,6 +84093,10 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/item/storage/secure/briefcase/permits{
+	pixel_x = 6;
+	pixel_y = 17
 	},
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hop)
@@ -105595,7 +105617,7 @@ cgs
 akS
 ckx
 alK
-amf
+ilI
 amD
 anA
 aeU
