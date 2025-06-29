@@ -47,7 +47,7 @@ Bonus
 	switch(A.stage)
 		if(1, 2, 3)
 			if(!suppress_warning)
-				M.emote("sniff")
+				M.emote("snuffle") //BLUEMOON EDIT
 		else
 			M.emote("sneeze")
 			if(M.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth

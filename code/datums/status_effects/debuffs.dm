@@ -1323,7 +1323,7 @@
 					"<span class='userdanger'>[pick("Your lungs hurt!", "It hurts to breathe!")]</span>",
 					"<span class='warning'>[pick("You feel nauseated.", "You feel like you're going to throw up!")]</span>")
 				else
-					fake_emote = pick("cough", "sniff", "sneeze")
+					fake_emote = pick("cough", "snuffle", "sneeze") //BLUEMOON EDIT
 	if(fake_emote)
 		owner.emote(fake_emote)
 	else if(fake_msg)
