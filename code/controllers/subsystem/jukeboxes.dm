@@ -46,16 +46,21 @@ SUBSYSTEM_DEF(jukeboxes)
 	song_beat = beat
 	song_associated_id = assocID
 
-/datum/controller/subsystem/jukeboxes/proc/addjukebox(obj/jukebox, datum/track/T, jukefalloff = 1, one_area_play = FALSE) //BLUEMOON EDIT
+/datum/controller/subsystem/jukeboxes/proc/addjukebox(obj/jukebox, datum/track/T, jukefalloff = 1) //BLUEMOON EDIT
 	if(!istype(T))
 		CRASH("[src] tried to play a song with a nonexistant track")
 	var/channeltoreserve = pick(freejukeboxchannels)
 	if(!channeltoreserve)
 		return FALSE
 	//BLUEMOON ADD START
-	var/area_play
-	if(one_area_play)
-		area_play = get_area(jukebox)
+	var/one_area_play	// Зона в которой будет играть музыка если есть ограничения
+	var/area/juke_area = get_area(jukebox)
+	if(juke_area.jukebox_restrain) // Запрет выхода музыки из зоны
+		if(istype(juke_area, /area/hilbertshotel)) // Отель передаёт свой номер, чтобы музыка разных комнат не играла друг у друга
+			var/area/hilbertshotel/HilberH = juke_area
+			one_area_play = HilberH.roomnumber
+		else
+			one_area_play = juke_area
 	//BLUEMOON ADD END
 	var/sound/song_to_init = sound(T.song_path)
 	freejukeboxchannels -= channeltoreserve
@@ -79,8 +84,20 @@ SUBSYSTEM_DEF(jukeboxes)
 		if(!(M.client.prefs.toggles & SOUND_JUKEBOXES))
 			continue
 		//BLUEMOON ADD START
-		if(one_area_play && get_area(M) != area_play)
+		var/area/mob_area = get_area(M)
+		if(mob_area.jukebox_silent) // Джукбокс заглушен в зоне игрока на начало игры музыки
 			continue
+		else if(mob_area.jukebox_privatized_by && mob_area.jukebox_privatized_by != jukebox) // Стационарные джукбоксы имеют приоритет игры в своей зоне и все кто в ней сидят не слышат иных джукбоксов
+			continue
+		else if(one_area_play)
+			if(isnum(one_area_play)) // Если число, то оно обозначает номер комнаты (мы не хотим чтобы из одних инфинити слышали в других)
+				var/area/hilbertshotel/HilberH = mob_area
+				if(!istype(HilberH))
+					continue
+				if(HilberH.roomnumber != one_area_play)
+					continue
+			else if(mob_area != one_area_play)
+				continue
 		//BLUEMOON ADD END
 
 		SEND_SOUND(M, song_to_init)
