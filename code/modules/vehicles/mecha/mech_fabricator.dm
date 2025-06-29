@@ -189,6 +189,8 @@
 					sub_category += "Energy Weapon"
 				if(mecha_modules & EXISUIT_WEAPON_MODULE_AOE)
 					sub_category += "Missile & Launcher Weapon"
+				if(mecha_modules & EXISUIT_MODULE_NONWEAPON)
+					sub_category += "Utility"
 			else
 				sub_category += "Modules"
 		// Sorting mod modules in subcategories
