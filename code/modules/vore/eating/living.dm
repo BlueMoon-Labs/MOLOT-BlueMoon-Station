@@ -381,6 +381,7 @@
 		var/mob/living/carbon/human/H = tasted
 		H.wash_cream()
 
+	playsound(src.loc, 'sound/effects/attackblob.ogg', 50, 1) //BLUEMOON ADD
 	visible_message("<span class='warning'>[src] licks [tasted]!</span>","<span class='notice'>You lick [tasted]. They taste rather like [tasted.get_taste_message()].</span>","<b>Slurp!</b>")
 
 /mob/living/proc/get_taste_message(allow_generic = TRUE, datum/species/mrace)
@@ -429,6 +430,7 @@
 	if(QDELETED(sniffed) || (sniffed.ckey && !(sniffed.client?.prefs.vore_flags & SMELLABLE)) || !Adjacent(sniffed) || incapacitated(ignore_restraints = TRUE))
 		return
 
+	emote("sniff") //BLUEMOON ADD
 	visible_message("<span class='warning'>[src] smells [sniffed]!</span>","<span class='notice'>You smell [sniffed]. They smell like [sniffed.get_smell_message()].</span>","<b>Sniff!</b>")
 
 /mob/living/proc/get_smell_message(allow_generic = TRUE, datum/species/mrace)
