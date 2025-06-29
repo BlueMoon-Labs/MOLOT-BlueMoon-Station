@@ -136,6 +136,7 @@
 
 // Used to obfuscate object refs imported/exported as strings.
 // Not very secure, but if someone still finds a way to abuse refs, they deserve it.
+// I did it and I deserve it. @kirillqueen 08.01.2025
 /proc/XorEncrypt(string, key)
 	if(!string || !key ||!istext(string)||!istext(key))
 		return
