@@ -26,7 +26,7 @@
 
 /obj/item/dildo/AltClick(mob/living/user)
 	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK, FALSE)) //BLUEMOON EDIT
 		return
 	customize(user)
 	return TRUE

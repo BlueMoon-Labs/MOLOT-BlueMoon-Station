@@ -7,7 +7,7 @@
 	var/lust_amt = 0
 	var/organ //SPLURT edit
 
-	if(!user.canUseTopic(user, BE_CLOSE))
+	if(!user.canUseTopic(user, BE_CLOSE, FALSE, FALSE, FALSE)) //BLUEMOON EDIT
 		return
 	user.DelayNextAction(CLICK_CD_RANGE)
 
