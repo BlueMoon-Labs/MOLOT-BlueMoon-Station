@@ -16,6 +16,7 @@
 	mopcap = initial(mopcap)
 	reagents.clear_reagents()
 	reach = initial(reach)
+	installed_upgrade = list()
 
 /obj/item/advanced_mop_upgrade
 	name = "advanced mop modification kit"
@@ -60,7 +61,8 @@
 		MOP.reach = clamp(MOP.reach + reach_modif, 1, 2)
 
 /obj/item/advanced_mop_upgrade/proc/uninstall(obj/item/mop/advanced/MOP)
-	LAZYREMOVE(MOP.installed_upgrade, src)
+	if(src in MOP.installed_upgrade)
+		MOP.installed_upgrade -= src
 	if(refill_rate)
 		MOP.refill_rate = max(0, MOP.refill_rate - refill_rate)
 	if(stamusage)
@@ -124,19 +126,19 @@
 /obj/item/advanced_mop_upgrade/charge_rate
 	name = "(advanced mop) charge rate modification kit"
 	desc = "Увеличивает генерацию реагентов за счёт утяжеления конструкции."
-	refill_rate = 0.5
+	refill_rate = 0.25
 	stamusage = 1
 
 /obj/item/advanced_mop_upgrade/light
 	name = "(advanced mop) light modification kit"
-	desc = "Уменьшает вес конструкции за счёт траты ценного пространства."
+	desc = "Уменьшает тяжесть использования оборудованием."
 	stamusage = -2
 
 /obj/item/advanced_mop_upgrade/capacity
 	name = "(advanced mop) capacity modification kit"
 	desc = "Увеличивает хранилище швабры за счёт уменьшения скорости производства реагента."
-	mopcap = 5
-	refill_rate = -0.25
+	mopcap = 10
+	refill_rate = -0.1
 
 /obj/item/advanced_mop_upgrade/reach
 	name = "(advanced mop) reach modification kit"
