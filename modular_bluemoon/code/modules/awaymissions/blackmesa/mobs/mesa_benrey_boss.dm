@@ -132,7 +132,7 @@
 
 /mob/living/simple_animal/hostile/skeleton/benrey
 	name = "black mesa skeleton"
-	desc = "BLACK MESA SWEET VOICE IS SUNNED ME!"
+	desc = "BLACK MESA SWEET VOICE IS STUNNED ME!"
 	turns_per_move = 5
 	maxHealth = 50
 	blood_volume = 0

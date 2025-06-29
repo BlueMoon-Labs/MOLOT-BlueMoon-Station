@@ -7,7 +7,7 @@
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 1
-	recoil = 1
+	spread = 7
 	fire_delay = 0
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 	automatic_burst_overlay = FALSE
@@ -75,10 +75,10 @@
 	can_suppress = FALSE
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
-	recoil = 1
+	spread = 9
 	burst_size = 3
 	burst_shot_delay = 2
-	fire_delay = 3.0 ///Это пиздец!
+	fire_delay = 2.5 ///Это пиздец!
 	can_bayonet = FALSE
 	automatic_burst_overlay = FALSE
 
@@ -189,15 +189,14 @@
 	icon_state = "m16hl"
 	burst_size = 1
 	fire_delay = 3
-	recoil = 1
+	spread = 11
 	fire_sound = 'modular_bluemoon/sound/weapons/mesa/m16.ogg'
 
 /obj/item/gun/ballistic/automatic/m16a4/mesa/update_icon_state()
 	if(magazine)
 		icon_state = "m16hl"
 	else
-		icon_state = "m16hl-e"
-
+		icon_state = "m16hl_mag"
 
 /obj/item/uber_teleporter
 	name = "\improper Nihilanth's Divinity"
