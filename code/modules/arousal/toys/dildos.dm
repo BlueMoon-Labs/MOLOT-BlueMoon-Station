@@ -112,7 +112,14 @@
 	desc 				= "The absurdity of a sex toy with the lethality of a baseball bat."
 	dildo_size 			= 4
 	force				= 10
-	hitsound = 'sound/weapons/klonk.ogg'
+	hitsound			= 'sound/weapons/klonk.ogg'
+	var/clashing
+
+/obj/item/dildo/flared/huge/Moved()
+	. = ..()
+	var/obj/item/toy/plush/bm/millie/P = locate() in range(1, src)
+	if(P && istype(P.loc, /turf/open) && !P.clash_target && !clashing)
+		P.clash_of_the_plushies(src)
 
 /obj/item/dildo/custom
 	name 				= "customizable dildo"
