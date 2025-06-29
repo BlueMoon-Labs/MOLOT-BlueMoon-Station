@@ -515,7 +515,7 @@
 /datum/emote/sound/human/sniff
 	key = "sniff"
 	key_third_person = "sniffs"
-	message = "sniffs."
+	message = "нюхает."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = SOFT_CRIT // BLUEMOON EDIT - некоторые эмоуты можно использовать в софткрите
 
