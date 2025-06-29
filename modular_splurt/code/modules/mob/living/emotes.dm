@@ -1270,7 +1270,7 @@ To add randomization to your emote, copy and paste this line of code:
 	key = "slaves"
 	key_third_person = "slaves"
 	name = "gachi slaves"
-	message = "клянёт рабов!"
+	message = "обвиняет рабов!"
 	message_mime = "безмолвно бранит рабов!"
 	sound = 'modular_splurt/sound/voice/gachi/fokensleves.ogg'
 	emote_type = EMOTE_AUDIBLE
