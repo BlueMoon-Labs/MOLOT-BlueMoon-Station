@@ -110,6 +110,7 @@
 						span_lewd("\The <b>[user]</b> дёргает соски <b>[target]</b>."),
 						span_lewd("\The <b>[user]</b> грубо давит на соски <b>[target]</b>."),
 						span_lewd("\The <b>[user]</b> дёргает грудь <b>[target]</b>.")))
+			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 		else
 			user.visible_message(
 					pick(span_lewd("\The <b>[user]</b> аккуратно лапает грудь <b>[target]</b>."),
@@ -119,6 +120,7 @@
 						span_lewd("\The <b>[user]</b> бережно обжимает соски <b>[target]</b>."),
 						span_lewd("\The <b>[user]</b> деликатно сжимает сосок <b>[target]</b>."),
 						span_lewd("\The <b>[user]</b> нежно ощупывает грудь <b>[target]</b>.")))
+			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 		if(prob(5 + target.get_lust()))
 			if(target.a_intent == INTENT_HELP)
 				user.visible_message(

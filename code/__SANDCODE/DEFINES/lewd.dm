@@ -24,7 +24,13 @@ GLOBAL_LIST_INIT(lewd_moans_female, list(
 	'modular_sand/sound/interactions/moan_f4.ogg',
 	'modular_sand/sound/interactions/moan_f5.ogg',
 	'modular_sand/sound/interactions/moan_f6.ogg',
-	'modular_sand/sound/interactions/moan_f7.ogg'
+	'modular_sand/sound/interactions/moan_f7.ogg',
+	'modular_bluemoon/sound/emotes/softmoan1.ogg',
+	'modular_bluemoon/sound/emotes/softmoan2.ogg',
+	'modular_bluemoon/sound/emotes/softmoan3.ogg',
+	'modular_bluemoon/sound/emotes/softmoan4.ogg',
+	'modular_bluemoon/sound/emotes/softmoan5.ogg',
+	'modular_bluemoon/sound/emotes/softmoan6.ogg'
 ))
 // Kissing sounds
 GLOBAL_LIST_INIT(lewd_kiss_sounds, list(

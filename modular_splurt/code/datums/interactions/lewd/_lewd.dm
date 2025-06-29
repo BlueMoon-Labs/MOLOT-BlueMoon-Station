@@ -614,7 +614,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
-	playlewdinteractionsound(loc, 'modular_sand/sound/interactions/swallow.ogg', 70, 1, -1)
+	playlewdinteractionsound(loc, 'modular_sand/sound/interactions/swallow.ogg', 90, 1, -1)
 	target.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, ORGAN_SLOT_TESTICLES)
 
 /mob/living/proc/do_cockfuck(mob/living/target)
