@@ -950,13 +950,6 @@
 	ckeywhitelist = list("allazarius", "flippingtable", "mihana964", "devildeadspace")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/syndie_jacket
-	name = "Cybertechnical Jacket"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/suit/bm/syndie_jacket
-	ckeywhitelist = list("xaeshkavd", "ghos7ik")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/wtadler
 	name = "WT-550 Adler Kit"
 	slot = ITEM_SLOT_BACKPACK
@@ -1684,3 +1677,10 @@
 	if(user.dna?.features["normalized_size"])
 		I.current_normalized_size = user.dna.features["normalized_size"]
 		I.try_update_size(user, TRUE)
+
+/datum/gear/donator/bm/rawk_sat
+	name = "Rawk Satchel"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/storage/backpack/satchel/rawk_sat
+	ckeywhitelist = list("xaeshkavd","silverfoxpaws")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
