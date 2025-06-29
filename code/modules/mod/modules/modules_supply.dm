@@ -13,6 +13,7 @@
 	incompatible_modules = list(/obj/item/mod/module/gps)
 	cooldown_time = 0.5 SECONDS
 	allowed_inactive = TRUE
+	mod_module_flags = MOD_MODULE_SUPPLY // BLUEMOON ADD
 
 /obj/item/mod/module/gps/Initialize(mapload)
 	. = ..()
@@ -44,6 +45,7 @@
 	var/max_crates = 3
 	/// The crates stored in the module.
 	var/list/stored_crates = list()
+	mod_module_flags = MOD_MODULE_SUPPLY // BLUEMOON ADD
 
 /obj/item/mod/module/clamp/on_select_use(atom/target)
 	. = ..()
@@ -110,6 +112,7 @@
 	load_time = 1 SECONDS
 	max_crates = 5
 	use_mod_colors = TRUE
+	mod_module_flags = MOD_MODULE_SUPPLY // BLUEMOON ADD
 
 ///Drill - Lets you dig through rock and basalt.
 /obj/item/mod/module/drill // TODO: Would be cooler with a built-in drill, but meh
@@ -123,6 +126,7 @@
 	module_type = MODULE_USABLE
 	/// Pickaxe we have stored.
 	var/obj/item/pickaxe/stored
+	mod_module_flags = MOD_MODULE_SUPPLY // BLUEMOON ADD
 
 /obj/item/mod/module/drill/on_use()
 	. = ..()
@@ -171,6 +175,7 @@
 	allowed_inactive = TRUE
 	/// Pickaxe we have stored.
 	var/obj/item/storage/bag/ore/stored
+	mod_module_flags = MOD_MODULE_SUPPLY // BLUEMOON ADD
 
 /obj/item/mod/module/orebag/on_use()
 	. = ..()

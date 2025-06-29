@@ -60,6 +60,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy
 	name = "general energy weapon"
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
+	mecha_subcategory_flags = EXISUIT_WEAPON_MODULE_ENERGY // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 8
@@ -206,6 +207,7 @@
 	var/projectile_energy_cost
 	var/disabledreload //For weapons with no cache (like the rockets) which are reloaded by hand
 	var/ammo_type
+	mecha_subcategory_flags = EXISUIT_WEAPON_MODULE_BALLISTIC // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/action_checks(target)
 	. = ..()
@@ -343,6 +345,7 @@
 	equip_cooldown = 60
 	harmful = TRUE
 	ammo_type = "missiles_he"
+	mecha_subcategory_flags = EXISUIT_WEAPON_MODULE_AOE // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/spacecops
 	projectiles = 420
@@ -366,6 +369,7 @@
 	var/missile_speed = 2
 	var/missile_range = 30
 	var/diags_first = FALSE
+	mecha_subcategory_flags = EXISUIT_WEAPON_MODULE_AOE // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/action(mob/source, atom/target, params)
 	if(!action_checks(target))

@@ -13,6 +13,7 @@
 	allowed_inactive = TRUE
 	/// Bag we have stored.
 	var/obj/item/storage/backpack/stored
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/storage/attackby(obj/item/I, mob/user, params)
 	if(!istype(I, /obj/item/storage/backpack))
@@ -93,6 +94,7 @@
 	/// Do we give the wearer a speed buff.
 	var/full_speed = FALSE
 	var/datum/effect_system/trail_follow/ion/ion_trail
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/jetpack/Initialize(mapload)
 	. = ..()
@@ -166,6 +168,7 @@
 	var/former_flags = NONE
 	/// Former visor flags of the helmet.
 	var/former_visor_flags = NONE
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/mouthhole/on_install()
 	former_flags = mod.helmet.flags_cover
@@ -189,6 +192,7 @@
 	complexity = 1
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
 	incompatible_modules = list(/obj/item/mod/module/emp_shield)
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/emp_shield/on_install()
 	mod.AddElement(/datum/element/empprotection, EMP_PROTECT_SELF|EMP_PROTECT_WIRES|EMP_PROTECT_CONTENTS)
@@ -231,6 +235,7 @@
 	var/min_range = 2
 	/// Maximum range we can set.
 	var/max_range = 5
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/flashlight/on_activation()
 	. = ..()
@@ -297,6 +302,7 @@
 	var/dispense_type = /obj/item/reagent_containers/food/snacks/burger/plain
 	/// Time it takes for us to dispense.
 	var/dispense_time = 0 SECONDS
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/dispenser/on_use()
 	. = ..()
@@ -330,6 +336,7 @@
 	cooldown_time = 0.5 SECONDS
 	/// The DNA we lock with.
 	var/dna = null
+	mod_module_flags = MOD_MODULE_GENERAL // BLUEMOON ADD
 
 /obj/item/mod/module/dna_lock/on_install()
 	RegisterSignal(mod, COMSIG_MOD_ACTIVATE, PROC_REF(on_mod_activation))
