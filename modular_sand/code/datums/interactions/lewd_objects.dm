@@ -33,13 +33,9 @@
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
 		//BLUEMOON ADD START
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
-			switch(dildo_size)
-				if(5)
-					to_chat(M, span_userdanger(pick("Гигантский дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от гигантского дилдо внутри!")))
-				if(4)
-					to_chat(M, span_userdanger(pick("Огромный дилдо внутри терзает вас волнами экстаза!", "Вы чувствуете нестерпимое удовольствие от огромного дилдо внутри!")))
+			target_reaction(M, organ, use_stun = user != M)
 		//BLUEMOON ADD END
-			M.handle_post_sex(lust_amount, null, user, organ) //SPLURT edit  //BLUEMOON EDIT lust_amt -> lust_amount
+		//M.handle_post_sex(lust_amt, null, user, organ) //SPLURT edit  //BLUEMOON EDIT commented
 
 		switch(user.zone_selected)
 			if(BODY_ZONE_PRECISE_GROIN)
