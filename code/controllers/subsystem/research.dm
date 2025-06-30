@@ -293,7 +293,7 @@ SUBSYSTEM_DEF(research)
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 35)	//citadel edit - techwebs nerf
-	var/multiserver_calculation = FALSE
+	var/multiserver_calculation = TRUE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
 
@@ -339,6 +339,8 @@ SUBSYSTEM_DEF(research)
 	if(multiserver_calculation)
 		var/eff = calculate_server_coefficient()
 		for(var/obj/machinery/rnd/server/miner in servers)
+			if(!miner.working)
+				continue
 			var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
 			for(var/i in result)
 				result[i] *= eff
