@@ -31,7 +31,15 @@
 					message = (user == M) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свой ротик.", "запихивает '\the [src]' прямо в свой собственный ротик.", "втыкает '\the [src]' прямо в свой ротик.") : pick("трахает <b>[M]</b> прямо в ротик при помощи '\the [src]'", "активно суёт '\the [src]' прямо в ротик <b>[M]</b>.")
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
-		M.handle_post_sex(lust_amount, null, user, organ) //SPLURT edit  //BLUEMOON EDIT lust_amt -> lust_amount
+		//BLUEMOON ADD START
+		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+			switch(dildo_size)
+				if(5)
+					to_chat(M, span_userdanger(pick("Гигантский дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от гигантского дилдо внутри!")))
+				if(4)
+					to_chat(M, span_userdanger(pick("Огромный дилдо внутри терзает вас волнами экстаза!", "Вы чувствуете нестерпимое удовольствие от огромного дилдо внутри!")))
+		//BLUEMOON ADD END
+			M.handle_post_sex(lust_amount, null, user, organ) //SPLURT edit  //BLUEMOON EDIT lust_amt -> lust_amount
 
 		switch(user.zone_selected)
 			if(BODY_ZONE_PRECISE_GROIN)

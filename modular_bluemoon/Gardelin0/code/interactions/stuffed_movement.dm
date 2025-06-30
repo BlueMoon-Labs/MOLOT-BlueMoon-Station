@@ -11,27 +11,39 @@
 		if(activate_after(src, rand(50,350))) //5 to 35 seconds, every 20 sec on average
 			if(!istype(src.loc, /obj/item/organ/genital))
 				return
-			if(dildo_size == 5)
-				to_chat(user, span_userdanger(pick("Гигантский дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от гигантского дилдо глубоко внутри!")))
-				if(user.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
-					user.Jitter(6)
-				user.Stun(10)
+			var/moan = FALSE
+			var/stun = 0
+			var/jitter = 0
+			switch(dildo_size)
+				if(4)
+					to_chat(user, span_userdanger(pick("Огромный дилдо внутри терзает вас волнами экстаза!", "Вы чувствуете нестерпимое удовольствие от огромного дилдо глубоко внутри!")))
+					jitter = 3
+					stun = 6
+					moan = TRUE
+				if(3)
+					to_chat(user, span_love(pick("Я чувствуете большой дилдо внутри себя!", "Вас пронзает ощутимое удовольствие от большого дилдо глубоко внутри!")))
+					jitter = 3
+					stun = 3
+					moan = TRUE
+				if(2)
+					to_chat(user, span_love(pick("Я чувствую дилдо внутри себя.", "Приятное удовольствие от дилдо глубоко внутри, проходит сквозь меня.")))
+					jitter = 3
+					stun = 1
+				if(1)
+					to_chat(user, span_love(pick("Я чувствую небольшой дилдо внутри себя.", "Легкое удовольствие от небольшого дилдо глубоко внутри, проходит сквозь меня.")))
+				// for 5 size and if some add bigger dildo
+				else
+					to_chat(user, span_userdanger(pick("Гигантский дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от гигантского дилдо глубоко внутри!")))
+					jitter = 6
+					stun = 10
+					moan = TRUE
+
+			if(jitter && (user.client?.prefs.cit_toggles & SEX_JITTER)) //By Gardelin0
+				user.Jitter(jitter)
+			if(moan)
 				user.emote("moan")
-			else if(dildo_size == 4)
-				to_chat(user, span_userdanger(pick("Огромный дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от огромного дилдо глубоко внутри!")))
-				if(user.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
-					user.Jitter(3)
-				user.Stun(6)
-				user.emote("moan")
-			else if(dildo_size != 1)
-				to_chat(user, span_love(pick("Дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от дилдо глубоко внутри!")))
-				if(user.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
-					user.Jitter(3)
-				user.Stun(3)
-				user.emote("moan")
-			else
-				to_chat(user, span_love(pick("Я чувствую дилдо внутри!", "Вы чувствуете удовольствие от дилдо глубоко внутри!")))
-			
+			if(stun)
+				user.Stun(stun)
 			user.handle_post_sex(lust_amount, null, user)
 			user.plug13_genital_emote(loc, lust_amount)
 
