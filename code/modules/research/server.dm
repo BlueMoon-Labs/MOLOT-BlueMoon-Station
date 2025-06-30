@@ -7,7 +7,6 @@
 	circuit = /obj/item/circuitboard/machine/rdserver
 
 	idle_power_usage = 500
-	power_channel = 1
 	var/datum/techweb/stored_research
 	//Code for point mining here.
 	var/working = TRUE			//temperature should break it.
