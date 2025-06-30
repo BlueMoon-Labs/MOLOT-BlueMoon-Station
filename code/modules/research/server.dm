@@ -67,8 +67,6 @@
 	refresh_working()
 
 /obj/machinery/rnd/server/proc/mine()
-	if(machine_stat & (BROKEN|NOPOWER))
-		return
 	. = base_mining_income.Copy()
 	var/penalty = max((get_env_temp() - temp_tolerance_high), 0) * temp_penalty_coefficient
 	for(var/i in .)
