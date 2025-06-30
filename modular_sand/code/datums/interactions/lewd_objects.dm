@@ -33,7 +33,7 @@
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
 		//BLUEMOON ADD START
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
-			target_reaction(M, organ, use_stun = user != M)
+			target_reaction(M, organ, 0, user != M, TRUE, FALSE)
 		//BLUEMOON ADD END
 		//M.handle_post_sex(lust_amt, null, user, organ) //SPLURT edit  //BLUEMOON EDIT commented
 
