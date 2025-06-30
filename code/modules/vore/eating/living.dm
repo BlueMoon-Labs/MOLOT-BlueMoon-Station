@@ -377,6 +377,13 @@
 	if(QDELETED(tasted) || (tasted.ckey && !(tasted.client?.prefs.vore_flags & LICKABLE)) || !Adjacent(tasted) || incapacitated(ignore_restraints = TRUE))
 		return
 
+	//BLUEMOON ADD START // Delay like licking tongue
+	var/lickspeed = initial((/obj/item/soap/tongue/organic)::cleanspeed)
+	visible_message("<span class='warning'><b>[src]</b> begins to lick \the <b>[tasted]</b>.", "<span class='warning'>You begin to lick \the <b>[tasted]</b>...</span>")
+	if(!do_after(src, lickspeed, tasted) || !in_range(src, tasted))
+		return //If they moved away, you can't lick them.
+	//BLUEMOON ADD END
+
 	if(ishuman(tasted))
 		var/mob/living/carbon/human/H = tasted
 		H.wash_cream()
