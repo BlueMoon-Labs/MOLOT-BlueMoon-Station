@@ -29,9 +29,10 @@
 			if(BODY_ZONE_PRECISE_MOUTH)
 				if(M.has_mouth() && !M.is_mouth_covered())
 					message = (user == M) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свой ротик.", "запихивает '\the [src]' прямо в свой собственный ротик.", "втыкает '\the [src]' прямо в свой ротик.") : pick("трахает <b>[M]</b> прямо в ротик при помощи '\the [src]'", "активно суёт '\the [src]' прямо в ротик <b>[M]</b>.")
+					organ = CUM_TARGET_MOUTH //BLUEMOON ADD
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
-		target_reaction(M, organ, 0, (user != M && user.a_intent == INTENT_HARM), TRUE, FALSE) //BLUEMOON ADD
+		target_reaction(M, user, 1, organ, null, (user != M && user.a_intent == INTENT_HARM)) //BLUEMOON ADD
 		//M.handle_post_sex(lust_amt, null, user, organ) //SPLURT edit  //BLUEMOON EDIT commented
 
 		switch(user.zone_selected)

@@ -16,14 +16,17 @@
 
 // proc that ensures the target's reaction to the dildo according to the size
 // to_chat_mode: 0 - to_chat if dildo_size >= 4, 1 - all to_chat, else not use to_chat
-/obj/item/dildo/proc/target_reaction(mob/living/user, organ = NONE, to_chat_mode = 0, use_stun = TRUE, add_lust = TRUE, use_moan = TRUE, use_jitter = TRUE)
+/obj/item/dildo/proc/target_reaction(mob/living/target, mob/living/user = null, to_chat_mode = 0, what_cum = null, where_cum = null, use_stun = TRUE, add_lust = TRUE, use_moan = TRUE, use_jitter = TRUE)
 	var/message = ""
 	var/moan = FALSE
 	var/stun = 0
 	var/jitter = 0
+	var/lust_to_target = lust_amount
+	if(isnull(user))
+		user = target
 	switch(dildo_size)
 		if(4)
-			if(organ == CUM_TARGET_MOUTH)
+			if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
 				message = span_userdanger(pick("Я чувствую, как дилдо заполняет мой рот до предела!","Моя глотка пульсирует, обхватывая огромный дилдо!"))
 			else
 				message = span_userdanger(pick("Огромный дилдо внутри терзает вас волнами экстаза!", "Вы чувствуете нестерпимое удовольствие от огромного дилдо глубоко внутри!"))
@@ -31,26 +34,26 @@
 			stun = 6
 			moan = TRUE
 		if(3)
-			if(organ == CUM_TARGET_MOUTH)
-				message = span_userdanger(pick("Большой дилдо входит в рот, вызывая возбуждение.","Податливое горло натужно принимает большой дилдо."))
+			if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
+				message = span_love(pick("Большой дилдо входит в рот, вызывая возбуждение.","Податливое горло натужно принимает большой дилдо."))
 			else
-				message = to_chat(user, span_love(pick("Я чувствую большой дилдо внутри себя!", "Вас пронзает ощутимое удовольствие от большого дилдо глубоко внутри!")))
+				message = span_love(pick("Я чувствую большой дилдо внутри себя!", "Вас пронзает ощутимое удовольствие от большого дилдо глубоко внутри!"))
 			jitter = 3
 			stun = 3
 			moan = TRUE
 		if(2)
-			if(organ == CUM_TARGET_MOUTH)
-				message = span_userdanger(pick("Я чувствую, как дилдо толкает в самое основание языка.","Каждый раз, когда дилдо входит в рот, накатывает волна возбуждения."))
+			if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
+				message = span_love(pick("Я чувствую, как дилдо толкает в самое основание языка.","Каждый раз, когда дилдо входит в рот, накатывает волна возбуждения."))
 			else
 				message = span_love(pick("Я чувствую дилдо внутри себя.", "Приятное удовольствие от дилдо глубоко внутри, проходит сквозь меня."))
 		if(1)
-			if(organ == CUM_TARGET_MOUTH)
-				message = span_userdanger(pick("Небольшой дилдо удобно ложится на язык, вызывая щекочущее возбуждение.","Я ощущаю, как маленький дилдо мягко упирается в заднюю стенку глотки."))
+			if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
+				message = span_love(pick("Небольшой дилдо удобно ложится на язык, вызывая щекочущее возбуждение.","Я ощущаю, как маленький дилдо мягко упирается в заднюю стенку глотки."))
 			else
 				message = span_love(pick("Я чувствую небольшой дилдо внутри себя.", "Легкое удовольствие от небольшого дилдо глубоко внутри, проходит сквозь меня."))
 		// for 5 size and if some add bigger dildo
 		else
-			if(organ == CUM_TARGET_MOUTH)
+			if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
 				message = span_userdanger(pick("Я задыхаюсь от гигантского дилдо, но удовольствие лишь нарастает!", "Я чувствую, как гигантский дилдо давит на горло изнутри, почти перекрывая воздух!"))
 			else
 				message = span_userdanger(pick("Гигантский дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от гигантского дилдо глубоко внутри!"))
@@ -59,18 +62,17 @@
 			moan = TRUE
 
 	if(to_chat_mode == 1 || (to_chat_mode == 0 && dildo_size >= 4))
-		to_chat(user, message)
-	if(use_jitter && jitter && (user.client?.prefs.cit_toggles & SEX_JITTER)) //By Gardelin0
-		user.Jitter(jitter)
+		to_chat(target, message)
+	if(use_jitter && jitter && (target.client?.prefs.cit_toggles & SEX_JITTER)) //By Gardelin0
+		target.Jitter(jitter)
 	if(use_moan && moan)
-		user.emote("moan")
+		target.emote("moan")
 	if(use_stun && stun)
-		user.Stun(stun)
+		target.Stun(stun)
 	if(add_lust)
-		var/new_lust_amount = 0
-		if(organ == CUM_TARGET_MOUTH)
-			new_lust_amount = min(LOW_LUST*dildo_size/3, LOW_LUST) // realy small lust
-		user.handle_post_sex(new_lust_amount ? new_lust_amount : lust_amount, null, user, organ)
+		if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
+			lust_to_target = min(LOW_LUST*dildo_size/3, LOW_LUST) // realy small lust
+		target.handle_post_sex(lust_to_target, where_cum, user, what_cum)
 
 /obj/item/dildo/Initialize(mapload)
 	. = ..()
