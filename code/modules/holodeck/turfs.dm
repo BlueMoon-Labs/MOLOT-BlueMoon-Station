@@ -34,7 +34,7 @@
 /turf/open/floor/holofloor/beach
 	gender = PLURAL
 	name = "sand"
-	icon = 'icons/misc/beach.dmi'
+	icon = 'modular_bluemoon/icons/turf/floors/sand.dmi'
 	icon_state = "sand"
 	bullet_bounce_sound = null
 	tiled_dirt = FALSE
@@ -42,16 +42,19 @@
 /turf/open/floor/holofloor/beach/coast_t
 	gender = NEUTER
 	name = "coastline"
-	icon_state = "sandwater_t"
+	icon = 'modular_bluemoon/icons/turf/floors/beach.dmi'
+	icon_state = "beach"
 
 /turf/open/floor/holofloor/beach/coast_b
 	gender = NEUTER
 	name = "coastline"
-	icon_state = "sandwater_b"
+	icon = 'modular_bluemoon/icons/turf/floors/beach.dmi'
+	icon_state = "beach-corner"
 
 /turf/open/floor/holofloor/beach/water
 	name = "water"
 	icon_state = "water"
+	icon = 'modular_bluemoon/icons/turf/floors/beach.dmi'
 	bullet_sizzle = TRUE
 
 /turf/open/floor/holofloor/asteroid
