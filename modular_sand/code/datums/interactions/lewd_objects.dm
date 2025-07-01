@@ -32,7 +32,10 @@
 					organ = CUM_TARGET_MOUTH //BLUEMOON ADD
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
-		target_reaction(M, user, 1, organ, null, (user != M && user.a_intent == INTENT_HARM)) //BLUEMOON ADD
+		//BLUEMOON ADD START
+		var/where_cum = (user.zone_selected == BODY_ZONE_PRECISE_GROIN) ? CUM_TARGET_HAND : null
+		target_reaction(M, user, 1, organ, where_cum, (user != M && user.a_intent == INTENT_HARM))
+		//BLUEMOON ADD END
 		//M.handle_post_sex(lust_amt, null, user, organ) //SPLURT edit  //BLUEMOON EDIT commented
 
 		switch(user.zone_selected)
