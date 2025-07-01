@@ -10,6 +10,11 @@
 	icon = 'modular_citadel/code/modules/festive/alleywaybricks.dmi'
 	canSmoothWith = list(/turf/open/floor/plating/cobblestone/alleyway)
 
+/turf/open/floor/plating/cobblestone/sidewalk
+	name = "sidewalk"
+	icon = 'modular_citadel/code/modules/festive/sidewalk.dmi'
+	canSmoothWith = list(/turf/open/floor/plating/cobblestone/sidewalk)
+
 /turf/open/indestructible/ironsand
 	gender = PLURAL
 	name = "iron sand"
