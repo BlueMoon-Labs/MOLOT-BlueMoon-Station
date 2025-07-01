@@ -112,10 +112,10 @@
 	flags_1 = NONE
 	attachment_holes = FALSE
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
 
 /turf/open/floor/plating/beach/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
@@ -130,6 +130,10 @@
 	icon_state = "sand"
 	icon = 'modular_bluemoon/icons/turf/floors/sand.dmi'
 	baseturfs = /turf/open/floor/plating/beach/sand
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/beach/sand/Initialize(mapload)
 	. = ..()
@@ -140,6 +144,7 @@
 	name = "coastline"
 	desc = "Tide's high tonight. Charge your batons."
 	icon_state = "beach"
+	slowdown = 1
 	baseturfs = /turf/open/floor/plating/beach/coastline_t
 
 /*
@@ -153,10 +158,12 @@
 	name = "water"
 	desc = "You get the feeling that nobody's bothered to actually make this water functional..."
 	icon_state = "water"
+	slowdown = 2
 	baseturfs = /turf/open/floor/plating/beach/water
 
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner
 	icon_state = "beach-corner"
+	slowdown = 1
 	baseturfs = /turf/open/floor/plating/beach/coastline_t/sandwater_inner
 
 /turf/open/floor/plating/ironsand
