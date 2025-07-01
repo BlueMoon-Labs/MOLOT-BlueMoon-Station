@@ -273,6 +273,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	var/message
 	var/obj/item/organ/genital/peepee = null
 	var/lust_increase = NORMAL_LUST
+	var/has_penis = user.has_penis() // BLUEMOON ADD
 
 	if(user.is_fucking(src, CUM_TARGET_MOUTH))
 		if(prob(user.get_sexual_potency()))
@@ -298,16 +299,18 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 					else
 						improv = TRUE
 				if("penis")
-					if(user.has_penis() || user.has_strapon())
+					//BLUEMOON EDIT START
+					if(has_penis || user.has_strapon()) //BLUEMOON EDIT
 						//var/genital_name = user.get_penetrating_genital_name()
 						message = pick(
-							"отсасывает сам себе!.",
-							"обводит языком свой член.",
-							"проводит языком вдоль своего члена.",
-							"водит языком вокруг головки своего члена.",
-							"медленно заглатывает свой член.",
-							"целует ствол своего члена.",
-							"заглатывает свой член поглубже.",
+							"отсасывает "+(has_penis ? "сам себе" : "свой дилдо")+"!",
+							"обводит языком свой "+(has_penis ? "член" : "дилдо")+".",
+							"проводит языком вдоль своего "+(has_penis ? "члена" : "дилдо")+".",
+							"водит языком вокруг головки своего "+(has_penis ? "члена" : "дилдо")+".",
+							"медленно заглатывает свой "+(has_penis ? "член" : "дилдо")+".",
+							"целует ствол своего "+(has_penis ? "члена" : "дилдо")+".",
+							"заглатывает свой "+(has_penis ? "член" : "дилдо")+" поглубже.",
+					//BLUEMOON EDIT END
 						)
 					else
 						improv = TRUE
@@ -330,16 +333,18 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 				else
 					improv = TRUE
 			if("penis")
-				if(user.has_penis() || user.has_strapon())
+				//BLUEMOON EDIT START
+				if(has_penis || user.has_strapon())
 					//var/genital_name = user.get_penetrating_genital_name()
 					message = pick(
-						"отсасывает сам себе!",
-						"обводит языком свой член.",
-						"проводит языком вдоль своего члена.",
-						"водит языком вокруг головки своего члена.",
-						"медленно заглатывает свой член.",
-						"целует ствол своего члена.",
-						"заглатывает свой член поглубже.",
+						"отсасывает "+(has_penis ? "сам себе" : "свой дилдо")+"!",
+						"обводит языком свой "+(has_penis ? "член" : "дилдо")+".",
+						"проводит языком вдоль своего "+(has_penis ? "члена" : "дилдо")+".",
+						"водит языком вокруг головки своего "+(has_penis ? "члена" : "дилдо")+".",
+						"медленно заглатывает свой "+(has_penis ? "член" : "дилдо")+".",
+						"целует ствол своего "+(has_penis ? "члена" : "дилдо")+".",
+						"заглатывает свой "+(has_penis ? "член" : "дилдо")+" поглубже.",
+				//BLUEMOON EDIT END
 					)
 				else
 					improv = TRUE
@@ -376,8 +381,16 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 									'modular_sand/sound/interactions/bj10.ogg',
 									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
 	visible_message(message = "<span class='lewd'><b>\The [src]</b> [message]</span>", ignored_mobs = get_unconsenting())
-	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
+	//BLUEMOON EDIT START
+	if(fucktarget == "vagina")
 		user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, fucktarget)
+	else
+		if(user.can_penetrating_genital_cum())
+			user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, fucktarget)
+		else if(!(has_penis) && user.has_strapon())
+			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
+			user_strapon.attached_dildo.target_reaction(user, null, 1, CUM_TARGET_MOUTH, null, FALSE)
+	//BLUEMOON EDIT END
 	lust_increase = NORMAL_LUST //RESET IT REE
 
 /mob/living/proc/do_breastfuck_self(mob/living/user)
@@ -650,10 +663,15 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
 	playlewdinteractionsound(src, pick(noises), 70, 1, -1)
-	if(can_penetrating_genital_cum())
+	if(can_penetrating_genital_cum()) // PENIS + PENIS || STRAPON
 		handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, target, ORGAN_SLOT_PENIS)
-	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, ORGAN_SLOT_PENIS)
+		if(target.can_penetrating_genital_cum())
+			target.handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, ORGAN_SLOT_PENIS)
+	//BLUEMOON EDIT START
+	else if(src.has_strapon() && target.can_penetrating_genital_cum()) // STRAPON + PENIS
+		var/obj/item/clothing/underwear/briefs/strapon/user_strapon = src.get_strapon()
+		user_strapon.attached_dildo.target_reaction(target, src, 1, CUM_TARGET_MOUTH, null, src.a_intent == INTENT_HARM)
+	//BLUEMOON EDIT END
 
 /mob/living/proc/do_nipfuck(mob/living/target)
 	var/message
