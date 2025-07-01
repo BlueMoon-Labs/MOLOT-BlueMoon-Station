@@ -52,7 +52,10 @@
 	if(use_stun && stun)
 		user.Stun(stun)
 	if(add_lust)
-		user.handle_post_sex(lust_amount, null, user, organ)
+		var/new_lust_amount = 0
+		if(organ == CUM_TARGET_MOUTH)
+			new_lust_amount = min(LOW_LUST*dildo_size/3, LOW_LUST) // realy small lust
+		user.handle_post_sex(new_lust_amount ? new_lust_amount : lust_amount, null, user, organ)
 
 /obj/item/dildo/Initialize(mapload)
 	. = ..()
