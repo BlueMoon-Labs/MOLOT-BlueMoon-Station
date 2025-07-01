@@ -670,7 +670,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	//BLUEMOON EDIT START
 	else if(src.has_strapon() && target.can_penetrating_genital_cum()) // STRAPON + PENIS
 		var/obj/item/clothing/underwear/briefs/strapon/user_strapon = src.get_strapon()
-		user_strapon.attached_dildo.target_reaction(target, src, 1, CUM_TARGET_MOUTH, null, src.a_intent == INTENT_HARM)
+		user_strapon.attached_dildo.target_reaction(target, src, 1, CUM_TARGET_URETHRA, null, src.a_intent == INTENT_HARM)
 	//BLUEMOON EDIT END
 
 /mob/living/proc/do_nipfuck(mob/living/target)
