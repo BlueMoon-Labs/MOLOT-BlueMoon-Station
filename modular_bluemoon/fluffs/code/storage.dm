@@ -113,3 +113,11 @@
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/storage_righthand.dmi'
 	icon_state = "dilivery_bag"
 	item_state = "dilivery_bag"
+
+/obj/item/storage/backpack/satchel/rawk_sat
+	name = "Rawk Satchel"
+	desc = "Tactical military satchel for a special forces group."
+	icon = 'modular_bluemoon/fluffs/icons/obj/storage.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/storage.dmi'
+	icon_state = "rawk_sat"
+	item_state = "rawk_sat"

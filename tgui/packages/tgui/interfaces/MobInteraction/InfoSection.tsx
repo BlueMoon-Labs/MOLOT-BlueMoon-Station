@@ -82,6 +82,34 @@ export const InfoSection = (props, context) => {
         <Stack.Item>
           <Stack fill>
             <Stack.Item grow basis={0}>
+              <Button
+                fluid
+                mb={-0.7}
+                content="Your genitals menu"
+                color = "pink"
+                onClick={() => act('genitals_menu', {
+                  who: 'user',
+                })}
+              />
+            </Stack.Item>
+            {(!isTargetSelf ? (
+              <Stack.Item grow basis={0}>
+                <Button
+                  fluid
+                  mb={-0.7}
+                  content="Partner's genitals menu"
+                  color = "pink"
+                  onClick={() => act('genitals_menu', {
+                    who: 'target',
+                  })}
+                />
+              </Stack.Item>
+            ) : (null))}
+          </Stack>
+        </Stack.Item>
+        <Stack.Item>
+          <Stack fill>
+            <Stack.Item grow basis={0}>
               <Stack>
                 <Stack.Item grow>
                   <Button

@@ -2,8 +2,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/mob/living/carbon/human/H = src
-	if(!istype(H) || !has_dna())
+	if(!has_dna())
 		return
 	if(HAS_TRAIT(src, TRAIT_CHOKE_SLUT))
 		if(amount <= 0)

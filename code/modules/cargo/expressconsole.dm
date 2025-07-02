@@ -17,7 +17,7 @@
 	blockade_warning = "Bluespace instability detected. Delivery impossible."
 	req_access = list(ACCESS_CARGO)
 	is_express = TRUE
-	icon_screen = "CargoExpress"
+	icon_screen = "supply_express"
 
 	var/message
 	var/printed_beacons = 0 //number of beacons printed. Used to determine beacon names.
@@ -77,25 +77,51 @@
 	packin_up()
 	return TRUE
 
-/obj/machinery/computer/cargo/express/proc/packin_up() // oh shit, I'm sorry
-	meme_pack_data = list() // sorry for what?
-	for(var/pack in SSshuttle.supply_packs) // our quartermaster taught us not to be ashamed of our supply packs
-		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]  // specially since they're such a good price and all
-		if(!meme_pack_data[P.group]) // yeah, I see that, your quartermaster gave you good advice
-			meme_pack_data[P.group] = list( // it gets cheaper when I return it
-				"name" = P.group, // mmhm
-				"packs" = list()  // sometimes, I return it so much, I rip the manifest
-			) // see, my quartermaster taught me a few things too
-		if((P.hidden) || (P.special)) // like, how not to rip the manifest
-			continue// by using someone else's crate
-		if(P.contraband && !contraband) // will you show me?
-			continue // i'd be right happy to
+/* BLUEMOON CHANGE выносим переписанный  текст "Oh shit. I'm sorry" отдельным комментарием чтобы не засирать код
+oh shit, I'm sorry
+sorry for what?
+our quartermaster taught us not to be ashamed of our supply packs
+specially since they're such a good price and all
+yeah, I see that, your quartermaster gave you good advice
+it gets cheaper when I return it
+mmhm
+sometimes, I return it so much, I rip the manifest
+see, my quartermaster taught me a few things too
+like, how not to rip the manifest
+by using someone else's crate
+will you show me?
+i'd be right happy to */
+
+/obj/machinery/computer/cargo/express/proc/packin_up(forced = FALSE)
+	meme_pack_data = list()
+	// BLUEMOON ADD TG UPSTREAM PULL
+	if(!forced && !SSshuttle.initialized) // Map spawned express need get they manifest later
+		SSshuttle.express_consoles += src
+		return
+	// BLUEMOON ADD END
+	for(var/pack in SSshuttle.supply_packs)
+		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
+		if(!meme_pack_data[P.group])
+			meme_pack_data[P.group] = list(
+				"name" = P.group,
+				"packs" = list()
+			)
+		if((P.hidden) || (P.special))
+			continue
+		if(P.contraband && !contraband)
+			continue
 		meme_pack_data[P.group]["packs"] += list(list(
 			"name" = P.name,
 			"cost" = P.get_cost(),
 			"id" = pack,
 			"desc" = P.desc || P.name // If there is a description, use it. Otherwise use the pack's name.
 		))
+
+/obj/machinery/computer/cargo/express/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CargoExpress", name)
+		ui.open()
 
 /obj/machinery/computer/cargo/express/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?

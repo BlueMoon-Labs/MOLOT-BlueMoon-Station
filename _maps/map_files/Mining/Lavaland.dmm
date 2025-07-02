@@ -1047,9 +1047,7 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "aQK" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Shuttle Security Airlock";
@@ -1175,7 +1173,7 @@
 	pixel_y = 32
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "aWQ" = (
 /obj/machinery/light,
 /turf/open/floor/wood/wood_parquet,
@@ -2007,9 +2005,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/security)
 "byC" = (
@@ -2591,7 +2586,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "bZG" = (
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/lavaland/unpowered)
@@ -3405,7 +3400,7 @@
 	},
 /obj/structure/cable/yellow,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "cIa" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/tile/purple,
@@ -3888,7 +3883,7 @@
 /area/mine/xenoarch_area_c)
 "dbw" = (
 /turf/open/pool,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "dbH" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/comms_officer)
@@ -3971,7 +3966,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/armory)
 "dem" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "det" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -4897,7 +4892,7 @@
 /obj/item/soap/syndie,
 /obj/machinery/light/small,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "dOG" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
@@ -6034,7 +6029,7 @@
 	pixel_y = 16
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "eSE" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -6312,7 +6307,7 @@
 	dir = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "fde" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -6584,7 +6579,8 @@
 /area/mine/xenoarch_area_b)
 "fqp" = (
 /obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24
+	pixel_x = -25;
+	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -6648,7 +6644,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "ftc" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
@@ -7175,7 +7171,7 @@
 	dir = 8
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "fQS" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -7339,8 +7335,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/chemistry)
 "fWb" = (
@@ -9899,7 +9893,7 @@
 /area/mine/xenoarch_area_b)
 "hWZ" = (
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "hXh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -11399,9 +11393,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24
-	},
+/obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -11980,7 +11972,7 @@
 	dir = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "jPJ" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -12840,9 +12832,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/airlock/hatch/syndicate,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "kvU" = (
@@ -13203,7 +13192,7 @@
 	dir = 8
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "kKR" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -14782,7 +14771,7 @@
 	dir = 4
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "lPl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -15570,7 +15559,7 @@
 	pixel_y = 19
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "mxu" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -16779,7 +16768,7 @@
 /area/mine/xenoarch_area_c)
 "njN" = (
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "nkJ" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
@@ -18603,6 +18592,15 @@
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
+"oDQ" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/security/glass{
+	name = "Labor Camp Shuttle Security Airlock";
+	req_access_txt = "2"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plasteel/dark,
+/area/mine/laborcamp)
 "oEz" = (
 /obj/machinery/light,
 /obj/structure/sign/flag/syndicate{
@@ -19821,7 +19819,7 @@
 	pixel_y = 28
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "pMK" = (
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
@@ -20939,7 +20937,6 @@
 	},
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/airlock/hatch/syndicate,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/reactor)
 "qDk" = (
@@ -21098,7 +21095,7 @@
 	},
 /obj/item/seeds/gatfruit,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "qHq" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4;
@@ -21411,7 +21408,7 @@
 	name = "Bathroom"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "qQY" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -22033,12 +22030,12 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "rre" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Shuttle Security Airlock";
 	req_access_txt = "2"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
@@ -22161,12 +22158,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/lavaland/unpowered/deepspaceone/armory)
-"rvu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/lavaland/unpowered/deepspaceone/security)
 "rvS" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/dark{
@@ -22800,7 +22791,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "rWz" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -23698,7 +23689,7 @@
 /obj/structure/bedsheetbin/towel,
 /obj/item/soap/syndie,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "sLL" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
@@ -24479,7 +24470,7 @@
 "ttB" = (
 /obj/machinery/pool/controller,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "tus" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/clothing/head/helmet/clockwork,
@@ -25330,7 +25321,7 @@
 "udn" = (
 /obj/structure/pool/ladder,
 /turf/open/pool,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "udq" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/ore_box,
@@ -25580,7 +25571,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
 	},
@@ -26292,7 +26282,7 @@
 	dir = 6
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "uSs" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -26737,7 +26727,7 @@
 	name = "Bathroom"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 "vib" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer1{
 	dir = 6
@@ -26809,8 +26799,7 @@
 "vly" = (
 /obj/structure/cable/yellow,
 /obj/machinery/power/apc/auto_name/south{
-	cell_type = /obj/item/stock_parts/cell/high/empty;
-	pixel_y = -24
+	cell_type = /obj/item/stock_parts/cell/high/empty
 	},
 /turf/open/floor/plasteel,
 /area/mine/storage)
@@ -27616,7 +27605,7 @@
 	dir = 8
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "vXu" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -28043,9 +28032,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/lavaland/unpowered/deepspaceone/security)
 "wqR" = (
@@ -28210,7 +28196,7 @@
 	pixel_y = 17
 	},
 /turf/open/pool,
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 "wAM" = (
 /obj/structure/flora/junglebush/large{
 	pixel_y = -5
@@ -28974,11 +28960,11 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "wWh" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Shuttle Prisoner Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
@@ -43835,7 +43821,7 @@ doQ
 sdp
 nbO
 jln
-rvu
+gZO
 mzb
 eJB
 spp
@@ -122645,7 +122631,7 @@ rRb
 rRb
 rRb
 rRb
-aQK
+oDQ
 wjg
 rre
 nCA

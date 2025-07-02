@@ -1,3 +1,52 @@
+/**
+ * ПАМЯТКА О КАЧЕСТВЕННОЙ РАССТАНОВКЕ ТЕЛЕФОНОВ НА СТАНЦИИ
+ *
+ * Данная памятка для мапперов носит рекомендательный характер.
+ * Я принес данный предмет на этот билд с CMSS13 (Colonial Marines), качественно улучшил и исправил имевшееся недостатки и баги данного предмета,
+ * я заинтересован в повышении качества игры тех, кто будет пользоваться моими наработками. Поэтому я поделюсь ходом моего рассуждения и принятия решений
+ * при расстановке данного предмета на станции, т.к. этот предмет разработан, протестирован и откалиброван, основываясь на описанных далее принципах.
+ * Даже на оригинальном билде телефоны расставлены с оглядкой на идею о назначении данного предмета, на них же и строятся этим принципы.
+ *
+ * Данный предмет рассматривается как "звонок в отдел". Не важно кому конкретно и не важно кто возьмет трубку, т.е. телефон это преимущественно
+ * способ связи "Персона->Отдел" или "Отдел->Отдел". "Отдел" означает не конкретное подразделение отдела (ксенобиология, роботехи, детектив), а именно
+ * отдел целиком (РНД, Карго, СБ). Телефон издает звон в радиусе около 10 тайлов и его слышно сквозь стены.
+ * Командные телефоны считаются персональными, т.к. мы звоним конкретному главе и пользуются ими только конкретные главы. Однако на мостике должен стоять один обычный телефон, т.к.
+ * он будет телефоном отдела Командования.
+ * Также по станции расставлены дополнительные гражданские телефоны, которые не относятся к отделам и установлены для гражданского использования:
+ * бар, библиотека, по одному на каждой стороне света станции (север, юг, запад, восток) и в центре станции.
+ *
+ * Существует строгая вертикальная иерархия телефонных связей:
+ * 		ЦК->СИНДИ->КОМАНДОВАНИЕ->ПУБЛИЧНАЯ
+ * Все прозванивается сверху вниз, но никак не наоборот, вышестоящих даже не видно.
+ *
+ * Принципы расстановки телефонов (начиная с обязательных, заканчивая менее важными):
+ * 1) Один телефон на отдел = идеал. Не более двух телефонов на отдел.
+ *		Когда пользователь хочет позвонить в отдел не важно какому лицу, ему безразлично звонить ли в токсинную, в ксенобиологию или в робо.
+		Иначе пользователь воспользовался бы ПДА или голопадом. Пользователь будет звонить на первый попавшийся телефон и не будет прозванивать
+		5 разных телефонов в одном и том же отделе, если в какой-то жопе отдела не было сотрудника.
+ * 2) Телефон должен находиться в зоне концентрации рабочего пространства игроков или близко к нему.
+ * 		Телефон надо ставить там, где ОДНОЗНАЧНО будут ходить или работать активные игроки отдела, даже если это будет в ущерб площади
+ * 		"полезного покрытия". Не надо ставить телефоны в местах, где игроки почти никогда не ходят. Даже если игроки будут слышать телефон
+ * 		из своей рабочей зоны, игроки могут намеренно игнорировать его или просто не успеют взять трубку, если игроку будет далеко идти
+ * 		до телефона.
+ * 		Пример: в отделе СБ телефон надо ставить прямо на проходной, т.к. активные игроки отдела обычно не сидят в глубине, а часто
+ * 		выходят гулять, в отличие, например, от Инженерного отдела, где игроки проводят много времени внутри отдела за настройкой движков, а на
+ * 		проходной почти никогда никого нет.
+ * 3) Телефон должен быть заметным и легкодоступным.
+ * 		Телефон должен хорошо восприниматься при беглом осмотре комнаты, не должен быть завален предметами или находиться в самом дальнем углу комнаты.
+ * 		Желательно, чтобы телефон не был перегорожен стенкой и игроку не приходилось обходить какие-то сторонние предметы
+ * 		на пути (столы, закутки из стен и т.п.).
+ * 4) Телефон должен покрывать максимум "полезного" рабочего пространства.
+ * 		Под "полезным рабочим пространством" подразумевается место с максимальной концентрацией активных игроков отдела, которые не занимаются своими
+ * 		отвлеченными делами. Важно "покрывать" места, где игроки будут готовы ответить на рабочий звонок. Отдельно "покрывать" места отдыха или
+ * 		удаленные закутки отдела неблагоразумно и малополезно, т.к. игроки там не работают или занимаются своими отвлеченными делами
+ * 		и вероятнее всего им будет безразлично на рабочий звонок в отдел, но вероятнее всего там попросту никого не будет.
+ * 5) Нежелательно, чтобы несколько различных телефонов находились близко друг к другу.
+ * 		Под различными телефонами подразумеваются телефоны из разных отделов или "юрисдикций", например общедоступный гражданский телефон, телефон отдела
+ * 		и телефон главы это три различных телефона и ставить их очень близко друг к другу нежелательно, т.к. могут звонить в одно место, а услышат
+ * 		все в округе.
+ */
+
 GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 #define COMSIG_TRANSMITTER_UPDATE_ICON "transmitter_update_icon"
@@ -337,9 +386,17 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		T.update_icon()
 		STOP_PROCESSING(SSobj, T)
 	outring_loop.stop()
+	if(!timeout) //we place the telephone back.
+		attached_to?.reset_tether()
 	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/transmitter/process()
+	if(attached_to)
+		if(attached_to.loc != src)
+			if(!attached_to.tether || attached_to.tether.finished)
+				attached_to.reset_tether()
+		else
+			attached_to.reset_tether()
 	if(inbound_call)
 		if(!attached_to)
 			STOP_PROCESSING(SSobj, src)
@@ -357,6 +414,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			STOP_PROCESSING(SSobj, src)
 			return
 		var/obj/item/telephone/P = T.attached_to
+		// I'm pretty sure code below is never executed. But it is an original CMSS13 code. So I leave it as it is.
 		if(P && attached_to.loc == src && P.loc == T && next_ring < world.time)
 			playsound(get_turf(attached_to), 'modular_bluemoon/sound/machines/telephone/telephone_ring.ogg', 20, FALSE, 14)
 			visible_message(span_warning("[src] rings vigorously!"))
@@ -369,11 +427,11 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(ismob(attached_to.loc))
 		var/mob/M = attached_to.loc
 		M.dropItemToGround(attached_to)
-		playsound(get_turf(M), pick('modular_bluemoon/sound/machines/telephone/rtb_handset_1.ogg',
-									'modular_bluemoon/sound/machines/telephone/rtb_handset_2.ogg',
-									'modular_bluemoon/sound/machines/telephone/rtb_handset_3.ogg',
-									'modular_bluemoon/sound/machines/telephone/rtb_handset_4.ogg',
-									'modular_bluemoon/sound/machines/telephone/rtb_handset_5.ogg'), 100, FALSE, 7)
+	playsound(loc, pick('modular_bluemoon/sound/machines/telephone/rtb_handset_1.ogg',
+								'modular_bluemoon/sound/machines/telephone/rtb_handset_2.ogg',
+								'modular_bluemoon/sound/machines/telephone/rtb_handset_3.ogg',
+								'modular_bluemoon/sound/machines/telephone/rtb_handset_4.ogg',
+								'modular_bluemoon/sound/machines/telephone/rtb_handset_5.ogg'), 100, FALSE, 7)
 	attached_to.forceMove(src)
 	reset_call()
 	busy_loop.stop()
@@ -423,6 +481,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	icon_state = "rpb_phone"
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/structure/transmitter/attached_to
+	var/datum/beam/tether = null
 	// var/datum/effects/tethering/tether_effect
 	var/raised = FALSE
 	var/zlevel_transfer = FALSE
@@ -459,16 +518,17 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/item/telephone/Moved(atom/OldLoc, Dir)
 	. = ..()
 	if(.)
-		// reset_tether()
-		if(!do_zlevel_check())
-			attached_to.recall_phone()
-		if(attached_to && !ismob(OldLoc))
-			if(get_dist(attached_to, src) > attached_to.range)
-				if(ismob(loc))
-					var/mob/M = loc
-					M.dropItemToGround(src, TRUE)
-				else
-					attached_to.recall_phone()
+		if(attached_to)
+			reset_tether()
+			if(!do_zlevel_check())
+				attached_to.recall_phone()
+			if(attached_to && !ismob(OldLoc))
+				if(get_dist(attached_to, src) > attached_to.range)
+					if(ismob(loc))
+						var/mob/M = loc
+						M.dropItemToGround(src, TRUE)
+					else
+						attached_to.recall_phone()
 
 /obj/item/telephone/on_enter_storage(obj/item/storage/S)
 	. = ..()
@@ -545,9 +605,16 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/item/telephone/proc/remove_attached()
 	attached_to = null
-	// reset_tether()
+	reset_tether()
 
-// /obj/item/telephone/proc/reset_tether()
+/obj/item/telephone/proc/reset_tether()
+	QDEL_NULL(tether)
+	if(!attached_to || loc == attached_to)
+		return
+	if(ismob(loc))
+		tether = loc.Beam(attached_to, icon_state="wire", icon = "modular_bluemoon/icons/effects/beam.dmi", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
+	else
+		tether = Beam(attached_to, icon_state="wire", icon = "modular_bluemoon/icons/effects/beam.dmi", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
 // 	SIGNAL_HANDLER
 // 	if (tether_effect)
 // 		UnregisterSignal(tether_effect, COMSIG_PARENT_QDELETING)

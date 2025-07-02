@@ -33,8 +33,8 @@
 	obj_damage = 60
 	melee_damage_lower = 30
 	melee_damage_upper = 40
-	health = 9000
-	maxHealth = 9000
+	health = 6000
+	maxHealth = 6000
 	loot = list(/obj/effect/temp_visual/benrey_death,/obj/item/stack/spacecash/c100000,/obj/item/uber_teleporter,/obj/item/reagent_containers/hypospray/medipen/tuberculosiscure )
 	projectiletype = /obj/item/projectile/bullet/shotgun_meteorslug/benrey
 	projectilesound = 'sound/weapons/flashbang.ogg'
@@ -132,7 +132,7 @@
 
 /mob/living/simple_animal/hostile/skeleton/benrey
 	name = "black mesa skeleton"
-	desc = "BLACK MESA SWEET VOICE IS SUNNED ME!"
+	desc = "BLACK MESA SWEET VOICE IS STUNNED ME!"
 	turns_per_move = 5
 	maxHealth = 50
 	blood_volume = 0
@@ -151,7 +151,7 @@
 	attack_verb_simple = "SWEET VOICE"
 	deathmessage = "Slowly decays into ashes"
 	projectilesound = 'modular_bluemoon/sound/weapons/mesa/sweetvoice.ogg'
-	projectiletype = /obj/item/projectile/magic/teleport/benrey
+	projectiletype = /obj/item/projectile/bullet/shotgun_meteorslug/skeleton
 
 /mob/living/simple_animal/hostile/skeleton/benrey/meteor
 	color = "#1e6940"
@@ -172,9 +172,9 @@
 	name = "deadly mesa sweet voice"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "chronofield"
+	knockdown = 40
 
-
-/obj/item/projectile/magic/teleport/benrey
-	outer_tele_radius = 1
+/obj/item/projectile/bullet/shotgun_meteorslug/skeleton
+	knockdown = 0
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "impact_laser_blue"

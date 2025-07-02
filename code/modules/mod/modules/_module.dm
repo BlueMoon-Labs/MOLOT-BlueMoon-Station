@@ -44,6 +44,8 @@
 	var/allowed_inactive = FALSE
 	/// Timer for the cooldown
 	COOLDOWN_DECLARE(cooldown_timer)
+	/// BLUEMOON ADD Bitflag for exosuit fabricator sub-categories
+	var/mod_module_flags
 
 /obj/item/mod/module/Initialize(mapload)
 	. = ..()

@@ -108,14 +108,14 @@
 
 /turf/open/floor/plating/beach
 	name = "beach"
-	icon = 'icons/misc/beach.dmi'
+	icon = 'modular_bluemoon/icons/turf/floors/beach.dmi'
 	flags_1 = NONE
 	attachment_holes = FALSE
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
 
 /turf/open/floor/plating/beach/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
@@ -128,33 +128,48 @@
 	name = "sand"
 	desc = "Surf's up."
 	icon_state = "sand"
+	icon = 'modular_bluemoon/icons/turf/floors/sand.dmi'
 	baseturfs = /turf/open/floor/plating/beach/sand
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/beach/sand/Initialize(mapload)
+	. = ..()
+	if(prob(15))
+		icon_state = "sand[rand(1,4)]"
 
 /turf/open/floor/plating/beach/coastline_t
 	name = "coastline"
 	desc = "Tide's high tonight. Charge your batons."
-	icon_state = "sandwater_t"
+	icon_state = "beach"
+	slowdown = 1
 	baseturfs = /turf/open/floor/plating/beach/coastline_t
 
+/*
 /turf/open/floor/plating/beach/coastline_b
 	name = "coastline"
 	icon_state = "sandwater_b"
 	baseturfs = /turf/open/floor/plating/beach/coastline_b
-
+*/
 /turf/open/floor/plating/beach/water
 	gender = PLURAL
 	name = "water"
 	desc = "You get the feeling that nobody's bothered to actually make this water functional..."
 	icon_state = "water"
+	slowdown = 2
 	baseturfs = /turf/open/floor/plating/beach/water
 
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner
-	icon_state = "sandwater_inner"
+	icon_state = "beach-corner"
+	slowdown = 1
 	baseturfs = /turf/open/floor/plating/beach/coastline_t/sandwater_inner
 
 /turf/open/floor/plating/ironsand
 	gender = PLURAL
 	name = "iron sand"
+	icon_state = "ironsand1"
 	desc = "Like sand, but more <i>metal</i>."
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND

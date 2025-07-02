@@ -71,10 +71,6 @@
 	name = "Facility hecu bus stop"
 	icon_state = "awaycontent13"
 
-/area/awaymission/outsideofmesa/hecu_camp
-	name = "Facility hecu main camp"
-	icon_state = "awaycontent15"
-
 /area/awaymission/ihategordon/hecu_abandoned_camp
 	name = "Facility destroyed hecu camps"
 	icon_state = "awaycontent16"
@@ -98,12 +94,6 @@
 /area/awaymission/ihategordon/dorm_rooms
 	name = "restrooms"
 	icon_state = "awaycontent6"
-
-/area/awaymission/outsideofmesa
-	name = "Outside of facility"
-	icon_state = "awaycontent6"
-	shipambience ='modular_bluemoon/sound/ambience/mesa/mesaoutsideambient.ogg'
-	ambientsounds = list('modular_bluemoon/sound/ambience/mesa/mesaoutsideambient.ogg','modular_bluemoon/sound/ambience/mesa/outsideofcomplex.ogg')
 
 /area/awaymission/ihategordon/secret_rooms
 	name = "secret"
@@ -132,3 +122,13 @@
 /area/awaymission/ihategordon/opposing/end
 	name = "east sector H complex ending"
 	icon_state = "3"
+
+/area/awaymission/ihategordon/outsideofmesa
+	name = "Outside of facility"
+	icon_state = "awaycontent6"
+	shipambience ='modular_bluemoon/sound/ambience/mesa/mesaoutsideambient.ogg'
+	ambientsounds = list('modular_bluemoon/sound/ambience/mesa/mesaoutsideambient.ogg','modular_bluemoon/sound/ambience/mesa/outsideofcomplex.ogg')
+
+/area/awaymission/ihategordon/outsideofmesa/hecu_camp
+	name = "Facility hecu main camp"
+	icon_state = "awaycontent15"

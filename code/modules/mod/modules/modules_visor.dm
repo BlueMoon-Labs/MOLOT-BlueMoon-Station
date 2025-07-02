@@ -13,6 +13,7 @@
 	var/hud_type
 	/// The traits given by the visor.
 	var/list/visor_traits = list()
+	mod_module_flags = MOD_MODULE_VISOR // BLUEMOON ADD
 
 /obj/item/mod/module/visor/on_activation()
 	. = ..()

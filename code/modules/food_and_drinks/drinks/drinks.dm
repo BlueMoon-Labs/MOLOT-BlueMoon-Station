@@ -495,7 +495,8 @@
 	icon_state = "shaker"
 	custom_materials = list(/datum/material/iron=1500)
 	amount_per_transfer_from_this = 10
-	volume = 100
+	possible_transfer_amounts = list(5,10,15,20,25,30,40,50,60,120) // BLUEMOON CHANGE подгоняем под большую банку
+	volume = 120 // BLUEMOON CHANGE подгоняем под большую банку
 	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/flask

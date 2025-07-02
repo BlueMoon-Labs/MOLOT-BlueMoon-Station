@@ -127,6 +127,8 @@
 		/obj/item/clothing/under/custom/mw2_russian_para = 5,
 		/obj/item/clothing/under/bm/sigu = 5,
 		/obj/item/clothing/head/beret/sec/bitch = 5,
+		/obj/item/clothing/head/helmet/justice = 5,
+		/obj/item/clothing/head/helmet/justice/escape = 5,
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
