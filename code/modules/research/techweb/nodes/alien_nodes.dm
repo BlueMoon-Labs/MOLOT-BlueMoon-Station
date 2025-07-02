@@ -29,8 +29,8 @@
 
 /datum/techweb_node/alien_engi
 	id = "alien_engi"
-	display_name = "Alien Engineering"
-	description = "Alien engineering tools."
+	display_name = "Advanced Engineering Tools" // BLUEMOON CHANGE
+	description = "Reverse engineered alien tools." // BLUEMOON CHANGE
 	prereq_ids = list("alientech", "exp_tools")
 	design_ids = list("alien_wrench", "alien_wirecutters", "alien_screwdriver", "alien_crowbar", "alien_welder", "alien_multitool")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)

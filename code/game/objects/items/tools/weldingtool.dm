@@ -431,5 +431,15 @@
 	toolspeed = 0.2
 	light_intensity = 0
 	change_icons = 0
+// BLUEMOON ADD START black skin
+	unique_reskin = list(
+		"Carbonized" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/advancedtools_black.dmi',
+		),
+		"Titanium" = list(
+			RESKIN_ICON_STATE = "welder",
+		)
+	)
+// BLUEMOON ADD END
 
 #undef WELDER_FUEL_BURN_INTERVAL

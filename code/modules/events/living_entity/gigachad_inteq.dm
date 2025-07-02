@@ -92,6 +92,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	spacewalk = TRUE
+	faction = list(ROLE_INTEQ)
 
 /mob/living/simple_animal/hostile/gigachad_inteq/shooter
 	name = "InteQ Machinegunner"
@@ -106,7 +107,7 @@
 	casingtype = /obj/item/ammo_casing/n762
 	retreat_distance = 5
 	minimum_distance = 5
-
+	faction = list(ROLE_INTEQ)
 
 /mob/living/simple_animal/hostile/gigachad_inteq/shooter/sniper
 	name = "InteQ Buffed sniper"
