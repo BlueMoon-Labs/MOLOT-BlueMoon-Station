@@ -102,7 +102,7 @@
 #define MAX_MESSAGE_LEN			4096		//Citadel edit: What's the WORST that could happen?
 #define MAX_FLAVOR_LEN			4096
 #define MAX_FLAVOR_PREVIEW_LEN	40
-#define MAX_TASTE_LEN			40 //lick... vore... ew...
+#define MAX_TASTE_LEN			400 //lick... vore... ew... //BLUEMOON EDIT
 #define MAX_NAME_LEN			42
 #define MAX_BROADCAST_LEN		512
 #define MAX_CHARTER_LEN			80
