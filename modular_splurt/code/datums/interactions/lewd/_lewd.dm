@@ -637,6 +637,12 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	//var/u_genital_name = get_penetrating_genital_name()
 	//var/t_genital_name = target.get_penetrating_genital_name()
 	var/list/lines
+	// BLUEMOON ADD START
+	var/user_has_penis = has_penis()
+	var/user_has_balls = has_balls()
+	var/target_has_penis = target.has_penis()
+	var/target_has_balls = target.has_balls()
+	// BLUEMOON ADD END
 	var/list/noises = list(
 		'modular_sand/sound/interactions/bang1.ogg',
 		'modular_sand/sound/interactions/bang2.ogg',
@@ -648,15 +654,15 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 
 	if(is_fucking(target, CUM_TARGET_URETHRA))
 		lines = list(
-			"трахает член <b>[target]</b>, растягивая его, своими яичками встречаясь с чужими с негромкими шлепками.",
-			"проскальзывает своим членом внутрь конца <b>[target]</b>, ощущая всю узкость уретры!",
-			"вонзает свой член и двигается взад-вперед в уретре <b>[target]</b>, невообразимо сношая эту маленькую дырочку."
+			"трахает "+(user_has_penis ? "член" : "дилдо")+" <b>[target]</b>, растягивая его, своими "+(user_has_balls ? "яичками" : "бедрами")+" встречаясь с чужими "+(target_has_balls ? "яичками" : "бедрами")+" с негромкими шлепками.",
+			"проскальзывает своим "+(user_has_penis ? "членом" : "дилдо")+" внутрь конца <b>[target]</b>"+(user_has_penis ? ", ощущая всю узкость "+(target_has_penis ? "уретры" : "дилдо")+"!" : "."),
+			"вонзает свой "+(user_has_penis ? "член" : "дилдо")+" и двигается взад-вперед в "+(target_has_penis ? "уретре" : "дилдо")+" <b>[target]</b>, невообразимо сношая эту маленькую дырочку."
 		)
 	else
 		lines = list(
-			"кончиком целует конец <b>[target]</b>, прямо перед тем как вдавить свою длину прямо в уретру.",
-			"проводит своим концом члена по органу <b>[target]</b>, только для того, чтобы ввести свой орган прямо до упора внутрь.",
-			"завставляет жирный член <b>[target]</b> растянуться и пульсировать, как только прибор находит свой путь глубже."
+			"кончиком целует конец <b>[target]</b>, прямо перед тем как вдавить свою длину прямо в "+(target_has_penis ? "уретру" : "дилдо")+".",
+			"проводит своим концом "+(user_has_penis ? "члена" : "дилдо")+" по "+(target_has_penis ? "органу" : "дилдо")+" <b>[target]</b>, только для того, чтобы ввести свой "+(user_has_penis ? "орган" : "дилдо")+" прямо до упора внутрь.",
+			"завставляет "+(target_has_penis ? "жирный член" : "толстый дилдо")+" <b>[target]</b> растянуться"+(target_has_penis ? " и пульсировать" : "")+", как только прибор находит свой путь глубже."
 		)
 		set_is_fucking(target, CUM_TARGET_URETHRA, getorganslot(ORGAN_SLOT_PENIS))
 
