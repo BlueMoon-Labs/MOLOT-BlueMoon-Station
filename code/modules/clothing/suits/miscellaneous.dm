@@ -1474,3 +1474,11 @@
 	icon_state = "hawaiivice"
 	item_state = "hawaiivice"
 	togglename = "buttons"
+
+/obj/item/clothing/suit/syndie_jacket
+	name = "Cybertechnical Jacket"
+	desc = "A cybernetic jacket for civilians. Convenience, luxury, technology, brutality!"
+	icon_state = "syndie_jacket"
+	item_state = "syndie_jacket"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

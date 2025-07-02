@@ -329,6 +329,91 @@
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
 	icon_state = "millie"
 	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)
+	var/obj/item/dildo/flared/huge/clash_target
+
+/obj/item/toy/plush/bm/millie/Moved()
+	. = ..()
+	if(clash_target)
+		return
+	var/obj/item/dildo/flared/huge/P = locate() in range(1, src)
+	if(P && istype(P.loc, /turf/open) && !P.clashing)
+		clash_of_the_plushies(P)
+
+/obj/item/toy/plush/bm/millie/proc/clash_of_the_plushies(obj/item/dildo/flared/huge/P)
+	clash_target = P
+	P.clashing = TRUE
+	say("Палка для мастурбации!")
+	P.say("Дура кошачья...")
+	var/a_winnar_is
+	var/victory_chance = 10
+	for(var/i in 1 to 10) //We only fight ten times max
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(!Adjacent(P))
+			visible_message("<span class='warning'>The two plushies angrily flail at each other before giving up.</span>")
+			clash_target = null
+			P.clashing = FALSE
+			return
+		playsound(src, 'sound/magic/clockwork/ratvar_attack.ogg', 50, TRUE, frequency = 2)
+		sleep(2.4)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(prob(victory_chance))
+			a_winnar_is = src
+			break
+		P.SpinAnimation(5, 0)
+		sleep(5)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		playsound(P, 'sound/magic/clockwork/narsie_attack.ogg', 50, TRUE, frequency = 2)
+		sleep(3.3)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(prob(victory_chance))
+			a_winnar_is = P
+			break
+		SpinAnimation(5, 0)
+		victory_chance += 10
+		sleep(5)
+	if(!a_winnar_is)
+		a_winnar_is = pick(src, P)
+	if(a_winnar_is == src)
+		say("Секс ликвидирован")
+		playsound(src, 'sound/magic/clockwork/anima_fragment_attack.ogg', 50, TRUE, frequency = 2)
+		playsound(P, 'sound/magic/demon_dies.ogg', 50, TRUE, frequency = 2)
+		var/obj/effect/decal/cleanable/semen/femcum/V = new /obj/effect/decal/cleanable/semen/femcum(get_turf(src))
+		V.desc = "Да, вам не показалось, это сделала игрушка."
+		qdel(P)
+		clash_target = null
+	else
+		P.say("Очередная розовая шлюха повержена")
+		playsound(src, 'sound/magic/clockwork/anima_fragment_death.ogg', 62, TRUE, frequency = 2)
+		playsound(P, 'sound/magic/demon_attack1.ogg', 50, TRUE, frequency = 2)
+		var/datum/reagents/R = new(1)
+		R.my_atom = P
+		R.add_reagent(/datum/reagent/drug/aphrodisiac, 1)
+		var/datum/effect_system/smoke_spread/chem/smoke = new
+		smoke.set_up(R, 1, get_turf(P), FALSE)
+		sleep(5)
+		smoke.start()
+		qdel(src)
+		P.clashing = FALSE
 
 /obj/item/toy/plush/bm/lissara
 	name = "Lissara plush"

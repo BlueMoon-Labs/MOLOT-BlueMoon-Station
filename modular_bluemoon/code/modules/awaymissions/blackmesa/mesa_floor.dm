@@ -1,98 +1,36 @@
-/turf/open/floor/festive/cobblestone/safe/mesafcobble
+/turf/open/floor/plating/cobblestone
+	name = "cobblestone"
+	icon = 'modular_citadel/code/modules/festive/cobblestone.dmi'
+	icon_state = "unsmooth"
+	smooth = SMOOTH_MORE | SMOOTH_BORDER
+	canSmoothWith = list(/turf/open/floor/plating/cobblestone)
 
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/Melt()
-	to_be_destroyed = FALSE
-	return src
+/turf/open/floor/plating/cobblestone/alleyway
+	name = "alleyway bricks"
+	icon = 'modular_citadel/code/modules/festive/alleywaybricks.dmi'
+	canSmoothWith = list(/turf/open/floor/plating/cobblestone/alleyway)
 
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/singularity_act()
-	return
+/turf/open/floor/plating/cobblestone/sidewalk
+	name = "sidewalk"
+	icon = 'modular_citadel/code/modules/festive/sidewalk.dmi'
+	canSmoothWith = list(/turf/open/floor/plating/cobblestone/sidewalk)
 
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
-	return
+/turf/open/indestructible/ironsand
+	gender = PLURAL
+	name = "iron sand"
+	icon_state = "ironsand1"
+	desc = "Like sand, but even more <i>metal</i>."
+	baseturfs = /turf/open/indestructible/ironsand
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
-	return
-
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
-	return
-
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/break_tile()
-	return
-
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/burn_tile()
-	return
-
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/can_have_cabling()
-	return TRUE
-
-/turf/open/floor/festive/cobblestone/safe/mesafcobble/crowbar_act(mob/living/user, obj/item/I)
-	return
+/turf/open/indestructible/ironsand/Initialize(mapload)
+	. = ..()
+	icon_state = "ironsand[rand(1,15)]"
 
 /turf/closed/mineral/black_mesa
-	turf_type = /turf/open/floor/plating/ironsand/black_mesa
-	baseturfs = /turf/open/floor/plating/ironsand/black_mesa
+	turf_type = /turf/open/floor/plating/ironsand
+	baseturfs = /turf/open/floor/plating/ironsand
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-
-/turf/open/floor/plating/ironsand/black_mesa
-	baseturfs = /turf/open/floor/plating/ironsand/black_mesa
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-
-/turf/open/floor/festive/sidewalk/mesawalk
-
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = FALSE
-
-/turf/open/floor/festive/sidewalk/mesawalk/Melt()
-	to_be_destroyed = FALSE
-	return src
-
-/turf/open/floor/festive/sidewalk/mesawalk/singularity_act()
-	return
-
-/turf/open/floor/festive/sidewalk/mesawalk/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
-	return
-
-/turf/open/floor/festive/sidewalk/mesawalk/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
-	return
-
-/turf/open/floor/festive/sidewalk/mesawalk/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
-	return
-
-/turf/open/floor/festive/sidewalk/mesawalk/break_tile()
-	return
-
-/turf/open/floor/festive/sidewalk/mesawalk/burn_tile()
-	return
-
-/turf/open/floor/festive/sidewalk/mesawalk/can_have_cabling()
-	return TRUE
-
-/turf/open/floor/festive/sidewalk/mesawalk/crowbar_act(mob/living/user, obj/item/I)
-	return
-
-//используемые только у босса
-/turf/open/indestructible/newmesacobble
-	name = "cobblestone"
-	baseturfs = /turf/open/floor/festive/cobblestone
-	icon = 'modular_bluemoon/icons/turf/floors/cobble_turf.dmi'
-	icon_state = "unsmooth"
-	canSmoothWith = list(/turf/open/floor/festive/cobblestone)
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = FALSE
-
-
-
-/turf/open/indestructible/newmesawalk
-	name = "sidewalk"
-	baseturfs = /turf/open/floor/festive/sidewalk
-	icon = 'modular_citadel/code/modules/festive/sidewalk.dmi'
-	icon_state = "unsmooth"
-	canSmoothWith = list(/turf/open/floor/festive/sidewalk)
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = FALSE
-
-
-/turf/open/indestructible/mesasand
-	name = "sand"
-	icon_state = "ironsand1"

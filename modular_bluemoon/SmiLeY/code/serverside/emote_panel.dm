@@ -358,6 +358,11 @@
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("sniff")
 
+/mob/living/verb/emote_snuffle()
+	set name = "~ Шмыгнуть "
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("snuffle")
+
 /mob/living/verb/emote_snore1()
 	set name = "> Тихо Храпеть "
 	set category = "Эмоции.3: Простые Действия"
