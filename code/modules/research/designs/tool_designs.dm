@@ -115,7 +115,7 @@
 /////////////////////////////////////////
 //////////////Alien Tools////////////////
 /////////////////////////////////////////
-
+/* BLUEMOON COMMENTED OUT we're using own .dm for modular purposes modular_bluemoon\code\modules\research\designs\tool_designs.dm
 /datum/design/alienwrench
 	name = "Alien Wrench"
 	desc = "An advanced wrench obtained through Abductor technology."
@@ -175,7 +175,7 @@
 	materials = list(/datum/material/iron = 5000, /datum/material/silver = 2500, /datum/material/plasma = 5000, /datum/material/titanium = 2000, /datum/material/diamond = 2000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
-
+*/
 /////////////////////////////////////////
 /////////Alien Surgical Tools////////////
 /////////////////////////////////////////

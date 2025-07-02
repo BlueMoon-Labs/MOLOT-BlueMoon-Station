@@ -185,3 +185,18 @@
 	icon_state = "cutters"
 	toolspeed = 0.2
 	random_color = FALSE
+// BLUEMOON ADD START black skin
+	unique_reskin = list(
+		"Carbonized" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/advancedtools_black.dmi',
+			RESKIN_ICON_STATE = "cutters_black",
+		),
+		"Titanium" = list(
+			RESKIN_ICON_STATE = "cutters",
+		)
+	)
+
+/obj/item/wirecutters/advanced/reskin_obj(mob/user)
+	if(current_skin == "Carbonized")
+		desc = "A set of reproduction alien wirecutters, they have a carbon handle with an exceedingly sharp blade."
+// BLUEMOON ADD END

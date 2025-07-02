@@ -138,3 +138,14 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.2
+// BLUEMOON ADD START black skin
+	unique_reskin = list(
+		"Carbonized" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/advancedtools_black.dmi',
+			RESKIN_ICON_STATE = "crowbar_black",
+		),
+		"Titanium" = list(
+			RESKIN_ICON_STATE = "crowbar",
+		)
+	)
+// BLUEMOON ADD END

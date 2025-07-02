@@ -181,3 +181,14 @@
 	icon_state = "wrench"
 	usesound = 'sound/effects/empulse.ogg'
 	toolspeed = 0.2
+// BLUEMOON ADD START black skin
+	unique_reskin = list(
+		"Carbonized" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/advancedtools_black.dmi',
+			RESKIN_ICON_STATE = "wrench_black",
+		),
+		"Titanium" = list(
+			RESKIN_ICON_STATE = "wrench",
+		)
+	)
+// BLUEMOON ADD END
