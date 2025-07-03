@@ -8,7 +8,6 @@
 	loadout_enabled = FALSE
 	can_load_appearance = TRUE
 	roundstart = FALSE
-	skip_reentry_check = TRUE
 	category = "trauma"
 	mob_type = /mob/living/carbon/human // чат верим? Нужно чтобы не менять проверку на can_load_appearance
 	var/mob/camera/imaginary_friend/friend
