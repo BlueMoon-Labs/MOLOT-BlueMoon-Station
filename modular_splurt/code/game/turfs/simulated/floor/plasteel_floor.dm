@@ -1,8 +1,9 @@
-/turf/open/floor/plasteel/dark/texcorner
+/*
+/turf/open/floor/plasteel/dark/corner
 	icon = 'modular_splurt/icons/turf/floors.dmi'
 	icon_state = "textured_darkcorner"
 	base_icon_state = "textured_darkcorner"
-
+*/
 /turf/open/floor/plasteel/hallway
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "hallway_floor"

@@ -68,32 +68,68 @@
 	icon_state = "e3,3"
 
 //SOLGOV//
-/obj/effect/turf_decal/solgov/all
-	icon_state = "top-left-all"
+/obj/effect/turf_decal/big_sign/solgov
+	icon = 'modular_bluemoon/icons/turf/big_sign/sol_gov.dmi'
+	icon_state = "example"
 
-/obj/effect/turf_decal/solgov/all/top
-	icon_state = "top-center-all"
+/obj/effect/turf_decal/big_sign/solgov/aa
+	icon_state = "1-1"
 
-/obj/effect/turf_decal/solgov/all/top_right
-	icon_state = "top-right-all"
+/obj/effect/turf_decal/big_sign/solgov/ab
+	icon_state = "1-2"
 
-/obj/effect/turf_decal/solgov/all/center_left
-	icon_state = "center-left-all"
+/obj/effect/turf_decal/big_sign/solgov/ac
+	icon_state = "1-3"
 
-/obj/effect/turf_decal/solgov/all/center
-	icon_state = "center-all"
+/obj/effect/turf_decal/big_sign/solgov/ba
+	icon_state = "2-1"
 
-/obj/effect/turf_decal/solgov/all/center_right
-	icon_state = "center-right-all"
+/obj/effect/turf_decal/big_sign/solgov/bb
+	icon_state = "2-2"
 
-/obj/effect/turf_decal/solgov/all/bottom_left
-	icon_state = "bottom-left-all"
+/obj/effect/turf_decal/big_sign/solgov/bc
+	icon_state = "2-3"
 
-/obj/effect/turf_decal/solgov/all/bottom_center
-	icon_state = "bottom-center-all"
+/obj/effect/turf_decal/big_sign/solgov/ca
+	icon_state = "3-1"
 
-/obj/effect/turf_decal/solgov/all/bottom_right
-	icon_state = "bottom-right-all"
+/obj/effect/turf_decal/big_sign/solgov/cb
+	icon_state = "3-2"
+
+/obj/effect/turf_decal/big_sign/solgov/cc
+	icon_state = "3-3"
+
+/// NTSS RAVEN EMERGENCY SHUTTLE LOGO ///
+/obj/effect/turf_decal/big_sign/raven
+	icon = 'modular_bluemoon/icons/turf/big_sign/raven.dmi'
+	icon_state = "example"
+
+/obj/effect/turf_decal/big_sign/raven/one
+	icon_state = "RAVEN1"
+
+/obj/effect/turf_decal/big_sign/raven/two
+	icon_state = "RAVEN2"
+
+/obj/effect/turf_decal/big_sign/raven/three
+	icon_state = "RAVEN3"
+
+/obj/effect/turf_decal/big_sign/raven/four
+	icon_state = "RAVEN4"
+
+/obj/effect/turf_decal/big_sign/raven/five
+	icon_state = "RAVEN5"
+
+/obj/effect/turf_decal/big_sign/raven/six
+	icon_state = "RAVEN6"
+
+/obj/effect/turf_decal/big_sign/raven/seven
+	icon_state = "RAVEN7"
+
+/obj/effect/turf_decal/big_sign/raven/eight
+	icon_state = "RAVEN8"
+
+/obj/effect/turf_decal/big_sign/raven/nine
+	icon_state = "RAVEN9"
 
 ///Departments///
 /obj/effect/turf_decal/bluemoon_decals/departments/bridge

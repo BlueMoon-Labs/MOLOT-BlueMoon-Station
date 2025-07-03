@@ -1258,10 +1258,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/shrink_ccw
 	icon_state = "trimline_shrink_ccw"
 
-/obj/effect/turf_decal/tile/blue/darkblue
-	name = "dark blue corner"
-	color = "#486091"
-
 /obj/effect/turf_decal/stripes/blue
 	icon_state = "warningline_blue"
 	icon = 'modular_bluemoon/smiley/icons/misc/turf_decals.dmi'

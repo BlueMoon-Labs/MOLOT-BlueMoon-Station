@@ -1106,7 +1106,8 @@
 /area/awaymission/complex/medical)
 "aVU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/awaymission/complex/facilityresearch)
 "aWe" = (
 /obj/structure/chair/sofa/corp/right{
@@ -12381,7 +12382,11 @@
 	icon_state = "4-8"
 	},
 /obj/structure/mecha_wreckage/ripley/deathripley,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 1
+	},
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/awaymission/complex/security)
 "kEA" = (
 /obj/structure/door_assembly/door_assembly_sec,
@@ -19611,7 +19616,8 @@
 /area/awaymission/complex/janitorial)
 "rfK" = (
 /obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/awaymission/complex/facilityresearch)
 "rfQ" = (
 /obj/structure/chair/office/dark,
@@ -23164,7 +23170,11 @@
 	},
 /obj/structure/holosign/barrier,
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/tile/red/half/contrasted{
+	dir = 1
+	},
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/awaymission/complex/security)
 "tXf" = (
 /obj/machinery/door/airlock/security/glass,

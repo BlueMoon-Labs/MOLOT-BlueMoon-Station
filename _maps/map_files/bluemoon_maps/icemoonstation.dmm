@@ -8714,7 +8714,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/science/robotics/mechbay)
 "bCB" = (
 /obj/effect/turf_decal/box/white/corners{
@@ -14875,12 +14876,11 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "cER" = (
-/obj/effect/turf_decal/tile/blue/darkblue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue/darkblue,
 /obj/item/kirbyplants/random{
 	pixel_y = 6
+	},
+/obj/effect/turf_decal/tile/dark_blue/half/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/engineering/lobby)
@@ -22164,7 +22164,8 @@
 /area/icemoon/surface/outdoors)
 "dTa" = (
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel/smooth/half,
 /area/science/robotics/mechbay)
 "dTc" = (
 /obj/effect/turf_decal/tile/dark{
@@ -28534,7 +28535,7 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/external,
-/turf/open/floor/catwalk_floor/airless,
+/turf/open/floor/catwalk_floor,
 /area/maintenance/department/crew_quarters/locker)
 "eYX" = (
 /turf/open/floor/plasteel/white/smooth/corner{
@@ -37351,7 +37352,7 @@
 /area/maintenance/department/crew_quarters/locker)
 "gDt" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/catwalk_floor/airless,
+/turf/open/floor/catwalk_floor,
 /area/maintenance/department/crew_quarters/locker)
 "gDN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -48788,7 +48789,8 @@
 /obj/machinery/camera{
 	c_tag = "Theatre"
 	},
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/cargo/storage)
 "iIF" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -52149,7 +52151,8 @@
 	},
 /area/maintenance/department/science/mid)
 "jmw" = (
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/maintenance/aft)
 "jmB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -53056,11 +53059,12 @@
 /turf/open/floor/plasteel/textured/large,
 /area/engineering/break_room)
 "jvS" = (
-/obj/effect/turf_decal/bot,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/recharge_floor,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel/smooth/half,
 /area/science/robotics/lab)
 "jvU" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -55811,7 +55815,8 @@
 	},
 /area/maintenance/starboard/fore)
 "jTR" = (
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/maintenance/port/fore)
 "jTU" = (
 /obj/machinery/atmospherics/components/binary/pump/layer3{
@@ -64699,7 +64704,8 @@
 	name = "Station Intercom (General)";
 	pixel_x = -31
 	},
-/turf/open/floor/plasteel/recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/science/robotics/mechbay)
 "lvL" = (
 /obj/machinery/vending/wardrobe/bar_wardrobe,
@@ -66640,7 +66646,8 @@
 	dir = 2
 	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/mine/mechbay)
 "lPl" = (
 /obj/structure/table/wood,
@@ -81850,7 +81857,7 @@
 "oBw" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/catwalk_floor/airless,
+/turf/open/floor/catwalk_floor,
 /area/maintenance/department/crew_quarters/locker)
 "oBz" = (
 /obj/effect/turf_decal/bot_white{
@@ -83753,15 +83760,11 @@
 /obj/structure/table,
 /obj/item/rcl/pre_loaded,
 /obj/item/rcl/pre_loaded,
-/obj/effect/turf_decal/tile/blue/darkblue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue/darkblue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue/darkblue,
 /obj/item/storage/firstaid/fire{
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/engineering/lobby)
@@ -87484,7 +87487,8 @@
 /area/maintenance/department/science/mid)
 "pAI" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/maintenance/department/science)
 "pAK" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -92098,7 +92102,7 @@
 	},
 /obj/item/stack/tile/plasteel,
 /obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/catwalk_floor/airless,
+/turf/open/floor/catwalk_floor,
 /area/maintenance/department/crew_quarters/locker)
 "qrt" = (
 /obj/effect/landmark/event_spawn,
@@ -100309,7 +100313,8 @@
 	},
 /area/hallway/primary/aft)
 "rPm" = (
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/maintenance/department/electrical)
 "rPo" = (
 /obj/machinery/atmospherics/miner/nitrogen,
@@ -105447,13 +105452,7 @@
 	pixel_y = -24
 	},
 /obj/item/pipe_dispenser,
-/obj/effect/turf_decal/tile/blue/darkblue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue/darkblue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue/darkblue,
+/obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted,
 /turf/open/floor/plasteel,
 /area/engineering/lobby)
 "sMB" = (
@@ -108620,7 +108619,7 @@
 "tpL" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/airlock/external,
-/turf/open/floor/catwalk_floor/airless,
+/turf/open/floor/catwalk_floor,
 /area/maintenance/department/crew_quarters/locker)
 "tpM" = (
 /obj/effect/turf_decal/siding/red/corner{
@@ -110122,7 +110121,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/darkblue/line{
+/obj/effect/turf_decal/trimline/dark_blue/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -128674,7 +128673,10 @@
 /area/science/storage)
 "wVd" = (
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/goonplaque,
+/obj/effect/turf_decal/plaque,
+/turf/open/floor/plasteel/smooth/edge{
+	dir = 1
+	},
 /area/hallway/primary/aft)
 "wVg" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark,
