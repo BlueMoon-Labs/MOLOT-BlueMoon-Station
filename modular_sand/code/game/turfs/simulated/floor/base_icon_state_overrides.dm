@@ -46,10 +46,10 @@
 
 /turf/open/floor/plasteel/recharge_floor/asteroid
 	base_icon_state = "recharge_floor_asteroid"
-*/
+
 /turf/open/floor/plasteel/chapel
 	base_icon_state = "chapel"
-
+*/
 /turf/open/floor/plasteel/showroomfloor
 	base_icon_state = "showroomfloor"
 

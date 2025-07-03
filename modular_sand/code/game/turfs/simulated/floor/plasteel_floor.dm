@@ -4,9 +4,6 @@
 /turf/open/floor/plasteel/dark
 	floor_tile = /obj/item/stack/tile/plasteel/dark
 
-/turf/open/floor/plasteel/chapel
-	floor_tile = /obj/item/stack/tile/plasteel/chapel
-
 /turf/open/floor/plasteel/showroomfloor
 	floor_tile = /obj/item/stack/tile/plasteel/shower
 
