@@ -11,3 +11,7 @@
 
 /obj/effect/turf_decal/recharge
 	icon_state = "recharge"
+
+/obj/effect/turf_decal/bluemoon_decals/drain
+	icon = 'modular_bluemoon/icons/turf/decals.dmi'
+	icon_state = "drain"
