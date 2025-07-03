@@ -1,19 +1,19 @@
-/obj/effect/turf_decal/stripes/line
+/obj/effect/turf_decal/stripes/yellow/line
 	icon_state = "warningline"
 
-/obj/effect/turf_decal/stripes/end
+/obj/effect/turf_decal/stripes/yellow/end
 	icon_state = "warn_end"
 
-/obj/effect/turf_decal/stripes/corner
+/obj/effect/turf_decal/stripes/yellow/corner
 	icon_state = "warninglinecorner"
 
-/obj/effect/turf_decal/stripes/box
+/obj/effect/turf_decal/stripes/yellow/box
 	icon_state = "warn_box"
 
-/obj/effect/turf_decal/stripes/full
+/obj/effect/turf_decal/stripes/yellow/full
 	icon_state = "warn_full"
 
-/obj/effect/turf_decal/stripes/asteroid/line
+/obj/effect/turf_decal/stripes/asteroid
 	icon_state = "ast_warn"
 
 /obj/effect/turf_decal/stripes/asteroid/end
@@ -28,7 +28,7 @@
 /obj/effect/turf_decal/stripes/asteroid/full
 	icon_state = "ast_warn_full"
 
-/obj/effect/turf_decal/stripes/white/line
+/obj/effect/turf_decal/stripes/white
 	icon_state = "warningline_white"
 
 /obj/effect/turf_decal/stripes/white/end
@@ -43,7 +43,7 @@
 /obj/effect/turf_decal/stripes/white/full
 	icon_state = "warn_full_white"
 
-/obj/effect/turf_decal/stripes/red/line
+/obj/effect/turf_decal/stripes/red
 	icon_state = "warningline_red"
 
 /obj/effect/turf_decal/stripes/red/end
@@ -177,22 +177,22 @@
 /obj/effect/turf_decal/plaque
 	icon_state = "plaque"
 
-/obj/effect/turf_decal/stripes/line
+/obj/effect/turf_decal/stripes/yellow/line
 	icon_state = "warningline"
 
-/obj/effect/turf_decal/stripes/end
+/obj/effect/turf_decal/stripes/yellow/end
 	icon_state = "warn_end"
 
-/obj/effect/turf_decal/stripes/corner
+/obj/effect/turf_decal/stripes/yellow/corner
 	icon_state = "warninglinecorner"
 
-/obj/effect/turf_decal/stripes/box
+/obj/effect/turf_decal/stripes/yellow/box
 	icon_state = "warn_box"
 
-/obj/effect/turf_decal/stripes/full
+/obj/effect/turf_decal/stripes/yellow/full
 	icon_state = "warn_full"
 
-/obj/effect/turf_decal/stripes/asteroid/line
+/obj/effect/turf_decal/stripes/asteroid
 	icon_state = "ast_warn"
 
 /obj/effect/turf_decal/stripes/asteroid/end
@@ -207,7 +207,7 @@
 /obj/effect/turf_decal/stripes/asteroid/full
 	icon_state = "ast_warn_full"
 
-/obj/effect/turf_decal/stripes/white/line
+/obj/effect/turf_decal/stripes/white
 	icon_state = "warningline_white"
 
 /obj/effect/turf_decal/stripes/white/end
@@ -222,7 +222,7 @@
 /obj/effect/turf_decal/stripes/white/full
 	icon_state = "warn_full_white"
 
-/obj/effect/turf_decal/stripes/red/line
+/obj/effect/turf_decal/stripes/red
 	icon_state = "warningline_red"
 
 /obj/effect/turf_decal/stripes/red/end

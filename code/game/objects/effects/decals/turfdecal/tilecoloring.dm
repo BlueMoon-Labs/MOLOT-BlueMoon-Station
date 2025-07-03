@@ -1262,7 +1262,7 @@
 	icon_state = "warningline_blue"
 	icon = 'modular_bluemoon/smiley/icons/misc/turf_decals.dmi'
 
-/obj/effect/turf_decal/stripes/blue/line
+/obj/effect/turf_decal/stripes/blue
 	icon_state = "warningline_blue"
 
 /obj/effect/turf_decal/stripes/blue/end
