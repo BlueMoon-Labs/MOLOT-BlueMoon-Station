@@ -395,16 +395,34 @@ GLOBAL_LIST_INIT(pp_limbs, list(
 		if ("explode")
 			var/power = text2num(params["power"])
 			var/empMode = text2num(params["emp_mode"])
+			var/extinguishMode = text2num(params["extinguish_mode"])
+			var/chosen_mode = ""
 
+			if(empMode)
+				chosen_mode += " EMP"
+				empulse_using_range(usr, power, TRUE)
+			if(extinguishMode)
+				chosen_mode += " extinguish"
+				for(var/turf/T in range(power, get_turf(usr)))
+					if(istype(T, /turf/open))
+						var/turf/open/O = T
+						if(O.air)
+							O.air.set_temperature(T20C)
+							O.air_update_turf()
+					for(var/obj/Ob in T)
+						if(istype(Ob, /obj/effect/hotspot))
+							qdel(Ob)
+						else
+							Ob.extinguish()
+					for(var/mob/living/L in T)
+						L.ExtinguishMob()
+			if(!(empMode || extinguishMode))
+				chosen_mode = " explosion"
+				explosion(usr, power / 3, power / 2, power, power, ignorecap = TRUE)
 
 			var/turf/T = get_turf(usr)
-			message_admins("[ADMIN_LOOKUPFLW(usr)] created an admin [empMode ? "EMP" : "explosion"] at [ADMIN_VERBOSEJMP(T)].")
-			log_admin("[key_name(usr)] created an admin [empMode ? "EMP" : "explosion"] at [usr.loc].")
-
-			if (empMode)
-				empulse_using_range(usr, power, TRUE)
-			else
-				explosion(usr, power / 3, power / 2, power, power, ignorecap = TRUE)
+			message_admins("[ADMIN_LOOKUPFLW(usr)] created an admin[chosen_mode] at [ADMIN_VERBOSEJMP(T)].")
+			log_admin("[key_name(usr)] created an admin[chosen_mode] at [usr.loc].")
 
 		if ("narrate")
 			var/list/stylesRaw = params["classes"]

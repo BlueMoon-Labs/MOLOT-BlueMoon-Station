@@ -172,14 +172,7 @@
 	if (length(status_examines))
 		. += status_examines
 	//Approximate character height based on current sprite scale
-	var/dispSize = round(12*get_size(src)) // gets the character's sprite size percent and converts it to the nearest half foot
-	if(dispSize % 2) // returns 1 or 0. 1 meaning the height is not exact and the code below will execute, 0 meaning the height is exact and the else will trigger.
-		dispSize = dispSize - 1 //makes it even
-		dispSize = dispSize / 2 //rounds it out
-		. += "[t_on], кажется, чуть выше или около [dispSize] футов в высоту."
-	else
-		dispSize = dispSize / 2
-		. += "[t_on], кажется, около [dispSize] футов в высоту."
+	. += "[t_on], кажется, около [round(180*get_size(src))] сантиметров в высоту."
 	if(has_status_effect(/datum/status_effect/pregnancy))
 		. += "<b>[t_on] имеет выступающую часть на уровне живота. Кажется, это беременность.\n</b>"
 	//CIT CHANGES START HERE - adds genital details to examine text
@@ -561,7 +554,7 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
 
-	var/traitstring = get_trait_string()
+	var/traitstring
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
@@ -587,6 +580,7 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 					R = find_record("name", perpname, GLOB.data_core.medical)
 					if(R)
 						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a>"
+					traitstring = get_trait_string(FALSE, TRUE)
 					if(traitstring)
 						. += "<span class='info'>Обнаружены Особенности:\n[traitstring]</span>"
 
@@ -606,8 +600,10 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 							"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
 							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
 							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
-	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Особенности:</b> [traitstring]</span>"
+	else if(isobserver(user))
+		traitstring = get_trait_string(FALSE)
+		if(traitstring)
+			. += "<span class='info'><b>Особенности:</b> [traitstring]</span>"
 
 	if(LAZYLEN(.) > 2) //Want this to appear after species text
 		.[2] += "<hr>"

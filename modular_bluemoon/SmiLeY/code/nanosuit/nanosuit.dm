@@ -1009,7 +1009,7 @@
 		NS.kill_cloak()
 
 /obj/item/clothing/suit/space/hardsuit/nano/proc/kill_cloak()
-	SIGNAL_HANDLER
+	SIGNAL_HANDLER_DOES_SLEEP
 	if(mode == NANO_CLOAK)
 		var/obj/item/W = Wearer.get_active_held_item()
 		if(istype(W, /obj/item/gun))

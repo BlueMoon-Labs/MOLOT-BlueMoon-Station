@@ -367,6 +367,7 @@
 	desc = "Heavenly robes of the kitsune Luna Pumpkin,you can feel radiance coming from them."
 	item_state = "Divine_robes"
 	icon_state = "Divine_robes"
+	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/custom/leoskimpy
@@ -671,3 +672,14 @@
 	for(var/i in 1 to 20)
 		new /obj/item/coin/green(src)
 
+//Bluemood ADD
+
+/obj/item/clothing/head/assu_helmet/bp_helmet
+	name = "Old bullet proof helmet"
+	desc = "Old version style BP helmet. That helmet without armor plates soo without em that simple cool styled helmet"
+	icon_state = "epic_bp_helmet"
+	icon = 'icons/obj/clothing/hats.dmi'
+	mutantrace_variation = STYLE_MUZZLE
+	flags_inv = HIDEEARS | HIDESNOUT | HIDEHAIR
+
+//Bluemood End

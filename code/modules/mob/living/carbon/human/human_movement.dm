@@ -93,7 +93,7 @@
 
 				if(istype(S))
 					S.step_action()
-	if(movement_type & GROUND)
+	if(movement_type & GROUND && dirtyness_maker)
 		dirt_buildup()
 
 /mob/living/carbon/human/Process_Spacemove(movement_dir = 0) //Temporary laziness thing. Will change to handles by species reee.

@@ -55,12 +55,12 @@
 //RSH-12
 
 /obj/item/ammo_box/magazine/internal/shot/com/rsh12
-	name = "rsh-15 internal magazine"
+	name = "rsh-12 internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	max_ammo = 6
 
 /obj/item/gun/ballistic/shotgun/rsh12
-	name = "RSH-15"
+	name = "RSH-12"
 	desc = "A moden Russian-made semi-automatic revolver, intended to used with 12 gauge."
 	icon_state = "rsh12"
 	item_state = "rsh12"
@@ -75,9 +75,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/rsh12
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
-	unique_reskin = list(
-		"RSH-15" = list("icon_state" = "rsh12")
-	)
 
 //HoS G22 pistol
 /obj/item/gun/ballistic/automatic/pistol/g22
@@ -154,7 +151,7 @@
 //Head of Security's new weapons beacon and stuff
 
 /obj/item/storage/secure/briefcase/rsh12_box
-	name = "\improper RSH-15 revolver box"
+	name = "\improper RSH-12 revolver box"
 	desc = "A storage case for a heavy revolver."
 
 /obj/item/storage/secure/briefcase/rsh12_box/PopulateContents()

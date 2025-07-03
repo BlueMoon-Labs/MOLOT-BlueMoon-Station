@@ -35,6 +35,7 @@
 					"крепко сжимает свою грудь",
 					"шлёпает по своим сиськам",
 					"максимально грубо сжимает свои титьки")
+		playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/bang1.ogg', 50, 1, -1)
 	else
 		message = pick("нежно ощупывает свою грудь",
 					"мягко хватается за свою грудь",
@@ -42,6 +43,7 @@
 					"проводит несколькими пальцами вдоль своей груди",
 					"деликатно сжимает свой сосок",
 					"возбуждённо проводит пальцем вдоль своей груди")
+		playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	if(prob(5 + user.get_lust()))
 		user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("дрожит от возбуждения",
 				"тихо стонет",
@@ -49,6 +51,12 @@
 				"мурлыкает и звучно вздыхает",
 				"тихонько вздрагивает",
 				"вздрагивает, хватаясь за причинное место")]</span>")
+		playlewdinteractionsound(get_turf(user), pick('modular_bluemoon/sound/emotes/softmoan1.ogg',
+					'modular_bluemoon/sound/emotes/softmoan2.ogg',
+					'modular_bluemoon/sound/emotes/softmoan3.ogg',
+					'modular_bluemoon/sound/emotes/softmoan4.ogg',
+					'modular_bluemoon/sound/emotes/softmoan5.ogg',
+					'modular_bluemoon/sound/emotes/softmoan6.ogg'), 70, 1, -1)
 
 	if(liquid_container)
 		message += " прямо в [liquid_container]"
@@ -61,6 +69,7 @@
 				playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
 		else
 			message += ", но дойка не дает результатов..."
+			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch3.ogg', 50, 1, -1)
 
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS) //SPLURT edit

@@ -592,6 +592,7 @@
 	icon = 'modular_splurt/icons/mob/clothing/species/teshari/tesh_items.dmi'
 	icon_state = "tesh_beltcloak_bo"
 	body_parts_covered = CHEST|GROIN|ARMS
+	alternate_worn_layer = MOB_UPPER_LAYER
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter,/obj/item/clothing/gloves/color/yellow)
 
 
@@ -721,7 +722,7 @@
 	desc = "A soft Teshari cloak made the Chief Engineer with special rad and fire alloy"
 	icon_state = "tesh_beltcloak_ce"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 5, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 30, FIRE = 35, ACID = 45)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/melee/baton)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/engineer
 	name = "engineering belted cloak"
@@ -740,7 +741,7 @@
 	desc = "A soft Teshari cloak made the Chief Medical Officer"
 	icon_state = "tesh_beltcloak_cmo"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 50)
-	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/hypospray/mkii, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
+	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/melee/baton, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/hypospray/mkii, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/hooded/teshari/beltcloak/jobs/medical
 	name = "medical belted cloak"

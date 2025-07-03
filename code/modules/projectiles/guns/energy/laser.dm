@@ -37,6 +37,7 @@
 /obj/item/gun/energy/laser/retro
 	name ="retro laser gun"
 	icon_state = "retro"
+	item_state = "laser_old"
 	desc = "An older model of the basic lasergun, no longer used by Nanotrasen's private security or military forces. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
 	ammo_x_offset = 3
 
@@ -51,6 +52,7 @@
 	name ="hellfire laser gun"
 	desc = "A relic of a weapon, built before NT began installing regulators on its laser weaponry. This pattern of laser gun became infamous for the gruesome burn wounds it caused, and was quietly discontinued once it began to affect NT's reputation."
 	icon_state = "hellgun"
+	item_state = "lasernew"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire)
 
 /obj/item/gun/energy/laser/captain
@@ -129,7 +131,7 @@
 	name = "accelerator laser cannon"
 	desc = "An advanced laser cannon that does more damage the farther away the target is."
 	icon_state = "lasercannon"
-	item_state = "laser"
+	item_state = "lasernew"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
@@ -257,3 +259,45 @@
 
 /obj/item/gun/laser/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	playsound(src, 'sound/weapons/laser_no_power.ogg', 30, 1)
+
+/obj/item/gun/energy/laser/hellgun/immolator
+	name = "Immolator laser gun"
+	desc = "A modified laser gun, shooting highly concetrated beams with higher intensity that ignites the target, for the cost of draining more power per shot"
+	icon_state = "immolator"
+	item_state = "immolator-wielded"
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	inaccuracy_modifier = 0.6
+	force = 10
+	throwforce = 10
+	burst_size = 2
+	fire_delay = 2.5
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/immolator)
+	cell_type = /obj/item/stock_parts/cell/lascarbine //16 выстрелов (4 Выстрела кладет в крит голяка. Итого 4 тела по 4 выстрела или же 2 тела по 5-6 выстрелов)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	can_flashlight = 1
+	flight_x_offset = 15
+	flight_y_offset = 10
+
+/obj/item/ammo_casing/energy/laser/hellfire/immolator
+	fire_sound = 'sound/weapons/pulse.ogg'
+
+/obj/item/gun/energy/laser/hellgun/immolator/nopin
+	pin = null
+
+
+/obj/item/gun/energy/laser/hellgun/immolator/multi //Щит спавн для ОБР
+	name = "multi lens immolator cannon"
+	desc = "A large laser cannon, similar to the Immolator Laser, with toggleable firemodes. It is frequently used by military-like forces through Nanotrasen."
+	icon_state = "multilensimmolator"
+	item_state = "immolator-wielded"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/immolator)
+	pin = /obj/item/firing_pin/implant/mindshield
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT,SELECT_FULLY_AUTOMATIC)
+	burst_size = 4
+	inaccuracy_modifier = 0.8
+	fire_delay = 2.5
+	cell_type = /obj/item/stock_parts/cell/pulse/carbine //38 Выстрелов
+	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF

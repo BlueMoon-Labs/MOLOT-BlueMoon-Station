@@ -1,3 +1,4 @@
+/* BLUEMOON REWORK check modular_bluemoon\code\modules\vehicles\pimpin_ride.dm
 //PIMP-CART
 /obj/vehicle/ridden/janicart
 	name = "janicart (pimpin' ride)"
@@ -71,3 +72,4 @@
 
 /obj/vehicle/ridden/janicart/upgraded
 	floorbuffer = TRUE
+*/

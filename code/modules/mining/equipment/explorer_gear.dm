@@ -243,6 +243,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 100, ACID = 20, WOUND = 15)
 	resistance_flags = FIRE_PROOF | GOLIATH_WEAKNESS
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/head/hooded/explorer/heva/equipped(mob/living/carbon/human/user, slot)
 	..()

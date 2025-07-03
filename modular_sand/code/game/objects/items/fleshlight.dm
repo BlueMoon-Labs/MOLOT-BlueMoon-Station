@@ -725,6 +725,7 @@
 	else
 		. += "<span class='notice'>Устройство сопряжено и ожидает использования по прямому назначению. Количество сопряженных устройств: <b>[portallight.len]</b>.</span>"
 	. += "<span class='notice'>Публичный доступ к устройству <b>[free_use ? "включен" : "отключен"]</b>. (Alt+Click для смены режима)</span>"
+	. += span_notice("Использование \"Latex Adjustment Override\" переключает возможность снятия предмета.")
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attackby(obj/item/I, mob/living/user) //pairing
 	if(istype(I, /obj/item/portallight))

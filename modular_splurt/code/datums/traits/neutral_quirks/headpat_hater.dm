@@ -2,6 +2,7 @@
 	name = "Отстраненность"
 	desc = "Вам нет дела до ласки со стороны других. Будь то вследствие сдержанности или самоконтроля, получаемые поглаживания не заставят вилять хвостом, если таковой есть, ласка может даже разгневать."
 	mob_trait = TRAIT_DISTANT
+	flavor_quirk = TRUE
 	value = 0
 	gain_text = span_notice("Чужие прикосновения раздражают вас...")
 	lose_text = span_notice("Теперь поглаживания не кажутся настолько уж плохими...")
@@ -37,6 +38,10 @@
 	if(HAS_TRAIT(action_owner, TRAIT_DISTANT))
 		REMOVE_TRAIT(action_owner, TRAIT_DISTANT, ROUNDSTART_TRAIT)
 		to_chat(action_owner, span_notice("You let your headpat-guard down!"))
+		button_icon_state = "pain_medium" // BLUEMOON ADD
 	else
 		ADD_TRAIT(action_owner, TRAIT_DISTANT, ROUNDSTART_TRAIT)
 		to_chat(action_owner, span_warning("You let your headpat-guard up!"))
+		button_icon_state = "pain_max" // BLUEMOON ADD
+
+	UpdateButtons() // BLUEMOON ADD

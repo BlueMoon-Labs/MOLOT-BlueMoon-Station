@@ -380,7 +380,7 @@
 	description = "Tea mixed with honey, has both antitoxins and sweetness in one!"
 	color = "#101000" // rgb: 16, 16, 0
 	nutriment_factor = 0
-	quality = DRINK_NICE
+	quality = DRINK_GOOD // BLUEMOON ADD
 	taste_description = "sweet tea"
 	glass_icon_state = "tea_forest"
 	glass_name = "glass of forest tea"
@@ -612,6 +612,7 @@
 	glass_icon_state = "glass_red"
 	glass_name = "glass of Shambler's juice"
 	glass_desc = "Mmm mm, shambly."
+	quality = DRINK_NICE // BLUEMOON ADD
 
 /datum/reagent/consumable/shamblers/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)

@@ -214,7 +214,7 @@
 					/obj/item/reagent_containers/spray/cleaner,
 					/obj/item/mop/advanced,
 					/obj/item/lightreplacer,
-					/obj/item/janiupgrade,
+					/obj/item/janicart_upgrade/buffer,
 					/obj/item/holosign_creator)
 	crate_name = "advanced santation crate"
 	crate_type = /obj/structure/closet/crate/secure

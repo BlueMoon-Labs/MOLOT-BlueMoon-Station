@@ -1061,8 +1061,12 @@
 	},
 /area/holodeck/rec_center/medical)
 "acY" = (
-/turf/open/floor/holofloor/beach/coast_b,
-/area/holodeck/rec_center/beach)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/beach/sand,
+/area/centcom/holding)
 "acZ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/medical,
@@ -2535,7 +2539,6 @@
 	locked = 1;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "aiD" = (
@@ -2738,7 +2741,6 @@
 	locked = 1;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/closed/indestructible/riveted,
 /area/tdome/tdomeobserve)
 "ako" = (
@@ -3478,7 +3480,6 @@
 	req_access_txt = "106";
 	locked = 1
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod)
 "apA" = (
@@ -11067,6 +11068,11 @@
 	},
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
+"csy" = (
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 6
+	},
+/area/centcom/holding)
 "csM" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/sepia,
@@ -13099,6 +13105,13 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"era" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/beach/sand,
+/area/centcom/holding)
 "erm" = (
 /obj/effect/turf_decal/tile/red/half,
 /obj/structure/chair/pew/left{
@@ -18499,6 +18512,12 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/open/floor/plasteel/white,
 /area/centcom/holding)
+"jaA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/floor/plating/beach/sand,
+/area/centcom/holding)
 "jbs" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -21650,6 +21669,11 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/dark,
 /area/syndicate_mothership/control)
+"lNM" = (
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 2
+	},
+/area/centcom/holding)
 "lOU" = (
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -24558,12 +24582,7 @@
 /turf/open/floor/plasteel,
 /area/shuttle/inteq/collosus)
 "oHg" = (
-/turf/open/floor/spooktime/beach/coasts/watercoastN{
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water"
-	},
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner,
 /area/centcom/holding)
 "oHi" = (
 /obj/effect/turf_decal/siding/wood,
@@ -25229,6 +25248,11 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom)
+"pkt" = (
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 10
+	},
+/area/centcom/holding)
 "pls" = (
 /obj/structure/artilleryplaceholder{
 	icon_state = "12"
@@ -26054,11 +26078,8 @@
 /area/centcom/holding)
 "qba" = (
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/spooktime/beach/coasts/watercoastN{
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water"
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 6
 	},
 /area/centcom/holding)
 "qbe" = (
@@ -26295,7 +26316,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "qkH" = (
-/turf/open/space/basic,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
 "qkM" = (
 /obj/structure/rack/shelf,
@@ -28916,6 +28940,15 @@
 	},
 /turf/open/floor/wood/wood_parquet,
 /area/centcom/vip)
+"sAr" = (
+/obj/structure/fans/tiny/invisible,
+/turf/open/floor/plating/beach/water{
+	barefootstep = "water";
+	clawfootstep = "water";
+	footstep = "water";
+	heavyfootstep = "water"
+	},
+/area/centcom/holding)
 "sAz" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass/grass0,
@@ -31228,6 +31261,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom)
+"uIE" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/floor/plating/beach/sand,
+/area/centcom/holding)
 "uJy" = (
 /obj/structure/table/wood,
 /obj/item/seeds/kudzu,
@@ -32053,6 +32092,11 @@
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"vrA" = (
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 4
+	},
+/area/centcom/holding)
 "vrC" = (
 /obj/structure/punching_bag,
 /obj/effect/decal/cleanable/cobweb{
@@ -42707,7 +42751,7 @@ aaa
 aaa
 aaa
 aaa
-qkH
+aaa
 ncJ
 ncJ
 ncJ
@@ -58393,7 +58437,7 @@ bgH
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bUc
 nWY
@@ -58650,7 +58694,7 @@ bgH
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bUc
 rnA
@@ -58907,7 +58951,7 @@ bgH
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bUc
 nWY
@@ -59160,7 +59204,7 @@ nWY
 ncJ
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -59417,7 +59461,7 @@ nWY
 ncJ
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -60190,7 +60234,7 @@ bgH
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -60442,12 +60486,12 @@ ncJ
 rJg
 rJg
 ncJ
+ncJ
 bgH
 bgH
 bgH
 bgH
 bgH
-oHg
 bgH
 bgH
 bgH
@@ -60698,7 +60742,7 @@ fON
 ncJ
 rJg
 ncJ
-bgH
+ncJ
 bgH
 bgH
 bgH
@@ -60958,7 +61002,7 @@ ncJ
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -61215,12 +61259,12 @@ eAr
 bgH
 bgH
 bgH
-oHg
 bgH
 bgH
 bgH
 bgH
-oHg
+bgH
+bgH
 bgH
 bUc
 nWY
@@ -61472,12 +61516,12 @@ uCQ
 bgH
 bgH
 bgH
-oHg
 bgH
 bgH
 bgH
 bgH
-oHg
+bgH
+bgH
 bgH
 bUc
 nWY
@@ -61729,7 +61773,7 @@ uCQ
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -61986,7 +62030,7 @@ uCQ
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -62504,7 +62548,7 @@ bgH
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bUc
@@ -62751,17 +62795,17 @@ fON
 fON
 pbN
 lvA
-fON
+ncJ
 ncJ
 uCQ
 bgH
-oHg
 bgH
 bgH
 bgH
 bgH
 bgH
-oHg
+bgH
+bgH
 bgH
 bgH
 dzb
@@ -63009,10 +63053,10 @@ fON
 fON
 fON
 fON
-fON
+ncJ
 ncJ
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -63268,7 +63312,7 @@ oiE
 fON
 fON
 ncJ
-bgH
+ncJ
 bgH
 bgH
 bgH
@@ -64295,11 +64339,11 @@ fON
 fON
 vpn
 fON
-fON
 oDP
 ncJ
+ncJ
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -64552,11 +64596,11 @@ fON
 fON
 fON
 fON
-fON
+ncJ
 ncJ
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -64813,7 +64857,7 @@ ncJ
 bgH
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -65064,9 +65108,9 @@ fON
 fON
 fON
 ncJ
+ncJ
 bgH
 bgH
-oHg
 bgH
 bgH
 bgH
@@ -65323,7 +65367,7 @@ ncJ
 ncJ
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -65576,11 +65620,11 @@ fON
 fON
 ncJ
 ncJ
+ncJ
 bgH
 bgH
 bgH
 bgH
-oHg
 bgH
 bgH
 bgH
@@ -65821,7 +65865,7 @@ ncJ
 ncJ
 fON
 fON
-fON
+pbN
 oiE
 ncJ
 ncJ
@@ -66073,7 +66117,7 @@ fON
 fON
 fON
 fON
-fON
+ncJ
 ncJ
 fON
 dby
@@ -66091,7 +66135,7 @@ ncJ
 ncJ
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -66326,20 +66370,20 @@ ncJ
 ncJ
 ncJ
 ncJ
-fON
+ncJ
 fON
 fON
 ncJ
 ncJ
+pbN
 fON
 fON
 fON
 fON
 fON
 fON
-fON
-fON
-fON
+qkH
+ncJ
 ncJ
 ncJ
 ncJ
@@ -66348,7 +66392,7 @@ sJf
 oTl
 bgH
 bgH
-oHg
+bgH
 bgH
 bgH
 bgH
@@ -66595,9 +66639,9 @@ pbN
 fON
 fON
 fON
-fON
-fON
-fON
+jaA
+nWY
+nWY
 ncJ
 oTl
 sJf
@@ -66605,7 +66649,7 @@ sJf
 sJf
 oTl
 bgH
-oHg
+bgH
 bgH
 bgH
 rGH
@@ -66852,9 +66896,9 @@ fON
 fON
 fON
 fON
-fON
-bgH
-bgH
+acY
+oHg
+vrA
 qba
 bgH
 oTl
@@ -67104,15 +67148,15 @@ fON
 fON
 fON
 fON
-fON
 oDP
 fON
 fON
-fON
-fON
+era
+uIE
+nWY
+lNM
 bgH
-bgH
-qba
+sAr
 bgH
 bgH
 oTl
@@ -67358,16 +67402,16 @@ aFe
 vLs
 aFe
 aFe
-fON
-fON
-fON
-fON
-fON
-fON
-fON
+uIE
+uIE
+uIE
+uIE
+uIE
+uIE
+nWY
 oHg
-bgH
-bgH
+vrA
+csy
 bgH
 ncJ
 ncJ
@@ -67615,14 +67659,14 @@ fRP
 pXv
 jwQ
 aFe
-fON
-bgH
-bgH
-oHg
-bgH
-bgH
-bgH
-oHg
+vrA
+vrA
+vrA
+vrA
+vrA
+vrA
+vrA
+csy
 bgH
 bgH
 bgH
@@ -67872,14 +67916,14 @@ pXv
 pXv
 pXv
 ryB
-oHg
-bgH
-bgH
-oHg
 bgH
 bgH
 bgH
-oHg
+bgH
+bgH
+bgH
+bgH
+bgH
 bgH
 bgH
 ncJ
@@ -68129,16 +68173,16 @@ pXv
 pXv
 pXv
 ryB
-oHg
-bgH
-bgH
-oHg
 bgH
 bgH
 bgH
-oHg
 bgH
 bgH
+bgH
+bgH
+rGH
+doF
+doF
 ncJ
 ncJ
 ncJ
@@ -68386,17 +68430,17 @@ pXv
 pXv
 pXv
 ryB
-oHg
+doF
+doF
+doF
+doF
+pkt
 bgH
 bgH
-oHg
-bgH
-bgH
-bgH
-fON
-fON
-fON
-fON
+bUc
+nWY
+nWY
+nWY
 ncJ
 ncJ
 ovj
@@ -68643,17 +68687,17 @@ pXv
 pXv
 pXv
 aFe
-fON
-fON
-oiE
-fON
+nWY
+nWY
+nWY
+nWY
+uCQ
 bgH
 bgH
-bgH
-fON
-fON
-fON
-fON
+bUc
+nWY
+nWY
+nWY
 ncJ
 ncJ
 frl
@@ -96123,7 +96167,7 @@ abw
 abw
 abw
 acS
-acY
+adh
 adh
 abj
 adv
@@ -96380,7 +96424,7 @@ acl
 abw
 abw
 acT
-acY
+adh
 adh
 abj
 adw
@@ -96637,7 +96681,7 @@ abw
 abw
 abw
 acU
-acY
+adh
 adh
 abj
 adx
@@ -96894,7 +96938,7 @@ abw
 acy
 abw
 acS
-acY
+adh
 adh
 abj
 aZk
@@ -97151,7 +97195,7 @@ abw
 abw
 abw
 acS
-acY
+adh
 adh
 abj
 adz

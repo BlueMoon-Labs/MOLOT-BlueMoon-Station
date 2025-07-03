@@ -19,6 +19,10 @@
 		. += "...обладает руками."
 	if(has_mouth())
 		. += "...обладает [mouth_is_free() ? "неприкрытым" : "прикрытым"] ртом."
+	// BLUEMOON ADD хвостики!
+	if(has_tail())
+		. += "...обладает хвостом."
+	// BLUEMOON ADD END
 
 /// The base of all interactions
 /datum/interaction
@@ -42,6 +46,7 @@
 	var/required_from_target_exposed = NONE
 	var/required_from_target_unexposed = NONE
 
+	var/big_user_target_text = FALSE // BLUEMOON ADD большой текстик для TARGET И USER если TRUE
 	/// Additional details to be shown in the interaction menu, accepts more than one entry
 	var/list/additional_details
 
@@ -139,8 +144,8 @@
 /// Display the message
 /datum/interaction/proc/display_interaction(mob/living/user, mob/living/target)
 	if(simple_message)
-		var/use_message = replacetext(simple_message, "USER", "\the [user]")
-		use_message = replacetext(use_message, "TARGET", "\the [target]")
+		var/use_message = replacetext(simple_message, "USER", big_user_target_text ? "<b>\the [user]</b>" : "\the [user]") // BLUEMOON ADD большой текст
+		use_message = replacetext(use_message, "TARGET", big_user_target_text ? "<b>\the [target]</b>" : "\the [target]") // BLUEMOON ADD большой текст
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
 
 /// After the interaction, the base only plays the sound and only if it has one

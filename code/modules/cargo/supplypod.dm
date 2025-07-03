@@ -62,7 +62,7 @@
 /obj/structure/closet/supplypod/bluespacepod
 	style = STYLE_BLUESPACE
 	bluespace = TRUE
-	explosionSize = list(0,0,1,2)
+	explosionSize = list(0,0,0,0) // BLUEMOON CHANGE бс поды не взрываются
 
 /obj/structure/closet/supplypod/extractionpod
 	name = "Syndicate Extraction Pod"

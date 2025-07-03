@@ -58,6 +58,9 @@ GLOBAL_LIST_INIT(interaction_speeds, list(
 #define CUM_TARGET_EARS "ears"
 #define CUM_TARGET_EYES "eyes"
 //
+// BLUEMOON ADD хвостики!
+#define CUM_TARGET_TAIL "tail"
+//
 #define GRINDING_FACE_WITH_ANUS "faceanus"
 #define GRINDING_FACE_WITH_FEET "facefeet"
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"
@@ -92,6 +95,9 @@ GLOBAL_LIST_INIT(interaction_speeds, list(
 #define INTERACTION_REQUIRE_FEET (1<<7)
 #define INTERACTION_REQUIRE_PENIS (1<<8)
 #define INTERACTION_REQUIRE_VAGINA (1<<9)
+// BLUEMOON ADD хвостики!
+#define INTERACTION_REQUIRE_TAIL (1<<9)
+// BLUEMOON ADD END
 
 /// Interaction flags
 #define INTERACTION_FLAG_ADJACENT (1<<0)

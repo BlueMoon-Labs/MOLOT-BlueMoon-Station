@@ -1,6 +1,7 @@
 /datum/quirk/ropebunny
 	name = "Верёвочный Кролик"
 	desc = "Вы обучены искусно вязать верёвки любой формы. Вы можете создавать веревку из ткани, а из этой веревки - болы!"
+	flavor_quirk = TRUE
 	value = 2
 
 /datum/quirk/ropebunny/add()

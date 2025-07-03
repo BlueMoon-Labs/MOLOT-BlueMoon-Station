@@ -30,3 +30,12 @@
 		/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stack/sheet/glass = 1)
 	needs_anchored = FALSE
+
+// This item must not be used in the game. It's needed for correct stock_parts work.
+/obj/item/circuitboard/machine/pedalgen
+	name = "Pedal Generator (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/dynamo
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 2)
+	needs_anchored = FALSE

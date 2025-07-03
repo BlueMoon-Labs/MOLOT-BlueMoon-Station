@@ -4,7 +4,7 @@
 	id = "weaponry"
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new to weaponize just about everything now."
-	prereq_ids = list("engineering")
+	prereq_ids = list("sec_basic", "engineering") // BLUEMOON ADD sec_basic for order consistency
 	design_ids = list("pin_testing", "tele_shield", "lasercarbine")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 
@@ -95,3 +95,11 @@
 	prereq_ids = list("adv_weaponry", "adv_bluespace")
 	design_ids = list("gravitygun", "mech_gravcatapult")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+/datum/techweb_node/mil_beam_weapons
+	id = "mil_beam_weapons"
+	display_name = "Military Beam Weaponry"
+	description = "Military oriented Laser weapon system"
+	prereq_ids = list("beam_weapons")
+	design_ids = list("immolator")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000) // Immolator

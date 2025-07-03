@@ -2,6 +2,7 @@
 	desc = "A part used in MOD construction."
 	icon = 'icons/obj/clothing/modsuit/mod_construction.dmi'
 	item_state = "rack_parts"
+	mod_flags = MOD_CONSTRUCTION // BLUEMOON ADD
 
 /obj/item/mod/construction/helmet
 	name = "MOD helmet"
@@ -61,6 +62,7 @@
 	desc = "External plating used to finish a MOD control unit."
 	icon_state = "standard-plating"
 	var/datum/mod_theme/theme = /datum/mod_theme
+	mod_flags = MOD_PLATING // BLUEMOON ADD
 
 /obj/item/mod/construction/armor/Initialize(mapload)
 	. = ..()

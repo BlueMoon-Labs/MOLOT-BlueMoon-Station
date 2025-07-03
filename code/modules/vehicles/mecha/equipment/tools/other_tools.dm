@@ -12,6 +12,7 @@
 	energy_drain = 1000
 	range = MECHA_RANGED
 	var/teleport_range = 7
+	mecha_subcategory_flags = EXISUIT_MODULE_NONWEAPON // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/teleporter/action(mob/source, atom/target, params)
 	if(!action_checks(target) || is_centcom_level(loc.z))
@@ -160,6 +161,7 @@
 	var/deflect_coeff = 1.15
 	var/damage_coeff = 0.8
 	selectable = 0
+	mecha_subcategory_flags = EXISUIT_MODULE_NONWEAPON // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/proc/attack_react()
 	if(energy_drain && !chassis.has_charge(energy_drain))
@@ -179,6 +181,7 @@
 	var/deflect_coeff = 1.15
 	var/damage_coeff = 0.8
 	selectable = 0
+	mecha_subcategory_flags = EXISUIT_MODULE_NONWEAPON // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/proc/projectile_react()
 	if(energy_drain && !chassis.has_charge(energy_drain))
@@ -200,6 +203,7 @@
 	var/icon/droid_overlay
 	var/list/repairable_damage = list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH)
 	selectable = 0
+	mecha_subcategory_flags = EXISUIT_MODULE_NONWEAPON // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/repair_droid/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -467,6 +471,7 @@
 	icon_state = "thrusters"
 	selectable = FALSE
 	var/effect_type = /obj/effect/particle_effect/sparks
+	mecha_subcategory_flags = EXISUIT_MODULE_NONWEAPON // BLUEMOON ADD
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/try_attach_part(mob/user, obj/vehicle/sealed/mecha/M)
 	for(var/obj/item/I in M.equipment)

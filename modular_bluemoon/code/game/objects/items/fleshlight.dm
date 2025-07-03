@@ -6,6 +6,7 @@ GLOBAL_LIST_EMPTY(fleshlight_portallight)
 	var/seamless = FALSE 		// Закрытие трусиков на латексный ключ
 	var/free_use = FALSE 		// Общий доступ для использования
 	var/last_free_use_change	// Последнее изменение общего доступа у трусиков
+	interactable_in_strip_menu = TRUE
 
 /mob/living/carbon/human
 	var/fleshlight_nickname //Используется для анонимизации персонажа
@@ -132,7 +133,7 @@ GLOBAL_LIST_EMPTY(fleshlight_portallight)
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attack_hand(mob/user)
 	if(!ishuman(user))
 		return ..()
-	if(seamless && (user.get_item_by_slot(ITEM_SLOT_UNDERWEAR) == src))
+	if(seamless && (user.get_item_by_slot(ITEM_SLOT_UNDERWEAR) == src || user.get_item_by_slot(ITEM_SLOT_MASK) == src))
 		to_chat(user, span_purple(pick("You pull your panties as you search for some sort of escape.",
 									"You can't find any leverage to remove these panties!",
 									"Your pointless clawing seems to only make things more skin tight")))
@@ -146,7 +147,17 @@ GLOBAL_LIST_EMPTY(fleshlight_portallight)
 	if(istype(K, /obj/item/key/latex))
 		seamless = !seamless
 		to_chat(user, span_warning("The panties suddenly [seamless ? "tighten" : "loosen"]!"))
+		if(HAS_TRAIT(src, TRAIT_NODROP))
+			REMOVE_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+		else if(current_equipped_slot == ITEM_SLOT_UNDERWEAR || current_equipped_slot == ITEM_SLOT_MASK)
+			ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 	return ..()
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/equipped(mob/user, slot)
+	. = ..()
+	if(seamless)
+		if(slot == ITEM_SLOT_UNDERWEAR || slot == ITEM_SLOT_MASK)
+			ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 // Приватный режим с переключением на AltClick
 /obj/item/clothing/underwear/briefs/panties/portalpanties/verb/free_use()

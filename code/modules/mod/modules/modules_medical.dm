@@ -22,6 +22,7 @@
 	var/mode = HEALTH_SCAN
 	/// List of all scanning modes.
 	var/static/list/modes = list(HEALTH_SCAN, WOUND_SCAN, CHEM_SCAN)
+	mod_module_flags = MOD_MODULE_MEDICAL // BLUEMOON ADD
 
 /obj/item/mod/module/health_analyzer/add_ui_data()
 	. = ..()
@@ -69,6 +70,7 @@
 	complexity = 1
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
 	incompatible_modules = list(/obj/item/mod/module/quick_carry, /obj/item/mod/module/constructor)
+	mod_module_flags = MOD_MODULE_MEDICAL // BLUEMOON ADD
 
 /obj/item/mod/module/quick_carry/on_suit_activation()
 	ADD_TRAIT(mod.wearer, TRAIT_QUICKER_CARRY, MOD_TRAIT)
@@ -106,6 +108,7 @@
 	incompatible_modules = list(/obj/item/mod/module/defibrillator)
 	cooldown_time = 0.5 SECONDS
 	var/defib_cooldown = 5 SECONDS
+	mod_module_flags = MOD_MODULE_MEDICAL // BLUEMOON ADD
 
 /obj/item/mod/module/defibrillator/Initialize(mapload)
 	. = ..()
@@ -166,6 +169,7 @@
 	device = /obj/item/surgical_processor/mod
 	incompatible_modules = list(/obj/item/mod/module/surgical_processor)
 	cooldown_time = 0.5 SECONDS
+	mod_module_flags = MOD_MODULE_MEDICAL // BLUEMOON ADD
 
 /obj/item/surgical_processor/mod
 	name = "MOD surgical processor"

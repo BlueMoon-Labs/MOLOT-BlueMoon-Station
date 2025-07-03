@@ -137,6 +137,10 @@
 		required_from_user |= INTERACTION_REQUIRE_TOPLESS
 	if(self.is_bottomless())
 		required_from_user |= INTERACTION_REQUIRE_BOTTOMLESS
+	// BLUEMOON ADD
+	if(self.has_tail())
+		required_from_user |= INTERACTION_REQUIRE_TAIL
+	// BLUEMOON ADD
 	.["required_from_user"] = required_from_user
 
 	var/required_from_user_exposed = NONE
@@ -279,6 +283,10 @@
 			required_from_target |= INTERACTION_REQUIRE_TOPLESS
 		if(target.is_bottomless())
 			required_from_target |= INTERACTION_REQUIRE_BOTTOMLESS
+		// BLUEMOON ADD
+		if(target.has_tail())
+			required_from_target |= INTERACTION_REQUIRE_TAIL
+		// BLUEMOON ADD
 		.["required_from_target"] = required_from_target
 
 		var/required_from_target_exposed = NONE
@@ -752,5 +760,23 @@
 					return FALSE
 			prefs.save_preferences()
 			return TRUE
+		if("genitals_menu")
+			switch(params["who"])
+				if("user")
+					if(iscarbon(parent_mob))
+						var/mob/living/carbon/C = parent_mob
+						C.genital_menu()
+						return TRUE
+					else
+						to_chat(parent_mob, span_warning("Unavailable for this mob."))
+						return FALSE
+				if("target")
+					if(iscarbon(target))
+						var/mob/living/carbon/C = target
+						C.genital_menu()
+						return TRUE
+					else
+						to_chat(parent_mob, span_warning("Unavailable for this mob."))
+						return FALSE
 
 #undef INTERACTION_UNHOLY //SPLURT Edit

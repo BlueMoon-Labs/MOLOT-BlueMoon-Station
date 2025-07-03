@@ -193,7 +193,7 @@
 /datum/gear/neck/cloak/teshari/jobs/hop
 	name = "Teshari Head of Personnel Cloak"
 	path = /obj/item/clothing/neck/cloak/teshari/jobs/hop
-	restricted_roles = list("Head of Personeel")
+	restricted_roles = list("Head of Personnel")
 
 /datum/gear/neck/cloak/teshari/jobs/service
 	name = "Teshari Service Cloak"

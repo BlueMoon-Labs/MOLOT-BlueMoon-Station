@@ -10,9 +10,6 @@
 			"name" = "Alcoholic",
 			"icon" = "wine-bottle",
 			"products" = list(
-				/obj/item/reagent_containers/food/drinks/bottle/blank = 5,
-				/obj/item/reagent_containers/food/drinks/bottle/blank/small = 10,
-				/obj/item/reagent_containers/food/drinks/bottle/blank/pitcher = 2,
 				/obj/item/reagent_containers/food/drinks/bottle/gin = 5,
 				/obj/item/reagent_containers/food/drinks/bottle/whiskey = 5,
 				/obj/item/reagent_containers/food/drinks/bottle/tequila = 5,
@@ -68,6 +65,7 @@
 				/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 8,
 				/obj/item/reagent_containers/food/drinks/bottle/blank/vampire_bottle = 10,
 				/obj/item/reagent_containers/food/drinks/kvass = 5, // BLUEMOON ADDED - kvass
+				/obj/item/reagent_containers/food/drinks/ice = 10,
 			),
 		),
 
@@ -77,8 +75,11 @@
 			"products" = list(
 				/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 				/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
-				/obj/item/reagent_containers/food/drinks/ice = 10,
 				/obj/item/reagent_containers/food/drinks/flask = 3,
+				/obj/item/reagent_containers/food/drinks/bottle/blank = 5,
+				/obj/item/reagent_containers/food/drinks/bottle/blank/small = 10,
+				/obj/item/reagent_containers/food/drinks/bottle/blank/pitcher = 2,
+				/obj/item/reagent_containers/food/drinks/shaker = 2,
 			),
 		),
 	)

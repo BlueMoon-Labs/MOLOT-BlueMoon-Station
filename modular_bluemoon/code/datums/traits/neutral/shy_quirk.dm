@@ -3,6 +3,7 @@
 	desc = "Вам становится неловко когда на вас смотрят. А если вас увидят без одежды - вы сгорите от стыда!"
 	value = 0
 	mob_trait = TRAIT_SHY
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Мне неловко от чужих взглядов.</span>"
 	lose_text = "<span class='notice'>Я больше не чувствую неловкость от чужих взглядов.</span>"
 

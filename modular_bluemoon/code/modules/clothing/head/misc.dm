@@ -58,3 +58,51 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/head_muzzled.dmi'
 
 ////////////////////////////////////////////
+
+/obj/item/clothing/head/fez
+	name = "fez"
+	desc = "Put it on your monkey, make lots of cash money."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "fez"
+	item_state = "fez"
+
+/obj/item/clothing/head/flower_crown
+	name = "flower crown"
+	desc = "A colorful flower crown made out of lilies, sunflowers and poppies."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "flower_crown"
+	item_state = "flower_crown"
+
+/obj/item/clothing/head/sunflower_crown
+	name = "sunflower crown"
+	desc = "A bright flower crown made out sunflowers that is sure to brighten up anyone's day!"
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "sunflower_crown"
+	item_state = "sunflower_crown"
+
+/obj/item/clothing/head/poppy_crown
+	name = "poppy crown"
+	desc = "A flower crown made out of a string of bright red poppies."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "poppy_crown"
+	item_state = "poppy_crown"
+
+/obj/item/clothing/head/lily_crown
+	name = "lily crown"
+	desc = "A leafy flower crown with a cluster of large white lilies at the front."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "lily_crown"
+	item_state = "lily_crown"
+
+/obj/item/clothing/head/geranium_crown
+	name = "geranium crown"
+	desc = "A flower crown made out of an array of rich purple geraniums."
+	icon = 'modular_bluemoon/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/hats.dmi'
+	icon_state = "geranium_crown"
+	item_state = "geranium_crown"

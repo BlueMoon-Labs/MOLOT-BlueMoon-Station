@@ -126,7 +126,7 @@
 /datum/emote/sound/human/purr
 	key = "purr"
 	key_third_person = "purrs softly"
-	message = "purrs softly."
+	message = "мягко мурлычет."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE

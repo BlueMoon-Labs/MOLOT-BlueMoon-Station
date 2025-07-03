@@ -2,8 +2,8 @@
 	var/can_you_fuck_plush = TRUE // TRUE - Да, можно сунуть в игрушку флешлайт. FALSE - Нет, нельзя. // Сделано чтобы предотвратить "нон-кон" именных игрушек. Ставить по усмотрению автора игрушки.
 
 /obj/item/toy/plush/bm
-	name = "Aiko Wierd Plushie"
-	desc = "Ugh... Something looks wierd."
+	name = "Aiko Plushie"
+	desc = "Wow... Aiko plushie!"
 	icon_state = "aiko"
 	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
@@ -16,6 +16,34 @@
 	attack_verb = list("gnawed", "gnashed", "chewed")
 	squeak_override = list('modular_bluemoon/sound/voice/rawr.ogg' = 1)
 
+/obj/item/toy/plush/bm/shark/grey
+	name = "Shark Grey Plushie"
+	icon_state = "blahaj-grey"
+
+/obj/item/toy/plush/bm/shark/purple
+	name = "Shark Purple Plushie"
+	icon_state = "blahaj-purple"
+
+/obj/item/toy/plush/bm/shark/orange
+	name = "Shark Orange Plushie"
+	icon_state = "blahaj-orange"
+
+/obj/item/toy/plush/bm/shark/yellow
+	name = "Shark Yellow Plushie"
+	icon_state = "blahaj-yellow"
+
+/obj/item/toy/plush/bm/shark/red
+	name = "Shark Red Plushie"
+	icon_state = "blahaj-red"
+
+/obj/item/toy/plush/bm/shark/green
+	name = "Shark Green Plushie"
+	icon_state = "blahaj-green"
+
+/obj/item/toy/plush/bm/shark/judas
+	name = "Judas Shark Plush"
+	icon_state = "blahaj-judas"
+
 /obj/item/toy/plush/bm/rouny
 	name = "Rouny Plushie"
 	desc = "A plushie depicting a xenomorph runner, made to commemorate the centenary of the Battle of LV-426. Much cuddlier than the real thing."
@@ -26,12 +54,6 @@
 	name = "Ada plushie"
 	desc = "Плюшевая игрушка серой кошки с яркими, как изумруды, глазками. Язык прикреплён небрежно. Крылья в комплект не входят."
 	icon_state = "ada"
-	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
-
-/obj/item/toy/plush/bm/jay
-	name = "Jay Plushie"
-	desc = "Плюшевая игрушка фиолетовой ящерки."
-	icon_state = "jay"
 	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
 
 /obj/item/toy/plush/bm/kiirava
@@ -307,6 +329,91 @@
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
 	icon_state = "millie"
 	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)
+	var/obj/item/dildo/flared/huge/clash_target
+
+/obj/item/toy/plush/bm/millie/Moved()
+	. = ..()
+	if(clash_target)
+		return
+	var/obj/item/dildo/flared/huge/P = locate() in range(1, src)
+	if(P && istype(P.loc, /turf/open) && !P.clashing)
+		clash_of_the_plushies(P)
+
+/obj/item/toy/plush/bm/millie/proc/clash_of_the_plushies(obj/item/dildo/flared/huge/P)
+	clash_target = P
+	P.clashing = TRUE
+	say("Палка для мастурбации!")
+	P.say("Дура кошачья...")
+	var/a_winnar_is
+	var/victory_chance = 10
+	for(var/i in 1 to 10) //We only fight ten times max
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(!Adjacent(P))
+			visible_message("<span class='warning'>The two plushies angrily flail at each other before giving up.</span>")
+			clash_target = null
+			P.clashing = FALSE
+			return
+		playsound(src, 'sound/magic/clockwork/ratvar_attack.ogg', 50, TRUE, frequency = 2)
+		sleep(2.4)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(prob(victory_chance))
+			a_winnar_is = src
+			break
+		P.SpinAnimation(5, 0)
+		sleep(5)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		playsound(P, 'sound/magic/clockwork/narsie_attack.ogg', 50, TRUE, frequency = 2)
+		sleep(3.3)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(prob(victory_chance))
+			a_winnar_is = P
+			break
+		SpinAnimation(5, 0)
+		victory_chance += 10
+		sleep(5)
+	if(!a_winnar_is)
+		a_winnar_is = pick(src, P)
+	if(a_winnar_is == src)
+		say("Секс ликвидирован")
+		playsound(src, 'sound/magic/clockwork/anima_fragment_attack.ogg', 50, TRUE, frequency = 2)
+		playsound(P, 'sound/magic/demon_dies.ogg', 50, TRUE, frequency = 2)
+		var/obj/effect/decal/cleanable/semen/femcum/V = new /obj/effect/decal/cleanable/semen/femcum(get_turf(src))
+		V.desc = "Да, вам не показалось, это сделала игрушка."
+		qdel(P)
+		clash_target = null
+	else
+		P.say("Очередная розовая шлюха повержена")
+		playsound(src, 'sound/magic/clockwork/anima_fragment_death.ogg', 62, TRUE, frequency = 2)
+		playsound(P, 'sound/magic/demon_attack1.ogg', 50, TRUE, frequency = 2)
+		var/datum/reagents/R = new(1)
+		R.my_atom = P
+		R.add_reagent(/datum/reagent/drug/aphrodisiac, 1)
+		var/datum/effect_system/smoke_spread/chem/smoke = new
+		smoke.set_up(R, 1, get_turf(P), FALSE)
+		sleep(5)
+		smoke.start()
+		qdel(src)
+		P.clashing = FALSE
 
 /obj/item/toy/plush/bm/lissara
 	name = "Lissara plush"
@@ -325,3 +432,9 @@
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
 	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
 	)
+
+/obj/item/toy/plush/bm/stasik/artemq
+	name = "Artems toy plush"
+	desc = "Вы видите игрушку,одетую в стандатную форму inteQ. Смотря в удивленное плюшевое лицо,она вам подозрительно кого-то напоминает. Точно можно сказать что игрушка кого то испугалась. Но кого мог испугаться плюшевый интековец?"
+	icon_state = "artems"
+	squeak_override = list('modular_bluemoon/sound/voice/graysonplush.ogg' = 2, 'modular_bluemoon/sound/voice/stasik_volcahara.ogg' = 1,)

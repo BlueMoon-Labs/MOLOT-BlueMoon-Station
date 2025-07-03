@@ -108,6 +108,11 @@
 	set category = "Эмоции.1: Специальные Действия"
 	emote("lick")
 
+/mob/living/verb/emote_laugh_soft()
+	set name = "> Тихо смеяться "
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("laugh_soft")
+
 /mob/living/verb/emote_laugh1()
 	set name = "> Смеяться 1 "
 	set category = "Эмоции.2: Звуковые Действия"
@@ -352,6 +357,11 @@
 	set name = "~ Понюхать "
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("sniff")
+
+/mob/living/verb/emote_snuffle()
+	set name = "~ Шмыгнуть "
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("snuffle")
 
 /mob/living/verb/emote_snore1()
 	set name = "> Тихо Храпеть "

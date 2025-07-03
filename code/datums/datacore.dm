@@ -110,6 +110,16 @@
 			log_text = replacetext(log_text, "%%AUTH%%", "<u>[auth_name]</u>")
 			log_text = replacetext(log_text, "%%GEN_AUTH%%", "<u>[auth_name] ([auth_rank])</u>")
 			R.fields["actions_logs"] += log_text
+
+// отдельная запись квирков когда они реально записаны
+/datum/datacore/proc/notes_traits_modify(mob/living/carbon/human/H)
+	var/datum/data/record/foundrecord = find_record("name", H.real_name, GLOB.data_core.medical)
+	if(foundrecord)
+		var/traits_dat = H.get_trait_string(TRUE)
+		if(!traits_dat)
+			return
+		else
+			foundrecord.fields["notes"] += "\n traits information as of shift start: [traits_dat]"
 // BLUEMOON ADD END
 
 /datum/datacore/proc/manifest()
@@ -357,7 +367,7 @@
 		M.fields["alg_d"]		= "No allergies have been detected in this patient."
 		M.fields["cdi"]			= "None"
 		M.fields["cdi_d"]		= "No diseases have been diagnosed at the moment."
-		M.fields["notes"]		= "Trait information as of shift start: [H.get_trait_string(medical)]<br>[prefs.medical_records]"
+		M.fields["notes"]		= "[prefs.medical_records]"
 		medical += M
 
 		//Security Record

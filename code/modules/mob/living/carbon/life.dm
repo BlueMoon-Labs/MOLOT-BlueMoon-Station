@@ -65,12 +65,7 @@
 			//SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "suffocation", /datum/mood_event/suffocation)
 
 			// HYPER CHANGE
-			var/mob/living/carbon/human/B = src
-			if(HAS_TRAIT(B, TRAIT_CHOKE_SLUT))
-				B.add_lust(7)
-				if (B.get_lust() >= get_lust_tolerance()*3 && ishuman(B) && B.has_dna())
-					B.mob_climax(forced_climax=TRUE)
-			else
+			if(!HAS_TRAIT(src, TRAIT_CHOKE_SLUT))
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "suffocation", /datum/mood_event/suffocation)
 			// HYPER CHANGE END
 

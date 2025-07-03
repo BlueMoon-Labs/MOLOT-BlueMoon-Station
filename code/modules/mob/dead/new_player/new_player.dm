@@ -546,6 +546,7 @@
 
 	if(humanc && CONFIG_GET(flag/roundstart_traits))
 		SSquirks.AssignQuirks(humanc, humanc.client, TRUE, FALSE, job, FALSE)
+		GLOB.data_core.notes_traits_modify(humanc)
 	//sandstorm change
 	if(humanc)
 		SSlanguage.AssignLanguage(humanc, humanc.client, TRUE, FALSE, job, FALSE)

@@ -3,6 +3,7 @@
 	name = "giant bed"
 	icon_state = "bed_corner"
 	icon = 'modular_bluemoon/icons/obj/giant_bed.dmi'
+	buildstackamount = 4
 
 /obj/structure/bed/giant/side
 	icon_state = "bed_side"

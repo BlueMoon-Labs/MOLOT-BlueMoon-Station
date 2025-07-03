@@ -667,9 +667,9 @@
 
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison
 	name = "DS-2 'Blessed' | Long-Term Brig"
-	sub_areas = list(/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison_shower)
 
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "DS-2 'Blessed' | Brig Shower Room"
@@ -687,9 +687,9 @@
 
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness
 	name = "DS-2 'Blessed' | Fitness Room"
-	sub_areas = list(/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness_shower)
 
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "DS-2 'Blessed' | Shower Room"
@@ -802,9 +802,9 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation
 	name = "Listening Post"
 	icon_state = "yellow"
-	sub_areas = list(/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/listeningstation_shower)
 
-/area/ruin/space/has_grav/bluemoon/listeningstation/shower
+/area/ruin/space/has_grav/bluemoon/listeningstation_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "Listening Post Shower"

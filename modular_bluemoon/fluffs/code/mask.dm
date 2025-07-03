@@ -55,7 +55,7 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/mask.dmi'
 	icon_state = "eo-95_mask"
 
-/obj/item/clothing/mask/gas/hair_module
+/obj/item/clothing/mask/hair_module
 	name = "Hair Module"
 	desc = "Этот модуль крепится к голове СПУ. В дополнение к косметическим функциям, в этот модуль встроены датчики."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/mask.dmi'

@@ -198,6 +198,9 @@
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 
+/obj/item/clothing/head/helmet/space/hardsuit/teslapahelmet/update_icon_state()
+	return
+
 /obj/item/clothing/suit/space/hardsuit/advancedpa
 	name = "Advanced Power Armor"
 	desc = "An advanced power armor. You're sure this is near to impossible to penetrate in close quarters."
@@ -232,6 +235,9 @@
 	armor = list("melee" = 95, "bullet" = 90, "laser" = 70, "energy" = 80, "bomb" = 70, "bio" = 100, "rad" = 40, "fire" = 100, "acid" = 100, "wound" = 50)
 	strip_delay = 300
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+
+/obj/item/clothing/head/helmet/space/hardsuit/advancedpahelmet/update_icon_state()
+	return
 
 /obj/item/clothing/head/helmet/space/hardsuit/corpus
 	name = "Corpus Ranger Helmet"

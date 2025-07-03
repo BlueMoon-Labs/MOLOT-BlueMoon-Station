@@ -895,3 +895,10 @@
 	path = /obj/item/clothing/head/collectable/wizard
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/bp_helmet
+	name = "Old bullet proof helmet"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/assu_helmet/bp_helmet
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1

@@ -126,7 +126,7 @@
 	desc = "The right arm of the Free Trade Union "
 	icon = 'modular_splurt/icons/obj/guns/projectile.dmi'
 	icon_state = "fnfal"
-	item_state = "moistnugget"
+	item_state = "fnfal"
 	fire_sound = 'sound/weapons/rifleshot.ogg'
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/fal

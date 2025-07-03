@@ -92,6 +92,7 @@
 			else
 				user.visible_message(span_lewd("<b>[user]</b> пытается выдоить содержимое груди <b>[target]</b> в [liquid_container], но ничего не выходит...."), ignored_mobs = user.get_unconsenting())
 				target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
+				playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 
 	else
 		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, CUM_TARGET_BREASTS)

@@ -666,7 +666,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/stationroom/maint/fivexthree
 	template_names = list("Maint boxclutter1", "Maint breach", "Maint cloner", "Maint deltaclutter2", "Maint deltaclutter3", "Maint incompletefloor", "Maint kiloclutter1", "Maint metaclutter1", "Maint metaclutter3", "Maint minibreakroom", "Maint nastytrap", "Maint pills", "Maint pubbybedroom",
-	"Maint pubbyclutter4", "Maint pubbyclutter7", "Maint pubbykitchen", "Maint storeroom", "Maint yogsmaintdet", "Maint yogsmaintrpg", "Maint waitingroom", "Maint podmin", "Maint highqualitysurgery", "Maint chestburst", "Maint gloveroom", "Maint magicroom", "Maint spareparts", "Maint smallfish")
+	"Maint pubbyclutter4", "Maint pubbyclutter7", "Maint pubbykitchen", "Maint storeroom", "Maint yogsmaintdet", "Maint yogsmaintrpg", "Maint waitingroom", "Maint podmin", "Maint highqualitysurgery", "Maint chestburst", "Maint gloveroom", "Maint magicroom", "Maint spareparts", "Maint smallfish", "Maint ghostlibrary")
 
 /obj/effect/landmark/stationroom/maint/fivexfour
 	template_names = list("Maint blasted", "Maint boxbar", "Maint boxdinner", "Maint boxsurgery", "Maint comproom", "Maint deltabar", "Maint deltadetective", "Maint deltadressing", "Maint deltaEVA", "Maint deltagamble", "Maint deltalounge", "Maint deltasurgery", "Maint firemanroom", "Maint icicle",
