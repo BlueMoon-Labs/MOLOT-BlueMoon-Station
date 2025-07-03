@@ -332,6 +332,7 @@
 	name = "industrial welding tool"
 	desc = "A slightly larger welder with a larger tank."
 	icon_state = "indwelder"
+	item_state = "upindwelder"
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 	toolspeed = 0.95 // BLUEMOOD ADD
@@ -350,6 +351,7 @@
 	name = "emergency welding tool"
 	desc = "A miniature welder used during emergencies."
 	icon_state = "miniwelder"
+	item_state = "miniwelder"
 	max_fuel = 10
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=30, /datum/material/glass=10)
@@ -413,6 +415,7 @@
 	desc = "An alien welding tool. Whatever fuel it uses, it never runs out."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "welder"
+	item_state = "alienwelder"
 	self_fueling = TRUE
 	can_off_process = TRUE
 	refueling_interval = 1
@@ -425,6 +428,7 @@
 	desc = "A modern welding tool combined with an alien welding tool, it almost never runs out of fuel and works nearly as fast."
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "welder"
+	item_state = "alienwelder"
 	self_fueling = TRUE
 	can_off_process = TRUE
 	refueling_interval = 2
