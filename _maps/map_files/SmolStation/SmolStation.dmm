@@ -3660,7 +3660,8 @@
 	dwidth = 3;
 	height = 5;
 	name = "Science Outpost Shuttle Dock";
-	width = 7
+	width = 7;
+	shuttle_id = "sciout_dock"
 	},
 /turf/open/space/basic,
 /area/space)
@@ -3699,7 +3700,8 @@
 	height = 5;
 	name = "Station Dock";
 	roundstart_template = /datum/map_template/shuttle/modular_sand/permabrig;
-	width = 8
+	width = 8;
+	shuttle_id = "perma_station"
 	},
 /turf/open/space/basic,
 /area/space)
@@ -9103,7 +9105,8 @@
 	height = 5;
 	name = "Science Shuttle Dock";
 	roundstart_template = /datum/map_template/shuttle/modular_sand/scioutpost;
-	width = 7
+	width = 7;
+	shuttle_id = "sciout_station"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
 	name = "landing site"
@@ -11205,7 +11208,8 @@
 	dwidth = 3;
 	height = 5;
 	name = "AI Access";
-	width = 7
+	width = 7;
+	shuttle_id = "ai_sat"
 	},
 /turf/open/space/basic,
 /area/space)
@@ -22820,7 +22824,8 @@
 	height = 5;
 	name = "Station Access";
 	roundstart_template = /datum/map_template/shuttle/modular_sand/satshuttle;
-	width = 7
+	width = 7;
+	shuttle_id = "ai_station"
 	},
 /turf/open/space/basic,
 /area/space)
@@ -24416,7 +24421,8 @@
 	dwidth = 2;
 	height = 5;
 	name = "Perma Dock";
-	width = 8
+	width = 8;
+	shuttle_id = "perma_prison"
 	},
 /turf/open/space/basic,
 /area/space)
