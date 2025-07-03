@@ -5,29 +5,33 @@
 	gain_text = "<span class='notice'>You feel in good company, for some reason.</span>"
 	lose_text = "<span class='warning'>You feel lonely again.</span>"
 	var/mob/camera/imaginary_friend/friend
+	var/obj/effect/mob_spawn/imaginary_friend/friend_spawner	// спавнер для гостов, находится в друге
 	var/friend_initialized = FALSE
+	var/try_search_friend = TRUE
 
 /datum/brain_trauma/special/imaginary_friend/on_gain()
-	var/mob/living/M = owner
-	if(M.stat == DEAD || !M.client)
-		qdel(src)
-		return
+	if(owner.stat == DEAD || !owner.client)
+		return qdel(src)
 	..()
-	make_friend()
-	get_ghost()
+	if(try_search_friend) 	// BLUEMOON ADD если ищем друга, то делаем спавнер
+		make_friend_spawner()
+	else
+		make_friend()	// BLUEMOON ADD END если нет, то просто делаем друга
 
 /datum/brain_trauma/special/imaginary_friend/on_life()
 	if(get_dist(owner, friend) > 9)
 		friend.recall()
-	if(!friend)
-		qdel(src)
-		return
-	if(!friend.client && friend_initialized)
-		addtimer(CALLBACK(src, PROC_REF(reroll_friend)), 600)
+	//if(!friend) // BLUEMOON ADD нет друга? найдём ещё одного
+	//	qdel(src)
+	//	return
+	if((!friend || !friend.client) && friend_initialized)
+		friend_initialized = FALSE
+		addtimer(CALLBACK(src, PROC_REF(reroll_friend)), 1 MINUTES) // BLUEMOON ADD END
 
 /datum/brain_trauma/special/imaginary_friend/on_death()
 	..()
-	qdel(src) //friend goes down with the ship
+	if(resilience != TRAUMA_RESILIENCE_ABSOLUTE) // BLUEMOON ADD смерть не причина избавиться от ультимативной травмы
+		qdel(src) //friend goes down with the ship
 
 /datum/brain_trauma/special/imaginary_friend/on_lose()
 	..()
@@ -36,24 +40,21 @@
 //If the friend goes afk, make a brand new friend. Plenty of fish in the sea of imagination.
 /datum/brain_trauma/special/imaginary_friend/proc/reroll_friend()
 	if(friend.client) //reconnected
+		friend_initialized = TRUE
 		return
 	friend_initialized = FALSE
 	QDEL_NULL(friend)
-	make_friend()
-	get_ghost()
+// BLUEMOON ADD вместо анонса создаём слот для гостов
+	make_friend_spawner()
+
+/datum/brain_trauma/special/imaginary_friend/proc/make_friend_spawner()
+	if(!friend)
+		make_friend()
+	friend_spawner = new(friend, src)
+// BLUEMOON ADD END
 
 /datum/brain_trauma/special/imaginary_friend/proc/make_friend()
 	friend = new(get_turf(owner), src)
-
-/datum/brain_trauma/special/imaginary_friend/proc/get_ghost()
-	set waitfor = FALSE
-	var/list/candidates = pollCandidatesForMob("Do you want to play as [owner]'s imaginary friend?", ROLE_PAI, null, null, 75, friend, POLL_IGNORE_IMAGINARYFRIEND)
-	if(LAZYLEN(candidates))
-		var/mob/C = pick(candidates)
-		C.transfer_ckey(friend, FALSE)
-		friend_initialized = TRUE
-	else
-		qdel(src)
 
 /mob/camera/imaginary_friend
 	name = "imaginary friend"
@@ -101,7 +102,14 @@
 	hide = new
 	hide.Grant(src)
 
-/mob/camera/imaginary_friend/proc/setup_friend()
+/mob/camera/imaginary_friend/proc/setup_friend(use_pref = FALSE) //BLUEMOON ADD сетапим друга с префом зашедшего игрока
+	if(use_pref && client?.prefs)
+		real_name = client.prefs.real_name
+		name = real_name
+		human_image = get_flat_human_icon(null, pick(SSjob.occupations), client.prefs)
+		return
+	//BLUEMOON ADD END
+
 	var/gender = pick(MALE, FEMALE)
 	real_name = random_unique_name(gender)
 	name = real_name
@@ -244,6 +252,7 @@
 	gain_text = ""
 	lose_text = ""
 	random_gain = FALSE
+	try_search_friend = FALSE
 
 /datum/brain_trauma/special/imaginary_friend/trapped_owner/make_friend()
 	friend = new /mob/camera/imaginary_friend/trapped(get_turf(owner), src)
@@ -254,9 +263,6 @@
 	friend_initialized = FALSE
 	QDEL_NULL(friend)
 	qdel(src)
-
-/datum/brain_trauma/special/imaginary_friend/trapped_owner/get_ghost() //no randoms
-	return
 
 /mob/camera/imaginary_friend/trapped
 	name = "figment of imagination?"

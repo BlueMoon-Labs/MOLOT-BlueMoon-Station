@@ -23,6 +23,7 @@ export const SpawnerContent = (props, context) => {
   const midround = spawners.filter((spawner) => spawner.category === 'midround');
   const special = spawners.filter((spawner) => spawner.category === 'special');
   const offstation = spawners.filter((spawner) => spawner.category === 'offstation');
+  const trauma = spawners.filter((spawner) => spawner.category === 'trauma');
 
   return (
     <Box>
@@ -84,6 +85,14 @@ export const SpawnerContent = (props, context) => {
               Off-Station ({offstation.length})
             </Tabs.Tab>
           )}
+          {trauma.length > 0 && (
+            <Tabs.Tab
+              icon="heartbeat"
+              selected={tab === 'trauma'}
+              onClick={() => setTab('trauma')}>
+              Trauma ({trauma.length})
+            </Tabs.Tab>
+          )}
         </Tabs>
       </Section>
       {tab === 'misc' && <RolelistMisc spawners={misc} />}
@@ -93,6 +102,7 @@ export const SpawnerContent = (props, context) => {
       {tab === 'midround' && <RolelistMidround spawners={midround} />}
       {tab === 'special' && <RolelistSpecial spawners={special} />}
       {tab === 'offstation' && <RolelistOffstation spawners={offstation} />}
+      {tab === 'trauma' && <RolelistSyndicate spawners={trauma} />}
     </Box>
   );
 };
@@ -212,6 +222,16 @@ export const RolelistSpecial = ({ spawners, context }) => {
 };
 
 export const RolelistOffstation = ({ spawners, context }) => {
+  return (
+    <Section>
+      {spawners.map((spawner) => (
+        <RolelistItem key={spawner.name} spawner={spawner} />
+      ))}
+    </Section>
+  );
+};
+
+export const RolelistTrauma = ({ spawners, context }) => {
   return (
     <Section>
       {spawners.map((spawner) => (
