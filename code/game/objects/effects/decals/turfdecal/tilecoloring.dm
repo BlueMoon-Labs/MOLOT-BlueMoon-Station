@@ -1277,7 +1277,7 @@
 /obj/effect/turf_decal/stripes/blue/full
 	icon_state = "warn_full_blue"
 
-/obj/effect/turf_decal/bot_blue
+/obj/effect/turf_decal/bot/blue
 	icon = 'modular_bluemoon/smiley/icons/misc/turf_decals.dmi'
 	icon_state = "bot_blue"
 

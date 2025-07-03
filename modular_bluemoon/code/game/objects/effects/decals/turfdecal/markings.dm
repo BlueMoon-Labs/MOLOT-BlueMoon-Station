@@ -1,3 +1,6 @@
+/obj/effect/turf_decal/big_sign
+	icon_state = "plaque"
+
 /obj/effect/turf_decal/big_sign/chapel
 	icon = 'modular_bluemoon/icons/turf/big_sign/chapel.dmi'
 	icon_state = "example"

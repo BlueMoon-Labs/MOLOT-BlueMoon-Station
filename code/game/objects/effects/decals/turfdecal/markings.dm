@@ -67,11 +67,6 @@
 /obj/effect/turf_decal/delivery/red
 	icon_state = "delivery_red"
 
-//Blue. Bluemoon.
-
-/obj/effect/turf_decal/bot_blue
-	icon_state = "bot_blue"
-
 /obj/effect/turf_decal/caution/stand_clear/blue
 	icon_state = "stand_clear_blue"
 
@@ -92,32 +87,43 @@
 	icon_state = "caution_blue"
 
 //Blue. Bluemoon.
-
 /obj/effect/turf_decal/bot
 	icon_state = "bot"
 
-/obj/effect/turf_decal/bot/right
+/obj/effect/turf_decal/bot/blue
+	icon_state = "bot_blue"
+
+/obj/effect/turf_decal/bot/blue/right
+	icon_state = "bot_right_blue"
+
+/obj/effect/turf_decal/bot/blue/left
+	icon_state = "bot_left_blue"
+
+/obj/effect/turf_decal/bot/yellow
+	icon_state = "bot"
+
+/obj/effect/turf_decal/bot/yellow/right
 	icon_state = "bot_right"
 
-/obj/effect/turf_decal/bot/left
+/obj/effect/turf_decal/bot/yellow/left
 	icon_state = "bot_left"
 
-/obj/effect/turf_decal/bot_white
+/obj/effect/turf_decal/bot/white
 	icon_state = "bot_white"
 
-/obj/effect/turf_decal/bot_white/right
+/obj/effect/turf_decal/bot/white/right
 	icon_state = "bot_right_white"
 
-/obj/effect/turf_decal/bot_white/left
+/obj/effect/turf_decal/bot/white/left
 	icon_state = "bot_left_white"
 
-/obj/effect/turf_decal/bot_red
+/obj/effect/turf_decal/bot/red
 	icon_state = "bot_red"
 
-/obj/effect/turf_decal/bot_red/right
+/obj/effect/turf_decal/bot/red/right
 	icon_state = "bot_right_red"
 
-/obj/effect/turf_decal/bot_red/left
+/obj/effect/turf_decal/bot/red/left
 	icon_state = "bot_left_red"
 
 /obj/effect/turf_decal/loading_area
@@ -159,7 +165,7 @@
 /obj/effect/turf_decal/box
 	icon_state = "box"
 
-/obj/effect/turf_decal/box/corners
+/obj/effect/turf_decal/box/yellow/corners
 	icon_state = "box_corners"
 
 /obj/effect/turf_decal/box/white
@@ -246,33 +252,6 @@
 /obj/effect/turf_decal/delivery/red
 	icon_state = "delivery_red"
 
-/obj/effect/turf_decal/bot
-	icon_state = "bot"
-
-/obj/effect/turf_decal/bot/right
-	icon_state = "bot_right"
-
-/obj/effect/turf_decal/bot/left
-	icon_state = "bot_left"
-
-/obj/effect/turf_decal/bot_white
-	icon_state = "bot_white"
-
-/obj/effect/turf_decal/bot_white/right
-	icon_state = "bot_right_white"
-
-/obj/effect/turf_decal/bot_white/left
-	icon_state = "bot_left_white"
-
-/obj/effect/turf_decal/bot_red
-	icon_state = "bot_red"
-
-/obj/effect/turf_decal/bot_red/right
-	icon_state = "bot_right_red"
-
-/obj/effect/turf_decal/bot_red/left
-	icon_state = "bot_left_red"
-
 /obj/effect/turf_decal/loading_area
 	icon_state = "loadingarea"
 
@@ -312,7 +291,7 @@
 /obj/effect/turf_decal/box
 	icon_state = "box"
 
-/obj/effect/turf_decal/box/corners
+/obj/effect/turf_decal/box/yellow/corners
 	icon_state = "box_corners"
 
 /obj/effect/turf_decal/box/white
@@ -326,9 +305,6 @@
 
 /obj/effect/turf_decal/box/red/corners
 	icon_state = "box_corners_red"
-
-/obj/effect/turf_decal/plaque
-	icon_state = "plaque"
 
 /obj/effect/turf_decal/siding
 	icon_state = "siding_line"
