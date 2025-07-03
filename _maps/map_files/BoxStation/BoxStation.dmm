@@ -4473,7 +4473,8 @@
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "atF" = (
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/maintenance/department/electrical)
 "atG" = (
 /obj/machinery/mech_bay_recharge_port,
@@ -5089,6 +5090,7 @@
 /obj/machinery/shower{
 	pixel_y = 16
 	},
+/obj/effect/turf_decal/bluemoon_decals/drain,
 /turf/open/floor/plasteel/showroomfloor,
 /area/commons/dorms)
 "awG" = (
@@ -9293,14 +9295,22 @@
 /turf/open/floor/carpet,
 /area/service/library)
 "aPk" = (
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/bluemoon_decals/chapel{
 	dir = 4
 	},
+/obj/effect/turf_decal/bluemoon_decals/chapel/center{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "aPl" = (
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/bluemoon_decals/chapel{
 	dir = 1
 	},
+/obj/effect/turf_decal/bluemoon_decals/chapel/center{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "aPq" = (
 /turf/open/floor/plasteel/textured/large,
@@ -10127,15 +10137,21 @@
 /obj/structure/chair/pew/right{
 	dir = 1
 	},
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/bluemoon_decals/chapel,
+/obj/effect/turf_decal/bluemoon_decals/chapel/center,
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "aTg" = (
 /obj/structure/chair/pew/left{
 	dir = 1
 	},
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/bluemoon_decals/chapel{
 	dir = 8
 	},
+/obj/effect/turf_decal/bluemoon_decals/chapel/center{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "aTj" = (
 /obj/machinery/light{
@@ -15121,7 +15137,8 @@
 /turf/open/floor/plasteel,
 /area/science/robotics/mechbay)
 "blw" = (
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/recharge,
+/turf/open/floor/plasteel,
 /area/science/robotics/mechbay)
 "blx" = (
 /obj/machinery/airalarm{
@@ -40161,7 +40178,8 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/turf/open/floor/plasteel/showroomfloor/shower,
+/obj/effect/turf_decal/bluemoon_decals/drain,
+/turf/open/floor/plasteel/showroomfloor,
 /area/commons/toilet)
 "eJu" = (
 /obj/machinery/button/door{
@@ -40247,7 +40265,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/bluemoon_decals/chapel,
+/obj/effect/turf_decal/bluemoon_decals/chapel/center,
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "eLT" = (
 /obj/structure/cable{
@@ -41452,13 +41472,6 @@
 	},
 /turf/open/floor/plasteel/textured/half,
 /area/hallway/secondary/service)
-"fma" = (
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 16
-	},
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/commons/dorms)
 "fmL" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -44133,7 +44146,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/bluemoon_decals/chapel,
+/obj/effect/turf_decal/bluemoon_decals/chapel/center,
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "gyQ" = (
 /obj/structure/table/wood,
@@ -46309,9 +46324,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/bluemoon_decals/chapel{
 	dir = 8
 	},
+/obj/effect/turf_decal/bluemoon_decals/chapel/center{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "hAE" = (
 /obj/effect/turf_decal/stripes/line{
@@ -46784,7 +46803,8 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/turf/open/floor/plasteel/showroomfloor/shower,
+/obj/effect/turf_decal/bluemoon_decals/drain,
+/turf/open/floor/plasteel/showroomfloor,
 /area/commons/toilet)
 "hMx" = (
 /obj/effect/turf_decal/tile/red{
@@ -52406,9 +52426,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/bluemoon_decals/chapel{
 	dir = 8
 	},
+/obj/effect/turf_decal/bluemoon_decals/chapel/center{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/service/chapel/main)
 "kwp" = (
 /obj/structure/cable{
@@ -59872,7 +59896,8 @@
 	},
 /obj/item/soap/deluxe,
 /obj/item/bikehorn/rubberducky,
-/turf/open/floor/plasteel/showroomfloor/shower,
+/obj/effect/turf_decal/bluemoon_decals/drain,
+/turf/open/floor/plasteel/showroomfloor,
 /area/command/heads_quarters/captain)
 "oaa" = (
 /obj/machinery/door/airlock{
@@ -111365,7 +111390,7 @@ arf
 aWs
 xwX
 arf
-fma
+awF
 dgz
 tyn
 edQ
