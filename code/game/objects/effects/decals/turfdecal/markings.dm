@@ -1,19 +1,19 @@
-/obj/effect/turf_decal/stripes/line
+/obj/effect/turf_decal/stripes/yellow/line
 	icon_state = "warningline"
 
-/obj/effect/turf_decal/stripes/end
+/obj/effect/turf_decal/stripes/yellow/end
 	icon_state = "warn_end"
 
-/obj/effect/turf_decal/stripes/corner
+/obj/effect/turf_decal/stripes/yellow/corner
 	icon_state = "warninglinecorner"
 
-/obj/effect/turf_decal/stripes/box
+/obj/effect/turf_decal/stripes/yellow/box
 	icon_state = "warn_box"
 
-/obj/effect/turf_decal/stripes/full
+/obj/effect/turf_decal/stripes/yellow/full
 	icon_state = "warn_full"
 
-/obj/effect/turf_decal/stripes/asteroid/line
+/obj/effect/turf_decal/stripes/asteroid
 	icon_state = "ast_warn"
 
 /obj/effect/turf_decal/stripes/asteroid/end
@@ -28,7 +28,7 @@
 /obj/effect/turf_decal/stripes/asteroid/full
 	icon_state = "ast_warn_full"
 
-/obj/effect/turf_decal/stripes/white/line
+/obj/effect/turf_decal/stripes/white
 	icon_state = "warningline_white"
 
 /obj/effect/turf_decal/stripes/white/end
@@ -43,7 +43,7 @@
 /obj/effect/turf_decal/stripes/white/full
 	icon_state = "warn_full_white"
 
-/obj/effect/turf_decal/stripes/red/line
+/obj/effect/turf_decal/stripes/red
 	icon_state = "warningline_red"
 
 /obj/effect/turf_decal/stripes/red/end
@@ -66,11 +66,6 @@
 
 /obj/effect/turf_decal/delivery/red
 	icon_state = "delivery_red"
-
-//Blue. Bluemoon.
-
-/obj/effect/turf_decal/bot_blue
-	icon_state = "bot_blue"
 
 /obj/effect/turf_decal/caution/stand_clear/blue
 	icon_state = "stand_clear_blue"
@@ -92,32 +87,43 @@
 	icon_state = "caution_blue"
 
 //Blue. Bluemoon.
-
 /obj/effect/turf_decal/bot
 	icon_state = "bot"
 
-/obj/effect/turf_decal/bot/right
+/obj/effect/turf_decal/bot/blue
+	icon_state = "bot_blue"
+
+/obj/effect/turf_decal/bot/blue/right
+	icon_state = "bot_right_blue"
+
+/obj/effect/turf_decal/bot/blue/left
+	icon_state = "bot_left_blue"
+
+/obj/effect/turf_decal/bot/yellow
+	icon_state = "bot"
+
+/obj/effect/turf_decal/bot/yellow/right
 	icon_state = "bot_right"
 
-/obj/effect/turf_decal/bot/left
+/obj/effect/turf_decal/bot/yellow/left
 	icon_state = "bot_left"
 
-/obj/effect/turf_decal/bot_white
+/obj/effect/turf_decal/bot/white
 	icon_state = "bot_white"
 
-/obj/effect/turf_decal/bot_white/right
+/obj/effect/turf_decal/bot/white/right
 	icon_state = "bot_right_white"
 
-/obj/effect/turf_decal/bot_white/left
+/obj/effect/turf_decal/bot/white/left
 	icon_state = "bot_left_white"
 
-/obj/effect/turf_decal/bot_red
+/obj/effect/turf_decal/bot/red
 	icon_state = "bot_red"
 
-/obj/effect/turf_decal/bot_red/right
+/obj/effect/turf_decal/bot/red/right
 	icon_state = "bot_right_red"
 
-/obj/effect/turf_decal/bot_red/left
+/obj/effect/turf_decal/bot/red/left
 	icon_state = "bot_left_red"
 
 /obj/effect/turf_decal/loading_area
@@ -159,7 +165,7 @@
 /obj/effect/turf_decal/box
 	icon_state = "box"
 
-/obj/effect/turf_decal/box/corners
+/obj/effect/turf_decal/box/yellow/corners
 	icon_state = "box_corners"
 
 /obj/effect/turf_decal/box/white
@@ -174,25 +180,25 @@
 /obj/effect/turf_decal/box/red/corners
 	icon_state = "box_corners_red"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "plaque"
 
-/obj/effect/turf_decal/stripes/line
+/obj/effect/turf_decal/stripes/yellow/line
 	icon_state = "warningline"
 
-/obj/effect/turf_decal/stripes/end
+/obj/effect/turf_decal/stripes/yellow/end
 	icon_state = "warn_end"
 
-/obj/effect/turf_decal/stripes/corner
+/obj/effect/turf_decal/stripes/yellow/corner
 	icon_state = "warninglinecorner"
 
-/obj/effect/turf_decal/stripes/box
+/obj/effect/turf_decal/stripes/yellow/box
 	icon_state = "warn_box"
 
-/obj/effect/turf_decal/stripes/full
+/obj/effect/turf_decal/stripes/yellow/full
 	icon_state = "warn_full"
 
-/obj/effect/turf_decal/stripes/asteroid/line
+/obj/effect/turf_decal/stripes/asteroid
 	icon_state = "ast_warn"
 
 /obj/effect/turf_decal/stripes/asteroid/end
@@ -207,7 +213,7 @@
 /obj/effect/turf_decal/stripes/asteroid/full
 	icon_state = "ast_warn_full"
 
-/obj/effect/turf_decal/stripes/white/line
+/obj/effect/turf_decal/stripes/white
 	icon_state = "warningline_white"
 
 /obj/effect/turf_decal/stripes/white/end
@@ -222,7 +228,7 @@
 /obj/effect/turf_decal/stripes/white/full
 	icon_state = "warn_full_white"
 
-/obj/effect/turf_decal/stripes/red/line
+/obj/effect/turf_decal/stripes/red
 	icon_state = "warningline_red"
 
 /obj/effect/turf_decal/stripes/red/end
@@ -246,33 +252,6 @@
 /obj/effect/turf_decal/delivery/red
 	icon_state = "delivery_red"
 
-/obj/effect/turf_decal/bot
-	icon_state = "bot"
-
-/obj/effect/turf_decal/bot/right
-	icon_state = "bot_right"
-
-/obj/effect/turf_decal/bot/left
-	icon_state = "bot_left"
-
-/obj/effect/turf_decal/bot_white
-	icon_state = "bot_white"
-
-/obj/effect/turf_decal/bot_white/right
-	icon_state = "bot_right_white"
-
-/obj/effect/turf_decal/bot_white/left
-	icon_state = "bot_left_white"
-
-/obj/effect/turf_decal/bot_red
-	icon_state = "bot_red"
-
-/obj/effect/turf_decal/bot_red/right
-	icon_state = "bot_right_red"
-
-/obj/effect/turf_decal/bot_red/left
-	icon_state = "bot_left_red"
-
 /obj/effect/turf_decal/loading_area
 	icon_state = "loadingarea"
 
@@ -312,7 +291,7 @@
 /obj/effect/turf_decal/box
 	icon_state = "box"
 
-/obj/effect/turf_decal/box/corners
+/obj/effect/turf_decal/box/yellow/corners
 	icon_state = "box_corners"
 
 /obj/effect/turf_decal/box/white
@@ -326,83 +305,6 @@
 
 /obj/effect/turf_decal/box/red/corners
 	icon_state = "box_corners_red"
-
-/obj/effect/turf_decal/plaque
-	icon_state = "plaque"
-
-/// NTSS RAVEN EMERGENCY SHUTTLE LOGO ///
-
-/obj/effect/turf_decal/raven_ship_sign
-	icon_state = "RAVEN2"
-
-/obj/effect/turf_decal/raven/one
-	icon_state = "RAVEN1"
-
-/obj/effect/turf_decal/raven/two
-	icon_state = "RAVEN2"
-
-/obj/effect/turf_decal/raven/three
-	icon_state = "RAVEN3"
-
-/obj/effect/turf_decal/raven/four
-	icon_state = "RAVEN4"
-
-/obj/effect/turf_decal/raven/five
-	icon_state = "RAVEN5"
-
-/obj/effect/turf_decal/raven/six
-	icon_state = "RAVEN6"
-
-/obj/effect/turf_decal/raven/seven
-	icon_state = "RAVEN7"
-
-/obj/effect/turf_decal/raven/eight
-	icon_state = "RAVEN8"
-
-/obj/effect/turf_decal/raven/nine
-	icon_state = "RAVEN9"
-
-/// SYNDICATE EMBLEM ///
-
-//Bottom
-
-/obj/effect/turf_decal/syndicateemblem/bottom/left
-	icon_state = "synd1,1"
-
-/obj/effect/turf_decal/syndicateemblem/bottom/middle
-	icon_state = "synd1,2"
-
-/obj/effect/turf_decal/syndicateemblem/bottom/right
-	icon_state = "synd1,3"
-
-//Middle
-
-/obj/effect/turf_decal/syndicateemblem/middle/left
-	icon_state = "synd2,1"
-
-/obj/effect/turf_decal/syndicateemblem/middle/middle
-	icon_state = "synd2,2"
-
-/obj/effect/turf_decal/syndicateemblem/middle/right
-	icon_state = "synd2,3"
-
-//Top
-
-/obj/effect/turf_decal/syndicateemblem/top/left
-	icon_state = "synd3,1"
-
-/obj/effect/turf_decal/syndicateemblem/top/middle
-	icon_state = "synd3,2"
-
-/obj/effect/turf_decal/syndicateemblem/top/right
-	icon_state = "synd3,3"
-
-
-/obj/effect/turf_decal/mining
-	icon_state = "mining"
-
-/obj/effect/turf_decal/mining/survival
-	icon_state = "survival"
 
 /obj/effect/turf_decal/siding
 	icon_state = "siding_line"
@@ -671,53 +573,3 @@
 
 /obj/effect/turf_decal/siding/wideplating_new/terracotta/end
 	icon_state = "siding_wideplating_new_end"
-
-/// ALPHANUMERIC DECALS (SO FAR ONLY FOR CHESS ALGEBRAIC NOTATION) ///
-
-/obj/effect/turf_decal/board_number/one
-	icon_state = "board_1"
-
-/obj/effect/turf_decal/board_number/two
-	icon_state = "board_2"
-
-/obj/effect/turf_decal/board_number/three
-	icon_state = "board_3"
-
-/obj/effect/turf_decal/board_number/four
-	icon_state = "board_4"
-
-/obj/effect/turf_decal/board_number/five
-	icon_state = "board_5"
-
-/obj/effect/turf_decal/board_number/six
-	icon_state = "board_6"
-
-/obj/effect/turf_decal/board_number/seven
-	icon_state = "board_7"
-
-/obj/effect/turf_decal/board_number/eight
-	icon_state = "board_8"
-
-/obj/effect/turf_decal/board_letter/a
-	icon_state = "board_a"
-
-/obj/effect/turf_decal/board_letter/b
-	icon_state = "board_b"
-
-/obj/effect/turf_decal/board_letter/c
-	icon_state = "board_c"
-
-/obj/effect/turf_decal/board_letter/d
-	icon_state = "board_d"
-
-/obj/effect/turf_decal/board_letter/e
-	icon_state = "board_e"
-
-/obj/effect/turf_decal/board_letter/f
-	icon_state = "board_f"
-
-/obj/effect/turf_decal/board_letter/g
-	icon_state = "board_g"
-
-/obj/effect/turf_decal/board_letter/h
-	icon_state = "board_h"

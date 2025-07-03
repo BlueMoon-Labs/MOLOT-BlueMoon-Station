@@ -1100,7 +1100,7 @@
 	req_access = list("tarkoff")
 	},
 /obj/machinery/door/firedoor/heavy/closed,
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
@@ -1439,8 +1439,8 @@
 /obj/machinery/door/airlock/mining/glass{
 	req_access = list("tarkoff")
 	},
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -1709,7 +1709,7 @@
 	dir = 4;
 	name = "killroom vent"
 	},
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "jP" = (
@@ -1793,7 +1793,7 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "kh" = (
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/machinery/light/dim/directional/east,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/tile/brown/half{
@@ -2509,7 +2509,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "ot" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
@@ -2634,7 +2634,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "pc" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot/yellow,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2869,7 +2869,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "qr" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1;
 	piping_layer = 1
@@ -2895,7 +2895,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "qF" = (
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3376,7 +3376,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "tV" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
@@ -3408,7 +3408,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon)
 "ud" = (
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
@@ -4164,7 +4164,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "zd" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/decal/cleanable/confetti,
 /obj/item/broken_bottle,
@@ -4451,18 +4451,18 @@
 	layer = 3;
 	piping_layer = 3
 	},
-/obj/effect/turf_decal/stripes/asteroid/line{
+/obj/effect/turf_decal/stripes/asteroid{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/obj/effect/turf_decal/stripes/asteroid/line{
+/obj/effect/turf_decal/stripes/asteroid,
+/obj/effect/turf_decal/stripes/asteroid{
 	dir = 8
 	},
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "Ba" = (
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
@@ -4677,7 +4677,7 @@
 /obj/machinery/door/airlock/mining/glass{
 	req_access = list("tarkoff")
 	},
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
@@ -5622,7 +5622,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/toolstorage)
 "HH" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/weather/sand/plating,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1;
 	piping_layer = 3
@@ -8200,7 +8200,7 @@
 /turf/closed/mineral/random,
 /area/ruin/space/has_grav)
 "Wc" = (
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/structure/closet/emcloset,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
@@ -8707,7 +8707,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "Zl" = (
-/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/weather/sand/floor,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	piping_layer = 1
 	},

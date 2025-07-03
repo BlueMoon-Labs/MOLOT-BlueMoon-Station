@@ -1,3 +1,4 @@
+/* BLUEMOON DELETE теперь это декаль
 /turf/open/floor/mech_bay_recharge_floor               //        Whos idea it was
 	name = "mech bay recharge station"                      //        Recharging turfs
 	desc = "Parking a mech on this station will recharge its internal power cell."
@@ -6,11 +7,7 @@
 
 /turf/open/floor/mech_bay_recharge_floor/break_tile()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
-
-/turf/open/floor/mech_bay_recharge_floor/airless
-	icon_state = "recharge_floor_asteroid"
-	initial_gas_mix = AIRLESS_ATMOS
-
+*/
 /obj/machinery/mech_bay_recharge_port
 	name = "mech bay power port"
 	desc = "This port recharges a mech's internal power cell."

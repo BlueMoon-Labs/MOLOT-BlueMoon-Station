@@ -134,46 +134,48 @@
 /obj/effect/turf_decal/siding/wideplating/dark/end
 	icon_state = "siding_wideplating_end"
 
+/* BLUEMOON DEL чё они вообще курят
 // Replaces the SS13 plaque
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon = 'modular_splurt/icons/turf/decals.dmi'
 	icon_state = "L1"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L2"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L3"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L4"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L5"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L6"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L7"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L8"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L9"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L10"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L11"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L12"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L13"
 
-/obj/effect/turf_decal/plaque
+/obj/effect/turf_decal/misc/plaque
 	icon_state = "L14"
+*/

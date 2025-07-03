@@ -40,6 +40,7 @@
 /turf/open/floor/plasteel/yellowsiding/corner
 	base_icon_state = "yellowcornersiding"
 
+/* BLUEMOON DELETE
 /turf/open/floor/plasteel/recharge_floor
 	base_icon_state = "recharge_floor"
 
@@ -48,7 +49,7 @@
 
 /turf/open/floor/plasteel/chapel
 	base_icon_state = "chapel"
-
+*/
 /turf/open/floor/plasteel/showroomfloor
 	base_icon_state = "showroomfloor"
 
@@ -84,8 +85,10 @@
 /turf/open/floor/plasteel/vaporwave
 	base_icon_state = "pinkblack"
 
+/* BLUEMOON DELETE переход на декали
 /turf/open/floor/plasteel/goonplaque
 	base_icon_state = "plaque"
+*/
 
 /turf/open/floor/plasteel/stairs
 	base_icon_state = "stairs"

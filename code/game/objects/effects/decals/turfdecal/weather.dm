@@ -1,6 +1,6 @@
 /obj/effect/turf_decal/weather
 	name = "sandy floor"
-	icon_state = "sandyfloor"
+	icon_state = "bad_coder"
 
 /obj/effect/turf_decal/weather/snow
 	name = "snowy floor"
@@ -18,8 +18,11 @@
 
 /obj/effect/turf_decal/weather/sand
 	name = "sand siding"
-	icon = 'icons/misc/beach.dmi'
+	icon = 'modular_bluemoon/icons/turf/floors/sand.dmi'
 	icon_state = "sand_side"
 
-/obj/effect/turf_decal/weather/sand/light
-	icon_state = "lightsand_side"
+/obj/effect/turf_decal/weather/sand/floor
+	icon_state = "sandyfloor"
+
+/obj/effect/turf_decal/weather/sand/plating
+	icon_state = "sandyplating"

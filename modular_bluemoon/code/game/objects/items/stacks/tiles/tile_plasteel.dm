@@ -55,7 +55,6 @@
 		/obj/item/stack/tile/plasteel/kitchen/small,
 		/obj/item/stack/tile/plasteel/kitchen/diagonal,
 		/obj/item/stack/tile/plasteel/kitchen/herringbone,
-		/obj/item/stack/tile/plasteel/chapel,
 		/obj/item/stack/tile/plasteel/shower,
 		/obj/item/stack/tile/plasteel/grimy,
 		/obj/item/stack/tile/plasteel/solar_panel,
