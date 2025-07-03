@@ -134,6 +134,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark/end
 	icon_state = "siding_wideplating_end"
 
+/* BLUEMOON DEL чё они вообще курят
 // Replaces the SS13 plaque
 /obj/effect/turf_decal/plaque
 	icon = 'modular_splurt/icons/turf/decals.dmi'
@@ -177,3 +178,4 @@
 
 /obj/effect/turf_decal/plaque
 	icon_state = "L14"
+*/
