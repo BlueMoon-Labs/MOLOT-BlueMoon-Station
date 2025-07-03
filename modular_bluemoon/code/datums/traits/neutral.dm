@@ -166,15 +166,15 @@
 	desc = "У вас появился друг в голове. Кто знает, поможет он вам, или нет... Только не соглашайтесь на его предложение сделать клуб!"
 	value = 0
 	mob_trait = TRAIT_IMAGINARYFRIEND
-	gain_text = span_notice("You feel in good company, for some reason.")
-	lose_text = span_warning("You feel lonely again.")
+	//gain_text handled be trauma
+	//lose_text handled be trauma
 	medical_record_text = "У пациента присутсвует \"Воображаемый Друг\"."
 	on_spawn_immediate = FALSE
 
 /datum/quirk/imaginary_friend/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.gain_trauma(/datum/brain_trauma/special/imaginary_friend/quirk, TRAUMA_RESILIENCE_ABSOLUTE)
+	H.gain_trauma(/datum/brain_trauma/special/imaginary_friend, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/imaginary_friend/remove()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.cure_trauma_type(/datum/brain_trauma/special/imaginary_friend/quirk, TRAUMA_RESILIENCE_ABSOLUTE)
+	H.cure_trauma_type(/datum/brain_trauma/special/imaginary_friend, TRAUMA_RESILIENCE_ABSOLUTE)
