@@ -1,70 +1,134 @@
-/obj/effect/turf_decal/bluemoon_decals
-	icon = 'icons/turf/decals.dmi'
-	icon_state = "bad_coder"
-
 /obj/effect/decal/fakelattice/passthru	//Why the hell did TG make it dense anyways
 	density = FALSE
 
+//Snowdin Station Sign
+/obj/effect/turf_decal/big_sign/snowdin_station_sign
+	icon = 'modular_bluemoon/icons/turf/big_sign/snowdin_station_sign.dmi'
+	icon_state = "example"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/one
+	icon_state = "AOP1"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/two
+	icon_state = "AOP2"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/three
+	icon_state = "AOP3"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/four
+	icon_state = "AOP4"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/five
+	icon_state = "AOP5"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/six
+	icon_state = "AOP6"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/seven
+	icon_state = "AOP7"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up
+	icon_state = "AOPU1"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/two
+	icon_state = "AOPU2"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/three
+	icon_state = "AOPU3"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/four
+	icon_state = "AOPU4"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/five
+	icon_state = "AOPU5"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/six
+	icon_state = "AOPU6"
+
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/seven
+	icon_state = "AOPU7"
+
 ///SYNDICATE EMBLEM///
+/obj/effect/turf_decal/big_sign/syndicate
+	icon = 'modular_bluemoon/icons/turf/big_sign/syndicate.dmi'
+	icon_state = "example"
+
+///DS-2 Sign///
+/obj/effect/turf_decal/big_sign/syndicate/ds2/left
+	icon_state = "ds2-1"
+
+/obj/effect/turf_decal/big_sign/syndicate/ds2/middle
+	icon_state = "ds2-2"
+
+/obj/effect/turf_decal/big_sign/syndicate/ds2/right
+	icon_state = "ds2-3"
+
 //Bottom
-/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/left
+/obj/effect/turf_decal/big_sign/syndicate/bottom/left
 	icon_state = "1,1"
 
-/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/middle
+/obj/effect/turf_decal/big_sign/syndicate/bottom/middle
 	icon_state = "1,2"
 
-/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/right
+/obj/effect/turf_decal/big_sign/syndicate/bottom/right
 	icon_state = "1,3"
+
 //Middle
-/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/left
+/obj/effect/turf_decal/big_sign/syndicate/middle/left
 	icon_state = "2,1"
 
-/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/middle
+/obj/effect/turf_decal/big_sign/syndicate/middle/middle
 	icon_state = "2,2"
 
-/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/right
+/obj/effect/turf_decal/big_sign/syndicate/middle/right
 	icon_state = "2,3"
+
 //Top
-/obj/effect/turf_decal/bluemoon_decals/syndicate/top/left
+/obj/effect/turf_decal/big_sign/syndicate/top/left
 	icon_state = "3,1"
 
-/obj/effect/turf_decal/bluemoon_decals/syndicate/top/middle
+/obj/effect/turf_decal/big_sign/syndicate/top/middle
 	icon_state = "3,2"
 
-/obj/effect/turf_decal/bluemoon_decals/syndicate/top/right
+/obj/effect/turf_decal/big_sign/syndicate/top/right
 	icon_state = "3,3"
 
 ///ENCLAVE EMBLEM///
-/obj/effect/turf_decal/bluemoon_decals/enclave
+/obj/effect/turf_decal/big_sign/enclave
+	icon = 'modular_bluemoon/icons/turf/big_sign/enclave.dmi'
+	icon_state = "example"
 	layer = TURF_PLATING_DECAL_LAYER
 	alpha = 110
 	color = "#A46106"
+
 //Bottom
-/obj/effect/turf_decal/bluemoon_decals/enclave/bottom/left
+/obj/effect/turf_decal/big_sign/enclave/bottom/left
 	icon_state = "e1,1"
 
-/obj/effect/turf_decal/bluemoon_decals/enclave/bottom/middle
+/obj/effect/turf_decal/big_sign/enclave/bottom/middle
 	icon_state = "e1,2"
 
-/obj/effect/turf_decal/bluemoon_decals/enclave/bottom/right
+/obj/effect/turf_decal/big_sign/enclave/bottom/right
 	icon_state = "e1,3"
+
 //Middle
-/obj/effect/turf_decal/bluemoon_decals/enclave/middle/left
+/obj/effect/turf_decal/big_sign/enclave/middle/left
 	icon_state = "e2,1"
 
-/obj/effect/turf_decal/bluemoon_decals/enclave/middle/middle
+/obj/effect/turf_decal/big_sign/enclave/middle/middle
 	icon_state = "e2,2"
 
-/obj/effect/turf_decal/bluemoon_decals/enclave/middle/right
+/obj/effect/turf_decal/big_sign/enclave/middle/right
 	icon_state = "e2,3"
+
 //Top
-/obj/effect/turf_decal/bluemoon_decals/enclave/top/left
+/obj/effect/turf_decal/big_sign/enclave/top/left
 	icon_state = "e3,1"
 
-/obj/effect/turf_decal/bluemoon_decals/enclave/top/middle
+/obj/effect/turf_decal/big_sign/enclave/top/middle
 	icon_state = "e3,2"
 
-/obj/effect/turf_decal/bluemoon_decals/enclave/top/right
+/obj/effect/turf_decal/big_sign/enclave/top/right
 	icon_state = "e3,3"
 
 //SOLGOV//
@@ -130,24 +194,6 @@
 
 /obj/effect/turf_decal/big_sign/raven/nine
 	icon_state = "RAVEN9"
-
-///Departments///
-/obj/effect/turf_decal/bluemoon_decals/departments/bridge
-	icon_state = "bridge"
-
-///DS-2 Sign///
-/obj/effect/turf_decal/bluemoon_decals/ds2/left
-	icon_state = "ds1"
-
-/obj/effect/turf_decal/bluemoon_decals/ds2/middle
-	icon_state = "ds2"
-
-/obj/effect/turf_decal/bluemoon_decals/ds2/right
-	icon_state = "ds3"
-
-///Misc///
-/obj/effect/turf_decal/bluemoon_decals/misc/handicapped
-	icon_state = "handicapped"
 
 //Re-textures based off the survival pods, without the orange stripe. Now you can re-color them to paint your spaceships!
 //(Do faded tones - DONT USE NEON BRIGHT COLORS, I /WILL/ CRY, and your ship will look like literal crap)
