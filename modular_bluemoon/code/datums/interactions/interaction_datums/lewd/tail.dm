@@ -59,26 +59,23 @@
 ////////////////////////////////
 
 /datum/interaction/lewd/tail
-	description = "Хвост. Подрочить член."
 	simple_style = "lewd"
 	big_user_target_text = TRUE
-	required_from_user = INTERACTION_REQUIRE_TAIL
-	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
-	p13target_emote = PLUG13_EMOTE_PENIS
-	additional_details = list(INTERACTION_FILLS_CONTAINERS)
-	write_log_user = "tailjerked dick"
-	write_log_target = "dick tailjerked by"
-	var/target_organ = ORGAN_SLOT_PENIS	// орган для взаимодействия
-	var/try_milking = TRUE // пытаемся-ли выдоить что-то в контейнер
-	// для фраз стоит находить формулировки в которых можно будет
-	var/start_text	= "USER обхватывает своим хвостом член TARGET."
-	var/help_text	= "USER удвлетворяет член TARGET гуляя по нему своим хвостиком."
-	var/grab_text	= "USER крепко зажимая хвостом член TARGET, то и дело проскальзывает по всей его  длине."
-	var/harm_text	= "USER издевательски грубо мучает член TARGET, явно не собираясь заботиться о его ощущениях."
-	var/list/lewd_sounds = list('modular_sand/sound/interactions/bang1.ogg',
-						'modular_sand/sound/interactions/bang2.ogg',
-						'modular_sand/sound/interactions/bang3.ogg')
+	var/target_organ		// орган для взаимодействия
+	var/try_milking = FALSE // пытаемся-ли выдоить что-то в контейнер
+	// для фраз стоит находить формулировки в которых можно будет использовать USER и TARGET
+	var/start_text
+	var/help_text
+	var/grab_text
+	var/harm_text
+	var/list/lewd_sounds
 	var/p13target_strength_base_point = PLUG13_STRENGTH_NORMAL // точка к которой прибавляет +1 уровень при граб, дизарм и +2 уровня при харме
+
+/datum/interaction/lewd/tail/proc/text_picker(mob/living/user, mob/living/partner) // особая проверка для замены текста в n ситуации
+	return
+
+/datum/interaction/lewd/tail/proc/lust_granted(mob/living/partner) // разрешение на получение удовольствия
+	return TRUE
 
 /datum/interaction/lewd/tail/display_interaction(mob/living/user, mob/living/partner)
 
@@ -92,37 +89,11 @@
 			if(istype(cached_item, /obj/item/reagent_containers))
 				liquid_container = cached_item
 
-	//выбираем текст и проверка режима взаимодействия
-	var/has_penis = partner.has_penis()
-	if(src.type == /datum/interaction/lewd/tail)
-		start_text = list(
-			"USER обхватывает своим хвостом "+(has_penis ? "член" : "дилдо")+" TARGET.",
-			"USER плавно обвивает "+(has_penis ? "член" : "дилдо")+" TARGET, сжимая его кольцами хвоста.",
-			"USER ласково охватывает "+(has_penis ? "член" : "дилдо")+" TARGET хвостом."
-		)
-
-		help_text = list(
-			"USER удовлетворяет "+(has_penis ? "член" : "дилдо")+" TARGET, гуляя по нему своим хвостиком.",
-			"USER водит кончиком хвоста вдоль ствола TARGET.",
-			"USER двигает хвостом вверх-вниз по "+(has_penis ? "члену" : "дилдо")+" TARGET, "+(has_penis ? "" : "безуспешно ")+"стараясь доставить удовольствие."
-		)
-
-		grab_text = list(
-			"USER крепко зажимает хвостом "+(has_penis ? "член" : "дилдо")+" TARGET, то и дело проскальзывая по всей его длине.",
-			"USER хищно охватывает хвостом "+(has_penis ? "член" : "дилдо")+" TARGET и двигается по нему, не давая расслабиться.",
-			"USER удерживает "+(has_penis ? "член" : "дилдо")+" TARGET плотным кольцом хвоста, совершая настойчивые поступательные движения."
-		)
-
-		harm_text = list(
-			"USER издевательски грубо "+(has_penis ? "мучает член" : "скручивает дилдо")+" TARGET, явно не заботясь об ощущениях партнера.",
-			"USER давит и тянет "+(has_penis ? "член" : "дилдо")+" TARGET хвостом, словно наслаждаясь "+(has_penis ? "причиняемой болью" : "жестокостью")+".",
-			"USER резко сжимает и выкручивает "+(has_penis ? "член" : "дилдо")+" TARGET, действуя без жалости и удерживая с силой."
-		)
-
 	p13target_strength = p13target_strength_base_point
 	simple_message = null	// используем для сообщения базовую переменную
 	var/lust_amount = NORMAL_LUST
 	var/obj/item/organ/genital/partner_organ = partner.getorganslot(target_organ)
+	text_picker(user, partner)	// для особых случаев
 	if(partner.is_fucking(user, CUM_TARGET_TAIL, partner_organ))
 		switch(user.a_intent)
 			if(INTENT_HELP)
@@ -144,20 +115,61 @@
 
 	if(liquid_container)
 		simple_message += " Стараясь ловить исходящие жидкости в [liquid_container]"
-	if(target_organ != ORGAN_SLOT_PENIS || has_penis)
-		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_TAIL, liquid_container ? liquid_container : user,  partner_organ)
+	if(lust_granted(partner))
+		partner.handle_post_sex(lust_amount, CUM_TARGET_TAIL, liquid_container ? liquid_container : user,  partner_organ)
 	playlewdinteractionsound(get_turf(user), pick(lewd_sounds), 70, 1, -1)
 	..() // отправка сообщения в родительском проке
+
+/datum/interaction/lewd/tail/dick
+	description = "Хвост. Подрочить член."
+	required_from_user = INTERACTION_REQUIRE_TAIL
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	p13target_emote = PLUG13_EMOTE_PENIS
+	additional_details = list(INTERACTION_FILLS_CONTAINERS)
+	write_log_user = "tailjerked dick"
+	write_log_target = "dick tailjerked by"
+	target_organ = ORGAN_SLOT_PENIS
+	try_milking = TRUE
+	lewd_sounds = list('modular_sand/sound/interactions/bang1.ogg',
+						'modular_sand/sound/interactions/bang2.ogg',
+						'modular_sand/sound/interactions/bang3.ogg')
+
+/datum/interaction/lewd/tail/dick/lust_granted(mob/living/partner)
+	return partner.has_penis()
+
+/datum/interaction/lewd/tail/dick/text_picker(mob/living/user, mob/living/partner) // особая проверка для замены текста в n ситуации
+	var/has_penis = partner.has_penis()
+	start_text = list(
+		"USER обхватывает своим хвостом [has_penis ? "член" : "дилдо"] TARGET.",
+		"USER плавно обвивает [has_penis ? "член" : "дилдо"] TARGET, сжимая его кольцами хвоста.",
+		"USER ласково охватывает [has_penis ? "член" : "дилдо"] TARGET хвостом."
+	)
+
+	help_text = list(
+		"USER удовлетворяет [has_penis ? "член" : "дилдо"] TARGET, гуляя по нему своим хвостиком.",
+		"USER водит кончиком хвоста вдоль ствола TARGET.",
+		"USER двигает хвостом вверх-вниз по [has_penis ? "члену" : "дилдо"] TARGET, [has_penis ? "" : "безуспешно "]стараясь доставить удовольствие."
+	)
+
+	grab_text = list(
+		"USER крепко зажимает хвостом [has_penis ? "член" : "дилдо"] TARGET, то и дело проскальзывая по всей его длине.",
+		"USER хищно охватывает хвостом [has_penis ? "член" : "дилдо"] TARGET и двигается по нему, не давая расслабиться.",
+		"USER удерживает [has_penis ? "член" : "дилдо"] TARGET плотным кольцом хвоста, совершая настойчивые поступательные движения."
+	)
+
+	harm_text = list(
+		"USER издевательски грубо [has_penis ? "мучает член" : "скручивает дилдо"] TARGET, явно не заботясь об ощущениях партнера.",
+		"USER давит и тянет [has_penis ? "член" : "дилдо"] TARGET хвостом, словно наслаждаясь [has_penis ? "причиняемой болью" : "жестокостью"].",
+		"USER резко сжимает и выкручивает [has_penis ? "член" : "дилдо"] TARGET, действуя без жалости и удерживая с силой."
+	)
 
 /datum/interaction/lewd/tail/vagina
 	description = "Хвост. Проникнуть в вагину."
 	required_from_target_exposed = INTERACTION_REQUIRE_VAGINA
 	p13target_emote = PLUG13_EMOTE_VAGINA
-	additional_details = null
 	target_organ = ORGAN_SLOT_VAGINA
 	write_log_user = "tailfucked vagina"
 	write_log_target = "vaginal tailfucked by"
-	try_milking = FALSE
 	start_text = list(
 		"USER заползает внутрь вагины TARGET своим хвостом.",
 		"USER осторожно вводит хвост в вагину TARGET, словно исследуя её изнутри.",
@@ -185,11 +197,9 @@
 	description = "Хвост. Проникнуть в задницу."
 	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
 	p13target_emote = PLUG13_EMOTE_ANUS
-	additional_details = null
 	target_organ = ORGAN_SLOT_ANUS
 	write_log_user = "tailfucked ass"
 	write_log_target = "ass tailfucked by"
-	try_milking = FALSE
 	start_text = list(
 		"USER проталкивается в колечко TARGET своим хвостом.",
 		"USER осторожно просовывает хвост в анальное отверстие TARGET, продвигаясь глубже.",
@@ -218,15 +228,9 @@
 	description = "Хвост. Проникнуть в уретру."
 	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
 	p13target_emote = PLUG13_EMOTE_PENIS
-	additional_details = null
 	target_organ = ORGAN_SLOT_PENIS
 	write_log_user = "tailsounding urehtra"
 	write_log_target = "urehtra tailsounded by"
-	try_milking = FALSE
-	start_text	= "USER утыкает хвостик в уретру TARGET, меленно входя."
-	help_text	= "USER проталкивает и изучает уретру TARGET своим хвостом."
-	grab_text	= "USER старается хвостиком дойти до паха TARGET через уретру."
-	harm_text	= "USER использует уретру TARGET как игрушку, явно не заботясь о чужих ощущениях."
 	lewd_sounds = list('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg',
@@ -235,78 +239,69 @@
 						'modular_sand/sound/interactions/bang6.ogg',)
 	p13target_strength_base_point = PLUG13_STRENGTH_MEDIUM
 
-/datum/interaction/lewd/tail/urethra/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/tail/urethra/lust_granted(mob/living/partner)
+	return partner.has_penis()
+
+/datum/interaction/lewd/tail/urethra/text_picker(mob/living/user, mob/living/partner)
 	var/has_penis = partner.has_penis()
-
-	if(src.type == /datum/interaction/lewd/tail/urethra)
-		start_text = list(
-			"USER утыкает хвостик в "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET, медленно входя.",
-			"USER аккуратно просовывает кончик хвоста в "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET.",
-			"USER начинает проникновение хвостом в "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET, растягивая вход своим движением."
-		)
-		help_text = list(
-			"USER проталкивает и изучает "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET своим хвостом.",
-			"USER медленно двигает хвост внутри "+(has_penis ? "уретры" : "отверстия дилдо")+" TARGET, ощущая каждую деталь.",
-			"USER ласково толкается хвостом в "+(has_penis ? "уретре" : "отверстии дилдо")+" TARGET, "+(has_penis ? "" : "безуспешно ")+"стараясь принести удовольствие."
-		)
-		grab_text = list(
-			"USER старается хвостиком дойти до паха TARGET через "+(has_penis ? "уретру" : "отверстие дилдо")+".",
-			"USER активно продвигает хвост вглубь "+(has_penis ? "уретры" : "отверстия дилдо")+" TARGET, словно стремясь дотянуться до самого основания.",
-			"USER вдавливает хвост всё дальше по "+(has_penis ? "уретре" : "отверстию дилдо")+" TARGET, упорно пробираясь к паху."
-		)
-		harm_text = list(
-			"USER использует "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET как игрушку, явно не заботясь о чужих ощущениях.",
-			"USER безжалостно вбивает хвост в "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET, не снижая давления ни на секунду.",
-			"USER грубо насилует "+(has_penis ? "уретру" : "отверстие дилдо")+" TARGET хвостом, растягивая "+(has_penis ? "её" : "его")+" изнутри."
-		)
-
-	..()
+	start_text = list(
+		"USER утыкает хвостик в [has_penis ? "уретру" : "отверстие дилдо"] TARGET, медленно входя.",
+		"USER аккуратно просовывает кончик хвоста в [has_penis ? "уретру" : "отверстие дилдо"] TARGET.",
+		"USER начинает проникновение хвостом в [has_penis ? "уретру" : "отверстие дилдо"] TARGET, растягивая вход своим движением."
+	)
+	help_text = list(
+		"USER проталкивает и изучает [has_penis ? "уретру" : "отверстие дилдо"] TARGET своим хвостом.",
+		"USER медленно двигает хвост внутри [has_penis ? "уретры" : "отверстия дилдо"] TARGET, ощущая каждую деталь.",
+		"USER ласково толкается хвостом в [has_penis ? "уретре" : "отверстии дилдо"] TARGET, [has_penis ? "" : "безуспешно "]стараясь принести удовольствие."
+	)
+	grab_text = list(
+		"USER старается хвостиком дойти до паха TARGET через [has_penis ? "уретру" : "отверстие дилдо"].",
+		"USER активно продвигает хвост вглубь [has_penis ? "уретры" : "отверстия дилдо"] TARGET, словно стремясь дотянуться до самого основания.",
+		"USER вдавливает хвост всё дальше по [has_penis ? "уретре" : "отверстию дилдо"] TARGET, упорно пробираясь к паху."
+	)
+	harm_text = list(
+		"USER использует [has_penis ? "уретру" : "отверстие дилдо"] TARGET как игрушку, явно не заботясь о чужих ощущениях.",
+		"USER безжалостно вбивает хвост в [has_penis ? "уретру" : "отверстие дилдо"] TARGET, не снижая давления ни на секунду.",
+		"USER грубо насилует [has_penis ? "уретру" : "отверстие дилдо"] TARGET хвостом, растягивая [has_penis ? "её" : "его"] изнутри."
+	)
 
 ////////////////////////////
 //Итеракции с самим собой///
 ////////////////////////////
 
-/datum/interaction/lewd/tail/self
+/datum/interaction/lewd/tail/dick/self
 	description = "Хвост. Подрочить свой член."
 	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target_exposed = null
 	interaction_flags = INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	write_log_user = "tailjerked own dick"
 	write_log_target = null
-	start_text	= "USER обхватывает хвостом собственный член."
-	help_text	= "USER удвлетворяет себя гуляя по своему члену хвостиком."
-	grab_text	= "USER крепко зажимая хвостом собственный, то и дело проскальзывает по всей его  длине."
-	harm_text	= "USER явно желая доставить себе болезненные ощущения, особенно активно хвостом надрачивает свой член."
 	lewd_sounds = list('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg')
 
-/datum/interaction/lewd/tail/self/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/tail/dick/self/text_picker(mob/living/user, mob/living/partner)
 	var/has_penis = user.has_penis()
-
-	if(src.type == /datum/interaction/lewd/tail/self)
-		start_text = list(
-			"USER обхватывает хвостом собственный "+(has_penis ? "член" : "дилдо")+".",
-			"USER плотно обвивает свой "+(has_penis ? "член" : "дилдо")+" хвостом, начиная медленные движения.",
-			"USER накручивает хвост на свой "+(has_penis ? "член" : "дилдо")+", плотно окутывая его."
-		)
-		help_text = list(
-			"USER "+(has_penis ? "" : "безуспешно ")+"удовлетворяет себя, гуляя по своему "+(has_penis ? "члену" : "дилдо")+" хвостиком.",
-			"USER нежно скользит хвостом вверх-вниз по своему "+(has_penis ? "члену" : "дилдо")+", подстраиваясь под каждое движение.",
-			"USER ритмично ласкает свой "+(has_penis ? "член" : "дилдо")+" хвостом, "+(has_penis ? "" : "безуспешно ")+"стараясь доставить себе удовольствие."
-		)
-		grab_text = list(
-			"USER крепко зажимает хвостом собственный "+(has_penis ? "член" : "дилдо")+", то и дело проскальзывая по всей его длине.",
-			"USER не отпуская сжимает "+(has_penis ? "член" : "дилдо")+" хвостом, двигаясь по нему с нарастающей силой.",
-			"USER удерживает свой "+(has_penis ? "член" : "дилдо")+" плотным кольцом хвоста и активно мастурбирует, не сбавляя темпа."
-		)
-		harm_text = list(
-			"USER, "+(has_penis ? "явно" : "безуспешно")+" желая доставить себе болезненные ощущения, особенно активно хвостом надрачивает свой "+(has_penis ? "член" : "дилдо")+".",
-			"USER намеренно сжимает "+(has_penis ? "член до боли" : "дилдо до хруста")+" хвостом, маструбируя резкими движениями.",
-			"USER грубо работает хвостом по своему "+(has_penis ? "члену" : "дилдо")+", "+(has_penis ? "будто" : "безуспешно")+" стремясь испытать боль и наслаждение одновременно."
-		)
-
-	..()
+	start_text = list(
+		"USER обхватывает хвостом собственный [has_penis ? "член" : "дилдо"].",
+		"USER плотно обвивает свой [has_penis ? "член" : "дилдо"] хвостом, начиная медленные движения.",
+		"USER накручивает хвост на свой [has_penis ? "член" : "дилдо"], плотно окутывая его."
+	)
+	help_text = list(
+		"USER [has_penis ? "" : "безуспешно "]удовлетворяет себя, гуляя по своему [has_penis ? "члену" : "дилдо"] хвостиком.",
+		"USER нежно скользит хвостом вверх-вниз по своему [has_penis ? "члену" : "дилдо"], подстраиваясь под каждое движение.",
+		"USER ритмично ласкает свой [has_penis ? "член" : "дилдо"] хвостом, [has_penis ? "" : "безуспешно "]стараясь доставить себе удовольствие."
+	)
+	grab_text = list(
+		"USER крепко зажимает хвостом собственный [has_penis ? "член" : "дилдо"], то и дело проскальзывая по всей его длине.",
+		"USER не отпуская сжимает [has_penis ? "член" : "дилдо"] хвостом, двигаясь по нему с нарастающей силой.",
+		"USER удерживает свой [has_penis ? "член" : "дилдо"] плотным кольцом хвоста и активно мастурбирует, не сбавляя темпа."
+	)
+	harm_text = list(
+		"USER, [has_penis ? "явно" : "безуспешно"] желая доставить себе болезненные ощущения, особенно активно хвостом надрачивает свой [has_penis ? "член" : "дилдо"].",
+		"USER намеренно сжимает [has_penis ? "член до боли" : "дилдо до хруста"] хвостом, маструбируя резкими движениями.",
+		"USER грубо работает хвостом по своему [has_penis ? "члену" : "дилдо"], [has_penis ? "будто" : "безуспешно"] стремясь испытать боль и наслаждение одновременно."
+	)
 
 /datum/interaction/lewd/tail/vagina/self
 	description = "Хвост. Проникнуть в свою вагину."
@@ -379,10 +374,6 @@
 	interaction_flags = INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	write_log_user = "tailsounding own urehtra"
 	write_log_target = null
-	start_text	= "USER утыкает хвостик в свою уретру, меленно в ту входя."
-	help_text	= "USER проталкивает и изучает собственную уретру при помощи хвоста."
-	grab_text	= "USER старается хвостиком дойти до своего паха через уретру."
-	harm_text	= "USER вбивает хвостик собственную уретру с явной грубостью обходясь со своим телом."
 	lewd_sounds = list('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg',
@@ -390,33 +381,28 @@
 						'modular_sand/sound/interactions/bang5.ogg',
 						'modular_sand/sound/interactions/bang6.ogg',)
 
-/datum/interaction/lewd/tail/urethra/self/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/tail/urethra/self/text_picker(mob/living/user, mob/living/partner)
 	var/has_penis = user.has_penis()
-
-	if(src.type == /datum/interaction/lewd/tail/urethra/self)
-		start_text = list(
-			"USER утыкает хвостик в "+(has_penis ? "свою уретру" : "отверстие свего дилдо")+", медленно входя.",
-			"USER аккуратно вводит кончик хвоста в "+(has_penis ? "собственную уретру" : "свой дилдо")+", замирая от ощущения проникновения.",
-			"USER неспешно просовывает хвост в "+(has_penis ? "свою уретру" : "отверстие свего дилдо")+", наслаждаясь "+(has_penis ? "растяжением и трением внутри себя" : "ощущениями")+"."
-		)
-		help_text = list(
-			"USER проталкивает и изучает "+(has_penis ? "собственную уретру" : "свой дилдо")+" при помощи хвоста.",
-			"USER осторожно двигает хвостом в "+(has_penis ? "своей уретре" : "отверстии свего дилдо")+", чувствуя каждый изгиб и сжатие.",
-			"USER медленно и плавно продвигает хвост вглубь "+(has_penis ? "уретры" : "дилдо")+", словно исследуя изнутри."
-		)
-		grab_text = list(
-			"USER старается хвостиком дойти до своего паха через "+(has_penis ? "уретру" : "отверстие дилдо")+".",
-			"USER упорно проталкивает хвост вглубь сво"+(has_penis ? "ей уретры" : "его дилдо")+", стремясь проникнуть как можно дальше.",
-			"USER с напором двигает хвост по "+(has_penis ? "уретре" : "дилдо")+", будто желая коснуться основания своего тела."
-		)
-		harm_text = list(
-			"USER вбивает хвостик в собственн"+(has_penis ? "ую уретру" : "ый дилдо")+", с явной грубостью обходясь с"+(has_penis ? "о своим телом" : " ним")+".",
-			"USER резко и безжалостно продавливает хвост внутрь сво"+(has_penis ? "ей уретры" : "его дилдо")+", не обращая внимания на "+(has_penis ? "боль" : "давление")+".",
-			"USER жестко использует св"+(has_penis ? "ою уретру" : "ой дилдо")+" для проникновения хвоста, "+(has_penis ? "причиняя" : "безуспешно пытаясь причинить")+" себе резкое, пронизывающее ощущение."
-		)
-
-
-	..()
+	start_text = list(
+		"USER утыкает хвостик в [has_penis ? "свою уретру" : "отверстие свего дилдо"], медленно входя.",
+		"USER аккуратно вводит кончик хвоста в [has_penis ? "собственную уретру" : "свой дилдо"], замирая от ощущения проникновения.",
+		"USER неспешно просовывает хвост в [has_penis ? "свою уретру" : "отверстие свего дилдо"], наслаждаясь [has_penis ? "растяжением и трением внутри себя" : "ощущениями"]."
+	)
+	help_text = list(
+		"USER проталкивает и изучает [has_penis ? "собственную уретру" : "свой дилдо"] при помощи хвоста.",
+		"USER осторожно двигает хвостом в [has_penis ? "своей уретре" : "отверстии свего дилдо"], чувствуя каждый изгиб и сжатие.",
+		"USER медленно и плавно продвигает хвост вглубь [has_penis ? "уретры" : "дилдо"], словно исследуя изнутри."
+	)
+	grab_text = list(
+		"USER старается хвостиком дойти до своего паха через [has_penis ? "уретру" : "отверстие дилдо"].",
+		"USER упорно проталкивает хвост вглубь сво[has_penis ? "ей уретры" : "его дилдо"], стремясь проникнуть как можно дальше.",
+		"USER с напором двигает хвост по [has_penis ? "уретре" : "дилдо"], будто желая коснуться основания своего тела."
+	)
+	harm_text = list(
+		"USER вбивает хвостик в собственн[has_penis ? "ую уретру" : "ый дилдо"], с явной грубостью обходясь с[has_penis ? "о своим телом" : " ним"].",
+		"USER резко и безжалостно продавливает хвост внутрь сво[has_penis ? "ей уретры" : "его дилдо"], не обращая внимания на [has_penis ? "боль" : "давление"].",
+		"USER жестко использует св[has_penis ? "ою уретру" : "ой дилдо"] для проникновения хвоста, [has_penis ? "причиняя" : "безуспешно пытаясь причинить"] себе резкое, пронизывающее ощущение."
+	)
 
 // Ура душить хвостом
 /datum/interaction/lewd/tail_choke
