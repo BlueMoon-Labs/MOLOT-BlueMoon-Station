@@ -389,7 +389,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 			user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, fucktarget)
 		else if(!(has_penis) && user.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
-			user_strapon.attached_dildo.target_reaction(user, null, 1, CUM_TARGET_MOUTH, null, FALSE, TRUE, FALSE)
+			user_strapon.attached_dildo.target_reaction(user, null, 1, CUM_TARGET_MOUTH, null, FALSE)
 	//BLUEMOON EDIT END
 	lust_increase = NORMAL_LUST //RESET IT REE
 
