@@ -144,7 +144,7 @@
 
 	if(liquid_container)
 		simple_message += ", стараясь ловить исходящие жидкости в [liquid_container]"
-	if(has_penis)
+	if(target_organ != ORGAN_SLOT_PENIS || has_penis)
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_TAIL, liquid_container ? liquid_container : user,  partner_organ)
 	playlewdinteractionsound(get_turf(user), pick(lewd_sounds), 70, 1, -1)
 	..() // отправка сообщения в родительском проке
