@@ -19,7 +19,7 @@
 
 // proc that ensures the target's reaction to the dildo according to the size
 // to_chat_mode: 0 - to_chat if dildo_size >= 4, 1 - all to_chat, else not use to_chat
-/obj/item/dildo/proc/target_reaction(mob/living/target, mob/living/user = null, to_chat_mode = 0, what_cum = null, where_cum = null, use_stun = TRUE, add_lust = TRUE, use_moan = FALSE, use_jitter = TRUE)
+/obj/item/dildo/proc/target_reaction(mob/living/target, mob/living/user = null, to_chat_mode = 0, what_cum = null, where_cum = null, use_stun = TRUE, add_lust = TRUE, use_moan = FALSE, use_jitter = TRUE, ignore_delay = FALSE)
 	var/message = ""
 	var/moan = FALSE
 	var/stun = 0
@@ -44,7 +44,7 @@
 					"Огромный дилдо будто заполняет всё изнутри, оставляя чувство распирающего наслаждения!",
 					"Каждое движение огромного дилдо вызывает сладкую боль и трепет внизу живота!",
 					"Ваши мышцы сжимаются от напряжения, пока огромный дилдо двигается внутри!")
-			if(world.time - last_heavy_message_time >= heavy_message_delay)
+			if(ignore_delay || (world.time - last_heavy_message_time >= heavy_message_delay))
 				last_heavy_message_time = world.time
 				message = span_userdanger(message)
 			else
@@ -113,7 +113,7 @@
 					"Гигантский дилдо растягивает изнутри до предела, вызывая восторг и трепет.",
 					"Каждое движение гигантского дилдо будто разрывает грань между болью и наслаждением.",
 					"Гигантский словно пульсирует распирая изнутри, заставляя терять контроль.")
-			if(world.time - last_heavy_message_time >= heavy_message_delay)
+			if(ignore_delay || (world.time - last_heavy_message_time >= heavy_message_delay))
 				last_heavy_message_time = world.time
 				message = span_userdanger(message)
 			else

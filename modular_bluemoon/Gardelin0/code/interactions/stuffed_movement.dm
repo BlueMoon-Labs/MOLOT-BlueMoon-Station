@@ -11,7 +11,7 @@
 		if(activate_after(src, rand(50,350))) //5 to 35 seconds, every 20 sec on average
 			if(!istype(src.loc, /obj/item/organ/genital))
 				return
-			target_reaction(user, null, 1, null, null, TRUE, TRUE, TRUE)
+			target_reaction(user, null, 1, null, null, TRUE, TRUE, TRUE, TRUE, TRUE)
 			user.plug13_genital_emote(loc, lust_amount)
 
 //Buttplug

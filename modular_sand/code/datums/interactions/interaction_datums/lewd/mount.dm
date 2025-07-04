@@ -26,7 +26,13 @@
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, user, ORGAN_SLOT_PENIS) //SPLURT edit
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner, ORGAN_SLOT_VAGINA) //SPLURT edit
+	// BLUEMOON EDIT START
+	if(partner.has_strapon())
+		var/obj/item/clothing/underwear/briefs/strapon/partner_strapon = partner.get_strapon()
+		partner_strapon.attached_dildo.target_reaction(user, partner, 0, CUM_TARGET_VAGINA, CUM_TARGET_PENIS, FALSE)
+	else
+		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner, ORGAN_SLOT_VAGINA)
+	// BLUEMOON EDIT END
 
 /datum/interaction/lewd/mountass
 	description = "Попа. Женская Доминация."
@@ -53,7 +59,13 @@
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, user, ORGAN_SLOT_PENIS) //SPLURT edit
-	user.handle_post_sex(NORMAL_LUST, null, partner, "anus")
+	// BLUEMOON EDIT START
+	if(partner.has_strapon())
+		var/obj/item/clothing/underwear/briefs/strapon/partner_strapon = partner.get_strapon()
+		partner_strapon.attached_dildo.target_reaction(user, partner, 0, CUM_TARGET_ANUS, null, FALSE)
+	else
+		user.handle_post_sex(NORMAL_LUST, null, partner, CUM_TARGET_ANUS)
+	// BLUEMOON EDIT END
 
 /datum/interaction/lewd/mountface
 	description = "Попа. Потереться о лицо."

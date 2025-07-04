@@ -98,7 +98,7 @@
 	p13target_emote = PLUG13_EMOTE_BREASTS
 	p13target_strength = PLUG13_STRENGTH_NORMAL
 
-/datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, spillage = TRUE, mob/living/partner)
+/datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, mob/living/partner) // BLUEMOON EDIT
 	var/message
 	var/genital_name = user.get_penetrating_genital_name()
 	//BLUEMOON ADD START
