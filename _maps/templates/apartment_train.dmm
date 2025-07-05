@@ -17,7 +17,6 @@
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "aP" = (
-/obj/structure/bed,
 /obj/structure/grille/indestructable/fake{
 	pixel_y = 32
 	},
@@ -29,7 +28,13 @@
 	color = "#292929";
 	pixel_y = 32
 	},
-/turf/open/floor/wood/wood_tiled,
+/obj/structure/dresser{
+	pixel_y = 14;
+	pixel_x = 14;
+	density = 0;
+	layer = 3.3
+	},
+/turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "bp" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -57,24 +62,6 @@
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 1
 	},
-/area/hilbertshotel)
-"cS" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/grille/indestructable/fake{
-	pixel_y = -32
-	},
-/obj/structure/window/plastitanium/train_fake{
-	pixel_x = 0;
-	pixel_y = -32
-	},
-/obj/structure/curtain/fake{
-	color = "#B22222";
-	pixel_y = -32
-	},
-/obj/effect/light_emitter/train,
-/turf/open/floor/wood,
 /area/hilbertshotel)
 "dl" = (
 /obj/effect/turf_decal/siding/wood,
@@ -104,6 +91,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/oil,
+/obj/structure/mopbucket,
 /obj/item/mop,
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 8
@@ -250,6 +238,10 @@
 	color = "#292929";
 	pixel_y = -32
 	},
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = 8;
+	pixel_y = 0
+	},
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "lj" = (
@@ -265,10 +257,24 @@
 	},
 /area/hilbertshotel)
 "lp" = (
-/obj/machinery/light{
+/obj/structure/chair/sofa/corp/left{
+	color = "#DE3A3A";
 	dir = 8
 	},
-/turf/open/floor/wood/wood_tiled,
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/grille/indestructable/fake{
+	pixel_y = 32
+	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/structure/curtain/fake{
+	color = "#B22222";
+	pixel_y = 32
+	},
+/obj/effect/light_emitter/train,
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "lC" = (
 /obj/structure/flora/junglebush,
@@ -312,6 +318,12 @@
 	},
 /turf/open/floor/wood,
 /area/hilbertshotel)
+"mb" = (
+/obj/effect/light_emitter/train,
+/turf/open/floor/plating/smooth/grass/lavaland_jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
+/area/hilbertshotel)
 "mz" = (
 /obj/machinery/vending/kink,
 /turf/open/floor/plasteel/rivets,
@@ -354,6 +366,12 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 1
+	},
+/area/hilbertshotel)
+"pJ" = (
+/obj/effect/light_emitter/train,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
 /area/hilbertshotel)
 "pM" = (
@@ -433,6 +451,7 @@
 	invisibility = 100
 	},
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/effect/light_emitter/train,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -508,18 +527,6 @@
 	color = "#dbd1b4"
 	},
 /area/hilbertshotel)
-"uQ" = (
-/obj/effect/light_emitter/train,
-/turf/open/floor/plating/dirt/dark/jungle{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
-	},
-/area/hilbertshotel)
-"vk" = (
-/obj/effect/light_emitter/train,
-/turf/open/floor/plating/smooth/grass/lavaland_jungle{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
-	},
-/area/hilbertshotel)
 "we" = (
 /obj/item/bedsheet/brown,
 /obj/structure/bed/pod,
@@ -548,6 +555,14 @@
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
+/area/hilbertshotel)
+"wp" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/bed/double/pod,
+/obj/item/bedsheet/brown/double,
+/turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "wE" = (
 /obj/effect/turf_decal/siding/wood{
@@ -606,6 +621,39 @@
 /turf/closed/indestructible/syndicate,
 /area/hilbertshotel)
 "Ah" = (
+/obj/structure/grille/indestructable/fake{
+	pixel_y = 32
+	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/structure/curtain/fake{
+	color = "#292929";
+	pixel_y = 32
+	},
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/effect/light_emitter/train,
+/obj/effect/projector{
+	dir = 1
+	},
+/turf/open/floor/plasteel/rivets/corner,
+/area/hilbertshotel)
+"As" = (
+/obj/machinery/light,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/window/plastitanium/train_fake{
+	alpha = 0;
+	pixel_y = -32;
+	invisibility = 100
+	},
+/turf/open/floor/wood,
+/area/hilbertshotel)
+"BZ" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
@@ -625,37 +673,6 @@
 	},
 /obj/effect/light_emitter/train,
 /turf/open/floor/carpet/red,
-/area/hilbertshotel)
-"As" = (
-/obj/machinery/light,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/window/plastitanium/train_fake{
-	alpha = 0;
-	pixel_y = -32;
-	invisibility = 100
-	},
-/turf/open/floor/wood,
-/area/hilbertshotel)
-"BZ" = (
-/obj/structure/table/reinforced,
-/obj/effect/projector{
-	dir = 1
-	},
-/obj/structure/grille/indestructable/fake{
-	pixel_y = 32
-	},
-/obj/structure/window/plastitanium/train_fake{
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/structure/curtain/fake{
-	color = "#292929";
-	pixel_y = 32
-	},
-/obj/effect/light_emitter/train,
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "CC" = (
 /obj/structure/chair/sofa/corp/left{
@@ -737,7 +754,6 @@
 	lamp_power_usage = 0
 	},
 /obj/structure/cable,
-/obj/effect/light_emitter/train,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -928,7 +944,6 @@
 /turf/closed/indestructible/fakedoor,
 /area/hilbertshotel)
 "JC" = (
-/obj/structure/closet/cabinet,
 /obj/structure/grille/indestructable/fake{
 	pixel_y = 32
 	},
@@ -940,7 +955,14 @@
 	color = "#292929";
 	pixel_y = 32
 	},
-/turf/open/floor/carpet/red,
+/obj/machinery/shower/directional/west{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 8
+	},
 /area/hilbertshotel)
 "JY" = (
 /turf/open/floor/plating/dirt/dark/jungle{
@@ -1042,30 +1064,9 @@
 /area/hilbertshotel)
 "Og" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/light_emitter/train,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
-/area/hilbertshotel)
-"Oz" = (
-/obj/structure/chair/sofa/corp/left{
-	color = "#DE3A3A";
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/grille/indestructable/fake{
-	pixel_y = 32
-	},
-/obj/structure/window/plastitanium/train_fake{
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/structure/curtain/fake{
-	color = "#B22222";
-	pixel_y = 32
-	},
-/obj/effect/light_emitter/train,
-/turf/open/floor/wood,
 /area/hilbertshotel)
 "Pm" = (
 /obj/structure/chair/sofa/corp/left{
@@ -1080,12 +1081,14 @@
 	},
 /area/hilbertshotel)
 "Px" = (
-/obj/structure/bed/double/pod,
-/obj/item/bedsheet/brown/double,
-/obj/machinery/light{
-	dir = 4
+/obj/structure/sink/directional/west{
+	pixel_x = 13;
+	pixel_y = 0
 	},
-/turf/open/floor/carpet/red,
+/obj/structure/mirror/directional/east,
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 1
+	},
 /area/hilbertshotel)
 "PZ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1196,6 +1199,10 @@
 	color = "#292929";
 	pixel_y = 32
 	},
+/obj/item/clothing/underwear/shirt/formalshirt,
+/obj/item/clothing/under/pants/blackjeans,
+/obj/item/clothing/accessory/suitjacket/charcoal,
+/obj/item/clothing/head/beret/black,
 /turf/open/floor/plasteel/rivets,
 /area/hilbertshotel)
 "Ty" = (
@@ -1282,6 +1289,20 @@
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
 /area/hilbertshotel)
+"VM" = (
+/obj/structure/window/plastitanium/train_fake{
+	alpha = 0;
+	pixel_y = 32;
+	invisibility = 100
+	},
+/obj/structure/closet/cabinet{
+	pixel_x = 6;
+	pixel_y = 16;
+	layer = 3.3;
+	density = 0
+	},
+/turf/open/floor/carpet/red,
+/area/hilbertshotel)
 "We" = (
 /obj/structure/table/wood/fancy,
 /turf/open/floor/carpet/red,
@@ -1332,13 +1353,30 @@
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "XA" = (
-/obj/machinery/light{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/turf/open/floor/wood/wood_tiled,
+/obj/structure/grille/indestructable/fake{
+	pixel_y = -32
+	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/obj/structure/curtain/fake{
+	color = "#B22222";
+	pixel_y = -32
+	},
+/obj/effect/light_emitter/train,
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "Yd" = (
-/turf/open/floor/wood/wood_tiled,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 4
+	},
 /area/hilbertshotel)
 "YF" = (
 /obj/item/clothing/suit/caution,
@@ -1386,6 +1424,7 @@
 	pixel_y = 32;
 	invisibility = 100
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -1442,7 +1481,7 @@ zU
 ZT
 Dx
 Nl
-vk
+mb
 MQ
 "}
 (4,1,1) = {"
@@ -1483,8 +1522,8 @@ MQ
 "}
 (6,1,1) = {"
 zU
-aP
-lp
+gm
+Ng
 zU
 Ur
 dl
@@ -1502,25 +1541,25 @@ MQ
 (7,1,1) = {"
 zU
 BZ
-Yd
+Ex
 iJ
 Mt
 ag
 zU
-Oz
+lp
 hD
-cS
+XA
 zU
 rc
 Og
 JY
-uQ
+pJ
 Dl
 "}
 (8,1,1) = {"
 zU
 aP
-XA
+Ex
 zU
 Ur
 dl
@@ -1537,8 +1576,8 @@ MQ
 "}
 (9,1,1) = {"
 zU
-GV
-zU
+VM
+wp
 zU
 Fu
 RC
@@ -1555,8 +1594,8 @@ zU
 "}
 (10,1,1) = {"
 zU
-gm
-Ng
+GV
+zU
 zU
 Ur
 dl
@@ -1574,7 +1613,7 @@ zU
 (11,1,1) = {"
 zU
 Ah
-Ex
+Yd
 iJ
 Mt
 qw

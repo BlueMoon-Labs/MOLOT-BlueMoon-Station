@@ -1,4 +1,5 @@
 // Train appartment stuff
+// Не код, а пиздец полнейший, перепишу как будет настроение, благо работает и не лагает
 /obj/effect/projector
 	name = "fake window projector"
 	icon = 'icons/turf/decals.dmi'
@@ -14,7 +15,7 @@
 	var/projection_icon = 'modular_bluemoon/icons/projection/grass.dmi'
 	var/projection_icon_state = "grass"
 	var/area/hilbertshotel/own_area
-	color = "#777777"
+	color = "#524b7a"
 
 /obj/effect/projector/head
 	projection_icon = 'modular_bluemoon/icons/projection/rails.dmi'
@@ -115,11 +116,13 @@
 
 /area/hilbertshotel/Exited(mob/living/L)
 	. = ..()
-	if(projectors && projectors.len && istype(L))
+	if(istype(L))
 		if(!L.mind)
 			return
-		for(var/obj/effect/projector/P in projectors)
-			P.RemoveProjection(L)
+		if(projectors && projectors.len)
+			for(var/obj/effect/projector/P in projectors)
+				P.RemoveProjection(L)
+		L.stop_sound_channel(CHANNEL_AMBIENCE)
 
 
 // Indestructible away mission ladders which link based on a mapped ID and height value rather than X/Y/Z.
@@ -197,7 +200,7 @@
 	icon_state = "arrows_red"
 
 /obj/hotel_things/train/console
-	name = "Train console"
+	name = "Train terminal"
 	icon = 'modular_bluemoon/icons/effects/160x160.dmi'
 	icon_state = "shuttlecock_syndie"
 	layer = 5
@@ -206,6 +209,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	flags_1 = NODECONSTRUCT_1
 	anchored = TRUE
+	var/list/valid_area = list(/area/hilbertshotelstorage)	// зона в которой мы не работает, но и не удаляемся
 	var/moving = FALSE
 	var/cooldown = 5 MINUTES
 	var/cooldown_timer
@@ -246,13 +250,44 @@
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj, src)
+		var/area/hilbertshotel/current_area = get_area(src)
+		if(!istype(current_area))
+			return PROCESS_KILL
+		for(var/mob/M in GLOB.player_list)
+			if(!M.client)
+				continue
+			var/area/hilbertshotel/M_area = get_area(M)
+			if(!istype(M_area))
+				continue
+			if(M_area.roomnumber != current_area.roomnumber)
+				continue
+			M.stop_sound_channel(CHANNEL_AMBIENCE)
+
+/obj/hotel_things/train/console/forceMove(atom/destination)
+	. = ..()
+	var/area/hilbertshotel/current_area = get_area(src)
+	if(current_area == own_area)
+		return
+
+	if(istype(current_area))
+		if(moving)
+			START_PROCESSING(SSobj, src)
+			return
+
+	if(current_area.type in valid_area)
+		if(moving)
+			STOP_PROCESSING(SSobj, src)
+			return
+
+	// Значит мы не в допустимой зоне **ВЗРЫВ**
+	qdel(src)
 
 /obj/hotel_things/train/console/process(delta_time)
 	if(next_sound > world.time)
 		return
 	next_sound = world.time + 1 MINUTES + 16 SECONDS
-	var/area/hilbertshotel/own_area = get_area(src)
-	if(!istype(own_area))
+	var/area/hilbertshotel/current_area = get_area(src)
+	if(!istype(current_area))
 		return PROCESS_KILL
 	for(var/mob/M in GLOB.player_list)
 		if(!M.client)
@@ -260,9 +295,9 @@
 		var/area/hilbertshotel/M_area = get_area(M)
 		if(!istype(M_area))
 			continue
-		if(M_area.roomnumber != own_area.roomnumber)
+		if(M_area.roomnumber != current_area.roomnumber)
 			continue
-		SEND_SOUND(M, sound('modular_bluemoon/sound/ambience/train.ogg', volume = 30))
+		SEND_SOUND(M, sound('modular_bluemoon/sound/ambience/train.ogg', volume = 30, channel = CHANNEL_AMBIENCE))
 
 /obj/effect/light_emitter/train
 	set_luminosity = 2
