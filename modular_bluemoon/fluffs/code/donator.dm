@@ -1687,7 +1687,7 @@
 
 /datum/gear/donator/bm/kiber_labcoat
 
-name = "Kibercoat"
-slot = ITEM_SLOT_OCLOTHING
-path = /obj/item/clothing/suit/donator/bm/kiber_labcoat
-subcategory = LOADOUT_SUBCATEGORIES_DON02
+	name = "Kibercoat"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/kiber_labcoat
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
