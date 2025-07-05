@@ -401,3 +401,15 @@
 	icon_state = "dark_montur"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+
+/obj/item/clothing/suit/donator/bm/labcoat
+	name = "Kibercoat"
+	desc = "Странный халат с кибернетикой.Около него чуствуеться странный металический привкус"
+	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
+	icon_state = "Kibercoat1"
+	item_state = "Kibercoat2"
+	body_parts_covered = CHEST
+	body_parts_covered = HEAD
+	)
