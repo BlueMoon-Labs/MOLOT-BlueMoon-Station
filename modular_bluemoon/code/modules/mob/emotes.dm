@@ -289,6 +289,14 @@
 	sound = 'sound/voice/snore_mimimimimimi.ogg'
 	emote_cooldown = 1 SECONDS
 
+/datum/emote/sound/human/catgaph
+	key = "catgaph"
+	key_third_person = "catgaph"
+	message = "хватает воздух ртом."
+	message_mime = null
+	sound = 'modular_bluemoon/sound/emotes/catgaph.ogg'
+	emote_cooldown = 4 SECONDS
+
 /datum/emote/sound/human/cp_laugh
 	key = "cplaugh"
 	key_third_person = "cplaught"
