@@ -26,3 +26,10 @@
 		H.mind.special_role = ROLE_BLOODSUCKER
 		return 1
 	return 0
+
+/datum/admins/proc/makeMassShooter()
+	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for the position of a Mass Shooter?", ROLE_OPERATIVE)
+	var/mob/selected = pick_n_take(candidates)
+	var/mob/living/carbon/human/new_character = makeBody(selected)
+	new_character.mind.make_MassShooter()
+	return TRUE

@@ -789,6 +789,7 @@
 
 	if(chambered && chambered.BB)
 		chambered.BB.damage *= 10
+		. = TRUE
 
 	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD, stam_cost = getstamcost(user))
 
