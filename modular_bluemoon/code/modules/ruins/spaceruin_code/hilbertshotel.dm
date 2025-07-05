@@ -57,17 +57,24 @@
 	if(!projection)
 		update_icon(UPDATE_OVERLAYS)
 	if(add_to_viewers)
-		viewers |= viewer
+		viewers += viewer
 	if(viewer.client)
-		viewer.client.images |= projection
+		viewer.client.images += projection
 
 ///Makes the mind not able to see this effect
 /obj/effect/projector/proc/RemoveProjection(mob/viewer)
 	if(viewer in viewers)
-		LAZYREMOVE(viewers, viewer)
+		viewers -= viewer
 		UnregisterSignal(viewer, COMSIG_MOB_CLIENT_LOGIN)
 	if(viewer.client)
 		viewer.client.images -= projection
+
+/obj/effect/projector/proc/UpdateProjection()
+	for(var/mob/viewer in viewers)
+		viewer.client?.images -= projection
+	update_icon(UPDATE_OVERLAYS)
+	for(var/mob/viewer in viewers)
+		viewer.client?.images += projection
 
 /obj/effect/projector/Destroy()
 	for(var/mob/M in viewers)
@@ -76,7 +83,7 @@
 	viewers = null	// проверяем дважды, да
 	projection = null
 	if(own_area)
-		LAZYREMOVE(own_area.projectors, src)
+		own_area.projectors -= src
 	. = ..()
 
 /obj/effect/projector/forceMove(atom/destination)
@@ -91,22 +98,24 @@
 		return
 
 	if(current_area.type in valid_area)
+		for(var/mob/viewer in viewers)
+			UnregisterSignal(viewer, COMSIG_MOB_CLIENT_LOGIN)
 		return
 	// Значит мы не в допустимой для проектора зоне, **ВЗРЫВ**
 	qdel(src)
 
 /area/hilbertshotel/Entered(mob/living/L, atom/OldLoc)
 	. = ..()
-	if(projectors.len && istype(L))
+	if(projectors && projectors.len && istype(L))
 		if(!L.mind)
 			return
 		for(var/obj/effect/projector/P in projectors)
 			P.RegisterSignal(L, COMSIG_MOB_CLIENT_LOGIN, TYPE_PROC_REF(/obj/effect/projector, on_mob_login))
-			P.AddProjection(L)
+			P.AddProjection(L, TRUE)
 
 /area/hilbertshotel/Exited(mob/living/L)
 	. = ..()
-	if(projectors.len && istype(L))
+	if(projectors && projectors.len && istype(L))
 		if(!L.mind)
 			return
 		for(var/obj/effect/projector/P in projectors)
@@ -118,8 +127,9 @@
 	name = "door"
 	desc = "An extremely sturdy metal ladder."
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/hatch/centcom.dmi'
-	icon_state = "closed"
+	icon_state = "fake_on"
 	resistance_flags = INDESTRUCTIBLE
+	anchored = TRUE
 	var/teleport_x = 0
 	var/teleport_y = 0
 
@@ -185,3 +195,76 @@
 	invisibility = 100
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "arrows_red"
+
+/obj/hotel_things/train/console
+	name = "Train console"
+	icon = 'modular_bluemoon/icons/effects/160x160.dmi'
+	icon_state = "shuttlecock_syndie"
+	layer = 5
+	plane = 12
+	color = "#777777"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	flags_1 = NODECONSTRUCT_1
+	anchored = TRUE
+	var/moving = FALSE
+	var/cooldown = 5 MINUTES
+	var/cooldown_timer
+	var/next_sound
+
+/obj/hotel_things/train/console/proc/use(mob/user)
+	if(!in_range(src, user))
+		return
+	if(cooldown_timer && world.time < cooldown_timer + cooldown)
+		to_chat(user, "<span class='notice'>[src] сейчас перезаряжается, ожидайте.</span>")
+		return
+
+	cooldown_timer = world.time
+	change_moving(user)
+
+/obj/hotel_things/train/console/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+	use(user)
+
+/obj/hotel_things/train/console/attack_paw(mob/user)
+	return use(user)
+
+/obj/hotel_things/train/console/attackby(obj/item/W, mob/user, params)
+	return use(user)
+
+/obj/hotel_things/train/console/attack_robot(mob/living/silicon/robot/R)
+	if(R.Adjacent(src))
+		return use(R)
+
+/obj/hotel_things/train/console/proc/change_moving(mob/user)
+	var/area/hilbertshotel/HILBERT = get_area(src)
+	if(!istype(HILBERT))
+		return
+	moving = !moving
+	for(var/obj/effect/projector/projector in HILBERT.projectors)
+		projector.projection_state = moving ? "moving" : "stand"
+		projector.UpdateProjection()
+	if(moving)
+		START_PROCESSING(SSobj, src)
+	else
+		STOP_PROCESSING(SSobj, src)
+
+/obj/hotel_things/train/console/process(delta_time)
+	if(next_sound > world.time)
+		return
+	next_sound = world.time + 1 MINUTES + 16 SECONDS
+	var/area/hilbertshotel/own_area = get_area(src)
+	if(!istype(own_area))
+		return PROCESS_KILL
+	for(var/mob/M in GLOB.player_list)
+		if(!M.client)
+			continue
+		var/area/hilbertshotel/M_area = get_area(M)
+		if(!istype(M_area))
+			continue
+		if(M_area.roomnumber != own_area.roomnumber)
+			continue
+		SEND_SOUND(M, sound('modular_bluemoon/sound/ambience/train.ogg', volume = 30))
+
+/obj/effect/light_emitter/train
+	set_luminosity = 2
+	set_cap = 1
+	light_color = COLOR_BLUE

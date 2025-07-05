@@ -1,20 +1,20 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ag" = (
-/obj/machinery/computer{
-	dir = 8;
-	pixel_x = -3
-	},
+/obj/effect/turf_decal/siding/wood,
 /obj/structure/grille/indestructable/fake{
-	pixel_x = 32
+	pixel_y = -32
 	},
 /obj/structure/window/plastitanium/train_fake{
-	pixel_x = 32
+	pixel_x = 0;
+	pixel_y = -32
 	},
-/turf/open/floor/plasteel/rivets/large,
-/area/hilbertshotel)
-"aO" = (
-/obj/machinery/door/airlock/centcom,
-/turf/open/floor/carpet/red,
+/obj/structure/curtain/fake{
+	color = "#292929";
+	pixel_y = -32
+	},
+/obj/effect/projector,
+/obj/effect/light_emitter/train,
+/turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "aP" = (
 /obj/structure/bed,
@@ -38,17 +38,43 @@
 	},
 /area/hilbertshotel)
 "br" = (
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/projector/head{
+	dir = 4;
+	projection_pixel_x_offset = 64;
+	projection_pixel_y_offset = -64
+	},
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 4
 	},
 /area/hilbertshotel)
 "bH" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel/rivets/half{
+/turf/open/floor/plasteel/rivets/corner{
 	dir = 1
 	},
+/area/hilbertshotel)
+"cS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/grille/indestructable/fake{
+	pixel_y = -32
+	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/obj/structure/curtain/fake{
+	color = "#B22222";
+	pixel_y = -32
+	},
+/obj/effect/light_emitter/train,
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "dl" = (
 /obj/effect/turf_decal/siding/wood,
@@ -79,8 +105,8 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/item/mop,
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 8
 	},
 /area/hilbertshotel)
 "fN" = (
@@ -89,6 +115,21 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/structure/grille/indestructable/fake{
+	pixel_y = 32
+	},
+/obj/effect/projector{
+	dir = 1
+	},
+/obj/item/storage/fancy/donut_box{
+	pixel_x = 4;
+	pixel_y = 7
+	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 8
 	},
@@ -112,40 +153,17 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 4
 	},
 /area/hilbertshotel)
 "hq" = (
-/obj/machinery/computer{
-	dir = 8;
-	pixel_x = -3
-	},
-/obj/effect/projector/head{
+/obj/hotel_things/train/console{
 	dir = 4;
-	projection_pixel_x_offset = 64;
-	projection_pixel_y_offset = -64
+	pixel_x = -23;
+	pixel_y = -48
 	},
-/obj/structure/grille/indestructable/fake{
-	pixel_x = 32
-	},
-/obj/structure/window/plastitanium/train_fake{
-	pixel_x = 32
-	},
-/turf/open/floor/plasteel/rivets/large,
-/area/hilbertshotel)
-"hA" = (
-/obj/machinery/light,
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/window/plastitanium/train_fake{
-	alpha = 0;
-	pixel_y = -32;
-	invisibility = 100
-	},
-/obj/effect/projector{
-	projection_pixel_x_offset = -64
-	},
-/turf/open/floor/wood/wood_large,
+/turf/closed/indestructible/syndicate,
 /area/hilbertshotel)
 "hD" = (
 /obj/structure/chair/sofa/corp/right{
@@ -162,8 +180,8 @@
 	teleport_y = -6;
 	teleport_x = -6
 	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 4
 	},
 /area/hilbertshotel)
 "iJ" = (
@@ -193,8 +211,8 @@
 	teleport_y = -2;
 	teleport_x = -6
 	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 4
 	},
 /area/hilbertshotel)
 "kv" = (
@@ -321,19 +339,19 @@
 /area/hilbertshotel)
 "nY" = (
 /obj/machinery/light,
+/obj/machinery/light_switch/directional/south,
 /turf/open/floor/plasteel/stairs/right{
 	dir = 8
 	},
 /area/hilbertshotel)
 "pd" = (
 /obj/effect/projector,
-/obj/structure/grille/indestructable/fake{
-	pixel_y = -32
-	},
 /obj/structure/window/plastitanium/train_fake{
-	pixel_x = 0;
-	pixel_y = -32
+	alpha = 0;
+	pixel_y = -32;
+	invisibility = 100
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 1
 	},
@@ -349,9 +367,7 @@
 	teleport_y = -10;
 	teleport_x = -6
 	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
-	},
+/turf/open/floor/plasteel/rivets/corner,
 /area/hilbertshotel)
 "pO" = (
 /obj/structure/table/reinforced,
@@ -391,15 +407,24 @@
 	},
 /area/hilbertshotel)
 "qw" = (
-/obj/structure/flora/tree/jungle/small{
-	pixel_y = 0;
-	pixel_x = 0
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/grille/indestructable/fake{
+	pixel_y = -32
 	},
-/turf/closed/indestructible/syndicate{
-	icon = 'modular_splurt/icons/turf/smooth/_smooth.dmi';
-	icon_state = "grass";
-	color = "#dbd1b4"
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = -32
 	},
+/obj/structure/curtain/fake{
+	color = "#292929";
+	pixel_y = -32
+	},
+/obj/effect/projector{
+	projection_pixel_x_offset = 96
+	},
+/obj/effect/projector,
+/obj/effect/light_emitter/train,
+/turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "rc" = (
 /obj/structure/window/plastitanium/train_fake{
@@ -438,10 +463,13 @@
 	brightness = 3;
 	dir = 8
 	},
+/obj/machinery/light_switch/directional/south,
 /turf/open/floor/plasteel/rivets,
 /area/hilbertshotel)
 "sx" = (
-/turf/open/floor/plasteel/rivets/half,
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 4
+	},
 /area/hilbertshotel)
 "sS" = (
 /obj/machinery/vending/boozeomat{
@@ -469,6 +497,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/machinery/light_switch/directional/east,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "uf" = (
@@ -479,10 +508,33 @@
 	color = "#dbd1b4"
 	},
 /area/hilbertshotel)
+"uQ" = (
+/obj/effect/light_emitter/train,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
+/area/hilbertshotel)
+"vk" = (
+/obj/effect/light_emitter/train,
+/turf/open/floor/plating/smooth/grass/lavaland_jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
+/area/hilbertshotel)
 "we" = (
 /obj/item/bedsheet/brown,
 /obj/structure/bed/pod,
-/turf/open/floor/plasteel/rivets/half,
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/obj/structure/grille/indestructable/fake{
+	pixel_y = -32
+	},
+/obj/effect/projector,
+/obj/effect/light_emitter/train,
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 1
+	},
 /area/hilbertshotel)
 "wo" = (
 /obj/structure/flora/junglebush/c,
@@ -515,14 +567,15 @@
 	color = "#B22222";
 	pixel_y = -32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "xv" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 8
 	},
 /area/hilbertshotel)
 "yr" = (
@@ -570,6 +623,7 @@
 	color = "#292929";
 	pixel_y = 32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "As" = (
@@ -600,6 +654,7 @@
 	color = "#292929";
 	pixel_y = 32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "CC" = (
@@ -620,6 +675,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 4
 	},
@@ -641,6 +697,7 @@
 	color = "#B22222";
 	pixel_y = 32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "De" = (
@@ -664,6 +721,10 @@
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "Dl" = (
+/obj/structure/flora/tree/jungle/small{
+	pixel_y = 0;
+	pixel_x = 13
+	},
 /turf/closed/indestructible/hoteldoor{
 	icon_state = "door_closed";
 	icon = 'icons/obj/doors/puzzledoor/default.dmi'
@@ -676,6 +737,7 @@
 	lamp_power_usage = 0
 	},
 /obj/structure/cable,
+/obj/effect/light_emitter/train,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -684,12 +746,15 @@
 /obj/effect/projector{
 	dir = 1
 	},
-/obj/structure/grille/indestructable/fake{
-	pixel_y = 32
-	},
 /obj/structure/window/plastitanium/train_fake{
-	pixel_x = 0;
-	pixel_y = 32
+	alpha = 0;
+	pixel_y = 32;
+	invisibility = 100
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 9;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/rivets/corner{
 	dir = 8
@@ -711,6 +776,7 @@
 	color = "#B22222";
 	pixel_y = -32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "DX" = (
@@ -719,8 +785,8 @@
 	pixel_x = 0;
 	pixel_y = 14
 	},
-/turf/open/floor/plasteel/rivets/corner{
-	dir = 1
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 4
 	},
 /area/hilbertshotel)
 "Ew" = (
@@ -786,6 +852,13 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/structure/grille/indestructable/fake{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/rivets/corner,
 /area/hilbertshotel)
 "GV" = (
@@ -843,6 +916,7 @@
 	color = "#292929";
 	pixel_y = 32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/plasteel/rivets,
 /area/hilbertshotel)
 "IB" = (
@@ -968,9 +1042,30 @@
 /area/hilbertshotel)
 "Og" = (
 /obj/structure/closet/crate/bin,
+/obj/effect/light_emitter/train,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
+/area/hilbertshotel)
+"Oz" = (
+/obj/structure/chair/sofa/corp/left{
+	color = "#DE3A3A";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/grille/indestructable/fake{
+	pixel_y = 32
+	},
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/structure/curtain/fake{
+	color = "#B22222";
+	pixel_y = 32
+	},
+/obj/effect/light_emitter/train,
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "Pm" = (
 /obj/structure/chair/sofa/corp/left{
@@ -1036,6 +1131,7 @@
 	pixel_x = 0;
 	pixel_y = 32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/plasteel/rivets/corner,
 /area/hilbertshotel)
 "RC" = (
@@ -1045,9 +1141,6 @@
 	alpha = 0;
 	pixel_y = -32;
 	invisibility = 100
-	},
-/obj/effect/projector{
-	projection_pixel_x_offset = 96
 	},
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
@@ -1115,8 +1208,15 @@
 	pixel_x = 4;
 	pixel_y = 0
 	},
-/turf/open/floor/plasteel/rivets/edge{
-	dir = 8
+/obj/structure/window/plastitanium/train_fake{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/obj/structure/grille/indestructable/fake{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/rivets/corner{
+	dir = 4
 	},
 /area/hilbertshotel)
 "TO" = (
@@ -1150,6 +1250,7 @@
 	color = "#B22222";
 	pixel_y = 32
 	},
+/obj/effect/light_emitter/train,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "Um" = (
@@ -1163,9 +1264,7 @@
 	teleport_y = -4;
 	teleport_x = -6
 	},
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
-	},
+/turf/open/floor/plasteel/rivets/corner,
 /area/hilbertshotel)
 "Uq" = (
 /obj/machinery/door/airlock/centcom,
@@ -1214,7 +1313,6 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/jukebox{
 	req_one_access = null;
-	set_obj_flags = "EMAGGED";
 	density = 0;
 	pixel_x = -7;
 	pixel_y = 18;
@@ -1244,8 +1342,8 @@
 /area/hilbertshotel)
 "YF" = (
 /obj/item/clothing/suit/caution,
-/turf/open/floor/plasteel/rivets/half{
-	dir = 1
+/turf/open/floor/plasteel/rivets/edge{
+	dir = 4
 	},
 /area/hilbertshotel)
 "ZG" = (
@@ -1335,7 +1433,7 @@ Iy
 MC
 Uq
 Mt
-dl
+ag
 zU
 Dc
 We
@@ -1344,7 +1442,7 @@ zU
 ZT
 Dx
 Nl
-Po
+vk
 MQ
 "}
 (4,1,1) = {"
@@ -1371,7 +1469,7 @@ GV
 zU
 zU
 Fu
-hA
+RC
 zU
 Wx
 Pm
@@ -1407,16 +1505,16 @@ BZ
 Yd
 iJ
 Mt
-dl
+ag
 zU
-lT
+Oz
 hD
-PZ
+cS
 zU
 rc
 Og
 JY
-JY
+uQ
 Dl
 "}
 (8,1,1) = {"
@@ -1435,7 +1533,7 @@ KB
 lI
 nL
 ZR
-qw
+MQ
 "}
 (9,1,1) = {"
 zU
@@ -1449,10 +1547,10 @@ De
 Ex
 As
 zU
-zU
+GV
 zU
 yr
-zU
+ez
 zU
 "}
 (10,1,1) = {"
@@ -1477,9 +1575,9 @@ zU
 zU
 Ah
 Ex
-aO
+iJ
 Mt
-dl
+qw
 zU
 TX
 yV
@@ -1522,23 +1620,23 @@ zU
 FY
 zU
 QO
-br
-br
+Hw
+Hw
 CR
 zU
 "}
 (14,1,1) = {"
 Sp
 pM
-br
+Hw
 nb
-br
+Hw
 iB
 yr
 Um
 nb
 kf
-yr
+zU
 DA
 gq
 br
@@ -1550,17 +1648,17 @@ zU
 eS
 YF
 kv
-br
+sx
 bH
 zU
 xv
 Nu
 bH
 zU
-GV
-ag
+zU
+zU
 hq
-ez
+zU
 zU
 "}
 (16,1,1) = {"
