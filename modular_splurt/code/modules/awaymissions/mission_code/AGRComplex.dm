@@ -674,7 +674,7 @@
 
 /datum/techweb_node/clockworkcult/New()
 	. = ..()
-	boost_item_paths = typesof(/obj/item/grown/matrigrass)
+	boost_item_paths = typesof(/obj/item/grown/matrigrass, /obj/item/clockwork/component)
 
 /datum/design/brass
 	name = "Brass"
