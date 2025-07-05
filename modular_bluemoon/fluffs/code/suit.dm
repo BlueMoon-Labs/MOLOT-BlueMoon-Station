@@ -403,7 +403,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 
-/obj/item/clothing/suit/donator/bm/labcoat
+/obj/item/clothing/suit/donator/bm/kiber_labcoat
 	name = "Kibercoat"
 	desc = "Странный халат с кибернетикой.Около него чуствуеться странный металический привкус"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
@@ -412,4 +412,4 @@
 	item_state = "Kibercoat2"
 	body_parts_covered = CHEST
 	body_parts_covered = HEAD
-	)
+

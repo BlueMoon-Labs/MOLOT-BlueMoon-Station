@@ -1684,3 +1684,10 @@
 	path = /obj/item/storage/backpack/satchel/rawk_sat
 	ckeywhitelist = list("xaeshkavd","silverfoxpaws")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/kiber_labcoat
+
+name = "Kibercoat"
+slot = ITEM_SLOT_OCLOTHING
+path = /obj/item/clothing/suit/donator/bm/kiber_labcoat
+subcategory = LOADOUT_SUBCATEGORIES_DON02
