@@ -266,9 +266,6 @@
 /obj/hotel_things/train/console/forceMove(atom/destination)
 	. = ..()
 	var/area/hilbertshotel/current_area = get_area(src)
-	if(current_area == own_area)
-		return
-
 	if(istype(current_area))
 		if(moving)
 			START_PROCESSING(SSobj, src)
