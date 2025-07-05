@@ -39,7 +39,7 @@
 	. = ..()
 	if(isliving(user))
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-	if(src.z > 6)
+	if(is_away_level(z))
 		to_chat(user, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
 		return
 	var/dat

@@ -55,3 +55,6 @@
 	description = "A very simple precursor-alike chemical that can be used in the creation of any specific liquids."
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
+
+/datum/reagent/pax/catnip
+	color = "#009900"

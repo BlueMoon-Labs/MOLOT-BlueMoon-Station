@@ -4,6 +4,7 @@
 	value = 1
 	medical_record_text = "Пациент попытался покрыть комнату паутиной, заявляя, что \"делает гнездо\"."
 	mob_trait = TRAIT_ARACHNID
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>У вас появляется странное ощущение рядом с анусом...</span>"
 	lose_text = "<span class='notice'>Вы чувствуете, что больше не можете вить паутину...</span>"
 	processing_quirk = TRUE

@@ -254,6 +254,7 @@
 /datum/interaction/lewd/tail_choke/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 	var/oxy_damage = user.a_intent == INTENT_HARM ? rand(3, 6) : 3
+	var/lust_amount = LOW_LUST //если наша цель довести до пика, то не стоит это закрывать за попытками увести в крит от удушья
 	if(partner.getOxyLoss() > 40) //задушить и руками можно, это чисто ЕРП эмоут
 		oxy_damage = 0
 	if(user.a_intent == INTENT_HARM)
@@ -269,10 +270,9 @@
 
 	if(!HAS_TRAIT(partner, TRAIT_NOBREATH) && oxy_damage)
 		partner.apply_damage(oxy_damage, OXY)
+	if(HAS_TRAIT(partner, TRAIT_CHOKE_SLUT))
+		lust_amount = NORMAL_LUST
 	partner.set_is_fucking(user, CUM_TARGET_TAIL)
 	user.visible_message(span_danger("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-	var/lust_amount = NORMAL_LUST //если наша цель довести до пика, то не стоит это закрывать за попытками увести в крит от удушья
-	if(HAS_TRAIT(partner, TRAIT_CHOKE_SLUT)) // да, даже если не дышит, может ему по кайфу от шарфика вокруг шеи
-		lust_amount *= 2
 	partner.handle_post_sex(lust_amount, CUM_TARGET_HAND, user)

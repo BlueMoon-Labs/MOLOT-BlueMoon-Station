@@ -19,6 +19,11 @@
 	if(!istype(new_owner) || !(istype(add_or_merge) && add_or_merge.total_volume > 0))
 		qdel(src)
 		return
+	//BLUEMOON ADD START
+	if(new_owner.reagents.get_reagent(/datum/reagent/medicine/spermatex))
+		qdel(src)
+		return
+	//BLUEMOON ADD END
 	if(isnull(contents))
 		contents = new(300, NO_REACT)
 	if(istype(hole, /obj/item/organ/genital/anus))

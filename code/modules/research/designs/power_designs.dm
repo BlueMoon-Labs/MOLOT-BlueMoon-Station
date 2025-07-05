@@ -58,14 +58,34 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/inducer
-	name = "Inducer"
+	name = "Engineer Inducer"
 	desc = "The NT-75 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them."
 	id = "inducer"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 6000, /datum/material/glass = 3000)
+	build_path = /obj/item/inducer/dry
+	category = list("Power Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/inducer/sci
+	name = "Science Inducer"
+	desc = "The NT-75 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them."
+	id = "inducer_sci"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000)
 	build_path = /obj/item/inducer/sci
 	category = list("Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/inducer/syndie
+	name = "Syndie Inducer"
+	desc = "The Gorlex-7051 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them more faster than standart NT Inducers."
+	id = "inducer_syn"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 8000, /datum/material/silver = 1500)
+	build_path = /obj/item/inducer/syndicate/dry
+	category = list("Power Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/inducercombat
 	name = "Combat Ready Inducer"
@@ -76,6 +96,7 @@
 	build_path = /obj/item/inducer/sci/combat/dry
 	category = list("Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/board/pacman
 	name = "Machine Design (PACMAN-type Generator Board)"

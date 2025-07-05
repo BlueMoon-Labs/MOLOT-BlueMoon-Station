@@ -71,9 +71,9 @@
 
 /area/ruin/lavaland/unpowered/deepspaceone/main
 	name = "DS-1 'Dune' | Primary Hallway"
-	sub_areas = list(/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+	sub_areas = list(/area/ruin/lavaland/unpowered/deepspaceone/main_shower)
 
-/area/ruin/lavaland/unpowered/deepspaceone/main/shower
+/area/ruin/lavaland/unpowered/deepspaceone/main_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "DS-1 'Dune' | Shower Room"
@@ -82,7 +82,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/cargo
 	name = "DS-1 'Dune' | Cargo Bay"
 
-/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower
+/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "DS-1 'Dune' | Comm Shower Room"
@@ -114,7 +114,7 @@
 
 /area/ruin/lavaland/unpowered/deepspaceone/comms_officer
 	name = "DS-1 'Dune' | Communication Officer"
-	sub_areas = list(/area/ruin/lavaland/unpowered/deepspaceone/comms_officer/shower)
+	sub_areas = list(/area/ruin/lavaland/unpowered/deepspaceone/comms_officer_shower)
 
 /area/ruin/lavaland/unpowered/deepspaceone/reactor
 	name = "DS-1 'Dune' | Reactor"

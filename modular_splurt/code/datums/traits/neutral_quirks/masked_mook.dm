@@ -5,6 +5,7 @@
 	lose_text = span_notice("У вас больше нет нужды в ношении противогаза.")
 	value = -1
 	mood_quirk = TRUE
+	flavor_quirk = TRUE
 	medical_record_text = "Пациент чувствует себя более безопасно при ношении противогаза."
 	processing_quirk = TRUE
 

@@ -14,7 +14,7 @@
 
 /obj/effect/baseturf_helper/LateInitialize()
 	if(!baseturf_to_replace)
-		baseturf_to_replace = typecacheof(list(/turf/open/space,/turf/baseturf_bottom))
+		baseturf_to_replace = typecacheof(list(/turf/open/space,/turf/baseturf_bottom,/turf/open/floor/plating))
 	else if(!length(baseturf_to_replace))
 		baseturf_to_replace = list(baseturf_to_replace = TRUE)
 	else if(baseturf_to_replace[baseturf_to_replace[1]] != TRUE) // It's not associative
@@ -82,6 +82,6 @@
 	name = "lavaland baseturf editor"
 	baseturf = /turf/open/lava/smooth/lava_land_surface
 
-/obj/effect/baseturf_helper/beach/black_mesa
+/obj/effect/baseturf_helper/black_mesa
 	name = "mesa baseturf editor"
-	baseturf = /turf/open/indestructible/mesasand
+	baseturf = /turf/open/indestructible/ironsand

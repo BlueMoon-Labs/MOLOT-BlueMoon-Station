@@ -31,3 +31,11 @@
 	new /obj/item/reagent_containers/pill/salbutamol(src)
 	new /obj/item/reagent_containers/pill/charcoal(src)
 	new /obj/item/reagent_containers/hypospray/medipen/ekit(src)
+
+/obj/item/storage/pill_bottle/spermatex
+	name = "Spermatex Pills"
+	desc = "Made by Fermichem - the bottle show white drip crossed out with a red cross. It is not a means of contraception!"
+
+/obj/item/storage/pill_bottle/spermatex/PopulateContents()
+	for(var/i in 1 to 10)
+		new /obj/item/reagent_containers/pill/spermatex(src)

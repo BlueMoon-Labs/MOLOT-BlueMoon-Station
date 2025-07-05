@@ -355,7 +355,7 @@ GENETICS SCANNER
 						trauma_text += trauma_desc
 					temp_message += " <span class='alert'>Обнаружены церебральные травмы: субъект, судя по всему страдает, от [english_list(trauma_text)].</span>"
 				if(C.roundstart_quirks.len)
-					temp_message += " <span class='info'>Субъект обладает следующими психологическими особенностями: [C.get_trait_string()].</span>"
+					temp_message += " <span class='info'>Субъект обладает следующими психофизиологическими особенностями: [C.get_trait_string(FALSE, TRUE)].</span>"
 
 				if(ishuman(C) && advanced)
 					//MON PETIT CHAUFFEUR

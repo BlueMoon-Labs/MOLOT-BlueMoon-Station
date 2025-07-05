@@ -65,6 +65,7 @@ GLOBAL_LIST_INIT(clothesmate_socks, list())
 				/obj/item/clothing/head/ushanka/soviet = 7,
 				/obj/item/clothing/head/wig = 5,
 				/obj/item/clothing/head/yuri = 5,
+				/obj/item/clothing/head/fez = 5,
 			),
 		),
 
@@ -459,6 +460,7 @@ GLOBAL_LIST_INIT(clothesmate_socks, list())
 				/obj/item/storage/belt/fannypack/black = 3,
 				/obj/item/storage/belt/fannypack/blue = 3,
 				/obj/item/storage/belt/fannypack/red = 3,
+				/obj/item/clothing/head/helmet/biker = 3,
 	)
 	premium = list(
 				/obj/item/clothing/head/helmet/goner/officer/fake/poly = 10,

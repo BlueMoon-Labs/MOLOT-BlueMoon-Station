@@ -596,7 +596,7 @@
 		A small tag hangs off of it reading; 'Property of the Gorlex Marauders, with assistance from Cybersun Industries. \
 		All rights reserved, tampering with suit will void warranty."
 	default_skin = "syndicate"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 15, BOMB = 35, BIO = 100, FIRE = 50, ACID = 90, WOUND = 25, RAD = 0) // BLUEMOON EDIT - was "MELEE = 15, BULLET = 20, LASER = 15"
+	armor = list(MELEE = 25, BULLET = 35, LASER = 25, ENERGY = 15, BOMB = 30, BIO = 100, FIRE = 50, ACID = 90, WOUND = 25, RAD = 0) // BLUEMOON EDIT - was "MELEE = 15, BULLET = 20, LASER = 15"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
 	slowdown_inactive = 1
@@ -639,7 +639,7 @@
 		'Property of the Gorlex Marauders, with assistance from Cybersun Industries. \
 		All rights reserved, tampering with suit will void life expectancy.'"
 	default_skin = "elite"
-	armor = list(MELEE = 60, BULLET = 60, LASER = 50, ENERGY = 35, BOMB = 55, BIO = 100, FIRE = 100, ACID = 100, WOUND = 25, RAD = 0) // BLUEMOON EDIT - was "MELEE = 35, BULLET = 30, LASER = 35"
+	armor = list(MELEE = 45, BULLET = 45, LASER = 35, ENERGY = 30, BOMB = 50, BIO = 100, FIRE = 100, ACID = 100, WOUND = 25, RAD = 0) // BLUEMOON EDIT - was "MELEE = 35, BULLET = 30, LASER = 35"
 	resistance_flags = FIRE_PROOF|ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	siemens_coefficient = 0

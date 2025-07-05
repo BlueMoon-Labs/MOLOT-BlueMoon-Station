@@ -20,16 +20,24 @@
 							span_lewd("<b>[user]</b> аккуратно хватается ртом за [pick("сосок", "соски")] <b>[target]</b>"),
 							span_lewd("<b>[user]</b> лижет [pick("сосок", "соски")] <b>[target]</b>"),
 							span_lewd("<b>[user]</b> облизывает [pick("сосок", "соски")] <b>[target]</b>"))
+			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS) //BLUEMOON ADD
 		if(INTENT_HARM)
 			amount_high = 3 // aggressive sucking has higher rewards
 			user_message = pick(span_lewd("<b>[user]</b> кусает [pick("сосок", "соски")] <b>[target]</b>"),
 							span_lewd("<b>[user]</b> грубо всасывает [pick("сосок", "соски")] <b>[target]</b>"),
 							span_lewd("<b>[user]</b> грубо обсасывает [pick("сосок", "соски")] <b>[target]</b>"))
+			//BLUEMOON ADD START
+			if(HAS_TRAIT(target,TRAIT_MASO))
+				target.handle_post_sex(NORMAL_LUST, null, user, ORGAN_SLOT_BREASTS)
+			else
+				target.handle_post_sex(max(LOW_LUST-2,0), null, user, ORGAN_SLOT_BREASTS) //Без мазохима, меньше удовольствия
+			//BLUEMOON ADD END
 		if(INTENT_GRAB)
 			amount_high = 3 // aggressive sucking has higher rewards
 			user_message = pick(span_lewd("<b>[user]</b> активно сосёт [pick("сосок", "соски")] <b>[target]</b>"),
 							span_lewd("<b>[user]</b> с силой втягивает в свой рот [pick("сосок", "соски")] <b>[target]</b>"),
 							span_lewd("<b>[user]</b> крепко держит грудь <b>[target]</b> и обсасывает [pick("сосок", "соски")]"))
+			target.handle_post_sex(LOW_LUST*1.5, null, user, ORGAN_SLOT_BREASTS) //BLUEMOON ADD
 	user.visible_message(user_message)
 	var/has_breasts = target.has_breasts()
 	if(has_breasts == TRUE || has_breasts == HAS_EXPOSED_GENITAL)

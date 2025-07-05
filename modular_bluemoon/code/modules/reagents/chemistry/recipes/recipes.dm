@@ -32,3 +32,10 @@
 	required_reagents = list(/datum/reagent/drug/aphrodisiac = 2, /datum/reagent/consumable/organicprecursor = 1)
 	required_temp = 400
 	mob_react = FALSE
+
+/datum/chemical_reaction/spermatex
+	name = "Spermatex"
+	id = /datum/reagent/medicine/spermatex
+	results = list(/datum/reagent/medicine/spermatex = 2)
+	required_reagents = list(/datum/reagent/medicine/charcoal = 1, /datum/reagent/ammonia  = 1)
+	required_temp = 380

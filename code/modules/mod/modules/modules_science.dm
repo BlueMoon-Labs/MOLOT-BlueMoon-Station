@@ -12,6 +12,7 @@
 	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.2
 	incompatible_modules = list(/obj/item/mod/module/reagent_scanner)
 	cooldown_time = 0.5 SECONDS
+	mod_module_flags = MOD_MODULE_SCIENCE // BLUEMOON ADD
 
 /obj/item/mod/module/reagent_scanner/on_activation()
 	. = ..()
@@ -69,6 +70,7 @@
 	incompatible_modules = list(/obj/item/mod/module/anomaly_locked)
 	cooldown_time = 0.5 SECONDS
 	accepted_anomalies = list(/obj/item/assembly/signaler/anomaly/grav)
+	mod_module_flags = MOD_MODULE_SCIENCE // BLUEMOON ADD
 
 /obj/item/mod/module/anomaly_locked/antigrav/on_activation()
 	. = ..()
@@ -107,6 +109,7 @@
 	accepted_anomalies = list(/obj/item/assembly/signaler/anomaly/bluespace)
 	/// Time it takes to teleport
 	var/teleport_time = 3 SECONDS
+	mod_module_flags = MOD_MODULE_SCIENCE // BLUEMOON ADD
 
 /obj/item/mod/module/anomaly_locked/teleporter/on_select_use(atom/target)
 	. = ..()

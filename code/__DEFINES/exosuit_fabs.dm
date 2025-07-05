@@ -35,3 +35,36 @@
 #define EXOSUIT_MODULE_COMBAT		EXOSUIT_MODULE_GYGAX | EXOSUIT_MODULE_HONK | EXOSUIT_MODULE_DURAND | EXOSUIT_MODULE_PHAZON | EXOSUIT_MODULE_SAVANNAH
 /// Module is compatible with "Medical" Exosuit modelsm - Odysseus
 #define EXOSUIT_MODULE_MEDICAL		EXOSUIT_MODULE_ODYSSEUS | EXOSUIT_MODULE_GYGAX_MED
+
+// BLUEMOON ADD START MOD modules & exosuit modules sub-categories
+
+/// Module is from general MODsuit node
+#define MOD_MODULE_GENERAL 					(1<<0)
+/// Module is from engineering MODsuit node
+#define MOD_MODULE_ENGINEERING				(1<<1)
+/// Module is from medical MODsuit node
+#define MOD_MODULE_SECURITY					(1<<2)
+/// Module is from service MODsuit node
+#define MOD_MODULE_MEDICAL					(1<<3)
+/// Module is from SCIENCE MODsuit node
+#define MOD_MODULE_SCIENCE					(1<<4)
+/// Module is from supply MODsuit node
+#define MOD_MODULE_SUPPLY					(1<<5)
+/// Module is from HUD-visor MODsuit node
+#define MOD_MODULE_VISOR					(1<<6)
+
+/// Module is exosuit ballistic weapon
+#define EXISUIT_WEAPON_MODULE_BALLISTIC		(1<<0)
+/// Module is exosuit ballistic weapon
+#define EXISUIT_WEAPON_MODULE_ENERGY		(1<<1)
+/// Module is exosuit launcher or missile weapon
+#define EXISUIT_WEAPON_MODULE_AOE			(1<<2)
+/// Module is exosuit department modules
+#define EXISUIT_MODULE_NONWEAPON			(1<<3)
+
+/// MOD part is construction type
+#define MOD_CONSTRUCTION					(1<<0)
+/// MOD part is a plating
+#define MOD_PLATING							(1<<1)
+
+// BLUEMOON ADD END

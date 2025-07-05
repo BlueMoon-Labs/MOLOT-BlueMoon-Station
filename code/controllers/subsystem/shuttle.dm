@@ -82,6 +82,10 @@ SUBSYSTEM_DEF(shuttle)
 	//SPLURT CHANGE
 	var/list/navigation_locked_traits = list(ZTRAIT_RESERVED, ZTRAIT_CENTCOM, ZTRAIT_AWAY, ZTRAIT_REEBE) //traits forbided for custom docking
 	//END SPLURT CHANGE
+	// BLUEMOON ADD TG UPSTREAM PULL
+	/// List of express consoles that are waiting for pack initialization
+	var/list/obj/machinery/computer/cargo/express/express_consoles = list()
+	// BLUEMOON ADD END
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
@@ -92,6 +96,10 @@ SUBSYSTEM_DEF(shuttle)
 			continue
 		supply_packs[P.type] = P
 
+	// BLUEMOON ADD TG UPSTREAM PULL
+	for(var/obj/machinery/computer/cargo/express/console as anything in express_consoles)
+		console.packin_up(TRUE)
+	// BLUEMOON ADD END
 	initial_load()
 
 	if(!arrivals)

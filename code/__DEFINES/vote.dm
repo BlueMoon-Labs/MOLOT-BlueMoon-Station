@@ -16,8 +16,8 @@
 GLOBAL_LIST_INIT(vote_score_options,list("Bad","Poor","Acceptable","Good","Great"))
 
 GLOBAL_LIST_INIT(vote_type_names,list(\
-"Plurality (default)" = PLURALITY_VOTING,\
-"Approval" = APPROVAL_VOTING,\
+"Plurality (default, only vote for one option)" = PLURALITY_VOTING,\
+"Approval (can vote for as many as you want)" = APPROVAL_VOTING,\
 "IRV (single winner ranked choice)" = INSTANT_RUNOFF_VOTING,\
 "Schulze (ranked choice, higher result=better)" = SCHULZE_VOTING,\
 "Raw Score (returns results from 0 to 1, winner is 1)" = SCORE_VOTING,\

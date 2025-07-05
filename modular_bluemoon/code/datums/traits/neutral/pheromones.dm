@@ -5,6 +5,7 @@
 	name = "Твои феромоны"
 	desc = "Вы источаете феромоны, что странно влияют на чувствительных к ним существам. Они испытывают к вам возбуждение и желание принять вашу ласку и любовь."
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Вы источаете страный и нейтральный запах.</span>"
 	lose_text = "<span class='notice'>Странный и нейтральный запах пропадает.</span>"
 
@@ -44,6 +45,7 @@
 	gain_text = span_notice("Вы чувствуете феромоны окружающих...")
 	lose_text = span_notice("Вы больше не чувствуете феромны вокруг себя...")
 	processing_quirk = TRUE
+	flavor_quirk = TRUE
 	var/notice_delay = 0
 	var/mob/living/carbon/human/last_feromon
 

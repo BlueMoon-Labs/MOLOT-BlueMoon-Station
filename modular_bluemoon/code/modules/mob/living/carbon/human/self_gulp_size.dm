@@ -1,6 +1,3 @@
-/mob/living/carbon/human
-	var/self_gulp_size = 5 //количество выпиваемого за раз при самоличном потреблении
-
 /mob/living/carbon/human/verb/self_gulp_size()
 	set name = "Set Drink Amount"
 	set category = "IC"

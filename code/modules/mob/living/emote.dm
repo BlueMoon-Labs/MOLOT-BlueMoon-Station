@@ -260,7 +260,7 @@
 /datum/emote/sound/human/grin
 	key = "grin"
 	key_third_person = "grins"
-	message = "ухмыляется."
+	message = "ухмыляется с оскалом."
 
 /datum/emote/sound/human/groan
 	key = "groan"
@@ -360,15 +360,23 @@
 				return
 		else if(ishumanbasic(C))
 			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
-				playsound(C, pick('sound/voice/human/womanlaugh.ogg', 'sound/voice/female_laugh1.ogg', 'sound/voice/female_laugh2.ogg', 'sound/voice/female_laugh3.ogg'), 50, 1)
+				//BLUEMOON EDIT START
+				if(key == "laugh_soft")
+					playsound(C, 'sound/voice/human/womanlaugh.ogg', 50, 1)
+				else
+					playsound(C, pick('sound/voice/human/womanlaugh.ogg', 'sound/voice/female_laugh1.ogg', 'sound/voice/female_laugh2.ogg', 'sound/voice/female_laugh3.ogg'), 50, 1)
 			else
-				playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg', 'sound/voice/laugh_m1.ogg', 'sound/voice/laugh_m2.ogg', 'sound/voice/laugh_m3.ogg'), 50, 1)
+				if(key == "laugh_soft")
+					playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg'), 50, 1)
+				else
+					playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg', 'sound/voice/laugh_m1.ogg', 'sound/voice/laugh_m2.ogg', 'sound/voice/laugh_m3.ogg'), 50, 1)
+				//BLUEMOON EDIT END
 
 /datum/emote/sound/human_emote/chitter
 	key = "chitter"
 	key_third_person = "chitters"
-	message = "бубнит."
-	message_mime = "тихо бубнит."
+	message = "стрекочет."
+	message_mime = "тихо стрекочет."
 	stat_allowed = SOFT_CRIT // BLUEMOON EDIT - некоторые эмоуты можно использовать в софткрите
 
 /datum/emote/sound/human_emote/chitter/run_emote(mob/user, params)
@@ -507,7 +515,7 @@
 /datum/emote/sound/human/sniff
 	key = "sniff"
 	key_third_person = "sniffs"
-	message = "sniffs."
+	message = "нюхает."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = SOFT_CRIT // BLUEMOON EDIT - некоторые эмоуты можно использовать в софткрите
 
@@ -764,8 +772,9 @@
 /datum/emote/inhale
 	key = "inhale"
 	key_third_person = "inhales"
-	message = "breathes in."
+	message = "вдыхает."
+
 /datum/emote/exhale
 	key = "exhale"
 	key_third_person = "exhales"
-	message = "breathes out."
+	message = "выдыхает."

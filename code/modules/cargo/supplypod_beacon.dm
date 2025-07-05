@@ -93,5 +93,7 @@
 		if(new_beacon_name)
 			name += " ([tag])"
 		return
+	if(default_unfasten_wrench(user, W, 2 SECONDS))	// BLUEMOON ADD
+		return
 	else
 		return ..()

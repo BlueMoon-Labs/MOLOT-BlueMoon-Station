@@ -595,6 +595,7 @@ SUBSYSTEM_DEF(vote)
 					if(targetmap.max_round_search_span && count_occurences_of_value(lastmaps, M, targetmap.max_round_search_span) >= targetmap.max_rounds_played)
 						continue
 					choices |= M
+				shuffle_inplace(choices)
 			if("transfer") // austation begin -- Crew autotranfer vote
 				choices.Add(VOTE_TRANSFER,VOTE_CONTINUE) // austation end
 			if("roundtype")

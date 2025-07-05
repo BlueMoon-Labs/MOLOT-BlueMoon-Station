@@ -14,6 +14,7 @@
 	name = "Сноб"
 	desc = "Вас волнуют вещи утонченные, если комната выглядит некрасиво, она просто не стоит того, верно?"
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Вы считаете, что знаете, как должны выглядеть вещи.</span>"
 	lose_text = "<span class='notice'>Кого вообще волнует декор?</span>"
 	medical_record_text = "Пациент ведёт себя напыщенно."
@@ -23,6 +24,7 @@
 	name = "Пристрастие к Ананасам"
 	desc = "Вы обожаете плоды ананасового дерева. Вы никак не можете прекратить наслаждаться этим сладким вкусом!"
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>У вас появляется сильное желание вкусить мякоти ананаса.</span>"
 	lose_text = "<span class='notice'>По всей видимости, ваше отношение к ананасам возвращается к нейтральному.</span>"
 	medical_record_text = "У пациента проявляется патологическая любовь к ананасам."
@@ -42,6 +44,7 @@
 	name = "Неприязнь к Ананасам"
 	desc = "Вы испытываете сильнейшее отвращение к плодам ананасового дерева. Серьёзно, кому они нравятся? И какой безумец посмел положить их на пиццу!?"
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Вы задумываетесь над тем, какому идиоту вообще могут понравиться ананасы...</span>"
 	lose_text = "<span class='notice'>По всей видимости, ваше отношение к ананасам возвращается к нейтральному.</span>"
 	medical_record_text = "Пациент прав в своей нелюбви к ананасам."
@@ -61,6 +64,7 @@
 	name = "Извращенные Вкусы"
 	desc = "Вам не нравится то, что нравится большинству и наоборот."
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Появляется желание съесть чего-нибудь странного.</span>"
 	lose_text = "<span class='notice'>Вам снова нравится есть типичную пищу.</span>"
 	medical_record_text = "Пациент демонстрирует атипичные предпочтения в пище."
@@ -102,6 +106,7 @@
 	desc = "Вас возбуждает боль."
 	value = 0
 	mob_trait = TRAIT_MASO
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Вы хотите, чтобы вам причинили боль.</span>"
 	lose_text = "<span class='notice'>Боль больше не так заводит.</span>"
 
@@ -110,6 +115,7 @@
 	desc = "Вы быстрее возбуждаетесь."
 	value = 0
 	mob_trait = TRAIT_NYMPHO
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>У вас зудит в промежности.</span>"
 	lose_text = "<span class='notice'>Вы более не чувствуете того приятного жжения.</span>"
 
@@ -127,6 +133,7 @@
 	name = "Матёрый Волк"
 	desc = "Вы прошли долгий путь и пережили больше, чем остальные. Вы страдаете от жутких шрамов. Какова бы ни была причина, вы отказались от их удаления или аугментации."
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>Ваше тело видало лучшие дни.</span>"
 	lose_text = "<span class='notice'>Грехи можно смыть, но шрамы останутся...</span>"
 	medical_record_text = "Пациент выразил отказ от удаления многочисленных шрамов."
@@ -143,6 +150,7 @@
 	name = "Мусорный бак"
 	desc = "Вы можете есть мусор."
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = "<span class='notice'>В голову приходит мысль пожевать банку из-под содовой.</span>"
 	lose_text = "<span class='notice'>Вы больше не хотите есть мусор.</span>"
 	mob_trait = TRAIT_TRASHCAN
@@ -167,6 +175,7 @@
 	name = "Фотограф"
 	desc = "Вы знаете как пользоваться фотоаппаратом, сокращая время между фотографией."
 	value = 0
+	flavor_quirk = TRUE
 	mob_trait = TRAIT_PHOTOGRAPHER
 	gain_text = "<span class='notice'>Вы знаете всё о фотографиях.</span>"
 	lose_text = "<span class='danger'>Вы забываете, как работают фотокамеры.</span>"
@@ -192,6 +201,7 @@
 	name = "Сверхпродуктивная Грудь"
 	desc = "Ваша грудь производит и вмещает больше, чем обычно."
 	value = 0
+	flavor_quirk = TRUE
 	gain_text = span_notice("Вы чувствуете давление в груди.")
 	lose_text = span_notice("Вы чувствуете, что ваша грудь стала легче.")
 	medical_record_text = "Грудь пациента демонстрируют высокую продуктивность."
@@ -227,6 +237,7 @@
 	desc = "Вы не знаете, как проговаривать букву \"Р\"."
 	value = 0
 	mob_trait = TRAIT_KARTAVII
+	flavor_quirk = TRUE
 	gain_text = span_notice("Забываю как проговаривать букву \"Р\".")
 	lose_text = span_danger("Вспоминаю как проговаривать букву \"Р\".")
 	medical_record_text = "Пациент не может проговаривать букву \"Р\"."
@@ -251,6 +262,7 @@ proc/kartavo(message)
 	desc = "Долгое время работы в рисовых полях и жара палящего сверху солнца даровала вам этот прекрасный акцент."
 	value = 0
 	mob_trait = TRAIT_ASIAT
+	flavor_quirk = TRUE
 	gain_text = span_notice("Чиньг-чоньг!.")
 	lose_text = span_danger("Аниме говно.")
 	medical_record_text = "Пациент - азиат."
@@ -284,6 +296,7 @@ proc/asiatish(message)
 	name = "Украиновый"
 	desc = "Похоже, вы изучили новый язык и вы не замечаете в этом ничего необычного."
 	value = 0
+	flavor_quirk = TRUE
 	mob_trait = TRAIT_UKRAINE
 	gain_text = span_notice("А що такое?")
 	lose_text = span_danger("А что такое?")
@@ -349,6 +362,7 @@ proc/asiatish(message)
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
 	value = 0
 	mob_trait = TRAIT_RUSSIAN
+	flavor_quirk = TRUE
 	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
 	medical_record_text = "У пациента обнаружен Ангел-Хранитель."

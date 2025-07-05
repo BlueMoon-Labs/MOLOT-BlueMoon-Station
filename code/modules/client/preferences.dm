@@ -837,7 +837,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'><font color='[color_hex2num(features["mcolor3"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor3"]]</font></span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 						mutant_colors = TRUE
 
-						dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
+						dat += "<b>Body Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
+						dat += "<b>Normalized Size:</b> <a href='?_src_=prefs;preference=normalized_size;task=input'>[features["normalized_size"]*100]%</a><br>"
 						dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 						dat += "<b>Weight:</b> <a href='?_src_=prefs;preference=body_weight;task=input'>[all_quirks.Find("Пожиратель") ? NAME_WEIGHT_NORMAL : body_weight]</a><br>" //BLUEMOON ADD вес персонажей
 
@@ -3731,6 +3732,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									body_weight = new_body_weight
 								else
 									tgui_alert(user, "для взятия данного веса нужно ещё [abs(quirk_balance_check)] очков квирков", "Ugh, you cant", list("Ok", "Understood"))
+
+				// Нормализируемый размер (размер при нормализации)
+				if("normalized_size")
+					var/max_size = 	min(CONFIG_GET(number/body_size_max), 1.2)	// Магическая цифра (предел MOB_SIZE_HUMAN по proc/adjust_mobsize)
+					var/min_size =	max(CONFIG_GET(number/body_size_min), 0.81)	// Магическая цифра (предел MOB_SIZE_HUMAN по proc/adjust_mobsize)
+					var/new_normialzed_size = input(user, "Choose your desired normalized size: ([min_size * 100]-[max_size * 100]%)\nUsed with normalizer stuff", "Character Preference", features["normalized_size"]*100) as num|null
+					if(new_normialzed_size)
+						features["normalized_size"] = clamp(new_normialzed_size * 0.01, min_size, max_size)
+
 				//BLUEMOON ADD END
 
 				if("tongue")

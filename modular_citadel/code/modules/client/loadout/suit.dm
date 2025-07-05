@@ -363,3 +363,8 @@
 /datum/gear/suit/samurai
 	name = "Samurai outfit"
 	path = /obj/item/clothing/suit/samurai
+
+/datum/gear/suit/syndie_jacket
+	name = "Cybertechnical Jacket"
+	path = /obj/item/clothing/suit/syndie_jacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS

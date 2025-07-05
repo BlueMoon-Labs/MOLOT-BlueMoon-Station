@@ -47,8 +47,12 @@
 	return FALSE
 
 /datum/element/skirt_peeking/proc/on_examine(mob/living/carbon/human/peeked, mob/peeker, list/examine_list)
-	if(can_skirt_peek(peeked, peeker))
-		examine_list += span_purple("[peeked.ru_who(TRUE)] одет[peeked.ru_a()] в юбку! Наверное, под неё можно <b>подсмотреть</b>...")
+	var/obj/item/clothing/suit/outer_clothing = peeked.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+	if(!(outer_clothing && CHECK_MULTIPLE_BITFIELDS(outer_clothing.body_parts_covered, CHEST | GROIN | LEGS | FEET)))
+		// Valid clothing section
+		var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(ITEM_SLOT_ICLOTHING)
+		if(worn_uniform && is_type_in_typecache(worn_uniform.type, GLOB.skirt_peekable))
+			examine_list += span_purple("[peeked.ru_who(TRUE)] одет[peeked.ru_a()] в юбку! Наверное, под неё можно <b>подсмотреть</b>...")
 
 /datum/element/skirt_peeking/proc/on_closer_look(mob/living/carbon/human/peeked, mob/peeker, list/examine_content)
 	if(can_skirt_peek(peeked, peeker))

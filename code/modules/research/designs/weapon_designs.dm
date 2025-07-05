@@ -38,7 +38,7 @@
 	build_path = /obj/item/ammo_box/c38/hotshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /datum/design/c38_iceblox
 	name = "Speed Loader (.38 Iceblox)"
@@ -49,7 +49,7 @@
 	build_path = /obj/item/ammo_box/c38/iceblox
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 //////////////////
 //Mag-Rifle Mags//
@@ -124,7 +124,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/glass = 1000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtic
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /datum/design/mag_oldsmg/tx_mag
 	name = "WT-550 Semi-Auto SMG Uranium Magazine (4.6x30mm TX)"
@@ -163,42 +163,42 @@
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_GREEN //SEC_LEVEL_BLUE - Этот снаряд напечатать в не взломанном автолате можно
 
 /datum/design/rubbershot/sec
 	id = "sec_rshot"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_GREEN //SEC_LEVEL_AMBER - Вы реально на приколе резину в ембер сувать ?
 
 /datum/design/shotgun_slug/sec
 	id = "sec_slug"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED -Этот снаряд напечатать в взломанном автолате можно и не ждать кода, как и другие патроны :/
 
 /datum/design/buckshot_shell/sec
 	id = "sec_bshot"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_BLUE //SEC_LEVEL_AMBER - Взломанный Автолат не требует кода чтобы печатать дробь.
 
 /datum/design/shotgun_dart/sec
 	id = "sec_dart"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_BLUE //SEC_LEVEL_RED - ( ͡° ͜ʖ ͡°)
 
 /datum/design/incendiary_slug/sec
 	id = "sec_islug"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /datum/design/stunshell
 	name = "Stun Shell"
@@ -208,8 +208,8 @@
 	materials = list(/datum/material/iron = 200)
 	build_path = /obj/item/ammo_casing/shotgun/stunslug
 	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
-	min_security_level = SEC_LEVEL_BLUE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY //| DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_GREEN //SEC_LEVEL_BLUE
 
 /datum/design/techshell
 	name = "Unloaded Technological Shotshell"
@@ -268,7 +268,7 @@
 	build_path = /obj/item/firing_pin/explorer
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_GREEN //SEC_LEVEL_BLUE - Зачем ставить лок на пин что не работает на станции ?
 
 //////////////
 //Guns////////
@@ -283,7 +283,7 @@
 	build_path = /obj/item/storage/lockbox/weapon
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon
 	name = "Lockbox with Laser Carbine"
@@ -301,7 +301,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/tesla_revolver
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/tesla_revolver
 	name = "Lockbox with Tesla Revolver"
@@ -318,7 +318,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/nuclear_gun
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/nuclear_gun
 	name = "Lockbox with Advanced Energy Gun"
@@ -370,7 +370,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/rapidsyringe
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/rapidsyringe
 	name = "Lockbox with Rapid Syringe Gun"
@@ -387,7 +387,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/temp_gun
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/temp_gun
 	name = "Lockbox with Temperature Gun"
@@ -404,7 +404,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/xray
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/xray
 	name = "Lockbox with X-ray Laser Gun"
@@ -421,7 +421,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/ioncarbine
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_RED
+	min_security_level = SEC_LEVEL_AMBER //SEC_LEVEL_RED - Банально Ионка может понадобится при обезвреживании антагов с синди теле, киборгов, и прочего что можно ушатать ЭМИ
 
 /obj/item/storage/lockbox/weapon/ioncarbine
 	name = "Lockbox with Ion Carbine"
@@ -594,6 +594,24 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	min_security_level = SEC_LEVEL_BLUE
+
+/datum/design/lasercarbine/immolator
+	name = "Immolator Laser"
+	desc = "Millitary oriented laser gun with new systems what make laser more deadlier."
+	id = "immolator"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 25000, /datum/material/glass = 25000, /datum/material/gold = 15000, /datum/material/silver = 14500, /datum/material/diamond = 15000, /datum/material/titanium = 16000)
+	build_path = /obj/item/storage/lockbox/weapon/immolator
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/immolator
+	name = "Lockbox with Immolator Laser"
+	req_access = list(ACCESS_ARMORY)
+
+/obj/item/storage/lockbox/weapon/immolator/PopulateContents()
+	new /obj/item/gun/energy/laser/hellgun/immolator/nopin(src)
 
 //////////
 //MISC////
