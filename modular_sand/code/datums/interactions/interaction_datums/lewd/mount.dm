@@ -26,7 +26,13 @@
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, user, ORGAN_SLOT_PENIS) //SPLURT edit
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner, ORGAN_SLOT_VAGINA) //SPLURT edit
+	// BLUEMOON EDIT START
+	if(partner.has_strapon())
+		var/obj/item/clothing/underwear/briefs/strapon/partner_strapon = partner.get_strapon()
+		partner_strapon.attached_dildo.target_reaction(user, partner, 0, CUM_TARGET_VAGINA, CUM_TARGET_PENIS, FALSE)
+	else
+		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner, ORGAN_SLOT_VAGINA)
+	// BLUEMOON EDIT END
 
 /datum/interaction/lewd/mountass
 	description = "Попа. Женская Доминация."
@@ -53,7 +59,13 @@
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, user, ORGAN_SLOT_PENIS) //SPLURT edit
-	user.handle_post_sex(NORMAL_LUST, null, partner, "anus")
+	// BLUEMOON EDIT START
+	if(partner.has_strapon())
+		var/obj/item/clothing/underwear/briefs/strapon/partner_strapon = partner.get_strapon()
+		partner_strapon.attached_dildo.target_reaction(user, partner, 0, CUM_TARGET_ANUS, null, FALSE)
+	else
+		user.handle_post_sex(NORMAL_LUST, null, partner, CUM_TARGET_ANUS)
+	// BLUEMOON EDIT END
 
 /datum/interaction/lewd/mountface
 	description = "Попа. Потереться о лицо."
@@ -145,7 +157,7 @@
 			if("penis")
 				if(user.has_penis() || user.has_strapon())
 					message = pick(list(
-						"похотливо облизывается и поправляет своё положение на личике <b>[partner]</b>, после чего пару раз сжимает свои бёдра, выделяя немного предэякулята на лицо <b>[partner]</b>.",
+						"похотливо облизывается и поправляет своё положение на личике <b>[partner]</b>, после чего пару раз сжимает свои бёдра, "+ (user.has_penis() ? "выделяя немного предэякулята на лицо <b>[partner]</b>." : "шлепая дилдо по лицу <b>[partner]</b>."), // BLUEMOON EDIT откуда предэякулят у страпона Bruh
 						"обхватывает голову <b>[partner]</b> и с усилием вжимает в свою промежность, в процессе растирая свои гениталии о личико <b>[partner]</b>."))
 				else
 					improv = TRUE
@@ -170,6 +182,14 @@
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
+	// BLUEMOON ADD START
+	if(fucktarget == "penis")
+		if(user.has_strapon())
+			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
+			user_strapon.attached_dildo.target_reaction(partner, user, 1, CUM_TARGET_MOUTH, null, user.a_intent == INTENT_HARM)
+		else
+			partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_MOUTH)
+	// BLUEMOON ADD END
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(user.loc)
 	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))

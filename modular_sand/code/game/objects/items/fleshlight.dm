@@ -178,7 +178,7 @@
 			LAZYADD(penis_names, "penis")
 		else if(person.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/person_strapon = person.get_strapon()
-			LAZYADD(penis_names, "[GLOB.dildo_size_names[person_strapon.dildo_size]] [person_strapon.dildo_shape]")
+			LAZYADD(penis_names, "[GLOB.dildo_size_names[person_strapon.attached_dildo.dildo_size]] [person_strapon.attached_dildo.dildo_shape]") //BLUEMOON EDIT
 			LAZYADD(penis_names, "strapon")
 		else
 			LAZYADD(penis_names, "none")

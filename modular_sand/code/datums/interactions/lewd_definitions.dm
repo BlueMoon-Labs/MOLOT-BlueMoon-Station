@@ -530,8 +530,11 @@
 						//
 						if(CUM_TARGET_PENIS)
 							var/has_penis = partner.has_penis()
-							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
-								message = "обливает пенис [partner_name] сквиртом"
+							//BLUEMOON EDIT START
+							var/has_strapon = partner.has_strapon() //BLUEMOON ADD
+							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || has_strapon == HAS_EXPOSED_GENITAL)
+								message = "обливает [partner.get_penetrating_genital_name()] [partner_name] сквиртом"
+							//BLUEMOON EDIT END
 							else
 								message = "обливает пространство под собой сквиртом!"
 						else
@@ -730,8 +733,11 @@
 							//
 							if(CUM_TARGET_PENIS)
 								var/has_penis = partner.has_penis()
-								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
-									message = "обливает пенис [partner_name] сквиртом"
+								//BLUEMOON EDIT START
+								var/has_strapon = partner.has_strapon() //BLUEMOON ADD
+								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || has_strapon == HAS_EXPOSED_GENITAL)
+									message = "обливает [partner.get_penetrating_genital_name()] [partner_name] сквиртом"
+								//BLUEMOON EDIT END
 								else
 									message = "обливает пространство под собой сквиртом!"
 							else

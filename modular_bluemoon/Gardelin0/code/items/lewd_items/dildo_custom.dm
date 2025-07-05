@@ -169,10 +169,8 @@
 	if(!do_mob(user, G.owner, 5 SECONDS))
 		return FALSE
 
-	to_chat(G.owner, span_userlove("[G] чувствует что-то крупное внутри!"))
-	G.owner.handle_post_sex(NORMAL_LUST*3, null, G.owner)
-	G.owner.plug13_genital_emote(G, NORMAL_LUST*2)
-	G.owner.Jitter(2)
+	target_reaction(G.owner, null, 1)
+	G.owner.plug13_genital_emote(G, lust_amount)
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 
 /obj/item/dildo/proc/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
