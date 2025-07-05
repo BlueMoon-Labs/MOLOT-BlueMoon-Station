@@ -140,3 +140,9 @@
 	mappath = '_maps/templates/apartment_capsule.dmm'
 	landingZoneRelativeX = 1
 	landingZoneRelativeY = 8
+
+/datum/map_template/hilbertshotel/apartment/train
+	name = "Apartment_train"
+	mappath = '_maps/templates/apartment_train.dmm'
+	landingZoneRelativeX = 6
+	landingZoneRelativeY = 1
