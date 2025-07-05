@@ -18,7 +18,7 @@
 	//var/t_His = user.ru_ego()
 	//var/genital_name = user.get_penetrating_genital_name()
 	var/has_penis = user.has_penis() // BLUEMOON ADD
-	
+
 	var/obj/item/reagent_containers/liquid_container
 
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -31,15 +31,15 @@
 
 	if(user.is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_PENIS)))
 		//BLUEMOON EDIT START
-		message = "[pick("хватается за свой "+(has_penis ? "член" : "дилдо")+" и начинает его наяривать",
-			"с усердием вздрачивает свой "+(has_penis ? "пенис" : "дилдо")+"",
-			"дёргает сво"+(has_penis ? "ё мясо" : "й дилдо")+"",
+		message = pick("хватается за свой [has_penis ? "член" : "дилдо"] и начинает его наяривать",
+			"с усердием вздрачивает свой [has_penis ? "пенис" : "дилдо"]",
+			"дёргает сво[has_penis ? "ё мясо" : "й дилдо"]",
 			"наяривает",
-			"активно теребит свой "+(has_penis ? "орган" : "дилдо")+" не без помощи своих ладоней")]"
+			"активно теребит свой [has_penis ? "орган" : "дилдо"] не без помощи своих ладоней")
 	else
-		message = "[pick("хватается за свой "+(has_penis ? "член" : "дилдо")+" и начинает его наяривать",
-			"активно теребит свой "+(has_penis ? "орган" : "дилдо")+" не без помощи своих ладоней",
-			"с усердием вздрачивает свой "+(has_penis ? "пенис" : "дилдо"))]"
+		message = pick("хватается за свой [has_penis ? "член" : "дилдо"] и начинает его наяривать",
+			"активно теребит свой [has_penis ? "орган" : "дилдо"] не без помощи своих ладоней",
+			"с усердием вздрачивает свой [has_penis ? "пенис" : "дилдо"]")
 		//BLUEMOON EDIT END
 		user.set_is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_PENIS))
 	if(liquid_container)

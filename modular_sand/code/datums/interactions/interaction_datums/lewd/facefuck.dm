@@ -46,10 +46,10 @@
 					partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 					message = pick(
 						"грубо трахает \the <b>[partner]</b> в рот с громким чавкающим звуком.",
-						"с силой загоняет сво"+(has_penis ? "и гениталии" : "й дилдо")+" в самую глотку \the <b>[partner]</b>.",
+						"с силой загоняет сво[has_penis ? "и гениталии" : "й дилдо"] в самую глотку \the <b>[partner]</b>.",
 						"надавливает на дальнюю часть язычка \the <b>[partner]</b> до тех пор, пока не услышит тугой звук от Рвотного Рефлекса.",
-						"хватается за волосы \the <b>[partner]</b> и начинает тянуть к основанию своего "+(has_penis ? "органа" : "дилдо")+".",
-						"смотрит в глаза \the <b>[partner]</b>, когда "+(has_penis ? "член" : "дилдо")+" прижимается к ожидающему язычку.",
+						"хватается за волосы \the <b>[partner]</b> и начинает тянуть к основанию своего [has_penis ? "органа" : "дилдо"].",
+						"смотрит в глаза \the <b>[partner]</b>, когда [has_penis ? "член" : "дилдо"] прижимается к ожидающему язычку.",
 				// BLUEMOON EDIT END
 						"сильно вращает своими бёдрами и погружается в рот \the <b>[partner]</b>.",
 						)
@@ -89,9 +89,9 @@
 					partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 					if(user.is_fucking(partner, CUM_TARGET_THROAT))
 					// BLUEMOON EDIT START
-						message = "вытягивает свой "+(has_penis ? "орган" : "дилдо")+" из горла \the <b>[partner]</b>."
+						message = "вытягивает свой [has_penis ? "орган" : "дилдо"] из горла \the <b>[partner]</b>."
 					else
-						message = "засовывает сво"+(has_penis ? "и гениталии" : "й дилдо")+" в рот \the <b>[partner]</b>."
+						message = "засовывает сво[has_penis ? "и гениталии" : "й дилдо"] в рот \the <b>[partner]</b>."
 					// BLUEMOON EDIT END
 				else
 					improv = TRUE
@@ -147,16 +147,16 @@
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE
 	//BLUEMOON ADD START
-	var/has_penis = user.has_penis() 
+	var/has_penis = user.has_penis()
 	var/has_balls = user.has_balls()
 	//BLUEMOON ADD END
 
 	if(user.is_fucking(partner, CUM_TARGET_THROAT))
 		message = "[pick(
 		//BLUEMOON EDIT START
-			"жёстко засовывает свой крепкий "+(has_penis ? "орган" : "дилдо")+" в горло <b>[partner]</b> и тем самым образом своего партнёра затыкает.",
-			"душит <b>[partner]</b>, снова и снова засовывая свой "+(has_penis ? "влажный орган" : "крепкий дилдо")+" по самые "+(has_balls ? "яйца" : "бедра")+".",
-			"молотит рот <b>[partner]</b> с чавкающим звуком и раз за разом приземляется своими "+(has_balls ? "яйцами" : "бедрами")+" аккурат в лицо.")]"
+			"жёстко засовывает свой крепкий [has_penis ? "орган" : "дилдо"] в горло <b>[partner]</b> и тем самым образом своего партнёра затыкает.",
+			"душит <b>[partner]</b>, снова и снова засовывая свой [has_penis ? "влажный орган" : "крепкий дилдо"] по самые [has_balls ? "яйца" : "бедра"].",
+			"молотит рот <b>[partner]</b> с чавкающим звуком и раз за разом приземляется своими [has_balls ? "яйцами" : "бедрами"] аккурат в лицо.")]"
 		//BLUEMOON EDIT END
 		if(prob(10))
 			partner.emote("cough")
@@ -175,7 +175,7 @@
 			genital = check
 		user.set_is_fucking(partner, CUM_TARGET_THROAT, genital)
 	else
-		message = "загоняет сво"+(has_penis ? "и гениталии" : "й дилдо")+" глубоко в рот \the <b>[partner]</b> и углубляется вниз по самому горлу." // BLUEMOON EDIT
+		message = "загоняет сво[has_penis ? "и гениталии" : "й дилдо"] глубоко в рот \the <b>[partner]</b> и углубляется вниз по самому горлу." // BLUEMOON EDIT
 		var/check = user.getorganslot(ORGAN_SLOT_PENIS)
 		if(check)
 			genital = check

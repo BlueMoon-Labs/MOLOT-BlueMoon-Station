@@ -21,11 +21,13 @@
 	//BLUEMOON ADD END
 
 	if(user.is_fucking(partner, CUM_TARGET_VAGINA))
-		message = "[pick(
+		//BLUEMOON EDIT START
+		message = pick(
 			"долбится в киску <b>[partner]</b>.",
 			"проникает во влагалище <b>[partner]</b>.",
 			"глубоко вводит свой [genital_name] в кисоньку <b>[partner]</b>.",
-			"с силой загоняет сво"+(has_penis ? "и гениталии" : "й дилдо")+" в вагину <b>[partner]</b> и шлёпается своими "+(has_balls ? "яйцами" : "бедрами")+".")]" // BLUEMOON EDIT
+			"с силой загоняет сво[has_penis ? "и гениталии" : "й дилдо"] в вагину <b>[partner]</b> и шлёпается своими [has_balls ? "яйцами" : "бедрами"].")
+		//BLUEMOON EDIT START
 	else
 		message = "вводит свой [genital_name] в лоно <b>[partner]</b>."
 		user.set_is_fucking(partner, CUM_TARGET_VAGINA, user.getorganslot(ORGAN_SLOT_PENIS))
@@ -63,16 +65,18 @@
 	//BLUEMOON ADD END
 
 	if(user.is_fucking(partner, CUM_TARGET_ANUS))
-		message = "[pick(
+	//BLUEMOON EDIT START
+		message = pick(
 			"долбится в задницу <b>[partner]</b>.",
 			"проникает в попку <b>[partner]</b>.",
 			"глубоко вводит свой [genital_name] в анальное колечко <b>[partner]</b>.",
-			"с силой загоняет сво"+(has_penis ? "и гениталии" : "й дилдо")+" в анальное отверстие <b>[partner]</b> и шлёпается своими "+(has_balls ? "яйцами" : "бедрами")+".")]" // BLUEMOON EDIT
+			"с силой загоняет сво[has_penis ? "и гениталии" : "й дилдо"] в анальное отверстие <b>[partner]</b> и шлёпается своими [has_balls ? "яйцами" : "бедрами"].") // BLUEMOON EDIT
 	else
-		message = "[pick(
+		message = pick(
 			"грубо трахает \the <b>[partner]</b> в задницу с громким чавкающим звуком.",
-			"хватается за волосы \the <b>[partner]</b> и начинает тянуть к самому основанию своего "+(has_penis ? "органа" : "дилдо")+".", // BLUEMOON EDIT
-			"сильно вращает своими бёдрами и погружается внутрь сфинктера \the <b>[partner]</b>.")]"
+			"хватается за волосы \the <b>[partner]</b> и начинает тянуть к самому основанию своего [has_penis ? "органа" : "дилдо"].", // BLUEMOON EDIT
+			"сильно вращает своими бёдрами и погружается внутрь сфинктера \the <b>[partner]</b>.")
+	//BLUEMOON EDIT END
 		user.set_is_fucking(partner, CUM_TARGET_ANUS, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/bang1.ogg',
@@ -107,11 +111,13 @@
 	//BLUEMOON ADD END
 
 	if(user.is_fucking(partner, CUM_TARGET_BREASTS))
-		message = "[pick(
+	//BLUEMOON EDIT START
+		message = pick(
 			"продалбливается между титьками <b>[partner]</b>.",
 			"проникает между сиськами <b>[partner]</b>.",
 			"вводит свой [genital_name] в пространство между грудью <b>[partner]</b>.",
-			"с силой загоняет сво"+(has_penis ? "и гениталии" : "й дилдо")+" между сиськами <b>[partner]</b> и шлёпается своими "+(has_balls ? "яйцами" : "бедрами")+" о грудь.")]" //BLUEMOON EDIT
+			"с силой загоняет сво[has_penis ? "и гениталии" : "й дилдо"] между сиськами <b>[partner]</b> и шлёпается своими [has_balls ? "яйцами" : "бедрами"] о грудь.") //BLUEMOON EDIT
+	//BLUEMOON EDIT END
 	else
 		message = "игриво толкает <b>[partner]</b>, крепко хватается за грудь и сжимает ими свой [genital_name]."
 		user.set_is_fucking(partner, CUM_TARGET_BREASTS, user.getorganslot(ORGAN_SLOT_PENIS))
@@ -142,13 +148,15 @@
 	var/has_penis = user.has_penis() // BLUEMOON ADD
 
 	if(user.is_fucking(partner, CUM_TARGET_FEET))
-		message = "[pick("трётся своим "+(has_penis ? "членом" : "дилдо")+" о ботинок <b>[partner]</b>.",
-			"потирается своим "+(has_penis ? "членом" : "дилдо")+" о ботинок <b>[partner]</b>.",
-			(has_penis ? "мастурбирует" : "поглаживает дилдо")+", в процессе потираясь о ботинок <b>[partner]</b>.")]"
+	//BLUEMOON EDIT START
+		message = pick("трётся своим [has_penis ? "членом" : "дилдо"] о ботинок <b>[partner]</b>.",
+			"потирается своим [has_penis ? "членом" : "дилдо"] о ботинок <b>[partner]</b>.",
+			"[has_penis ? "мастурбирует" : "поглаживает дилдо"], в процессе потираясь о ботинок <b>[partner]</b>.")
 	else
-		message = "[pick("позиционирует свой [genital_name] на ботинок <b>[partner]</b> и начинает потираться.",
+		message = pick("позиционирует свой [genital_name] на ботинок <b>[partner]</b> и начинает потираться.",
 			"выставляет свой [genital_name] на ботинки ботинок <b>[partner]</b> и начинает тот стимулировать.",
-			"держит свой [genital_name] своими руками и наконец-то начинает тереться о ботинок <b>[partner]</b>.")]"
+			"держит свой [genital_name] своими руками и наконец-то начинает тереться о ботинок <b>[partner]</b>.")
+	//BLUEMOON EDIT END
 		user.set_is_fucking(partner, CUM_TARGET_FEET, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
@@ -172,13 +180,15 @@
 	var/shoes = partner.get_shoes()
 
 	if(user.is_fucking(partner, CUM_TARGET_FEET))
-		message = "[pick("трётся своим "+(has_penis ? "членом" : "дилдо")+" о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.",
-			"потирается своим "+(has_penis ? "членом" : "дилдо")+" о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.",
-			"мастурбирует, в процессе потираясь о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.")]"
+	//BLUEMOON EDIT START
+		message = pick("трётся своим [has_penis ? "членом" : "дилдо"] о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.",
+			"потирается своим [has_penis ? "членом" : "дилдо"] о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.",
+			"мастурбирует, в процессе потираясь о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.")
 	else
-		message = "[pick("позиционирует свой [genital_name] на [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b> и начинает потираться.",
+		message = pick("позиционирует свой [genital_name] на [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b> и начинает потираться.",
 			"выставляет свой [genital_name] на ботинки [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b> и начинает тот стимулировать.",
-			"держит свой [genital_name] своими руками и наконец-то начинает тереться о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.")]"
+			"держит свой [genital_name] своими руками и наконец-то начинает тереться о [shoes ? shoes : pick("ботинок", "ботинки")] <b>[partner]</b>.")
+	//BLUEMOON EDIT END
 		user.set_is_fucking(partner, CUM_TARGET_FEET, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
@@ -202,13 +212,15 @@
 	var/message
 
 	if(user.is_fucking(partner, CUM_TARGET_FEET))
-		message = "[pick("трётся своей киской о ботинок <b>[partner]</b>.",
+	//BLUEMOON EDIT START
+		message = pick("трётся своей киской о ботинок <b>[partner]</b>.",
 			"игриво потирается своим клитором о ботинок <b>[partner]</b> и довольно вздыхает.",
-			"мастурбирает о ботинок <b>[partner]</b> и громко постанывает.")]"
+			"мастурбирает о ботинок <b>[partner]</b> и громко постанывает.")
 	else
-		message = "[pick("с силой держится за ножку своего партнёра и активно трётся своей вагиной о ботинок <b>[partner]</b>.",
+		message = pick("с силой держится за ножку своего партнёра и активно трётся своей вагиной о ботинок <b>[partner]</b>.",
 			"замедляет свои движения на ботинке <b>[partner]</b>, засекает влагу на обуви и ехидно усмехается.",
-			"выставляет вагину на ботинок <b>[partner]</b> и начинает ту стимулировать. Как же радуется!")]"
+			"выставляет вагину на ботинок <b>[partner]</b> и начинает ту стимулировать. Как же радуется!")
+	//BLUEMOON EDIT END
 		user.set_is_fucking(partner, CUM_TARGET_FEET, user.getorganslot(ORGAN_SLOT_VAGINA))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
