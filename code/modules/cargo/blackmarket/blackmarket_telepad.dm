@@ -39,7 +39,7 @@
 /obj/machinery/ltsrbt/RefreshParts()
 	recharge_time = base_recharge_time
 	for(var/obj/item/stock_parts/scanning_module/scan in component_parts) // On tier 4 recharge_time should be 20 and by default it is 80 as scanning modules should be tier 1.
-		recharge_time -= scan.rating * 10
+		recharge_time -= scan.rating * 5
 	recharge_cooldown = recharge_time
 	power_efficiency = 0
 	for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
