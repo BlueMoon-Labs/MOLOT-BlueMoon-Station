@@ -62,10 +62,6 @@
 /turf/open/floor/plasteel/freezer
 	base_icon_state = "freezerfloor"
 
-/turf/open/floor/plasteel/freezer/coldroom
-	icon_state = "freezerfloor" //BLUEMOON ADD
-	base_icon_state = "freezerfloor"
-
 /turf/open/floor/plasteel/freezer/coldroom/Initialize(mapload)
 	initial_gas_mix = KITCHEN_COLDROOM_ATMOS
 	return ..()
