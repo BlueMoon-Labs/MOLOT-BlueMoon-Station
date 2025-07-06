@@ -167,7 +167,24 @@
 	var/p_to_f = FALSE	//from panties to fleshlight
 	var/f_to_p = FALSE	//from fleshlight to panties
 
+	// BLUEMOON EDIT START
+	var/user_has_penis = M.has_penis()
+	var/user_penis_desc = "какой-то"
+	var/target_has_penis = portal_target.has_penis()
+	var/target_penis_desc = "какой-то"
+
+	if(plush_icon != NONE)
+		playsound(user, 'sound/items/squeaktoy.ogg', 30, 1)
+
+	if(user_has_penis)
+		var/obj/item/organ/genital/penis/person_penis = person.getorganslot(ORGAN_SLOT_PENIS)
+		user_penis_desc = "[round(person_penis.length * (person ? get_size(person) : 1), 0.25)]-см [lowertext(person_penis.shape)]"
+	else if(M.has_strapon)
+		var/obj/item/clothing/underwear/briefs/strapon/person_strapon = person.get_strapon()
+		user_penis_desc = "[GLOB.dildo_size_names[person_strapon.attached_dildo.dildo_size]] [person_strapon.attached_dildo.dildo_shape]"
+
 	// This list is structured as [M's longname, M's shortname, wearer's longname, wearer's shortname]
+	/*
 	var/penis_names = list()
 	if(plush_icon != NONE)
 		playsound(user, 'sound/items/squeaktoy.ogg', 30, 1)
@@ -175,14 +192,15 @@
 		if(person.has_penis())
 			var/obj/item/organ/genital/penis/person_penis = person.getorganslot(ORGAN_SLOT_PENIS)
 			LAZYADD(penis_names, "[round(person_penis.length * (person ? get_size(person) : 1), 0.25)]-см [lowertext(person_penis.shape)]")
-			LAZYADD(penis_names, "penis")
+			LAZYADD(penis_names, "член")
 		else if(person.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/person_strapon = person.get_strapon()
 			LAZYADD(penis_names, "[GLOB.dildo_size_names[person_strapon.attached_dildo.dildo_size]] [person_strapon.attached_dildo.dildo_shape]") //BLUEMOON EDIT
-			LAZYADD(penis_names, "strapon")
+			LAZYADD(penis_names, "дилдо")
 		else
-			LAZYADD(penis_names, "none")
-			LAZYADD(penis_names, "none")
+			LAZYADD(penis_names, "что-то")
+			LAZYADD(penis_names, "что-то")
+	*/
 
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT) && useable) // I promise all those checks are worth it!
 		switch(user.zone_selected)
@@ -192,34 +210,34 @@
 						if(M.has_penis() == HAS_EXPOSED_GENITAL || M.has_strapon() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
-									user_message = (user == M) ? "трётся о [penis_names[3]], используя [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует член кого-то на другой стороне усилиями члена <b>[M]</b>, таким образом заставляя потираться о [penis_names[3]] [name]"
+									user_message = (user == M) ? "трётся о [penis_names[2]], используя [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует [penis_names[4]] кого-то на другой стороне усилиями [replacetext(penis_names[2], "член","члена")] <b>[M]</b>, таким образом заставляя потираться о [penis_names[3]] [name]"
 									target_message = "трётся о твой член"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
 								if(CUM_TARGET_VAGINA)
-									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает киску кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в киску"
+									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает киску кого-то на другой стороне своим [replacetext(penis_names[2], "член","членом")]" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в киску"
 									target_message = "трахает твою киску с помощью [penis_names[1]] [penis_names[2]]"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
 									f_to_p = TRUE
 								if(CUM_TARGET_ANUS)
-									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает анальное кольцо кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в анал"
+									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает анальное кольцо кого-то на другой стороне своим [replacetext(penis_names[2], "член","членом")]" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в анал"
 									target_message = "трахает твой анал с помощью [penis_names[1]] [penis_names[2]]"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
 									f_to_p = TRUE
 								if(CUM_TARGET_MOUTH)
-									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает ротик кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в ротик"
+									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает ротик кого-то на другой стороне своим [replacetext(penis_names[2], "член","членом")]" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в ротик"
 									target_message = "трахает твой ротик с помощью [penis_names[1]] [penis_names[2]]"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = LOW_LUST
 									f_to_p = TRUE
 								if(CUM_TARGET_URETHRA)
-									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает уретру кого-то на другой стороне своим членом" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с уретрой на другой стороне, таким образом причмокивая в процессе"
+									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает уретру кого-то на другой стороне своим [replacetext(penis_names[2], "член","членом")]" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с уретрой на другой стороне, таким образом причмокивая в процессе"
 									target_message = "трахает твою уретру с помощью [penis_names[1]] [penis_names[2]]"
 									target = CUM_TARGET_PENIS
 									user_lust_amt = NORMAL_LUST
@@ -299,8 +317,8 @@
 						if(M.has_penis() == HAS_EXPOSED_GENITAL || M.has_strapon() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
-									user_message = (user == M) ? "трахает твою уретру своим членом" : "трахает чужую уретру своим членом"
-									target_message = "трахает член прямо в уретру"
+									user_message = (user == M) ? "трахает [replacetext(replacetext(penis_names[4], "член","твою уретру"), "дилдо", "отверстие дилдо")] своим [replacetext(penis_names[2], "член","членом")]" : "трахает чужую уретру своим [replacetext(penis_names[2], "член","членом")]"
+									target_message = "трахает [penis_names[4]] прямо в [replacetext(replacetext(penis_names[4], "член","уретру"), "дилдо", "отверстие")]"
 									target = CUM_TARGET_URETHRA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
