@@ -104,11 +104,17 @@
 	crate_name = "iv drip crate"
 
 /datum/supply_pack/medical/medicalhardsuit
-	name = "Medical Hardsuit"
-	desc = "Есть люди, которых вынесло в космос? Пробоина в той комнате, где труп вашего товарища? Не бойтесь, теперь вы можете купить один медицинский скафандр с маской и баллоном для воздуха, чтобы спасти своих товарищей по экипажу. Требуется медицинский доступ для открытия."
-	cost = 2750
+	name = "Medical Hardsuits crate"
+	desc = "Есть люди, которых вынесло в космос? Пробоина в той комнате, где труп вашего товарища? Не бойтесь, теперь вы можете купить три медицинских скафандра с масками и баллонами для воздуха, чтобы спасти своих товарищей по экипажу. Требуется медицинский доступ для открытия."
+	cost = 8250
 	access = ACCESS_MEDICAL
 	contains = list(/obj/item/tank/internals/air,
+					/obj/item/clothing/mask/gas,
+					/obj/item/clothing/suit/space/hardsuit/medical,
+					/obj/item/tank/internals/air,
+					/obj/item/clothing/mask/gas,
+					/obj/item/clothing/suit/space/hardsuit/medical,
+					/obj/item/tank/internals/air,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit"

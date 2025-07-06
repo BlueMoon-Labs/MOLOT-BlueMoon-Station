@@ -49,9 +49,9 @@
 
 /datum/supply_pack/vending/dinner
 	name = "Engineering Supply Crate"
-	desc = "Пакеты с инструментами, ожидающими использования для ремонта. Содержит набор для заправки инструментов и технических средств торгового автомата. Требуется доступ CE."
+	desc = "Пакеты с инструментами, ожидающими использования для ремонта. Содержит набор для заправки инструментов и технических средств торгового автомата."
 	cost = 5500 //Powerfull
-	access = ACCESS_CE
+	access = ACCESS_ENGINE
 	contains = list(/obj/item/vending_refill/youtool,
 					/obj/item/vending_refill/engivend)
 	crate_name = "engineering supply crate"

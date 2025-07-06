@@ -95,3 +95,31 @@
 	cost = 500
 	contains = list(/obj/item/reagent_containers/hypospray/medipen,
 					/obj/item/reagent_containers/hypospray/medipen/ekit)
+
+//BlUEMOON ADD START - добовляю новые покупки для личного пользования
+
+/datum/supply_pack/goody/medicalhardsuit
+	name = "Medical Hardsuit single pack"
+	desc = "Есть люди, которых вынесло в космос, но ваш глава не санкционировал спасательную операцию? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свой альтруизм с этим мед скафандром. Постовляется без балона и маски."
+	cost = 2500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
+
+/datum/supply_pack/goody/explorerhardsuit
+	name = "Expedition Hardsuit single pack"
+	desc = "Есть горящее желание иследовать космос, но казна пуста? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свои суицидальные наклонности с этим иследовательским скафандром. Постовляется без балона и маски. "
+	cost = 3500
+	contains = list(/obj/item/clothing/head/helmet/space/hardsuit/security/explorer)
+
+/datum/supply_pack/goody/sechardsuit
+	name = "Sec Hardsuit single pack"
+	desc = "Угрозы в космосе уже не стесняются угрожать экипажу, но варден ушёл в запой? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свою жажду справедливости с этим боевым скафандром. Постовляется без балона и маски. "
+	cost = 3000
+	contains = list(/obj/item/clothing/head/helmet/space/hardsuit/security/explorer)
+
+/datum/supply_pack/goody/industrialrcd
+	name = "Industrial RCD single pack"
+	desc = "Тот самый случай, когда станцию разнесло в клочья, а инженер надрывается над целью. Этот индустриальный RCD позволить построить и залатать что угодно! Конечно последствиями небольшой наценки за пересылку. "
+	cost = 1750
+	contains = list(/obj/item/construction/rcd/industrial)
+
+//BLUEMOON ADD END

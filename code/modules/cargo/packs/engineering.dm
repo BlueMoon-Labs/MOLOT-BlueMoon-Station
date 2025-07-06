@@ -60,9 +60,9 @@
 
 /datum/supply_pack/engineering/atmoshardsuit
 	name = "Atmospherics Hardsuit"
-	desc = "Слишком много техников и недостаточно скафандров? Время купить еще немного! Поставляется с противогазом и воздушным баллоном. Попросите СЕ открыть вам это."
+	desc = "Слишком много техников и недостаточно скафандров? Время купить еще немного! Поставляется с противогазом и воздушным баллоном."
 	cost = 5000
-	access = ACCESS_CE //100% Fire and Bio resistance
+	access = ACCESS_ATMOSPHERICS //100% Fire and Bio resistance
 	contains = list(/obj/item/tank/internals/air,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/suit/space/hardsuit/engine/atmos)
@@ -83,10 +83,12 @@
 
 /datum/supply_pack/engineering/industrialrcd
 	name = "Industrial RCD"
-	desc = "Промышленный RCD на случай, если станция прошла через более чем один метеоритный шторм и CE необходимо установить что-то более надежное. Не содержит запасных зарядников."
+	desc = "Три промышленных RCD на случай, если станция прошла через более чем один метеоритный шторм и инженерам необходимо установить что-то более надежное. Данная модель уже улучшена ЦК, не содержит запасных зарядников."
 	cost = 4500
-	access = ACCESS_CE
-	contains = list(/obj/item/construction/rcd/industrial)
+	access = ACCESS_ENGINE
+	contains = list(/obj/item/construction/rcd/industrial,
+					/obj/item/construction/rcd/industrial,
+					/obj/item/construction/rcd/industrial)
 	crate_name = "industrial rcd"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 

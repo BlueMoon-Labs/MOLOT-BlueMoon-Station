@@ -635,6 +635,7 @@ RLD
 	matter = 500
 	delay_mod = 0.6
 	sheetmultiplier	= 8
+	upgrade = TRUE
 
 /obj/item/rcd_ammo
 	name = "compressed matter cartridge"

@@ -329,7 +329,7 @@
 	name = "Loot Box"
 	desc = "Испытайте свою удачу с этими высокозащищенными ящиками с добычей! Разгадайте замок, выиграйте отличные призы! ПРЕДУПРЕЖДЕНИЕ: ВЗРЫВООПАСНЫЙ ПРОВАЛ."
 	contraband = TRUE
-	cost = 15000
+	cost = 10000 // 15к за ящик которые даже не интересно депать? Zaaaaamn
 	contains = list(/obj/structure/closet/crate/secure/loot)
 	crate_name = "abandoned crate"
 	crate_type = /obj/structure/closet/crate/large
