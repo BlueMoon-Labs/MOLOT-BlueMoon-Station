@@ -218,3 +218,17 @@
 	cost = 12000
 	contains = list(/obj/item/circuitboard/computer/sat_control)
 	crate_name= "shield control board crate"
+
+//BLUEMOON ADD START - добовляю новые вещички
+
+/datum/supply_pack/engineering/advtools
+	name = "Advanced Engineering tools crate"
+	desc = "Нужно быстро что то починить, но учёные станции клюют носом? Engi-vend предостовляет эти продвинутые инструменты для таких случаев!"
+	cost = 6500
+	contains = list(/obj/item/crowbar/power,
+					/obj/item/screwdriver/power,
+					/obj/item/multitool/tricorder,
+					/obj/item/weldingtool/experimental,
+					/obj/item/storage/belt/utility)
+	crate_name= "Advanced Engineering tools"
+	crate_type = /obj/structure/closet/crate/secure/engineering
