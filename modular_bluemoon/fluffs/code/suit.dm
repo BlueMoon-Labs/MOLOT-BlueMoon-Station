@@ -411,5 +411,4 @@
 	icon_state = "Kibercoat1"
 	item_state = "Kibercoat2"
 	body_parts_covered = CHEST
-	body_parts_covered = HEAD
 
