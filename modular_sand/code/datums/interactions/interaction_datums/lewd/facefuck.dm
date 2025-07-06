@@ -113,11 +113,12 @@
 	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
 	// BLUEMOON ADD START
-	if(fucktarget == "penis" && user.has_strapon())
-		var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
-		user_strapon.attached_dildo.target_reaction(partner, user, 1, CUM_TARGET_MOUTH, null, user.a_intent == INTENT_HARM)
-	else
-		partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_MOUTH)
+	if(fucktarget == "penis")
+		if(user.has_strapon())
+			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
+			user_strapon.attached_dildo.target_reaction(partner, user, 1, CUM_TARGET_MOUTH, null, user.a_intent == INTENT_HARM)
+		else
+			partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_MOUTH)
 	// BLUEMOON ADD END
 
 /datum/interaction/lewd/throatfuck

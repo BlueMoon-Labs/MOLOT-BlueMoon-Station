@@ -117,14 +117,14 @@
 /datum/interaction/lewd/thighs/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 	var/obj/item/organ/genital/genital = null
-	var/lust_increase = 1
+	//var/lust_increase = 1 // BLUEMOON EDIT commented
 
 	//var/u_His = user.ru_ego()
 	//var/t_His = partner.ru_ego()
 	//var/t_Him = partner.ru_na()
 	//var/t_Hes = partner.ru_who()
 
-	if(user.is_fucking(partner, THIGH_SMOTHERING))
+	if(user.is_fucking(partner, THIGH_SMOTHERING) || user.is_fucking(partner, CUM_TARGET_MOUTH))
 		var/improv = FALSE
 		switch(fucktarget)
 			if("vagina")
@@ -165,11 +165,14 @@
 			message = "ловко смыкает ноги вокруг головы <b>[partner]</b> и с силой начинает душить."
 		else
 			switch(fucktarget)
+			// BLUEMOON EDIT START
 				if("vagina")
 					genital = partner.getorganslot(ORGAN_SLOT_VAGINA)
+					user.set_is_fucking(partner, THIGH_SMOTHERING, genital)
 				if("penis")
 					genital = partner.getorganslot(ORGAN_SLOT_PENIS)
-		user.set_is_fucking(partner, THIGH_SMOTHERING, genital)
+					user.set_is_fucking(partner, CUM_TARGET_MOUTH, genital)
+			// BLUEMOON EDIT END
 
 	var/file = pick('modular_sand/sound/interactions/bj10.ogg',
 					'modular_sand/sound/interactions/bj3.ogg',
@@ -177,19 +180,18 @@
 					'modular_sand/sound/interactions/foot_dry3.ogg')
 	playlewdinteractionsound(get_turf(user), file, 70, 1, -1)
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
-	user.handle_post_sex(lust_increase, THIGH_SMOTHERING, partner, genital) //SPLURT edit
+	// BLUEMOON EDIT START
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
-	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
-		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
-	// BLUEMOON ADD START
 	if(fucktarget == "penis")
 		if(user.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
 			user_strapon.attached_dildo.target_reaction(partner, user, 1, CUM_TARGET_MOUTH, null, user.a_intent == INTENT_HARM)
 		else
 			partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_MOUTH)
-	// BLUEMOON ADD END
+	else
+		user.handle_post_sex(NORMAL_LUST, THIGH_SMOTHERING, partner, genital) //SPLURT edit
+	// BLUEMOON EDIT END
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(user.loc)
 	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))

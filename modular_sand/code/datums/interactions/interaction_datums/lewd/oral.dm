@@ -142,10 +142,11 @@
 	else if(fucktarget == "vagina" && partner.has_vagina())
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user, ORGAN_SLOT_VAGINA)
 
-	if(fucktarget == "penis" && !(has_penis) && partner.has_strapon())
-		var/obj/item/clothing/underwear/briefs/strapon/user_strapon = partner.get_strapon()
-		user_strapon.attached_dildo.target_reaction(user, partner, 1, CUM_TARGET_MOUTH, null, partner.a_intent == INTENT_HARM)
-	else
-		user.handle_post_sex(LOW_LUST, null, partner, CUM_TARGET_THROAT)
+	if(fucktarget == "penis")
+		if(!(has_penis) && partner.has_strapon())
+			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = partner.get_strapon()
+			user_strapon.attached_dildo.target_reaction(user, partner, 1, CUM_TARGET_MOUTH, null, partner.a_intent == INTENT_HARM)
+		else
+			user.handle_post_sex(LOW_LUST, null, partner, CUM_TARGET_THROAT)
 //SPLURT EDIT END
 //BLUEMOON EDIT END
