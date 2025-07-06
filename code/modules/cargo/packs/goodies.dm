@@ -108,7 +108,7 @@
 	name = "Expedition Hardsuit single pack"
 	desc = "Есть горящее желание иследовать космос, но казна пуста? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свои суицидальные наклонности с этим иследовательским скафандром. Постовляется без балона и маски. "
 	cost = 3500
-	contains = list(/obj/item/clothing/head/helmet/space/hardsuit/security/explorer)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/explorer)
 
 /datum/supply_pack/goody/sechardsuit
 	name = "Sec Hardsuit single pack"

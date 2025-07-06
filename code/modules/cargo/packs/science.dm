@@ -271,12 +271,12 @@
 	access = ACCESS_GATEWAY
 	contains = list(/obj/item/tank/internals/oxygen,
 					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/head/helmet/space/hardsuit/security/explorer,
+					/obj/item/clothing/suit/space/hardsuit/security/explorer,
 					/obj/item/tank/internals/oxygen,
 					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/head/helmet/space/hardsuit/security/explorer,
+					/obj/item/clothing/suit/space/hardsuit/security/explorer,
 					/obj/item/tank/internals/oxygen,
 					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/head/helmet/space/hardsuit/security/explorer)
+					/obj/item/clothing/suit/space/hardsuit/security/explorer)
 	crate_name = "Expedition hardsuits crate"
 	crate_type = /obj/structure/closet/crate/secure/science
