@@ -114,7 +114,7 @@
 	name = "Sec Hardsuit single pack"
 	desc = "Угрозы в космосе уже не стесняются угрожать экипажу, но варден ушёл в запой? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свою жажду справедливости с этим боевым скафандром. Постовляется без балона и маски. "
 	cost = 3000
-	contains = list(/obj/item/clothing/head/helmet/space/hardsuit/security/explorer)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security)
 
 /datum/supply_pack/goody/industrialrcd
 	name = "Industrial RCD single pack"
