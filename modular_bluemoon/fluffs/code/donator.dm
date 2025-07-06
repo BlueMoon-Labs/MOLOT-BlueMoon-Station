@@ -1688,6 +1688,6 @@
 /datum/gear/donator/bm/kiber_labcoat
 
 	name = "Kibercoat"
-	slot = ITEM_SLOT_OCLOTHING
+	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/suit/donator/bm/kiber_labcoat
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON01
