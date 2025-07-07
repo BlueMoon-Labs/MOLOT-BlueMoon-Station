@@ -105,21 +105,32 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 
 /datum/supply_pack/goody/explorerhardsuit
-	name = "Expedition Hardsuit single pack"
+	name = "Expedition Hardsuit Single-Pack"
 	desc = "Есть горящее желание иследовать космос, но казна пуста? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свои суицидальные наклонности с этим иследовательским скафандром. Постовляется без балона и маски. "
 	cost = 3500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/explorer)
 
 /datum/supply_pack/goody/sechardsuit
-	name = "Sec Hardsuit single pack"
+	name = "Sec Hardsuit Single-Pack"
 	desc = "Угрозы в космосе уже не стесняются угрожать экипажу, но варден ушёл в запой? Не беда! Последствиями небольшой наценки, вы можете удоволетворить свою жажду справедливости с этим боевым скафандром. Постовляется без балона и маски. "
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security)
 
 /datum/supply_pack/goody/industrialrcd
-	name = "Industrial RCD single pack"
+	name = "Industrial RCD Single-Pack"
 	desc = "Тот самый случай, когда станцию разнесло в клочья, а инженер надрывается над целью. Этот индустриальный RCD позволить построить и залатать что угодно! Конечно последствиями небольшой наценки за пересылку. "
 	cost = 1750
 	contains = list(/obj/item/construction/rcd/industrial)
 
+/datum/supply_pack/goody/radbgone
+	name = "Rradiation treatment kit Single-Pack"
+	desc = "Аптечка первой помощи, предназначенная для борьбы с последствиями радиационного облучения. Выбор 9 из 10 облученных инженеров."
+	cost = 500
+	contains = list(/obj/item/storage/firstaid/radbgone)
+
+/datum/supply_pack/goody/russianroulete
+	name = "Russian roulete revolver Single-Pack"
+	desc = "Для тех кому совсем нечего делать в долгую смену"
+	cost = 300
+	contains = list(/obj/item/gun/ballistic/revolver/russian)
 //BLUEMOON ADD END
