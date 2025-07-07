@@ -1,6 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bz" = (
-/turf/open/floor/spooktime/beach/coasts/coastN,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 1
+	},
 /area/hilbertshotel)
 "cq" = (
 /obj/structure/chair/sofa/corp{
@@ -11,17 +13,9 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
-"ct" = (
-/turf/open/floor/spooktime/beach/coasts/watercoastN{
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water"
-	},
-/area/hilbertshotel)
 "cH" = (
 /obj/machinery/light/directional/east,
-/turf/open/floor/spooktime/beach/water,
+/turf/open/floor/plating/beach/water,
 /area/hilbertshotel)
 "cR" = (
 /obj/machinery/door/morgue,
@@ -81,7 +75,7 @@
 /area/hilbertshotel)
 "iE" = (
 /obj/item/toy/beach_ball,
-/turf/open/floor/spooktime/beach/water,
+/turf/open/floor/plating/beach/water,
 /area/hilbertshotel)
 "jf" = (
 /obj/machinery/light{
@@ -117,7 +111,9 @@
 /area/hilbertshotel)
 "lK" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/spooktime/beach/coasts/innerN,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 8
+	},
 /area/hilbertshotel)
 "lY" = (
 /obj/machinery/light{
@@ -179,7 +175,7 @@
 /area/hilbertshotel)
 "xW" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/spooktime/beach/water,
+/turf/open/floor/plating/beach/water,
 /area/hilbertshotel)
 "ya" = (
 /obj/structure/curtain{
@@ -193,14 +189,15 @@
 /obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/floor/holofloor/wood,
 /area/hilbertshotel)
-"zK" = (
-/turf/open/floor/spooktime/beach/water,
-/area/hilbertshotel)
 "Ag" = (
-/turf/open/floor/spooktime/beach/coasts/coastNW,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 9
+	},
 /area/hilbertshotel)
 "AL" = (
-/turf/open/floor/spooktime/beach/coasts/innerN,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 8
+	},
 /area/hilbertshotel)
 "BU" = (
 /obj/effect/turf_decal/siding/wood{
@@ -220,7 +217,7 @@
 /turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "Dh" = (
-/turf/open/floor/spooktime/beach/coasts/watercoastN,
+/turf/open/floor/plating/beach/water,
 /area/hilbertshotel)
 "DB" = (
 /obj/structure/chair/sofa/left{
@@ -236,7 +233,9 @@
 /area/hilbertshotel)
 "Ec" = (
 /obj/machinery/light/directional/east,
-/turf/open/floor/spooktime/beach/coasts/coastN,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 1
+	},
 /area/hilbertshotel)
 "Et" = (
 /obj/structure/table,
@@ -297,7 +296,7 @@
 /area/hilbertshotel)
 "OM" = (
 /obj/machinery/light/directional/north,
-/turf/open/floor/spooktime/beach/water,
+/turf/open/floor/plating/beach/water,
 /area/hilbertshotel)
 "Pb" = (
 /turf/closed/indestructible/hoteldoor{
@@ -360,7 +359,9 @@
 /turf/open/floor/holofloor/wood,
 /area/hilbertshotel)
 "TP" = (
-/turf/open/floor/spooktime/beach/coasts/coastNE,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 5
+	},
 /area/hilbertshotel)
 "Ua" = (
 /obj/machinery/shower{
@@ -373,15 +374,6 @@
 	},
 /obj/structure/window/reinforced/tinted,
 /turf/open/floor/plasteel/white/smooth/large,
-/area/hilbertshotel)
-"Uw" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/spooktime/beach/coasts/watercoastN{
-	barefootstep = "water";
-	clawfootstep = "water";
-	footstep = "water";
-	heavyfootstep = "water"
-	},
 /area/hilbertshotel)
 "UM" = (
 /obj/machinery/vending/dinnerware{
@@ -398,7 +390,9 @@
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "Xe" = (
-/turf/open/floor/spooktime/beach/coasts/innerE,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 4
+	},
 /area/hilbertshotel)
 "XM" = (
 /turf/open/floor/holofloor/wood,
@@ -435,7 +429,9 @@
 /area/hilbertshotel)
 "Zc" = (
 /obj/structure/fluff/beach_umbrella,
-/turf/open/floor/spooktime/beach/coasts/coastN,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 1
+	},
 /area/hilbertshotel)
 "ZQ" = (
 /obj/structure/table,
@@ -465,9 +461,9 @@ ED
 "}
 (2,1,1) = {"
 is
-Uw
-zK
-zK
+OM
+Dh
+Dh
 xW
 xW
 TP
@@ -483,11 +479,11 @@ ED
 "}
 (3,1,1) = {"
 is
-ct
-zK
-zK
-zK
-zK
+Dh
+Dh
+Dh
+Dh
+Dh
 Dh
 bz
 PX
@@ -501,11 +497,11 @@ ED
 "}
 (4,1,1) = {"
 oh
-zK
-zK
 Dh
-zK
-zK
+Dh
+Dh
+Dh
+Dh
 Dh
 bz
 PX
@@ -520,10 +516,10 @@ YR
 (5,1,1) = {"
 oh
 OM
-zK
 Dh
-zK
-zK
+Dh
+Dh
+Dh
 Ag
 Xe
 YR
@@ -538,10 +534,10 @@ Pb
 (6,1,1) = {"
 oh
 OM
-zK
 Dh
-zK
-zK
+Dh
+Dh
+Dh
 bz
 YR
 YR
@@ -555,9 +551,9 @@ YR
 "}
 (7,1,1) = {"
 oh
-zK
-zK
-zK
+Dh
+Dh
+Dh
 Dh
 Ag
 Xe
@@ -575,7 +571,7 @@ YR
 oh
 OM
 Dh
-zK
+Dh
 Dh
 Zc
 PX
@@ -593,7 +589,7 @@ YR
 oh
 OM
 Dh
-zK
+Dh
 Dh
 bz
 PX
@@ -609,9 +605,9 @@ YR
 "}
 (10,1,1) = {"
 oh
-zK
-zK
-zK
+Dh
+Dh
+Dh
 iE
 TP
 AL
@@ -628,10 +624,10 @@ YR
 (11,1,1) = {"
 oh
 OM
-zK
 Dh
-zK
-zK
+Dh
+Dh
+Dh
 bz
 YR
 gz
@@ -646,9 +642,9 @@ YR
 (12,1,1) = {"
 oh
 OM
-zK
 Dh
-zK
+Dh
+Dh
 Dh
 bz
 YR
@@ -663,10 +659,10 @@ YR
 "}
 (13,1,1) = {"
 oh
-ct
-zK
 Dh
-zK
+Dh
+Dh
+Dh
 Dh
 bz
 DB
@@ -681,10 +677,10 @@ YR
 "}
 (14,1,1) = {"
 is
-ct
-zK
-zK
-zK
+Dh
+Dh
+Dh
+Dh
 Dh
 bz
 DE
@@ -699,11 +695,11 @@ YR
 "}
 (15,1,1) = {"
 is
-Uw
-zK
+OM
+Dh
 cH
 cH
-zK
+Dh
 Ec
 Ys
 FI

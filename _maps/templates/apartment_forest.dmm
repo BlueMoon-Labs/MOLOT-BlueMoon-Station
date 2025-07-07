@@ -9,12 +9,15 @@
 /area/hilbertshotel)
 "aP" = (
 /obj/structure/bed/double,
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
 /area/hilbertshotel)
 "br" = (
 /obj/structure/flora/tree/spookylog{
 	pixel_x = 3;
 	pixel_y = -2
+	},
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
 	},
 /turf/open/floor/grass/grass2,
 /area/hilbertshotel)
@@ -27,7 +30,7 @@
 /turf/open/floor/grass,
 /area/hilbertshotel)
 "cI" = (
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
 /area/hilbertshotel)
 "cN" = (
 /obj/structure/spacevine,
@@ -38,7 +41,7 @@
 	dir = 8;
 	invisibility = 1
 	},
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/coastline_t,
 /area/hilbertshotel)
 "dl" = (
 /obj/machinery/light/floor{
@@ -46,7 +49,9 @@
 	light_range = 5;
 	invisibility = 1
 	},
-/turf/open/floor/spooktime/beach/coasts/coastNW,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 9
+	},
 /area/hilbertshotel)
 "eS" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -54,6 +59,13 @@
 /area/hilbertshotel)
 "fN" = (
 /obj/structure/flora/ausbushes/sunnybush,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"gw" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/effect/turf_decal/weather/sand{
+	dir = 9
+	},
 /turf/open/floor/grass/grass3,
 /area/hilbertshotel)
 "gX" = (
@@ -65,10 +77,19 @@
 /turf/open/floor/grass,
 /area/hilbertshotel)
 "hA" = (
-/turf/open/floor/spooktime/beach/coasts/coastNE,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 5
+	},
 /area/hilbertshotel)
 "hD" = (
 /turf/open/floor/spooktime/cobble/sideW,
+/area/hilbertshotel)
+"hY" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
+/turf/open/floor/grass/grass3,
 /area/hilbertshotel)
 "iB" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -100,28 +121,54 @@
 /turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "lh" = (
-/turf/open/floor/spooktime/beach/coasts/coastW,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 8
+	},
 /area/hilbertshotel)
 "lC" = (
 /obj/structure/flora/biolumi/mine,
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
 /turf/open/floor/grass/grass1,
 /area/hilbertshotel)
 "lT" = (
 /obj/effect/overlay/palmtree_l,
-/turf/open/floor/spooktime/beach/coasts/innerE,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 4
+	},
+/area/hilbertshotel)
+"mm" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "mz" = (
 /obj/structure/flora/rock,
 /obj/structure/flora/rock,
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner,
 /area/hilbertshotel)
 "nb" = (
 /obj/structure/chair/pew/right,
 /turf/open/floor/grass,
 /area/hilbertshotel)
+"nt" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/floor/grass,
+/area/hilbertshotel)
 "oF" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
+/area/hilbertshotel)
+"oQ" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/floor/grass,
 /area/hilbertshotel)
 "pd" = (
 /turf/open/floor/spooktime/cobble/sideN,
@@ -144,7 +191,14 @@
 	light_power = 20;
 	light_range = 5
 	},
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
+/area/hilbertshotel)
+"rO" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/floor/grass/grass3,
 /area/hilbertshotel)
 "sx" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -156,7 +210,7 @@
 /area/hilbertshotel)
 "tg" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
 /area/hilbertshotel)
 "tX" = (
 /turf/open/floor/spooktime/cobble/cornerNE,
@@ -173,6 +227,9 @@
 /area/hilbertshotel)
 "vx" = (
 /obj/structure/flora/biolumi/mine,
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
 /turf/open/floor/grass/grass3,
 /area/hilbertshotel)
 "we" = (
@@ -197,14 +254,16 @@
 /area/hilbertshotel)
 "xQ" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
 /area/hilbertshotel)
 "yr" = (
 /turf/closed/indestructible/rock,
 /area/hilbertshotel)
 "yD" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/spooktime/beach/coasts/innerE,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 4
+	},
 /area/hilbertshotel)
 "yU" = (
 /turf/open/floor/spooktime/cobble/cornerNW,
@@ -214,13 +273,28 @@
 	custom_premium_price = 0;
 	custom_price = 0
 	},
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
+/area/hilbertshotel)
+"zW" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 5
+	},
+/turf/open/floor/grass/grass2,
 /area/hilbertshotel)
 "Ah" = (
 /turf/open/floor/plating/beach/water,
 /area/hilbertshotel)
+"BT" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/turf/open/misc/grass,
+/area/hilbertshotel)
 "BZ" = (
-/turf/open/floor/spooktime/beach/coasts/coastN,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 1
+	},
 /area/hilbertshotel)
 "CC" = (
 /obj/structure/flora/ausbushes/sunnybush,
@@ -235,7 +309,7 @@
 /area/hilbertshotel)
 "De" = (
 /obj/effect/overlay/palmtree_r,
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
 /area/hilbertshotel)
 "Dl" = (
 /turf/closed/indestructible/hoteldoor{
@@ -252,7 +326,7 @@
 	pixel_x = -8;
 	pixel_y = -9
 	},
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
 /area/hilbertshotel)
 "DA" = (
 /turf/open/floor/spooktime/cobble/cornerSE,
@@ -271,7 +345,9 @@
 	light_range = 5
 	},
 /obj/structure/flora/rock,
-/turf/open/floor/spooktime/beach/coasts/coastN,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 1
+	},
 /area/hilbertshotel)
 "Fu" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -290,6 +366,9 @@
 /obj/machinery/light/floor{
 	light_power = 20;
 	light_range = 5
+	},
+/obj/effect/turf_decal/weather/sand{
+	dir = 5
 	},
 /turf/open/floor/grass/grass2,
 /area/hilbertshotel)
@@ -311,7 +390,15 @@
 /area/hilbertshotel)
 "LH" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/spooktime/beach/coasts/coastW,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 8
+	},
+/area/hilbertshotel)
+"Mp" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
+/turf/open/floor/grass/grass3,
 /area/hilbertshotel)
 "MC" = (
 /obj/structure/bonfire,
@@ -344,7 +431,7 @@
 	dir = 4;
 	invisibility = 1
 	},
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/coastline_t,
 /area/hilbertshotel)
 "Po" = (
 /turf/open/floor/grass/grass3,
@@ -354,7 +441,12 @@
 /area/hilbertshotel)
 "PZ" = (
 /obj/item/candle/infinite,
-/turf/open/floor/spooktime/beach,
+/turf/open/floor/plating/beach/sand,
+/area/hilbertshotel)
+"Qo" = (
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 1
+	},
 /area/hilbertshotel)
 "Qp" = (
 /obj/effect/spawner/lootdrop/three_course_meal{
@@ -407,7 +499,9 @@
 /turf/open/floor/grass/grass2,
 /area/hilbertshotel)
 "Uq" = (
-/turf/open/floor/spooktime/beach/coasts/coastE,
+/turf/open/floor/plating/beach/coastline_t{
+	dir = 4
+	},
 /area/hilbertshotel)
 "Vt" = (
 /obj/structure/fluff/beach_umbrella/science{
@@ -424,7 +518,9 @@
 /turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "WD" = (
-/turf/open/floor/spooktime/beach/coasts/innerN,
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner{
+	dir = 8
+	},
 /area/hilbertshotel)
 "XA" = (
 /turf/open/floor/carpet/blackred,
@@ -494,7 +590,7 @@ Uq
 WD
 tg
 cI
-CR
+zW
 ag
 CR
 Sy
@@ -513,7 +609,7 @@ hA
 WD
 Dx
 xQ
-sx
+oQ
 Ex
 Ex
 pR
@@ -531,7 +627,7 @@ Ah
 hA
 WD
 cI
-aO
+BT
 sS
 pH
 Ex
@@ -549,7 +645,7 @@ Ah
 Iy
 Fs
 cI
-pH
+rO
 oF
 iB
 aO
@@ -567,7 +663,7 @@ Ah
 Ah
 BZ
 cI
-Wx
+mm
 Wx
 Wx
 aO
@@ -585,7 +681,7 @@ Ah
 Ah
 BZ
 cI
-Ex
+nt
 Ex
 Ex
 eS
@@ -639,7 +735,7 @@ Ah
 dl
 lT
 cI
-Ex
+nt
 xv
 Og
 pH
@@ -651,12 +747,12 @@ yr
 (12,1,1) = {"
 yr
 yr
-cI
+Qo
 lh
 LH
 yD
 xQ
-sS
+gw
 Dc
 yU
 hD
@@ -670,10 +766,10 @@ yr
 yr
 Ex
 vx
-JC
-JC
-Po
-Po
+hY
+hY
+Mp
+Mp
 HM
 pM
 pd

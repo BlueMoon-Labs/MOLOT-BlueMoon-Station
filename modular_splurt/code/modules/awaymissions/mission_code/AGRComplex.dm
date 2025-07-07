@@ -674,7 +674,7 @@
 
 /datum/techweb_node/clockworkcult/New()
 	. = ..()
-	boost_item_paths = typesof(/obj/item/grown/matrigrass)
+	boost_item_paths = typesof(/obj/item/grown/matrigrass, /obj/item/clockwork/component)
 
 /datum/design/brass
 	name = "Brass"
@@ -1341,6 +1341,12 @@
 	initial_temperature = 255
 	turf_type = /turf/open/floor/plating/asteroid/snow/complex
 	baseturfs = /turf/open/floor/plating/asteroid/snow/complex
+
+/turf/closed/mineral/snowmountain/cavern/high_chance/complex
+
+	initial_temperature = 255
+	baseturfs = /turf/open/floor/plating/asteroid/snow/complex
+	turf_type = /turf/open/floor/plating/asteroid/snow/complex
 
 /turf/open/floor/plating/snowed/complex
 	initial_gas_mix = COLD_ATMOS

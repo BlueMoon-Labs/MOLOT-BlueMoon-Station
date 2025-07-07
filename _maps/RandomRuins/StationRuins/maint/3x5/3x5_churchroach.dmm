@@ -3,10 +3,13 @@
 /obj/structure/chair/pew/left{
 	dir = 1
 	},
-/mob/living/simple_animal/cockroach,
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 1
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/template_noop)
 "f" = (
 /turf/open/floor/carpet/purple,
@@ -19,19 +22,13 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/carpet/purple,
 /area/template_noop)
-"w" = (
-/obj/structure/chair/pew/left{
-	dir = 1
-	},
-/turf/open/floor/plasteel/chapel{
-	dir = 1
-	},
-/area/template_noop)
 "x" = (
 /obj/structure/chair/pew/right{
 	dir = 1
 	},
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/big_sign/chapel/center,
+/obj/effect/turf_decal/big_sign/chapel/base,
+/turf/open/floor/plasteel/dark/textured,
 /area/template_noop)
 "B" = (
 /obj/structure/chair/pew/right{
@@ -39,7 +36,9 @@
 	},
 /obj/item/stack/tile/carpet/purple,
 /obj/item/stack/tile/carpet/purple,
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/big_sign/chapel/center,
+/obj/effect/turf_decal/big_sign/chapel/base,
+/turf/open/floor/plasteel/dark/textured,
 /area/template_noop)
 "D" = (
 /obj/structure/chair/pew/left{
@@ -47,9 +46,13 @@
 	},
 /obj/item/stack/tile/carpet/purple,
 /obj/item/stack/tile/carpet/purple,
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 8
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/template_noop)
 "H" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -69,10 +72,13 @@
 /obj/structure/chair/pew/right{
 	dir = 1
 	},
-/mob/living/simple_animal/cockroach,
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 4
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/template_noop)
 
 (1,1,1) = {"
@@ -84,7 +90,7 @@ N
 "}
 (2,1,1) = {"
 U
-w
+b
 H
 b
 D

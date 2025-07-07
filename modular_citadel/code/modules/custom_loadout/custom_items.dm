@@ -679,6 +679,7 @@
 	desc = "Old version style BP helmet. That helmet without armor plates soo without em that simple cool styled helmet"
 	icon_state = "epic_bp_helmet"
 	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 	mutantrace_variation = STYLE_MUZZLE
 	flags_inv = HIDEEARS | HIDESNOUT | HIDEHAIR
 

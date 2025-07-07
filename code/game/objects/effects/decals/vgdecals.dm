@@ -99,6 +99,9 @@
 /obj/effect/turf_decal/vg_decals/department/zoo
 	icon_state = "zoo"
 
+/obj/effect/turf_decal/vg_decals/department/bridge
+	icon_state = "bridge"
+
 // DEPARTMENT END
 
 // MISC START
