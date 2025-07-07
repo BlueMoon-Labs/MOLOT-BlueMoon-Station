@@ -1685,9 +1685,9 @@
 	ckeywhitelist = list("xaeshkavd","silverfoxpaws")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/kiber_labcoat
+/datum/gear/donator/bm/Kibercoat1
 
 	name = "Kibercoat"
 	slot = ITEM_SLOT_ICLOTHING
-	path = /obj/item/clothing/suit/donator/bm/kiber_labcoat
+	path = /obj/item/clothing/suit/donator/bm/Kibercoat1
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
