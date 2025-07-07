@@ -430,57 +430,91 @@
 	. = ..()
 
 	// Ограничение по времени на срабатывания
-	if(love_target)// || world.time - last_love_interaction < 100)
-		return
-
+	if(!love_target && world.time - last_love_interaction >= 100)
 		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
 		if(P && istype(P.loc, /turf/open) && !P.love_target)
 			loving_interaction(P)
 
 /obj/item/toy/plush/bm/lissara/proc/loving_interaction(obj/item/toy/plush/bm/araminta/partner)
+	var/turf/start = get_turf(src)
+	var/turf/end = get_turf(partner)
+
+	if(!start || !end) // На всякий случай
+		return
+
 	love_target = partner
 	partner.love_target = src
 
 	last_love_interaction = world.time
 	partner.last_love_interaction = world.time
 
-	var/turf/start = get_turf(src)
-	var/turf/end = get_turf(partner)
+	var/list/original_pixel_offsets = list()
+	for(var/obj/item/toy/plush/plushe in list(src, partner))
+		// Сохраняем оригинальные позиции
+		original_pixel_offsets[plushe] = list(
+			"pixel_x" = plushe.pixel_x,
+			"pixel_y" = plushe.pixel_y
+		)
+		// Останавливаем бросок и таскание
+		plushe.forceMove(plushe.loc)
+		qdel(plushe.throwing)
 
-	if(!start || !end)
-		goto cleanup
+	// Проверяем: на одном ли тайле находятся игрушки
+	var/same_tile = get_turf(src) == get_turf(partner)
 
-	qdel(throwing)
-	qdel(partner.throwing)
+	// Получаем координаты с учётом тайла и pixel-смещения
+	var/x1 = same_tile ? src.pixel_x : src.x * 32 + src.pixel_x
+	var/y1 = same_tile ? src.pixel_y : src.y * 32 + src.pixel_y
+	var/x2 = same_tile ? partner.pixel_x : partner.x * 32 + partner.pixel_x
+	var/y2 = same_tile ? partner.pixel_y : partner.y * 32 + partner.pixel_y
 
-	var/shift = 8 // половина тайла
-	if(start == end)
-		src.pixel_x -= shift
-		partner.pixel_x += shift
-	else
-		var/dx = end.x - start.x
-		var/dy = end.y - start.y
+	var/dx = x2 - x1
+	var/dy = y2 - y1
 
-		if(abs(dx) > 0 && abs(dy) > 0) // Если по диагонали, то сммещаем на больше пикселей
-			shift *= 1.5
+	var/distance = sqrt(dx * dx + dy * dy)
 
-		// нормализация направления
-		var/mag = max(1, sqrt(dx * dx + dy * dy)) // защита от деления на 0
+	// Целевое расстояние между игрушками
+	var/target_distance = 16
+	var/tolerance = 5
 
-		src.pixel_x += round((dx / mag) * shift)
-		src.pixel_y += round((dy / mag) * shift)
+	// Нужно ли анимировать
+	var/need_animate = abs(distance - target_distance) > tolerance
 
-		partner.pixel_x -= round((dx / mag) * shift)
-		partner.pixel_y -= round((dy / mag) * shift)
+	if(need_animate)
+		var/delta = (target_distance - distance) / 2.0
 
+		var/norm_x = dx / max(distance, 1)
+		var/norm_y = dy / max(distance, 1)
+
+		var/shift_x = round(norm_x * delta)
+		var/shift_y = round(norm_y * delta)
+
+		if(same_tile)
+			// Просто двигаем pixel_x / pixel_y
+			animate(src, pixel_x = src.pixel_x - shift_x, pixel_y = src.pixel_y - shift_y, time = 6)
+			animate(partner, pixel_x = partner.pixel_x + shift_x, pixel_y = partner.pixel_y + shift_y, time = 6)
+		else
+			// Смещаем абсолютные координаты, потом пересчитываем обратно
+			var/final_x1 = x1 - shift_x
+			var/final_y1 = y1 - shift_y
+			var/final_x2 = x2 + shift_x
+			var/final_y2 = y2 + shift_y
+
+			animate(src, pixel_x = final_x1 - (src.x * 32), pixel_y = final_y1 - (src.y * 32), time = 6)
+			animate(partner, pixel_x = final_x2 - (partner.x * 32), pixel_y = final_y2 - (partner.y * 32), time = 6)
+
+	// Диалог
 	src.say(pick("Привет, дорогая~", "Скучала по тебе~", "Ты прекрасна, как и всегда~"))
 	partner.say(pick("Приветик, любимая~", "Люблю тебя~", "Обожаю~", "Моя змейка~"))
+
+	var/heart_broken = FALSE // Если игрушки разняли, что бы не играть анимацию
 
 	for(var/i = 1, i <= 4, i++)
 		if(src.loc != start || partner.loc != end) // Если игрушки передвинули в процессе
 			var/heart_broken_say = list("Не-ет!", "Не разлучай нас!", "Верни меня!")
 			src.say(pick(heart_broken_say))
 			partner.say(pick(heart_broken_say))
+			heart_broken = TRUE
 			goto cleanup
 		new /obj/effect/temp_visual/heart(get_turf(src))
 		new /obj/effect/temp_visual/heart(get_turf(partner))
@@ -488,14 +522,17 @@
 			playlewdinteractionsound(partner.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
 		else
 			playlewdinteractionsound(src.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
-		sleep(6)
+		sleep(8)
 
 	cleanup:
-		src.pixel_x = 0
-		src.pixel_y = 0
-		partner.pixel_x = 0
-		partner.pixel_y = 0
-
+		if(need_animate)
+			for(var/obj/item/toy/plush/plushe in list(src, partner))
+				var/list/offsets = original_pixel_offsets[plushe]
+				if(heart_broken)
+					plushe.pixel_x = offsets["pixel_x"]
+					plushe.pixel_y = offsets["pixel_y"]
+				else
+					animate(plushe, pixel_x = offsets["pixel_x"], pixel_y = offsets["pixel_y"], time = 6)
 		love_target = null
 		partner.love_target = null
 
