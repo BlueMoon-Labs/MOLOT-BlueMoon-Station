@@ -423,6 +423,82 @@
 	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 6,
 	'modular_splurt/sound/voice/raptor_purr.ogg' = 1
 	)
+	var/obj/item/toy/plush/bm/araminta/love_target
+	var/last_love_interaction = 0
+
+/obj/item/toy/plush/bm/lissara/Moved()
+	. = ..()
+
+	// Ограничение по времени на срабатывания
+	if(love_target)// || world.time - last_love_interaction < 100)
+		return
+
+		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
+		if(P && istype(P.loc, /turf/open) && !P.love_target)
+			loving_interaction(P)
+
+/obj/item/toy/plush/bm/lissara/proc/loving_interaction(obj/item/toy/plush/bm/araminta/partner)
+	love_target = partner
+	partner.love_target = src
+
+	last_love_interaction = world.time
+	partner.last_love_interaction = world.time
+
+	var/turf/start = get_turf(src)
+	var/turf/end = get_turf(partner)
+
+	if(!start || !end)
+		goto cleanup
+
+	qdel(throwing)
+	qdel(partner.throwing)
+
+	var/shift = 8 // половина тайла
+	if(start == end)
+		src.pixel_x -= shift
+		partner.pixel_x += shift
+	else
+		var/dx = end.x - start.x
+		var/dy = end.y - start.y
+
+		if(abs(dx) > 0 && abs(dy) > 0) // Если по диагонали, то сммещаем на больше пикселей
+			shift *= 1.5
+
+		// нормализация направления
+		var/mag = max(1, sqrt(dx * dx + dy * dy)) // защита от деления на 0
+
+		src.pixel_x += round((dx / mag) * shift)
+		src.pixel_y += round((dy / mag) * shift)
+
+		partner.pixel_x -= round((dx / mag) * shift)
+		partner.pixel_y -= round((dy / mag) * shift)
+
+	src.say(pick("Привет, дорогая~", "Скучала по тебе~", "Ты прекрасна, как и всегда~"))
+	partner.say(pick("Приветик, любимая~", "Люблю тебя~", "Обожаю~", "Моя змейка~"))
+
+	for(var/i = 1, i <= 4, i++)
+		if(src.loc != start || partner.loc != end) // Если игрушки передвинули в процессе
+			var/heart_broken_say = list("Не-ет!", "Не разлучай нас!", "Верни меня!")
+			src.say(pick(heart_broken_say))
+			partner.say(pick(heart_broken_say))
+			goto cleanup
+		new /obj/effect/temp_visual/heart(get_turf(src))
+		new /obj/effect/temp_visual/heart(get_turf(partner))
+		if(i % 2 == 0)
+			playlewdinteractionsound(partner.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
+		else
+			playlewdinteractionsound(src.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
+		sleep(6)
+
+	cleanup:
+		src.pixel_x = 0
+		src.pixel_y = 0
+		partner.pixel_x = 0
+		partner.pixel_y = 0
+
+		love_target = null
+		partner.love_target = null
+
 
 /obj/item/toy/plush/bm/araminta
 	name = "Araminta plush"
@@ -432,6 +508,21 @@
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
 	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
 	)
+	var/obj/item/toy/plush/bm/lissara/love_target
+	var/last_love_interaction = 0
+
+/obj/item/toy/plush/bm/araminta/Moved()
+	. = ..()
+
+	/*
+	// Ограничение по времени на срабатывания
+	if(love_target)// || world.time - last_love_interaction < 100)
+		return
+
+	var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
+	if(P && istype(P.loc, /turf/open) && !P.love_target)
+		P.loving_interaction(src)
+	*/
 
 /obj/item/toy/plush/bm/stasik/artemq
 	name = "Artems toy plush"
