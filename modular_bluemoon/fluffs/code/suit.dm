@@ -403,12 +403,11 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 
-/obj/item/clothing/suit/donator/bm/Kibercoat1
+/obj/item/clothing/suit/donator/bm/kiber_coat
 	name = "Kibercoat"
-	desc = "Странный халат с кибернетикой.Около него чуствуеться странный металический привкус"
+	desc = "Странный халат с кибернетикой. Около него чуствуется странный металический запах."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
 	icon_state = "Kibercoat1"
-	item_state = "Kibercoat2"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
