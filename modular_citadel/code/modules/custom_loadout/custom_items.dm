@@ -216,6 +216,7 @@
 	anthro_mob_worn_overlay = 'icons/mob/clothing/mask_muzzled.dmi'
 	icon_state = "stalker"
 	alternate_screams = RUSSIAN_SCREAMS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/mask/gas/military
 	name = "Military Gas Mask"
@@ -225,6 +226,7 @@
 	item_state = "mgas"
 	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
 	icon_state = "mgas"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/drinks/flask/steel
 	name = "The End"
