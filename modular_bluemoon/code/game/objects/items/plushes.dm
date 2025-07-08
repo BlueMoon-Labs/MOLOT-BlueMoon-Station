@@ -431,9 +431,9 @@
 
 	// Ограничение по процессу и времени на срабатывания
 	if(!love_target && world.time - last_love_interaction >= 100)
-		spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
-			var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
-			if(P && istype(P.loc, /turf/open) && !P.love_target)
+		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
+			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
 				loving_interaction(P)
 
 /obj/item/toy/plush/bm/lissara/proc/loving_interaction(obj/item/toy/plush/bm/araminta/partner)
@@ -579,9 +579,9 @@
 
 	// Ограничение по процессу и времени на срабатывания
 	if(!love_target && world.time - last_love_interaction >= 100)
-		spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
-			var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
-			if(P && istype(P.loc, /turf/open) && !P.love_target)
+		var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
+			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
 				P.loving_interaction(src)
 
 /obj/item/toy/plush/bm/stasik/artemq
