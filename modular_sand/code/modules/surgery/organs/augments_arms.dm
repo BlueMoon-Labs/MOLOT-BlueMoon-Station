@@ -5,14 +5,15 @@
 /obj/item/organ/cyberimp/arm/toolset/advanced
 	name = "advanced integrated toolset implant"
 	desc = "A very advanced version of the regular toolset implant, has alien stuff!"
-/*	contents = newlist(/obj/item/screwdriver/abductor, // BLUEMOON COMMENTING OUT: using own list of tools here
-						/obj/item/wrench/abductor,
-						/obj/item/weldingtool/abductor,
-						/obj/item/crowbar/abductor,
-						/obj/item/wirecutters/abductor,
-						/obj/item/multitool/abductor,
-						/obj/item/analyzer/ranged)
-*/ 	// BLUEMOON ADD START
+// 	BLUEMOON COMMENTING OUT using own list of tools below
+//	contents = newlist(/obj/item/screwdriver/abductor,
+//						/obj/item/wrench/abductor,
+//						/obj/item/weldingtool/abductor,
+//						/obj/item/crowbar/abductor,
+//						/obj/item/wirecutters/abductor,
+//						/obj/item/multitool/abductor,
+//						/obj/item/analyzer/ranged)
+// 	BLUEMOON ADD START
 	contents = newlist(/obj/item/screwdriver/advanced,
 						/obj/item/wrench/advanced,
 						/obj/item/weldingtool/advanced,
@@ -20,7 +21,7 @@
 						/obj/item/wirecutters/advanced,
 						/obj/item/multitool/advanced,
 						/obj/item/analyzer/ranged)
-	// BLUEMOON ADD END
+// 	BLUEMOON ADD END
 
 /obj/item/organ/cyberimp/arm/toolset/advanced/emag_act()
 	. = ..()
