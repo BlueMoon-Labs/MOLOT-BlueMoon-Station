@@ -429,11 +429,12 @@
 /obj/item/toy/plush/bm/lissara/Moved()
 	. = ..()
 
-	// Ограничение по времени на срабатывания
+	// Ограничение по процессу и времени на срабатывания
 	if(!love_target && world.time - last_love_interaction >= 100)
-		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
-		if(P && istype(P.loc, /turf/open) && !P.love_target)
-			loving_interaction(P)
+		spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
+			var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
+			if(P && istype(P.loc, /turf/open) && !P.love_target)
+				loving_interaction(P)
 
 /obj/item/toy/plush/bm/lissara/proc/loving_interaction(obj/item/toy/plush/bm/araminta/partner)
 	var/turf/start = get_turf(src)
@@ -504,14 +505,39 @@
 			animate(partner, pixel_x = final_x2 - (partner.x * 32), pixel_y = final_y2 - (partner.y * 32), time = 6)
 
 	// Диалог
-	src.say(pick("Привет, дорогая~", "Скучала по тебе~", "Ты прекрасна, как и всегда~"))
-	partner.say(pick("Приветик, любимая~", "Люблю тебя~", "Обожаю~", "Моя змейка~"))
+	src.say(pick(
+		"Привет, дорогая~",
+		"Скучала по тебе~",
+		"Ты прекрасна, как и всегда~",
+		"Наконец-то мы вместе~",
+		"Ты такая теплая~",
+		"Ара~",
+		"Обними меня крепче~",
+		"Моя кошечка~"))
+
+	partner.say(pick(
+		"Приветик, любимая~",
+		"Люблю тебя~",
+		"Обожаю~",
+		"Лисс~",
+		"Моя змейка~",
+		"Я так скучала по тебе~",
+		"Ты моя, навсегда~",
+		"Иди сюда, моя красавица~"))
 
 	var/heart_broken = FALSE // Если игрушки разняли, что бы не играть анимацию
 
 	for(var/i = 1, i <= 4, i++)
 		if(src.loc != start || partner.loc != end) // Если игрушки передвинули в процессе
-			var/heart_broken_say = list("Не-ет!", "Не разлучай нас!", "Верни меня!")
+			var/heart_broken_say = list(
+				"Не-ет!",
+				"Не разлучай нас!",
+				"Верни меня!",
+				"Почему ты вмешался?!",
+				"Не забирай её у меня!",
+				"Это жестоко!",
+				"Я просто хотела быть с ней!"
+			)
 			src.say(pick(heart_broken_say))
 			partner.say(pick(heart_broken_say))
 			heart_broken = TRUE
@@ -551,15 +577,12 @@
 /obj/item/toy/plush/bm/araminta/Moved()
 	. = ..()
 
-	/*
-	// Ограничение по времени на срабатывания
-	if(love_target)// || world.time - last_love_interaction < 100)
-		return
-
-	var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
-	if(P && istype(P.loc, /turf/open) && !P.love_target)
-		P.loving_interaction(src)
-	*/
+	// Ограничение по процессу и времени на срабатывания
+	if(!love_target && world.time - last_love_interaction >= 100)
+		spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
+			var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
+			if(P && istype(P.loc, /turf/open) && !P.love_target)
+				P.loving_interaction(src)
 
 /obj/item/toy/plush/bm/stasik/artemq
 	name = "Artems toy plush"
