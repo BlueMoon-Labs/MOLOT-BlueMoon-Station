@@ -358,6 +358,7 @@
 
 // Вариация рестарта для нон-конеров, после него синт не проснётся, пока реагент не закончится
 /datum/reagent/consumable/synthdrink/synthanol/restart/hard
+	name = "Hard Restart"
 	description = "Sometimes you just need to start anew... Welp, this one comes with BIOS update, oh shit."
 	color = "#0095ff"
 	synthetic_taste = "перезагрузки с установкой дополнительного ПО? Оу, это будет долго..."

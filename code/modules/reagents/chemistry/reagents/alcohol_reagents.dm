@@ -369,6 +369,10 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	boozepwr = 45
 	quality = DRINK_FANTASTIC
 	taste_description = "scaley sweetness"
+	glass_icon_state = "plumwineglass"
+	glass_name = "glass of Lizard wine"
+	glass_desc = "It looks like dark wine."
+	shot_glass_icon_state = "shotglassred"
 	pH = 3
 	value = REAGENT_VALUE_VERY_RARE
 
