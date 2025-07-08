@@ -134,10 +134,10 @@
 	if(use_stun && stun)
 		target.Stun(stun)
 	if(what_cum == CUM_TARGET_MOUTH || what_cum == CUM_TARGET_THROAT)
-			lust_to_target = min(LOW_LUST*dildo_size/3, LOW_LUST) // realy small lust
+		lust_to_target = min(LOW_LUST*dildo_size/3, LOW_LUST) // realy small lust
 	if(add_lust)
 		target.handle_post_sex(lust_to_target, where_cum, user, what_cum)
-	
+
 	return lust_to_target // Unified lust value if you want to make your own handle_post_sex
 
 /obj/item/dildo/Initialize(mapload)
