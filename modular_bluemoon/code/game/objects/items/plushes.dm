@@ -430,11 +430,12 @@
 	. = ..()
 
 	// Ограничение по процессу и времени на срабатывания
-	if(!love_target && world.time - last_love_interaction >= 100)
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 100)
 		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
 		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
 			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
-				loving_interaction(P)
+				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
+					loving_interaction(P)
 
 /obj/item/toy/plush/bm/lissara/proc/loving_interaction(obj/item/toy/plush/bm/araminta/partner)
 	var/turf/start = get_turf(src)
@@ -457,7 +458,7 @@
 			"pixel_y" = plushe.pixel_y
 		)
 		// Останавливаем бросок и таскание
-		plushe.forceMove(plushe.loc)
+		plushe.forceMove(get_turf(plushe))
 		qdel(plushe.throwing)
 
 	// Проверяем: на одном ли тайле находятся игрушки
@@ -578,11 +579,12 @@
 	. = ..()
 
 	// Ограничение по процессу и времени на срабатывания
-	if(!love_target && world.time - last_love_interaction >= 100)
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 100)
 		var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
 		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
 			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
-				P.loving_interaction(src)
+				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
+					P.loving_interaction(src)
 
 /obj/item/toy/plush/bm/stasik/artemq
 	name = "Artems toy plush"
