@@ -7,6 +7,13 @@
 /turf/open/floor/plasteel/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
+// BLUEMOON ADD ROTATION
+	. += "<span class='notice'>There's a <b>bolt</b> helping in rotary system.</span>"
+
+/turf/open/floor/plasteel/wrench_act(mob/living/user, obj/item/I)
+	I.play_tool_sound(src, 20)
+	return setDir(turn(dir, -90))
+// BLUEMOON ADD END
 
 /turf/open/floor/plasteel/rust_heretic_act()
 	if(prob(70))
