@@ -23,7 +23,7 @@
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/borg/sight/thermal,
-		/obj/item/extinguisher,
+		/obj/item/extinguisher/mini,
 		/obj/item/weldingtool/experimental,
 		/obj/item/screwdriver/cyborg,
 		/obj/item/wrench/cyborg,
@@ -52,7 +52,9 @@
 		/obj/item/gun/medbeam,
 		/obj/item/reagent_containers/borghypo/syndicate,
 		/obj/item/stack/medical/bone_gel,
-		/obj/item/bonesetter/bone,
+		/obj/item/bonesetter,
+		/obj/item/organ_storage,
+		/obj/item/borg/cyborghug/medical,
 		/obj/item/borg/lollipop,
 		/obj/item/borg_shapeshifter,
 		/obj/item/cyborg_inducer
