@@ -372,7 +372,13 @@
 	if(!lickable)
 		return
 
-	var/mob/living/tasted = show_radial_menu(src, src, lickable, radius = 40, require_near = TRUE)
+	// BLUEMOON EDIT START
+	var/mob/living/tasted
+	if(lickable.len == 1)
+		tasted = lickable[1]
+	else
+		tasted = show_radial_menu(src, src, lickable, radius = 40, require_near = TRUE)
+	// BLUEMOON EDIT END
 
 	if(QDELETED(tasted) || (tasted.ckey && !(tasted.client?.prefs.vore_flags & LICKABLE)) || !Adjacent(tasted) || incapacitated(ignore_restraints = TRUE))
 		return
@@ -432,7 +438,13 @@
 	if(!smellable)
 		return
 
-	var/mob/living/sniffed = show_radial_menu(src, src, smellable, radius = 40, require_near = TRUE)
+	// BLUEMOON EDIT START
+	var/mob/living/sniffed
+	if(smellable.len == 1)
+		sniffed = smellable[1]
+	else
+		sniffed = show_radial_menu(src, src, smellable, radius = 40, require_near = TRUE)
+	// BLUEMOON EDIT END
 
 	if(QDELETED(sniffed) || (sniffed.ckey && !(sniffed.client?.prefs.vore_flags & SMELLABLE)) || !Adjacent(sniffed) || incapacitated(ignore_restraints = TRUE))
 		return
