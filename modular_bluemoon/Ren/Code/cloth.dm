@@ -473,7 +473,7 @@
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi' // у нас забрали джет, терпим.
 	unique_reskin = list()
 	slowdown = 0.35
-	tail_state = "rd"
+	tail_state = "bombsuit_sci"
 
 //-----------------------------------------------------------[Одежда FTU]---------------------------------------------------------------------------------------
 ///Боевой риг
