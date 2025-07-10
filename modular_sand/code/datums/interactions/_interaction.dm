@@ -119,7 +119,7 @@
 	if(get_dist(user, target) > max_distance)
 		to_chat(user, span_warning("Слишком далеко."))
 		return FALSE
-	if(interaction_flags & INTERACTION_FLAG_ADJACENT && !(user.Adjacent(target) && target.Adjacent(user)))
+	if(interaction_flags & INTERACTION_FLAG_ADJACENT && !(user.Adjacent(target) && target.Adjacent(user) || isbelly(user.loc) && user.loc:owner == target || isbelly(target.loc) && target.loc:owner == user)) // BLUEMOON EDIT can interact if in belly
 		to_chat(user, span_warning("Ты не достаёшь."))
 		return FALSE
 	if(!evaluate_user(user, silent = FALSE, apply_cooldown = apply_cooldown))
