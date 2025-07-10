@@ -54,7 +54,7 @@
 			self_message = "[span_nicegreen("Ты играешься с пивной кегой!")] [span_warning("Кажется это небезопасно...")]"
 	M.visible_message(message, self_message, blind_message)
 
-	if(prob(explosion_chance) && ishuman(M) || ismonkey(M))
+	if(prob(explosion_chance) && ismammal(M) || ismonkey(M))
 		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
 		playsound(src, 'sound/effects/kega.ogg', 100, 1)
 		if(!QDELETED(src))
