@@ -455,7 +455,7 @@
 	icon_state = "hardsuit0-explorer"
 	item_state = "hardsuit0-explorer"
 	hardsuit_type = "explorer"
-	armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 50)
+	armor = list(MELEE = 20, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 30, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 50)
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
@@ -466,13 +466,14 @@
 	desc = "Армированный костюм, в котором не страшно ступить даже в самые опасные заброшенные станции и обломки кораблей."
 	icon_state = "hardsuit-explorer"
 	item_state = "hardsuit-explorer"
-	armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 50) // сниженная защита от лазеров и пуль - ценой повешенной мобильности и защиты от бомб
+	armor = list(MELEE = 20, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 30, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 50) // сниженная защита от лазеров и пуль - ценой повешенной мобильности и защиты от бомб
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/explorer
-	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
-	jetpack = /obj/item/tank/jetpack/suit/fast
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi' // у нас забрали джет, терпим.
 	unique_reskin = list()
+	slowdown = 0.35
+	tail_state = "rd"
 
 //-----------------------------------------------------------[Одежда FTU]---------------------------------------------------------------------------------------
 ///Боевой риг
