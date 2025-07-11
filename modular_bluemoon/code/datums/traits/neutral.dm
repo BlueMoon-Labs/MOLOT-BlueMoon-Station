@@ -160,3 +160,21 @@
 /datum/quirk/bondage_lover/remove()
 	// Remove mood event
 	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, QMOOD_BONDAGE)
+
+/datum/quirk/imaginary_friend
+	name = "Воображаемый друг"
+	desc = "У вас появился друг в голове. Кто знает, поможет он вам, или нет... Только не соглашайтесь на его предложение сделать клуб!"
+	value = 0
+	mob_trait = TRAIT_IMAGINARYFRIEND
+	//gain_text handled be trauma
+	//lose_text handled be trauma
+	medical_record_text = "У пациента присутсвует \"Воображаемый Друг\"."
+	on_spawn_immediate = FALSE
+
+/datum/quirk/imaginary_friend/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/special/imaginary_friend, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/imaginary_friend/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.cure_trauma_type(/datum/brain_trauma/special/imaginary_friend, TRAUMA_RESILIENCE_ABSOLUTE)

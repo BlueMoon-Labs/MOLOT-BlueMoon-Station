@@ -53,9 +53,9 @@
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
-	if(isobserver(user))
+	if(isobserver(user) && !skip_reentry_check)
 		var/mob/dead/observer/O = user
-		if(!O.can_reenter_round() && !skip_reentry_check)
+		if(!O.can_reenter_round())
 			return FALSE
 	var/ghost_role = alert(latejoinercalling ? "Latejoin as [mob_name]? (This is a ghost role, and as such, it's very likely to be off-station.)" : "Become [mob_name]? (Warning, You can no longer be cloned!)",,"Да","Нет")
 	if(ghost_role == "Нет" || !loc)

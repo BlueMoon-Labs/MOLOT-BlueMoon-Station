@@ -650,11 +650,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "dN" = (
-/obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "dP" = (
@@ -825,12 +829,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "eA" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/green,
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel/dark/textured/large,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "eB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -946,6 +946,13 @@
 /obj/item/toy/plush/carrot,
 /obj/structure/table,
 /obj/effect/turf_decal/siding/dark/corner,
+/obj/machinery/smartfridge/disks{
+	pixel_y = 2
+	},
+/obj/item/storage/box/disks_plantgene{
+	pixel_x = -9;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "fr" = (
@@ -1393,12 +1400,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "if" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ig" = (
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box{
@@ -3634,8 +3645,23 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "vI" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/away{
+	name = "Staff Areas APC";
+	pixel_y = -23
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "vJ" = (
 /obj/structure/disposalpipe/segment,
@@ -3891,21 +3917,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
-"xf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
@@ -4287,14 +4298,6 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
-"zr" = (
-/obj/machinery/power/apc/away{
-	name = "Staff Areas APC";
-	pixel_y = -23
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "zs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
@@ -4637,12 +4640,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
-"BF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "BH" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -4873,7 +4870,8 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/hydroponics/constructable,
+/obj/structure/table,
+/obj/machinery/plantgenes,
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ds" = (
@@ -5363,6 +5361,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/hydroponics/constructable,
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "GC" = (
@@ -6657,12 +6656,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "OO" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
+/turf/closed/wall,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "OQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
@@ -6768,9 +6764,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/green,
-/obj/effect/turf_decal/tile/green{
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Pr" = (
@@ -7734,19 +7727,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
-"Uf" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/green{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel/dark/textured/large,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ui" = (
 /obj/machinery/light{
 	dir = 8
@@ -9301,13 +9281,13 @@ Qh
 Qh
 Qh
 BH
-xf
-BF
-zr
-vI
-if
+dE
+De
+De
 OO
-ZP
+OO
+OO
+eA
 VT
 Uw
 Rb
@@ -9371,12 +9351,12 @@ ec
 vV
 Qh
 dy
-dE
+vI
 De
-De
-De
-De
-De
+Yt
+dN
+dX
+if
 De
 Rm
 fv
@@ -9443,9 +9423,9 @@ Lp
 Gw
 ss
 fv
-Yt
-Uf
-dX
+uR
+JM
+Ai
 Pm
 De
 zI
@@ -9513,7 +9493,7 @@ Qh
 dy
 dE
 fv
-Ai
+uR
 JM
 Ai
 vP
@@ -9584,7 +9564,7 @@ BH
 dE
 fv
 uR
-eA
+JM
 Ai
 Dp
 De
@@ -9724,7 +9704,7 @@ dy
 dE
 fv
 uR
-dN
+JM
 Ai
 xs
 Dt

@@ -128,7 +128,29 @@
 //выдача рандома, проверка на повторы
 /datum/ambition_objective/proc/random_choose(list_for_pick, list/choose_list)
 	if (list_for_pick == "random_crew")
-		return get_mob_by_ckey(pick(GLOB.joined_player_list))
+		if (GLOB.joined_player_list.len)
+			return get_mob_by_ckey(pick(GLOB.joined_player_list))
+		// Мы либо на локалке, либо этот игрок оказался единственным в раунде на момент ролла амбиции
+		return pick("Gandalf the Grey",
+		"Gandalf the White",
+		"Monty Python and the Holy Grail's Black Knight",
+		"Benito Mussolini",
+		"the Blue Meanie",
+		"Cowboy Curtis",
+		"Jambi the Genie",
+		"Robocop",
+		"the Terminator",
+		"Captain Kirk",
+		"Darth Vader",
+		"Lo-pan",
+		"Superman",
+		"every single Power Ranger",
+		"Bill S. Preston",
+		"Theodore Logan",
+		"Spock",
+		"The Rock",
+		"Doc Ock",
+		"Hulk Hogan")
 
 	var/picked = pick_list("ambitions/randoms.json", list_for_pick)
 
