@@ -348,13 +348,13 @@
 						target_orifice = null
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
-							if(partner.has_mouth() && partner.mouth_is_free())
+							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 								message = "кончает прямо в ротик [partner_name]."
 								cumin = TRUE
 							else
 								message = "кончает на лицо [partner_name] семенем."
 						if(CUM_TARGET_THROAT)
-							if(partner.has_mouth() && partner.mouth_is_free())
+							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 								message = "входит глубоко в глотку [partner_name] и кончает."
 								cumin = TRUE
 							else
@@ -461,13 +461,13 @@
 
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
-							if(partner.has_mouth() && partner.mouth_is_free())
+							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 								message = "кончает прямо в рот [partner_name]."
 								cumin = TRUE
 							else
 								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_THROAT)
-							if(partner.has_mouth() && partner.mouth_is_free())
+							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 								message = "трется своей киской о рот [partner_name] и кончает."
 								cumin = TRUE
 							else
@@ -550,13 +550,13 @@
 
 						switch(target_orifice)
 							if(CUM_TARGET_MOUTH)
-								if(partner.has_mouth() && partner.mouth_is_free())
+								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 									message = "кончает прямо в рот [partner_name]."
 									cumin = TRUE
 								else
 									message = "кончает на лицо [partner_name] семенем."
 							if(CUM_TARGET_THROAT)
-								if(partner.has_mouth() && partner.mouth_is_free())
+								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 									message = "входит глубоко в глотку [partner_name] и кончает."
 									cumin = TRUE
 								else
@@ -663,13 +663,13 @@
 
 						switch(target_orifice)
 							if(CUM_TARGET_MOUTH)
-								if(partner.has_mouth() && partner.mouth_is_free())
+								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 									message = "кончает прямо в [partner_name] ротик."
 									cumin = TRUE
 								else
 									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_THROAT)
-								if(partner.has_mouth() && partner.mouth_is_free())
+								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
 									message = "трется своей киской о рот [partner_name] и кончает."
 									cumin = TRUE
 								else
