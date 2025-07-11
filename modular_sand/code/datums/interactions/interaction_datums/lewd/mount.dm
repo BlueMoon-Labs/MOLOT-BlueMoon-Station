@@ -188,6 +188,7 @@
 			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = user.get_strapon()
 			user_strapon.attached_dildo.target_reaction(partner, user, 1, CUM_TARGET_MOUTH, null, user.a_intent == INTENT_HARM)
 		else
+			user.handle_post_sex(NORMAL_LUST, THIGH_SMOTHERING, partner, genital)
 			partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_MOUTH)
 	else
 		user.handle_post_sex(NORMAL_LUST, THIGH_SMOTHERING, partner, genital) //SPLURT edit
