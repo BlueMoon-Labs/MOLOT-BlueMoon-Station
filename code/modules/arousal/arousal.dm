@@ -136,12 +136,17 @@
 			if(istype(cummed_on))	//if human
 				var/datum/reagents/copy = new()
 				R.copy_to(copy, R.total_volume)
-
 				if(istype(receiver, /obj/item/organ/stomach))	//in mouth
 					if(istype(cummed_on.wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties as a mask
 						var/obj/item/portallight/plight = get_active_held_item()
 						if(istype(plight) && (sender.name == plight.targetting))	//only acting organ will be transfering fluids
 							R.trans_to(target, amount_to_transfer, log = TRUE)
+					// BLUEMMON ADD START
+					else if(istype(w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//sender is wearing portal panties as a panties
+						var/obj/item/portallight/plight = cummed_on.get_active_held_item()
+						if(istype(plight) && (sender.name == plight.portalunderwear.targetting))	//only portal organ will be transfering fluids
+							R.trans_to(target, amount_to_transfer, log = TRUE)
+					// BLUEMMON ADD END
 					else
 						switch(sender.type)
 							if(/obj/item/organ/genital/penis)
