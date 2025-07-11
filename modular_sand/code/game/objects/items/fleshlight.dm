@@ -166,10 +166,14 @@
 	// Fluid tranfser inside partner. Also if it is FALSE, it nullifies "orifice" variable in handle_post_sex() to make it work properly, since "cum_inside" variable actually doesn't work correctly today.
 	var/p_to_f = FALSE	//from panties to fleshlight
 	var/f_to_p = FALSE	//from fleshlight to panties
+	// BLUEMOON ADD START
+	var/p_to_f_inside = null
+	var/f_to_p_inside = null
+	// BLUEMOON ADD END
 
 	if(plush_icon != NONE)
 		playsound(user, 'sound/items/squeaktoy.ogg', 30, 1)
-	
+
 	// BLUEMOON EDIT START
 	var/genital_data = list(
 		"M_has_penis" = M.has_penis(),
@@ -200,6 +204,10 @@
 									target = CUM_TARGET_PENIS
 									user_lust_amt = LOW_LUST
 									target_lust_amt = LOW_LUST
+									f_to_p = TRUE
+									p_to_f = TRUE
+									p_to_f_inside = FALSE
+									f_to_p_inside = FALSE
 								if(CUM_TARGET_VAGINA)
 									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает киску кого-то на другой стороне своим [genital_data["M_has_penis"] ? "членом" : "дилдо"]" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в киску"
 									target_message = "трахает твою киску с помощью [genital_data["M_penis_desc"]] [genital_data["M_has_penis"] ? "члена" : "дилдо"]"
@@ -208,6 +216,7 @@
 									target_lust_amt = NORMAL_LUST
 									f_to_p = TRUE
 									p_to_f = TRUE
+									p_to_f_inside = FALSE
 								if(CUM_TARGET_ANUS)
 									user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает анальное кольцо кого-то на другой стороне своим [genital_data["M_has_penis"] ? "членом" : "дилдо"]" : "использует <b>'[src]'</b> по прямому назначению и трахает <b>[M]</b> прямо в анал"
 									target_message = "трахает твой анал с помощью [genital_data["M_penis_desc"]] [genital_data["M_has_penis"] ? "члена" : "дилдо"]"
@@ -243,22 +252,25 @@
 									p_to_f = TRUE
 									f_to_p = TRUE
 								if(CUM_TARGET_VAGINA)
-									user_message = (user == M) ? "потирает [M.ru_ego()] киску прямо о <b>'[src]'</b>, таким образом стимулирая киску на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует киску кого-то на другой стороне киской <b>[M]</b>"
+									user_message = (user == M) ? "потирает свою киску прямо о <b>'[src]'</b>, стимулирая киску на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует киску кого-то на другой стороне киской <b>[M]</b>"
 									target_message = "потирает свою киску прямо о твою собственную"
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
 									p_to_f = TRUE
 									f_to_p = TRUE
+									p_to_f_inside = FALSE
+									f_to_p_inside = FALSE
 								if(CUM_TARGET_ANUS)
-									user_message = (user == M) ? "потирает [M.ru_ego()] киску прямо о <b>'[src]'</b>, таким образом стимулирая анус на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне киской <b>[M]</b>"
+									user_message = (user == M) ? "потирает свою киску прямо о <b>'[src]'</b>, стимулирая анус на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне киской <b>[M]</b>"
 									target_message = "потирает свою киску прямо о твой анус"
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = LOW_LUST
 									f_to_p = TRUE
+									f_to_p_inside = FALSE
 								if(CUM_TARGET_MOUTH)
-									user_message = (user == M) ? "потирает [M.ru_ego()] киску прямо о <b>'[src]'</b>, таким образом целуя ротик на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с киской на другой стороне, таким образом причмокивая в процессе"
+									user_message = (user == M) ? "потирает свою киску прямо о <b>'[src]'</b>, заставляя себя вылизывать" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с киской на другой стороне, причмокивая в процессе"
 									target_message = "потирает свою киску прямо о твой ротик"
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
@@ -285,20 +297,21 @@
 									target_lust_amt = NORMAL_LUST
 									p_to_f = TRUE
 								if(CUM_TARGET_VAGINA)
-									user_message = (user == M) ? "потирает [M.ru_ego()] анус прямо о <b>'[src]'</b>, таким образом стимулирая киску кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне киской <b>[M]</b>"
+									user_message = (user == M) ? "потирает свой анус прямо о <b>'[src]'</b>, стимулирая киску кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне киской <b>[M]</b>"
 									target_message = "потирает свой анус прямо о твою киску"
 									target = CUM_TARGET_ANUS
 									user_lust_amt = LOW_LUST
 									target_lust_amt = NORMAL_LUST
 									p_to_f = TRUE
+									p_to_f_inside = FALSE
 								if(CUM_TARGET_ANUS)
-									user_message = (user == M) ? "потирает [M.ru_ego()] анус прямо о <b>'[src]'</b>, таким образом стимулирая анус кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне анусом <b>[M]</b>"
+									user_message = (user == M) ? "потирает свой анус прямо о <b>'[src]'</b>, стимулирая анус кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне анусом <b>[M]</b>"
 									target_message = "потирает свой анус прямо о твой собственный"
 									target = CUM_TARGET_ANUS
 									user_lust_amt = LOW_LUST
 									target_lust_amt = LOW_LUST
 								if(CUM_TARGET_MOUTH)
-									user_message = (user == M) ? "потирает [M.ru_ego()] анус прямо о <b>'[src]'</b>, таким образом стимулирая губки кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с анусом на другой стороне, таким образом причмокивая в процессе"
+									user_message = (user == M) ? "потирает свой анус прямо о <b>'[src]'</b>, заставляя себя вылизывать" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться своим слюнявым ротиком с анусом на другой стороне, причмокивая в процессе"
 									target_message = "потирает свой анус прямо о твой ротик"
 									target = CUM_TARGET_ANUS
 									user_lust_amt = NORMAL_LUST
@@ -309,39 +322,39 @@
 						if(M.has_penis() == HAS_EXPOSED_GENITAL || M.has_strapon() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
-									user_message = (user == M) ? "трахает [genital_data["target_has_penis"] ? "твою уретру" : "отверстие дилдо"] своим [genital_data["M_has_penis"] ? "членом" : "дилдо"]" : "трахает чужую уретру своим [genital_data["M_has_penis"] ? "членом" : "дилдо"]"
-									target_message = "трахает [genital_data["target_has_penis"] ? "член" : "дилдо"] прямо в [genital_data["target_has_penis"] ? "уретру" : "отверстие"]"
+									user_message = (user == M) ? "трахает [genital_data["M_has_penis"] ? "свою уретру" : "отверстие дилдо"] с помощью [genital_data["target_penis_desc"]] [name]" : "трахает уретру <b>[M]</b> своим [genital_data["target_penis_desc"]] [name]"
+									target_message = "трахает свой [genital_data["target_has_penis"] ? "член" : "дилдо"] прямо в [genital_data["target_has_penis"] ? "уретру" : "отверстие"]"
 									target = CUM_TARGET_URETHRA
-									user_lust_amt = NORMAL_LUST
-									target_lust_amt = HIGH_LUST
-									f_to_p = TRUE
+									user_lust_amt = HIGH_LUST
+									target_lust_amt = NORMAL_LUST
+									p_to_f = TRUE
 						else
 							to_chat(user, "<span class='warning'>Уретра закрыта или отсутствует!</span>")
 			if(BODY_ZONE_PRECISE_MOUTH)
 				if((M.has_mouth() && !M.is_mouth_covered()))
 					switch(portalunderwear.targetting)
 						if(CUM_TARGET_PENIS)
-							user_message = (user == M) ? "присасывается к [genital_data["target_penis_desc"]] [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует член кого-то на другой стороне усилиями ротика <b>[M]</b>, таким образом заставляя посасывать [genital_data["target_penis_desc"]] [name]"
+							user_message = (user == M) ? "присасывается к [genital_data["target_penis_desc"]] [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует член кого-то на другой стороне усилиями ротика <b>[M]</b>, заставляя посасывать [genital_data["target_penis_desc"]] [name]"
 							target_message = "отсасывает твой [genital_data["target_has_penis"] ? "член" : "дилдо"]"
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = LOW_LUST
 							target_lust_amt = NORMAL_LUST
 							p_to_f = TRUE
 						if(CUM_TARGET_VAGINA)
-							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и стимулирует киску кого-то на другой стороне своим ротиком" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне слюнявым ротиком <b>[M]</b>"
+							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и ублажает киску кого-то на другой стороне своим ротиком" : "использует <b>'[src]'</b> по прямому назначению и заставляет ублажать влагалище кого-то на другой стороне слюнявым ротиком <b>[M]</b>"
 							target_message = "вылизывает твою киску"
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = NONE
 							target_lust_amt = NORMAL_LUST
 							p_to_f = TRUE
 						if(CUM_TARGET_ANUS)
-							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне своим ротиком" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне слюнявым ротиком <b>[M]</b>"
+							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и ублажает анус кого-то на другой стороне своим ротиком" : "использует <b>'[src]'</b> по прямому назначению и заставляет ублажать анус кого-то на другой стороне слюнявым ротиком <b>[M]</b>"
 							target_message = "вылизывает твой анус"
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = NONE
 							target_lust_amt = NORMAL_LUST
 						if(CUM_TARGET_MOUTH)
-							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и стимулирует кого-то на другой стороне, целуя чей-то ротик" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться с кем-то на другой стороне своим слюнявым ротиком, таким образом причмокивая в процессе"
+							user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и целует кого-то на другой стороне в губы" : "использует <b>'[src]'</b> по прямому назначению и заставляет <b>[M]</b> поцеловаться с кем-то на другой стороне своим слюнявым ротиком, причмокивая в процессе"
 							target_message = "целует твой ротик"
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = (HAS_TRAIT(M, TRAIT_KISS_SLUT) ? LOW_LUST : NONE)
@@ -374,6 +387,7 @@
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
 								p_to_f = TRUE
+								p_to_f_inside = FALSE
 							if(CUM_TARGET_VAGINA)
 								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, мастурбируя киску на другой стороне своими пальчиками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне усилиями шаловливых пальчиков <b>[M]</b>"
 								target_message = "мастурбирует твою киску"
@@ -381,6 +395,7 @@
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
 								p_to_f = TRUE
+								p_to_f_inside = FALSE
 							if(CUM_TARGET_ANUS)
 								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, мастурбируя анус на другой стороне своими пальчиками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует попку кого-то на другой стороне усилиями шаловливых пальчиков <b>[M]</b>"
 								target_message = "мастурбирует твой анус"
@@ -421,21 +436,23 @@
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
 								p_to_f = TRUE
+								p_to_f_inside = FALSE
 							if(CUM_TARGET_VAGINA)
-								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, стимулируя влагалище на другой стороне [M.ru_ego()] ножками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне усилиями шаловливых пальцев ног <b>[M]</b>"
+								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, стимулируя влагалище на другой стороне своими ножками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне усилиями шаловливых пальцев ног <b>[M]</b>"
 								target_message = "потирает твою киску с помощью своих ножек"
 								target = CUM_TARGET_FEET
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
 								p_to_f = TRUE
+								p_to_f_inside = FALSE
 							if(CUM_TARGET_ANUS)
-								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, стимулируя анус на другой стороне [M.ru_ego()] ножками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне усилиями шаловливых пальцев ног <b>[M]</b>"
+								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, стимулируя анус на другой стороне своими ножками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует анус кого-то на другой стороне усилиями шаловливых пальцев ног <b>[M]</b>"
 								target_message = "потирает твой анус с помощью своих ножек"
 								target = CUM_TARGET_FEET
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
 							if(CUM_TARGET_MOUTH)
-								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, стимулируя ротик на другой стороне [M.ru_ego()] ножками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует ротик кого-то на другой стороне усилиями шаловливых пальцев ног <b>[M]</b>"
+								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, заставляя облизывать свои ножки кого-то на другой стороне" : "использует <b>'[src]'</b> по прямому назначению и проталкивает шаловливые пальцы ног <b>[M]</b> в ротик кого-то на другой стороне"
 								target_message = "вводит пальцы своих ножек прямо в твой ротик"
 								target = CUM_TARGET_FEET
 								user_lust_amt = NONE
@@ -456,21 +473,23 @@
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
 			portal_target.set_is_fucking(M, target, portal_target.getorganslot(portalunderwear.targetting))
 			M.set_is_fucking(portal_target, portalunderwear.targetting, M.getorganslot(target))
-			//M.last_genital = M.getorganslot(target)
-			//portal_target.last_genital = portal_target.getorgan(portalunderwear.targetting)
 
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
+
+			if(isnull(p_to_f_inside))
+				p_to_f_inside = p_to_f
+			if(isnull(f_to_p_inside))
+				f_to_p_inside = f_to_p
+
 			var/M_cum = FALSE
+			var/cum_inside_holes = list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH, CUM_TARGET_THROAT, CUM_TARGET_NIPPLE, CUM_TARGET_URETHRA, CUM_TARGET_EARS, CUM_TARGET_EYES)
 			// Strapon and in hole
-			if(portalunderwear.targetting == CUM_TARGET_PENIS && !(genital_data["target_has_penis"]) && target in list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH, CUM_TARGET_NIPPLE, CUM_TARGET_URETHRA))
+			if(portalunderwear.targetting == CUM_TARGET_PENIS && !(genital_data["target_has_penis"]) && (target in cum_inside_holes))
 				var/obj/item/clothing/underwear/briefs/strapon/target_strapon = portal_target.get_strapon()
 				if(target_strapon)
-					user_lust_amt = target_strapon.attached_dildo.target_reaction(M, portal_target, (target == CUM_TARGET_MOUTH ? 1 : 0), target, null, FALSE, FALSE)
-
-			if(target != CUM_TARGET_PENIS && target != CUM_TARGET_URETHRA)
-				M_cum = M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, f_to_p, TRUE)
-			else if(genital_data["M_has_penis"])
-				M_cum = M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, f_to_p, TRUE)
+					user_lust_amt = target_strapon.attached_dildo.target_reaction(M, portal_target, (target in list(CUM_TARGET_MOUTH, CUM_TARGET_URETHRA) ? 1 : 0), target, null, FALSE, FALSE)
+			if((target != CUM_TARGET_PENIS && target != CUM_TARGET_URETHRA) || genital_data["M_has_penis"])
+				M_cum = M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, (f_to_p_inside && (portalunderwear.targetting in cum_inside_holes)), TRUE)
 			if(M_cum)
 				switch(target)
 					if(CUM_TARGET_PENIS)
@@ -480,7 +499,7 @@
 							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH)
 								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как [genital_data["M_has_penis"] ? "член" : "дилдо"] углубляется прямо в [portalunderwear.targetting] и... кончает!</span>")
 							if(CUM_TARGET_URETHRA)
-								to_chat(portal_target, "<span class='userlove'>[genital_data["M_has_penis"] ? "член" : "дилдо"] кончает прямо в уретру!</span>")
+								to_chat(portal_target, "Чей-то <span class='userlove'>[genital_data["M_has_penis"] ? "член" : "дилдо"] кончает вам прямо в уретру!</span>")
 					if(CUM_TARGET_VAGINA)
 						switch(portalunderwear.targetting)
 							if(CUM_TARGET_PENIS)
@@ -494,15 +513,15 @@
 							if(CUM_TARGET_PENIS)
 								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как анус сжимается вокруг вашего [genital_data["target_has_penis"] ? "член" : "дилдо"]!</span>")
 							if(CUM_TARGET_VAGINA)
-								to_chat(portal_target, "<span class='userlove'>Вы ощущаете и наблюдаете, как анус сжимается в оргазме, потираясь об вашу киску!</span>")
+								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как анус сжимается в оргазме, потираясь об ваш[pick("у киску","у вагину","е влагалище","е лоно")]!</span>")
 							if(CUM_TARGET_ANUS)
-								to_chat(portal_target, "<span class='userlove'>Вы ощущаете и наблюдаете, как анус сжимается в оргазме, потираясь об ваш анус!</span>")
+								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как анус сжимается в оргазме, потираясь об ваш анус!</span>")
 							if(CUM_TARGET_MOUTH)
-								to_chat(portal_target, "<span class='userlove'>Вы ощущаете и наблюдаете, как анус сжимается в оргазме, пока вы ублажаете его язычком!</span>")
+								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как анус сжимается в оргазме, пока вы ублажаете его язычком!</span>")
 					if(CUM_TARGET_URETHRA)
 						switch(portalunderwear.targetting)
 							if(CUM_TARGET_PENIS)
-								to_chat(portal_target, "<span class='userlove'>Вы ощущаете и наблюдаете, как из уретры вырывается семя прямо на [genital_data["target_has_penis"] ? "член" : "дилдо"]!</span>")
+								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как из уретры вырывается семя прямо на [genital_data["target_has_penis"] ? "член" : "дилдо"]!</span>")
 					if(CUM_TARGET_MOUTH)
 						switch(portalunderwear.targetting)
 							if(CUM_TARGET_PENIS)
@@ -510,7 +529,7 @@
 							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS)
 								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как язык все более пылко ласкает твой [portalunderwear.targetting], когда он внезапно напрягается и замирает, а затем, наконец, расслабляется.</span>")
 							if(CUM_TARGET_MOUTH)
-								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как пара губ еще глубже прижимается к вашим и задрожав, расслабляется.</span>")
+								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как пара губ еще сильнее прижимается к вашим и задрожав, расслабляется.</span>")
 					// /* I don't think cumming while using these is even possible. If anyone feels otherwise, feel free to write some */
 					// if(CUM_TARGET_HAND)
 					// if(CUM_TARGET_FEET)
@@ -525,12 +544,12 @@
 			to_chat(portal_target, "<span class='lewd'>Кто-то использует сопряжённый <b>'[name]'</b>, этот кто-то [target_message].</span>")
 
 			// Strapon and in hole
-			if(target == CUM_TARGET_PENIS && !(genital_data["M_has_penis"]) && portalunderwear.targetting in list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH, CUM_TARGET_NIPPLE, CUM_TARGET_URETHRA))
+			if(target == CUM_TARGET_PENIS && !(genital_data["M_has_penis"]) && (portalunderwear.targetting in cum_inside_holes))
 				var/obj/item/clothing/underwear/briefs/strapon/M_strapon = M.get_strapon()
 				if(M_strapon)
 					target_lust_amt = M_strapon.attached_dildo.target_reaction(portal_target, M, (portalunderwear.targetting == CUM_TARGET_MOUTH ? 1 : 0), portalunderwear.targetting, null, FALSE, FALSE)
 
-			if(portal_target.handle_post_sex(target_lust_amt, p_to_f ? target : null, M, portalunderwear.targetting, p_to_f, TRUE))
+			if(portal_target.handle_post_sex(target_lust_amt, p_to_f ? target : null, M, portalunderwear.targetting, (p_to_f_inside && (target in cum_inside_holes)), TRUE))
 
 				switch(portalunderwear.targetting)
 					if(CUM_TARGET_VAGINA)
@@ -540,9 +559,9 @@
 							if(CUM_TARGET_MOUTH)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] сквиртит прямо вам в ротик!</span>")
 							if(CUM_TARGET_VAGINA)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] сквиртит прямо на вашу киску!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] сквиртит прямо на ваш[pick("у киску","у вагину","е влагалище","е лоно")]!</span>")
 							if(CUM_TARGET_ANUS)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] сквиртит прямо на ваш анус!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] сквиртит прямо на [pick("ваш анус","твою попку")]!</span>")
 							if(CUM_TARGET_HAND)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] сквиртит прямо на вашу ручку!</span>")
 							if(CUM_TARGET_FEET)
@@ -552,7 +571,7 @@
 							if(CUM_TARGET_PENIS)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как анус сжимается в оргазме вокруг вашего [genital_data["M_has_penis"] ? "члена" : "дилдо"]!</span>")
 							if(CUM_TARGET_VAGINA)
-								to_chat(M, "<span class='userlove'>Вы ощущаете и наблюдаете, как анус сжимается в оргазме и трется об твою киску!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете и наблюдаете, как анус сжимается в оргазме и трется об тво[pick("ю киску","ю вагину","е влагалище","е лоно")]!</span>")
 							if(CUM_TARGET_ANUS)
 								to_chat(M, "<span class='userlove'>Вы чувствуете, как анус в оргазме трётся о ваш собственный, сжимаясь в судорогах!</span>")
 							if(CUM_TARGET_MOUTH)
@@ -567,8 +586,10 @@
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис"))] дергается несколько раз, прежде чем кончить прямо на твой [genital_data["M_has_penis"] ? pick("член", "пенис", "хрен") : "дилдо"]!</span>")
 							if(CUM_TARGET_HAND)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис"))] дергается несколько раз, прежде чем кончить прямо на твои пальцы!</span>")
-							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис"))] дергается несколько раз, прежде чем кончить прямо в твою дырочку!</span>")
+							if(CUM_TARGET_VAGINA)
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис"))] дергается несколько раз, прежде чем кончить прямо в тво[pick("ю киску","ю вагину","е влагалище","е лоно")]!</span>")
+							if(CUM_TARGET_ANUS)
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис"))] дергается несколько раз, прежде чем кончить прямо в тво[pick("й анус","ю попку")]!</span>")
 							if(CUM_TARGET_MOUTH)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис"))] дергается несколько раз, прежде чем кончить прямо в твой ротик!</span>")
 							if(CUM_TARGET_FEET)
@@ -579,12 +600,14 @@
 						switch(target)
 							if(CUM_TARGET_PENIS)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат, обхватывая твой [genital_data["M_has_penis"] ? pick("член", "пенис") : "дилдо"]!</span>")
-							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как язык дрожит, облизывая твою дырочку!</span>")
+							if(CUM_TARGET_VAGINA)
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как язык дрожит, облизывая тво[pick("ю киску","ю вагину","е влагалище","е лоно")]!</span>")
+							if(CUM_TARGET_ANUS)
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как язык дрожит, облизывая тво[pick("й анус","ю попку")]!</span>")
 							if(CUM_TARGET_MOUTH)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат при соприкасании с твоими!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как дрожь охватывает чьи-то губы при соприкасании с твоими!</span>")
 							if(CUM_TARGET_HAND)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат, обхватывая твою ручку!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат, обхватывая твои пальчики!</span>")
 							if(CUM_TARGET_FEET)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат, обхватывая твою ножку!</span>")
 					if(CUM_TARGET_URETHRA)
@@ -592,7 +615,7 @@
 							if(CUM_TARGET_PENIS)
 								to_chat(M, "<span class='userlove'>Из уретры вырывается семя прямо на ваш [genital_data["M_has_penis"] ? pick("член", "пенис") : "дилдо"]!</span>")
 					// BLUEMOON EDIT END
-			if(portal_target.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+			if(user.a_intent == INTENT_HARM && (portal_target.client?.prefs.cit_toggles & SEX_JITTER)) //By Gardelin0
 				portal_target.do_jitter_animation() //make your partner shake too!
 		else
 			user.visible_message("<span class='warning'><b>'[src]'</b> подает звуковой сигнал и не позволяет <b>[M]</b> войти.</span>")
