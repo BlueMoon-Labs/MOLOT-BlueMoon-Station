@@ -263,20 +263,3 @@
 	crate_name = "MOD core crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
-/datum/supply_pack/science/explorerhardsuit
-
-	name = "Expedition hardsuits crate"
-	desc = "Набор из трёх скафандров для иследований самых тёмных глубин космоса. Постовляется с масками и балонами кислорода."
-	cost = 10000
-	access = ACCESS_GATEWAY
-	contains = list(/obj/item/tank/internals/oxygen,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/suit/space/hardsuit/security/explorer,
-					/obj/item/tank/internals/oxygen,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/suit/space/hardsuit/security/explorer,
-					/obj/item/tank/internals/oxygen,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/suit/space/hardsuit/security/explorer)
-	crate_name = "Expedition hardsuits crate"
-	crate_type = /obj/structure/closet/crate/secure/science
