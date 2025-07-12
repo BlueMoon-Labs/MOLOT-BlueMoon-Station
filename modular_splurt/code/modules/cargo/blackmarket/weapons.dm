@@ -21,7 +21,7 @@
 	desc = "Old Prototype SMG. Has fallen out of use with old models ending up here. A rare find"
 	item = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	price_min = 100000
-	price_max = 200000
+	price_max = 150000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 60
@@ -31,7 +31,7 @@
 	desc = "Old Prototype SMG magazines. The mags are harder to find then the actual SMG"
 	item = /obj/item/ammo_box/magazine/smgm9mm
 	price_min = 150000
-	price_max = 250000
+	price_max = 200000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 55
@@ -40,8 +40,8 @@
 	name = "Type U3 Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds"
 	item = /obj/item/gun/ballistic/automatic/mini_uzi
-	price_min = 300000
-	price_max = 450000
+	price_min = 250000
+	price_max = 300000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 50
@@ -50,8 +50,8 @@
 	name = "Type U3 Uzi magazine"
 	desc = "Magazines for the Type U3 Uzi"
 	item = /obj/item/ammo_box/magazine/uzim9mm
-	price_min = 250000
-	price_max = 350000
+	price_min = 200000
+	price_max = 300000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 50
@@ -80,8 +80,8 @@
 	name = "brush gun (.45-70 GOVT)"
 	desc = "While lever-actions have been horribly out of date for hundreds of years now, putting a nicely sized hole in a man-sized target with a .45-70 round has stayed relatively timeless."
 	item = /obj/item/gun/ballistic/shotgun/brush
-	price_min = 300000
-	price_max = 400000
+	price_min = 250000
+	price_max = 300000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 50
@@ -206,8 +206,8 @@
 	name = "Unica 6 auto-revolver"
 	desc = "A retro high-powered autorevolver typically used by officers of the New Russia military. Uses .357 ammo"
 	item = /obj/item/gun/ballistic/revolver/mateba
-	price_min = 300000
-	price_max = 400000
+	price_min = 250000
+	price_max = 350000
 	stock_min = 2
 	stock_max = 10
 	availability_prob = 35
@@ -216,8 +216,8 @@
 	name = "Golden revolver"
 	desc = "This ain't no game, ain't never been no show, And I'll gladly gun down the oldest lady you know. Uses .357 ammo."
 	item = /obj/item/gun/ballistic/revolver/golden
-	price_min = 350000
-	price_max = 450000
+	price_min = 300000
+	price_max = 400000
 	stock_min = 2
 	stock_max = 10
 	availability_prob = 35
@@ -228,8 +228,8 @@
 	name = "Scarborough Arms C-20r SMG"
 	desc = "A bullpup two-round burst .45 SMG"
 	item = /obj/item/gun/ballistic/automatic/c20r/unrestricted
-	price_min = 450000
-	price_max = 650000
+	price_min = 400000
+	price_max = 600000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 60
@@ -238,8 +238,8 @@
 	name = "C-20r magazines"
 	desc = "Magazines for the C-20r"
 	item = /obj/item/ammo_box/magazine/smgm45
-	price_min = 250000
-	price_max = 350000
+	price_min = 200000
+	price_max = 300000
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 60
@@ -248,8 +248,8 @@
 	name = "Tommy gun"
 	desc = "A a clone of the classic Auto Ordnance Thompson SMG"
 	item = /obj/item/gun/ballistic/automatic/tommygun
-	price_min = 500000
-	price_max = 700000
+	price_min = 400000
+	price_max = 600000
 	stock_min = 1
 	stock_max = 6
 	availability_prob = 25
@@ -268,8 +268,8 @@
 	name = "Tommy gun stick magazine"
 	desc = "Stick magazines for the Tommy gun"
 	item = /obj/item/ammo_box/magazine/tommygunm45/r30
-	price_min = 252500
-	price_max = 352500
+	price_min = 202500
+	price_max = 302500
 	stock_min = 2
 	stock_max = 6
 	availability_prob = 25
@@ -278,8 +278,8 @@
 	name = "Old FTU SMG"
 	desc = "The left arm of the FTU"
 	item = /obj/item/gun/ballistic/automatic/smg22
-	price_min = 450000
-	price_max = 650000
+	price_min = 350000
+	price_max = 450000
 	stock_min = 1
 	stock_max = 2
 	availability_prob = 60
@@ -288,8 +288,8 @@
 	name = "Old FTU SMG drum magazine"
 	desc = "Magazines for the FTU SMG"
 	item = /obj/item/ammo_box/magazine/smg22
-	price_min = 250000
-	price_max = 350000
+	price_min = 150000
+	price_max = 200000
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 60
@@ -300,8 +300,8 @@
 	name = "Old Mars Service Rifle"
 	desc = "A Mars copy of the greatest battle implement ever devised"
 	item = /obj/item/gun/ballistic/automatic/m1garand
-	price_min = 500000
-	price_max = 700000
+	price_min = 400000
+	price_max = 500000
 	stock_min = 1
 	stock_max = 5
 	availability_prob = 55
@@ -310,8 +310,8 @@
 	name = "Old Mars Enbloc clip"
 	desc = "Enbloc clip for the Mars Service rifle"
 	item = /obj/item/ammo_box/magazine/garand
-	price_min = 300000
-	price_max = 400000
+	price_min = 200000
+	price_max = 300000
 	stock_min = 2
 	stock_max = 10
 	availability_prob = 55
@@ -320,8 +320,8 @@
 	name = "M-90gl Carbine"
 	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off"
 	item = /obj/item/gun/ballistic/automatic/m90
-	price_min = 600000
-	price_max = 750000
+	price_min = 500000
+	price_max = 650000
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 40
@@ -329,9 +329,9 @@
 /datum/blackmarket_item/weapon/fal
 	name = "Old FTU Rifle"
 	desc = "The right arm of the Free Trade Union "
-	item = /obj/item/gun/ballistic/automatic/m1garand
-	price_min = 750000
-	price_max = 850000
+	item = /obj/item/gun/ballistic/automatic/fal
+	price_min = 650000
+	price_max = 700000
 	stock_min = 1
 	stock_max = 5
 	availability_prob = 50
@@ -340,8 +340,8 @@
 	name = "Old FTU Rifle 20 round magazine"
 	desc = "20 round magazine for the FTU rifle"
 	item = /obj/item/ammo_box/magazine/fal
-	price_min = 400000
-	price_max = 500000
+	price_min = 300000
+	price_max = 400000
 	stock_min = 2
 	stock_max = 10
 	availability_prob = 40
@@ -350,8 +350,8 @@
 	name = "Old FTU Rifle 10 round magazine"
 	desc = "10 round magazine for the FTU rifle"
 	item = /obj/item/ammo_box/magazine/fal/r10
-	price_min = 350000
-	price_max = 450000
+	price_min = 250000
+	price_max = 350000
 	stock_min = 2
 	stock_max = 10
 	availability_prob = 50
@@ -373,21 +373,21 @@
 	name = "bulldog shotgun"
 	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
 	item = /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
-	price_min = 10500000
-	price_max = 11500000
+	price_min = 8550000
+	price_max = 9550000
 	stock_min = 1
-	stock_max = 3
-	availability_prob = 40
+	stock_max = 5
+	availability_prob = 50
 
 /datum/blackmarket_item/syndi/weapon/bulldogmag
 	name = "bulldog shotgun drum mags"
 	desc = "A 8 round drum magazine for the Bulldog shotgun."
 	item = /obj/item/ammo_box/magazine/m12g
-	price_min = 8500000
-	price_max = 9500000
+	price_min = 7000000
+	price_max = 8000000
 	stock_min = 1
-	stock_max = 3
-	availability_prob = 40
+	stock_max = 50
+	availability_prob = 50
 
 //Heavy weapons
 
@@ -395,8 +395,8 @@
 	name = "L6 SAW"
 	desc = "A heavily modified 1.95x129mm light machine gun, designated 'L6 SAW'. Has 'Aussec Armoury - 2531' engraved on the receiver below the designation."
 	item = /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
-	price_min = 12000000
-	price_max = 13000000
+	price_min = 9000000
+	price_max = 10000000
 	stock_min = 1
 	stock_max = 3
 	availability_prob = 20
@@ -405,8 +405,8 @@
 	name = "L6 belts"
 	desc = "A 50 round belt of 1.95x129mm for the L6 SAW"
 	item = /obj/item/ammo_casing/mm712x82
-	price_min = 8500000
-	price_max = 9500000
+	price_min = 4500000
+	price_max = 6500000
 	stock_min = 1
 	stock_max = 3
 	availability_prob = 20
@@ -415,18 +415,18 @@
 	name = "PML-9"
 	desc = "A reusable rocket propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
 	item = /obj/item/gun/ballistic/rocketlauncher/unrestricted
-	price_min = 15000000
-	price_max = 20000000
+	price_min = 10000000
+	price_max = 15000000
 	stock_min = 1
 	stock_max = 3
-	availability_prob = 10
+	availability_prob = 30
 
 /datum/blackmarket_item/syndi/weapon/pml9rocket
 	name = "PM-9HE 84mm rocket"
 	desc = "An 84mm High Explosive rocket. Fire at people and pray."
 	item = /obj/item/ammo_casing/caseless/rocket
-	price_min = 20000000
-	price_max = 25000000
+	price_min = 15000000
+	price_max = 20000000
 	stock_min = 1
 	stock_max = 10
-	availability_prob = 10
+	availability_prob = 30
