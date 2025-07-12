@@ -72,9 +72,9 @@
 
 /datum/supply_pack/engine/mason
 	name = "M.A.S.O.N RIG Crate"
-	desc = "Редкий M.A.S.O.N RIG. Требуется доступ CE для открытия."
+	desc = "Редкий M.A.S.O.N RIG, предоставляющий высокую защиту от радиации и давления, ценой скорости."
 	cost = 15000
-	access = ACCESS_CE
+	access = ACCESS_ENGINE
 	contains = list(/obj/item/clothing/suit/space/hardsuit/ancient/mason)
 	crate_name = "M.A.S.O.N Rig"
 	crate_type = /obj/structure/closet/crate/secure/engineering

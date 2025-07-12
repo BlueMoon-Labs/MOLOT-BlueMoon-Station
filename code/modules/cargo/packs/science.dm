@@ -262,3 +262,4 @@
 		/obj/item/mod/construction/core)
 	crate_name = "MOD core crate"
 	crate_type = /obj/structure/closet/crate/secure/science
+
