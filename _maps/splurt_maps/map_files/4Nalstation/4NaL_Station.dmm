@@ -27607,13 +27607,18 @@
 "iDJ" = (
 /obj/structure/sign/barsign{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 0;
+	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/green/filled/line{
-	dir = 8
+/obj/machinery/requests_console{
+	department = "Bar";
+	departmentType = 2;
+	pixel_x = -30;
+	pixel_y = 0;
+	receive_ore_updates = 1
 	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/central)
+/turf/open/floor/wood,
+/area/service/bar)
 "iEa" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -31962,17 +31967,9 @@
 /turf/open/floor/plasteel/white,
 /area/medical/patients_rooms/room_b)
 "kbJ" = (
-/obj/machinery/requests_console{
-	department = "Bar";
-	departmentType = 2;
-	pixel_x = -30;
-	pixel_y = 26;
-	receive_ore_updates = 1
-	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "2-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/wood,
 /area/service/bar)
 "kbT" = (
@@ -32062,6 +32059,10 @@
 /area/commons/dorms)
 "kcO" = (
 /obj/structure/reagent_dispensers/beerkeg,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/wood,
 /area/service/bar)
 "kcS" = (
@@ -53400,19 +53401,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
-"qOF" = (
-/obj/structure/sign/barsign{
-	dir = 8;
-	pixel_x = -32
-	},
-/obj/effect/turf_decal/trimline/green/filled/line{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/central)
 "qOH" = (
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
@@ -178213,7 +178201,7 @@ wmQ
 wmQ
 iKN
 bry
-qbU
+iDJ
 kcO
 hXN
 jnW
@@ -178470,8 +178458,8 @@ rFa
 rFa
 tLV
 bry
+qbU
 kbJ
-fXS
 fXS
 fXS
 fXS
@@ -181054,7 +181042,7 @@ nms
 dSA
 uBt
 bqM
-qOF
+qFy
 ylj
 feE
 hmS
@@ -181548,7 +181536,7 @@ omd
 omd
 omd
 omd
-iDJ
+omd
 liL
 nms
 nms
