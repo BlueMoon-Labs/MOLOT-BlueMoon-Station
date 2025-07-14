@@ -51,8 +51,12 @@
 				to_chat(user, span_warning("The \the [bin] is empty!"))
 				return FALSE
 			to_chat(user, span_notice("You insert some paper into [src]'s paper recycler."))
-			playsound(src, 'sound/items/handling/paper_drop.ogg', YEET_SOUND_VOLUME, ignore_walls = FALSE)
+			playsound(src, 'sound/items/handling/paper_drop.ogg', YEET_SOUND_VOLUME, ignore_walls = FALSE) // paper drop sound
 			bin.total_paper--
+			if(bin.papers.len > 0) // // If there's any custom paper on the stack dell
+				var/obj/item/paper/P = bin.papers[bin.papers.len]
+				bin.papers.Remove(P)
+				qdel(P)
 			bin.update_icon()
 		else
 			if(user && !user.temporarilyRemoveItemFromInventory(I))
