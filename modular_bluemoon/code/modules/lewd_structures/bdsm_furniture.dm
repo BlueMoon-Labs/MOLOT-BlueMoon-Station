@@ -7,6 +7,7 @@
 	icon = 'modular_bluemoon/icons/obj/structures/bdsm_furniture.dmi'
 	icon_state = "bdsm_bed"
 	max_integrity = 50
+	buildstackamount = 4
 
 /obj/item/bdsm_bed_kit
 	name = "bdsm bed construction kizt"

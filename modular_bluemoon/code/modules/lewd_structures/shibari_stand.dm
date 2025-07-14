@@ -18,9 +18,10 @@
 	///The rope inside the stand, that's actually tying the person to it
 	var/obj/item/restraints/bondage_rope/ropee = null
 
+/*
 /obj/structure/chair/shibari_stand/can_be_rotated(mob/user)
 	return FALSE
-
+*/
 /obj/structure/chair/shibari_stand/Destroy()
 	cut_overlay(shibari_shadow_overlay)
 	cut_overlay(shibari_rope_overlay)
