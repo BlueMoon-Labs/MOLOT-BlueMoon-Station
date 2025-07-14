@@ -1,5 +1,5 @@
 /mob/living
-	var/mb_cd_length = 5 SECONDS						//5 second cooldown for masturbating because fuck spam.
+	var/mb_cd_length = 1 SECONDS						//5 second cooldown for masturbating because fuck spam. // BLUEMOON EDIT
 	var/mb_cd_timer = 0									//The timer itself
 
 /mob/living/carbon/human
@@ -220,13 +220,16 @@
 
 /mob/living/carbon/human/proc/pick_climax_genitals(silent = FALSE)
 	var/list/genitals_list
-	var/list/worn_stuff = get_equipped_items()
+	// BLUEMOON EDIT START
 
 	for(var/obj/item/organ/genital/G in internal_organs)
-		if((G.genital_flags & CAN_CLIMAX_WITH) && G.is_exposed(worn_stuff)) //filter out what you can't masturbate with
+		if((G.genital_flags & CAN_CLIMAX_WITH) && (G.is_exposed() || G.always_accessible)) //filter out what you can't masturbate with
 			LAZYADD(genitals_list, G)
 	if(LAZYLEN(genitals_list))
-		var/obj/item/organ/genital/ret_organ = input(src, "Чем?", "Климаксировать", null) as null|obj in genitals_list
+		for(var/obj/item/organ/genital/listed in genitals_list)
+			genitals_list[listed] = new /mutable_appearance(listed)
+		var/obj/item/organ/genital/ret_organ = genitals_list.len == 1 ? genitals_list[1] : show_radial_menu(src, src, genitals_list)
+		// BLUEMOON EDIT END
 		//SPLURT edit
 		if(CHECK_BITFIELD(ret_organ.genital_flags, GENITAL_CHASTENED))
 			visible_message("<span class='userlove'><b>\The [src]</b> fumbles with their cage with a whine!</span>",
@@ -240,27 +243,30 @@
 
 /mob/living/carbon/human/proc/pick_partner(silent = FALSE)
 	var/list/partners = list()
-	if(pulling)
-		partners += pulling
-	if(pulledby)
-		partners += pulledby
-	//Now we got both of them, let's check if they're proper
+	// BLUEMOON EDIT START
+	for(var/mob/living/L in view(1))
+		if(L != src && L.ckey && L.mind && Adjacent(L))
+			if(!iscarbon(L))
+				LAZYADD(partners, L)
+			else 
+				var/mob/living/carbon/C = L
+				if(C.exposed_genitals.len || C.is_groin_exposed() || C.is_chest_exposed() || !C.is_mouth_covered()) //Anything through_clothing
+					LAZYADD(partners, L)
+
 	for(var/mob/living/L in partners)
-		if(!L.client || !L.mind) // can't consent, not a partner
-			partners -= L
-		if(iscarbon(L))
-			var/mob/living/carbon/C = L
-			if(!C.exposed_genitals.len && !C.is_groin_exposed() && !C.is_chest_exposed() && C.is_mouth_covered()) //Nothing through_clothing, no proper partner.
-				partners -= C
+		partners[L] = new /mutable_appearance(L)
 	//NOW the list should only contain correct partners
 	if(!partners.len)
 		if(!silent)
 			to_chat(src, "<span class='warning'>Вы не можете сделать это в одиночку.</span>")
 		return //No one left.
-	var/mob/living/target = input(src, "С кем?", "Партнёр по Совокуплению", null) as null|anything in partners //pick one, default to null
+	
+	var/mob/living/target = partners.len == 1 ? partners[1] : show_radial_menu(src, src, partners, radius = 40, require_near = TRUE) // BLUEMOON EDIT
+	// BLUEMOON EDIT END
 	if(target && in_range(src, target))
 		to_chat(src,"<span class='notice'>Ожидание согласия...</span>")
-		var/consenting = input(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Нет") in list("Да","Нет")
+		//var/consenting = input(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Да") in list("Да","Нет")
+		var/consenting = alert(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Да","Нет")
 		if(consenting == "Да")
 			return target
 		else
@@ -278,7 +284,11 @@
 			containers_list += C
 
 	if(containers_list.len)
-		var/obj/item/reagent_containers/SC = input(src, "В или на что? (Отмена, если никуда)", null)  as null|obj in containers_list
+		//BLUEMOON EDIT START
+		for(var/obj/item/reagent_containers/C in containers_list)
+			containers_list[C] = new /mutable_appearance(C)
+		var/obj/item/reagent_containers/SC = containers_list.len == 1 ? containers_list[1] : show_radial_menu(src, src, containers_list, require_near = TRUE)	
+		//BLUEMOON EDIT END
 		if(SC && CanReach(SC))
 			return SC
 	else if(!silent)
@@ -370,7 +380,25 @@
 		return
 
 	//Ok, now we check what they want to do.
-	var/choice = input(src, "Выбор Сексуальной Активности", "Сексуальная Активность:") as null|anything in list("Оргазмировать в одиночестве","Оргазмировать совместно с кем-то", "Оргазмировать на кого-то (CTRL+ЛКМ)", "Наполнить контейнер половыми жидкостями")
+	// BLUEMOON EDIT START
+	var/list/options = list(
+		"Оргазмировать в одиночестве" = list("icon" = 'icons/obj/genitals/hud.dmi', "state" = "arousal"),
+		"Оргазмировать совместно с кем-то" = list("icon" = 'modular_sand/icons/mob/dogborg.dmi', "state" = "pleasuremaw"),
+		"Оргазмировать на кого-то" = list("icon" = 'modular_splurt/icons/effects/cumoverlay.dmi', "state" = "cum_large"),
+		"Наполнить контейнер половыми жидкостями" = list("icon" = 'modular_splurt/icons/obj/drinks.dmi', "state" = "cumchalice")
+	)
+
+	var/list/choices = list()
+	for(var/text in options)
+		var/info = options[text]
+		var/mutable_appearance/app = new /mutable_appearance()
+		app.icon = info["icon"]
+		app.icon_state = info["state"]
+		app.name = text
+		choices[text] = app
+
+	var/choice = show_radial_menu(src, src, choices, require_near = FALSE)
+
 	if(!choice)
 		return
 
@@ -381,17 +409,17 @@
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			if(picked_organ && available_rosie_palms(TRUE))
 				mob_climax_outside(picked_organ)
+				mb_cd_timer = world.time + mb_cd_length
 		if("Оргазмировать совместно с кем-то")
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
-			var/obj/item/organ/genital/picked_target = null
 			if(picked_organ)
 				var/mob/living/partner = pick_partner() //Get someone
-				if(partner)
-					picked_target = pick_receiving_organ(partner)
-					var/spillage = input(src, "Would your fluids spill outside?", "Choose overflowing option", "Yes") as null|anything in list("Yes", "No")
-					if(spillage && in_range(src, partner))
-						mob_climax_partner(picked_organ, partner, spillage == "Yes" ? TRUE : FALSE, Lgen = picked_target)
+				if(partner && in_range(src, partner))
+					var/spillage = alert(src, "Кончить внутрь?", "При возможности", "Да", "Нет")
+					if(in_range(src, partner))
+						mob_climax_partner(picked_organ, partner, spillage == "Нет" ? TRUE : FALSE, Lgen = pick_receiving_organ(partner))
+						mb_cd_timer = world.time + mb_cd_length
 		if("Наполнить контейнер половыми жидкостями")
 			//We'll need hands and no restraints.
 			if(!available_rosie_palms(FALSE, /obj/item/reagent_containers))
@@ -404,15 +432,17 @@
 				var/obj/item/reagent_containers/fluid_container = pick_climax_container()
 				if(fluid_container && available_rosie_palms(TRUE, /obj/item/reagent_containers))
 					mob_fill_container(picked_organ, fluid_container)
-		if("Оргазмировать на кого-то (CTRL+ЛКМ)")
+					mb_cd_timer = world.time + mb_cd_length
+		if("Оргазмировать на кого-то")
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			if(picked_organ)
 				var/mob/living/partner = pick_partner() //Get someone
-				if(partner)
+				if(partner && in_range(src, partner))
 					mob_climax_over(picked_organ, partner, TRUE)
+					mb_cd_timer = world.time + mb_cd_length
 
-	mb_cd_timer = world.time + mb_cd_length
+	// BLUEMOON EDIT END
 
 /mob/living/carbon/human/verb/climax_verb()
 	set category = "IC"
