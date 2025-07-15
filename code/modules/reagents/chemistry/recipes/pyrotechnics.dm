@@ -113,7 +113,7 @@
 
 /datum/chemical_reaction/emp_pulse/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)
-	empulse(location, min(300, multiplier))
+	empulse(location, multiplier)
 	holder.clear_reagents()
 
 /datum/chemical_reaction/beesplosion
