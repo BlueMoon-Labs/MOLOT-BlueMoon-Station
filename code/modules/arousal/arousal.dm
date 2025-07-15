@@ -241,16 +241,16 @@
 	else if(!silent)
 		to_chat(src, "<span class='warning'>Вы не можете достичь кульминации без наличия гениталий.</span>")
 
-/mob/living/carbon/human/proc/pick_partner(silent = FALSE)
+// BLUEMOON EDIT START
+/mob/living/carbon/human/proc/pick_partner(silent = FALSE, covering = FALSE)
 	var/list/partners = list()
-	// BLUEMOON EDIT START
 	for(var/mob/living/L in view(1))
 		if(L != src && L.ckey && L.mind && Adjacent(L))
 			if(!iscarbon(L))
 				LAZYADD(partners, L)
-			else 
+			else
 				var/mob/living/carbon/C = L
-				if(C.exposed_genitals.len || C.is_groin_exposed() || C.is_chest_exposed() || !C.is_mouth_covered()) //Anything through_clothing
+				if(covering || C.exposed_genitals.len || C.is_groin_exposed() || C.is_chest_exposed() || !C.is_mouth_covered()) //Anything through_clothing or covering
 					LAZYADD(partners, L)
 
 	for(var/mob/living/L in partners)
@@ -260,18 +260,21 @@
 		if(!silent)
 			to_chat(src, "<span class='warning'>Вы не можете сделать это в одиночку.</span>")
 		return //No one left.
-	
+
 	var/mob/living/target = partners.len == 1 ? partners[1] : show_radial_menu(src, src, partners, radius = 40, require_near = TRUE) // BLUEMOON EDIT
-	// BLUEMOON EDIT END
+
 	if(target && in_range(src, target))
-		to_chat(src,"<span class='notice'>Ожидание согласия...</span>")
-		//var/consenting = input(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Да") in list("Да","Нет")
-		var/consenting = alert(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Да","Нет")
-		if(consenting == "Да")
+		if(covering && target.client?.prefs.cit_toggles & CUM_ONTO)
 			return target
 		else
-			message_admins("[ADMIN_LOOKUPFLW(src)] tried to climax with [target], but [target] did not consent.")
-			log_consent("[key_name(src)] tried to climax with [target], but [target] did not consent.")
+		// BLUEMOON EDIT END
+			to_chat(src,"<span class='notice'>Ожидание согласия...</span>")
+			var/consenting = alert(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Да","Нет")
+			if(consenting == "Да")
+				return target
+			else
+				message_admins("[ADMIN_LOOKUPFLW(src)] tried to climax with [target], but [target] did not consent.")
+				log_consent("[key_name(src)] tried to climax with [target], but [target] did not consent.")
 
 /mob/living/carbon/human/proc/pick_climax_container(silent = FALSE)
 	var/list/containers_list = list()
@@ -287,7 +290,7 @@
 		//BLUEMOON EDIT START
 		for(var/obj/item/reagent_containers/C in containers_list)
 			containers_list[C] = new /mutable_appearance(C)
-		var/obj/item/reagent_containers/SC = containers_list.len == 1 ? containers_list[1] : show_radial_menu(src, src, containers_list, require_near = TRUE)	
+		var/obj/item/reagent_containers/SC = containers_list.len == 1 ? containers_list[1] : show_radial_menu(src, src, containers_list, require_near = TRUE)
 		//BLUEMOON EDIT END
 		if(SC && CanReach(SC))
 			return SC
@@ -437,7 +440,7 @@
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			if(picked_organ)
-				var/mob/living/partner = pick_partner() //Get someone
+				var/mob/living/partner = pick_partner(covering = TRUE) //Get someone
 				if(partner && in_range(src, partner))
 					mob_climax_over(picked_organ, partner, TRUE)
 					mb_cd_timer = world.time + mb_cd_length
