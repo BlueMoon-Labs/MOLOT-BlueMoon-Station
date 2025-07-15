@@ -1534,7 +1534,7 @@
     name = "Technical Jacket"
     slot = ITEM_SLOT_BACKPACK
     path = /obj/item/clothing/suit/donator/bm/echoes_jacket
-    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980")
+    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980", "heathkit1")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/millie_plushe
@@ -1682,5 +1682,19 @@
 	name = "Rawk Satchel"
 	slot = ITEM_SLOT_HANDS
 	path = /obj/item/storage/backpack/satchel/rawk_sat
-	ckeywhitelist = list("xaeshkavd","silverfoxpaws")
+	ckeywhitelist = list("xaeshkavd","silverfoxpaws", "heathkit1")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/tesh_hcloak_br
+	name = "black and red hooded cloak"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/hooded/teshari/standard/black_red
+	ckeywhitelist = list("heathkit1")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/pg
+	name = "powder ganger jacket"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/pg
+	ckeywhitelist = list("heathkit1")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
