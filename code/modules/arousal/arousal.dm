@@ -269,7 +269,7 @@
 		else
 		// BLUEMOON EDIT END
 			to_chat(src,"<span class='notice'>Ожидание согласия...</span>")
-			var/consenting = alert(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Да","Нет")
+			var/consenting = alert(target, "Вы хотите, чтобы [src] кончил[src.ru_a()] [covering ? "на вас" : "совместно с вами"]?","Механика Кульминации","Да","Нет")
 			if(consenting == "Да")
 				return target
 			else
