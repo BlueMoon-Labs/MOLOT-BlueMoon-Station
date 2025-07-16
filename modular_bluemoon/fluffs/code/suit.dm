@@ -401,3 +401,13 @@
 	icon_state = "dark_montur"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/noxscoutcoat
+    name = "Military-Civilian Scout Coat"
+    desc = "Specialized military-civilian coat with protection of the first class category, for solving various types of tasks. There is a number sewn in inside - 228321."
+    icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+    mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+    icon_state = "noxscoutcoat"
+    item_state = "noxscoutcoat"
+    body_parts_covered = CHEST
+    mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
