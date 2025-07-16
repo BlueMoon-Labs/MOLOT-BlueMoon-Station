@@ -372,9 +372,8 @@
 				continue
 			var/mob/living/partner
 			var/check_target
-			var/list/worn_stuff = get_equipped_items()
 
-			if(forced_receiving_genital || G.is_exposed(worn_stuff))
+			if(forced_receiving_genital || G.is_exposed() || G.always_accessible) // BLUEMOON EDIT
 				if(pulling) //Are we pulling someone? Priority target, we can't be making option menus for this, has to be quick
 					if(isliving(pulling)) //Don't fuck objects
 						check_target = pulling
@@ -387,6 +386,13 @@
 						var/mob/living/carbon/C = check_target
 						if(C.exposed_genitals.len || C.is_groin_exposed() || C.is_chest_exposed()) //Are they naked enough?
 							partner = C
+						// BLUEMMON ADD START
+						else
+							for(var/obj/item/organ/genital/partner_G in C.internal_organs)
+								if(partner_G.always_accessible)
+									partner = C
+									break
+						// BLUEMMON ADD END
 					else //A cat is fine too
 						partner = check_target
 				//skyrat edit

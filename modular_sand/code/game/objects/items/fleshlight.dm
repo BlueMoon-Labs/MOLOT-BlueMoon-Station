@@ -472,7 +472,7 @@
 	if(user_message)
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
 			portal_target.set_is_fucking(M, target, portal_target.getorganslot(portalunderwear.targetting))
-			M.set_is_fucking(portal_target, portalunderwear.targetting, M.getorganslot(target))
+			//M.set_is_fucking(portal_target, portalunderwear.targetting, M.getorganslot(target))
 
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
 

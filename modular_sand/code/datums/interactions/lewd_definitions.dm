@@ -834,6 +834,10 @@
 	last_partner = partner
 	last_orifice = orifice
 	last_genital = genepool
+	//BLUEMOON ADD START
+	if(partner && orifice && !partner.is_fucking(src, orifice))
+		partner.set_is_fucking(src, genepool:name, partner.getorganslot(orifice))
+	//BLUEMOON ADD END
 
 /mob/living/proc/get_shoes(singular = FALSE)
 	var/obj/A = get_item_by_slot(ITEM_SLOT_FEET)

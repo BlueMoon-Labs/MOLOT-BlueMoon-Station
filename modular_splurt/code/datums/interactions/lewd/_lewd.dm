@@ -130,7 +130,6 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 					if(CUM_TARGET_TAIL)
 						message = "кончает на хвост <b>[partner]</b>!"
 					// BLUEMOON ADD END
-
 		else
 			switch(last_genital.type)
 				if(/obj/item/organ/genital/penis)
