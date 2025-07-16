@@ -342,26 +342,32 @@
 
 	if(src != partner)
 		if(ismob(partner))
+			// BLEMOON ADD START
+			var/partner_has_portal = list(
+				"mouth" = istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties),
+				"groin" = istype(partner:w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties)
+			)
+			// BLUEMOON ADD END
 			if(!last_genital)
 				if(has_penis())
 					if(!istype(partner))
 						target_orifice = null
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
-							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 								message = "кончает прямо в ротик [partner_name]."
 								cumin = TRUE
 							else
 								message = "кончает на лицо [partner_name] семенем."
 						if(CUM_TARGET_THROAT)
-							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 								message = "входит глубоко в глотку [partner_name] и кончает."
 								cumin = TRUE
 							else
 								message = "кончает на лицо [partner_name] семенем."
 						if(CUM_TARGET_VAGINA)
 							var/has_vagina = partner.has_vagina()
-							if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
+							if(has_vagina == TRUE || (has_vagina == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 								if(partner_carbon_check)
 									target_gen = c_partner.getorganslot(ORGAN_SLOT_VAGINA)
 								message = "кончает в киску [partner_name] семенем."
@@ -370,7 +376,7 @@
 								message = "кончает на живот [partner_name] семенем."
 						if(CUM_TARGET_ANUS)
 							var/has_anus = partner.has_anus()
-							if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+							if(has_anus == TRUE || (has_anus == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 								message = "кончает в попку <b>[partner_name]</b> семенем."
 								cumin = TRUE
 							else
@@ -400,7 +406,7 @@
 							else
 								message = "кончает на грудину и торс [partner_name]."
 						if(NUTS_TO_FACE)
-							if(partner.has_mouth() && partner.mouth_is_free())
+							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
 						if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
 							// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
@@ -418,9 +424,9 @@
 								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
 
 							if(has_penis(REQUIRE_EXPOSED)) //it already checks for the cock before, why the hell would you do this redundant shit
-								message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
+								message = "держит [partner_name] между бёдрами, пока член пульсирует, изливаясь в лицо и волосы жертвы." // BLUEMOON EDIT
 							else
-								message = "достигает пика, фиксирует ноги вокруг головы [partner_name] с особой силой, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
+								message = "достигает пика, фиксирует ноги вокруг головы [partner_name] с особой силой, пока член пульсирует, изливаясь в лицо и волосы жертвы." // BLUEMOON EDIT
 							cumin = TRUE
 						if(CUM_TARGET_FEET)
 							if(!last_lewd_datum.require_target_num_feet)
@@ -449,7 +455,7 @@
 						//
 						if(CUM_TARGET_PENIS)
 							var/has_penis = partner.has_penis()
-							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
+							if(has_penis == TRUE || (has_penis == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 								message = "кончает на [partner_name]."
 							else
 								message = "кончает под себя!"
@@ -461,27 +467,27 @@
 
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
-							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 								message = "кончает прямо в рот [partner_name]."
 								cumin = TRUE
 							else
 								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_THROAT)
-							if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 								message = "трется своей киской о рот [partner_name] и кончает."
 								cumin = TRUE
 							else
 								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_VAGINA)
 							var/has_vagina = partner.has_vagina()
-							if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
+							if(has_vagina == TRUE || (has_vagina == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 								message = "обливает киску [partner_name] сквиртом!"
 								cumin = TRUE
 							else
 								message = "обливает живот [partner_name] сквиртом!"
 						if(CUM_TARGET_ANUS)
 							var/has_anus = partner.has_anus()
-							if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+							if(has_anus == TRUE || (has_anus == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 								message = "обливает попку [partner_name] сквиртом!"
 								cumin = TRUE
 							else
@@ -498,10 +504,10 @@
 							else
 								message = "обливает грудину и торс [partner_name] сквиртом!"
 						if(NUTS_TO_FACE)
-							if(partner.has_mouth() && partner.mouth_is_free())
+							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
 						if(THIGH_SMOTHERING)
-							message = "держит [partner_name] между бёдрами, пока киска пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
+							message = "держит [partner_name] между бёдрами, пока киска пульсирует, изливаясь в лицо и волосы жертвы." // BLUEMOON EDIT
 							cumin = TRUE
 						if(CUM_TARGET_FEET)
 							if(!last_lewd_datum.require_target_num_feet)
@@ -532,7 +538,7 @@
 							var/has_penis = partner.has_penis()
 							//BLUEMOON EDIT START
 							var/has_strapon = partner.has_strapon() //BLUEMOON ADD
-							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || has_strapon == HAS_EXPOSED_GENITAL)
+							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || has_strapon == HAS_EXPOSED_GENITAL || partner_has_portal["groin"]) // BLUEMOON EDIT
 								message = "обливает [partner.get_penetrating_genital_name()] [partner_name] сквиртом"
 							//BLUEMOON EDIT END
 							else
@@ -550,20 +556,20 @@
 
 						switch(target_orifice)
 							if(CUM_TARGET_MOUTH)
-								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 									message = "кончает прямо в рот [partner_name]."
 									cumin = TRUE
 								else
 									message = "кончает на лицо [partner_name] семенем."
 							if(CUM_TARGET_THROAT)
-								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 									message = "входит глубоко в глотку [partner_name] и кончает."
 									cumin = TRUE
 								else
 									message = "кончает на лицо [partner_name] семенем."
 							if(CUM_TARGET_VAGINA)
 								var/has_vagina = partner.has_vagina()
-								if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
+								if(has_vagina == TRUE || (has_vagina == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 									if(partner_carbon_check)
 										target_gen = c_partner.getorganslot(ORGAN_SLOT_VAGINA)
 									message = "кончает в киску [partner_name] семенем."
@@ -572,7 +578,7 @@
 									message = "кончает на живот [partner_name] семенем."
 							if(CUM_TARGET_ANUS)
 								var/has_anus = partner.has_anus()
-								if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+								if(has_anus == TRUE || (has_anus == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 									message = "кончает в попку [partner_name] семенем."
 									cumin = TRUE
 								else
@@ -602,7 +608,7 @@
 								else
 									message = "кончает на грудину и торс [partner_name]."
 							if(NUTS_TO_FACE)
-								if(partner.has_mouth() && partner.mouth_is_free())
+								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
 							if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
 								// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
@@ -620,9 +626,9 @@
 									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
 
 								if(has_penis())
-									message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
+									message = "держит [partner_name] между бёдрами, пока член пульсирует, изливаясь в лицо и волосы жертвы." // BLUEMOON EDIT
 								else
-									message = "достигает пика, фиксирует ноги вокруг головы [partner_name] с особой силой, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
+									message = "достигает пика, фиксирует ноги вокруг головы [partner_name] с особой силой, пока член пульсирует, изливаясь в лицо и волосы жертвы." // BLUEMOON EDIT
 								cumin = TRUE
 							if(CUM_TARGET_FEET)
 								if(!last_lewd_datum || !last_lewd_datum.require_target_num_feet)
@@ -651,7 +657,7 @@
 							//
 							if(CUM_TARGET_PENIS)
 								var/has_penis = partner.has_penis()
-								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
+								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || partner_has_portal["groin"]) // BLUEMOON EDIT
 									message = "кончает на [partner_name]."
 								else
 									message = "кончает под себя!"
@@ -663,27 +669,27 @@
 
 						switch(target_orifice)
 							if(CUM_TARGET_MOUTH)
-								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 									message = "кончает прямо в [partner_name] ротик."
 									cumin = TRUE
 								else
 									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_THROAT)
-								if(partner.has_mouth() && (partner.mouth_is_free() || istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))) // BLUEMOON EDIT
+								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 									message = "трется своей киской о рот [partner_name] и кончает."
 									cumin = TRUE
 								else
 									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_VAGINA)
 								var/has_vagina = partner.has_vagina()
-								if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
+								if(has_vagina == TRUE || (has_vagina == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 									message = "обливает киску [partner_name] сквиртом!"
 									cumin = TRUE
 								else
 									message = "обливает живот [partner_name] сквиртом!"
 							if(CUM_TARGET_ANUS)
 								var/has_anus = partner.has_anus()
-								if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+								if(has_anus == TRUE || (has_anus == HAS_EXPOSED_GENITAL || partner_has_portal["groin"])) // BLUEMOON EDIT
 									message = "обливает попку [partner_name] сквиртом!"
 									cumin = TRUE
 								else
@@ -700,11 +706,11 @@
 								else
 									message = "обливает грудь и шейку [partner_name] сквиртом!"
 							if(NUTS_TO_FACE)
-								if(partner.has_mouth() && partner.mouth_is_free())
+								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
 
 							if(THIGH_SMOTHERING)
-								message = "держит [partner_name] между бёдрами, пока киска пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
+								message = "держит [partner_name] между бёдрами, пока киска пульсирует, изливаясь в лицо и волосы жертвы." // BLUEMOON EDIT
 
 							if(CUM_TARGET_FEET)
 								if(!last_lewd_datum || !last_lewd_datum.require_target_num_feet)
@@ -735,7 +741,7 @@
 								var/has_penis = partner.has_penis()
 								//BLUEMOON EDIT START
 								var/has_strapon = partner.has_strapon() //BLUEMOON ADD
-								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || has_strapon == HAS_EXPOSED_GENITAL)
+								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL || has_strapon == HAS_EXPOSED_GENITAL || partner_has_portal["groin"]) // BLUEMOON EDIT
 									message = "обливает [partner.get_penetrating_genital_name()] [partner_name] сквиртом"
 								//BLUEMOON EDIT END
 								else

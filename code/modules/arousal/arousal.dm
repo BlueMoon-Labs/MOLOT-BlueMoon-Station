@@ -136,51 +136,76 @@
 			if(!istype(cummed_on)) // not human
 				R.trans_to(target, amount_to_transfer, log = TRUE)
 			else // if human
-				to_chat(cummed_on, "target: [target]") // ОТЛАДКА
-				to_chat(cummed_on, "sender: [sender]") // ОТЛАДКА
-				to_chat(cummed_on, "receiver: [receiver]") // ОТЛАДКА
-				to_chat(cummed_on, "last_lewd_datum: [isnull(last_lewd_datum) ? "NULL" : "YES"]") // ОТЛАДКА
-				to_chat(cummed_on, "cummed_on_last_lewd_datum: [isnull(cummed_on.last_lewd_datum) ? "NULL" : "YES"]") // ОТЛАДКА
-				to_chat(cummed_on, "last_genital: [last_genital]") // ОТЛАДКА
-				to_chat(cummed_on, "last_partner: [last_partner]") // ОТЛАДКА
-				to_chat(cummed_on, "last_orifice: [last_orifice]") // ОТЛАДКА
-
 				var/datum/reagents/copy = new()
 				R.copy_to(copy, R.total_volume)
 
-				var/obj/item/clothing/underwear/briefs/panties/portalpanties/p_panties
-				var/obj/item/portallight/p_light
-				var/already_cum = FALSE
+				// BLUEMOON EDIT START
+				var/it_a_portal = FALSE
 
+				if(anonymous) //most likely a portal fleshlight
+					// Universal list of liquid transfer cases via portalpanties
+					var/list/portal_cases = list(
+						list( // receiver is wearing portal panties as a mask
+							"panties" = cummed_on.wear_mask,
+							"plight" = get_active_held_item()
+						),
+						list( // sender is wearing portal panties
+							"panties" = w_underwear,
+							"plight" = cummed_on.get_active_held_item()
+						),
+						list( // receiver is wearing portal panties
+							"panties" = cummed_on.w_underwear,
+							"plight" = get_active_held_item()
+						)
+					)
 
-				if(istype(receiver, /obj/item/organ/stomach))	//in mouth
-					if(istype(cummed_on.wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties as a mask
-						var/obj/item/portallight/plight = get_active_held_item()
-						if(istype(plight) && plight.portalunderwear == cummed_on.wear_mask && sender.name == plight.targetting)	//only acting organ will be transfering fluids
-							to_chat(cummed_on, "Работает: receiver is wearing portal panties as a mask") // ОТЛАДКА
-							R.trans_to(target, amount_to_transfer, log = TRUE)
-					// BLUEMMON ADD START
-					else if(istype(w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//sender is wearing portal panties as a panties
-						var/obj/item/portallight/plight = cummed_on.get_active_held_item()
-						if(istype(plight) && plight.portalunderwear == w_underwear && sender.name == plight.portalunderwear.targetting)	//only portal organ will be transfering fluids
-							to_chat(cummed_on, "Работает: sender is wearing portal panties as a panties") // ОТЛАДКА
-							R.trans_to(target, amount_to_transfer, log = TRUE)
-					// BLUEMMON ADD END
-					else
+					for(var/case in portal_cases)
+						var/obj/item/clothing/underwear/briefs/panties/portalpanties/p_panties = case["panties"]
+						if(!istype(p_panties))
+							continue
+
+						var/obj/item/portallight/plight = case["plight"]
+						if(!istype(plight))
+							continue
+
+						// checking that this is exactly the right fleshlight and portal
+						if(plight.portalunderwear != p_panties)
+							continue
+
+						it_a_portal = TRUE // We are absolutely sure that this is a portal (i guess) -> anonymous + checks
+
+						// checking that sender is either the target of the fleshlight or the target of the portal
+						if(sender.name != plight.targetting && sender.name != p_panties.targetting)
+							continue
+
+						// checking if last_genital is sender P.S. because this process is called in all scenarios, and I won't/don't to fix it.
+						if(last_genital != sender)
+							continue
+
+						// if the sender is the vagina, but the receiver is not the mouth, it is unacceptable
+						if(istype(sender, /obj/item/organ/genital/vagina) && !istype(receiver, /obj/item/organ/stomach))
+							continue
+
+						R.trans_to(target, amount_to_transfer, log = TRUE)
+
+						// sender = penis, in vagina or anus
+						if(istype(sender, /obj/item/organ/genital/penis) && (istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus)))
+							if(copy.total_volume > 0)
+								cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
+						break
+
+				if(!it_a_portal)
+					if(istype(receiver, /obj/item/organ/stomach))	//in mouth
 						switch(sender.type)
 							if(/obj/item/organ/genital/penis)
 								if(src.last_lewd_datum?.required_from_user_exposed == INTERACTION_REQUIRE_PENIS && src.last_lewd_datum?.required_from_target == INTERACTION_REQUIRE_MOUTH)	//panel user is sender
 									R.trans_to(target, amount_to_transfer, log = TRUE)
-									to_chat(cummed_on, "Работает: else penis 1") // ОТЛАДКА
 								else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_PENIS)	//panel user is receiver
-									to_chat(cummed_on, "Работает: else penis 2") // ОТЛАДКА
 									R.trans_to(target, amount_to_transfer, log = TRUE)
 							if(/obj/item/organ/genital/vagina)
 								if(src.last_lewd_datum?.required_from_user_exposed == INTERACTION_REQUIRE_VAGINA && src.last_lewd_datum?.required_from_target == INTERACTION_REQUIRE_MOUTH)
-									to_chat(cummed_on, "Работает: else vagina 1") // ОТЛАДКА
 									R.trans_to(target, amount_to_transfer, log = TRUE)
 								else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_VAGINA)
-									to_chat(cummed_on, "Работает: else vagina 2") // ОТЛАДКА
 									R.trans_to(target, amount_to_transfer, log = TRUE)
 							//most likely not needed here
 							// if(/obj/item/organ/genital/breasts)
@@ -188,25 +213,8 @@
 							// 		R.trans_to(target, amount_to_transfer, log = TRUE)
 							// 	else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_BREASTS)
 							// 		R.trans_to(target, amount_to_transfer, log = TRUE)
-				else if(istype(sender, /obj/item/organ/genital/penis))	//not in mouth and penis orgasm
-					if(istype(cummed_on.w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties
-						var/obj/item/portallight/plight = get_active_held_item()
-						if(istype(plight) && (sender.name == plight.targetting))	//only acting organ will be transfering fluids
-							to_chat(cummed_on, "Работает: else if penis portal") // ОТЛАДКА
-							R.trans_to(target, amount_to_transfer, log = TRUE)
-							if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))
-								if(copy.total_volume > 0)
-									to_chat(cummed_on, "Работает: else if penis portal STATUS_EFFECT_DRIPPING_CUM") // ОТЛАДКА
-									cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
-					// BLUEMMON ADD START
-					else if(istype(w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//sender is wearing portal panties as a panties
-						var/obj/item/portallight/plight = cummed_on.get_active_held_item()
-						if(istype(plight) && plight.portalunderwear == w_underwear && sender.name == plight.portalunderwear.targetting)	//only portal organ will be transfering fluids
-							to_chat(cummed_on, "Работает: else if penis sender is wearing portal panties as a panties") // ОТЛАДКА
-							R.trans_to(target, amount_to_transfer, log = TRUE)
-					// BLUEMMON ADD END
-					else
-						to_chat(cummed_on, "Работает: else if penis != portal") // ОТЛАДКА
+					else if(istype(sender, /obj/item/organ/genital/penis))	//not in mouth and penis orgasm
+					// BLUEMOON EDIT END
 						R.trans_to(target, amount_to_transfer, log = TRUE)
 						if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))
 							if(copy.total_volume > 0)

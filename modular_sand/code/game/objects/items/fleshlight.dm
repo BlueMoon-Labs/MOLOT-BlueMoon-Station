@@ -244,7 +244,7 @@
 						if(M.has_vagina() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
-									user_message = (user == M) ? "[genital_data["target_has_penis"] ? "" : "безуспешно "]стимулирует [genital_data["target_has_penis"] ? "член" : "дилдо"] через [name]" : "трахает <b>[M]</b> при помощи [genital_data["target_penis_desc"]] [name]"
+									user_message = (user == M) ? "ииспользует [genital_data["target_penis_desc"]] <b>'[src]'</b> по прямому назначению, трахая свою киску" : "трахает киску <b>[M]</b> при помощи [genital_data["target_penis_desc"]] [name]"
 									target_message = "трахает твой [genital_data["target_has_penis"] ? "член" : "дилдо"] с помощью своей киски"
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
@@ -290,7 +290,7 @@
 						if(M.has_anus() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
-									user_message = (user == M) ? "использует свой сокрытый в <b>'[src]'</b> [genital_data["target_penis_desc"]] [name] по прямому назначению и трахает себя в анальное колечко" : "трахает <b>[M]</b> анально при помощи [genital_data["target_penis_desc"]] [name]"
+									user_message = (user == M) ? "использует [genital_data["target_penis_desc"]] [name] по прямому назначению, трахая себя в анальное колечко" : "анально трахает <b>[M]</b> при помощи [genital_data["target_penis_desc"]] [name]"
 									target_message = "нещадно трахает твой [genital_data["target_has_penis"] ? "член" : "дилдо"] своим анусом"
 									target = CUM_TARGET_ANUS
 									user_lust_amt = NORMAL_LUST
