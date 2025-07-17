@@ -403,7 +403,7 @@
 	else
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
-			smell_message += "a normal [H.custom_species ? H.custom_species : H.dna.species]"
+			taste_message += "a normal [H.custom_species ? H.custom_species : H.dna.species]"
 		else
 			taste_message += "a plain old normal [src]"
 	return taste_message
