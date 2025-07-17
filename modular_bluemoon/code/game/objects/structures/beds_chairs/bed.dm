@@ -39,9 +39,9 @@
 /obj/structure/bed/pre_buckle_mob(mob/living/M)
 	if(buckle_lying)
 		switch(dir)
-			if(1, 3)
+			if(NORTH, WEST) // 1, 8
 				buckle_lying = 270
-			if(2, 4)
+			if(SOUTH, EAST) // 2, 4
 				buckle_lying = 90
 	. = ..()
 

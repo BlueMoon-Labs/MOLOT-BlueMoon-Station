@@ -101,7 +101,7 @@
 		setMovetype(movement_type | CRAWLING)
 		if(!lying) //force them on the ground
 			// BLUEMOON EDIT START
-			if(should_be_lying >= 1)
+			if(should_be_lying > 1)
 				lying = should_be_lying
 			else
 				switch(dir)
