@@ -1042,9 +1042,13 @@
 		return
 	var/mob/living/silicon/robot/R = user
 	var/mob/living/L = target
+	// BLUEMOON EDIT START commented P.S. This is not a vore mechanic, the check has been removed by analogy with the living tongue
+	/*
 	if(L.ckey && !(L.client?.prefs.vore_flags & LICKABLE))
 		to_chat(R, "<span class='danger'>ERROR ERROR: Target not lickable. Aborting display-of-affection subroutine.</span>")
 		return
+	*/
+	// BLUEMOON EDIT END commented
 
 	if(check_zone(R.zone_selected) == "head")
 		R.visible_message("<span class='warning'>\the [R] affectionally licks \the [L]'s face!</span>", "<span class='notice'>You affectionally lick \the [L]'s face!</span>")

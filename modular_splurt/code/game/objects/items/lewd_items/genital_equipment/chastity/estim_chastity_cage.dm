@@ -26,43 +26,42 @@
 	if(!COOLDOWN_FINISHED(src, last_activation))
 		return
 	var/mob/living/carbon/human/H = estim_cage.equipment.holder_genital.owner
-
+	var/genits = null // BLUEMOON ADD
 	switch(estim_cage.mode)
 		if("shock")
 			playsound(H, get_sfx("sparks"), 20*power)
 
 			if(power >= max_power)
-				H.do_jitter_animation()
+				if(H.client?.prefs.cit_toggles & SEX_JITTER)
+					H.do_jitter_animation()
 				H.Stun(3 SECONDS)
 
 			if(HAS_TRAIT(H, TRAIT_MASO))
-				H.adjust_arousal(20*power, "masochism", maso = TRUE)
-				H.set_lust(5)
+				//BLUEMOON EDIT START
+				genits = H.adjust_arousal(20*power, "masochism", maso = TRUE)
+				H.handle_post_sex(NORMAL_LUST*power, null, null, H.getorganslot(CUM_TARGET_PENIS))
 
 				if(prob(30))
 					H.emote(pick("moan", "shiver", "blush"))
-				return
-
-			if(prob(30))
-				H.emote("groan")
-			H.adjust_arousal(-20*power, "e-stimcage")
-			H.set_lust(0)
-
+			else
+				if(prob(30))
+					if(power > 4)
+						H.emote(pick("scream", "pain", "twitch"))
+					else
+						H.emote(pick("groan", "shiver", "twitch_s"))
+				H.add_lust(-1*NORMAL_LUST*power)
 		if("stimulation")
 			playsound(H, 'modular_splurt/sound/lewd/vibrate.ogg', 20*power)
-			if(HAS_TRAIT(H, TRAIT_MASO) && prob(30))
-				H.adjust_arousal(-20*power, "e-stimcage")
-				H.set_lust(0)
-
-				if(prob(30))
-					H.emote("groan")
-				return
-
 			if(prob(30))
 				H.emote(pick("moan", "shiver", "blush"))
 
-			H.adjust_arousal(20*power, "e-stimcage")
-			H.set_lust(5)
+			genits = H.adjust_arousal(20*power, "e-stimcage")
+			H.handle_post_sex(LOW_LUST*power, null, null, H.getorganslot(CUM_TARGET_PENIS))
+	if(genits)
+		for(var/g in genits)
+			var/obj/item/organ/genital/G = g
+			to_chat(H, span_userlove("[G.arousal_verb]!"))
+		//BLUEMOON EDIT END
 
 	COOLDOWN_START(src, last_activation, 1 SECONDS)
 

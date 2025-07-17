@@ -52,10 +52,10 @@
 		if(istype(G, /obj/item/organ/genital/penis))
 			//SPLURT edit
 			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && enabling)
-				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
+				to_chat(src, "<span class='userlove'>Твой [pick("член","пенис")] дергается в своей клетке!</span>") // BLUEMOON EDIT
 				continue
 			if(CHECK_BITFIELD(G.genital_flags, GENITAL_IMPOTENT) && enabling)
-				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] simply won't go up!</span>")
+				to_chat(src, "<span class='userlove'>Твой [pick("член","пенис")] просто не может возбудиться!</span>") // BLUEMOON EDIT
 				continue
 		//
 		if(G.genital_flags & GENITAL_CAN_AROUSE && !G.aroused_state && prob(abs(strength)*G.sensitivity * arousal_rate))
