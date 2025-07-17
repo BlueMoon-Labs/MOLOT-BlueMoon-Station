@@ -25,8 +25,7 @@
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
 				to_chat(H, span_userlove("[G.arousal_verb]!"))
-			if(prob(60)) // ~ 25% considering the first prob
-				H.handle_post_sex(NORMAL_LUST, null, null)
+			H.handle_post_sex(NORMAL_LUST, null, null)
 		// BLUEMOON EDIT END
 	if(!HAS_TRAIT(src, TRAIT_PERMABONER))
 		H.dna.species.stop_wagging_tail(src)

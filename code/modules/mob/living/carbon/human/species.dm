@@ -2029,8 +2029,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
 				to_chat(target, span_userlove("[G.arousal_verb]!"))
-			if(prob(60)) // ~ 25% considering the first prob
-				target.handle_post_sex(NORMAL_LUST, null, null)
+			target.handle_post_sex(NORMAL_LUST, null, null)
 		// BLUEMOON EDIT END
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
 			stop_wagging_tail(target)
