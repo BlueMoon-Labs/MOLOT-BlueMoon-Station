@@ -253,6 +253,11 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.update_sight()
 
+/datum/quirk/night_vision/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.update_sight()
+
 /datum/quirk/hard_soles
 	name = "Твёрдые ступни" // BLUEMOON EDIT - typo
 	desc = "Вы привыкли ходить босиком, а потому осколки стекла и мусор никак не вредят вашим ногам."

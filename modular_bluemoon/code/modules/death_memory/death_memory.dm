@@ -6,6 +6,8 @@
 /datum/mind/proc/forget_death(reason = DEATH_FORGETFULNESS_REASON_UNKNOWN)
 	if(HAS_TRAIT_FROM(src, TRAIT_BLUEMOON_DEATH_FORGETFULNESS, reason))
 		return
+	if(!istype(current))
+		return
 	current.log_message("does not remember its own death anymore. Reason: [reason]", LOG_VICTIM)
 	ADD_TRAIT(src, TRAIT_BLUEMOON_DEATH_FORGETFULNESS, reason)
 
