@@ -471,8 +471,9 @@
 		to_chat(user, "<span class='notice'>Похоже, что устройство вышло из строя или на стороне партнёра что-то не так.</span>")
 	if(user_message)
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
+			portal_target.last_lewd_datum = null
+			M.last_lewd_datum = null
 			portal_target.set_is_fucking(M, target, portal_target.getorganslot(portalunderwear.targetting))
-			//M.set_is_fucking(portal_target, portalunderwear.targetting, M.getorganslot(target))
 
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
 

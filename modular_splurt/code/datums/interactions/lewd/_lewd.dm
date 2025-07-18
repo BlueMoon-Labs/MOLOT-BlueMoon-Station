@@ -108,10 +108,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 									gut = new
 									gut.Insert(partner)
 								gut.climax_modify_size(src, getorganslot(ORGAN_SLOT_PENIS), target_orifice)
-
-					if(CUM_TARGET_ARMPIT)
-						message = "кончает в подмышку <b>[partner]</b>."
-
+					// BLUEMOON EDIT START commented, transfer to original proc
 					if(CUM_TARGET_MOUTH, CUM_TARGET_THROAT, CUM_TARGET_VAGINA, CUM_TARGET_ANUS)
 						if(c_partner)
 							if(partner.client?.prefs.cit_toggles & BELLY_INFLATION)
@@ -126,10 +123,6 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 									ass = new
 									ass.Insert(partner)
 								ass.climax_modify_size(src, getorganslot(ORGAN_SLOT_PENIS))
-					// BLUEMOON ADD хвостики!
-					if(CUM_TARGET_TAIL)
-						message = "кончает на хвост <b>[partner]</b>!"
-					// BLUEMOON ADD END
 		else
 			switch(last_genital.type)
 				if(/obj/item/organ/genital/penis)
@@ -200,18 +193,10 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 										ass = new
 										ass.Insert(partner)
 									ass.climax_modify_size(src, last_genital)
-						// BLUEMOON ADD хвостики!
-						if(CUM_TARGET_TAIL)
-							message = "кончает на хвост <b>[partner]</b>!"
-						// BLUEMOON ADD END
 		if(iswendigo(partner) && partner.pulling == src)
 			var/mob/living/carbon/wendigo/W = partner
 			W.slaves |= src
 			to_chat(src, "<font color='red'> Теперь ты раб <b>[W]</b>! Служи, служи и ещё раз служи!!! </font>")
-	// BLUEMOON ADD хвостики!
-	if(target_orifice == CUM_TARGET_TAIL && src == partner)
-		message = "кончает на собственный хвост!"
-	// BLUEMOON ADD END
 	if(!message)
 		return ..()
 	if(gender == MALE || (gender == PLURAL && ismasculine(src)))
@@ -424,7 +409,12 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	visible_message(message = span_lewd("<b>\The [src]</b> [message]"), ignored_mobs = get_unconsenting())
-	handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, user, ORGAN_SLOT_PENIS)
+	// BLUEMOON EDIT START
+	if(has_penis)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, user, ORGAN_SLOT_PENIS)
+	else if(HAS_TRAIT(src, TRAIT_NYMPHO))
+		handle_post_sex(LOW_LUST, null, user, CUM_TARGET_BREASTS)
+	// BLUEMOON EDIT END
 
 /mob/living/proc/nuzzle_belly(mob/living/target)
 	var/message
@@ -596,7 +586,6 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(target.can_penetrating_genital_cum())
 		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ARMPIT, src, ORGAN_SLOT_PENIS)
-	handle_post_sex(LOW_LUST, null, target) //BLUEMOON ADD
 
 /mob/living/proc/do_boobjob(mob/living/target)
 	var/message
@@ -628,12 +617,14 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(target.can_penetrating_genital_cum())
 		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, src, CUM_TARGET_PENIS) // BLUEMOON EDIT
+	if(HAS_TRAIT(src, TRAIT_NYMPHO))
+		handle_post_sex(LOW_LUST, null, target, CUM_TARGET_BREASTS)
 
 /mob/living/proc/lick_nuts(mob/living/target)
 	var/message
 	//var/u_His = ru_ego()
 	//var/t_His = target.ru_ego()
-	var/lust_increase = 1
+	//var/lust_increase = 1 // BLUEMOON EDIT commented
 	//var/list/balls = list("balls", "nuts", "[pick(list("cum", "spunk", "nut", "jizz", "seed"))] [pick(list("orbs", "spheres", "tanks", "holders", "churners"))]")
 	var/list/lines
 
@@ -654,7 +645,9 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
 	playlewdinteractionsound(loc, 'modular_sand/sound/interactions/swallow.ogg', 70, 1, -1)
-	target.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, ORGAN_SLOT_TESTICLES)
+	target.handle_post_sex(HAS_TRAIT(target, TRAIT_NYMPHO) ? NORMAL_LUST : LOW_LUST, NUTS_TO_FACE, src, ORGAN_SLOT_PENIS) // BLUEMOON EDIT
+	if(HAS_TRAIT(src, TRAIT_NYMPHO))
+		handle_post_sex(LOW_LUST, partner = target)
 
 /mob/living/proc/do_cockfuck(mob/living/target)
 	var/message
@@ -695,14 +688,14 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
 	playlewdinteractionsound(src, pick(noises), 70, 1, -1)
+	//BLUEMOON EDIT START
 	if(can_penetrating_genital_cum()) // PENIS + PENIS || STRAPON
 		handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, target, ORGAN_SLOT_PENIS)
-		if(target.can_penetrating_genital_cum())
-			target.handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, ORGAN_SLOT_PENIS)
-	//BLUEMOON EDIT START
+		if(target.can_penetrating_genital_cum()) // PENIS + PENIS
+			target.handle_post_sex(HIGH_LUST, CUM_TARGET_PENIS, src, CUM_TARGET_PENIS)
 	else if(src.has_strapon() && target.can_penetrating_genital_cum()) // STRAPON + PENIS
 		var/obj/item/clothing/underwear/briefs/strapon/user_strapon = src.get_strapon()
-		user_strapon.attached_dildo.target_reaction(target, src, 1, CUM_TARGET_URETHRA, null, src.a_intent == INTENT_HARM)
+		user_strapon.attached_dildo.target_reaction(target, src, 1, CUM_TARGET_PENIS, CUM_TARGET_PENIS, src.a_intent == INTENT_HARM)
 	//BLUEMOON EDIT END
 
 /mob/living/proc/do_nipfuck(mob/living/target)
@@ -737,7 +730,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	if(!is_fucking(target, CUM_TARGET_NIPPLE))
 		set_is_fucking(target, CUM_TARGET_NIPPLE, getorganslot(ORGAN_SLOT_PENIS))
 
-	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]!</span>"
+	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
 	playlewdinteractionsound(src, pick('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
@@ -1103,7 +1096,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	playlewdinteractionsound(target.loc, pick('modular_bluemoon/sound/interactions/watering1.ogg',
 											'modular_bluemoon/sound/interactions/watering2.ogg',
 											'modular_bluemoon/sound/interactions/watering3.ogg'), 70, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
-	handle_post_sex(LOW_LUST, null, target, pee_pee)
+	handle_post_sex(LOW_LUST, CUM_TARGET_BREASTS, target, pee_pee)
 	//BLUEMOON EDIT END
 
 /mob/living/carbon/proc/piss_mouth(mob/living/target)

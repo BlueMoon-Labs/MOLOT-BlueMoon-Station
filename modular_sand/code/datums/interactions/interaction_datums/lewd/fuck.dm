@@ -130,7 +130,10 @@
 
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, partner, ORGAN_SLOT_PENIS) //SPLURT edit
-	partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_BREASTS) //BLUEMOON ADD START
+	//BLUEMOON ADD START
+	if(HAS_TRAIT(partner, TRAIT_NYMPHO))
+		partner.handle_post_sex(LOW_LUST, null, user, CUM_TARGET_BREASTS)
+	//BLUEMOON ADD END
 
 /datum/interaction/lewd/footfuck
 	description = "Член. Потереться о ботинок."
