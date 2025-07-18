@@ -1,8 +1,8 @@
 /datum/supply_pack/science/hev
-	name = "Hazard Suit Crate"
-	desc = "A familiar suit from the times of interdimensional exploring. Research Directors might prefer these due to their superior radioactive protection over the standard RD suit."
+	name = "H.E.V. suit crate"
+	desc = "Я с исследовательской группой говорили они! Содержит один H.E.V. который точно защитит вас от любых угроз - будь то радиация или вспышка зомби-вируса!"
 	cost = 15000
-	access = ACCESS_RD
+	access = ACCESS_TOX
 	contains = list(/obj/item/clothing/suit/space/hardsuit/rd/hev)
 	crate_name = "hazard suit crate"
 	crate_type = /obj/structure/closet/crate/secure/science

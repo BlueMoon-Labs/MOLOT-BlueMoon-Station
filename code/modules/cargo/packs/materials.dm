@@ -50,10 +50,10 @@
 
 /datum/supply_pack/materials/plastic20
 	crate_type = /obj/structure/closet/secure_closet/cargo
-	name = "20 Plastic Sheets"
+	name = "50 Plastic Sheets"
 	desc = "Соберите неограниченное количество игрушек из пятидесяти пластиковых листов!"
 	cost = 2000
-	contains = list(/obj/item/stack/sheet/plastic/twenty)
+	contains = list(/obj/item/stack/sheet/plastic/fifty)
 
 /datum/supply_pack/materials/sandstone30
 	crate_type = /obj/structure/closet/secure_closet/cargo
@@ -66,7 +66,7 @@
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "20 Wood Planks"
 	desc = "Превратите скучную плитку в красивый панельный пол и многое другое с помощью двадцати деревянных досок!"
-	cost = 4000 // 6-7 planks shy from having equal import/export prices
+	cost = 2000 // 6-7 planks shy from having equal import/export prices
 	contains = list(/obj/item/stack/sheet/mineral/wood/twenty)
 
 /datum/supply_pack/materials/rcdammo

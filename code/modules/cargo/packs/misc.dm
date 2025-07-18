@@ -329,7 +329,7 @@
 	name = "Loot Box"
 	desc = "Испытайте свою удачу с этими высокозащищенными ящиками с добычей! Разгадайте замок, выиграйте отличные призы! ПРЕДУПРЕЖДЕНИЕ: ВЗРЫВООПАСНЫЙ ПРОВАЛ."
 	contraband = TRUE
-	cost = 15000
+	cost = 10000 // 15к за ящик которые даже не интересно депать? Zaaaaamn
 	contains = list(/obj/structure/closet/crate/secure/loot)
 	crate_name = "abandoned crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -518,3 +518,12 @@
 			continue
 		crate_value -= I.cost
 		new I.item(C)
+
+/datum/supply_pack/misc/commandkeys
+	name = "Command Encryption Key Crate"
+	desc = "Набор ключей шифрования, которые дают доступ к командной радиосети. Набор ключей шифрования, которые дают доступ к командной радиосети.по крайней мере, свести к минимуму перебранки со стороны командного состава."
+	access = ACCESS_BRIDGE_OFFICER
+	cost = 6000
+	contains = list(/obj/item/encryptionkey/headset_com = 3)
+	crate_type = /obj/structure/closet/crate/secure/gear
+	crate_name = "command encryption key crate"
