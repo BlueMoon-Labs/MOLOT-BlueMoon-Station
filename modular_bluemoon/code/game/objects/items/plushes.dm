@@ -598,3 +598,10 @@
 	desc = "Вы видите игрушку,одетую в стандатную форму inteQ. Смотря в удивленное плюшевое лицо,она вам подозрительно кого-то напоминает. Точно можно сказать что игрушка кого то испугалась. Но кого мог испугаться плюшевый интековец?"
 	icon_state = "artems"
 	squeak_override = list('modular_bluemoon/sound/voice/graysonplush.ogg' = 2, 'modular_bluemoon/sound/voice/stasik_volcahara.ogg' = 1,)
+
+/obj/item/toy/plush/bm/carrion
+	name = "Monster plushie"
+	desc = "One of the many monsters bred by geneticists. This one is made of synthetic materials, very soft, and can be used as an anti-stress tool. Especially for fans!"
+	icon_state = "carrion"
+	attack_verb = list("squish", "glorp", "blorp")
+	squeak_override = list('modular_bluemoon/sound/voice/fleshy_squish.ogg' = 1)
