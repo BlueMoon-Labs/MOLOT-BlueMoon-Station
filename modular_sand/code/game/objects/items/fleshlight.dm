@@ -389,16 +389,16 @@
 								p_to_f = TRUE
 								p_to_f_inside = FALSE
 							if(CUM_TARGET_VAGINA)
-								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, мастурбируя киску на другой стороне своими пальчиками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне усилиями шаловливых пальчиков <b>[M]</b>"
-								target_message = "мастурбирует твою киску"
+								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, играясь с киской на другой стороне своими пальчиками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует влагалище кого-то на другой стороне усилиями шаловливых пальчиков <b>[M]</b>"
+								target_message = "играется с твоей киской"
 								target = CUM_TARGET_HAND
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
 								p_to_f = TRUE
 								p_to_f_inside = FALSE
 							if(CUM_TARGET_ANUS)
-								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, мастурбируя анус на другой стороне своими пальчиками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует попку кого-то на другой стороне усилиями шаловливых пальчиков <b>[M]</b>"
-								target_message = "мастурбирует твой анус"
+								user_message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению, стимулируя анус на другой стороне своими пальчиками" : "использует <b>'[src]'</b> по прямому назначению и стимулирует попку кого-то на другой стороне усилиями шаловливых пальчиков <b>[M]</b>"
+								target_message = "стимулирует твой анус"
 								target = CUM_TARGET_HAND
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
@@ -500,15 +500,21 @@
 				var/obj/item/clothing/underwear/briefs/strapon/target_strapon = portal_target.get_strapon()
 				if(target_strapon)
 					user_lust_amt = target_strapon.attached_dildo.target_reaction(M, portal_target, (target in list(CUM_TARGET_MOUTH, CUM_TARGET_URETHRA) ? 1 : 0), target, null, FALSE, FALSE)
+			// if self, use max, not both
+			if(M == portalunderwear.targetting)
+				user_lust_amt = max(user_lust_amt, target_lust_amt)
+				target_lust_amt = max(user_lust_amt, target_lust_amt)
 			if((target != CUM_TARGET_PENIS && target != CUM_TARGET_URETHRA) || genital_data["M_has_penis"])
 				// if it self and have real penis, it must be main to cum
 				if(M == portal_target && portalunderwear.targetting == CUM_TARGET_PENIS && genital_data["M_has_penis"])
 					M_cum = M.handle_post_sex(target_lust_amt, p_to_f ? target : null, portal_target, portalunderwear.targetting, (p_to_f_inside && (target in cum_inside_holes)), TRUE)
-					self_get_lust = target_lust_amt > 0 ? TRUE : FALSE
+					self_get_lust = target_lust_amt > 0
+				else if(M == portal_target && portalunderwear.targetting == CUM_TARGET_VAGINA && target == CUM_TARGET_MOUTH)
+					M_cum = M.handle_post_sex(target_lust_amt, p_to_f ? target : null, portal_target, portalunderwear.targetting, (p_to_f_inside && (target in cum_inside_holes)), TRUE)
+					self_get_lust = target_lust_amt > 0
 				else
 					if(M == portal_target)
-						user_lust_amt = max(user_lust_amt, target_lust_amt)
-						self_get_lust = user_lust_amt > 0 ? TRUE : FALSE
+						self_get_lust = user_lust_amt > 0
 					M_cum = M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, (f_to_p_inside && (portalunderwear.targetting in cum_inside_holes)), TRUE)
 
 			if(M_cum)
