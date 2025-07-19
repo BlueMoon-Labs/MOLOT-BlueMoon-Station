@@ -383,7 +383,7 @@
 								message = "кончает на спину [partner_name] семенем."
 						if(CUM_TARGET_HAND)
 							if(partner.has_hand())
-								message = "кончает на руку <b>[partner_name]</b> семенем." 
+								message = "кончает на руку <b>[partner_name]</b> семенем."
 							else
 								message = "кончает на [partner_name]."
 						// BLUEMOON ADD START
@@ -436,7 +436,7 @@
 							else
 								message = "держит [partner_name] между бёдрами, пока член пульсирует, изливаясь в лицо и волосы жертвы."
 							// BLEUMOON EDIT END
-							
+
 						if(CUM_TARGET_FEET)
 							if(!last_lewd_datum.require_target_num_feet)
 								if(partner.has_feet())
@@ -481,7 +481,7 @@
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
 							if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
-								message = "кончает прямо в рот [partner_name]."
+								message = "сквиртит прямо в рот [partner_name]." // BLUEMOON EDIT
 								cumin = TRUE
 							else
 								message = "обливает лицо [partner_name] сквиртом!"
@@ -712,7 +712,7 @@
 						switch(target_orifice)
 							if(CUM_TARGET_MOUTH)
 								if(partner.has_mouth() && (partner.mouth_is_free() || partner_has_portal["mouth"])) // BLUEMOON EDIT
-									message = "кончает прямо в [partner_name] ротик."
+									message = "сквиртит прямо в ротик [partner_name]." // BLUEMOON EDIT
 									cumin = TRUE
 								else
 									message = "обливает лицо [partner_name] сквиртом!"
@@ -892,26 +892,31 @@
 		return FALSE
 	return TRUE
 
-/mob/living/proc/set_is_fucking(mob/living/partner, orifice, obj/item/organ/genital/genepool, sub_set = FALSE)
+//BLUEMOON EDIT START
+/mob/living/proc/set_is_fucking(mob/living/partner, orifice, genepool, sub_set = FALSE)
 	last_partner = partner
 	last_orifice = orifice
-	last_genital = genepool
 	//BLUEMOON ADD START
-	/*
+	var/partner_orifice = ""
+	if(istext(genepool))
+		last_genital = getorganslot(genepool)
+		partner_orifice = genepool
+	else
+		last_genital = genepool
+		partner_orifice = last_genital?.name
 	to_chat(src,"src: [src]") // ОТЛАДКА
 	to_chat(src,"partner: [partner]") // ОТЛАДКА
 	to_chat(src,"orifice: [orifice]") // ОТЛАДКА
-	to_chat(src,"genepool?.name: [genepool?.name]") // ОТЛАДКА
+	to_chat(src,"partner_orifice: [partner_orifice]") // ОТЛАДКА
 	to_chat(src,"last_lewd_datum: [last_lewd_datum?.description]") // ОТЛАДКА
 	to_chat(src,"partner.last_lewd_datum: [partner.last_lewd_datum?.description]") // ОТЛАДКА
-	to_chat(src,"!partner.is_fucking(src, genepool?.name): [!partner.is_fucking(src, genepool?.name)]") // ОТЛАДКА
-	to_chat(src,"!partner.is_fucking(src, genepool?.name, lewd_datum = last_lewd_datum): [!partner.is_fucking(src, genepool?.name, lewd_datum = last_lewd_datum)]") // ОТЛАДКА
-	to_chat(src,"!partner.is_fucking(src, genepool?.name, partner.getorganslot(orifice)): [!partner.is_fucking(src, genepool?.name, partner.getorganslot(orifice))]") // ОТЛАДКА
-	to_chat(src,"!partner.is_fucking(src, genepool?.name, partner.getorganslot(orifice), last_lewd_datum): [!partner.is_fucking(src, genepool?.name, partner.getorganslot(orifice), last_lewd_datum)]") // ОТЛАДКА
-	*/
-	if(!sub_set && partner && partner != src && (!partner.is_fucking(src, genepool?.name, lewd_datum = last_lewd_datum)))
+	to_chat(src,"!partner.is_fucking(src, partner_orifice): [!partner.is_fucking(src, partner_orifice)]") // ОТЛАДКА
+	to_chat(src,"!partner.is_fucking(src, partner_orifice, lewd_datum = last_lewd_datum): [!partner.is_fucking(src, partner_orifice, lewd_datum = last_lewd_datum)]") // ОТЛАДКА
+	to_chat(src,"!partner.is_fucking(src, partner_orifice, partner.getorganslot(orifice)): [!partner.is_fucking(src, partner_orifice, partner.getorganslot(orifice))]") // ОТЛАДКА
+	to_chat(src,"!partner.is_fucking(src, partner_orifice, partner.getorganslot(orifice), last_lewd_datum): [!partner.is_fucking(src, partner_orifice, partner.getorganslot(orifice), last_lewd_datum)]") // ОТЛАДКА
+	if(!sub_set && partner && partner != src && (!partner.is_fucking(src, partner_orifice, getorganslot(orifice == CUM_TARGET_URETHRA ? CUM_TARGET_PENIS : orifice), last_lewd_datum)))
 		partner.last_lewd_datum = last_lewd_datum
-		partner.set_is_fucking(src, genepool?.name, partner.getorganslot(orifice == CUM_TARGET_URETHRA ? CUM_TARGET_PENIS : orifice), sub_set = TRUE)
+		partner.set_is_fucking(src, partner_orifice, partner.getorganslot(orifice == CUM_TARGET_URETHRA ? CUM_TARGET_PENIS : orifice), sub_set = TRUE)
 	if(!last_lewd_datum) // Fleshlight set_is_fucking clear timer
 		if(cleartimer)
 			deltimer(cleartimer)

@@ -244,7 +244,7 @@
 						if(M.has_vagina() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
-									user_message = (user == M) ? "ииспользует [genital_data["target_penis_desc"]] <b>'[src]'</b> по прямому назначению, трахая свою киску" : "трахает киску <b>[M]</b> при помощи [genital_data["target_penis_desc"]] [name]"
+									user_message = (user == M) ? "использует [genital_data["target_penis_desc"]] <b>'[src]'</b> по прямому назначению, трахая свою киску" : "трахает киску <b>[M]</b> при помощи [genital_data["target_penis_desc"]] [name]"
 									target_message = "трахает твой [genital_data["target_has_penis"] ? "член" : "дилдо"] с помощью своей киски"
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
@@ -331,7 +331,7 @@
 						else
 							to_chat(user, "<span class='warning'>Уретра закрыта или отсутствует!</span>")
 			if(BODY_ZONE_PRECISE_MOUTH)
-				if((M.has_mouth() && !M.is_mouth_covered()))
+				if((M.has_mouth() && (!M.is_mouth_covered() || istype(M.wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))))
 					switch(portalunderwear.targetting)
 						if(CUM_TARGET_PENIS)
 							user_message = (user == M) ? "присасывается к [genital_data["target_penis_desc"]] [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует член кого-то на другой стороне усилиями ротика <b>[M]</b>, заставляя посасывать [genital_data["target_penis_desc"]] [name]"
@@ -471,9 +471,19 @@
 		to_chat(user, "<span class='notice'>Похоже, что устройство вышло из строя или на стороне партнёра что-то не так.</span>")
 	if(user_message)
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
-			portal_target.last_lewd_datum = null
-			M.last_lewd_datum = null
-			portal_target.set_is_fucking(M, target, portal_target.getorganslot(portalunderwear.targetting))
+			// if it self and have real penis, it must be main to cum
+			if((M == portal_target && portalunderwear.targetting == CUM_TARGET_MOUTH && target == CUM_TARGET_VAGINA && !portal_target.is_fucking(M, CUM_TARGET_MOUTH, portal_target.getorganslot(CUM_TARGET_VAGINA), null)) || \
+				(M == portal_target && !(portalunderwear.targetting == CUM_TARGET_MOUTH && target == CUM_TARGET_VAGINA) && !portal_target.is_fucking(M, target == CUM_TARGET_PENIS ? portalunderwear.targetting : target, portal_target.getorganslot(target == CUM_TARGET_PENIS ? target : portalunderwear.targetting), null)) || \
+				(M != portal_target && (!portal_target.is_fucking(M, target, portal_target.getorganslot(portalunderwear.targetting), null) || !M.is_fucking(portal_target, portalunderwear.targetting, M.getorganslot(target), null))))
+				portal_target.last_lewd_datum = null
+				M.last_lewd_datum = null
+				// if it self and have real penis, it must be main to cum
+				if(portal_target == M && genital_data["target_has_penis"] && target == CUM_TARGET_PENIS)
+					portal_target.set_is_fucking(M, portalunderwear.targetting, target)
+				else if(portal_target == M && portalunderwear.targetting == CUM_TARGET_MOUTH && target == CUM_TARGET_VAGINA)
+					portal_target.set_is_fucking(M, portalunderwear.targetting, target)
+				else
+					portal_target.set_is_fucking(M, target, portalunderwear.targetting)
 
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
 
@@ -483,6 +493,7 @@
 				f_to_p_inside = f_to_p
 
 			var/M_cum = FALSE
+			var/self_get_lust = FALSE
 			var/cum_inside_holes = list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH, CUM_TARGET_THROAT, CUM_TARGET_NIPPLE, CUM_TARGET_URETHRA, CUM_TARGET_EARS, CUM_TARGET_EYES)
 			// Strapon and in hole
 			if(portalunderwear.targetting == CUM_TARGET_PENIS && !(genital_data["target_has_penis"]) && (target in cum_inside_holes))
@@ -490,7 +501,16 @@
 				if(target_strapon)
 					user_lust_amt = target_strapon.attached_dildo.target_reaction(M, portal_target, (target in list(CUM_TARGET_MOUTH, CUM_TARGET_URETHRA) ? 1 : 0), target, null, FALSE, FALSE)
 			if((target != CUM_TARGET_PENIS && target != CUM_TARGET_URETHRA) || genital_data["M_has_penis"])
-				M_cum = M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, (f_to_p_inside && (portalunderwear.targetting in cum_inside_holes)), TRUE)
+				// if it self and have real penis, it must be main to cum
+				if(M == portal_target && portalunderwear.targetting == CUM_TARGET_PENIS && genital_data["M_has_penis"])
+					M_cum = M.handle_post_sex(target_lust_amt, p_to_f ? target : null, portal_target, portalunderwear.targetting, (p_to_f_inside && (target in cum_inside_holes)), TRUE)
+					self_get_lust = target_lust_amt > 0 ? TRUE : FALSE
+				else
+					if(M == portal_target)
+						user_lust_amt = max(user_lust_amt, target_lust_amt)
+						self_get_lust = user_lust_amt > 0 ? TRUE : FALSE
+					M_cum = M.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, portal_target, target, (f_to_p_inside && (portalunderwear.targetting in cum_inside_holes)), TRUE)
+
 			if(M_cum)
 				switch(target)
 					if(CUM_TARGET_PENIS)
@@ -500,7 +520,7 @@
 							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH)
 								to_chat(portal_target, "<span class='userlove'>Вы ощущаете, как [genital_data["M_has_penis"] ? "член" : "дилдо"] углубляется прямо в [portalunderwear.targetting] и... кончает!</span>")
 							if(CUM_TARGET_URETHRA)
-								to_chat(portal_target, "Чей-то <span class='userlove'>[genital_data["M_has_penis"] ? "член" : "дилдо"] кончает вам прямо в уретру!</span>")
+								to_chat(portal_target, "<span class='userlove'>Чей-то [genital_data["M_has_penis"] ? "член" : "дилдо"] кончает вам прямо в уретру!</span>")
 					if(CUM_TARGET_VAGINA)
 						switch(portalunderwear.targetting)
 							if(CUM_TARGET_PENIS)
@@ -549,9 +569,15 @@
 				var/obj/item/clothing/underwear/briefs/strapon/M_strapon = M.get_strapon()
 				if(M_strapon)
 					target_lust_amt = M_strapon.attached_dildo.target_reaction(portal_target, M, (portalunderwear.targetting == CUM_TARGET_MOUTH ? 1 : 0), portalunderwear.targetting, null, FALSE, FALSE)
-
-			if(portal_target.handle_post_sex(target_lust_amt, p_to_f ? target : null, M, portalunderwear.targetting, (p_to_f_inside && (target in cum_inside_holes)), TRUE))
-
+			var/target_cum = FALSE
+			// if it self and have real penis, it must be main to cum
+			if(portal_target == M && genital_data["target_has_penis"] && target == CUM_TARGET_PENIS)
+				// already get lust
+				if(!self_get_lust)
+					target_cum = portal_target.handle_post_sex(user_lust_amt, f_to_p ? portalunderwear.targetting : null, M, target, (f_to_p_inside && (portalunderwear.targetting in cum_inside_holes)), TRUE)
+			else
+				target_cum = portal_target.handle_post_sex(target_lust_amt, p_to_f ? target : null, M, portalunderwear.targetting, (p_to_f_inside && (target in cum_inside_holes)), TRUE)
+			if(target_cum)
 				switch(portalunderwear.targetting)
 					if(CUM_TARGET_VAGINA)
 						switch(target)
@@ -615,8 +641,8 @@
 						switch(target)
 							if(CUM_TARGET_PENIS)
 								to_chat(M, "<span class='userlove'>Из уретры вырывается семя прямо на ваш [genital_data["M_has_penis"] ? pick("член", "пенис") : "дилдо"]!</span>")
-					// BLUEMOON EDIT END
-			if(user.a_intent == INTENT_HARM && (portal_target.client?.prefs.cit_toggles & SEX_JITTER)) //By Gardelin0
+			if(M != portal_target && user.a_intent == INTENT_HARM && (portal_target.client?.prefs.cit_toggles & SEX_JITTER)) //By Gardelin0
+			// BLUEMOON EDIT END
 				portal_target.do_jitter_animation() //make your partner shake too!
 		else
 			user.visible_message("<span class='warning'><b>'[src]'</b> подает звуковой сигнал и не позволяет <b>[M]</b> войти.</span>")
