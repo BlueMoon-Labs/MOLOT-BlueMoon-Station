@@ -7,6 +7,13 @@
 /turf/open/floor/plasteel/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
+// BLUEMOON ADD ROTATION
+	. += "<span class='notice'>There's a <b>bolt</b> helping in rotary system.</span>"
+
+/turf/open/floor/plasteel/wrench_act(mob/living/user, obj/item/I)
+	I.play_tool_sound(src, 20)
+	return setDir(turn(dir, -90))
+// BLUEMOON ADD END
 
 /turf/open/floor/plasteel/rust_heretic_act()
 	if(prob(70))
@@ -66,19 +73,6 @@
 /turf/open/floor/plasteel/yellowsiding/corner
 	icon_state = "yellowcornersiding"
 
-
-/turf/open/floor/plasteel/recharge_floor
-	icon_state = "recharge_floor"
-/turf/open/floor/plasteel/recharge_floor/asteroid
-	icon_state = "recharge_floor_asteroid"
-
-
-/turf/open/floor/plasteel/chapel
-	icon_state = "chapel"
-
-/turf/open/floor/plasteel/chapel_floor
-	icon_state = "chapel_alt"
-
 /turf/open/floor/plasteel/showroomfloor
 	icon_state = "showroomfloor"
 
@@ -90,8 +84,6 @@
 
 /turf/open/floor/plasteel/freezer
 	icon_state = "freezerfloor"
-/turf/open/floor/plasteel/freezer/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plasteel/grimy
 	icon_state = "grimy"
@@ -111,17 +103,16 @@
 /turf/open/floor/plasteel/vaporwave
 	icon_state = "pinkblack"
 
+/* BLUEMOON DELETE переход на декали
 /turf/open/floor/plasteel/goonplaque
 	icon_state = "plaque"
 	name = "commemorative plaque"
 	desc = "\"This is a plaque in honour of our comrades on the G4407 Stations. Hopefully TG4407 model can live up to your fame and fortune.\" Scratched in beneath that is a crude image of a meteor and a spaceman. The spaceman is laughing. The meteor is exploding."
 	tiled_dirt = FALSE
+*/
 
 /turf/open/floor/plasteel/cult/narsie_act()
 	return
-/turf/open/floor/plasteel/cult/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 
 /turf/open/floor/plasteel/stairs
 	icon_state = "stairs"

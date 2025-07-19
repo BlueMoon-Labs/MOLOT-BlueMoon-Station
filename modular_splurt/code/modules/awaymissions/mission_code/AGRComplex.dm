@@ -674,7 +674,7 @@
 
 /datum/techweb_node/clockworkcult/New()
 	. = ..()
-	boost_item_paths = typesof(/obj/item/grown/matrigrass)
+	boost_item_paths = typesof(/obj/item/grown/matrigrass, /obj/item/clockwork/component)
 
 /datum/design/brass
 	name = "Brass"
@@ -1326,11 +1326,27 @@
 	light_power = 0.075
 	light_color = "#89959a"
 
+/turf/open/floor/plating/asteroid/snow/complex/dug
+	baseturfs = /turf/open/floor/plating/asteroid/snow/complex/dug
+	floor_variance = FALSE
+	icon_state = "snow_dug"
+	slowdown = 1
+
+/obj/effect/baseturf_helper/complex
+	name = "AGRcomplex baseturf editor"
+	baseturf = /turf/open/floor/plating/asteroid/snow/complex/dug
+
 /turf/closed/mineral/random/snow/high_chance/complex
 	initial_gas_mix = COLD_ATMOS
 	initial_temperature = 255
 	turf_type = /turf/open/floor/plating/asteroid/snow/complex
 	baseturfs = /turf/open/floor/plating/asteroid/snow/complex
+
+/turf/closed/mineral/snowmountain/cavern/high_chance/complex
+
+	initial_temperature = 255
+	baseturfs = /turf/open/floor/plating/asteroid/snow/complex
+	turf_type = /turf/open/floor/plating/asteroid/snow/complex
 
 /turf/open/floor/plating/snowed/complex
 	initial_gas_mix = COLD_ATMOS

@@ -6,7 +6,6 @@
 		/obj/item/stack/tile/plasteel,
 		/obj/item/stack/tile/plasteel/white,
 		/obj/item/stack/tile/plasteel/dark,
-		/obj/item/stack/tile/plasteel/chapel,
 		/obj/item/stack/tile/plasteel/shower,
 		/obj/item/stack/tile/plasteel/freezer,
 		/obj/item/stack/tile/plasteel/kitchen,
@@ -31,14 +30,6 @@
 	turf_type = /turf/open/floor/plasteel/dark
 //	icon = 'modular_sand/icons/obj/tiles.dmi'
 	icon_state = "tile_dark"
-
-/obj/item/stack/tile/plasteel/chapel
-	name = "chapel floor tile"
-	singular_name = "chapel floor tile"
-	desc = "Those very dark floor tiles you find in the chapel a lot."
-	turf_type = /turf/open/floor/plasteel/chapel
-//	icon = 'modular_sand/icons/obj/tiles.dmi'
-	icon_state = "tile_chapel"
 
 /obj/item/stack/tile/plasteel/shower
 	name = "shower floor tile"

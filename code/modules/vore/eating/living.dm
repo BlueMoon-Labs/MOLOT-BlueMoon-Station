@@ -364,7 +364,7 @@
 
 	var/list/lickable = list()
 	for(var/mob/living/L in view(1))
-		if(L != src && (!L.ckey || L.client?.prefs.vore_flags & LICKABLE) && Adjacent(L))
+		if(L != src && Adjacent(L))
 			LAZYADD(lickable, L)
 	for(var/mob/living/listed in lickable)
 		lickable[listed] = new /mutable_appearance(listed)
@@ -372,27 +372,38 @@
 	if(!lickable)
 		return
 
-	var/mob/living/tasted = show_radial_menu(src, src, lickable, radius = 40, require_near = TRUE)
+	var/mob/living/tasted = lickable.len == 1 ? lickable[1] : show_radial_menu(src, src, lickable, radius = 40, require_near = TRUE) // BLUEMOON EDIT
 
-	if(QDELETED(tasted) || (tasted.ckey && !(tasted.client?.prefs.vore_flags & LICKABLE)) || !Adjacent(tasted) || incapacitated(ignore_restraints = TRUE))
+	if(QDELETED(tasted) || !Adjacent(tasted) || incapacitated(ignore_restraints = TRUE)) // BLUEMOON EDIT
 		return
+
+	//BLUEMOON ADD START // Delay like licking tongue
+	var/lickspeed = initial((/obj/item/soap/tongue/organic)::cleanspeed)
+	visible_message("<span class='warning'><b>[src]</b> begins to lick \the <b>[tasted]</b>.", "<span class='warning'>You begin to lick \the <b>[tasted]</b>...</span>")
+	if(!do_after(src, lickspeed, tasted) || !in_range(src, tasted))
+		return //If they moved away, you can't lick them.
+	//BLUEMOON ADD END
 
 	if(ishuman(tasted))
 		var/mob/living/carbon/human/H = tasted
 		H.wash_cream()
 
-	visible_message("<span class='warning'>[src] licks [tasted]!</span>","<span class='notice'>You lick [tasted]. They taste rather like [tasted.get_taste_message()].</span>","<b>Slurp!</b>")
+	playsound(src.loc, 'sound/effects/attackblob.ogg', 50, 1) //BLUEMOON ADD
+	visible_message("<span class='warning'><b>[src]</b> licks <b>[tasted]</b>!</span>","<span class='notice'>You lick <b>[tasted]</b>. They taste rather like [tasted.get_taste_message()].</span>","<b>Slurp!</b>") //BLUEMOON EDIT
 
-/mob/living/proc/get_taste_message(allow_generic = TRUE, datum/species/mrace)
+// BLUEMOON EDIT START
+/mob/living/proc/get_taste_message(allow_generic = TRUE)
 	if(!vore_taste && !allow_generic)
 		return FALSE
 
 	var/taste_message = ""
-	if(vore_taste && (vore_taste != ""))
+	if((!ckey || client?.prefs.vore_flags & LICKABLE) && vore_taste && vore_taste != "")
+// BLUEMOON EDIT END
 		taste_message += "[vore_taste]"
 	else
 		if(ishuman(src))
-			taste_message += "they haven't bothered to set their flavor text"
+			var/mob/living/carbon/human/H = src
+			taste_message += "a normal [H.custom_species ? H.custom_species : H.dna.species]"
 		else
 			taste_message += "a plain old normal [src]"
 	return taste_message
@@ -416,7 +427,7 @@
 
 	var/list/smellable = list()
 	for(var/mob/living/L in view(1))
-		if(L != src && (!L.ckey || L.client?.prefs.vore_flags & SMELLABLE) && Adjacent(L))
+		if(L != src && Adjacent(L))
 			LAZYADD(smellable, L)
 	for(var/mob/living/listed in smellable)
 		smellable[listed] = new /mutable_appearance(listed)
@@ -424,19 +435,20 @@
 	if(!smellable)
 		return
 
-	var/mob/living/sniffed = show_radial_menu(src, src, smellable, radius = 40, require_near = TRUE)
+	var/mob/living/sniffed = smellable.len == 1 ? smellable[1] : show_radial_menu(src, src, smellable, radius = 40, require_near = TRUE) // BLUEMOON EDIT
 
-	if(QDELETED(sniffed) || (sniffed.ckey && !(sniffed.client?.prefs.vore_flags & SMELLABLE)) || !Adjacent(sniffed) || incapacitated(ignore_restraints = TRUE))
+	if(QDELETED(sniffed) || !Adjacent(sniffed) || incapacitated(ignore_restraints = TRUE))
 		return
 
-	visible_message("<span class='warning'>[src] smells [sniffed]!</span>","<span class='notice'>You smell [sniffed]. They smell like [sniffed.get_smell_message()].</span>","<b>Sniff!</b>")
+	emote("sniff") //BLUEMOON ADD
+	visible_message("<span class='warning'><b>[src]</b> smells <b>[sniffed]</b>!</span>","<span class='notice'>You smell <b>[sniffed]</b>. They smell like [sniffed.get_smell_message()].</span>","<b>Sniff!</b>") //BLUEMOON EDIT
 
-/mob/living/proc/get_smell_message(allow_generic = TRUE, datum/species/mrace)
-	if(!vore_smell && !allow_generic)
-		return FALSE
+// BLUEMOON EDIT START
+/mob/living/proc/get_smell_message()
 
 	var/smell_message = ""
-	if(vore_smell && (vore_smell != ""))
+	if((!ckey || client?.prefs.vore_flags & SMELLABLE) && vore_smell && vore_smell != "")
+	// BLUEMOON EDIT END
 		smell_message += "[vore_smell]"
 	else
 		if(ishuman(src))

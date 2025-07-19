@@ -8,6 +8,8 @@
 	icon = 'modular_bluemoon/icons/obj/clothing/modsuit/mod_clothing.dmi'
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/icons/mob/clothing/modsuit/mod_clothing_anthro.dmi'
+	// Bitflags for exosuit subcategories
+	var/mod_flags
 // BLUEMOON ADDITION END
 	icon_state = "standard-control"
 	item_state = "standard-control"

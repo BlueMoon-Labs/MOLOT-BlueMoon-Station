@@ -650,6 +650,10 @@
 		if(!HAS_TRAIT(bite_target, TRAIT_MASO))
 			// Force bite_target to play the scream emote
 			bite_target.emote("scream")
+		//BLUEMOON ADD START
+		else
+			bite_target.emote("moan")
+		//BLUEMOON ADD END
 
 		// Log the biting action failure
 		log_combat(action_owner,bite_target,"bloodfledge bitten (interrupted)")

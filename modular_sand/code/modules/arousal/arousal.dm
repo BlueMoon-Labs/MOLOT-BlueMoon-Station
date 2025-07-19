@@ -20,10 +20,13 @@
 	if (!istype(L))
 		return
 	var/list/receivers_list
-	var/list/other_worn = L.get_equipped_items()
+	//BLUEMOON EDIT START
 	for(var/obj/item/organ/genital/G in L.internal_organs)
-		if((!flag || (G.genital_flags & flag)) && G.is_exposed(other_worn)) //filter out what you can't cum into
+		if((!flag || (G.genital_flags & flag)) && (G.is_exposed() || G.always_accessible)) //filter out what you can't cum into
 			LAZYADD(receivers_list, G)
 	if(LAZYLEN(receivers_list))
-		var/obj/item/organ/genital/ret_organ = input(src, desc, title, null) as null|obj in receivers_list
+		for(var/obj/item/organ/genital/G in receivers_list)
+			receivers_list[G] = new /mutable_appearance(G)
+		var/obj/item/organ/genital/ret_organ = show_radial_menu(src, L, receivers_list, require_near = TRUE, tooltips = TRUE)
+	//BLUEMOON EDIT END
 		return ret_organ

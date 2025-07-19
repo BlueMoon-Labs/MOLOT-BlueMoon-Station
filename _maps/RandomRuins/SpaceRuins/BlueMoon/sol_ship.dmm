@@ -5,9 +5,9 @@
 	},
 /obj/effect/turf_decal/tile/dark_blue/full,
 /obj/machinery/power/apc/inteq{
-	dir = 4;
+	dir = 1;
 	name = "СИЗО-37 Listening Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 45
 	},
 /obj/structure/cable/yellow{
@@ -108,7 +108,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "aD" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/metal/twenty,
@@ -116,7 +116,7 @@
 	amount = 10
 	},
 /obj/item/stack/rods/ten,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/item/storage/box/lights/bulbs,
 /obj/item/stack/sheet/mineral/plasma{
 	amount = 30
@@ -135,7 +135,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
@@ -189,10 +189,13 @@
 	anchored = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/effect/turf_decal/stripes{
 	dir = 1;
 	icon_state = "delivery"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
@@ -329,7 +332,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "by" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
@@ -452,7 +455,7 @@
 /turf/open/floor/plasteel/white/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "cl" = (
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -473,7 +476,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "co" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -561,7 +564,7 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "dd" = (
 /obj/structure/filingcabinet,
 /obj/machinery/door/window{
@@ -678,7 +681,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_inspection)
 "dS" = (
-/obj/effect/turf_decal/solgov/all/top_right,
+/obj/effect/turf_decal/big_sign/solgov/ac,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "dT" = (
@@ -694,7 +697,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "dW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -801,7 +804,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "eC" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
@@ -872,7 +875,7 @@
 	pixel_x = 26
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "fl" = (
 /obj/structure/chair/stool/bar/directional/south,
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -992,7 +995,6 @@
 	pixel_x = 3;
 	pixel_y = 1
 	},
-/obj/effect/turf_decal/tile/dark_blue/fourcorners,
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
@@ -1295,6 +1297,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "hJ" = (
@@ -1429,15 +1434,6 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
-"in" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "io" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -1492,10 +1488,10 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "iH" = (
 /obj/structure/table/reinforced,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /obj/item/toy/plush/nukeplushie/susplushie,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "iL" = (
@@ -1548,7 +1544,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "jn" = (
 /obj/effect/turf_decal/stripes{
 	dir = 1;
@@ -1565,7 +1561,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
@@ -1631,7 +1627,7 @@
 /obj/item/reagent_containers/food/snacks/grown/onion,
 /obj/item/choice_beacon/ingredients,
 /obj/item/choice_beacon/ingredients,
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot/white,
 /obj/item/storage/box/ingredients/carnivore,
 /obj/item/storage/box/ingredients/wildcard,
 /obj/item/storage/fancy/egg_box,
@@ -1722,14 +1718,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "jT" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "jV" = (
-/obj/effect/turf_decal/solgov/all/top,
+/obj/effect/turf_decal/big_sign/solgov/ab,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "jY" = (
@@ -1790,7 +1786,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1809,7 +1805,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "kA" = (
 /obj/structure/table/optable,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot/yellow,
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
 /obj/machinery/airalarm/inteq{
 	dir = 1;
@@ -1979,16 +1975,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
-"lv" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "ly" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Crematorium";
@@ -2070,7 +2056,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
@@ -2259,12 +2245,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_inspection)
-"mN" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "mQ" = (
 /obj/structure/table/glass,
 /obj/item/hand_labeler,
@@ -2293,15 +2273,12 @@
 "mW" = (
 /obj/structure/closet,
 /obj/item/clothing/gloves/botanic_leather,
-/obj/effect/turf_decal/trimline/green/filled/line{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/green/filled/line{
-	dir = 5
-	},
 /obj/item/storage/bag/plants,
 /obj/item/storage/box/disks_plantgene,
 /obj/structure/window/reinforced/spawner/west,
+/obj/effect/turf_decal/trimline/green/filled/end{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "nb" = (
@@ -2509,7 +2486,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "om" = (
-/obj/effect/turf_decal/solgov/all,
+/obj/effect/turf_decal/big_sign/solgov/aa,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "op" = (
@@ -2662,7 +2639,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -2706,16 +2683,6 @@
 /obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
-"pg" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "pi" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -2797,7 +2764,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "pI" = (
-/obj/effect/turf_decal/stripes/box,
+/obj/effect/turf_decal/stripes/yellow/box,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "pL" = (
@@ -2849,7 +2816,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "qa" = (
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
@@ -3115,7 +3082,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "rH" = (
-/obj/effect/turf_decal/stripes/box,
+/obj/effect/turf_decal/stripes/yellow/box,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
@@ -3342,7 +3309,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "sx" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_inspection)
@@ -3366,7 +3333,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "sD" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
 /obj/structure/cable/yellow{
@@ -3375,7 +3342,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
@@ -3454,7 +3421,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bar)
 "tu" = (
-/obj/effect/turf_decal/solgov/all/center,
+/obj/effect/turf_decal/big_sign/solgov/bb,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "ty" = (
@@ -3641,7 +3608,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 2
 	},
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot/white,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
@@ -3821,7 +3788,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "wt" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "wu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -3964,7 +3931,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bar)
 "xi" = (
 /obj/structure/table,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 8
 	},
 /obj/item/paper/fluff/ruins/forgottenship/nanostrasen/sol,
@@ -4008,9 +3975,6 @@
 	},
 /obj/item/stack/sheet/plastic/five,
 /obj/item/pipe_dispenser,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 4
 	},
@@ -4239,7 +4203,7 @@
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "yw" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -4274,7 +4238,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "yB" = (
 /obj/machinery/door/poddoor/incinerator_syndicatelava_main,
 /turf/open/floor/engine/vacuum,
@@ -4286,10 +4250,10 @@
 "yF" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/apc/inteq{
-	dir = 1;
+	dir = 8;
 	name = "СИЗО-37 Post APC";
 	start_charge = 35;
-	pixel_x = -32
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
@@ -4496,7 +4460,7 @@
 /obj/structure/table/glass,
 /obj/item/clothing/neck/stethoscope,
 /obj/item/gun/medbeam,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "Ae" = (
@@ -4506,9 +4470,9 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/structure/closet/crate/trashcart,
 /obj/machinery/power/apc/inteq{
-	dir = 1;
+	dir = 4;
 	name = "СИЗО-37 Forgotten Ship APC";
-	pixel_x = 27;
+	pixel_x = 24;
 	start_charge = 35
 	},
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -4690,7 +4654,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "AX" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "Ba" = (
@@ -4711,7 +4675,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Bc" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "Be" = (
 /obj/machinery/computer/rdconsole/core{
 	req_access = null
@@ -4805,7 +4769,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "BP" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
@@ -4931,10 +4895,10 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Cq" = (
 /obj/machinery/smartfridge/food,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot/white,
 /turf/open/floor/plasteel/white/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "Cu" = (
@@ -4980,7 +4944,7 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "CJ" = (
-/obj/effect/turf_decal/solgov/all/bottom_center,
+/obj/effect/turf_decal/big_sign/solgov/cb,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "CN" = (
@@ -5019,9 +4983,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "CS" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 8
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -5037,10 +4998,13 @@
 /obj/item/grenade/frag/mega{
 	pixel_x = 12
 	},
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Dc" = (
-/obj/effect/turf_decal/solgov/all/center_right,
+/obj/effect/turf_decal/big_sign/solgov/bc,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "Dd" = (
@@ -5090,10 +5054,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Dl" = (
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 8
 	},
 /obj/item/cigbutt/cigarbutt,
@@ -5152,7 +5116,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_inspection)
 "DB" = (
-/obj/effect/turf_decal/solgov/all/bottom_right,
+/obj/effect/turf_decal/big_sign/solgov/cc,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "DC" = (
@@ -5275,13 +5239,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "Eo" = (
 /obj/machinery/processor,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 8
 	},
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot/white,
 /turf/open/floor/plasteel/white/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "Ep" = (
@@ -5295,7 +5259,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Et" = (
-/obj/effect/turf_decal/solgov/all/bottom_left,
+/obj/effect/turf_decal/big_sign/solgov/ca,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "Ex" = (
@@ -5309,7 +5273,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "Ey" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -5324,15 +5288,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "EA" = (
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 8
 	},
 /obj/machinery/deepfryer,
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot/white,
 /turf/open/floor/plasteel/white/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "EC" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "ED" = (
@@ -5342,7 +5306,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "EI" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot/yellow,
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = -32
 	},
@@ -5401,7 +5365,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "Fk" = (
 /obj/machinery/door/window{
 	dir = 1;
@@ -5616,7 +5580,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "GK" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "GN" = (
@@ -5774,7 +5738,7 @@
 	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "HA" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
@@ -5804,7 +5768,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "HR" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
@@ -5843,7 +5807,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -5914,10 +5878,10 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/stripes/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot/white,
 /turf/open/floor/plasteel/white/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "Ij" = (
@@ -5986,13 +5950,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "II" = (
-/obj/effect/turf_decal/tile/brown,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/effect/turf_decal/tile/dark_blue,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_inspection)
 "IO" = (
@@ -6144,22 +6108,22 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
 "JM" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 9
-	},
 /obj/machinery/cryopod{
 	dir = 8
 	},
 /obj/structure/sign/poster/official/poster_vulp8{
 	pixel_y = 32
 	},
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "JN" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot/yellow,
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
@@ -6197,7 +6161,7 @@
 /obj/machinery/pool/drain,
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "JX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6486,7 +6450,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "Ly" = (
 /obj/machinery/computer/camera_advanced{
 	dir = 8
@@ -6649,11 +6613,10 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_atmos)
 "Mc" = (
-/obj/effect/turf_decal/delivery,
 /obj/vehicle/sealed/mecha/combat/durand/zeus,
-/turf/open/floor/mech_bay_recharge_floor{
-	color = "#8c8c8c"
-	},
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/misc/recharge,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "Md" = (
 /obj/structure/cable/yellow{
@@ -7053,7 +7016,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "Oh" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bar)
@@ -7146,7 +7109,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /obj/structure/cable/yellow{
@@ -7292,7 +7255,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "Ql" = (
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "Qo" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -7543,10 +7506,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "RN" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1
-	},
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/clothing/head/welding,
 /obj/item/weldingtool/largetank,
@@ -7555,7 +7514,7 @@
 	dir = 1;
 	icon_state = "delivery"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/structure/sign/poster/contraband/syndicate_pistol{
 	icon_state = "poster_build";
 	name = "poster";
@@ -7643,7 +7602,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_medbay)
 "Sx" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -7708,7 +7667,7 @@
 /turf/open/floor/circuit/green,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_rnd)
 "SP" = (
-/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/stripes/red,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white/textured/large,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig)
@@ -7856,7 +7815,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8021,7 +7980,7 @@
 	network = list("fsc");
 	screen_loc = ""
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -8031,7 +7990,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Forgotten Ship APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /obj/item/soap/syndie,
@@ -8166,7 +8125,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
@@ -8259,7 +8218,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bar)
 "VY" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -8372,9 +8331,6 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
-"WJ" = (
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "WL" = (
 /obj/machinery/porta_turret/syndicate{
 	faction = list("neutral");
@@ -8730,7 +8686,7 @@
 /obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "СИЗО-37 Post APC";
-	pixel_y = 32;
+	pixel_y = 23;
 	start_charge = 35
 	},
 /obj/structure/cable/yellow{
@@ -8844,7 +8800,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost)
 "Zg" = (
-/obj/effect/turf_decal/solgov/all/center_left,
+/obj/effect/turf_decal/big_sign/solgov/ba,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_bridge)
 "Zj" = (
@@ -8861,7 +8817,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white/smooth/small,
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 "Zk" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Vault";
@@ -8871,7 +8827,7 @@
 /area/ruin/space/has_grav/bluemoon/inteq_forgotten_ship)
 "Zn" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 5
 	},
 /turf/open/floor/plasteel,
@@ -10980,7 +10936,7 @@ gQ
 sr
 As
 Nr
-WJ
+th
 xC
 KS
 Nr
@@ -11205,9 +11161,9 @@ Nr
 ut
 aW
 Nr
-WJ
+th
 XZ
-WJ
+th
 gu
 Nr
 Zz
@@ -11507,7 +11463,7 @@ xD
 rU
 DF
 XZ
-WJ
+th
 Nr
 UX
 th
@@ -11732,7 +11688,7 @@ th
 th
 AC
 XZ
-WJ
+th
 Ij
 Nr
 Nr
@@ -11807,7 +11763,7 @@ th
 th
 Fq
 XZ
-WJ
+th
 BY
 oD
 sq
@@ -11882,8 +11838,8 @@ nt
 nt
 ev
 XZ
-WJ
-lv
+th
+tW
 pr
 th
 th
@@ -11957,7 +11913,7 @@ qH
 qH
 YM
 NA
-pg
+rG
 hW
 gs
 rG
@@ -12034,7 +11990,7 @@ mo
 fK
 Dd
 tW
-mN
+xC
 th
 th
 pr
@@ -12107,9 +12063,9 @@ th
 Ky
 Eb
 Dh
-WJ
+th
 tW
-mN
+xC
 th
 th
 Ss
@@ -12330,9 +12286,9 @@ Nr
 aI
 eJ
 dv
-WJ
+th
 XZ
-WJ
+th
 ZU
 tf
 Dj
@@ -12405,9 +12361,9 @@ Nr
 yH
 th
 fO
-WJ
+th
 XZ
-WJ
+th
 Fk
 th
 TW
@@ -12482,7 +12438,7 @@ zO
 Vd
 eY
 XZ
-WJ
+th
 st
 zP
 qF
@@ -12630,9 +12586,9 @@ Nr
 Qc
 ga
 lh
-WJ
+th
 xC
-WJ
+th
 nY
 qB
 oy
@@ -12703,7 +12659,7 @@ Nr
 Nr
 Nr
 TP
-in
+ns
 oc
 ns
 vv

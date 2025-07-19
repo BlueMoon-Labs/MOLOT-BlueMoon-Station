@@ -15,6 +15,7 @@
 	icon_state = "enforcer_black"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/e45
+	pin = /obj/item/firing_pin/alert_level/blue
 	can_suppress = TRUE
 	can_flashlight = 1
 	flight_x_offset = 18

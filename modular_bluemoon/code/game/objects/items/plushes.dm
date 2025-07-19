@@ -328,7 +328,99 @@
 	name = "Millie plush"
 	desc = "A cute pink girl. The soft silicone gives off a pleasant strawberry-raspberry scent. When you squeeze the doll slightly, her tongue comes out in a funny way."
 	icon_state = "millie"
-	squeak_override = list('modular_bluemoon/sound/plush/millie.ogg' = 1)
+	squeak_override = list(
+		'modular_bluemoon/sound/plush/milp1.ogg' = 1,
+		'modular_bluemoon/sound/plush/milp2.ogg' = 1,
+		'modular_bluemoon/sound/plush/milp3.ogg' = 1,
+		'modular_bluemoon/sound/plush/milp4.ogg' = 1,
+		'modular_bluemoon/sound/plush/milp5.ogg' = 1,
+		'modular_bluemoon/sound/plush/milp6.ogg' = 1
+		)
+	var/obj/item/dildo/flared/huge/clash_target
+
+/obj/item/toy/plush/bm/millie/Moved()
+	. = ..()
+	if(clash_target)
+		return
+	var/obj/item/dildo/flared/huge/P = locate() in range(1, src)
+	if(P && istype(P.loc, /turf/open) && !P.clashing)
+		clash_of_the_plushies(P)
+
+/obj/item/toy/plush/bm/millie/proc/clash_of_the_plushies(obj/item/dildo/flared/huge/P)
+	clash_target = P
+	P.clashing = TRUE
+	say("Палка для мастурбации!")
+	P.say("Дура кошачья...")
+	var/a_winnar_is
+	var/victory_chance = 10
+	for(var/i in 1 to 10) //We only fight ten times max
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(!Adjacent(P))
+			visible_message("<span class='warning'>The two plushies angrily flail at each other before giving up.</span>")
+			clash_target = null
+			P.clashing = FALSE
+			return
+		playsound(src, 'sound/magic/clockwork/ratvar_attack.ogg', 50, TRUE, frequency = 2)
+		sleep(2.4)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(prob(victory_chance))
+			a_winnar_is = src
+			break
+		P.SpinAnimation(5, 0)
+		sleep(5)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		playsound(P, 'sound/magic/clockwork/narsie_attack.ogg', 50, TRUE, frequency = 2)
+		sleep(3.3)
+		if(QDELETED(src))
+			P.clashing = FALSE
+			return
+		if(QDELETED(P))
+			clash_target = null
+			return
+		if(prob(victory_chance))
+			a_winnar_is = P
+			break
+		SpinAnimation(5, 0)
+		victory_chance += 10
+		sleep(5)
+	if(!a_winnar_is)
+		a_winnar_is = pick(src, P)
+	if(a_winnar_is == src)
+		say("Секс ликвидирован")
+		playsound(src, 'sound/magic/clockwork/anima_fragment_attack.ogg', 50, TRUE, frequency = 2)
+		playsound(P, 'sound/magic/demon_dies.ogg', 50, TRUE, frequency = 2)
+		var/obj/effect/decal/cleanable/semen/femcum/V = new /obj/effect/decal/cleanable/semen/femcum(get_turf(src))
+		V.desc = "Да, вам не показалось, это сделала игрушка."
+		qdel(P)
+		clash_target = null
+	else
+		P.say("Очередная розовая шлюха повержена")
+		playsound(src, 'sound/magic/clockwork/anima_fragment_death.ogg', 62, TRUE, frequency = 2)
+		playsound(P, 'sound/magic/demon_attack1.ogg', 50, TRUE, frequency = 2)
+		var/datum/reagents/R = new(1)
+		R.my_atom = P
+		R.add_reagent(/datum/reagent/drug/aphrodisiac, 1)
+		var/datum/effect_system/smoke_spread/chem/smoke = new
+		smoke.set_up(R, 1, get_turf(P), FALSE)
+		sleep(5)
+		smoke.start()
+		qdel(src)
+		P.clashing = FALSE
 
 /obj/item/toy/plush/bm/lissara
 	name = "Lissara plush"
@@ -338,6 +430,146 @@
 	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 6,
 	'modular_splurt/sound/voice/raptor_purr.ogg' = 1
 	)
+	var/obj/item/toy/plush/bm/araminta/love_target
+	var/last_love_interaction = 0
+
+/obj/item/toy/plush/bm/lissara/Moved()
+	. = ..()
+
+	// Ограничение по процессу и времени на срабатывания
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 100)
+		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
+			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
+				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
+					loving_interaction(P)
+
+/obj/item/toy/plush/bm/lissara/proc/loving_interaction(obj/item/toy/plush/bm/araminta/partner)
+	var/turf/start = get_turf(src)
+	var/turf/end = get_turf(partner)
+
+	if(!start || !end) // На всякий случай
+		return
+
+	love_target = partner
+	partner.love_target = src
+
+	last_love_interaction = world.time
+	partner.last_love_interaction = world.time
+
+	var/list/original_pixel_offsets = list()
+	for(var/obj/item/toy/plush/plushe in list(src, partner))
+		// Сохраняем оригинальные позиции
+		original_pixel_offsets[plushe] = list(
+			"pixel_x" = plushe.pixel_x,
+			"pixel_y" = plushe.pixel_y
+		)
+		// Останавливаем бросок и таскание
+		plushe.forceMove(get_turf(plushe))
+		qdel(plushe.throwing)
+
+	// Проверяем: на одном ли тайле находятся игрушки
+	var/same_tile = get_turf(src) == get_turf(partner)
+
+	// Получаем координаты с учётом тайла и pixel-смещения
+	var/x1 = same_tile ? src.pixel_x : src.x * 32 + src.pixel_x
+	var/y1 = same_tile ? src.pixel_y : src.y * 32 + src.pixel_y
+	var/x2 = same_tile ? partner.pixel_x : partner.x * 32 + partner.pixel_x
+	var/y2 = same_tile ? partner.pixel_y : partner.y * 32 + partner.pixel_y
+
+	var/dx = x2 - x1
+	var/dy = y2 - y1
+
+	var/distance = sqrt(dx * dx + dy * dy)
+
+	// Целевое расстояние между игрушками
+	var/target_distance = 16
+	var/tolerance = 5
+
+	// Нужно ли анимировать
+	var/need_animate = abs(distance - target_distance) > tolerance
+
+	if(need_animate)
+		var/delta = (target_distance - distance) / 2.0
+
+		var/norm_x = dx / max(distance, 1)
+		var/norm_y = dy / max(distance, 1)
+
+		var/shift_x = round(norm_x * delta)
+		var/shift_y = round(norm_y * delta)
+
+		if(same_tile)
+			// Просто двигаем pixel_x / pixel_y
+			animate(src, pixel_x = src.pixel_x - shift_x, pixel_y = src.pixel_y - shift_y, time = 6)
+			animate(partner, pixel_x = partner.pixel_x + shift_x, pixel_y = partner.pixel_y + shift_y, time = 6)
+		else
+			// Смещаем абсолютные координаты, потом пересчитываем обратно
+			var/final_x1 = x1 - shift_x
+			var/final_y1 = y1 - shift_y
+			var/final_x2 = x2 + shift_x
+			var/final_y2 = y2 + shift_y
+
+			animate(src, pixel_x = final_x1 - (src.x * 32), pixel_y = final_y1 - (src.y * 32), time = 6)
+			animate(partner, pixel_x = final_x2 - (partner.x * 32), pixel_y = final_y2 - (partner.y * 32), time = 6)
+
+	// Диалог
+	src.say(pick(
+		"Привет, дорогая~",
+		"Скучала по тебе~",
+		"Ты прекрасна, как и всегда~",
+		"Наконец-то мы вместе~",
+		"Ты такая теплая~",
+		"Ара~",
+		"Обними меня крепче~",
+		"Моя кошечка~"))
+
+	partner.say(pick(
+		"Приветик, любимая~",
+		"Люблю тебя~",
+		"Обожаю~",
+		"Лисс~",
+		"Моя змейка~",
+		"Я так скучала по тебе~",
+		"Ты моя, навсегда~",
+		"Иди сюда, моя красавица~"))
+
+	var/heart_broken = FALSE // Если игрушки разняли, что бы не играть анимацию
+
+	for(var/i = 1, i <= 4, i++)
+		if(src.loc != start || partner.loc != end) // Если игрушки передвинули в процессе
+			var/heart_broken_say = list(
+				"Не-ет!",
+				"Не разлучай нас!",
+				"Верни меня!",
+				"Почему ты вмешался?!",
+				"Не забирай её у меня!",
+				"Это жестоко!",
+				"Я просто хотела быть с ней!"
+			)
+			src.say(pick(heart_broken_say))
+			partner.say(pick(heart_broken_say))
+			heart_broken = TRUE
+			goto cleanup
+		new /obj/effect/temp_visual/heart(get_turf(src))
+		new /obj/effect/temp_visual/heart(get_turf(partner))
+		if(i % 2 == 0)
+			playlewdinteractionsound(partner.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
+		else
+			playlewdinteractionsound(src.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
+		sleep(8)
+
+	cleanup:
+		if(need_animate)
+			for(var/obj/item/toy/plush/plushe in list(src, partner))
+				var/list/offsets = original_pixel_offsets[plushe]
+				if(heart_broken)
+					plushe.pixel_x = offsets["pixel_x"]
+					plushe.pixel_y = offsets["pixel_y"]
+				else
+					animate(plushe, pixel_x = offsets["pixel_x"], pixel_y = offsets["pixel_y"], time = 6)
+		love_target = null
+		partner.love_target = null
+
 
 /obj/item/toy/plush/bm/araminta
 	name = "Araminta plush"
@@ -347,9 +579,29 @@
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
 	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
 	)
+	var/obj/item/toy/plush/bm/lissara/love_target
+	var/last_love_interaction = 0
+
+/obj/item/toy/plush/bm/araminta/Moved()
+	. = ..()
+
+	// Ограничение по процессу и времени на срабатывания
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 100)
+		var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
+			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
+				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
+					P.loving_interaction(src)
 
 /obj/item/toy/plush/bm/stasik/artemq
 	name = "Artems toy plush"
 	desc = "Вы видите игрушку,одетую в стандатную форму inteQ. Смотря в удивленное плюшевое лицо,она вам подозрительно кого-то напоминает. Точно можно сказать что игрушка кого то испугалась. Но кого мог испугаться плюшевый интековец?"
 	icon_state = "artems"
 	squeak_override = list('modular_bluemoon/sound/voice/graysonplush.ogg' = 2, 'modular_bluemoon/sound/voice/stasik_volcahara.ogg' = 1,)
+
+/obj/item/toy/plush/bm/carrion
+	name = "Monster plushie"
+	desc = "One of the many monsters bred by geneticists. This one is made of synthetic materials, very soft, and can be used as an anti-stress tool. Especially for fans!"
+	icon_state = "carrion"
+	attack_verb = list("squish", "glorp", "blorp")
+	squeak_override = list('modular_bluemoon/sound/voice/fleshy_squish.ogg' = 1)

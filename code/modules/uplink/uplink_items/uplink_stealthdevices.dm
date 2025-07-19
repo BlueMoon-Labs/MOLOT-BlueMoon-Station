@@ -138,6 +138,6 @@
 	desc = "This satchel is thin enough to be hidden in the gap between plating and tiling; great for stashing \
 			your stolen goods. Comes with a crowbar and a floor tile inside. Properly hidden satchels have been \
 			known to survive intact even beyond the current shift, but this is just a myth. "
-	item = /obj/item/storage/backpack/satchel/flat
+	item = /obj/item/storage/backpack/satchel/flat/with_tools
 	cost = 1
 	surplus = 30

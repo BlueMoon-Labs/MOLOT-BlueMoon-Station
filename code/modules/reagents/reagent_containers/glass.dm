@@ -313,8 +313,8 @@
 	custom_materials = list(/datum/material/iron=200)
 	w_class = WEIGHT_CLASS_NORMAL
 	amount_per_transfer_from_this = 20
-	possible_transfer_amounts = list(5,10,15,20,25,30,50,70)
-	volume = 70
+	possible_transfer_amounts = list(5,10,15,20,25,30,40,50,60,120) // BLUEMOON CHANGE подгоняем под большую банку
+	volume = 120 // BLUEMOON CHANGE подгоняем под большую банку
 	flags_inv = HIDEHAIR
 	slot_flags = ITEM_SLOT_HEAD
 	resistance_flags = NONE
@@ -338,10 +338,11 @@
 
 /obj/item/reagent_containers/glass/bucket/attackby(obj/O, mob/user, params)
 	if(istype(O, /obj/item/mop))
+		var/obj/item/mop/MOP = O
 		if(reagents.total_volume < 1)
 			to_chat(user, "<span class='warning'>[src] is out of water!</span>")
 		else
-			reagents.trans_to(O, 5, log = "reagentcontainer-bucket fill mop")
+			reagents.trans_to(O, MOP.mopcap, log = "reagentcontainer-bucket fill mop")
 			to_chat(user, "<span class='notice'>You wet [O] in [src].</span>")
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 	else if(isprox(O))

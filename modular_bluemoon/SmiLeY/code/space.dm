@@ -55,3 +55,12 @@
 	allow_duplicates = FALSE
 	always_place = TRUE
 	id = "forgottenship_nothing"
+
+/datum/map_template/ruin/space/abductorcrush
+	name = "Crushed Abductor Ship"
+	description = "Похоже, греи-похитители в этот раз не учли, что их цели похищения вполне способны дать отпор... И даже отследить неприятеля."
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "abductor_crushed.dmm"
+	allow_duplicates = FALSE
+	always_place = TRUE
+	id = "abductorcrush"

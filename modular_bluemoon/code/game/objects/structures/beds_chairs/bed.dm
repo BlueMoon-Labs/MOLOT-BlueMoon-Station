@@ -34,3 +34,26 @@
 			return TRUE
 	return FALSE
 //Копипаст закончен
+
+//Bed
+/obj/structure/bed/pre_buckle_mob(mob/living/M)
+	if(buckle_lying)
+		switch(dir)
+			if(NORTH, WEST) // 1, 8
+				buckle_lying = 270
+			if(SOUTH, EAST) // 2, 4
+				buckle_lying = 90
+	. = ..()
+
+/obj/structure/bed/double
+	icon = 'modular_bluemoon/icons/obj/objects.dmi'
+	icon_state = "bed_double"
+
+/obj/structure/bed/pod
+	icon = 'modular_bluemoon/icons/obj/lavaland/survival_pod.dmi'
+	icon_state = "bed"
+
+/obj/structure/bed/double/pod
+	icon = 'modular_bluemoon/icons/obj/lavaland/survival_pod.dmi'
+	icon_state = "bed_double"
+

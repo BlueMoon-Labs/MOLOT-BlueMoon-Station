@@ -62,7 +62,7 @@
 	},
 /area/shuttle/syndicate/frigate)
 "bt" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/right,
+/obj/effect/turf_decal/big_sign/syndicate/bottom/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "bw" = (
@@ -98,7 +98,7 @@
 	},
 /area/shuttle/syndicate/frigate)
 "cE" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/top/left,
+/obj/effect/turf_decal/big_sign/syndicate/top/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "cO" = (
@@ -171,7 +171,7 @@
 	},
 /area/shuttle/syndicate/frigate)
 "eC" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/top/right,
+/obj/effect/turf_decal/big_sign/syndicate/top/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "eG" = (
@@ -720,7 +720,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "pu" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/top/middle,
+/obj/effect/turf_decal/big_sign/syndicate/top/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "pT" = (
@@ -1144,7 +1144,7 @@
 	},
 /area/shuttle/syndicate/frigate)
 "xf" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/left,
+/obj/effect/turf_decal/big_sign/syndicate/bottom/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "xh" = (
@@ -1255,7 +1255,9 @@
 	dir = 4;
 	name = "Cargo Bay"
 	},
-/turf/open/space/basic,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
 /area/shuttle/syndicate/frigate)
 "zF" = (
 /obj/structure/extinguisher_cabinet/directional/east,
@@ -1399,7 +1401,7 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/frigate)
 "Do" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/left,
+/obj/effect/turf_decal/big_sign/syndicate/middle/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "Du" = (
@@ -1651,11 +1653,11 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/frigate)
 "IW" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/middle,
+/obj/effect/turf_decal/big_sign/syndicate/bottom/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "IY" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/middle,
+/obj/effect/turf_decal/big_sign/syndicate/middle/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "Jg" = (
@@ -1839,7 +1841,7 @@
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "Lt" = (
-/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/right,
+/obj/effect/turf_decal/big_sign/syndicate/middle/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/frigate)
 "Lu" = (
@@ -1998,7 +2000,10 @@
 /area/shuttle/syndicate/frigate)
 "OS" = (
 /obj/vehicle/sealed/mecha/combat/gygax/dark/loaded,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/misc/recharge,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
 /area/shuttle/syndicate/frigate)
 "Pe" = (
 /obj/machinery/light/small/directional/west,
@@ -2176,7 +2181,10 @@
 /area/shuttle/syndicate/frigate)
 "UE" = (
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/misc/recharge,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
 /area/shuttle/syndicate/frigate)
 "UH" = (
 /obj/machinery/door/airlock/hatch{

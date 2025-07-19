@@ -881,3 +881,21 @@
 	desc = "A modkit for making a Miniature Energy Gun into Anabel."
 	product = /obj/item/gun/energy/e_gun/hos/Anabel
 	fromitem = list(/obj/item/gun/energy/e_gun/mini, /obj/item/gun/energy/e_gun/mini/expeditor)
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/gun/ballistic/revolver/detective/rsh_future
+	name = "RSH-Future"
+	desc = " A custom-made revolver .38 caliber, engraved on the cylinder of the drum - 228321. The special body of this revolver, made of an unusual list of materials, allows you to muffle the sound of shots of this caliber, by about 25 percent. But still, there is a minus - a strong recoil, what a without a strong grip - It will be painfully."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "rsh_future"
+	item_state = "rsh_future"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/rshfuture_shot.ogg'
+	
+/obj/item/modkit/rsh_future
+	name = "Special .38 Mars Kit"
+	desc = "A modkit for making a .38 Mars Special into a RSH-Future."
+	product = /obj/item/gun/ballistic/revolver/detective/rsh_future
+	fromitem = list (/obj/item/gun/ballistic/revolver/detective)

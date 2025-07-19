@@ -10,6 +10,7 @@
 	complexity = 1
 	incompatible_modules = list(/obj/item/mod/module/welding)
 	overlay_state_inactive = "module_welding"
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/welding/on_suit_activation()
 	mod.helmet.flash_protect = 2
@@ -33,6 +34,7 @@
 	cooldown_time = 0.5 SECONDS
 	/// T-ray scan range.
 	var/range = 4
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/t_ray/on_active_process(delta_time)
 	t_ray_scan(mod.wearer, 0.8 SECONDS, range)
@@ -52,6 +54,7 @@
 	cooldown_time = 0.5 SECONDS
 	/// Slowdown added onto the suit.
 	var/slowdown_active = 2
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/magboot/on_activation()
 	. = ..()
@@ -91,6 +94,7 @@
 	use_power_cost = DEFAULT_CHARGE_DRAIN
 	incompatible_modules = list(/obj/item/mod/module/tether)
 	cooldown_time = 1.5 SECONDS
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/tether/on_use()
 	if(mod.wearer.has_gravity(get_turf(src)))
@@ -146,6 +150,7 @@
 	complexity = 2
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
 	incompatible_modules = list(/obj/item/mod/module/rad_protection)
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/rad_protection/on_suit_activation()
 	mod.armor = mod.armor.modifyRating(rad = 65)
@@ -174,6 +179,7 @@
 	use_power_cost = DEFAULT_CHARGE_DRAIN * 2
 	incompatible_modules = list(/obj/item/mod/module/constructor, /obj/item/mod/module/quick_carry)
 	cooldown_time = 11 SECONDS
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/constructor/on_suit_activation()
 	ADD_TRAIT(mod.wearer, TRAIT_QUICK_BUILD, MOD_TRAIT)
@@ -194,6 +200,7 @@
 	cooldown_time = 0.5 SECONDS
 	/// Volume of our reagent holder.
 	var/volume = 500
+	mod_module_flags = MOD_MODULE_ENGINEERING // BLUEMOON ADD
 
 /obj/item/mod/module/mister/Initialize(mapload)
 	create_reagents(volume, OPENCONTAINER)

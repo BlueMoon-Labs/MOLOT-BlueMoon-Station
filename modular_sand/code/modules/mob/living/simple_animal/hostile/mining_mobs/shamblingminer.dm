@@ -36,7 +36,27 @@
 	robust_searching = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	minimum_distance = 1
+// Bluemoon Add
+	speak_emote = list("бубнит","хрипит")
+	speak = list(
+        "Доченька... такая большая стала... скоро папа вернётся.....",
+        "Вылазка... мы скоро вернемся... Не переживай цветик, ладно ?",
+        "Ещё немного копать... и домой... эх... вот только найти бы дорогу...",
+        "Найти.. собрать... хрррр...",
+        "найти артефакты... найти артефакты......",
+        "Болит ай болиииит....",
+    )
+	speak_chance = 10
 
+	emote_taunt = list(
+        "Некрополь зовет...",
+        "уб-бить...",
+        "Голова... болит... нужно.. убивать...",
+        "*рычит*",
+        "Обратной.. дороги... нет...",
+        "чужак...",)
+	taunt_chance = 30
+//Bluemood END
 /mob/living/simple_animal/hostile/asteroid/miner/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \

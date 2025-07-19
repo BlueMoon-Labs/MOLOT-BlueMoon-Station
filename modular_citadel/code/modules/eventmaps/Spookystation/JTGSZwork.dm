@@ -154,7 +154,7 @@
 	icon_state = "grass_clump"
 	turf_type = /turf/open/floor/spooktime/nonspooktimegrass
 	resistance_flags = FLAMMABLE
-
+/* BLUEMOON DELETE фуфуфу бяку использовать
 /obj/item/stack/tile/normalasssand
 	name = "piles of sand"
 	singular_name = "pile of sand"
@@ -162,7 +162,7 @@
 	icon = 'modular_citadel/code/modules/eventmaps/Spookystation/iconfile32.dmi'
 	icon_state = "sand_clump"
 	turf_type = /turf/open/floor/spooktime/beach
-
+*/
 /*
 	IMPORTANT TURFS */
 
@@ -788,46 +788,62 @@ GLOBAL_LIST_EMPTY(rain_sounds)
 //Damaged plasteel plates, cause fuck varediting all these icons my man.
 //Just search damturf for the tree
 
-/turf/open/floor/plasteel/damturf //ez search plasteel parent
+//ez search plasteel parent
 /turf/open/floor/plasteel/damturf/damage1
 	icon_state = "damaged1"
+
 /turf/open/floor/plasteel/damturf/damage2
 	icon_state = "damaged2"
-/turf/open/floor/plasteel/damturf/
+
+/turf/open/floor/plasteel/damturf/damage3
 	icon_state = "damaged3"
+
 /turf/open/floor/plasteel/damturf/damage4
 	icon_state = "damaged4"
+
 /turf/open/floor/plasteel/damturf/damage5
 	icon_state = "damaged5"
-/turf/open/floor/plasteel/damturf/scorched
-	icon_state = "panelscorched"
+
 /turf/open/floor/plasteel/damturf/scorched1
 	icon_state = "floorscorched1"
+
 /turf/open/floor/plasteel/damturf/scorched2
 	icon_state = "floorscorched2"
-/turf/open/floor/plasteel/damturf/platdmg1
+
+/turf/open/floor/plating/damturf/scorched
+	icon_state = "panelscorched"
+
+/turf/open/floor/plating/damturf/platdmg1
 	icon_state = "platingdmg1"
-/turf/open/floor/plasteel/damturf/platdmg2
+
+/turf/open/floor/plating/damturf/platdmg2
 	icon_state = "platingdmg2"
-/turf/open/floor/plasteel/damturf/platdmg3
+
+/turf/open/floor/plating/damturf/platdmg3
 	icon_state = "platingdmg3"
 
-/turf/open/floor/wood/damturf //ez search wood parent
+//ez search wood parent
 /turf/open/floor/wood/damturf/broken1
 	icon_state = "wood-broken"
+
 /turf/open/floor/wood/damturf/broken2
 	icon_state = "wood-broken2"
+
 /turf/open/floor/wood/damturf/broken3
 	icon_state = "wood-broken3"
+
 /turf/open/floor/wood/damturf/broken4
 	icon_state = "wood-broken4"
+
 /turf/open/floor/wood/damturf/broken5
 	icon_state = "wood-broken5"
+
 /turf/open/floor/wood/damturf/broken6
 	icon_state = "wood-broken6"
+
 /turf/open/floor/wood/damturf/broken7
 	icon_state = "wood-broken7"
-
+/* BLUEMOON DELETE фу-фу-фу брось бяку использовать
 //Parent that goes into coasts too
 /turf/open/floor/spooktime/beach //laketime
 	gender = PLURAL
@@ -934,7 +950,7 @@ GLOBAL_LIST_EMPTY(rain_sounds)
 
 /turf/open/floor/spooktime/beach/watersolid/attackby(obj/item/C, mob/user, params)
 	return //You aren't digging my lake out unless I want you to fool.
-
+*/ // BLUEMOON DELETE END
 //Motion river water with the lighting on it.
 /turf/open/floor/spooktime/riverwatermotion
 	gender = PLURAL

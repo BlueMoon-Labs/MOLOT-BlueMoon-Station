@@ -55,7 +55,7 @@
 /datum/blackmarket_item/misc/smugglers_satchel
 	name = "Smuggler's Satchel"
 	desc = "This easily hidden satchel can become a versatile tool to anybody with the desire to keep certain items out of sight and out of mind."
-	item = /obj/item/storage/backpack/satchel/flat
+	item = /obj/item/storage/backpack/satchel/flat/with_tools
 	price_min = 750
 	price_max = 1000
 	stock_max = 2

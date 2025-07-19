@@ -333,3 +333,21 @@
 		to_chat(user, "<span class='warning'>You cannot use your weapon while on the station!</span>")
 		return FALSE
 	return TRUE
+
+/obj/item/firing_pin/alert_level
+	name = "alert level firing pin"
+	var/desired_minimium_alert = SEC_LEVEL_AMBER //For the purpose of the firing pin, we will consider violet, orange and amber as same level
+	desc = "A small authentication device, to be inserted into a firearm receiver to allow operation. This one is configured to only fire on amber alert or higher."
+	fail_message = "incorrect alert level!"
+
+/obj/item/firing_pin/alert_level/pin_auth(mob/living/user)
+	return (isnum(GLOB.security_level) && GLOB.security_level >= desired_minimium_alert)
+
+/obj/item/firing_pin/alert_level/blue
+	name = "alert level firing pin"
+	desired_minimium_alert = SEC_LEVEL_BLUE
+	desc = "A small authentication device, to be inserted into a firearm receiver to allow operation. This one is configured to only fire on blue alert or higher."
+	fail_message = "incorrect alert level!"
+
+/obj/item/firing_pin/alert_level/blue/pin_auth(mob/living/user)
+	return (isnum(GLOB.security_level) && GLOB.security_level >= desired_minimium_alert)

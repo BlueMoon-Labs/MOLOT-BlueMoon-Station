@@ -79,7 +79,8 @@
 /datum/quirk/anti_normalizer
 	name = "Невосприимчивость к нормалайзеру"
 	desc = "Syntech производит устройства-нормалайзеры, подводящие параметры размера существ к человеческим. \
-	По тем или иным причинам, на вас эта технология не работает, как и их size tool."
+	По тем или иным причинам, на вас эта технология почти не работает, как и их size tool. Однако модифицированная под вас версия \
+	нормализатора (из loadout) способна создать нужный эффект."
 	value = 0
 	mob_trait = TRAIT_BLUEMOON_ANTI_NORMALIZER
 	gain_text = "<span class='notice'>В последний раз, когда вы пытались надеть нормалайзер, он не работал.</span>"
@@ -159,3 +160,21 @@
 /datum/quirk/bondage_lover/remove()
 	// Remove mood event
 	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, QMOOD_BONDAGE)
+
+/datum/quirk/imaginary_friend
+	name = "Воображаемый друг"
+	desc = "У вас появился друг в голове. Кто знает, поможет он вам, или нет... Только не соглашайтесь на его предложение сделать клуб!"
+	value = 0
+	mob_trait = TRAIT_IMAGINARYFRIEND
+	//gain_text handled be trauma
+	//lose_text handled be trauma
+	medical_record_text = "У пациента присутсвует \"Воображаемый Друг\"."
+	on_spawn_immediate = FALSE
+
+/datum/quirk/imaginary_friend/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/special/imaginary_friend, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/imaginary_friend/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.cure_trauma_type(/datum/brain_trauma/special/imaginary_friend, TRAUMA_RESILIENCE_ABSOLUTE)

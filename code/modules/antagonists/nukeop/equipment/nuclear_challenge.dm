@@ -1,4 +1,4 @@
-#define CHALLENGE_TELECRYSTALS 250
+#define CHALLENGE_TELECRYSTALS 500
 #define PLAYER_SCALING 1.5
 #define CHALLENGE_TIME_LIMIT 25000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
 #define CHALLENGE_PLAYERS_TARGET 50 //target players population. anything below is a malus to the challenge tc bonus.
@@ -59,6 +59,8 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 
 	priority_announce(war_declaration, title = "Объявление Войны", sound = war_sound, has_important_message = TRUE)
 
+	addtimer(CALLBACK(SSsecurity_level, TYPE_PROC_REF(/datum/controller/subsystem/security_level, set_level), SEC_LEVEL_LAMBDA), 30 SECONDS)
+
 	to_chat(user, "You've attracted the attention of powerful forces within the InteQ. A bonus bundle of Credits has been granted to your team. Great things await you if you complete the mission.")
 
 	for(var/V in GLOB.syndicate_shuttle_boards)
@@ -101,6 +103,8 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 		return
 
 	priority_announce(war_declaration, title = "Объявление Войны", sound = 'sound/machines/alarm.ogg', has_important_message = TRUE)
+
+	addtimer(CALLBACK(SSsecurity_level, TYPE_PROC_REF(/datum/controller/subsystem/security_level, set_level), SEC_LEVEL_LAMBDA), 30 SECONDS)
 
 	for(var/V in GLOB.syndicate_shuttle_boards)
 		var/obj/item/circuitboard/computer/syndicate_shuttle/board = V

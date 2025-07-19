@@ -579,46 +579,46 @@
 	color = rgb(204,233,235)
 
 //decals//--
-/obj/effect/turf_decal/snowdin_station_sign
+/obj/effect/turf_decal/big_sign/snowdin_station_sign
 	icon_state = "AOP1"
 
-/obj/effect/turf_decal/snowdin_station_sign/two
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/two
 	icon_state = "AOP2"
 
-/obj/effect/turf_decal/snowdin_station_sign/three
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/three
 	icon_state = "AOP3"
 
-/obj/effect/turf_decal/snowdin_station_sign/four
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/four
 	icon_state = "AOP4"
 
-/obj/effect/turf_decal/snowdin_station_sign/five
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/five
 	icon_state = "AOP5"
 
-/obj/effect/turf_decal/snowdin_station_sign/six
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/six
 	icon_state = "AOP6"
 
-/obj/effect/turf_decal/snowdin_station_sign/seven
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/seven
 	icon_state = "AOP7"
 
-/obj/effect/turf_decal/snowdin_station_sign/up
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up
 	icon_state = "AOPU1"
 
-/obj/effect/turf_decal/snowdin_station_sign/up/two
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/two
 	icon_state = "AOPU2"
 
-/obj/effect/turf_decal/snowdin_station_sign/up/three
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/three
 	icon_state = "AOPU3"
 
-/obj/effect/turf_decal/snowdin_station_sign/up/four
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/four
 	icon_state = "AOPU4"
 
-/obj/effect/turf_decal/snowdin_station_sign/up/five
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/five
 	icon_state = "AOPU5"
 
-/obj/effect/turf_decal/snowdin_station_sign/up/six
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/six
 	icon_state = "AOPU6"
 
-/obj/effect/turf_decal/snowdin_station_sign/up/seven
+/obj/effect/turf_decal/big_sign/snowdin_station_sign/up/seven
 	icon_state = "AOPU7"
 
 /obj/effect/landmark/vr_spawn/snowdin

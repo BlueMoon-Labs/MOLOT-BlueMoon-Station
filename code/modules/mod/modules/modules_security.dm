@@ -17,6 +17,7 @@
 	var/bumpoff = TRUE
 	/// The alpha applied when the cloak is on.
 	var/stealth_alpha = 50
+	mod_module_flags = MOD_MODULE_SECURITY // BLUEMOON ADD
 
 /obj/item/mod/module/stealth/on_activation()
 	. = ..()
@@ -75,6 +76,7 @@
 	var/static/list/guns_typecache
 	/// The guns already allowed by the modsuit chestplate.
 	var/list/already_allowed_guns = list()
+	mod_module_flags = MOD_MODULE_SECURITY // BLUEMOON ADD
 
 /obj/item/mod/module/magnetic_harness/Initialize(mapload)
 	. = ..()
@@ -131,6 +133,7 @@
 	allowed_inactive = TRUE
 	/// Gun we have holstered.
 	var/obj/item/gun/holstered
+	mod_module_flags = MOD_MODULE_SECURITY // BLUEMOON ADD
 
 /obj/item/mod/module/holster/on_use()
 	. = ..()

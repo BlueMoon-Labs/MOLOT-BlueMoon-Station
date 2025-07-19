@@ -13,6 +13,7 @@
 #define TRAIT_SHY							"shy"
 #define TRAIT_COMMON_PREGNANCY				"common_pregnancy"
 #define TRAIT_BONDAGED						"bondaged"
+#define TRAIT_IMAGINARYFRIEND				"imaginaryfriend"
 
 // Отдельные наименования для квирков, чтобы не повторять их в настройках
 #define BLUEMOON_TRAIT_NAME_SHRIEK				"Крикун"

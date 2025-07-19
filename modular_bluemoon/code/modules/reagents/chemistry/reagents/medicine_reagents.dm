@@ -24,3 +24,19 @@
 	if(!isrobotic(M))
 		return
 	M.reagents.add_reagent(/datum/reagent/blood/oil, metabolization_rate * 10)
+
+/datum/reagent/medicine/spermatex
+	name = "Spermatex"
+	description = "Destroys sperm and removes from the patient's body without affecting other chemicals. It is not a means of contraception!"
+	reagent_state = LIQUID
+	color = "#ffffd0"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	pH = 7
+
+/datum/reagent/medicine/spermatex/on_mob_add(mob/living/carbon/M)
+	M.remove_status_effect(STATUS_EFFECT_DRIPPING_CUM)
+
+/datum/reagent/medicine/spermatex/on_mob_life(mob/living/carbon/M)
+	. = 1
+	M.reagents.remove_reagent(/datum/reagent/consumable/semen, 10)
+	..()

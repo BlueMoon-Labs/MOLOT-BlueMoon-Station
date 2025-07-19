@@ -178,6 +178,54 @@
 					category_override += "Phazon"
 				if(mech_types & EXOSUIT_MODULE_SAVANNAH)
 					category_override += "Savannah-Ivanov"
+		// BLUEMOON ADD START
+			// Sorting exosuit modules & weapons in subcategories
+			var/mecha_modules = initial(E.mecha_subcategory_flags)
+			sub_category = list()
+			if(mecha_modules)
+				if(mecha_modules & EXISUIT_WEAPON_MODULE_BALLISTIC)
+					sub_category += "Ballistic Weapon"
+				if(mecha_modules & EXISUIT_WEAPON_MODULE_ENERGY)
+					sub_category += "Energy Weapon"
+				if(mecha_modules & EXISUIT_WEAPON_MODULE_AOE)
+					sub_category += "Missile & Launcher Weapon"
+				if(mecha_modules & EXISUIT_MODULE_NONWEAPON)
+					sub_category += "Utility"
+			else
+				sub_category += "Modules"
+		// Sorting mod modules in subcategories
+		else if(built_item in typesof(/obj/item/mod/module))
+			var/obj/item/mod/module/M = built_item
+			var/mod_module_types = initial(M.mod_module_flags)
+			sub_category = list()
+			if(mod_module_types)
+				if(mod_module_types & MOD_MODULE_GENERAL)
+					sub_category += "General"
+				if(mod_module_types & MOD_MODULE_ENGINEERING)
+					sub_category += "Engineering"
+				if(mod_module_types & MOD_MODULE_SECURITY)
+					sub_category += "Security"
+				if(mod_module_types & MOD_MODULE_MEDICAL)
+					sub_category += "Medical"
+				if(mod_module_types & MOD_MODULE_SCIENCE)
+					sub_category += "Science & Bluespace"
+				if(mod_module_types & MOD_MODULE_SUPPLY)
+					sub_category += "Supply & Mining"
+				if(mod_module_types & MOD_MODULE_VISOR)
+					sub_category += "HUD & Visors"
+			else
+				sub_category += "Miscellaneous"
+		// Sorting mod parts and platings in subcategories
+		else if(built_item in typesof(/obj/item/mod/construction))
+			var/obj/item/mod/construction/C = built_item
+			var/mod_parts = initial(C.mod_flags)
+			sub_category = list()
+			if(mod_parts)
+				if(mod_parts & MOD_CONSTRUCTION)
+					sub_category += "Parts"
+				if(mod_parts & MOD_PLATING)
+					sub_category += "Platings"
+		// BLUEMOON ADD END
 
 	var/list/part = list(
 		"name" = D.name,

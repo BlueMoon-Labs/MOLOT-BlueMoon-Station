@@ -31,7 +31,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/dorm)
@@ -113,10 +113,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/powered/animal_hospital)
-"ahM" = (
-/mob/living/simple_animal/hostile/cult/warrior,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "aji" = (
 /obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -243,9 +239,6 @@
 /obj/item/kitchen/knife/combat/bone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
-"asm" = (
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "asN" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -306,9 +299,13 @@
 	dir = 4
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 4
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "ayG" = (
 /obj/effect/turf_decal/trimline/white/line{
@@ -352,18 +349,14 @@
 /obj/effect/decal/nuclear_waste,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/reactor)
-"aFs" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/organ/eyes,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "aGp" = (
 /obj/structure/chair/pew{
 	dir = 4
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/big_sign/chapel/center,
+/obj/effect/turf_decal/big_sign/chapel/base,
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "aGV" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
@@ -643,7 +636,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 4
 	},
 /obj/structure/cable/yellow{
@@ -689,7 +682,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/powered/animal_hospital)
 "bbg" = (
-/obj/effect/turf_decal/stripes/white/line,
+/obj/effect/turf_decal/stripes/white,
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 4
 	},
@@ -893,7 +886,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1067,7 +1060,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/ruin/lavaland/powered/animal_hospital)
 "bBy" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1102,7 +1095,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/powered/animal_hospital)
 "bEN" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 10
 	},
 /turf/open/floor/wood/wood_diagonal,
@@ -1171,7 +1164,7 @@
 	},
 /area/ruin/space/has_grav/russianbunker)
 "bJb" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 5
 	},
 /obj/machinery/stasis,
@@ -1190,10 +1183,6 @@
 /obj/structure/bookcase,
 /turf/open/indestructible/boss,
 /area/awaymission)
-"bJT" = (
-/obj/item/stack/sheet/runed_metal/ten,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "bJY" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plasteel,
@@ -1202,7 +1191,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
@@ -1366,7 +1355,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/awaymission)
 "bYL" = (
-/obj/effect/turf_decal/stripes/white/line,
+/obj/effect/turf_decal/stripes/white,
 /obj/structure/holohoop{
 	dir = 1
 	},
@@ -2107,7 +2096,7 @@
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
 	dir = 9
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2209,7 +2198,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2907,7 +2896,7 @@
 /turf/open/floor/clockwork/reebe,
 /area/awaymission)
 "eet" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3257,9 +3246,13 @@
 /area/awaymission)
 "eLU" = (
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 1
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "eLX" = (
 /turf/open/floor/plasteel/white,
@@ -3310,7 +3303,7 @@
 /turf/open/floor/plasteel/cult,
 /area/awaymission)
 "eNC" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/white/line{
@@ -3347,7 +3340,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 6
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3411,9 +3404,13 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/ruin/lavaland/powered/animal_hospital)
 "eUR" = (
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 1
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "eVy" = (
 /obj/structure/ladder,
@@ -3425,10 +3422,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
-"eWU" = (
-/obj/structure/destructible/cult/pylon,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "eXr" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/white,
@@ -3487,7 +3480,9 @@
 /obj/structure/chair/pew{
 	dir = 4
 	},
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/big_sign/chapel/center,
+/obj/effect/turf_decal/big_sign/chapel/base,
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "fdJ" = (
 /obj/machinery/conveyor{
@@ -4357,7 +4352,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel/chapel,
+/obj/effect/turf_decal/big_sign/chapel/center,
+/obj/effect/turf_decal/big_sign/chapel/base,
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "gyc" = (
 /obj/structure/bed/pod,
@@ -4598,7 +4595,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/stripes/yellow/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4895,7 +4892,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/powered/animal_hospital)
 "hoV" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 9
 	},
 /turf/open/floor/wood/wood_diagonal,
@@ -4919,7 +4916,7 @@
 /turf/open/indestructible/boss,
 /area/awaymission)
 "hqF" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 4
 	},
 /turf/open/floor/wood/wood_diagonal,
@@ -5635,7 +5632,7 @@
 	name = "Main Area APC";
 	pixel_y = -23
 	},
-/obj/effect/turf_decal/stripes/corner,
+/obj/effect/turf_decal/stripes/yellow/corner,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
@@ -6110,9 +6107,13 @@
 /obj/structure/chair/pew{
 	dir = 4
 	},
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 4
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "jmq" = (
 /obj/machinery/light/small{
@@ -6326,9 +6327,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/powered/animal_hospital)
 "jCk" = (
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 8
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "jCy" = (
 /turf/closed/mineral/random,
@@ -6454,7 +6459,7 @@
 	},
 /area/ruin/lavaland/powered/animal_hospital)
 "jMo" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/structure/closet/crate/bin{
 	name = "laundry bin"
 	},
@@ -6614,7 +6619,7 @@
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "jSZ" = (
-/obj/effect/turf_decal/stripes/white/line,
+/obj/effect/turf_decal/stripes/white,
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 8
 	},
@@ -6777,7 +6782,7 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/powered/animal_hospital)
 "kir" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 9
 	},
 /obj/machinery/sleeper{
@@ -7384,7 +7389,7 @@
 /obj/structure/chair{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel,
@@ -7560,7 +7565,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/stripes/yellow/corner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -7605,7 +7610,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "lHW" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 5
 	},
 /turf/open/floor/wood/wood_diagonal,
@@ -7716,7 +7721,7 @@
 /area/awaymission)
 "lUi" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -8100,10 +8105,6 @@
 	},
 /turf/open/indestructible/boss,
 /area/awaymission)
-"mAo" = (
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "mAy" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
@@ -8177,7 +8178,7 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/powered/snow_biodome)
 "mIk" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 1
 	},
 /obj/structure/holohoop{
@@ -8719,7 +8720,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/stripes/yellow/corner{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -8814,7 +8815,7 @@
 /area/ruin/space/has_grav/deepstorage/storage)
 "nMv" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
@@ -8863,7 +8864,7 @@
 	dir = 4
 	},
 /obj/structure/chair,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 9
 	},
 /turf/open/floor/plasteel,
@@ -9639,7 +9640,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -9802,9 +9803,13 @@
 /area/ruin/lavaland/powered/animal_hospital)
 "pqk" = (
 /obj/structure/spawner/headcrab,
-/turf/open/floor/plasteel/chapel{
+/obj/effect/turf_decal/big_sign/chapel/center{
 	dir = 1
 	},
+/obj/effect/turf_decal/big_sign/chapel/base{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/textured,
 /area/ruin/lavaland/powered/animal_hospital)
 "prb" = (
 /mob/living/simple_animal/hostile/asteroid/polarbear,
@@ -10233,10 +10238,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/crusher)
-"pWs" = (
-/mob/living/simple_animal/hostile/cult/mannequin,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "pWF" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/trash/semki,
@@ -10375,7 +10376,7 @@
 /turf/open/indestructible/diamond,
 /area/ruin/lavaland/powered/kinggoat_arena)
 "qlc" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -10436,7 +10437,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
 "qvA" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 4
 	},
 /obj/structure/cable/yellow{
@@ -11147,7 +11148,7 @@
 /turf/open/indestructible/boss,
 /area/awaymission)
 "rTg" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 8
 	},
 /turf/open/floor/wood/wood_diagonal,
@@ -11259,13 +11260,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
 "seu" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#e8eaff"
@@ -11606,7 +11607,7 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/powered/animal_hospital)
 "sKn" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -11828,7 +11829,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
@@ -11883,7 +11884,7 @@
 	pixel_y = 4;
 	req_access_txt = "55"
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel,
@@ -12188,10 +12189,6 @@
 	dir = 1
 	},
 /area/awaymission)
-"tTe" = (
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "tTg" = (
 /obj/item/clothing/gloves/color/latex,
 /obj/item/clothing/mask/surgical,
@@ -12326,10 +12323,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/power)
-"udQ" = (
-/obj/machinery/door/airlock/cult/friendly,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "uef" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/lavaland/powered)
@@ -12393,7 +12386,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 9
 	},
 /turf/open/floor/plasteel,
@@ -13121,10 +13114,6 @@
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
 /area/ruin/space/has_grav/russianbunker)
-"vTF" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "vTL" = (
 /obj/structure/closet/crate,
 /obj/structure/stone_tile/block/cracked{
@@ -13209,7 +13198,7 @@
 	name = "Containment Pen";
 	req_access_txt = "55"
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 8
 	},
 /obj/effect/turf_decal/delivery,
@@ -13374,7 +13363,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/yellow/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
@@ -13514,7 +13503,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
 "wFU" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -13596,10 +13585,6 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
-"wPY" = (
-/obj/structure/trap/stun,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
 "wQs" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/grass,
@@ -13692,7 +13677,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "xaX" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/white/line{
@@ -13841,7 +13826,7 @@
 /turf/open/floor/plasteel/cult,
 /area/awaymission)
 "xtw" = (
-/obj/effect/turf_decal/stripes/white/line{
+/obj/effect/turf_decal/stripes/white{
 	dir = 6
 	},
 /turf/open/floor/wood/wood_diagonal,
@@ -13852,10 +13837,6 @@
 /area/awaymission)
 "xvN" = (
 /obj/item/organ/tongue,
-/turf/open/floor/plasteel/cult,
-/area/awaymission)
-"xvR" = (
-/obj/structure/trap/fire,
 /turf/open/floor/plasteel/cult,
 /area/awaymission)
 "xxB" = (
@@ -14157,7 +14138,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 10
 	},
 /obj/item/shard,
@@ -38371,10 +38352,10 @@ fVN
 bUV
 cAi
 cAi
-mAo
+gEK
 cAi
 cAi
-asm
+skZ
 cAi
 fVN
 gyZ
@@ -38383,15 +38364,15 @@ iid
 hLQ
 gyZ
 fVN
-mAo
-asm
-asm
-asm
-asm
-asm
-asm
+gEK
+skZ
+skZ
+skZ
+skZ
+skZ
+skZ
 cmg
-asm
+skZ
 weR
 swS
 mht
@@ -38673,9 +38654,9 @@ fVN
 wWz
 xch
 jHa
-asm
+skZ
 cAi
-mAo
+gEK
 gPr
 qVi
 fVN
@@ -38685,16 +38666,16 @@ gyZ
 gKk
 gyZ
 fVN
-asm
+skZ
 hmh
-asm
+skZ
 okr
 cAi
-asm
+skZ
 hmh
 cAi
 okr
-asm
+skZ
 fcu
 lBD
 fVN
@@ -38975,11 +38956,11 @@ fVN
 xtu
 cAi
 cAi
-asm
+skZ
 cKP
-tTe
+hIp
 cAi
-asm
+skZ
 fVN
 gyZ
 hLQ
@@ -38987,17 +38968,17 @@ gyZ
 hLQ
 gyZ
 fVN
-asm
-asm
+skZ
+skZ
 cAi
 qHW
-asm
-asm
+skZ
+skZ
 iBs
-asm
+skZ
 cAi
 cAi
-pWs
+jcP
 dpb
 fVN
 ika
@@ -39290,16 +39271,16 @@ hLQ
 gyZ
 fVN
 skO
-asm
+skZ
 cAi
 cAi
 dyu
-asm
+skZ
 xtk
-asm
+skZ
 jpm
 cmg
-asm
+skZ
 fVN
 fVN
 ika
@@ -39576,31 +39557,31 @@ ika
 ika
 fVN
 hil
-ahM
+okk
 skZ
-ahM
-wPY
+okk
+iOB
 fqf
-asm
-asm
-asm
+skZ
+skZ
+skZ
 xtN
 bUo
 eXz
 sas
 bUo
 gKk
-udQ
-asm
+luG
+skZ
 cAi
 cAi
-asm
-asm
+skZ
+skZ
 hkj
-asm
+skZ
 nlF
-asm
-asm
+skZ
+skZ
 cAi
 fVN
 ika
@@ -39877,33 +39858,33 @@ ika
 ika
 ika
 fVN
-vTF
+cAi
 ohd
 skZ
 wBx
-aFs
-asm
+spn
+skZ
 cAi
 qVi
 gKk
-udQ
+luG
 oyB
 hLQ
 sas
 tZm
 hLQ
-udQ
-asm
-asm
+luG
+skZ
+skZ
 qHW
 iBs
-asm
-asm
+skZ
+skZ
 uqR
-asm
-asm
+skZ
+skZ
 iBs
-asm
+skZ
 fVN
 ika
 ika
@@ -40180,32 +40161,32 @@ ika
 ika
 fVN
 skZ
-vTF
-vTF
+cAi
+cAi
 tWq
 skZ
-asm
+skZ
 jHa
-asm
-asm
+skZ
+skZ
 fVN
-asm
-asm
+skZ
+skZ
 giD
 sas
 sas
 fVN
 skO
-asm
-asm
-asm
-mAo
+skZ
+skZ
+skZ
+gEK
 sYA
-asm
+skZ
 hkj
-mAo
+gEK
 cAi
-asm
+skZ
 fVN
 ika
 ika
@@ -40487,27 +40468,27 @@ pSL
 rCg
 cqt
 stB
-asm
-asm
+skZ
+skZ
 skO
 fVN
-asm
+skZ
 jyY
 giD
 sas
 mhX
 fVN
-asm
-mAo
-asm
-asm
+skZ
+gEK
+skZ
+skZ
 dyu
-asm
+skZ
 kav
-asm
+skZ
 kDb
 cAi
-asm
+skZ
 fVN
 ika
 ika
@@ -40789,7 +40770,7 @@ fVN
 fVN
 fVN
 fVN
-udQ
+luG
 gmi
 fVN
 fVN
@@ -40797,19 +40778,19 @@ fVN
 fVN
 fVN
 jbl
-udQ
+luG
 fVN
-asm
+skZ
 cAi
 hgW
-asm
-asm
-asm
+skZ
+skZ
+skZ
 iBs
 cAi
 cAi
-asm
-asm
+skZ
+skZ
 fVN
 ika
 ika
@@ -41085,15 +41066,15 @@ ika
 ika
 ika
 fVN
-asm
+skZ
 cAi
-mAo
-asm
+gEK
+skZ
 jFF
 jeK
 cAi
 cAi
-mAo
+gEK
 fVN
 jdO
 wUp
@@ -41101,17 +41082,17 @@ rFR
 cAi
 tyV
 fVN
-asm
+skZ
 ujG
 cAi
 cAi
-asm
-asm
-mAo
+skZ
+skZ
+gEK
 cAi
 hmh
-asm
-asm
+skZ
+skZ
 fVN
 ika
 ika
@@ -41387,15 +41368,15 @@ mwG
 mwG
 ika
 fVN
-asm
+skZ
 rMC
 cAi
 cAi
 cAi
 qHW
-asm
+skZ
 rMC
-tTe
+hIp
 fVN
 xIe
 fMu
@@ -41407,13 +41388,13 @@ cAi
 cAi
 ylu
 cAi
-asm
-asm
-asm
-asm
-asm
-asm
-asm
+skZ
+skZ
+skZ
+skZ
+skZ
+skZ
+skZ
 fVN
 ika
 ika
@@ -41697,25 +41678,25 @@ fVN
 fVN
 fVN
 cAi
-asm
+skZ
 fVN
 xxB
 qEh
 vJd
 jEc
-asm
+skZ
 fVN
-asm
+skZ
 cAi
 cAi
-asm
+skZ
 skO
-asm
-asm
+skZ
+skZ
 skO
-asm
-asm
-asm
+skZ
+skZ
+skZ
 fVN
 ika
 ika
@@ -42012,8 +41993,8 @@ fVN
 fVN
 fVN
 fVN
-udQ
-udQ
+luG
+luG
 fVN
 fVN
 fVN
@@ -42294,13 +42275,13 @@ mwG
 mwG
 fVN
 cAi
-asm
-mAo
-asm
+skZ
+gEK
+skZ
 cAi
 njf
 fVN
-asm
+skZ
 cAi
 fVN
 haa
@@ -42309,17 +42290,17 @@ vUq
 coJ
 cAi
 fVN
-asm
+skZ
 qHW
 cAi
 oPZ
-asm
+skZ
 sas
 sas
 cAi
-asm
-asm
-asm
+skZ
+skZ
+skZ
 cAi
 fVN
 ika
@@ -42586,7 +42567,7 @@ mwG
 mwG
 mwG
 snc
-asm
+skZ
 snc
 mwG
 mwG
@@ -42596,7 +42577,7 @@ mwG
 mwG
 fVN
 jFF
-asm
+skZ
 cAi
 mDO
 wTZ
@@ -42608,17 +42589,17 @@ fVN
 fVN
 fVN
 fVN
-udQ
-udQ
+luG
+luG
 fVN
 okk
-asm
+skZ
 hgW
 eXz
 qHW
 sas
 cwE
-pWs
+jcP
 cAi
 hmh
 cAi
@@ -42889,7 +42870,7 @@ mwG
 mwG
 snc
 snc
-asm
+skZ
 fVN
 fVN
 fVN
@@ -42901,12 +42882,12 @@ jdH
 fVN
 fVN
 fVN
-asm
+skZ
 cAi
 fVN
-asm
+skZ
 cAi
-udQ
+luG
 giD
 giD
 kNB
@@ -42920,11 +42901,11 @@ mgX
 jyY
 jyY
 jyY
-asm
+skZ
 qHW
 fNS
 cAi
-asm
+skZ
 fVN
 ika
 ika
@@ -43189,26 +43170,26 @@ mwG
 mwG
 mwG
 snc
-asm
+skZ
 snc
 snc
-udQ
+luG
 qHW
 cAi
 cAi
 iOB
-mAo
-udQ
+gEK
+luG
 qHW
-xvR
+eNz
 qHW
 gmi
 cAi
-mAo
+gEK
 fVN
-asm
+skZ
 cAi
-udQ
+luG
 cAi
 qHW
 cAi
@@ -43222,11 +43203,11 @@ jyY
 jyY
 jyY
 jyY
-asm
+skZ
 mvl
 cAi
 dbK
-asm
+skZ
 fVN
 ika
 ika
@@ -43493,41 +43474,41 @@ mwG
 mwG
 snc
 snc
-asm
-udQ
+skZ
+luG
 cAi
 wTZ
-mAo
+gEK
 cAi
 cAi
 pAY
 cAi
-asm
+skZ
 njf
 gmi
 cAi
 iOB
 fVN
-asm
-asm
+skZ
+skZ
 fVN
 fVN
 fVN
 fVN
-mAo
+gEK
 knU
 fVN
 okk
-asm
-mAo
+skZ
+gEK
 nrT
 cAi
-asm
-pWs
+skZ
+jcP
 cAi
 cAi
 cRn
-asm
+skZ
 fVN
 fVN
 ika
@@ -43793,7 +43774,7 @@ mwG
 mwG
 mwG
 snc
-asm
+skZ
 snc
 snc
 fVN
@@ -43810,8 +43791,8 @@ fVN
 fVN
 fVN
 fVN
-udQ
-udQ
+luG
+luG
 fVN
 fVN
 fVN
@@ -44096,7 +44077,7 @@ mwG
 mwG
 snc
 snc
-asm
+skZ
 snc
 mwG
 mwG
@@ -44105,16 +44086,16 @@ mwG
 mwG
 mwG
 fVN
-asm
+skZ
 mDO
-mAo
+gEK
 fVN
 cfk
 cfk
 xtk
-asm
-asm
-asm
+skZ
+skZ
+skZ
 xtk
 cAi
 fVN
@@ -44409,17 +44390,17 @@ mwG
 fVN
 jFF
 cAi
-xvR
+eNz
 fVN
-asm
-asm
+skZ
+skZ
 cAi
 xOd
-asm
-tTe
-asm
+skZ
+hIp
+skZ
 spn
-asm
+skZ
 xtk
 fVN
 pcc
@@ -44715,14 +44696,14 @@ cAi
 fVN
 wCG
 rdc
-asm
+skZ
 cAi
 cAi
 jHa
-mAo
+gEK
 cAi
 cAi
-asm
+skZ
 fVN
 mGw
 pTR
@@ -45012,25 +44993,25 @@ mwG
 mwG
 fVN
 tKj
-asm
+skZ
 cAi
 fVN
 cfk
 cfk
-asm
-asm
+skZ
+skZ
 eXz
 xEK
 hgW
-asm
+skZ
 cAi
-asm
+skZ
 fVN
 pbL
-vTF
+cAi
 skZ
 eNz
-vTF
+cAi
 dNU
 fVN
 hmh
@@ -45314,7 +45295,7 @@ sqZ
 mwG
 fVN
 fVN
-mAo
+gEK
 cAi
 fVN
 bxo
@@ -45334,9 +45315,9 @@ erN
 xoK
 vRA
 skZ
-udQ
+luG
 cAi
-bJT
+vRA
 fVN
 fVN
 ika
@@ -45621,23 +45602,23 @@ hmh
 fVN
 pQZ
 iuo
-mAo
+gEK
 cAi
-asm
-asm
-asm
+skZ
+skZ
+skZ
 cAi
-asm
+skZ
 cAi
 fVN
 skZ
-vTF
+cAi
 omT
-vTF
+cAi
 skZ
 cBH
 fVN
-bJT
+vRA
 fVN
 fVN
 ika
@@ -45934,9 +45915,9 @@ kav
 fVN
 agV
 qFi
-vTF
+cAi
 iDs
-eWU
+hmh
 jcP
 fVN
 fVN

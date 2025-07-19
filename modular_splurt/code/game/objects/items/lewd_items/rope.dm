@@ -48,6 +48,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	var/roped_object_type = null
 	var/tugged_flag = FALSE
 	var/random_color = TRUE
+	var/rope_length = ROPE_MAX_DISTANCE_MASTER //BLUEMOON ADD
 
 /obj/item/restraints/bondage_rope/Initialize(mapload)
 	. = ..()
@@ -118,8 +119,8 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	if(rope_state != ROPE_STATE_DECIDING_OBJECT)
 		return
 	// Might be reduntant, since the roped mob gets pulled, but meh
-	var/distance = get_dist(user, roped_mob)
-	if(distance > ROPE_MAX_DISTANCE_MASTER)
+	var/distance = get_dist(O.loc, roped_mob.loc) //BLUEMOON EDIT
+	if(distance > rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 		to_chat(user, "<span class='warning'>The rope isn't long enough to tie a knot.</span>")
 		return
 
@@ -177,6 +178,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	if(C.mob_weight > MOB_WEIGHT_HEAVY)
 		to_chat(user, span_warning("[C] is too heavy to be moved on ropes. It would be useless."))
 		return
+	tugged_flag = TRUE
 	// BLUEMOON ADD END
 	rope_state = ROPE_STATE_DECIDING_OBJECT
 	set_roped_mob(C)
@@ -237,8 +239,8 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	set_roped_object(O, O_type)
 	to_chat(roped_mob, "<span class='warning'>You are tied to [O].</span>")
 	to_chat(roped_master, "<span class='notice'>You tie the rope to [O].</span>")
-	tugged_flag = TRUE
-	apply_tug_mob_to_object(roped_mob, roped_object, ROPE_MAX_DISTANCE_OBJECT)
+	tugged_flag = FALSE //BLUEMOON EDIT TRUE -> FALSE
+	apply_tug_mob_to_object(roped_mob, roped_object, min(ROPE_MAX_DISTANCE_OBJECT,rope_length)) //BLUEMOON EDIT min(..,rope_length)
 
 // Handles a number of edge cases, if something goes wrong resets the rope state and returns false
 /obj/item/restraints/bondage_rope/proc/check_rope_state()
@@ -280,12 +282,13 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	if(!check_rope_state())
 		return
 	var/distance = get_dist(roped_mob.loc, roped_master.loc)
-	if(distance > ROPE_MAX_DISTANCE_MASTER)
+	if(distance > rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 		tugged_flag = TRUE
-		apply_tug_mob_to_mob(roped_mob, roped_master, ROPE_MAX_DISTANCE_MASTER)
-		if (prob(30))
+		apply_tug_mob_to_mob(roped_mob, roped_master, rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
+		if (prob(30) && roped_master.a_intent == INTENT_HARM) //BLUEMOON EDIT
 			roped_mob.apply_effect(20, EFFECT_KNOCKDOWN, 0)
-	if(distance > ROPE_MAX_DISTANCE_SNAP)
+	stoplag(3) //BLUEMOON ADD
+	if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 		snap_rope()
 
 // Handles whenever roped object moves, tugging their tied mob to it
@@ -293,12 +296,13 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	if(!check_rope_state())
 		return
 	var/distance = get_dist(roped_mob.loc, roped_object.loc)
-	if(distance > ROPE_MAX_DISTANCE_OBJECT)
+	if(distance > min(ROPE_MAX_DISTANCE_OBJECT,rope_length)) //BLUEMOON EDIT min(..,rope_length)
 		tugged_flag = TRUE
-		apply_tug_mob_to_object(roped_mob, roped_object, ROPE_MAX_DISTANCE_OBJECT)
+		apply_tug_mob_to_object(roped_mob, roped_object, min(ROPE_MAX_DISTANCE_OBJECT,rope_length)) //BLUEMOON EDIT min(..,rope_length)
 		if (prob(30))
 			roped_mob.apply_effect(20, EFFECT_KNOCKDOWN, 0)
-	if(distance > ROPE_MAX_DISTANCE_SNAP)
+	stoplag(3) //BLUEMOON ADD
+	if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 		snap_rope()
 
 // Handles whenever roped mob moves, tugging them to their master, their object to them or them to their object
@@ -312,7 +316,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 		if(ROPE_STATE_DECIDING_OBJECT)
 			if(roped_master != null)
 				var/distance = get_dist(roped_mob.loc, roped_master.loc)
-				if(distance > ROPE_MAX_DISTANCE_MASTER)
+				if(distance > rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 					if (prob(10))
 						to_chat(roped_mob, "<span class='warning'>You tug the rope away from [roped_master].</span>")
 						to_chat(roped_master, "<span class='warning'>[roped_mob] tugs the rope away from you.</span>")
@@ -320,33 +324,36 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 					else
 						to_chat(roped_mob, "<span class='warning'>The rope doesn't let you go further.</span>")
 						tugged_flag = TRUE
-						apply_tug_mob_to_mob(roped_mob, roped_master, ROPE_MAX_DISTANCE_MASTER)
+						apply_tug_mob_to_mob(roped_mob, roped_master, rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 						// Not reduntant, since the above line can tug the rope and make roped_master null
 						if(roped_master == null)
 							return
 						distance = get_dist(roped_mob.loc, roped_master.loc)
-				if(distance > ROPE_MAX_DISTANCE_SNAP)
+					stoplag(3) //BLUEMOON ADD
+				if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 					snap_rope()
 			else
 				var/distance = get_dist(roped_mob.loc, src.loc)
-				if(distance > ROPE_MAX_DISTANCE_MASTER)
-					apply_tug_object_to_mob(src, roped_mob, ROPE_MAX_DISTANCE_MASTER)
+				if(distance > rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
+					apply_tug_object_to_mob(src, roped_mob, rope_length) //BLUEMOON EDIT ROPE_MAX_DISTANCE_MASTER -> rope_length
 					distance = get_dist(roped_mob.loc, src.loc)
-				if(distance > ROPE_MAX_DISTANCE_SNAP)
+				stoplag(3) //BLUEMOON ADD
+				if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 					snap_rope()
 
 		if(ROPE_STATE_TIED)
 			var/can_move = can_move_object()
 			var/distance = get_dist(roped_mob.loc, roped_object.loc)
-			if(distance > ROPE_MAX_DISTANCE_OBJECT)
+			if(distance > min(ROPE_MAX_DISTANCE_OBJECT, rope_length)) //BLUEMOON EDIT min(..,rope_length)
 				if(can_move)
-					apply_tug_object_to_mob(roped_object, roped_mob, ROPE_MAX_DISTANCE_OBJECT)
+					apply_tug_object_to_mob(roped_object, roped_mob, min(ROPE_MAX_DISTANCE_OBJECT, rope_length)) //BLUEMOON EDIT min(..,rope_length)
 				else
 					to_chat(roped_mob, "<span class='warning'>The rope doesn't let you go further.</span>")
 					tugged_flag = TRUE
-					apply_tug_mob_to_object(roped_mob, roped_object, ROPE_MAX_DISTANCE_OBJECT)
+					apply_tug_mob_to_object(roped_mob, roped_object, min(ROPE_MAX_DISTANCE_OBJECT, rope_length)) //BLUEMOON EDIT min(..,rope_length)
 				distance = get_dist(roped_mob.loc, roped_object.loc)
-			if(distance > ROPE_MAX_DISTANCE_SNAP)
+			stoplag(3) //BLUEMOON ADD
+			if(distance > rope_length + ROPE_MAX_DISTANCE_MASTER) //BLUEMOON EDIT ROPE_MAX_DISTANCE_SNAP -> rope_length + ROPE_MAX_DISTANCE_MASTER
 				snap_rope()
 
 /obj/item/restraints/bondage_rope/proc/snap_rope()
@@ -460,6 +467,8 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 
 // Returns true, if roped mob can tug their object behind them
 /obj/item/restraints/bondage_rope/proc/can_move_object()
+	//BLUEMOON EDIT START
+	/*
 	if(roped_object == null)
 		return FALSE
 	switch(roped_object_type)
@@ -474,6 +483,9 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 			return LAZYLEN(tables) <= 1
 
 	return GLOB.bondage_rope_objects[roped_object_type] == ROPE_OBJECT_MOVABLE
+	*/
+	return ismovable(roped_object) && roped_object.can_be_pulled(roped_mob,,roped_mob.pull_force)
+	//BLUEMOON EDIT END
 
 // Handles changing slowdown based on roped object
 /obj/item/restraints/bondage_rope/proc/set_rope_slowdown(mob/living/carbon/target)

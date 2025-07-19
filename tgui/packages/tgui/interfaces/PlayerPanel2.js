@@ -789,6 +789,7 @@ const FunActions = (props, context) => {
 
   const [lockExplode, setLockExplode] = useLocalState(context, "explode_lock_toggle", true);
   const [empMode, setEmpMode] = useLocalState(context, "empMode", false);
+  const [extinguishMode, setExtinguishMode] = useLocalState(context, "extinguishMode", false);
   const [expPower, setExpPower] = useLocalState(context, "exp_power", 8);
   const [narrateSize, setNarrateSize] = useLocalState(context, "narrateSize", 1);
   const [narrateMessage, setNarrateMessage] = useLocalState(context, "narrateMessage", "");
@@ -818,6 +819,12 @@ const FunActions = (props, context) => {
       <Section title="Explosion" buttons={(
         <Fragment>
           <Button.Checkbox
+            checked={extinguishMode}
+            color="transparent"
+            content="Extinguish Mode"
+            onClick={() => setExtinguishMode(!extinguishMode)}
+          />
+          <Button.Checkbox
             checked={empMode}
             color="transparent"
             content="EMP Mode"
@@ -842,7 +849,7 @@ const FunActions = (props, context) => {
               height="100%"
               color="red"
               disabled={lockExplode}
-              onClick={() => act("explode", { power: expPower, emp_mode: empMode })}
+              onClick={() => act("explode", { power: expPower, emp_mode: empMode, extinguish_mode: extinguishMode })}
             >
               <Box height="100%" pt={2} pb={2} textAlign="center">Detonate</Box>
             </Button>

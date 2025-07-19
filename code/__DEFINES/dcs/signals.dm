@@ -622,11 +622,11 @@
 #define COMSIG_LIVING_PREDEATH "living_predeath"
 
 /*******Component Specific Signals*******/
-//Janitor
+/* Janitor BLUEMOON OVERRIDE для и компановки перенесено в code\__DEFINES\dcs\signals\signals_janitor.dm
 #define COMSIG_TURF_IS_WET "check_turf_wet"							//(): Returns bitflags of wet values.
 #define COMSIG_TURF_MAKE_DRY "make_turf_try"						//(max_strength, immediate, duration_decrease = INFINITY): Returns bool.
 #define COMSIG_COMPONENT_CLEAN_ACT "clean_act"					//called on an object to clean it of cleanables. Usualy with soap: (num/strength)
-
+*/
 //Food
 #define COMSIG_FOOD_EATEN "food_eaten"		//from base of obj/item/reagent_containers/food/snacks/attack(): (mob/living/eater, mob/feeder)
 

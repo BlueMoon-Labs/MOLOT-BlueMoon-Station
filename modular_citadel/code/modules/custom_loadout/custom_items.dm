@@ -216,6 +216,7 @@
 	anthro_mob_worn_overlay = 'icons/mob/clothing/mask_muzzled.dmi'
 	icon_state = "stalker"
 	alternate_screams = RUSSIAN_SCREAMS
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/mask/gas/military
 	name = "Military Gas Mask"
@@ -225,6 +226,7 @@
 	item_state = "mgas"
 	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
 	icon_state = "mgas"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/drinks/flask/steel
 	name = "The End"
@@ -679,6 +681,7 @@
 	desc = "Old version style BP helmet. That helmet without armor plates soo without em that simple cool styled helmet"
 	icon_state = "epic_bp_helmet"
 	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 	mutantrace_variation = STYLE_MUZZLE
 	flags_inv = HIDEEARS | HIDESNOUT | HIDEHAIR
 

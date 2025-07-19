@@ -172,3 +172,18 @@
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.2
 	random_color = FALSE
+// BLUEMOON ADD START black skin
+	unique_reskin = list(
+		"Carbonized" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/advancedtools_black.dmi',
+			RESKIN_ICON_STATE = "screwdriver_a_black",
+		),
+		"Titanium" = list(
+			RESKIN_ICON_STATE = "screwdriver_a",
+		)
+	)
+
+/obj/item/screwdriver/advanced/reskin_obj(mob/user)
+	if(current_skin == "Carbonized")
+		desc = "A classy carbon screwdriver with an alien alloy tip, it works almost as well as the real thing."
+// BLUEMOON ADD END

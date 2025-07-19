@@ -28,6 +28,9 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe_list("beds", list( \
 		new/datum/stack_recipe("bed", /obj/structure/bed, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("double bed", /obj/structure/bed/double, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		// BLUEMOON ADD START
+		new/datum/stack_recipe("bdsm bed", /obj/structure/bed/bdsm_bed, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		// BLUEMOON ADD END
 		new/datum/stack_recipe("pod bed", /obj/structure/bed/pod, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("double pod bed", /obj/structure/bed/double/pod, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	)), \

@@ -10,7 +10,7 @@
 		return ELEMENT_INCOMPATIBLE
 	if(cleaning_range)
 		range = cleaning_range
-	RegisterSignal(cleaner, COMSIG_MOVABLE_MOVED, PROC_REF(Clean))
+	RegisterSignal(cleaner, COMSIG_MOVABLE_MOVED, PROC_REF(Clean), TRUE)
 
 /datum/element/cleaning/Detach(atom/movable/cleaner)
 	. = ..()

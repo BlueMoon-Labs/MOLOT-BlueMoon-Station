@@ -347,9 +347,9 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "InteQ Forgotten Outpost"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
-	sub_areas = list(/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower)
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower)
 
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost/shower
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_outpost_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "InteQ Forgotten Outpost Shower"
@@ -393,9 +393,9 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "InteQ Forgotten Permanent Brig"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
-	sub_areas = list(/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower)
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower)
 
-/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig/shower
+/area/ruin/space/has_grav/bluemoon/inteq_forgotten_permabrig_shower
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shower"
 	name = "InteQ Forgotten Permanent Brig Shower"

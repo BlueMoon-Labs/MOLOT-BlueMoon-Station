@@ -748,7 +748,7 @@
 	name = "Alta's dogtag"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/tie/dogtag
-	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer", "silyamg", "lomodno")
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer", "silyamg", "lomodno", "valsons", "nyctealust", "abrikos")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/pedantcape
@@ -763,13 +763,6 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/head/tricorne
 	ckeywhitelist = list("smol42", "weirdbutton", "sage4or")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/bm/oftok
-	name = "Officer token"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/neck/tie/oftok
-	ckeywhitelist = list("xaeshkavd", "akinight", "heathkit1", "scramblescream", "definitelynotnesuby", "sosnovskii")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/rt46
@@ -948,13 +941,6 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/gloves/fingerless/SATT_gloves_finger
 	ckeywhitelist = list("allazarius", "flippingtable", "mihana964", "devildeadspace")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/bm/syndie_jacket
-	name = "Cybertechnical Jacket"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/suit/bm/syndie_jacket
-	ckeywhitelist = list("xaeshkavd", "ghos7ik")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/wtadler
@@ -1156,6 +1142,41 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/razorsong_kit
 	ckeywhitelist = list("xaeshkavd")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/noxscoutcoat
+	name = "Military-Civilian Scout Coat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/donator/bm/noxscoutcoat
+	ckeywhitelist = list("xaeshkavd")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/rsh_future
+	name = "Special .38 Mars Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/rsh_future
+	ckeywhitelist = list("xaeshkavd", "sosnovskii")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/rawk_sat
+	name = "Rawk Satchel"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/storage/backpack/satchel/rawk_sat
+	ckeywhitelist = list("xaeshkavd","silverfoxpaws", "heathkit1", "sosnovskii")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/echoes_jacket
+    name = "Technical Jacket"
+    slot = ITEM_SLOT_BACKPACK
+    path = /obj/item/clothing/suit/donator/bm/echoes_jacket
+    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980", "heathkit1", "sosnovskii")
+    subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/oftok
+	name = "Officer token"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/neck/tie/oftok
+	ckeywhitelist = list("xaeshkavd", "akinight", "heathkit1", "scramblescream", "definitelynotnesuby", "sosnovskii")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/agentcape
@@ -1537,13 +1558,6 @@
 	ckeywhitelist = list("hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/echoes_jacket
-    name = "Technical Jacket"
-    slot = ITEM_SLOT_BACKPACK
-    path = /obj/item/clothing/suit/donator/bm/echoes_jacket
-    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980")
-    subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/millie_plushe
 	name = "Millie plush"
 	slot = ITEM_SLOT_BACKPACK
@@ -1669,3 +1683,32 @@
 	path = /obj/item/paper/book_alch
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/bm/ouroboroswinterschock
+	name = "Ouroboros"
+	slot = ITEM_SLOT_GLOVES
+	path = /obj/item/clothing/accessory/ring/syntech/winterschock
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	ckeywhitelist = list("winterschock")
+
+/datum/gear/donator/bm/ouroboroswinterschock/on_spawn(mob/living/carbon/human/user, obj/item/clothing/accessory/ring/syntech/winterschock/I)
+	if(!istype(user))
+		return
+	I.owner = user
+	if(user.dna?.features["normalized_size"])
+		I.current_normalized_size = user.dna.features["normalized_size"]
+		I.try_update_size(user, TRUE)
+
+/datum/gear/donator/bm/tesh_hcloak_br
+	name = "black and red hooded cloak"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/hooded/teshari/standard/black_red
+	ckeywhitelist = list("heathkit1")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/pg
+	name = "powder ganger jacket"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/pg
+	ckeywhitelist = list("heathkit1")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

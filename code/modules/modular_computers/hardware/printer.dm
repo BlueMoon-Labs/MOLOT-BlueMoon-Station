@@ -39,15 +39,31 @@
 	return TRUE
 
 /obj/item/computer_hardware/printer/try_insert(obj/item/I, mob/living/user = null)
-	if(istype(I, /obj/item/paper))
+	// BLUEMOON EDIT START Add papers from bin
+	if(istype(I, /obj/item/paper_bin) || istype(I, /obj/item/paper))
 		if(stored_paper >= max_paper)
-			to_chat(user, span_warning("You try to add \the [I] into [src], but its paper bin is full!"))
+			to_chat(user, span_warning("You try to add [istype(I, /obj/item/paper_bin) ? "some paper" : "\the [I]"] into [src], but its paper bin is full!"))
 			return FALSE
 
-		if(user && !user.temporarilyRemoveItemFromInventory(I))
-			return FALSE
-		to_chat(user, span_notice("You insert \the [I] into [src]'s paper recycler."))
-		qdel(I)
+		if(istype(I, /obj/item/paper_bin))
+			var/obj/item/paper_bin/bin = I
+			if(bin.total_paper < 1)
+				to_chat(user, span_warning("The \the [bin] is empty!"))
+				return FALSE
+			to_chat(user, span_notice("You insert some paper into [src]'s paper recycler."))
+			playsound(src, 'sound/items/handling/paper_drop.ogg', YEET_SOUND_VOLUME, ignore_walls = FALSE) // paper drop sound
+			bin.total_paper--
+			if(bin.papers.len > 0) // // If there's any custom paper on the stack dell
+				var/obj/item/paper/P = bin.papers[bin.papers.len]
+				bin.papers.Remove(P)
+				qdel(P)
+			bin.update_icon()
+		else
+			if(user && !user.temporarilyRemoveItemFromInventory(I))
+				return FALSE
+			to_chat(user, span_notice("You insert \the [I] into [src]'s paper recycler."))
+			qdel(I)
+	// BLUEMOON EDIT END
 		stored_paper++
 		return TRUE
 	return FALSE

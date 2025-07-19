@@ -1011,6 +1011,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 /mob/living/proc/piss_over(mob/living/target)
 	var/message
 	//var/u_His = ru_ego()
+	var/pee_pee = (has_penis(REQUIRE_EXPOSED) ? getorganslot(ORGAN_SLOT_PENIS) : (has_vagina(REQUIRE_EXPOSED) ? getorganslot(ORGAN_SLOT_VAGINA) : null)) //BLUEMOON ADD
 	var/list/hell = list(
 		"опустошает свой мочевой пузырь на тело <b>[target]</b> покрывая его тёплой мочёй",
 		"покрывает тело <b>[target]</b> золотым дождём ",
@@ -1019,9 +1020,12 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(hell)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
-	playlewdinteractionsound(target.loc, 'modular_bluemoon/sound/interactions/voda.ogg', 70, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
-	if(get_lust() < 10)
-		add_lust(10)
+	//BLUEMOON EDIT START
+	playlewdinteractionsound(target.loc, pick('modular_bluemoon/sound/interactions/watering1.ogg',
+											'modular_bluemoon/sound/interactions/watering2.ogg',
+											'modular_bluemoon/sound/interactions/watering3.ogg'), 70, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
+	handle_post_sex(LOW_LUST, null, target, pee_pee)
+	//BLUEMOON EDIT END
 
 /mob/living/carbon/proc/piss_mouth(mob/living/target)
 	var/message
@@ -1034,8 +1038,12 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(hell)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
-	playlewdinteractionsound(loc, 'modular_sand/sound/interactions/swallow.ogg', 70, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
-	playlewdinteractionsound(target.loc, 'modular_bluemoon/sound/interactions/voda.ogg', 70, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
+	//BLUEMOON EDIT START
+	playlewdinteractionsound(loc, 'modular_sand/sound/interactions/swallow.ogg', 100, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
+	playlewdinteractionsound(target.loc, pick('modular_bluemoon/sound/interactions/watering1.ogg',
+											'modular_bluemoon/sound/interactions/watering2.ogg',
+											'modular_bluemoon/sound/interactions/watering3.ogg'), 70, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
+	//BLUEMOON EDIT END
 	if(!is_fucking(target, CUM_TARGET_MOUTH))
 		set_is_fucking(target, CUM_TARGET_MOUTH, pee_pee)
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, target, pee_pee)

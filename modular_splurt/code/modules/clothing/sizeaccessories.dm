@@ -12,14 +12,20 @@
 	strip_delay = 40
 	equip_delay_self = 175
 	unequip_delay_self = 175
+	var/owner = null	// владелец нормалайзера может нацепить его даже если у него стоит квирк ANTI_NORMALIZER
 	var/list/previous_gloves_data[3] // strip_delay, equip_delay_self, unequip_delay_self
 	//These are already defined under the parent ring, but I wanna leave em here for reference purposes
 
-/obj/item/clothing/proc/clothing_size_normalize(mob/living/user, slot, slot_to_check)
+/obj/item/clothing/proc/clothing_size_normalize(mob/living/user, slot, slot_to_check, owner)
+	var/used_size
+	if(ishuman(user))
+		var/mob/living/carbon/human/M = user
+		if(M?.dna?.features["normalized_size"])
+			used_size = M.dna.features["normalized_size"]
 	if(slot_to_check && slot != slot_to_check)
 		return FALSE
 
-	if(HAS_TRAIT(user, TRAIT_BLUEMOON_ANTI_NORMALIZER))
+	if(HAS_TRAIT(user, TRAIT_BLUEMOON_ANTI_NORMALIZER) && owner != user)
 		to_chat(user, "<span class='warning'>\The [src] buzzes, as nothing changes.</span>")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		return FALSE
@@ -29,7 +35,7 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		return FALSE
 
-	user.AddComponent(/datum/component/size_normalized, wear=src)
+	user.AddComponent(/datum/component/size_normalized, wear=src, size_to_use = used_size)
 
 /obj/item/clothing/proc/clothing_size_un_normalize(mob/living/user)
 	var/datum/component/size_normalized/comp = user.GetComponent(/datum/component/size_normalized)
@@ -38,7 +44,7 @@
 
 //For glove slots
 /obj/item/clothing/accessory/ring/syntech/equipped(mob/living/user, slot)
-	clothing_size_normalize(user, slot, ITEM_SLOT_GLOVES)
+	clothing_size_normalize(user, slot, ITEM_SLOT_GLOVES, src.owner)
 	..()
 
 /obj/item/clothing/accessory/ring/syntech/dropped(mob/living/user, slot)
@@ -70,7 +76,7 @@
 
 /obj/item/clothing/accessory/ring/syntech/on_uniform_equip(obj/item/clothing/under/U, mob/living/carbon/human/user)
 	if(istype(user) && user.gloves == U)
-		clothing_size_normalize(user)
+		clothing_size_normalize(user, owner = src.owner)
 
 /obj/item/clothing/accessory/ring/syntech/on_uniform_dropped(obj/item/clothing/under/U, mob/living/user)
 	clothing_size_un_normalize(user)
@@ -83,11 +89,12 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/hands.dmi'
 	icon_state = "wristband"
 	item_state = "syntechband"
+	var/owner = null	// владелец нормалайзера может нацепить его даже если у него стоит квирк ANTI_NORMALIZER
 	equip_delay_self = 175
 	unequip_delay_self = 175
 
 /obj/item/clothing/wrists/syntech/equipped(mob/user, slot)
-	clothing_size_normalize(user, slot, ITEM_SLOT_WRISTS)
+	clothing_size_normalize(user, slot, ITEM_SLOT_WRISTS, src.owner)
 	..()
 
 /obj/item/clothing/wrists/syntech/dropped(mob/living/user, slot)
@@ -103,12 +110,13 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/neck.dmi'
 	icon_state = "pendant"
 	item_state = "pendant"
+	var/owner = null	// владелец нормалайзера может нацепить его даже если у него стоит квирк ANTI_NORMALIZER
 	equip_delay_self = 175
 	unequip_delay_self = 175
 
 //For neck items
 /obj/item/clothing/neck/syntech/equipped(mob/living/user, slot)
-	clothing_size_normalize(user, slot, ITEM_SLOT_NECK)
+	clothing_size_normalize(user, slot, ITEM_SLOT_NECK, src.owner)
 	..()
 
 /obj/item/clothing/neck/syntech/dropped(mob/living/user, slot)
