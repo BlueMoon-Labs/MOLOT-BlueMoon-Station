@@ -461,15 +461,45 @@
 
 	//Check for dresscode violations
 	// BLUEMOON EDIT START
-	if(
-		istype(head, /obj/item/clothing/head/helmet/space/hardsuit/wizard) || \
-		istype(head, /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard) || \
-		istype(head, /obj/item/clothing/head/helmet/space/hardsuit/syndi) || \
-		istype(head, /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi) \
+	var/list/equip_checks = list(
+		/obj/item/clothing/head/helmet/space/hardsuit/wizard,
+		/obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard,
+		/obj/item/clothing/head/helmet/space/hardsuit/syndi,
+		/obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi,
+		/obj/item/clothing/head/helmet/swat/inteq,
+		/obj/item/clothing/suit/armor/inteq,
+		/obj/item/storage/belt/military/inteq,
+		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+		/obj/item/clothing/mask/gas/inteq,
+		/obj/item/storage/backpack/security/inteq,
+		/obj/item/clothing/under/inteq
 	)
+
+	var/list/special_equip_checks = list(/obj/item/clothing/head/wizard = "check_magic_flag")
+
+	// main check
+	var/illegal_equipment = FALSE
+	var/list/equipped_items = get_equipped_items(FALSE)
+	var/list/obscured_slots = check_obscured_slots()
+	for(var/obj/item/I in equipped_items)
+		if(I.current_equipped_slot in obscured_slots)
+			continue
+		for(var/T in equip_checks)
+			if(istype(I, T))
+				illegal_equipment = TRUE
+				break
+		for(var/T in special_equip_checks)
+			if(istype(I, T))
+				var/proc_to_call = special_equip_checks[T]
+				if(!proc_to_call || call(I, proc_to_call)())
+					illegal_equipment = TRUE
+					break
+		if(illegal_equipment)
+			break
+
+	if(illegal_equipment)
+		threatcount += 4 //fuk u antags <3			//no you
 	// BLUEMOON EDIT END
-		threatcount += 4
- //fuk u antags <3			//no you
 
 	//mindshield implants imply trustworthyness
 	if(HAS_TRAIT(src, TRAIT_MINDSHIELD))
