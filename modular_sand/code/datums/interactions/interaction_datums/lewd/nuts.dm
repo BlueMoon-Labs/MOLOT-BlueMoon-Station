@@ -13,7 +13,7 @@
 /datum/interaction/lewd/nuts/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	var/lust_increase = 1
+	//var/lust_increase = 1 // BLUEMOON EDIT commented
 
 	if(user.is_fucking(partner, NUTS_TO_FACE))
 		message = pick(list(
@@ -31,7 +31,11 @@
 						'modular_sand/sound/interactions/oral1.ogg',
 						'modular_sand/sound/interactions/oral2.ogg',), 70, 1, -1) //These files don't even exist but nobody noticed because double-quotes were used instead of single.
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
-	user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
+	// BLUEMOON EDIT START
+	user.handle_post_sex(HAS_TRAIT(user, TRAIT_NYMPHO) ? NORMAL_LUST : LOW_LUST, NUTS_TO_FACE, partner, ORGAN_SLOT_PENIS)
+	if(HAS_TRAIT(partner, TRAIT_NYMPHO))
+		partner.handle_post_sex(LOW_LUST, partner = user)
+	// BLUEMOON EDIT END
 
 /datum/interaction/lewd/nut_smack
 	description = "Яйца. Шлёпнуть по яйцам."

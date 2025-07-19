@@ -11,34 +11,8 @@
 		if(activate_after(src, rand(50,350))) //5 to 35 seconds, every 20 sec on average
 			if(!istype(src.loc, /obj/item/organ/genital))
 				return
-			if(dildo_size == 5)
-				to_chat(user, span_userdanger(pick("Гигантский дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от гигантского дилдо глубоко внутри!")))
-				user.handle_post_sex(HIGH_LUST*4, null, user)
-				user.plug13_genital_emote(loc, HIGH_LUST*4)
-				if(user.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
-					user.Jitter(6)
-				user.Stun(10)
-				user.emote("moan")
-			else if(dildo_size == 4)
-				to_chat(user, span_userdanger(pick("Огромный дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от огромного дилдо глубоко внутри!")))
-				user.handle_post_sex(HIGH_LUST*2, null, user)
-				user.plug13_genital_emote(loc, HIGH_LUST*2)
-				if(user.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
-					user.Jitter(3)
-				user.Stun(6)
-				user.emote("moan")
-			else if(dildo_size != 1)
-				to_chat(user, span_love(pick("Дилдо внутри сводит вас с ума!", "Вы чувствуете мучительное удовольствие от дилдо глубоко внутри!")))
-				user.handle_post_sex(NORMAL_LUST*2, null, user)
-				user.plug13_genital_emote(loc, NORMAL_LUST*2)
-				if(user.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
-					user.Jitter(3)
-				user.Stun(3)
-				user.emote("moan")
-			else
-				to_chat(user, span_love(pick("Я чувствую дилдо внутри!", "Вы чувствуете удовольствие от дилдо глубоко внутри!")))
-				user.handle_post_sex(LOW_LUST*2, null, user)
-				user.plug13_genital_emote(loc, LOW_LUST*2)
+			target_reaction(user, null, 1, null, null, TRUE, TRUE, TRUE, TRUE, TRUE)
+			user.plug13_genital_emote(loc, lust_amount)
 
 //Buttplug
 /obj/item/buttplug/proc/stuffed_movement(mob/living/user)
