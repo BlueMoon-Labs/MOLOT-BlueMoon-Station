@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX	59.2
+#define SAVEFILE_VERSION_MAX	60
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -401,6 +401,18 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		else if(quirks.Find("Сверхтяжёлый"))
 			all_quirks.Remove("Сверхтяжёлый")
 			S["body_weight"] = NAME_WEIGHT_HEAVY_SUPER
+
+	// BLUEMOON ADD - улучшение эмоут панели
+	if(current_version < 60)
+		var/list/new_custom_emote_panel = list()
+		for(var/emote_key in custom_emote_panel)
+			var/emote_name = html_encode(custom_emote_panel[emote_key])
+			if(!emote_name)
+				continue
+			// Если у игрока были эмоуты с одинаковыми названиями, но разными ключами, некоторые из них могут быть потеряны.
+			// Но это уже проблемы игрока...
+			new_custom_emote_panel[emote_name] = list("type" = TGUI_PANEL_EMOTE_TYPE_DEFAULT, "key" = emote_key)
+		custom_emote_panel = new_custom_emote_panel
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)

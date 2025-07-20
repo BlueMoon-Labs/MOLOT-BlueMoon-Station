@@ -41,11 +41,25 @@
 	if(!name)
 		name = key
 
-/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
+/// Makes the mob to run the specified emote.
+/// * `user` - our mob.
+/// * `type_override` - See `EMOTE_VISIBLE`, `EMOTE_AUDIBLE`, etc. Equivalent to `m_type` in mob/emote().
+/// * `params` - parameters for the emote. Mainly used in /me emotes, i.e. `L.emote("me", 1, "nibbles away at \the [parent]")`.
+/// Also can be used in "blows a kiss to %t" kinda emotes, where it replaces "%t". Equivalent to `message` in mob/emote().
+/// * `intentional` - whether this emote is triggered by the mob themselves (`TRUE`) or forced by game mechanics (`FALSE`).
+/// * `message_override` - if set to some string, will replace the emote message with the provided string. If `params` is used,
+/// this string can contain `%t`, which will be replaced with `message`.
+/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE, message_override = null)
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
-	var/msg = select_message_type(user)
+
+	var/msg = ""
+	if(message_override)
+		msg = message_override
+	else
+		msg = select_message_type(user)
+
 	if(params && message_param)
 		msg = select_param(user, params)
 
@@ -59,7 +73,7 @@
 	if(!msg)
 		return
 
-	user.log_message(msg, LOG_EMOTE)
+	user.log_message(message_override ? "[select_message_type(user)] | [msg]" : msg, LOG_EMOTE)
 	//msg = "<b>[user]</b> " + msg //SKYRAT CHANGE
 	var/dchatmsg = "<span class='emote'><b>[user]</b> [msg]</span>" //SKYRAT CHANGE
 

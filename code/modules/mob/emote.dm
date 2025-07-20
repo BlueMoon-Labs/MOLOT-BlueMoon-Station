@@ -14,7 +14,15 @@
 // ⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿
 
 //The code execution of the emote datum is located at code/datums/emotes.dm
-/mob/proc/emote(act, m_type = null, message = null, intentional = FALSE)
+/// Makes the mob to run the specified emote.
+/// * `act` - emote key (for example `emote("sigh")`).
+/// * `m_type` - type override for the emote. See `EMOTE_VISIBLE`, `EMOTE_AUDIBLE`, etc.
+/// * `message` - "param"[eter] for the emote. Mainly used in /me emotes, i.e. `L.emote("me", 1, "nibbles away at \the [parent]")`.
+/// Also can be used in "blows a kiss to %t" kinda emotes, where it replaces "%t".
+/// * `intentional` - whether this emote is triggered by the mob themselves (`TRUE`) or forced by game mechanics (`FALSE`).
+/// * `message_override` - if set to some string, will replace the emote message with the provided string. If `message` is used,
+/// this string can contain `%t`, which will be replaced with `message`.
+/mob/proc/emote(act, m_type = null, message = null, intentional = FALSE, message_override = null)
 	act = lowertext(act)
 	var/param = message
 	var/custom_param = findchar(act, " ")
@@ -26,8 +34,8 @@
 	for(var/datum/emote/emote in key_emotes)
 		if(!emote.can_run_emote(src, TRUE, intentional, param))
 			continue
-		if(emote.run_emote(src, param, m_type, intentional))
-			SEND_SIGNAL(src, COMSIG_MOB_EMOTE, emote, act, m_type, message, intentional)
+		if(emote.run_emote(src, param, m_type, intentional, message_override))
+			SEND_SIGNAL(src, COMSIG_MOB_EMOTE, emote, act, m_type, message, intentional, message_override)
 			return TRUE
 	if(!key_emotes)
 		to_chat(src, span_notice("Unusable emote '[act]'. Say *help for a list."))

@@ -138,9 +138,10 @@
 		return
 	switch(action)
 		if("submit")
-			if(length(params["entry"]) > max_length)
+			// BLUEMOON EDIT - исправление счета по байтам, а не по символам Юникода
+			if(length_char(params["entry"]) > max_length)
 				return
-			if(encode && (length(html_encode(params["entry"])) > max_length))
+			if(encode && (length_char(html_encode(params["entry"])) > max_length))
 				to_chat(usr, span_notice("Your message was clipped due to special character usage."))
 			set_entry(params["entry"])
 			closed = TRUE
