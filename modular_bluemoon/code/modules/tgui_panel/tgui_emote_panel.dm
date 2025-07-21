@@ -1,7 +1,7 @@
 #define TGUI_PANEL_MAX_EMOTES 30
 #define TGUI_PANEL_MAX_EMOTE_LENGTH 128
 #define TGUI_PANEL_MAX_EMOTE_NAME_LENGTH 32
-#define CUSTOM_EMOTE_COOLDOWN 3 SECONDS
+#define CUSTOM_EMOTE_COOLDOWN 1.5 SECONDS
 
 /*
 	Панель эмоутов была переделана, и теперь вместо простого ассоциативного списка `emotes["sigh"] = "вздох"`
@@ -86,7 +86,7 @@
 					var/emote_key = client.prefs.custom_emote_panel[emote_name]["key"]
 					var/message_override = client.prefs.custom_emote_panel[emote_name]["message_override"]
 					L.emote(emote_key, intentional = TRUE, message_override = message_override)
-					L.nextsoundemote = world.time + CUSTOM_EMOTE_COOLDOWN
+					L.nextsoundemote = (L.nextsoundemote > world.time ? L.nextsoundemote : world.time) + CUSTOM_EMOTE_COOLDOWN
 
 				if (TGUI_PANEL_EMOTE_TYPE_ME)
 					if(L.nextsoundemote >= world.time)
@@ -94,7 +94,7 @@
 						return TRUE
 					var/message = client.prefs.custom_emote_panel[emote_name]["message"]
 					L.emote("me", intentional = TRUE, message = message)
-					L.nextsoundemote = world.time + CUSTOM_EMOTE_COOLDOWN
+					L.nextsoundemote = (L.nextsoundemote > world.time ? L.nextsoundemote : world.time) + CUSTOM_EMOTE_COOLDOWN
 
 			return TRUE
 
