@@ -201,7 +201,7 @@
 
 /datum/supply_pack/medical/advrad
 	name = "Radiation Treatment Crate Deluxe"
-	desc = "Ящик на случай, если радиация выйдет из-под контроля... Содержит два набора rad-b-gone ,один флакон роскошных таблеток от радиации, а также флакон роскошных таблеток для лучевой терапии"
+	desc = "Ящик на случай, если радиация выйдет из-под контроля... содержит два набора rad-b-gone, один флакон роскошных таблеток от радиации, а также флакон роскошных таблеток для лучевой терапии."
 	cost = 3500
 	contains = list(/obj/item/storage/pill_bottle/antirad_plus,
 					/obj/item/storage/pill_bottle/mutarad,
