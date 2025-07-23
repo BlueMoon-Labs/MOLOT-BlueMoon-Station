@@ -84,7 +84,7 @@
 /datum/supply_pack/engineering/industrialrcd
 	name = "Industrial RCD"
 	desc = "Три промышленных RCD на случай, если станция прошла через более чем один метеоритный шторм и инженерам необходимо установить что-то более надежное. Данная модель уже улучшена ЦК, не содержит запасных зарядников."
-	cost = 4500
+	cost = 9000
 	access = ACCESS_ENGINE
 	contains = list(/obj/item/construction/rcd/industrial,
 					/obj/item/construction/rcd/industrial,
