@@ -21,12 +21,21 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, 1)
 		return FALSE
 
-/obj/item/choice_beacon/proc/generate_options(mob/living/M)
+/obj/item/choice_beacon/proc/generate_options(mob/living/M, radial_menu = FALSE)
 	if(!stored_options || force_refresh)
 		stored_options = generate_display_names()
 	if(!stored_options.len)
 		return
-	var/choice = input(M,"Which item would you like to order?","Select an Item") as null|anything in stored_options
+	// BLEMOON EDIT START
+	var/choice
+	if(radial_menu)
+		var/list/stored_options_radial = list()
+		for(var/listed in stored_options)
+			stored_options_radial[listed] = new /mutable_appearance(stored_options[listed])
+		choice = stored_options_radial.len == 1 ? stored_options_radial[1] : show_radial_menu(M, src, stored_options_radial, radius = 40, require_near = TRUE, no_repeat_close = TRUE)
+	else
+		choice = tgui_input_list(M, "Select an item", "Which item would you like to order?", stored_options)
+	// BLEMOON EDIT END
 	if(!choice || !M.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 
@@ -288,6 +297,17 @@
 		for(var/V in plushies_set_two)
 			plushie_list[V] = V //easiest way to do this which works with how selecting options works, despite being snowflakey to have the key equal the value
 	return plushie_list
+
+// BLUEMOON ADD START
+/obj/item/choice_beacon/box/plushie/AltClick(mob/user)
+	. = ..()
+	if(user.get_active_held_item() == src && canUseBeacon(user))
+		generate_options(user, TRUE)
+
+/obj/item/choice_beacon/box/plushie/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-click to show radial menu.")
+// BLUEMOON ADD END
 
 /// Don't allow these special ones (you can still get narplush/hugbox)
 /obj/item/choice_beacon/box/plushie/proc/remove_bad_plushies(list/plushies)
