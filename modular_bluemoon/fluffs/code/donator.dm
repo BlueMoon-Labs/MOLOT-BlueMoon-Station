@@ -1712,3 +1712,10 @@
 	path = /obj/item/clothing/suit/pg
 	ckeywhitelist = list("heathkit1")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/cybercoat
+	name = "Cybercoat"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/hooded/bm/cybercoat
+	ckeywhitelist = list("cnaperdodo")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

@@ -2,6 +2,16 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
 
+/obj/item/clothing/suit/hooded/bm
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+
+/obj/item/clothing/head/hooded/bm
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
+
 /obj/item/clothing/suit/donator/bm/lightning_holocloak
 	name = "lightning holo-cloak"
 	desc = "When equipped, a strange hologram is activated, and the fabric of the cloak itself disappears, and lightning starts projecting all over the body."
@@ -411,3 +421,22 @@
     item_state = "noxscoutcoat"
     body_parts_covered = CHEST
     mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/hooded/bm/cybercoat // Спрайты принадлежат cnaperdodo
+	name = "Cybercoat"
+	desc = "Странный халат с кибернетикой. Около него чуствуется странный металический привкус."
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "cybercoat"
+	item_state = "cybercoat"
+	body_parts_covered = CHEST|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	hoodtype = /obj/item/clothing/head/hooded/bm/cybercoat
+
+/obj/item/clothing/head/hooded/bm/cybercoat // Спрайты принадлежат cnaperdodo
+	name = "Cybercoat hood"
+	icon_state = "hood_cybercoat"
+	item_state = "hood_cybercoat"
+	body_parts_covered = HEAD
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	rad_flags = RAD_NO_CONTAMINATE
