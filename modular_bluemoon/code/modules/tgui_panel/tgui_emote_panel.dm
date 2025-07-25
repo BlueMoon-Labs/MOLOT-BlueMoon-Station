@@ -1,6 +1,8 @@
 #define TGUI_PANEL_MAX_EMOTES 30
 #define TGUI_PANEL_MAX_EMOTE_LENGTH 128
 #define TGUI_PANEL_MAX_EMOTE_NAME_LENGTH 32
+#define SHORT_EMOTE_MAX_LENGTH 40
+#define CUSTOM_SHORT_EMOTE_COOLDOWN 0.1 SECONDS
 #define CUSTOM_EMOTE_COOLDOWN 1 SECONDS
 
 /*
@@ -86,7 +88,10 @@
 					var/emote_key = client.prefs.custom_emote_panel[emote_name]["key"]
 					var/message_override = client.prefs.custom_emote_panel[emote_name]["message_override"]
 					L.emote(emote_key, intentional = TRUE, message_override = message_override)
-					L.nextsoundemote = max(L.nextsoundemote, world.time + CUSTOM_EMOTE_COOLDOWN)
+					if (length_char(message_override) > SHORT_EMOTE_MAX_LENGTH)
+						L.nextsoundemote = max(L.nextsoundemote, world.time + CUSTOM_EMOTE_COOLDOWN)
+					else
+						L.nextsoundemote = max(L.nextsoundemote, world.time + CUSTOM_SHORT_EMOTE_COOLDOWN)
 
 				if (TGUI_PANEL_EMOTE_TYPE_ME)
 					if(L.nextsoundemote >= world.time)
@@ -94,7 +99,10 @@
 						return TRUE
 					var/message = client.prefs.custom_emote_panel[emote_name]["message"]
 					L.emote("me", intentional = TRUE, message = message)
-					L.nextsoundemote = max(L.nextsoundemote, world.time + CUSTOM_EMOTE_COOLDOWN)
+					if (length_char(message) > SHORT_EMOTE_MAX_LENGTH)
+						L.nextsoundemote = max(L.nextsoundemote, world.time + CUSTOM_EMOTE_COOLDOWN)
+					else
+						L.nextsoundemote = max(L.nextsoundemote, world.time + CUSTOM_SHORT_EMOTE_COOLDOWN)
 
 			return TRUE
 
@@ -302,4 +310,6 @@
 #undef TGUI_PANEL_MAX_EMOTES
 #undef TGUI_PANEL_MAX_EMOTE_LENGTH
 #undef TGUI_PANEL_MAX_EMOTE_NAME_LENGTH
+#undef SHORT_EMOTE_MAX_LENGTH
+#undef CUSTOM_SHORT_EMOTE_COOLDOWN
 #undef CUSTOM_EMOTE_COOLDOWN
