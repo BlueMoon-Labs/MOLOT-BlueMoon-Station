@@ -32,7 +32,7 @@
 		var/list/stored_options_radial = list()
 		for(var/listed in stored_options)
 			stored_options_radial[listed] = new /mutable_appearance(stored_options[listed])
-		choice = stored_options_radial.len == 1 ? stored_options_radial[1] : show_radial_menu(M, src, stored_options_radial, radius = 40, require_near = TRUE, no_repeat_close = TRUE)
+		choice = stored_options_radial.len == 1 ? stored_options_radial[1] : show_radial_menu(M, src, stored_options_radial, radius = 40, require_near = TRUE)
 	else
 		choice = tgui_input_list(M, "Select an item", "Which item would you like to order?", stored_options)
 	// BLEMOON EDIT END
@@ -280,6 +280,8 @@
 	name = "choice box (plushie)"
 	desc = "Using the power of quantum entanglement, this box contains every plush, until the moment it is opened!"
 	icon = 'icons/obj/plushes.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/plushes-lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/plushes-right.dmi'
 	icon_state = "box"
 	item_state = "box"
 
