@@ -168,6 +168,8 @@
 	required_from_target_exposed = INTERACTION_REQUIRE_VAGINA
 	p13target_emote = PLUG13_EMOTE_VAGINA
 	target_organ = ORGAN_SLOT_VAGINA
+	try_milking = TRUE
+	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	write_log_user = "tailfucked vagina"
 	write_log_target = "vaginal tailfucked by"
 	start_text = list(
