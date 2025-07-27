@@ -24,6 +24,7 @@
 	desc = "The classic fleur d'amour - flower of love. Watch for its thorns!"
 	icon_state = "rose"
 	icon = 'modular_sand/icons/obj/hydroponics/harvest.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi' //BLUEMOON ADD
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD //|ITEM_SLOT_MASK // couldn't get this to work, revive another day
@@ -54,6 +55,7 @@
 	desc = "The all new fleur d'amour gris - the flower of love, modernized, with no harsh thorns."
 	icon_state = "carbonrose"
 	icon = 'modular_sand/icons/obj/hydroponics/harvest.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi' //BLUEMOON ADD
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_righthand.dmi'
 	force = 0
