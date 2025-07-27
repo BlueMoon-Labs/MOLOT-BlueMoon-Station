@@ -39,6 +39,28 @@
 	custom_materials = list(/datum/material/wood = 1000)
 	drop_sound = 'modular_bluemoon/sound/items/wooden_drop.ogg'
 	var/flipped = FALSE
+	/**
+	 * This var is used for random separate item placement on the tabe when picking up flipped cup.
+	 * During Initialize() it will become 2D 9x2 array: 9 is 9 positions, 2 is pixelshift x|y -> ((x1,y1), (x2,y2), ..., (x9, y9))
+	 *
+	 * X | X | X
+	 * ---------
+	 * X | X | X
+	 * ---------
+	 * X | X | X
+	 *
+	 * So the item will be placed on the random X = (xn,yn) spot on the table.
+	 * The center = (0,0), upper left corner = (-8,8), down right corner = (8,-8)
+	 */
+	var/list/table_pixel_positions[9]
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/wooden/Initialize(mapload)
+	. = ..()
+	var/counter = 1
+	for(var/i in list(-8, 0, 8))
+		for(var/j in list(-8, 0, 8))
+			table_pixel_positions[counter] = list(i, j)
+			counter++
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/wooden/examine(mob/user)
 	. = ..()
@@ -58,8 +80,8 @@
 		return ..()
 	if(!iscarbon(user) || (is_blind(user)) || !user.TurfAdjacent(get_turf(src)))
 		return
-	visible_message("[user] is lifting [src] to peek dice results")
-	if(do_after(user, 3 SECONDS, src))
+	visible_message("[user] is lifting [src] to peek dice results.")
+	if(do_after(user, 2 SECONDS, src))
 		for(var/obj/item/dice/D in src)
 			to_chat(user, "[D] is landed on [span_bold("[D.result]")].")
 
@@ -120,8 +142,10 @@
 		icon_state = initial(icon_state)
 		reagents.reagents_holder_flags |= OPENCONTAINER
 		var/turf/T = get_turf(src)
+		var/list/tpp = LAZYCOPY(table_pixel_positions) // this way we won't overwrite our array
 		for(var/obj/item/I in src)
 			I.forceMove(T)
-			I.pixel_x += rand(-8, 8)
-			I.pixel_y += rand(-8, 8)
+			var/item_pixel_positions = pick_n_take(tpp)
+			I.pixel_x += item_pixel_positions[1]
+			I.pixel_y += item_pixel_positions[2]
 	. = ..()
