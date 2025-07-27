@@ -13,9 +13,9 @@
 	 */
 	var/rotated
 
-/datum/element/decal/Attach(atom/target, _icon, _icon_state, _dir, _cleanable=CLEAN_GOD, _color, _layer=TURF_LAYER, _description, _alpha=255, _rotated=FALSE)
+/datum/element/decal/Attach(atom/target, _icon, _icon_state, _dir, _cleanable=CLEAN_GOD, _color, _layer=TURF_LAYER, _description, _alpha=255, _rotated=FALSE, _pixel_x = 0, _pixel_y = 0)
 	. = ..()
-	if(!isatom(target) || (pic ? FALSE : !generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, target)))
+	if(!isatom(target) || (pic ? FALSE : !generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, _pixel_x, _pixel_y, target)))
 		return ELEMENT_INCOMPATIBLE
 	description = _description
 	cleanable = _cleanable
@@ -37,13 +37,15 @@
 	if(_description)
 		RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(examine),TRUE)
 
-/datum/element/decal/proc/generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, source)
+/datum/element/decal/proc/generate_appearance(_icon, _icon_state, _dir, _layer, _color, _alpha, _pixel_x, _pixel_y, source)
 	if(!_icon || !_icon_state)
 		return FALSE
 	var/temp_image = image(_icon, null, _icon_state, _layer, _dir)
 	pic = new(temp_image)
 	pic.color = _color
 	pic.alpha = _alpha
+	pic.pixel_x = _pixel_x
+	pic.pixel_y = _pixel_y
 	return TRUE
 
 /datum/element/decal/Detach(atom/source, force)
