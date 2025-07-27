@@ -50,6 +50,11 @@
 	var/can_be_rigged = TRUE
 	var/rigged = FALSE
 
+/obj/item/dice/examine(mob/user)
+	. = ..()
+	if(result)
+		. += "It is landed on [span_bold("[result]")]."
+
 /obj/item/dice/Initialize(mapload)
 	. = ..()
 	result = roll(sides)
@@ -171,9 +176,10 @@
 	var/mob/thrown_by = thrownby?.resolve()
 	if(thrown_by)
 		diceroll(thrown_by)
+		playsound(src, 'modular_bluemoon/sound/items/dice_roll.ogg', 50, TRUE)
 	. = ..()
 
-/obj/item/dice/proc/diceroll(mob/user)
+/obj/item/dice/proc/diceroll(mob/user, hide_message)
 	result = roll(sides)
 	if(rigged && result != rigged)
 		if(prob(clamp(1/(sides - 1) * 100, 25, 80)))
@@ -189,6 +195,8 @@
 		result = (result - 1)*10
 	if(special_faces.len == sides)
 		result = special_faces[result]
+	if(hide_message)
+		return
 	if(user != null) //Dice was rolled in someone's hand
 		user.visible_message("[user] has thrown [src]. It lands on [result]. [comment]", \
 							"<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
