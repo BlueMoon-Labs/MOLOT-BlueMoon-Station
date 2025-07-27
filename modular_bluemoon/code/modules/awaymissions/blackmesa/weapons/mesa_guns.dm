@@ -198,6 +198,165 @@
 	else
 		icon_state = "m16hl_mag"
 
+/obj/item/gun/ballistic/automatic/mp7
+	name = "\improper mp7"
+	desc = "Heckler & Koch MP7 A1 PDW — пистолет-пулемёт, разработанный в начале 2000-х годов немецкой фирмой Heckler & Koch. Отлично подойдёт, если вместо лечения людей медик хочет устроить бойню"
+	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon_state = "mp7"
+	item_state = "mp7"
+	fire_delay = 1 //ATATATATATATATATA!!!
+	spread = 8
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/mp7.ogg'
+	weapon_weight = WEAPON_LIGHT
+	mag_type = /obj/item/ammo_box/magazine/mp7
+
+/obj/item/gun/ballistic/automatic/mp7/update_icon_state()
+	icon_state = "[initial(icon_state)][chambered ? "" : ""]"
+	if(magazine)
+		icon_state = "mp7"
+	else
+		icon_state = "mp7nomag"
+
+/obj/item/ammo_box/magazine/mp7
+	name = "MP7 magazine"
+	desc = "A standart magazine for mp7"
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "mp7"
+	ammo_type = /obj/item/ammo_casing/mm46
+	caliber = "4.6mm"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/mp7/update_icon()
+	. = ..()
+	if(ammo_count())
+		icon_state = "[initial(icon_state)]-ammo"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/ammo_casing/mm46
+	name = "4.6mm bullet casing"
+	desc = "A 4.6mm bullet casing."
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "5.8x40mm"
+	caliber = "4.6mm"
+	projectile_type = /obj/item/projectile/bullet/mm46
+
+/obj/item/projectile/bullet/mm46
+	name = "4.6mm bullet"
+	damage = 10
+	armour_penetration = 3
+	wound_bonus = -3
+	bare_wound_bonus = 1
+
+/obj/item/gun/ballistic/automatic/scar
+	name = "\improper HC scar"
+	desc = "Модифицированная версия FN Scar, предназначенная для ведения стрельбы на средние и дальние дистанции. В отличие от M4oa1, имеет автоматический режим стрельбы и менее убойный калибр."
+	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon_state = "scar"
+	item_state = "scar"
+	fire_delay = 5
+	spread = 10
+	fire_sound = 'modular_bluemoon/sound/weapons/mesa/scar.ogg'
+	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/scar
+
+/obj/item/gun/ballistic/automatic/scar/update_icon_state()
+	icon_state = "[initial(icon_state)][chambered ? "" : ""]"
+	if(magazine)
+		icon_state = "scar"
+	else
+		icon_state = "scar_mag"
+
+/obj/item/ammo_box/magazine/scar
+	name = " HC SCAR magazine"
+	desc = "A standart magazine for HC SCAR"
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "scar"
+	ammo_type = /obj/item/ammo_casing/mm762
+	caliber = "7.62mm"
+	max_ammo = 20
+
+/obj/item/ammo_box/magazine/scar/update_icon()
+	. = ..()
+	if(ammo_count())
+		icon_state = "[initial(icon_state)]-ammo"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/ammo_casing/mm762
+	name = "7.62mm bullet casing"
+	desc = "A 7.62mm bullet casing."
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "5.8x40mm"
+	caliber = "7.62mm"
+	projectile_type = /obj/item/projectile/bullet/mm762
+
+/obj/item/projectile/bullet/mm762
+	name = "7.62mm bullet"
+	damage = 25
+	armour_penetration = 4
+	wound_bonus = -6
+	bare_wound_bonus = 5
+
+/obj/item/gun/ballistic/automatic/p90
+	name = "\improper P90"
+	desc = "FN P90 является оружием индивидуальной самообороны бельгийской компании Fabrique Nationale Herstal."
+	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon_state = "p90"
+	item_state = "p90"
+	fire_delay = 0.5 //FUUUUUUUUCK!!!!!
+	spread = 15
+	fire_sound = 'sound/weapons/gunshot_smg_alt.ogg'
+	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/p90
+
+/obj/item/gun/ballistic/automatic/p90/update_icon_state()
+	icon_state = "[initial(icon_state)][chambered ? "" : ""]"
+	if(magazine)
+		icon_state = "p90"
+	else
+		icon_state = "p90_mag"
+
+/obj/item/ammo_box/magazine/p90
+	name = "p90 magazine"
+	desc = "A standart magazine for p90"
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "p90"
+	ammo_type = /obj/item/ammo_casing/mm57
+	caliber = "5.7mm"
+	max_ammo = 50
+
+/obj/item/ammo_box/magazine/p90/update_icon()
+	. = ..()
+	if(ammo_count())
+		icon_state = "[initial(icon_state)]-ammo"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/ammo_casing/mm57
+	name = "5.7mm bullet casing"
+	desc = "A 5.7mm bullet casing."
+	icon = 'modular_bluemoon/icons/obj/ammo.dmi'
+	icon_state = "5.8x40mm"
+	caliber = "5.7mm"
+	projectile_type = /obj/item/projectile/bullet/mm57
+
+/obj/item/projectile/bullet/mm57
+	name = "4.6mm bullet"
+	damage = 10
+	armour_penetration = 4
+	wound_bonus = -4
+	bare_wound_bonus = 2
+
+
 /obj/item/uber_teleporter
 	name = "\improper Nihilanth's Divinity"
 	desc = "It glows harshly, the power of a portal wielding monster lays within."
@@ -246,3 +405,42 @@
 	if(!success)
 		do_teleport(user, possible_turfs, channel = TELEPORT_CHANNEL_FREE)
 		playsound(get_turf(user), 'sound/magic/LightningShock.ogg', 50, TRUE)
+
+
+
+//SPECGUNS
+//В РАЗРАБОТКЕ
+
+//obj/item/gun/energy/beam_rifle/mesa
+//	name = "CARGO HELPER 1998"
+//	desc = "Критично ПРОВАЛЬНЫЙ прототип который должен был помогать работникам чёрной мезы перетаскивать предметы при помощи антигравитационного луча. К превиликому сожалению или счастью, этот монстр вместо того, что-бы поднимать предметы буквально ПРОШИВАЕТ их смертоносной энергией зена. На корпусе видно куча торчащих проводков и надписей с предупреждениями"
+//	icon = 'icons/obj/guns/energy.dmi'
+//	icon_state = "esniper"
+//	item_state = "esniper"
+//	fire_sound = 'sound/weapons/beam_sniper.ogg'
+//	slot_flags = FALSE
+//	force = 20
+//	recoil = 6
+//	ammo_x_offset = 0
+//	ammo_y_offset = 0
+//	ammo_type = list(/obj/item/projectile/beam/emitter/hitscan)
+//	cell_type = /obj/item/stock_parts/cell/beam_rifle
+//	canMouseDown = TRUE
+//	can_turret = FALSE
+//	can_circuit = FALSE
+//	//Cit changes: beam rifle stats.
+//	slowdown = 1
+//	item_flags = NO_MAT_REDEMPTION | SLOWS_WHILE_IN_HAND
+//	pin = /obj/item/firing_pin
+//	aiming_time = 6
+//	aiming_time_fire_threshold = 4
+//	aiming_time_left = 5
+//	aiming_time_increase_user_movement = 10
+//	structure_piercing = 1
+//	wall_pierce_amount = 1
+//	projectile_damage = 40
+//	projectile_stun = 1
+//	delay = 25
+
+//	var/static/image/charged_overlay = image(icon = 'icons/obj/guns/energy.dmi', icon_state = "esniper_charged")
+//	var/static/image/drained_overlay = image(icon = 'icons/obj/guns/energy.dmi', icon_state = "esniper_empty")

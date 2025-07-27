@@ -67,6 +67,23 @@
 	for(var/mob/living/iterating_mob in loc)
 		iterating_mob.heal_overall_damage(heal_amount, heal_amount)
 
+/obj/structure/healstation
+	name = "health station"
+	desc = "wall-mounted devices that give a limited amount of health and power. They are found throughout the Black Mesa Research Facility"
+	light_range = 3
+	light_color = "#71ffff"
+	var/heal_amount = 5
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
+	icon_state = "aid"
+
+/obj/structure/healstation/Initialize(mapload)
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/structure/healstation/process(seconds_per_tick)
+	for(var/mob/living/iterating_mob in loc)
+		iterating_mob.heal_overall_damage(heal_amount, heal_amount)
+
 /mob/living/simple_animal/hostile/blackmesa/xen
 	var/can_be_shielded = TRUE
 	var/shielded = FALSE
@@ -88,6 +105,21 @@
 		balloon_alert_to_viewers("ineffective!")
 		return FALSE
 	return ..()
+
+/obj/structure/sign/flag/blackmesa
+	name = "black mesa flag"
+	desc = "The Black Mesa Research Facility, or B.M.R.F. for short, and colloquially known as Black Mesa, was a scientific research complex built around an abandoned Cold War ICBM launch silo in the New Mexico desert in the United States"
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
+	icon_state = "flag_mesa"
+	item_flag = /obj/item/sign/flag
+
+/obj/item/sign/flag/blackmesa
+	name = "folded flag of Black mesa"
+	desc = "The folded flag of Black mesa."
+	icon_state = "folded_mesa"
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
+	sign_path = /obj/structure/sign/flag/blackmesa
+
 
 /obj/structure/xen_pylon
 	name = "shield plant"

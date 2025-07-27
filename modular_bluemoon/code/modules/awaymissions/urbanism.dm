@@ -1,3 +1,32 @@
+/turf/closed/mineral/mesarock
+	name = "rock"
+	icon = 'icons/turf/mining.dmi'
+	smooth_icon = 'icons/turf/walls/rock_wall.dmi'
+	icon_state = "rockyash"
+	smooth = SMOOTH_MORE|SMOOTH_BORDER
+	canSmoothWith = list (/turf/closed)
+
+/turf/closed/mineral/mesarock/rust_heretic_act()
+	return
+
+/turf/closed/mineral/mesarock/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
+	return
+
+/turf/closed/mineral/mesarock/acid_act(acidpwr, acid_volume, acid_id)
+	return FALSE
+
+/turf/closed/mineral/mesarock/Melt()
+	to_be_destroyed = FALSE
+	return src
+
+/turf/closed/mineral/mesarock/singularity_act()
+	return
+
+/turf/closed/mineral/mesarock/attackby(obj/item/pickaxe/I, mob/user, params)
+	return
+
+/turf/closed/mineral/mesarock/attack_hand(mob/user)
+	return
 
 /obj/machinery/power/floodlight/urbanismlight
 	name = "Floodlight"
@@ -86,7 +115,7 @@
 /obj/structure/urbanismpower
 	name = "Power Line"
 	desc = "Эта необычная старая вышка обеспечивает электричеством то место, где вы сейчас находитесь"
-	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism96x160.dmi'
 	icon_state = "powerline"
 	anchored = TRUE
 	density = TRUE
@@ -118,3 +147,96 @@
 	density = TRUE
 	armor = list(MELEE = 70, BULLET =60, LASER = 50, ENERGY = 80, BOMB = 50, BIO = 10, RAD = 10, FIRE = 50, ACID = 50)
 	layer = SPACEVINE_LAYER
+
+/obj/structure/urbanismradio
+	name = "Radio"
+	desc = "Big rusty radio tower"
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
+	icon_state = "radio"
+	anchored = TRUE
+	density = TRUE
+	armor = list(MELEE = 50, BULLET =40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
+	layer = SPACEVINE_LAYER
+
+
+/obj/structure/urbanismdisplay
+	name = "Mesa incident display"
+	desc = "Looks broken"
+	icon = 'modular_bluemoon/icons/obj/urbanism/mesa_display.dmi'
+	icon_state = "display_broken"
+	anchored = TRUE
+	density = FALSE
+	armor = list(MELEE = 50, BULLET =40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
+	light_range = 5
+	light_color = "#2652e2"
+	max_integrity = 9999999
+	layer = SPACEVINE_LAYER
+
+/obj/structure/urbanismdisplay/urbanismchalk
+	name = "Big chalkboard"
+	desc = "Here is many of symbols and text... You barely can understand that text"
+	icon = 'modular_bluemoon/icons/obj/urbanism/mesa_display.dmi'
+	icon_state = "chalkboard"
+	anchored = TRUE
+	density = FALSE
+	armor = list(MELEE = 50, BULLET =40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
+	light_range = FALSE
+	light_color = FALSE
+	max_integrity = FALSE
+
+/obj/structure/urbanismmachines
+
+	name = "old machine"
+	desc = "some kind of old (and sometimes broken) machine"
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
+	icon_state = "server_desrtoyed"
+	anchored = TRUE
+	density = TRUE
+	armor = list(MELEE = 30, BULLET =50, LASER = 30, ENERGY = 20, BOMB = 70, BIO = 15, RAD = 10, FIRE = 40, ACID = 30)
+
+
+/obj/structure/urbanismmounted
+
+	name = "Mounted kind of machine"
+	desc = "here's many terminals and generators... Be careful"
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
+	icon_state = "terminal_broken"
+	anchored = TRUE
+	density = FALSE
+	armor = list(MELEE = 30, BULLET =50, LASER = 30, ENERGY = 20, BOMB = 70, BIO = 15, RAD = 10, FIRE = 40, ACID = 30)
+
+
+/obj/structure/urbanismbillboard
+	name = "Big billboard"
+	desc = "YOUR AD COULD BE HERE!"
+	icon = 'modular_bluemoon/icons/obj/urbanism/bilboards.dmi'
+	icon_state = "bilboard1"
+	anchored = TRUE
+	density = TRUE
+	armor = list(MELEE = 80, BULLET =80, LASER = 70, ENERGY = 60, BOMB = 80, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
+	light_range = FALSE
+	light_color = FALSE
+	max_integrity = FALSE
+	layer = SPACEVINE_LAYER
+
+
+/obj/structure/rockpilemesa
+	name = "large rocks"
+	icon_state = "rocks"
+	icon = 'modular_bluemoon/icons/obj/urbanism/stone.dmi'
+	icon_state = "stone1"
+	color = "#f79668"
+
+/obj/effect/turf_decal/misc/brokenwalls
+	name = "crushed wall"
+	icon = 'modular_bluemoon/icons/obj/urbanism/decals.dmi'
+	icon_state = "brokenwall2"
+
+/obj/effect/turf_decal/misc/brokenwalls/alt
+	icon_state = "brokenwall1"
+
+
+/obj/effect/turf_decal/weather/rock
+	name = "rocks"
+	icon = 'modular_bluemoon/icons/obj/urbanism/decals.dmi'
+	icon_state = "rock"
