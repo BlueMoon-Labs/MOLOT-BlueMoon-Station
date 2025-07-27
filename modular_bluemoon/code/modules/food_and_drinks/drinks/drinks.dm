@@ -42,13 +42,26 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/wooden/examine(mob/user)
 	. = ..()
-	if(!flipped)
+	if(flipped)
+		if(locate(/obj/item/dice) in src)
+			. += span_notice("[span_bold("Ctrl+Shitf+Click")] to look at the dice results.")
+	else
 		if(user.TurfAdjacent(get_turf(src)))
 			for(var/obj/item/I in src)
 				. += "You can see [span_bold("[I]")] inside."
-			. += span_notice("Drag and drop [src] to take out items.")
+			. += span_notice("Drag and drop [src] to take items out.")
 		else
 			. += "You can't see if there are any items inside [src] from this distance."
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/wooden/CtrlShiftClick(mob/user)
+	if(!(locate(/obj/item/dice) in src))
+		return ..()
+	if(!iscarbon(user) || (is_blind(user)) || !user.TurfAdjacent(get_turf(src)))
+		return
+	visible_message("[user] is lifting [src] to peek dice results")
+	if(do_after(user, 3 SECONDS, src))
+		for(var/obj/item/dice/D in src)
+			to_chat(user, "[D] is landed on [span_bold("[D.result]")].")
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/wooden/on_reagent_change(changetype)
 	gulp_size = max(round(reagents.total_volume / 5), 5)
