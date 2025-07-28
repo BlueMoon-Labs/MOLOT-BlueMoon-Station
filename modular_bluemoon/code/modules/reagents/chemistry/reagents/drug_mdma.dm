@@ -11,7 +11,7 @@
 	name = "MDP2P precursor"
 	id = /datum/reagent/drug/mdp2p
 	results = list(/datum/reagent/drug/mdp2p = 3)
-	required_reagents = list(/datum/reagent/diethylamine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol = 2, /datum/reagent/phenol = 1, /datum/reagent/ammonia = 1)
+	required_reagents = list(/datum/reagent/diethylamine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol = 2, /datum/reagent/phenol = 1)
 	mix_message = "Смесь бурно реагирует, оставляя после себя желтую маслянистую жидкость с резким запахом мочи."
 	//FermiChem vars:
 	OptimalTempMin 	= 450
