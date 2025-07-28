@@ -47,6 +47,7 @@
 				/obj/item/tvcamera = 3,
 				/obj/item/toy/nyamagotchi = 10,
 				/obj/item/gun/ballistic/revolver/russian/lewd = 5,
+				/obj/item/storage/dice/d6 = 5,
 			),
 		),
 		list(
