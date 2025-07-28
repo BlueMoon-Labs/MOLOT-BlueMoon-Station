@@ -4,7 +4,7 @@
 
 /obj/item/toy/cards/deck/examine()
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to remove unwanted cards.</span>"
+	. += span_notice("Alt-click [src] to remove unwanted cards.")
 
 /obj/item/toy/cards/deck/populate_deck()
 	. = ..()
