@@ -56,7 +56,7 @@
 	maxHealth = 90
 	health = 90
 
-/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid
+/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid/alt2
 	icon_state = "bullsquid3"
 	icon_living = "bullsquid3"
 	icon_dead = "bullsquid3dead"
