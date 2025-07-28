@@ -5285,6 +5285,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/dorm_rooms)
 "cpV" = (
@@ -6356,6 +6359,9 @@
 	pixel_y = 30
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 5
 	},
 /turf/open/floor/plasteel,
@@ -9417,6 +9423,9 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "ecV" = (
@@ -12226,6 +12235,9 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "fho" = (
@@ -12450,6 +12462,12 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/dorm_rooms)
 "flY" = (
@@ -17326,6 +17344,9 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 9
 	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "hna" = (
@@ -21012,20 +21033,18 @@
 /area/awaymission/ihategordon/opposing)
 "iJM" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/mre/menu1/safe{
-	pixel_x = 0;
-	pixel_y = 0
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 1
 	},
 /obj/item/storage/box/mre/menu1/safe{
 	pixel_x = 7;
-	pixel_y = 0
+	pixel_y = 0;
+	name = "\improper  MRE Ration Kit Menu 1"
 	},
-/obj/item/storage/box/mre/menu2/safe{
-	pixel_x = -9;
-	pixel_y = 0
-	},
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 1
+/obj/item/storage/box/mre/menu1/safe{
+	pixel_x = -8;
+	pixel_y = 0;
+	name = "\improper  MRE Ration Kit Menu 1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/outsideofmesa/hecu_camp)
@@ -23561,7 +23580,9 @@
 	},
 /area/awaymission/ihategordon/opposing/comlpex)
 "jIB" = (
-/turf/open/chasm/jungle,
+/turf/open/chasm/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/awaymission/ihategordon/science_tunnel)
 "jIH" = (
 /obj/effect/turf_decal/siding/wideplating_new/light{
@@ -24407,8 +24428,9 @@
 /area/awaymission/ihategordon/sectorhnorthoffices)
 "jZH" = (
 /obj/item/storage/box/mre/menu1/safe{
-	pixel_x = 0;
-	pixel_y = 9
+	pixel_x = 7;
+	pixel_y = 0;
+	name = "\improper  MRE Ration Kit Menu 1"
 	},
 /turf/open/floor/plating/cobblestone,
 /area/awaymission/ihategordon/opposing)
@@ -26739,6 +26761,9 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "kYi" = (
@@ -28447,6 +28472,9 @@
 	name = "Broken Computer"
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -31534,16 +31562,18 @@
 /area/awaymission/ihategordon/underground_tunnels)
 "mRd" = (
 /obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 5
+	},
 /obj/item/storage/box/mre/menu1/safe{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -8;
+	pixel_y = 0;
+	name = "\improper  MRE Ration Kit Menu 1"
 	},
 /obj/item/storage/box/mre/menu1/safe{
 	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 5
+	pixel_y = 0;
+	name = "\improper  MRE Ration Kit Menu 1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/outsideofmesa/hecu_camp)
@@ -31666,6 +31696,12 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/dorm_rooms)
 "mUb" = (
@@ -35222,7 +35258,9 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/sectorhnorthoffices)
 "oqG" = (
-/turf/open/chasm/jungle,
+/turf/open/chasm/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/awaymission/ihategordon/opposing/comlpex)
 "oqM" = (
 /obj/structure/barricade/urbanism,
@@ -40746,7 +40784,9 @@
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/big_offices)
 "qKR" = (
-/turf/open/chasm/jungle,
+/turf/open/chasm/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/awaymission/ihategordon/dining_room)
 "qKS" = (
 /obj/structure/barricade/wooden,
@@ -43448,7 +43488,9 @@
 /turf/open/floor/plasteel/rivets/large,
 /area/awaymission/ihategordon/underground_tunnels)
 "rRK" = (
-/turf/open/chasm/jungle,
+/turf/open/chasm/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/awaymission/ihategordon/outsideofmesa)
 "rSa" = (
 /obj/effect/turf_decal/trimline/purple/line{
@@ -44944,6 +44986,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/sectorhnorthoffices)
+"svn" = (
+/obj/effect/turf_decal/trimline/dark_red/filled/line,
+/obj/effect/turf_decal/siding/wideplating_new/dark,
+/turf/open/floor/plasteel,
+/area/awaymission/ihategordon/sectorhsecoffices)
 "svr" = (
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 1;
@@ -51243,6 +51290,16 @@
 	icon_state = "wasteland4"
 	},
 /area/awaymission/ihategordon/underground_tunnels)
+"uXI" = (
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/ihategordon/sectorhsecoffices)
 "uXR" = (
 /obj/item/rack_parts,
 /turf/open/floor/plating{
@@ -51500,7 +51557,9 @@
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/emitter_chambers)
 "vax" = (
-/turf/open/chasm/jungle,
+/turf/open/chasm/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/awaymission/ihategordon/rocks)
 "vaL" = (
 /obj/structure/flora/rock,
@@ -53407,6 +53466,9 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 6
 	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "vRM" = (
@@ -55297,7 +55359,9 @@
 	},
 /area/awaymission/ihategordon/opposing/end)
 "wCX" = (
-/turf/open/chasm/jungle,
+/turf/open/chasm/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/awaymission/ihategordon/tram_tunnel)
 "wDk" = (
 /obj/structure/table/reinforced,
@@ -84791,7 +84855,7 @@ dFo
 xKx
 hmQ
 kXF
-neb
+uXI
 xKx
 grS
 mry
@@ -85048,7 +85112,7 @@ lrV
 qcm
 fgY
 bKf
-eCs
+svn
 tvI
 xke
 bHy
@@ -85305,7 +85369,7 @@ lrV
 tNI
 lEv
 jwo
-eCs
+svn
 tvI
 fIz
 qMt
