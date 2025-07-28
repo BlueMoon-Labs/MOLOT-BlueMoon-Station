@@ -319,7 +319,8 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("urn", /obj/item/reagent_containers/glass/mortar/urn, 3), \
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
 	new/datum/stack_recipe("notice board frame", /obj/item/wallframe/noticeboard, 5, time = 10),\
-	new/datum/stack_recipe("wooden block", /obj/item/stamp_block, 10, time = 10)
+	new/datum/stack_recipe("wooden block", /obj/item/stamp_block, 10, time = 10),\
+	new/datum/stack_recipe("wooden cup", /obj/item/reagent_containers/food/drinks/drinkingglass/wooden, 1, time = 50)
 	))
 
 /obj/item/stack/sheet/mineral/wood
