@@ -403,19 +403,30 @@ GLOBAL_LIST_INIT(pp_limbs, list(
 				empulse_using_range(usr, power, TRUE)
 			if(extinguishMode)
 				chosen_mode += " extinguish"
-				for(var/turf/T in range(power, get_turf(usr)))
-					if(istype(T, /turf/open))
-						var/turf/open/O = T
-						if(O.air)
-							O.air.set_temperature(T20C)
-							O.air_update_turf()
-					for(var/obj/Ob in T)
-						if(istype(Ob, /obj/effect/hotspot))
-							qdel(Ob)
-						else
-							Ob.extinguish()
-					for(var/mob/living/L in T)
-						L.ExtinguishMob()
+				var/turf/usr_turf = get_turf(usr)
+				var/list/z_level_turfs = list(usr_turf)
+				var/turf/neighbour_z_turf = SSmapping.get_turf_above(usr_turf)
+				while(neighbour_z_turf)
+					z_level_turfs += neighbour_z_turf
+					neighbour_z_turf = SSmapping.get_turf_above(neighbour_z_turf)
+				neighbour_z_turf = SSmapping.get_turf_below(usr_turf)
+				while(neighbour_z_turf)
+					z_level_turfs += neighbour_z_turf
+					neighbour_z_turf = SSmapping.get_turf_below(neighbour_z_turf)
+				for(var/turf/zT in z_level_turfs)
+					for(var/turf/T in range(power, zT))
+						if(istype(T, /turf/open))
+							var/turf/open/O = T
+							if(O.air)
+								O.air.set_temperature(T20C)
+								O.air_update_turf()
+						for(var/obj/Ob in T)
+							if(istype(Ob, /obj/effect/hotspot))
+								qdel(Ob)
+							else
+								Ob.extinguish()
+						for(var/mob/living/L in T)
+							L.ExtinguishMob()
 			if(!(empMode || extinguishMode))
 				chosen_mode = " explosion"
 				explosion(usr, power / 3, power / 2, power, power, ignorecap = TRUE)
