@@ -198,11 +198,20 @@
 
 			for(var/reagent_id in consumed_reagents_list)
 				consumed_reagents_list[reagent_id] *= production_coefficient
-				if(!reagents.has_reagent(reagent_id, consumed_reagents_list[reagent_id]))
+				// BLUEMOON EDIT START
+				var/datum/reagent/reagent_found = reagents.has_reagent(reagent_id, consumed_reagents_list[reagent_id], TRUE)
+				if(!reagent_found)
+				// BLUEMOON EDIT END
 					audible_message("<span class='warning'>\The [src] buzzes and states \"INSUFFICENT REAGENTS\"</span>")
 					playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
 					return
 
+				// BLUEMOON ADD START
+				if(reagent_found.type != reagent_id)
+					var/value = consumed_reagents_list[reagent_id]
+					consumed_reagents_list -= reagent_id
+					consumed_reagents_list[reagent_found.type] = value
+				// BLUEMOON ADD END
 				power = max(2000, (power + consumed_reagents_list[reagent_id]))
 
 			busy = TRUE
@@ -255,7 +264,7 @@
 
 
 /obj/machinery/limbgrower/proc/reagent_sanity_check(reagent_id, amount)
-	if(reagents.has_reagent(reagent_id, amount))
+	if(reagents.has_reagent(reagent_id, amount, TRUE)) // BLUEMOON EDIT
 		return TRUE
 	audible_message("<span class='warning'>\The [src] buzzes, with a screen showing: INSUFFICENT REAGENTS</span>")
 	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)

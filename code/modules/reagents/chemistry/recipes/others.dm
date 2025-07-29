@@ -622,6 +622,12 @@
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, multiplier)
 	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life") // Lol.
 
+// BLUEMOON ADD START
+/datum/chemical_reaction/life/synthmass
+	id = "life_2"
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh/mass = 1, /datum/reagent/blood = 1)
+// BLUEMOON ADD END || P.S. no friendly recipe from such a disgusting mass
+
 //This is missing, I'm adding it back (see tgwiki). Not sure why we don't have it.
 /datum/chemical_reaction/life_friendly
 	name = "Life (Friendly)"

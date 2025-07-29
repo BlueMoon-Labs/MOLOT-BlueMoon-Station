@@ -98,6 +98,12 @@
 	required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/space_cola = 1)
 	mix_message = "Смесь бурно реагирует, оставляя после себя огромную кучу микро-мини-нано бургеров."
 
+// BLUEMOON ADD START
+/datum/chemical_reaction/liquid_burger/synthmass
+	name = "Liquid Burger (Synthmass)"
+	required_reagents = list(/datum/reagent/medicine/synthflesh/mass = 1, /datum/reagent/consumable/space_cola = 1)
+// BLUEMOON ADD END
+
 /datum/chemical_reaction/solid_burger
 	name = "Solid Burger"
 	id = "solid_burger"
