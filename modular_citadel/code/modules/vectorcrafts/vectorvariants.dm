@@ -23,7 +23,6 @@
 /obj/vehicle/sealed/vectorcraft/truck
 	name = "Hovertruck"
 	desc = "An all-terrain vehicle built for traversing rough terrain with ease."
-	gear = "auto"
 	icon_state = "truck"
 	max_acceleration = 4.25
 	accel_step = 0.4
