@@ -803,7 +803,8 @@
 		return FALSE
 	if(!istype(src, /obj/item/gun/ballistic/shotgun) || on_cooldown())
 		return FALSE
-	if(target.has_balls() != HAS_EXPOSED_GENITAL)
+	var/obj/item/organ/genital/testicles/balls = target.getorganslot(ORGAN_SLOT_TESTICLES)
+	if(!balls || !(balls.is_exposed() || balls.always_accessible))
 		return FALSE
 	if(target.client?.prefs?.erppref == "No" || user.client?.prefs?.erppref == "No")
 		return FALSE
@@ -857,7 +858,6 @@
 		var/pain_message = "AAAAAAAHHHHHH!!! MY BALLS SUCH PAIN!!!"
 		if(chambered_damage > 20)
 			pain_message = "AAAAAAAHHHHHH!!! MY BALLS IS GONE!!!"
-			var/obj/item/organ/genital/testicles/balls = target.getorganslot(ORGAN_SLOT_TESTICLES)
 			balls.Remove()
 			var/obj/effect/gibspawner/generic/Gibbis = new /obj/effect/gibspawner/generic(get_turf(target))
 			Gibbis.gib_mob_type = /mob/living/carbon/human
