@@ -18,7 +18,7 @@
 
 /mob/living/simple_animal/hostile/blackmesa/xen/bullsquid
 	name = "bullsquid"
-	desc = "Противное инопланетное существо прямиком из другого измерения. Его противные глаза уже сверлят вас."
+	desc = "Противное инопланетное существо прямиком из другого измерения. Его глаза уже сверлят вас."
 	icon = 'modular_bluemoon/icons/mob/bullsquidnew.dmi'
 	icon_state = "bullsquid1"
 	icon_living = "bullsquid1"
