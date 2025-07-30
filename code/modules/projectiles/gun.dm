@@ -368,7 +368,8 @@
 			return
 		// BLUEMOON ADD START
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
-			shoot_balls(user, target)
+			if(user.a_intent != INTENT_HELP)
+				shoot_balls(user, target)
 			return
 		// BLUEMOON ADD END
 
