@@ -115,7 +115,7 @@
 /obj/structure/urbanismpower
 	name = "Power Line"
 	desc = "Эта необычная старая вышка обеспечивает электричеством то место, где вы сейчас находитесь"
-	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
 	icon_state = "powerline"
 	anchored = TRUE
 	density = TRUE
