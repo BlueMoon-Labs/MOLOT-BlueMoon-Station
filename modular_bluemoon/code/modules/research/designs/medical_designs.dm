@@ -74,3 +74,37 @@
 	build_path = /obj/item/organ/cyberimp/arm/lenses
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY //Mmm, i don't see the reason not to give it to basically everyone.
+
+//DATA CHIP. Expensive stuff for good chips.
+/datum/design/medicalbrainchip
+	name = "Advanced medical data chip"
+	desc = "Special implant that was designed to help field operators with medical care for their fallen brethren. Allows advanced surgical procedures outside of the sterile conditions."
+	id = "chip-medical"
+	build_type = PROTOLATHE
+	construction_time = 100
+	materials = list(/datum/material/iron = 30000, /datum/material/glass = 30000, /datum/material/silver = 6000, /datum/material/gold = 6000, /datum/material/diamond = 6000, /datum/material/bluespace = 6000)
+	build_path = /obj/item/organ/cyberimp/brainchip/medical
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/engibrainchip
+	name = "Advanced electrical data chip"
+	desc = "Special implant that was designed to provide a quick learning for field engineers and inadept electricians."
+	id = "chip-engi"
+	build_type = PROTOLATHE
+	construction_time = 100
+	materials = list(/datum/material/iron = 30000, /datum/material/glass = 30000, /datum/material/silver = 6000, /datum/material/gold = 6000, /datum/material/diamond = 6000, /datum/material/bluespace = 6000)
+	build_path = /obj/item/organ/cyberimp/brainchip/engi
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/roboticalbrainchip
+	name = "Advanced robotical data chip"
+	desc = "Special implant that was designed to provide a quick learning for inadept roboticians and on-field crew."
+	id = "chip-robotic"
+	build_type = PROTOLATHE
+	construction_time = 100
+	materials = list(/datum/material/iron = 30000, /datum/material/glass = 30000, /datum/material/silver = 6000, /datum/material/gold = 6000, /datum/material/diamond = 6000, /datum/material/bluespace = 6000)
+	build_path = /obj/item/organ/cyberimp/brainchip/robotic
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
