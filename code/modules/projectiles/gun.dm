@@ -808,7 +808,7 @@
 	if(target.client?.prefs?.erppref == "No" || user.client?.prefs?.erppref == "No")
 		return FALSE
 	if(user.client?.prefs?.extremeharm == "No")
-		to_chat(user, span_warning("Balls shooting too much for they..."))
+		to_chat(user, span_warning("Balls shooting too much for me..."))
 		return FALSE
 	if(target?.client?.prefs?.extremeharm == "No" || user != target && target?.client?.prefs?.nonconpref == "No")
 		to_chat(user, span_warning("Balls shooting too much for they..."))
