@@ -823,7 +823,7 @@
 
 	busy_action = TRUE
 
-	if(!do_mob(user, target, 15) || user.zone_selected != BODY_ZONE_PRECISE_GROIN)
+	if(!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_GROIN)
 		if(user == target)
 			user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
 		else if(target && target.Adjacent(user))
