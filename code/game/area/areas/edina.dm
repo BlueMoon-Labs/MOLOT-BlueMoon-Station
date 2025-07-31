@@ -150,7 +150,12 @@
 
 /area/edina/crew_quarters
 	clockwork_warp_allowed = TRUE
-	area_flags = BLOBS_ALLOWED | VALID_TERRITORY
+	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | CULT_PERMITTED
+	always_unpowered = FALSE
+	power_light = TRUE
+	power_equip = TRUE
+	power_environ = TRUE
+	outdoors = FALSE
 
 /area/edina/crew_quarters/holo_atrium
 	name = "Hologram atrium"

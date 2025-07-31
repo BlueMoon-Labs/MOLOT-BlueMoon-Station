@@ -26,7 +26,7 @@
 
 /obj/item/dildo/AltClick(mob/living/user)
 	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK, FALSE)) //BLUEMOON EDIT
 		return
 	customize(user)
 	return TRUE
@@ -37,25 +37,25 @@
 	if(src && !user.incapacitated() && in_range(user,src))
 		var/color_choice = input(user,"Choose a color for your dildo.","Dildo Color") as null|anything in GLOB.dildo_colors
 		if(src && color_choice && !user.incapacitated() && in_range(user,src))
-			sanitize_inlist(color_choice, GLOB.dildo_colors, "Red")
+			//sanitize_inlist(color_choice, GLOB.dildo_colors, "Red") // BLUEMOON EDIT commented
 			color = GLOB.dildo_colors[color_choice]
 	update_appearance()
 	if(src && !user.incapacitated() && in_range(user,src))
 		var/shape_choice = input(user,"Choose a shape for your dildo.","Dildo Shape") as null|anything in GLOB.dildo_shapes
 		if(src && shape_choice && !user.incapacitated() && in_range(user,src))
-			sanitize_inlist(shape_choice, GLOB.dildo_colors, "Knotted")
+			//sanitize_inlist(shape_choice, GLOB.dildo_colors, "Knotted") // BLUEMOON EDIT commented
 			dildo_shape = GLOB.dildo_shapes[shape_choice]
 	update_appearance()
 	if(src && !user.incapacitated() && in_range(user,src))
 		var/size_choice = input(user,"Choose the size for your dildo.","Dildo Size") as null|anything in GLOB.dildo_sizes
 		if(src && size_choice && !user.incapacitated() && in_range(user,src))
-			sanitize_inlist(size_choice, GLOB.dildo_colors, "Medium")
+			//sanitize_inlist(size_choice, GLOB.dildo_colors, "Medium") // BLUEMOON EDIT commented
 			dildo_size = GLOB.dildo_sizes[size_choice]
 	update_appearance()
 	if(src && !user.incapacitated() && in_range(user,src))
 		var/transparency_choice = input(user,"Choose the transparency of your dildo. Lower is more transparent!(192-255)","Dildo Transparency") as null|num
 		if(src && transparency_choice && !user.incapacitated() && in_range(user,src))
-			sanitize_integer(transparency_choice, 192, 255, 192)
+			transparency_choice = sanitize_integer(transparency_choice, 192, 255, 192) // BLUEMOON EDIT
 			alpha = transparency_choice
 	update_appearance()
 	return TRUE

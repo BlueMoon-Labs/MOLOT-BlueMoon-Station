@@ -23,6 +23,7 @@
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/lust_increase = NORMAL_LUST
+	var/has_penis = partner.has_penis() // BLUEMOON ADD
 
 	if(partner.is_fucking(user, CUM_TARGET_MOUTH))
 		if(prob(partner.get_sexual_potency()))
@@ -32,7 +33,7 @@
 					message = "становится всё проворней и проворней в случае с киской \the <b>[partner]</b>."
 					lust_increase += 5
 				if("penis")
-					message = "становится всё проворней и проворней в случае с членом \the <b>[partner]</b>."
+					message = "становится всё проворней и проворней в случае с [has_penis ? "членом" : "дилдо"] \the <b>[partner]</b>." // BLUEMOON EDIT
 					lust_increase += 5
 		else
 			var/improv = FALSE
@@ -51,15 +52,17 @@
 					else
 						improv = TRUE
 				if("penis")
-					if(partner.has_penis() || partner.has_strapon())
+				//BLUEMOON EDIT START
+					if(has_penis || partner.has_strapon())
 						message = pick(
-							"довольно отсасывает мясо \the <b>[partner]</b>, крепко удерживая орган рукой.",
-							"нежно проводит своим язычком вдоль всего органа \the <b>[partner]</b>.",
-							"обводит орган \the <b>[partner]</b> своим горячим язычком.",
-							"обхватывает головку члена \the <b>[partner]</b> своими губками и с нежностью производит круговые движения язычком.",
-							"медленно погружает орган \the <b>[partner]</b> в своё горло вплоть до тугого вздоха и резко вытаскивает его, громко вдыхая",
-							"ласково целует орган \the <b>[partner]</b> и миловидно улыбается.",
-							"с силой обхватывает орган \the <b>[partner]</b> и пару раз бьёт им себя по рту.",
+							"довольно отсасывает [has_penis ? "мясо" : "дилдо"] \the <b>[partner]</b>, крепко удерживая [has_penis ? "орган" : "его"] рукой.",
+							"нежно проводит своим язычком вдоль всего [has_penis ? "органа" : "дилдо"] \the <b>[partner]</b>.",
+							"обводит [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> своим горячим язычком.",
+							"обхватывает головку [has_penis ? "члена" : "дилдо"] \the <b>[partner]</b> своими губками и с нежностью производит круговые движения язычком.",
+							"медленно погружает [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> в своё горло вплоть до тугого вздоха и резко вытаскивает его, громко вдыхая",
+							"ласково целует [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> и миловидно улыбается.",
+							"с силой обхватывает [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> и пару раз бьёт им себя по рту.",
+				//BLUEMOON EDIT END
 						)
 					else
 						improv = TRUE
@@ -88,15 +91,17 @@
 				else
 					improv = TRUE
 			if("penis")
-				if(partner.has_penis() || partner.has_strapon())
+			//BLUEMOON EDIT START
+				if(has_penis || partner.has_strapon())
 					message = pick(
-						"довольно отсасывает мясо \the <b>[partner]</b>, крепко удерживая орган рукой.",
-						"нежно проводит своим язычком вдоль всего органа \the <b>[partner]</b>.",
-						"обводит орган \the <b>[partner]</b> своим горячим язычком.",
-						"обхватывает головку члена \the <b>[partner]</b> своими губками и с нежностью производит круговые движения язычком.",
-						"медленно погружает орган \the <b>[partner]</b> в своё горло вплоть до тугого вздоха и резко вытаскивает его, громко вдыхая",
-						"ласково целует орган \the <b>[partner]</b> и миловидно улыбается.",
-						"с силой обхватывает орган \the <b>[partner]</b> и пару раз бьёт им себя по рту.",
+						"довольно отсасывает [has_penis ? "мясо" : "дилдо"] \the <b>[partner]</b>, крепко удерживая [has_penis ? "орган" : "его"] рукой.",
+						"нежно проводит своим язычком вдоль всего [has_penis ? "органа" : "дилдо"] \the <b>[partner]</b>.",
+						"обводит [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> своим горячим язычком.",
+						"обхватывает головку [has_penis ? "члена" : "дилдо"] \the <b>[partner]</b> своими губками и с нежностью производит круговые движения язычком.",
+						"медленно погружает [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> в своё горло вплоть до тугого вздоха и резко вытаскивает его, громко вдыхая",
+						"ласково целует [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> и миловидно улыбается.",
+						"с силой обхватывает [has_penis ? "орган" : "дилдо"] \the <b>[partner]</b> и пару раз бьёт им себя по рту.",
+			//BLUEMOON EDIT END
 					)
 				else
 					improv = TRUE
@@ -130,9 +135,18 @@
 									'modular_sand/sound/interactions/bj10.ogg',
 									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+//BLUEMOON EDIT START
 //SPLURT EDIT START
 	if(fucktarget == "penis" && partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user, ORGAN_SLOT_PENIS)
 	else if(fucktarget == "vagina" && partner.has_vagina())
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user, ORGAN_SLOT_VAGINA)
+
+	if(fucktarget == "penis")
+		if(!(has_penis) && partner.has_strapon())
+			var/obj/item/clothing/underwear/briefs/strapon/user_strapon = partner.get_strapon()
+			user_strapon.attached_dildo.target_reaction(user, partner, 1, CUM_TARGET_MOUTH, null, partner.a_intent == INTENT_HARM)
+		else
+			user.handle_post_sex(LOW_LUST, null, partner, CUM_TARGET_THROAT)
 //SPLURT EDIT END
+//BLUEMOON EDIT END

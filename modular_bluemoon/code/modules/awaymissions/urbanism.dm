@@ -105,7 +105,7 @@
 
 /obj/structure/urbanismtire
 	name = "Tire"
-	desc = "Just tire! Tire for cars and fireplaces"
+	desc = "Tire for cars and fireplaces"
 	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism.dmi'
 	icon_state = "shina"
 	anchored = TRUE
@@ -115,7 +115,7 @@
 /obj/structure/urbanismpower
 	name = "Power Line"
 	desc = "Эта необычная старая вышка обеспечивает электричеством то место, где вы сейчас находитесь"
-	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism96x160.dmi'
+	icon = 'modular_bluemoon/icons/obj/urbanism/urbanism_structure32x64.dmi'
 	icon_state = "powerline"
 	anchored = TRUE
 	density = TRUE

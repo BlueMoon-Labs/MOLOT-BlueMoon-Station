@@ -18,11 +18,11 @@
 
 /mob/living/simple_animal/hostile/blackmesa/xen/bullsquid
 	name = "bullsquid"
-	desc = "Противное инопланетное существо прямиком из другого измерения. Его противные глаза уже сверлят вас."
-	icon = 'modular_bluemoon/icons/mob/mesa_mobs.dmi'
-	icon_state = "bullsquid"
-	icon_living = "bullsquid"
-	icon_dead = "bullsquid_dead"
+	desc = "Противное инопланетное существо прямиком из другого измерения. Его глаза уже сверлят вас."
+	icon = 'modular_bluemoon/icons/mob/bullsquidnew.dmi'
+	icon_state = "bullsquid1"
+	icon_living = "bullsquid1"
+	icon_dead = "bullsquid1dead"
 	icon_gib = null
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
@@ -49,6 +49,19 @@
 	alert_sounds = list('modular_bluemoon/sound/creatures/mesa/bullsquid/detect1.ogg','modular_bluemoon/sound/creatures/mesa/bullsquid/detect2.ogg','modular_bluemoon/sound/creatures/mesa/bullsquid/detect3.ogg')
 	projectiletype = /obj/item/projectile/neurotox/bullsquid
 
+/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid/alt1
+	icon_state = "bullsquid2"
+	icon_living = "bullsquid2"
+	icon_dead = "bullsquid2dead"
+	maxHealth = 90
+	health = 90
+
+/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid/alt2
+	icon_state = "bullsquid3"
+	icon_living = "bullsquid3"
+	icon_dead = "bullsquid3dead"
+	maxHealth = 100
+	health = 100
 
 /obj/item/projectile/neurotox/bullsquid
 	name = "nasty ball of ooze"

@@ -323,11 +323,13 @@
 		for(var/A in genitals_to_add)
 			if(istype(A, /obj/item/clothing/underwear/briefs/strapon))
 				var/obj/item/clothing/underwear/briefs/strapon/strapon = A
-				var/datum/sprite_accessory/S = GLOB.cock_shapes_list[GLOB.dildo_shape_to_cock_shape[strapon.dildo_shape]]
+				//BLUEMOON EDIT START
+				var/datum/sprite_accessory/S = GLOB.cock_shapes_list[GLOB.dildo_shape_to_cock_shape[strapon.attached_dildo.dildo_shape]]
 				var/mutable_appearance/genital_overlay = mutable_appearance(S.icon, layer = -layer)
-				genital_overlay.color = strapon.dildo_color
-				genital_overlay.icon_state = "[ORGAN_SLOT_PENIS]_[S.icon_state]_[strapon.dildo_size]_[1]_[layertext]"
-				genital_overlay.alpha = strapon.dildo_alpha
+				genital_overlay.color = strapon.attached_dildo.color
+				genital_overlay.icon_state = "[ORGAN_SLOT_PENIS]_[S.icon_state]_[strapon.attached_dildo.dildo_size]_[1]_[layertext]"
+				genital_overlay.alpha = strapon.attached_dildo.alpha
+				//BLUEMOON EDIT END
 				// dirty fix to render the dildo above the strap
 				if(strapon.is_exposed())
 					genital_overlay.layer = -GENITALS_EXPOSED_LAYER

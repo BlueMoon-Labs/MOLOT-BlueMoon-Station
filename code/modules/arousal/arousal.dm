@@ -133,16 +133,69 @@
 			// sandstorm edit - advanced cum drip
 			var/amount_to_transfer = R.total_volume * (spill ? sender.fluid_transfer_factor : 1)
 			var/mob/living/carbon/human/cummed_on = target
-			if(istype(cummed_on))	//if human
+			if(!istype(cummed_on)) // not human
+				R.trans_to(target, amount_to_transfer, log = TRUE)
+			else // if human
 				var/datum/reagents/copy = new()
 				R.copy_to(copy, R.total_volume)
 
-				if(istype(receiver, /obj/item/organ/stomach))	//in mouth
-					if(istype(cummed_on.wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties as a mask
-						var/obj/item/portallight/plight = get_active_held_item()
-						if(istype(plight) && (sender.name == plight.targetting))	//only acting organ will be transfering fluids
-							R.trans_to(target, amount_to_transfer, log = TRUE)
-					else
+				// BLUEMOON EDIT START
+				var/it_a_portal = FALSE
+
+				if(anonymous) //most likely a portal fleshlight
+					// Universal list of liquid transfer cases via portalpanties
+					var/list/portal_cases = list(
+						list( // receiver is wearing portal panties as a mask
+							"panties" = cummed_on.wear_mask,
+							"plight" = get_active_held_item()
+						),
+						list( // sender is wearing portal panties
+							"panties" = w_underwear,
+							"plight" = cummed_on.get_active_held_item()
+						),
+						list( // receiver is wearing portal panties
+							"panties" = cummed_on.w_underwear,
+							"plight" = get_active_held_item()
+						)
+					)
+
+					for(var/case in portal_cases)
+						var/obj/item/clothing/underwear/briefs/panties/portalpanties/p_panties = case["panties"]
+						if(!istype(p_panties))
+							continue
+
+						var/obj/item/portallight/plight = case["plight"]
+						if(!istype(plight))
+							continue
+
+						// checking that this is exactly the right fleshlight and portal
+						if(plight.portalunderwear != p_panties)
+							continue
+
+						it_a_portal = TRUE // We are absolutely sure that this is a portal (i guess) -> anonymous + checks
+
+						// checking that sender is either the target of the fleshlight or the target of the portal
+						if(sender.name != plight.targetting && sender.name != p_panties.targetting)
+							continue
+
+						// checking if last_genital is sender P.S. because this process is called in all scenarios, and I won't/don't to fix it.
+						if(last_genital != sender)
+							continue
+
+						// if the sender is the vagina, but the receiver is not the mouth, it is unacceptable
+						if(istype(sender, /obj/item/organ/genital/vagina) && !istype(receiver, /obj/item/organ/stomach))
+							continue
+
+						R.trans_to(target, amount_to_transfer, log = TRUE)
+
+						// sender = penis, in vagina or anus
+						if(istype(sender, /obj/item/organ/genital/penis) && (istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus)))
+							if(copy.total_volume > 0)
+								cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
+						break
+
+				if(!it_a_portal)
+					if(istype(receiver, /obj/item/organ/stomach))	//in mouth
 						switch(sender.type)
 							if(/obj/item/organ/genital/penis)
 								if(src.last_lewd_datum?.required_from_user_exposed == INTERACTION_REQUIRE_PENIS && src.last_lewd_datum?.required_from_target == INTERACTION_REQUIRE_MOUTH)	//panel user is sender
@@ -160,22 +213,13 @@
 							// 		R.trans_to(target, amount_to_transfer, log = TRUE)
 							// 	else if(cummed_on.last_lewd_datum?.required_from_user == INTERACTION_REQUIRE_MOUTH && cummed_on.last_lewd_datum?.required_from_target_exposed == INTERACTION_REQUIRE_BREASTS)
 							// 		R.trans_to(target, amount_to_transfer, log = TRUE)
-				else if(istype(sender, /obj/item/organ/genital/penis))	//not in mouth and penis orgasm
-					if(istype(cummed_on.w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties))	//receiver is wearing portal panties
-						var/obj/item/portallight/plight = get_active_held_item()
-						if(istype(plight) && (sender.name == plight.targetting))	//only acting organ will be transfering fluids
-							R.trans_to(target, amount_to_transfer, log = TRUE)
-							if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))
-								if(copy.total_volume > 0)
-									cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
-					else
+					else if(istype(sender, /obj/item/organ/genital/penis))	//not in mouth and penis orgasm
+					// BLUEMOON EDIT END
 						R.trans_to(target, amount_to_transfer, log = TRUE)
 						if(istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus))
 							if(copy.total_volume > 0)
 								cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
-			else	//not human
-				R.trans_to(target, amount_to_transfer, log = TRUE)
-		//
+
 	sender.last_orgasmed = world.time
 	R.clear_reagents()
 	//sandstorm edit - gain momentum from dirty deeds.
@@ -341,9 +385,8 @@
 				continue
 			var/mob/living/partner
 			var/check_target
-			var/list/worn_stuff = get_equipped_items()
 
-			if(forced_receiving_genital || G.is_exposed(worn_stuff))
+			if(forced_receiving_genital || G.is_exposed() || G.always_accessible) // BLUEMOON EDIT
 				if(pulling) //Are we pulling someone? Priority target, we can't be making option menus for this, has to be quick
 					if(isliving(pulling)) //Don't fuck objects
 						check_target = pulling
@@ -356,6 +399,13 @@
 						var/mob/living/carbon/C = check_target
 						if(C.exposed_genitals.len || C.is_groin_exposed() || C.is_chest_exposed()) //Are they naked enough?
 							partner = C
+						// BLUEMMON ADD START
+						else
+							for(var/obj/item/organ/genital/partner_G in C.internal_organs)
+								if(partner_G.always_accessible)
+									partner = C
+									break
+						// BLUEMMON ADD END
 					else //A cat is fine too
 						partner = check_target
 				//skyrat edit

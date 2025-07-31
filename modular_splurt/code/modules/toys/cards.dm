@@ -4,7 +4,7 @@
 
 /obj/item/toy/cards/deck/examine()
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to remove joker cards.</span>"
+	. += span_notice("Alt-click [src] to remove unwanted cards.")
 
 /obj/item/toy/cards/deck/populate_deck()
 	. = ..()
@@ -14,48 +14,39 @@
 /obj/item/toy/cards/deck/AltClick(mob/living/user, obj/item/I)
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user), FALSE)) //, TRUE))
 		return
-	var/jokermono = cards.Remove("Monochrome Joker")
-	var/jokercolor = cards.Remove("Colorful Joker")
-	user.visible_message("[user] searches through the deck to remove joker cards.", "<span class='notice'>You search through the deck to remove joker cards.</span>")
-	if(!(jokermono || jokercolor))
-		to_chat(user, "<span class='warning'>There are no joker cards to remove!</span>")
+	var/cards_to_find = tgui_input_list(user, "Select cards to remove", "Cards to remove", list("Hearts", "Spades", "Clubs", "Diamonds", "Joker", "Ace", "King", "Queen", "Jack", "2", "3", "4", "5", "6", "7", "8", "9", "10"), null)
+	if(isnull(cards_to_find))
 		return
-	if(jokermono && jokercolor)
-		var/obj/item/toy/cards/singlecard/H1 = new/obj/item/toy/cards/singlecard(user.loc)
-		var/obj/item/toy/cards/singlecard/H2 = new/obj/item/toy/cards/singlecard(user.loc)
-		if(holo)
-			holo.spawned += H1 // track them leaving the holodeck
-			holo.spawned += H2
-		H1.cardname = "Monochrome Joker"
-		H2.cardname = "Colorful Joker"
-		H1.parentdeck = src
-		H2.parentdeck = src
-		var/O = src
-		H1.apply_card_vars(H1,O)
-		H2.apply_card_vars(H2,O)
-		var/obj/item/toy/cards/cardhand/C = new/obj/item/toy/cards/cardhand(user.loc)
-		C.currenthand += H1.cardname
-		C.currenthand += H2.cardname
-		C.parentdeck = H1.parentdeck
-		C.apply_card_vars(C,H1)
-		qdel(H1)
-		qdel(H2)
-		C.pickup(user)
-		user.put_in_active_hand(C)
-	else if(jokermono || jokercolor)
-		var/obj/item/toy/cards/singlecard/H = new/obj/item/toy/cards/singlecard(user.loc)
-		if(holo)
-			holo.spawned += H // track them leaving the holodeck
-		if(jokermono)
-			H.cardname = "Monochrome Joker"
+	user.visible_message("[user] searches through the deck to remove [cards_to_find] cards.")
+	var/list/found_cards = list()
+	var/obj/item/toy/cards/singlecard/S
+	for(var/c in cards)
+		if(findtext(c, cards_to_find))
+			cards.Remove(c)
+			S = new/obj/item/toy/cards/singlecard(user.loc)
+			if(holo)
+				holo.spawned += S // track them leaving the holodeck
+			S.cardname = c
+			S.parentdeck = src
+			S.apply_card_vars(S, src)
+			found_cards += S
+	switch(length(found_cards))
+		if(0)
+			to_chat(user, "There are no [cards_to_find] cards to remove!")
+		if(1)
+			S.pickup(user)
+			user.put_in_active_hand(S)
+			update_icon()
 		else
-			H.cardname = "Colorful Joker"
-		H.parentdeck = src
-		var/O = src
-		H.apply_card_vars(H,O)
-		H.pickup(user)
-		user.put_in_active_hand(H)
-		update_icon()
+			var/obj/item/toy/cards/cardhand/C = new/obj/item/toy/cards/cardhand(user.loc)
+			for(var/obj/item/toy/cards/singlecard/SC in found_cards)
+				C.currenthand += SC.cardname
+				C.parentdeck = SC.parentdeck
+				C.apply_card_vars(C,SC)
+				qdel(SC)
+			C.pickup(user)
+			user.put_in_active_hand(C)
+			update_icon()
 
 /obj/item/toy/cards/cardhand
 	icon = 'modular_splurt/icons/obj/toy.dmi'

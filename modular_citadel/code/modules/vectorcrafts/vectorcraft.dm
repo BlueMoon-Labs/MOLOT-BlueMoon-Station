@@ -48,7 +48,14 @@
 		if(gear != "auto")
 			gear = driver.a_intent
 	start_engine()
-	to_chat(M, "<span class='big notice'>How to drive:</span> \n<span class='notice'><i>Hold wasd to gain speed in a direction, c to enable/disable the clutch, 1 2 3 4 to change gears while holding a direction (make sure the clutch is enabled when you change gears, you should hear a sound when you've successfully changed gears), r to toggle handbrake, hold alt for brake and press shift for boost (the machine will beep when the boost is recharged)! If you hear an ebbing sound like \"brbrbrbrbr\" you need to gear down, the whining sound means you need to gear up. Hearing a pleasant \"whumwhumwhum\" is optimal gearage! It can be a lil slow to start, so make sure you're in the 1st gear.\n</i></span>")
+	to_chat(M, "<span class='big notice'>How to drive:</span> \
+			\n<span class='notice'><i>Hold WASD to gain speed in a direction. \
+			\nToggle [span_bold("Combat Mode (C)")] to enable/disable the clutch. \
+			\nSwitch [span_bold("Intents (1,2,3,4)")] to change gears while holding a direction (make sure the clutch is enabled when you change gears, you should hear a sound when you've successfully changed gears). \
+			\nHold [span_bold("Alt")] for brake. \
+			\nToggle [span_bold("Throw Mode (R)")] to toggle handbrake. \
+			\nPress [span_bold("Shift")] for boost (the machine will beep when the boost is recharged)! \
+			\nIf you hear an ebbing sound like \"brbrbrbrbr\" you need to gear down, the whining sound means you need to gear up. Hearing a pleasant \"whumwhumwhum\" is optimal gearage! It can be a lil slow to start, so make sure you're in the 1st gear.\n</i></span>")
 	return ..()
 
 /obj/vehicle/sealed/vectorcraft/mob_exit(mob/living/M)
@@ -290,7 +297,6 @@
 //////////////////////////////////////////////////////////////
 //Repairing
 /obj/vehicle/sealed/vectorcraft/attackby(obj/item/O, mob/user, params)
-	.=..()
 	if(istype(O, /obj/item/weldingtool) && user.a_intent != INTENT_HARM)
 		if(obj_integrity < max_integrity)
 			if(!O.tool_start_check(user, amount=0))
@@ -300,12 +306,13 @@
 				"<span class='notice'>Вы начинаете чинить [src]...</span>", \
 				"<span class='italics'>You hear welding.</span>")
 
-			if(O.use_tool(src, user, 40, volume=50))
+			if(O.use_tool(src, user, 10 SECONDS, volume=50))
 				to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 				apply_damage(-max_integrity)
 		else
 			to_chat(user, "<span class='notice'>[src] does not need repairs.</span>")
-
+	else
+		return ..()
 
 /obj/vehicle/sealed/vectorcraft/attack_hand(mob/user)
 	remove_key(driver)
@@ -329,6 +336,17 @@
 		qdel(src)
 	if(obj_integrity > max_integrity)
 		obj_integrity = max_integrity
+	update_icon()
+
+/obj/vehicle/sealed/vectorcraft/update_overlays()
+	. = ..()
+	if(obj_integrity < max_integrity/3)
+		var/mutable_appearance/smoke_over = mutable_appearance('icons/effects/chemsmoke.dmi', "old", alpha = 150)
+		smoke_over.pixel_x = -32
+		smoke_over.pixel_y = -32
+		. += smoke_over
+	if(obj_integrity < max_integrity/4)
+		. += GLOB.fire_overlay
 
 //
 /obj/vehicle/sealed/vectorcraft/Bump(atom/M)
