@@ -46,7 +46,6 @@
 	if(!user)
 		return FALSE
 
-	return TRUE
 /obj/item/clothing/gloves/toggled/examine(mob/user)
 	. = ..()
 	. += span_notice("Ctrl-click to [active ? "activate" : "deactivate"] ability.")
@@ -58,7 +57,7 @@
 
 /obj/item/clothing/gloves/toggled/hug/use_buffs(mob/living/carbon/human/user, buff)
 	. = ..()
-	if(!.)
+	if(. == FALSE)
 		return .
 	if(buff)
 		ADD_TRAIT(user, TRAIT_NOGUNS, GLOVE_TRAIT)
@@ -66,8 +65,6 @@
 	else
 		REMOVE_TRAIT(user, TRAIT_NOGUNS, GLOVE_TRAIT)
 		REMOVE_TRAIT(user, TRAIT_PACIFISM, GLOVE_TRAIT)
-
-	return .
 
 /obj/item/clothing/gloves/toggled/hug/Touch(mob/target, proximity = TRUE)
 	if(!isliving(target))
