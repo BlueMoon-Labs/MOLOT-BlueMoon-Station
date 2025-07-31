@@ -77,7 +77,7 @@
 
 //DATA CHIP. Expensive stuff for good chips.
 /datum/design/medicalbrainchip
-	name = "Advanced medical data chip"
+	name = "Advanced Medical Data Chip"
 	desc = "Special implant that was designed to help field operators with medical care for their fallen brethren. Allows advanced surgical procedures outside of the sterile conditions."
 	id = "chip-medical"
 	build_type = PROTOLATHE
@@ -88,7 +88,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/engibrainchip
-	name = "Advanced electrical data chip"
+	name = "Advanced Electrical Data Chip"
 	desc = "Special implant that was designed to provide a quick learning for field engineers and inadept electricians."
 	id = "chip-engi"
 	build_type = PROTOLATHE
@@ -99,7 +99,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/roboticalbrainchip
-	name = "Advanced robotical data chip"
+	name = "Advanced Robotical Data Chip"
 	desc = "Special implant that was designed to provide a quick learning for inadept roboticians and on-field crew."
 	id = "chip-robotic"
 	build_type = PROTOLATHE
