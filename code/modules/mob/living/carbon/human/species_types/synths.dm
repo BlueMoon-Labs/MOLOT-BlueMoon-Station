@@ -41,7 +41,7 @@
 	UnregisterSignal(H, COMSIG_MOB_SAY)
 
 /datum/species/synth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(istype(chem, /datum/reagent/medicine/synthflesh)) // BLUEMOON EDIT
+	if(chem.type == /datum/reagent/medicine/synthflesh)
 		chem.reaction_mob(H, TOUCH, 2 ,0) //heal a little
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 		return TRUE

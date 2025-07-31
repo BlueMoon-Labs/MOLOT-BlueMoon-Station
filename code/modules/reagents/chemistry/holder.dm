@@ -1078,17 +1078,17 @@
 
 	return FALSE
 
-/datum/reagents/proc/has_reagent(reagent, amount = -1, check_subtype = FALSE) // BLUEMOON EDIT
+/datum/reagents/proc/has_reagent(reagent, amount = -1)
 	var/list/cached_reagents = reagent_list
 	for(var/_reagent in cached_reagents)
 		var/datum/reagent/R = _reagent
-		if((!check_subtype && R.type == reagent) || (check_subtype && istype(R, reagent))) // BLUEMOON EDIT
+		if (R.type == reagent)
 			if(!amount)
 				return R
 			else
 				if(round(R.volume, CHEMICAL_QUANTISATION_LEVEL) >= amount)
 					return R
-				else if(!check_subtype) // BLUEMOON EDIT
+				else
 					return FALSE
 
 	return FALSE

@@ -74,8 +74,6 @@
 	results = list(/datum/reagent/medicine/mine_salve = 15)
 	required_reagents = list(/datum/reagent/toxin/plasma = 5, /datum/reagent/iron = 5, /datum/reagent/consumable/sugar = 1) // A sheet of plasma, a twinkie and a sheet of metal makes four of these
 
-// BLUEMOON EDIT START || commented
-/*
 /datum/chemical_reaction/synthflesh
 	name = "Synthflesh"
 	id = /datum/reagent/medicine/synthflesh
@@ -85,21 +83,6 @@
 /datum/chemical_reaction/synthflesh/synthblood
 	id = "synthflesh_2"
 	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/styptic_powder = 1)
-*/
-// BLUEMOON EDIT END || commented
-
-// BLUEMOON ADD START
-/datum/chemical_reaction/synthflesh/mass
-	name = "Synthmass"
-	id = /datum/reagent/medicine/synthflesh/mass
-	results = list(/datum/reagent/medicine/synthflesh/mass = 3)
-	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/styptic_powder = 1)
-	mix_message = span_warning("The mixture rapidly turns into a disgusting mass.")
-
-/datum/chemical_reaction/synthflesh/mass/synthblood
-	id = "synthmass_2"
-	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/styptic_powder = 1)
-// BLUEMOON ADD END
 
 /datum/chemical_reaction/synthtissue
 	name = "Synthtissue"
