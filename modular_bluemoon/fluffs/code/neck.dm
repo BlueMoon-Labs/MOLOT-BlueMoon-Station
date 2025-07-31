@@ -46,3 +46,7 @@
 	item_state = "eidolon_cape"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
+
+/obj/item/clothing/neck/cloak/cybersun/civil
+	desc = "Souvenir version without protection of cloack worn by High-Ranking Cybersun Personnel, the cybersun shall rise!"
+	armor = null

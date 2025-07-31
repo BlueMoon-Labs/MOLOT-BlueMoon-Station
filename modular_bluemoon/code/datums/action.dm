@@ -29,3 +29,8 @@
 /datum/action/item_action/toggle_hood
 	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_CONSCIOUS
 	required_mobility_flags = NONE
+
+/datum/action/item_action/toggle_gloves
+	name = "Activate"
+	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_CONSCIOUS
+	required_mobility_flags = NONE

@@ -50,3 +50,32 @@
 	if(do_after(user, 10 SECONDS, user))
 		try_update_size(user, FALSE)
 	return TRUE
+
+// copypaste from /obj/item/clothing/gloves/combat/maid/civil
+/obj/item/clothing/gloves/toggled/hug/combat_maid_civil
+	name = "Combat Maid Sleeves"
+	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
+	icon_state = "syndimaid_arms"
+	item_state = "blackgloves"
+	strip_delay = 80
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	resistance_flags = NONE
+	strip_mod = 1.5
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 80, ACID = 50)
+
+// copypaste from /obj/item/clothing/gloves/poly_evening
+/obj/item/clothing/gloves/toggled/hug/poly_evening
+	name = "Polychromic evening gloves"
+	desc = "Thin, pretty polychromic gloves intended for use in regal feminine attire."
+	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/hands.dmi'
+	icon_state = "poly_evening"
+	item_state = "poly_evening"
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = COAT_MAX_TEMP_PROTECT
+	strip_mod = 0.9
