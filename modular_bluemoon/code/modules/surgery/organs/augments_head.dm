@@ -26,14 +26,18 @@
     . = ..()
     if(!.)
         return
-    ADD_TRAIT(owner, TRAIT_KNOW_MED_SURGERY_T2, TRAIT_QUICK_CARRY, TRAIT_REAGENT_EXPERT)
+    ADD_TRAIT(owner.mind, TRAIT_KNOW_MED_SURGERY_T2, TRAIT_GENERIC)
+    ADD_TRAIT(owner.mind, TRAIT_QUICK_CARRY, TRAIT_GENERIC)
+    ADD_TRAIT(owner.mind, TRAIT_REAGENT_EXPERT, TRAIT_GENERIC)
 
 /obj/item/organ/cyberimp/brainchip/medical/Remove(special = FALSE)
     . = ..()
     if(!.)
         return
     var/mob/living/carbon/C = .
-    REMOVE_TRAIT(C, TRAIT_KNOW_MED_SURGERY_T2, TRAIT_QUICK_CARRY, TRAIT_REAGENT_EXPERT)
+    REMOVE_TRAIT(C.mind, TRAIT_KNOW_MED_SURGERY_T2, TRAIT_GENERIC)
+    REMOVE_TRAIT(C.mind, TRAIT_QUICK_CARRY, TRAIT_GENERIC)
+    REMOVE_TRAIT(C.mind, TRAIT_REAGENT_EXPERT, TRAIT_GENERIC)
 
 //Engin-ie chip. Provides TRAIT_KNOW_ENGI_WIRES.
 /obj/item/organ/cyberimp/brainchip/engi
@@ -45,14 +49,14 @@
     . = ..()
     if(!.)
         return
-    ADD_TRAIT(owner, TRAIT_KNOW_ENGI_WIRES)
+    ADD_TRAIT(owner.mind, TRAIT_KNOW_ENGI_WIRES, TRAIT_GENERIC)
 
 /obj/item/organ/cyberimp/brainchip/engi/Remove(special = FALSE)
     . = ..()
     if(!.)
         return
     var/mob/living/carbon/C = .
-    REMOVE_TRAIT(C, TRAIT_KNOW_ENGI_WIRES)
+    REMOVE_TRAIT(C.mind, TRAIT_KNOW_ENGI_WIRES, TRAIT_GENERIC)
 
 //Robotic chip. Provides TRAIT_KNOW_CYBORG_WIRES.
 /obj/item/organ/cyberimp/brainchip/robotic
@@ -64,11 +68,11 @@
     . = ..()
     if(!.)
         return
-    ADD_TRAIT(owner, TRAIT_KNOW_CYBORG_WIRES)
+    ADD_TRAIT(owner.mind, TRAIT_KNOW_CYBORG_WIRES, TRAIT_GENERIC)
 
 /obj/item/organ/cyberimp/brainchip/robotic/Remove(special = FALSE)
     . = ..()
     if(!.)
         return
     var/mob/living/carbon/C = .
-    REMOVE_TRAIT(C, TRAIT_KNOW_CYBORG_WIRES)
+    REMOVE_TRAIT(C.mind, TRAIT_KNOW_CYBORG_WIRES, TRAIT_GENERIC)
