@@ -50,8 +50,11 @@
 	STR.max_items = 30
 	STR.can_hold_extra = typecacheof(list(/obj/item/organ/lungs, /obj/item/organ/liver, /obj/item/organ/stomach, /obj/item/clothing/shoes)) - typesof(/obj/item/clothing/shoes/magboots, /obj/item/clothing/shoes/clown_shoes, /obj/item/clothing/shoes/jackboots, /obj/item/clothing/shoes/workboots)
 	STR.cant_hold = typecacheof(list(/obj/item/disk/nuclear, /obj/item/storage/wallet, /obj/item/organ/brain))
-	STR.limited_random_access = TRUE
-	STR.limited_random_access_stack_position = 3
+	STR.display_numerical_stacking = TRUE // BLUEMOON ADD
+	// BLUEMOON EDIT START || commented
+	//STR.limited_random_access = TRUE
+	//STR.limited_random_access_stack_position = 3
+	// BLUEMOON EDIT END || commented
 
 /obj/item/storage/bag/trash/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] puts [src] over [user.ru_ego()] head and starts chomping at the insides! Disgusting!</span>")
@@ -94,7 +97,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 60
 	STR.max_items = 60
-	STR.limited_random_access_stack_position = 5
+	//STR.limited_random_access_stack_position = 5 // BLUEMOON EDIT || commented
 
 /obj/item/storage/bag/trash/bluespace/cyborg
 	insertable = FALSE
