@@ -513,33 +513,40 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-    // Оригинальные проверки
-    var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
-    if(!target_obj)
-        return
+	// Оригинальные проверки из старого кода
+	var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
+	if(!target_obj)
+		return
 
-    var/distance = get_dist(get_turf(src), get_turf(target_obj))
-    if(distance > 1 || distance < 0)
-        return
+	var/distance = get_dist(get_turf(src), get_turf(target_obj))
+	if(distance > 1 || distance < 0)
+		return
 
-    var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
-    var/mode = get_pin_data(IC_INPUT, 3)
+	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
+	var/mode = get_pin_data(IC_INPUT, 3)
 
-    if(!assembly || !istype(container) || !istype(target_obj) || !isnum(mode))
-        return
+	if(!assembly || !istype(container) || !istype(target_obj) || !isnum(mode))
+		return
 
-        switch(mode)
-        if(1)
-            if(istype(container, /obj/item/storage/backpack/holding) && istype(target_obj, /obj/item/storage/backpack/holding))
-                return
+	if(mode == 1)
+		if(istype(container, /obj/item/storage/backpack/holding) && istype(target_obj, /obj/item/storage/backpack/holding))
+			return
 
-            container.contents += target_obj
-            target_obj.forceMove(container)
+		var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+		if(STR)
+			STR.handle_item_insertion(target_obj, null, src)
+		else
+			container.contents += target_obj
+			target_obj.forceMove(container)
 
-        if(0)
-            if(target_obj in container.contents)
-                container.contents -= target_obj
-                target_obj.forceMove(get_turf(src))
+	else if(mode == 0)
+		if(target_obj in container.contents)
+			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+			if(STR)
+				STR.remove_from_storage(target_obj, get_turf(src))
+			else
+				container.contents -= target_obj
+				target_obj.forceMove(get_turf(src))
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
