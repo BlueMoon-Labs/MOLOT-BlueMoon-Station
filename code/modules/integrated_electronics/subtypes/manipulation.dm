@@ -502,7 +502,7 @@
 	desc = "A nimble circuit that puts stuff inside a storage like a backpack and can take it out aswell."
 	icon_state = "grabber"
 	extended_desc = "This circuit accepts a reference to an object to be inserted or extracted depending on mode. If a storage is given for extraction, the extracted item will be put in the new storage. Modes: 1 insert, 0 to extract."
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = ITEM_SIZE_SMALL | WEIGHT_CLASS_SMALL
 	size = 3
 	cooldown_per_use = 5
 	complexity = 10
@@ -511,7 +511,6 @@
 	spawn_flags = IC_SPAWN_RESEARCH
 	action_flags = IC_ACTION_COMBAT
 	power_draw_per_use = 20
-	var/max_items = 10
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
 	//There shouldn't be any target required to eject all contents
@@ -523,28 +522,23 @@
 	if(distance > 1 || distance < 0)
 		return
 
-	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
+	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
 	var/mode = get_pin_data(IC_INPUT, 3)
-	switch(mode)
-		if(1)	//Not working
-			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
-				return
+	if(assembly && istype(container) && istype(target_obj) && isnum_safe(mode))
+		switch(mode)
+			if(1)	//Not working
+				if(!container.can_be_inserted(target_obj))
+					return
 
-			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
+				// The circuit is smarter than people that does this
+				if(istype(container, /obj/item/storage/backpack/holding) && istype(target_obj, /obj/item/storage/backpack/holding))
+					return
 
-			STR.attackby(src, target_obj)
+				container.handle_item_insertion(target_obj)
 
-		else
-			var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
-
-			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
-				STR.remove_from_storage(target_obj,drop_location())
-			else
-				STR.remove_from_storage(target_obj,container)
+			if(2)
+				if(target_obj in container.contents)
+					container.remove_from_storage(target_obj, get_turf(src))
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
