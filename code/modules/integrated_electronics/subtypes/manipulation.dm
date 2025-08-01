@@ -524,27 +524,27 @@
 
 	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
 	var/mode = get_pin_data(IC_INPUT, 3)
-	if(assembly && istype(container) && istype(target_obj))
+	if(assembly && istype(target_obj))
 		switch(mode)
-			if(1)	//Not working
+			if(1)	// Insert mode
 				if(!container || !istype(container,/obj/item/storage))
 					return
 
 				var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
+				if(!STR)
+					return
 
-			STR.attackby(src, target_obj)
+				STR.attackby(src, target_obj)
 
-		if(2)
-			var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
+			if(2)	// Extract mode
+				var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
+				if(!STR)
+					return
 
-			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
-				STR.remove_from_storage(target_obj,drop_location())
-			else
-				STR.remove_from_storage(target_obj,container)
+				if(!container || !istype(container,/obj/item/storage))
+					STR.remove_from_storage(target_obj, drop_location())
+				else
+					STR.remove_from_storage(target_obj, container)
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
