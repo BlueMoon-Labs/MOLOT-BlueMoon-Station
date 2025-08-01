@@ -50,7 +50,6 @@
 	STR.max_items = 30
 	STR.can_hold_extra = typecacheof(list(/obj/item/organ/lungs, /obj/item/organ/liver, /obj/item/organ/stomach, /obj/item/clothing/shoes)) - typesof(/obj/item/clothing/shoes/magboots, /obj/item/clothing/shoes/clown_shoes, /obj/item/clothing/shoes/jackboots, /obj/item/clothing/shoes/workboots)
 	STR.cant_hold = typecacheof(list(/obj/item/disk/nuclear, /obj/item/storage/wallet, /obj/item/organ/brain))
-	STR.display_numerical_stacking = TRUE // BLUEMOON ADD
 	// BLUEMOON EDIT START || commented
 	//STR.limited_random_access = TRUE
 	//STR.limited_random_access_stack_position = 3
