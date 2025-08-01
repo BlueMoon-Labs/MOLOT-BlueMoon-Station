@@ -513,53 +513,37 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-    // Получаем входные данные
-    var/obj/item/target = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
+    // Получаем данные как в оригинале
+    var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
+    if(!target_obj)
+        return
+
+    var/distance = get_dist(get_turf(src), get_turf(target_obj))
+    if(distance > 1 || distance < 0)
+        return
+
     var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
     var/mode = get_pin_data(IC_INPUT, 3)
 
-    // Отладочный вывод старта
-    message_admins("INSERTER: Start | Target: [target] | Container: [container] | Mode: [mode]")
-
-    // Проверка цели
-    if(!target)
-        message_admins("INSERTER ERROR: Target is null!")
+    // Только базовые проверки из старого кода
+    if(!assembly || !istype(container) || !isnum(mode))
         return
 
-    // Режимы работы
+    // Режимы (без выдуманных методов!)
     switch(mode)
-        // ВСТАВКА (mode = 1)
+        // Вставка (mode = 1)
         if(1)
-            message_admins("INSERTER: INSERT mode | Target: [target] -> Container: [container]")
+            // Просто добавляем в contents и forceMove
+            container.contents += target_obj
+            target_obj.forceMove(container)
+            message_admins("INSERTER: Added [target_obj] to [container]")
 
-            if(container && istype(container, /obj/item/storage))
-                container.contents += target
-                target.forceMove(container)
-                message_admins("INSERTER SUCCESS: [target] added to [container]")
-            else
-                message_admins("INSERTER ERROR: Invalid container!")
-
-        // ИЗВЛЕЧЕНИЕ (mode = 0)
+        // Извлечение (mode = 0)
         if(0)
-            message_admins("INSERTER: EXTRACT mode | Target loc: [target.loc] | New container: [container]")
-
-            if(istype(target.loc, /obj/item/storage))
-                var/obj/item/storage/old_container = target.loc
-                old_container.contents -= target
-                target.forceMove(get_turf(src))
-                message_admins("INSERTER SUCCESS: [target] moved from [old_container] to floor")
-
-            else if(container && istype(container, /obj/item/storage))
-                target.forceMove(container)
-                message_admins("INSERTER SUCCESS: [target] moved to new container [container]")
-
-            else
-                target.forceMove(get_turf(src))
-                message_admins("INSERTER SUCCESS: [target] dropped on floor")
-
-        // Неизвестный режим
-        else
-            message_admins("INSERTER ERROR: Invalid mode [mode]! Use 0 (extract) or 1 (insert)")
+            if(target_obj in container.contents)
+                container.contents -= target_obj
+                target_obj.forceMove(get_turf(src))
+                message_admins("INSERTER: Removed [target_obj] from [container]")
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
