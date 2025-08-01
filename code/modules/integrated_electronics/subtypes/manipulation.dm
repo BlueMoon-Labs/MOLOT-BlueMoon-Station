@@ -513,38 +513,42 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-	//There shouldn't be any target required to eject all contents
+	// Проверка объекта
 	var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
 	if(!target_obj)
 		return
 
-	var/distance = get_dist(get_turf(src),get_turf(target_obj))
-	if(distance > 1 || distance < 0)
+	// Проверка расстояния
+	var/distance = get_dist(get_turf(src), get_turf(target_obj))
+	if(distance > 1)
 		return
 
+	// Проверка контейнера и режима
 	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
 	var/mode = get_pin_data(IC_INPUT, 3)
-	if(assembly && istype(target_obj))
-		switch(mode)
-			if(1)	// Insert mode
-				if(!container || !istype(container,/obj/item/storage))
-					return
+	if(!assembly || !istype(target_obj))
+		return
 
-				var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-				if(!STR)
-					return
+	switch(mode)
+		if(1)	// Режим вставки
+			if(!container || !istype(container, /obj/item/storage))
+				return
 
-				STR.attackby(src, target_obj)
+			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+			if(!STR)
+				return
 
-			if(2)	// Extract mode
-				var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
-				if(!STR)
-					return
+			STR.attackby(src, target_obj)
 
-				if(!container || !istype(container,/obj/item/storage))
-					STR.remove_from_storage(target_obj, drop_location())
-				else
-					STR.remove_from_storage(target_obj, container)
+		if(2)	// Режим извлечения
+			var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
+			if(!STR)
+				return
+
+			if(!container || !istype(container, /obj/item/storage))
+				STR.remove_from_storage(target_obj, get_turf(src))  // Выбрасываем рядом со схемой
+			else
+				STR.remove_from_storage(target_obj, container)  // Перемещаем в новый контейнер
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
