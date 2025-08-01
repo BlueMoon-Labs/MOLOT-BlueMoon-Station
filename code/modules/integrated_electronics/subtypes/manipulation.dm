@@ -513,42 +513,53 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-	// Проверка объекта
-	var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
-	if(!target_obj)
-		return
+    // Получаем входные данные
+    var/obj/item/target = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
+    var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
+    var/mode = get_pin_data(IC_INPUT, 3)
 
-	// Проверка расстояния
-	var/distance = get_dist(get_turf(src), get_turf(target_obj))
-	if(distance > 1)
-		return
+    // Отладочный вывод старта
+    message_admins("INSERTER: Start | Target: [target] | Container: [container] | Mode: [mode]")
 
-	// Проверка контейнера и режима
-	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
-	var/mode = get_pin_data(IC_INPUT, 3)
-	if(!assembly || !istype(target_obj))
-		return
+    // Проверка цели
+    if(!target)
+        message_admins("INSERTER ERROR: Target is null!")
+        return
 
-	switch(mode)
-		if(1)	// Режим вставки
-			if(!container || !istype(container, /obj/item/storage))
-				return
+    // Режимы работы
+    switch(mode)
+        // ВСТАВКА (mode = 1)
+        if(1)
+            message_admins("INSERTER: INSERT mode | Target: [target] -> Container: [container]")
 
-			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
+            if(container && istype(container, /obj/item/storage))
+                container.contents += target
+                target.forceMove(container)
+                message_admins("INSERTER SUCCESS: [target] added to [container]")
+            else
+                message_admins("INSERTER ERROR: Invalid container!")
 
-			STR.attackby(src, target_obj)
+        // ИЗВЛЕЧЕНИЕ (mode = 0)
+        if(0)
+            message_admins("INSERTER: EXTRACT mode | Target loc: [target.loc] | New container: [container]")
 
-		if(2)	// Режим извлечения
-			var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
+            if(istype(target.loc, /obj/item/storage))
+                var/obj/item/storage/old_container = target.loc
+                old_container.contents -= target
+                target.forceMove(get_turf(src))
+                message_admins("INSERTER SUCCESS: [target] moved from [old_container] to floor")
 
-			if(!container || !istype(container, /obj/item/storage))
-				STR.remove_from_storage(target_obj, get_turf(src))  // Выбрасываем рядом со схемой
-			else
-				STR.remove_from_storage(target_obj, container)  // Перемещаем в новый контейнер
+            else if(container && istype(container, /obj/item/storage))
+                target.forceMove(container)
+                message_admins("INSERTER SUCCESS: [target] moved to new container [container]")
+
+            else
+                target.forceMove(get_turf(src))
+                message_admins("INSERTER SUCCESS: [target] dropped on floor")
+
+        // Неизвестный режим
+        else
+            message_admins("INSERTER ERROR: Invalid mode [mode]! Use 0 (extract) or 1 (insert)")
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
