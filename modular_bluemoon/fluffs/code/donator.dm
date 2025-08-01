@@ -1169,7 +1169,7 @@
     name = "Technical Jacket"
     slot = ITEM_SLOT_BACKPACK
     path = /obj/item/clothing/suit/donator/bm/echoes_jacket
-    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980", "heathkit1", "sosnovskii")
+    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980", "heathkit1", "sosnovskii", "trora")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/oftok
