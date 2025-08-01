@@ -513,39 +513,41 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-    // Получаем входные данные
+    // Получаем данные
     var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
-    if(!target_obj)
-        return
-
-    // Проверка расстояния
-    var/distance = get_dist(get_turf(src), get_turf(target_obj))
-    if(distance > 1)
-        return
-
     var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
     var/mode = get_pin_data(IC_INPUT, 3)
 
     // Базовые проверки
-    if(!assembly || !istype(container) || !istype(target_obj) || !isnum(mode))
+    if(!target_obj || !assembly || !istype(container) || !isnum(mode))
         return
 
-    // Режим вставки (1)
-    if(mode == 1)
-        // Проверка на сумки хранения
-        if(istype(container, /obj/item/storage/backpack/holding) && istype(target_obj, /obj/item/storage/backpack/holding))
-            return
+    // Проверка расстояния (включая тот же тайл на котором интегралка)
+    if(get_dist(get_turf(src), get_turf(target_obj)) > 1)
+        return
 
-        // Простое перемещение с визуальным обновлением
-        if(target_obj.loc != container)
+    // Режимы работы
+    switch(mode)
+        // ВСТАВКА (mode = 1)
+        if(1)
+            // Защита от вложения хранилищ друг в друга (предотвращение бесконечной вложенности)
+            if(istype(container, /obj/item/storage) && istype(target_obj, /obj/item/storage))
+                return
+
+            // Если предмет уже в контейнере - пропускаем
+            if(target_obj in container.contents)
+                return
+
+            // Простое перемещение с обновлением отображения контейнера
             target_obj.forceMove(container)
             container.update_icon()
 
-    // Режим извлечения (0)
-    else if(mode == 0)
-        if(target_obj in container.contents)
-            target_obj.forceMove(get_turf(src))
-            container.update_icon()
+        // ИЗВЛЕЧЕНИЕ (mode = 0)
+        if(0)
+            if(target_obj in container.contents)
+                container.contents -= target_obj
+                target_obj.forceMove(get_turf(src)) // Кидает под себя
+                container.update_icon()
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
