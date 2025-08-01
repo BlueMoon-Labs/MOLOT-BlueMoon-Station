@@ -513,7 +513,7 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-    // Получаем данные как в оригинале
+    // Оригинальные проверки
     var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
     if(!target_obj)
         return
@@ -525,25 +525,21 @@
     var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item/storage)
     var/mode = get_pin_data(IC_INPUT, 3)
 
-    // Только базовые проверки из старого кода
-    if(!assembly || !istype(container) || !isnum(mode))
+    if(!assembly || !istype(container) || !istype(target_obj) || !isnum(mode))
         return
 
-    // Режимы (без выдуманных методов!)
-    switch(mode)
-        // Вставка (mode = 1)
+        switch(mode)
         if(1)
-            // Просто добавляем в contents и forceMove
+            if(istype(container, /obj/item/storage/backpack/holding) && istype(target_obj, /obj/item/storage/backpack/holding))
+                return
+
             container.contents += target_obj
             target_obj.forceMove(container)
-            message_admins("INSERTER: Added [target_obj] to [container]")
 
-        // Извлечение (mode = 0)
         if(0)
             if(target_obj in container.contents)
                 container.contents -= target_obj
                 target_obj.forceMove(get_turf(src))
-                message_admins("INSERTER: Removed [target_obj] from [container]")
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
