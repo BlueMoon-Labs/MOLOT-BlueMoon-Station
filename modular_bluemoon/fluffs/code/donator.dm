@@ -237,7 +237,7 @@
 	name = "Syndicate Admiral's Cloak"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/cloak/syndieadm
-	ckeywhitelist = list("architect0r", "fanlexa", "herobrine998", "Nyaa-a-a")
+	ckeywhitelist = list("architect0r", "fanlexa", "herobrine998", "nyaa-a-a")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/sencloak
@@ -1724,21 +1724,21 @@
 	name = "A diamond ring"
 	path = /obj/item/clothing/accessory/ring/diamond
 	slot = ITEM_SLOT_ACCESSORY
-	ckeywhitelist = list("herobrine998", "Nyaa-a-a")
+	ckeywhitelist = list("herobrine998", "nyaa-a-a")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/cybersun_cloak
 	name = "Cybersun Cloak"
 	path = /obj/item/clothing/neck/cloak/cybersun/civil
 	slot = ITEM_SLOT_NECK
-	ckeywhitelist = list("herobrine998", "Nyaa-a-a")
+	ckeywhitelist = list("herobrine998", "nyaa-a-a")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/toggles_combat_maid_civil
 	name = "Combat Maid Sleeves"
 	path = /obj/item/clothing/gloves/toggled/hug/combat_maid_civil
 	slot = ITEM_SLOT_GLOVES
-	ckeywhitelist = list("Nyaa-a-a")
+	ckeywhitelist = list("nyaa-a-a")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/toggles_poly_evening
