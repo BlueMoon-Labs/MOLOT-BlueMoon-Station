@@ -513,7 +513,6 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-	//There shouldn't be any target required to eject all contents
 	var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
 	if(!target_obj)
 		return
@@ -536,38 +535,39 @@
 			STR.attackby(src, target_obj)
 
 		if(0) // Extract mode
-			var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
-
-			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
-				STR.remove_from_storage(target_obj,drop_location())
+			if(target_obj in container.contents)
+			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+			if(STR)
+				STR.remove_from_storage(target_obj, get_turf(src))
 			else
-				STR.remove_from_storage(target_obj,container)
+				container.contents -= target_obj
+				target_obj.forceMove(get_turf(src))
+
+	activate_pin(2)
 
 
 				/////////////////////
 
-				if(0)
-            message_admins("INSERTER: EXTRACT mode | Target loc: [target.loc] | New container: [container]")
+		// 		if(0)
+        //     message_admins("INSERTER: EXTRACT mode | Target loc: [target.loc] | New container: [container]")
 
-            if(istype(target.loc, /obj/item/storage))
-                var/obj/item/storage/old_container = target.loc
-                old_container.contents -= target
-                target.forceMove(get_turf(src))
-                message_admins("INSERTER SUCCESS: [target] moved from [old_container] to floor")
+        //     if(istype(target.loc, /obj/item/storage))
+        //         var/obj/item/storage/old_container = target.loc
+        //         old_container.contents -= target
+        //         target.forceMove(get_turf(src))
+        //         message_admins("INSERTER SUCCESS: [target] moved from [old_container] to floor")
 
-            else if(container && istype(container, /obj/item/storage))
-                target.forceMove(container)
-                message_admins("INSERTER SUCCESS: [target] moved to new container [container]")
+        //     else if(container && istype(container, /obj/item/storage))
+        //         target.forceMove(container)
+        //         message_admins("INSERTER SUCCESS: [target] moved to new container [container]")
 
-            else
-                target.forceMove(get_turf(src))
-                message_admins("INSERTER SUCCESS: [target] dropped on floor")
+        //     else
+        //         target.forceMove(get_turf(src))
+        //         message_admins("INSERTER SUCCESS: [target] dropped on floor")
 
-        // Неизвестный режим
-        else
-            message_admins("INSERTER ERROR: Invalid mode [mode]! Use 0 (extract) or 1 (insert)")
+        // // Неизвестный режим
+        // else
+        //     message_admins("INSERTER ERROR: Invalid mode [mode]! Use 0 (extract) or 1 (insert)")
 
 /////////////////////////////////////////////////////////////alist
 
