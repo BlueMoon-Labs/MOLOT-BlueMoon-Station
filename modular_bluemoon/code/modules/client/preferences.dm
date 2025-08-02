@@ -1,6 +1,7 @@
 /datum/preferences
 	var/body_weight = NAME_WEIGHT_NORMAL
 	var/normalized_size = RESIZE_NORMAL
+	var/custom_laugh = "Default"
 
 #define ACTION_HEADSHOT_LINK_NOOP 0
 #define ACTION_HEADSHOT_LINK_REMOVE -1
