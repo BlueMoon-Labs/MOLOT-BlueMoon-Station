@@ -387,14 +387,14 @@
 	penetrates = TRUE
 
 /obj/item/hypospray/mkii/CMO/combat/synthflesh
-	name = "Combat Hypospray with Synthflesh"
+	name = "Combat Hypospray with Neosynth" // BLUEMOON EDIT
 	icon = 'icons/obj/syringe.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	mode = HYPO_SPRAY
 	item_state = "holy_hypo"
 	icon_state = "holy_hypo"
-	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/synthflesh
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/synthflesh/neo // BLUEMOON EDIT
 
 /obj/item/hypospray/mkii/Initialize(mapload)
 	. = ..()

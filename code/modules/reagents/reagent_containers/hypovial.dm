@@ -155,6 +155,13 @@
 	icon_state = "hypoviallarge-k"
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
 
+// BLUEMOON ADD START
+/obj/item/reagent_containers/glass/bottle/vial/large/synthflesh/neo
+	name = "large blue hypovial (neosynth)"
+	icon_state = "hypoviallarge-d"
+	list_reagents = list(/datum/reagent/medicine/synthflesh/neo = 120)
+// BLUEMOON ADD END
+
 /obj/item/reagent_containers/glass/bottle/vial/large/combat
 	name = "combat hypovial"
 	icon_state = "hypoviallarge-t"

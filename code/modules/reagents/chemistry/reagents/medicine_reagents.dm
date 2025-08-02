@@ -502,13 +502,14 @@
 
 /datum/reagent/medicine/synthflesh
 	name = "Synthflesh"
-	description = "Has a 100% chance of healing large amounts of brute and burn damage very quickly. One unit of the chemical will heal one point of damage. Touch application only."
+	description = "Has a 100% chance of healing large amounts of brute and burn damage very quickly. It toxic to the body if it gets into wounds. One unit of the chemical will heal one point of damage. Touch application only." // BLUEMOON EDIT
 	reagent_state = LIQUID
 	color = "#FFEBEB"
 	pH = 11.5
 	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 40
 	value = REAGENT_VALUE_COMMON
+	var/toxic = TRUE // BLUEMOON ADD
 
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
@@ -522,8 +523,17 @@
 		else if(method == INJECT)
 			return
 		else if(method in list(PATCH, TOUCH))
+			var/total_damage = 0
+			// BLUEMOON ADD START
+			if(toxic)
+				total_damage = M.getFireLoss() + M.getBruteLoss()
+			// BLUEMOON ADD END
 			M.adjustBruteLoss(-1 * reac_volume)
 			M.adjustFireLoss(-1 * reac_volume)
+			// BLUEMOON ADD START
+			if(toxic)
+				M.adjustToxLoss(0.75 * total_damage - M.getFireLoss() - M.getBruteLoss()) // cured damage multiplied by the coefficient apply as toxins
+			// BLUEMOON ADD END
 			for(var/i in C.all_wounds)
 				var/datum/wound/iter_wound = i
 				iter_wound.on_synthflesh(reac_volume)
@@ -539,6 +549,16 @@
 
 /datum/reagent/medicine/synthflesh/overdose_start(mob/living/M)
 	metabolization_rate = 15 * REAGENTS_METABOLISM
+
+// BLUEMOON ADD START
+/datum/reagent/medicine/synthflesh/neo
+	name = "Neosynth"
+	description = "An advanced nanosynthetic biomaterial capable of instantly repairing damaged tissues in direct contact with the skin. Uses intelligent nanoparticles to assess the type of injury and adaptive regeneration. It does not require metabolism, it is activated by touch. It was developed as the final stage in the evolution of synthetic flesh."
+	color = "#6fe0ff"
+	value = REAGENT_VALUE_UNCOMMON
+	toxic = FALSE
+	taste_description = "sparkles"
+// BLUEMOON ADD END
 
 /datum/reagent/medicine/charcoal
 	name = "Charcoal"
