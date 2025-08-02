@@ -524,8 +524,9 @@
 	var/mode = get_pin_data(IC_INPUT, 3)
 
 	switch(mode)
-	
+
 		if(1) // Insert mode
+
 			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
 				return
 
