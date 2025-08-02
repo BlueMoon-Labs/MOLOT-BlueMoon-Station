@@ -40,7 +40,7 @@
 	var/turf/TO = get_turf(chosen) // the turf of origin we're travelling TO
 
 	playsound(TO, 'sound/effects/phasein.ogg', 100, TRUE)
-	priority_announce("Обнаружена массивная БС-транспозиция.", "ВНИМАНИЕ: ВНИМАНИЕ: АНОМАЛИЯ")
+	priority_announce("Обнаружена массивная БС-транспозиция.", "ВНИМАНИЕ: АНОМАЛИЯ")
 
 	var/list/flashers = list()
 	for(var/mob/living/carbon/C in viewers(TO, null))
