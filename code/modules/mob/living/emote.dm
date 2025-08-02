@@ -328,6 +328,7 @@
 	message_mime = "тихо смеётся!"
 	emote_cooldown = 3 SECONDS
 
+/* BLUEMOON REWRITE check modular_bluemoon\code\modules\mob\living\emote.dm
 /datum/emote/sound/human_emote/laugh/run_emote(mob/user, params)
 	. = ..()
 	if(. && iscarbon(user)) //Citadel Edit because this is hilarious
@@ -371,6 +372,7 @@
 				else
 					playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg', 'sound/voice/laugh_m1.ogg', 'sound/voice/laugh_m2.ogg', 'sound/voice/laugh_m3.ogg'), 50, 1)
 				//BLUEMOON EDIT END
+*/ // BLUEMOON REWRITE END
 
 /datum/emote/sound/human_emote/chitter
 	key = "chitter"

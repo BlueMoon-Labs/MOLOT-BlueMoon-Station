@@ -1,4 +1,5 @@
 //Main code edits
+/* BLUEMOON REWRITE check modular_bluemoon\code\modules\mob\living\emote.dm
 /datum/emote/sound/human_emote/laugh/run_emote(mob/user, params)
 	. = ..()
 
@@ -60,6 +61,7 @@
 
 	// Play laugh sound
 	playsound(carbon_user, laugh_sound, 50, 1)
+*/ // BLUEMOON REWRITE END
 
 // Living variant
 /datum/emote/sound/human

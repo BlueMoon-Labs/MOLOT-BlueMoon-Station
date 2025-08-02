@@ -284,7 +284,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/bark_pitch = 1
 	var/bark_variance = 0.2
 	COOLDOWN_DECLARE(bark_previewing)
-	COOLDOWN_DECLARE(deathsound_preview) // BLUEMOON ADD - пользовательский эмоут смерти
+	COOLDOWN_DECLARE(deathsound_preview)	// BLUEMOON ADD - пользовательский эмоут смерти
+	COOLDOWN_DECLARE(laugh_preview)			// BLUEMOON ADD - выбор своего смеха
 
 	/// Security record note section
 	var/security_records
@@ -1313,10 +1314,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=speech_verb;task=input'>[custom_speech_verb]</a><BR>"
 					dat += "<b>Custom Tongue:</b><BR>"
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
+					// BLUEMOON ADD выбор смеха
+					dat += "<b>Laugh:</b><BR>"
+					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=laugh;task=input'>[custom_laugh]</a>"
+					if(custom_laugh != "Default")
+						dat += "<a href='?_src_=prefs;preference=laughpreview;task=input''>Preview Laugh</a><BR>"
+					// BLUEMOON ADD END
 					//SANDSTORM EDIT - additional language + runechat color
-					dat += "<b>Additional Language</b><br>"
-					dat += "<a href='?_src_=prefs;preference=language;task=menu'>[english_list(language, "None")]</a></center><br>"
-					dat += "<b>Custom runechat color:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Enabled" : "Disabled"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
+					dat += "<BR><b>Additional Language</b><br>"
+					dat += "<a href='?_src_=prefs;preference=language;task=menu'>[english_list(language, "None")]</a></center><BR>"
+					dat += "<BR><b>Custom runechat color:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Enabled" : "Disabled"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
 					dat += "</td>"
 					//END OF SANDSTORM EDIT
 					dat += "<td width='340px' height='300px' valign='top'>"
@@ -3741,6 +3748,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_normialzed_size)
 						features["normalized_size"] = clamp(new_normialzed_size * 0.01, min_size, max_size)
 
+				// Выбор смеха
+				if("laugh")
+					var/select_laugh = tgui_input_list(user, "Choose your desired laugh", "Character Preference", GLOB.mob_laughs)
+					if(select_laugh)
+						custom_laugh = select_laugh
+
+				if("laughpreview")
+					if(SSticker.current_state == GAME_STATE_STARTUP) //Timers don't tick at all during game startup, so let's just give an error message
+						to_chat(user, "<span class='warning'>Laugh sound previews can't play during initialization!</span>")
+						return
+					if(!COOLDOWN_FINISHED(src, laugh_preview))
+						return
+					if(!user || custom_laugh == "Default")
+						return
+					COOLDOWN_START(src, laugh_preview, (3 SECONDS))
+					user.playsound_local(user, pick(get_laugh_sound(custom_laugh, FALSE)), 50)
 				//BLUEMOON ADD END
 
 				if("tongue")
@@ -4759,6 +4782,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				real_name += "[pick(GLOB.last_names)]"
 
 	character.mob_weight = mob_size_name_to_num(body_weight) //BLUEMOON ADD записываем вес персонажа как цифру
+	character.laugh_override = custom_laugh != "Default" ? custom_laugh : null //BLUEMOON ADD записываем вес персонажа как цифру
 
 	//reset size if applicable
 	if(character.dna.features["body_size"])
