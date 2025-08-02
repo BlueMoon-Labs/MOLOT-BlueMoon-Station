@@ -495,7 +495,6 @@
 
 //Hippie Ported Code--------------------------------------------------------------------------------------------------------
 
-
 // - inserter circuit - //
 /obj/item/integrated_circuit/manipulation/inserter
 	name = "inserter"
@@ -524,7 +523,9 @@
 	var/mode = get_pin_data(IC_INPUT, 3)
 
 	switch(mode)
-		if(1)	/// Insert mode
+
+		if(TRUE) // Insert mode 1
+
 			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
 				return
 
@@ -534,9 +535,11 @@
 
 			STR.attackby(src, target_obj)
 
-		if(0) // Extract mode
+		if(FALSE) // Extract mode 0
+
 			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
 			if(target_obj in container.contents)
+
 				if(STR)
 					STR.remove_from_storage(target_obj, get_turf(src))
 
