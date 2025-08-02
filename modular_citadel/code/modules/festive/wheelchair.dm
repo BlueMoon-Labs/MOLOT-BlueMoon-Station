@@ -57,6 +57,7 @@
 	max_velocity = 20
 	boost_power = 15
 	gear = "auto"
+	max_occupants = 1
 
 /obj/vehicle/sealed/vectorcraft/rideable/wheelchair/ComponentInitialize()	//Since it's technically a chair I want it to have chair properties
 	. = ..()
