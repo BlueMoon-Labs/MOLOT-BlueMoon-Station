@@ -756,7 +756,7 @@
 		return FALSE
 	return ..()
 
-/obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
+/obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer, time_to_kill = 12 SECONDS)
 	if(!ishuman(user) || !ishuman(target))
 		return
 
@@ -772,7 +772,7 @@
 
 	busy_action = TRUE
 
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_mob(user, target, time_to_kill) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
 				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
@@ -789,6 +789,7 @@
 
 	if(chambered && chambered.BB)
 		chambered.BB.damage *= 10
+		. = TRUE
 
 	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD, stam_cost = getstamcost(user))
 

@@ -189,6 +189,13 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create a revenant. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create a revenant.")
+			if("massshooter")
+				if(src.makeMassShooter())
+					message_admins("[key_name(usr)] created a Mass Shooter.")
+					log_admin("[key_name(usr)] created a Mass Shooter.")
+				else
+					message_admins("[key_name_admin(usr)] tried to create a Mass Shooter. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a Mass Shooter.")
 
 //			if("qareen")	Temporary removed. - Gardelin0
 //				if(src.makeQareen())
