@@ -535,104 +535,10 @@
 			STR.attackby(src, target_obj)
 
 		if(0) // Extract mode
-			if(target_obj in container.contents)
 			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-
-			if(STR)
-				STR.remove_from_storage(target_obj, get_turf(src))
-
-
-
-				/////////////////////
-
-		// 		if(0)
-        //     message_admins("INSERTER: EXTRACT mode | Target loc: [target.loc] | New container: [container]")
-
-        //     if(istype(target.loc, /obj/item/storage))
-        //         var/obj/item/storage/old_container = target.loc
-        //         old_container.contents -= target
-        //         target.forceMove(get_turf(src))
-        //         message_admins("INSERTER SUCCESS: [target] moved from [old_container] to floor")
-
-        //     else if(container && istype(container, /obj/item/storage))
-        //         target.forceMove(container)
-        //         message_admins("INSERTER SUCCESS: [target] moved to new container [container]")
-
-        //     else
-        //         target.forceMove(get_turf(src))
-        //         message_admins("INSERTER SUCCESS: [target] dropped on floor")
-
-        // // Неизвестный режим
-        // else
-        //     message_admins("INSERTER ERROR: Invalid mode [mode]! Use 0 (extract) or 1 (insert)")
-
-/////////////////////////////////////////////////////////////alist
-
-// код вставки рабочий
-	// if(assembly && istype(target_obj))
-	// 	switch(mode)
-	// 		if(1)	// Insert mode
-	// 			if(!container || !istype(container,/obj/item/storage))
-	// 				return
-
-	// 			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-	// 			if(!STR)
-	// 				return
-
-	// 			STR.attackby(src, target_obj)
-
-	// 		if(2)	// Extract mode
-	// 			var/datum/component/storage/STR = target_obj.loc.GetComponent(/datum/component/storage)
-	// 			if(!STR)
-	// 				return
-
-	// 			if(!container || !istype(container,/obj/item/storage))
-	// 				STR.remove_from_storage(target_obj, drop_location())
-	// 			else
-	// 				STR.remove_from_storage(target_obj, container)
-
-
-//////////////////////////////////////////////////////////////
-
-//	МОЙ КОД
-
-
-	// /obj/item/integrated_circuit/manipulation/inserter/do_work()
-    // // Получаем данные
-    // var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
-    // var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
-    // var/mode = get_pin_data(IC_INPUT, 3)
-
-    // // Базовые проверки
-    // if(!target_obj || !assembly || !istype(container) || !isnum(mode))
-    //     return
-
-    // // Проверка расстояния (включая тот же тайл на котором интегралка)
-    // if(get_dist(get_turf(src), get_turf(target_obj)) > 1)
-    //     return
-
-    // // Режимы работы
-    // switch(mode)
-    //     // ВСТАВКА (mode = 1)
-    //     if(1)
-    //         // Защита от вложения хранилищ друг в друга (предотвращение бесконечной вложенности)
-    //         if(istype(container,/obj/item/storage) && istype(target_obj,/obj/item/storage))
-    //             return
-
-    //         // Если предмет уже в контейнере - пропускаем
-    //         if(target_obj in container.contents)
-    //             return
-
-    //         // Простое перемещение с обновлением отображения контейнера
-    //         target_obj.forceMove(container)
-    //         container.update_icon()
-
-    //     // ИЗВЛЕЧЕНИЕ (mode = 0)
-    //     if(0)
-    //         if(target_obj in container.contents)
-    //             container.contents -= target_obj
-    //             target_obj.forceMove(get_turf(src)) // Кидает под себя
-    //             container.update_icon()
+			if(target_obj in container.contents)
+				if(STR)
+					STR.remove_from_storage(target_obj, get_turf(src))
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
