@@ -535,11 +535,13 @@
 			STR.attackby(src, target_obj)
 
 		if(0) // Extract mode
-			if(target_obj in container.contents)
 			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+			if(target_obj in container.contents)
+				if(STR)
+					STR.remove_from_storage(target_obj, get_turf(src))
 
-			if(STR)
-				STR.remove_from_storage(target_obj, get_turf(src))
+
+
 
 
 
