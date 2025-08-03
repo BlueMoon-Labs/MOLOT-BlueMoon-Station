@@ -16,6 +16,12 @@
 			set_headshot_link(user, "headshot_link1")
 		if ("headshot2")
 			set_headshot_link(user, "headshot_link2")
+		if ("headshot_naked")
+			set_headshot_link(user, "headshot_naked_link")
+		if ("headshot_naked1")
+			set_headshot_link(user, "headshot_naked_link1")
+		if ("headshot_naked2")
+			set_headshot_link(user, "headshot_naked_link2")
 
 	return ..()
 

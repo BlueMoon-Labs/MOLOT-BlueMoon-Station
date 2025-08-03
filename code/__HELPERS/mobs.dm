@@ -274,6 +274,9 @@
 		"headshot_link"		= "", //SPLURT edit
 		"headshot_link1"		= "", //BLUEMOON edit
 		"headshot_link2"		= "", //BLUEMOON edit
+		"headshot_naked_link"		= "", //BLUEMOON ADD
+		"headshot_naked_link1"		= "", //BLUEMOON ADD
+		"headshot_naked_link2"		= "", //BLUEMOON ADD
 		"meat_type"			= "Mammalian",
 		"body_model"		= body_model,
 		"body_size"			= RESIZE_DEFAULT_SIZE,

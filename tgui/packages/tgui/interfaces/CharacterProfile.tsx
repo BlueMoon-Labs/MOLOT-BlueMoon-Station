@@ -132,7 +132,10 @@ const CharacterProfileImageElement = (props, context) => {
   const { data } = useBackend<CharacterProfileContext>(context);
 
   const headshot_links =
-    data.headshot_links?.filter(link => link?.length) || [];
+    [
+      ...(data.headshot_links || []),
+      ...(data.headshot_naked_links || [])
+    ].filter(link => link?.length) || [];
 
   const [
     selectedHeadshot,

@@ -784,6 +784,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
 					if(features["headshot_link2"])
 						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					//dat += "<br><br>"
+
+					dat += "<h2>Naked (NSFW) Headshots</h2>"
+
+					dat += "<a href='?_src_=prefs;preference=headshot_naked'><b>Set Headshot 1 Image</b></a><br>"
+					if(features["headshot_naked_link"])
+						dat += "<img src='[features["headshot_naked_link"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+
+					dat += "<a href='?_src_=prefs;preference=headshot_naked1'><b>Set Headshot 2 Image</b></a><br>"
+					if(features["headshot_naked_link1"])
+						dat += "<img src='[features["headshot_naked_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+
+					dat += "<a href='?_src_=prefs;preference=headshot_naked2'><b>Set Headshot 3 Image</b></a><br>"
+					if(features["headshot_naked_link2"])
+						dat += "<img src='[features["headshot_naked_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 					// BLUEMOON ADD END
 					dat += "</td></tr></table>"
@@ -4833,6 +4850,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.dna.headshot_links.Add(features["headshot_link1"])
 	if (features["headshot_link2"])
 		character.dna.headshot_links.Add(features["headshot_link2"])
+	// BLUEMOON ADD START
+	if (features["headshot_naked_link"])
+		character.dna.headshot_naked_links.Add(features["headshot_naked_link"])
+	if (features["headshot_naked_link1"])
+		character.dna.headshot_naked_links.Add(features["headshot_naked_link1"])
+	if (features["headshot_naked_link2"])
+		character.dna.headshot_naked_links.Add(features["headshot_naked_link2"])
+	// BLUEMOON ADD END
 	character.dna.ooc_notes = features["ooc_notes"]
 	if(custom_blood_color)
 		character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки

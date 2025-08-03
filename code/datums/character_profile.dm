@@ -102,6 +102,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 					can_see_naked = FALSE
 					break
 			data["flavortext_naked"] = can_see_naked ? (C.dna?.naked_flavor_text || "") : ""
+			data["headshot_naked_links"] =  (check_rights_for(user.client, R_ADMIN) && isobserver(user)) || ((!unknown) && can_see_naked) ? (C.dna.headshot_naked_links.Copy() || "") : list()
 	// BLUEMOON EDIT END
 
 	data["is_unknown"] = unknown
