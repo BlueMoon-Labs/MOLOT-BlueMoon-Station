@@ -495,7 +495,6 @@
 
 //Hippie Ported Code--------------------------------------------------------------------------------------------------------
 
-
 // - inserter circuit - //
 /obj/item/integrated_circuit/manipulation/inserter
 	name = "inserter"
