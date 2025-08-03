@@ -74,11 +74,14 @@ export const CharacterProfile = (props, context) => {
                 {data.flavortext || "———"}
               </Section>
             </Collapsible>
-            <Collapsible title="Описание Голого Тела Персонажа" open>
-              <Section style={{ "white-space": "pre-line" }}>
-                {data.flavortext_naked || "———"}
-              </Section>
-            </Collapsible>
+
+            {data.flavortext_naked ? (
+               <Collapsible title="Описание Голого Тела Персонажа" open>
+                <Section style={{ "white-space": "pre-line" }}>
+                  {data.flavortext_naked || "———"}
+                </Section>
+              </Collapsible>
+            ) : (<Box />)}
 
             {data.security_records ? (
               <Collapsible title="База Данных Службы Безопасности" open>

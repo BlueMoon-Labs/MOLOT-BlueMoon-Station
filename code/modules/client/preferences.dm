@@ -769,19 +769,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "[TextPreview(medical_records)]..."
 
 					// BLUEMOON ADD
-					dat += "<h2>Headshot 1 Image</h2>"
+					dat += "<h2>Headshots</h2>"
+
 					dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot 1 Image</b></a><br>"
 					if(features["headshot_link"])
 						dat += "<img src='[features["headshot_link"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 
-					dat += "<h2>Headshot 2 Image</h2>"
 					dat += "<a href='?_src_=prefs;preference=headshot1'><b>Set Headshot 2 Image</b></a><br>"
 					if(features["headshot_link1"])
 						dat += "<img src='[features["headshot_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 
-					dat += "<h2>Headshot 3 Image</h2>"
 					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
 					if(features["headshot_link2"])
 						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
