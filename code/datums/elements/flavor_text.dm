@@ -140,8 +140,8 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 
 // BLUEMOON EDIT START - заменил систему ингейм смены флаворов на более простую и релевантную
 /mob/proc/manage_flavor_tests()
-	set name = "Manage Flavor Texts"
-	set desc = "Used to manage your various flavor texts."
+	set name = "Manage Flavor"
+	set desc = "Used to manage your various flavor."
 	set category = "IC"
 
 	if(!isliving(src))
