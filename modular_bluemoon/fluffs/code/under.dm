@@ -276,3 +276,28 @@
 			На обратной стороне изображен стеклянный цилиндр с синим космическим кристаллом внутри. \
 			В юбку встроен радар внешнего обзора. Иногда происходит пространственное смещение... стоп ЧТО?!"
 	icon_state = "InlaidDataDress"
+	var/atom/movable/distortion_effect/filter_on_user
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/New()
+	. = ..()
+	filter_on_user = new(src)
+	LAZYADD(vis_contents, filter_on_user)
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/equipped(mob/user, slot)
+	. = ..()
+	LAZYADD(user.vis_contents, filter_on_user)
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/dropped(mob/user)
+	LAZYREMOVE(user.vis_contents, filter_on_user)
+	. = ..()
+
+/atom/movable/distortion_effect
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "distortion_b"
+	pixel_x = -32
+	pixel_y = -32
+	alpha = 10
+	plane = GRAVITY_PULSE_PLANE
+	appearance_flags = PIXEL_SCALE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	vis_flags = VIS_INHERIT_LAYER
