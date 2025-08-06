@@ -299,7 +299,7 @@
 	var/list/moans
 	if (gender == FEMALE || (gender == PLURAL && isfeminine(src)))
 	// BLUEMOON EDIT START
-		if(lust/get_climax_threshold() < 0.40)
+		if(lust/get_climax_threshold() < 0.55 && last_climax + min(3 MINUTES, world.time) <= world.time)
 			moans = GLOB.lewd_softmoans_female
 		else
 			moans = GLOB.lewd_moans_female
@@ -968,7 +968,7 @@
 	if (lust >= threshold)
 		if(prob(30))
 			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
-		
+
 		// BLUEMOON EDIT START
 		if (!use_moaning_multiplier && amount > 0 && prob(chance))
 			moan()
