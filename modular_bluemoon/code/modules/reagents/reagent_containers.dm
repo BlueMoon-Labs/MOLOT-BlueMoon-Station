@@ -17,7 +17,7 @@
 
 /obj/item/reagent_containers/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
-	if(hotness && reagents && !istype(I, /obj/item/clothing/mask/cigarette))
+	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
 		to_chat(user, "<span class='notice'>You heat [name] with [I]!</span>")
 	if(tape_connection && user.a_intent == INTENT_HARM && istype(I, /obj/item/reagent_containers/glass) && I.embedding) // время размазать банку об банку ради великой цели
