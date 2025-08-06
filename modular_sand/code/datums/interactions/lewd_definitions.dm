@@ -299,7 +299,7 @@
 	var/list/moans
 	if (gender == FEMALE || (gender == PLURAL && isfeminine(src)))
 	// BLUEMOON EDIT START
-		if(lust/get_climax_threshold() < 0.55 && last_climax + min(3 MINUTES, world.time) <= world.time)
+		if(lust/get_climax_threshold() < 0.55 && last_climax + min(8 MINUTES, world.time) <= world.time)
 			moans = GLOB.lewd_softmoans_female
 		else
 			moans = GLOB.lewd_moans_female
