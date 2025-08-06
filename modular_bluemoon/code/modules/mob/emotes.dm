@@ -348,7 +348,7 @@
 	emote_pitch_variance = FALSE
 
 /datum/emote/sound/human/girlymoan/run_emote(mob/user, params)
-	sound = pick('modular_bluemoon/sound/emotes/softmoan1.ogg', 'modular_bluemoon/sound/emotes/softmoan2.ogg', 'modular_bluemoon/sound/emotes/softmoan3.ogg', 'modular_bluemoon/sound/emotes/softmoan4.ogg', 'modular_bluemoon/sound/emotes/softmoan5.ogg', 'modular_bluemoon/sound/emotes/softmoan6.ogg')
+	sound = pick(GLOB.lewd_softmoans_female)
 	. = ..()
 
 /datum/emote/sound/human/squeal

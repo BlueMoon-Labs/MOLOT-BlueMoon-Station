@@ -51,12 +51,7 @@
 				"мурлыкает и звучно вздыхает",
 				"тихонько вздрагивает",
 				"вздрагивает, хватаясь за причинное место")]</span>")
-		playlewdinteractionsound(get_turf(user), pick('modular_bluemoon/sound/emotes/softmoan1.ogg',
-					'modular_bluemoon/sound/emotes/softmoan2.ogg',
-					'modular_bluemoon/sound/emotes/softmoan3.ogg',
-					'modular_bluemoon/sound/emotes/softmoan4.ogg',
-					'modular_bluemoon/sound/emotes/softmoan5.ogg',
-					'modular_bluemoon/sound/emotes/softmoan6.ogg'), 70, 1, -1)
+		playlewdinteractionsound(get_turf(user), pick(GLOB.lewd_softmoans_female), 70, 1, -1)
 
 	if(liquid_container)
 		message += " прямо в [liquid_container]"

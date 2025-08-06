@@ -17,5 +17,5 @@
 			handle_post_sex(amount*5)
 		else // proc/handle_post_sex() won't work here if mob is not CONSCIOUS
 			add_lust(amount*5)
-			if(get_lust() >= get_lust_tolerance()*3)
+			if(get_lust() >= get_climax_threshold()) // BLUEMOON EDIT
 				mob_climax(forced_climax=TRUE, cause="choke_slut")
