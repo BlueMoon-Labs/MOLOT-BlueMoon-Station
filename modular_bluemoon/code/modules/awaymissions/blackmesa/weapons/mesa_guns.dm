@@ -548,3 +548,44 @@
 	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
 	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
 	new /obj/item/grenade/plastic/c4(src)
+
+//medic
+
+/obj/item/choice_beacon/mesamedic
+	name = "medic type choice beacon"
+	desc = "Secret USA army technology. Get your MEDS here and now"
+
+/obj/item/choice_beacon/mesamedic/generate_display_names()
+	var/static/list/medic_item_list
+	if(!medic_item_list)
+		medic_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/basedmedic)
+		for(var/V in templist)
+			var/atom/A = V
+			medic_item_list[initial(A.name)] = A
+	return medic_item_list
+
+/obj/item/storage/box/basedmedic
+	name = "9mm and based meds kit"
+
+/obj/item/storage/box/basedmedic/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/hl9mm(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/storage/firstaid/emergency(src)
+
+/obj/item/storage/box/basedmedic/mp7
+	name = "mp7 and toxin treatment kit"
+
+/obj/item/storage/box/basedmedic/mp7/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/mp7(src)
+	new /obj/item/ammo_box/magazine/mp7(src)
+	new /obj/item/ammo_box/magazine/mp7(src)
+	new /obj/item/storage/firstaid/toxin(src)
+
+/obj/item/storage/box/basedmedic/medbeam
+	name = "medbeam and tactical meds (No weapons) kit"
+
+/obj/item/storage/box/basedmedic/medbeam/PopulateContents()
+	new /obj/item/gun/medbeam(src)
+	new /obj/item/storage/firstaid/tactical(src)
