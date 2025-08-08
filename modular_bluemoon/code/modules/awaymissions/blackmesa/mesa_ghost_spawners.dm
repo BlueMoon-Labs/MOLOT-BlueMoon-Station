@@ -174,13 +174,12 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
-	r_hand = /obj/item/gun/ballistic/automatic/mp5
+	r_hand = /obj/item/choice_beacon/mesagrunt
 	back = /obj/item/storage/backpack/hecu
 	backpack_contents = list(
 		/obj/item/storage/box/survival/radio,
 		/obj/item/storage/firstaid/emergency,
 		/obj/item/kitchen/knife/combat,
-		/obj/item/ammo_box/magazine/mp5,
 	)
 
 /datum/outfit/hecu_engineer
@@ -220,7 +219,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
-	r_hand = /obj/item/gun/ballistic/shotgun/spas
+	r_hand = /obj/item/choice_beacon/mesabreacher
 	back = /obj/item/storage/backpack/hecu
 	backpack_contents = list(
 		/obj/item/storage/box/survival/radio,
@@ -228,7 +227,6 @@
 		/obj/item/kitchen/knife/combat,
 		/obj/item/gun/ballistic/automatic/pistol/hl9mm,
 		/obj/item/ammo_box/magazine/pistolm9mm,
-		/obj/item/ammo_box/shotgun/loaded/buckshot,
 	)
 
 /datum/outfit/hecu_medic
@@ -242,15 +240,12 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
+	r_hand = /obj/item/choice_beacon/mesamedic
 	back = /obj/item/storage/backpack/hecu
 	backpack_contents = list(
 		/obj/item/storage/box/survival/radio,
 		/obj/item/storage/firstaid/emergency,
 		/obj/item/kitchen/knife/combat,
-		/obj/item/storage/firstaid/tactical,
-		/obj/item/gun/ballistic/automatic/pistol/hl9mm,
-		/obj/item/ammo_box/magazine/pistolm9mm,
-		/obj/item/ammo_box/magazine/pistolm9mm,
 	)
 
 /obj/effect/mob_spawn/human/black_mesa/hecu/leader

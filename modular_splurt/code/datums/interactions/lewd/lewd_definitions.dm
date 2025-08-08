@@ -2,7 +2,7 @@ GLOBAL_LIST_INIT(lust_modifiers, list("[GENITAL_HYPERSENS]" = 3, "[GENITAL_OVERS
 GLOBAL_LIST_INIT(anus_traits, list("[TRAIT_HYPERSENS_ANUS]" = 3, "[TRAIT_OVERSTIM_ANUS]" = 1.8, "[TRAIT_DISAPPOINTING_ANUS]" = 0.75, "[TRAIT_EDGINGONLY_ANUS]" = 0.5, "[TRAIT_IMPOTENT_ANUS]" = 0))
 
 /mob/living/proc/lustcap(amt)
-	var/lust_cap = (get_lust_tolerance() * 3) * 0.8 // 80% of the mob's orgasm arousal (lust_tolerance * 3)
+	var/lust_cap = (get_climax_threshold()) * 0.8 // 80% of the mob's orgasm arousal (lust_tolerance * 3) // BLUEMOON EDIT
 	if((get_lust() + amt) >= lust_cap)
 		set_lust(lust_cap - 1)
 

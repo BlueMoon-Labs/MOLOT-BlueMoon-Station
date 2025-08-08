@@ -103,6 +103,27 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+/obj/item/gun/ballistic/shotgun/m870
+	name = "m870 shotgun"
+	desc = "Remington 870 - это классический помповый дробовик, который был представлен компанией Remington Arms в 1950 году и до сих пор остается одним из самых популярных и продаваемых ружей в Солнечной Федерации."
+	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon_state = "m870"
+	item_state = "m870"
+	w_class = WEIGHT_CLASS_BULKY
+	recoil = 4
+	force = 40
+	fire_delay = 4
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/m870
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/ammo_box/magazine/internal/shot/m870
+	name = "shotgun internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "shotgun"
+	max_ammo = 5
+
 /obj/item/gun/ballistic/shotgun/spas
 	name = "SPAS 12 shotgun"
 	desc = "Этот невероятно старый и брутальный дробовик заставляет вас надеть балаклаву с горнолыжными очками."
@@ -113,13 +134,16 @@
 	item_state = "spas"
 	fire_sound = 'modular_bluemoon/sound/weapons/mesa/shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
-	burst_size = 2
-	recoil = 4
-	force = 35
-	fire_delay = 15
+	recoil = 3
+	force = 10
+	fire_delay = 4
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/spas
 	pumpsound = 'modular_bluemoon/sound/weapons/mesa/shotgun_rack.ogg'
 	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/shotgun/spas/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	..()
+	src.pump(user)
 
 /obj/item/ammo_box/magazine/internal/shot/spas
 	name = "shotgun internal magazine"
@@ -279,7 +303,7 @@
 	icon_state = "scar"
 	ammo_type = /obj/item/ammo_casing/mm762
 	caliber = "7.62mm"
-	max_ammo = 20
+	max_ammo = 15
 
 /obj/item/ammo_box/magazine/scar/update_icon()
 	. = ..()
@@ -311,8 +335,8 @@
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "p90"
 	item_state = "p90"
-	fire_delay = 0.5 //FUUUUUUUUCK!!!!!
-	spread = 15
+	fire_delay = 1.5 //FUUUUUUUUCK!!!!!
+	spread = 17
 	fire_sound = 'sound/weapons/gunshot_smg_alt.ogg'
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
@@ -350,7 +374,7 @@
 	projectile_type = /obj/item/projectile/bullet/mm57
 
 /obj/item/projectile/bullet/mm57
-	name = "4.6mm bullet"
+	name = "5.7mm bullet"
 	damage = 10
 	armour_penetration = 4
 	wound_bonus = -4
@@ -444,3 +468,124 @@
 
 //	var/static/image/charged_overlay = image(icon = 'icons/obj/guns/energy.dmi', icon_state = "esniper_charged")
 //	var/static/image/drained_overlay = image(icon = 'icons/obj/guns/energy.dmi', icon_state = "esniper_empty")
+
+
+
+//ПРИЗЫВ ПУШЕК??!??!?!?7
+//Grunt
+/obj/item/choice_beacon/mesagrunt
+	name = "Grunt type choice beacon"
+	desc = "Secret USA army technology. Get your guns here and now"
+
+/obj/item/choice_beacon/mesagrunt/generate_display_names()
+	var/static/list/grunt_item_list
+	if(!grunt_item_list)
+		grunt_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/basedgrunt)
+		for(var/V in templist)
+			var/atom/A = V
+			grunt_item_list[initial(A.name)] = A
+	return grunt_item_list
+
+/obj/item/storage/box/basedgrunt
+	name = "MP5 machinegun kit"
+
+
+/obj/item/storage/box/basedgrunt/PopulateContents()
+	new /obj/item/ammo_box/magazine/mp5(src)
+	new /obj/item/gun/ballistic/automatic/mp5(src)
+	new /obj/item/ammo_box/magazine/mp5(src)
+
+
+/obj/item/storage/box/basedgrunt/marksman
+	name = "HC SCAR marksman kit"
+
+/obj/item/storage/box/basedgrunt/marksman/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/scar(src)
+	new /obj/item/ammo_box/magazine/scar(src)
+	new /obj/item/ammo_box/magazine/scar(src)
+	new /obj/item/ammo_box/magazine/scar(src)
+	new /obj/item/binoculars(src)
+
+/obj/item/storage/box/basedgrunt/rapidgrunt
+	name = "p90 machinegun kit"
+
+/obj/item/storage/box/basedgrunt/rapidgrunt/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/p90(src)
+	new /obj/item/ammo_box/magazine/p90(src)
+	new /obj/item/ammo_box/magazine/p90(src)
+	new /obj/item/ammo_box/magazine/p90(src)
+
+//breacher
+
+/obj/item/choice_beacon/mesabreacher
+	name = "breacher type choice beacon"
+	desc = "Secret USA army technology. Get your guns here and now"
+
+/obj/item/choice_beacon/mesabreacher/generate_display_names()
+	var/static/list/breacher_item_list
+	if(!breacher_item_list)
+		breacher_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/basedbreacher)
+		for(var/V in templist)
+			var/atom/A = V
+			breacher_item_list[initial(A.name)] = A
+	return breacher_item_list
+
+/obj/item/storage/box/basedbreacher
+	name = "SPAS 12 crowd control kit"
+
+/obj/item/storage/box/basedbreacher/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/spas(src)
+	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
+
+
+/obj/item/storage/box/basedbreacher/m870
+	name = "m870 breacher kit"
+
+/obj/item/storage/box/basedbreacher/m870/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/m870(src)
+	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
+	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
+	new /obj/item/grenade/plastic/c4(src)
+
+//medic
+
+/obj/item/choice_beacon/mesamedic
+	name = "medic type choice beacon"
+	desc = "Secret USA army technology. Get your MEDS here and now"
+
+/obj/item/choice_beacon/mesamedic/generate_display_names()
+	var/static/list/medic_item_list
+	if(!medic_item_list)
+		medic_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/basedmedic)
+		for(var/V in templist)
+			var/atom/A = V
+			medic_item_list[initial(A.name)] = A
+	return medic_item_list
+
+/obj/item/storage/box/basedmedic
+	name = "9mm and based meds kit"
+
+/obj/item/storage/box/basedmedic/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/hl9mm(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/storage/firstaid/emergency(src)
+
+/obj/item/storage/box/basedmedic/mp7
+	name = "mp7 and toxin treatment kit"
+
+/obj/item/storage/box/basedmedic/mp7/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/mp7(src)
+	new /obj/item/ammo_box/magazine/mp7(src)
+	new /obj/item/ammo_box/magazine/mp7(src)
+	new /obj/item/storage/firstaid/toxin(src)
+
+/obj/item/storage/box/basedmedic/medbeam
+	name = "medbeam and tactical meds (No weapons) kit"
+
+/obj/item/storage/box/basedmedic/medbeam/PopulateContents()
+	new /obj/item/gun/medbeam(src)
+	new /obj/item/storage/firstaid/tactical(src)

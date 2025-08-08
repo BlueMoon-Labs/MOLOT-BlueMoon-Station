@@ -1,6 +1,6 @@
 /mob/living
-	var/mb_cd_length = 1 SECONDS						//5 second cooldown for masturbating because fuck spam. // BLUEMOON EDIT
-	var/mb_cd_timer = 0									//The timer itself
+	//var/mb_cd_length = 1 SECONDS						//5 second cooldown for masturbating because fuck spam. // BLUEMOON EDIT commented
+	var/last_climax = 0									// BLUEMOON EDIT
 
 /mob/living/carbon/human
 	var/arousal_rate = 1
@@ -86,6 +86,7 @@
 		var/obj/item/organ/genital/penis/P = sender
 		condomning = locate(/obj/item/genital_equipment/condom) in P.contents
 	sender.generate_fluid(R)
+	last_climax = world.time // BLUEMOON ADD
 	log_message("Кончает [sender] благодаря [target]", LOG_EMOTE)
 
 	client?.plug13.send_emote(PLUG13_EMOTE_GROIN, PLUG13_STRENGTH_MAX, PLUG13_DURATION_ORGASM)
@@ -194,7 +195,7 @@
 								cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
 						break
 
-				if(!it_a_portal)
+				if(!it_a_portal && (!last_genital || last_genital.type == sender.type)) // some lewd interactions are broken, so we checking type
 					if(istype(receiver, /obj/item/organ/stomach))	//in mouth
 						switch(sender.type)
 							if(/obj/item/organ/genital/penis)
@@ -362,10 +363,6 @@
 //skyrat edit - forced partner and spillage
 /mob/living/carbon/human/proc/mob_climax(forced_climax = FALSE, cause = "", var/mob/living/forced_partner = null, var/forced_spillage = TRUE, var/obj/item/organ/genital/forced_receiving_genital = null, anonymous = FALSE)
 	set waitfor = FALSE
-	if(mb_cd_timer > world.time)
-		if(!forced_climax) //Don't spam the message to the victim if forced to come too fast
-			to_chat(src, "<span class='warning'>Вы должны подождать [DisplayTimeText((mb_cd_timer - world.time), TRUE)] до того, как можете сделать это снова!</span>")
-		return
 
 	if(!(client?.prefs.arousable || !ckey) || !has_dna())
 		return
@@ -424,7 +421,6 @@
 			mob_climax_outside(G, mb_time = 0) //removed climax timer for sudden, forced orgasms
 		//Now all genitals that could climax, have.
 		//Since this was a forced climax, we do not need to continue with the other stuff
-		mb_cd_timer = world.time + mb_cd_length
 		return
 	//If we get here, then this is not a forced climax and we gotta check a few things.
 
@@ -462,7 +458,6 @@
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			if(picked_organ && available_rosie_palms(TRUE))
 				mob_climax_outside(picked_organ)
-				mb_cd_timer = world.time + mb_cd_length
 		if("Оргазмировать совместно с кем-то")
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
@@ -472,7 +467,6 @@
 					var/spillage = alert(src, "Кончить внутрь?", "При возможности", "Да", "Нет")
 					if(in_range(src, partner))
 						mob_climax_partner(picked_organ, partner, spillage == "Нет" ? TRUE : FALSE, Lgen = pick_receiving_organ(partner))
-						mb_cd_timer = world.time + mb_cd_length
 		if("Наполнить контейнер половыми жидкостями")
 			//We'll need hands and no restraints.
 			if(!available_rosie_palms(FALSE, /obj/item/reagent_containers))
@@ -485,7 +479,6 @@
 				var/obj/item/reagent_containers/fluid_container = pick_climax_container()
 				if(fluid_container && available_rosie_palms(TRUE, /obj/item/reagent_containers))
 					mob_fill_container(picked_organ, fluid_container)
-					mb_cd_timer = world.time + mb_cd_length
 		if("Оргазмировать на кого-то")
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
@@ -493,7 +486,6 @@
 				var/mob/living/partner = pick_partner(covering = TRUE) //Get someone
 				if(partner && in_range(src, partner))
 					mob_climax_over(picked_organ, partner, TRUE)
-					mb_cd_timer = world.time + mb_cd_length
 
 	// BLUEMOON EDIT END
 

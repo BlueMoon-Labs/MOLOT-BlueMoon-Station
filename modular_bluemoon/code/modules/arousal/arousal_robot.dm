@@ -188,10 +188,6 @@
 	if (!iscyborg(src))
 		return
 	R = src
-	if(mb_cd_timer > world.time)
-		if(!forced_climax)
-			to_chat(src, "<span class='warning'>Вы должны подождать [DisplayTimeText((mb_cd_timer - world.time), TRUE)] до того, как можете сделать это снова!</span>")
-		return
 
 	if(!(client?.prefs.arousable || !ckey))
 		return
@@ -226,7 +222,6 @@
 			if(partner)
 				mob_climax_partner_silicon(R, partner, forced_spillage, 0, forced_receiving_genital, forced_climax, anonymous)
 		mob_climax_outside_silicon(R, mb_time = 0)
-		mb_cd_timer = world.time + mb_cd_length
 		return
 
 	if(stat == UNCONSCIOUS)
@@ -256,5 +251,3 @@
 			var/mob/living/partner = pick_partner_silicon()
 			if(partner)
 				mob_climax_over_silicon(R, partner, TRUE)
-
-	mb_cd_timer = world.time + mb_cd_length

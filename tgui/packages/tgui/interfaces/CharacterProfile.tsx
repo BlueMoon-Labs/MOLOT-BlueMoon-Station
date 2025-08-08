@@ -25,6 +25,7 @@ interface CharacterProfileContext {
   directory_visible: boolean;
   is_unknown: boolean;
   headshot_links?: (string | null)[];
+  headshot_naked_links?: (string | null)[]; // BLUEMOON ADD
   character_ref: any,
   flavortext: string;
   flavortext_naked: string;
