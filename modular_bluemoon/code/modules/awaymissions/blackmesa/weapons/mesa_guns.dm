@@ -220,7 +220,7 @@
 	if(magazine)
 		icon_state = "m16hl"
 	else
-		icon_state = "m16hl_mag"
+		icon_state = "m16hl-e"
 
 /obj/item/gun/ballistic/automatic/mp7
 	name = "\improper mp7"
