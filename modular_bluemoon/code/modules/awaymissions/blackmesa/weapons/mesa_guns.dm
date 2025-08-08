@@ -122,7 +122,7 @@
 	name = "shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
-	max_ammo = 5
+	max_ammo = 4
 
 /obj/item/gun/ballistic/shotgun/spas
 	name = "SPAS 12 shotgun"

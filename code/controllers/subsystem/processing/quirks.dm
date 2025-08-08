@@ -51,7 +51,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	for(var/V in quirk_list)
 		var/datum/quirk/T = V
 		quirks[initial(T.name)] = T
-		quirk_points[initial(T.name)] = initial(T.value)
+		quirk_points[initial(T.name)] = initial(T.цц)
 		quirk_names_by_path[T] = initial(T.name)
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects, roundstart = FALSE, datum/job/job, silent = FALSE, mob/to_chat_target)

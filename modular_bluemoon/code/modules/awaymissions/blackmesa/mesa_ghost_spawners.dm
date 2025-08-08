@@ -1,4 +1,4 @@
-//Персонал чёрной мезы
+//учёные
 
 /obj/effect/mob_spawn/human/black_mesa
 	name = "Black mesa scientist"
@@ -25,21 +25,17 @@
 	uniform = /obj/item/clothing/under/rank/rnd/scientist/halflife
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
-	back = /obj/item/storage/backpack
-	backpack_contents = list(/obj/item/radio, /obj/item/reagent_containers/glass/beaker)
-	id = /obj/item/card/id/hlscientist
-	id_trim = /datum/id_trim/science_team
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(/obj/item/radio, /obj/item/reagent_containers/glass/beaker, /obj/item/storage/wallet)
+	id = /obj/item/card/id/away/mesasci
 
-/datum/id_trim/science_team
-	assignment = "Учёный Чёрной Мезы"
-	trim_state = "retro"
-
-/obj/item/card/id/hlscientist
+/obj/item/card/id/away/mesasci
 	name = "Black mesa scientist"
-	assignment = "Учёный Чёрной Мезы"
-	icon_state = "retro"
+	assignment = "Black mesa scientist"
+	desc = "An access card designated for \"the science team\". You are forgotten basically immediately when it comes to the lab."
+	access = list(ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS)
 
-
+//охрана
 
 /obj/effect/mob_spawn/human/black_mesa/guard
 	name = "Black mesa guard"
@@ -54,25 +50,35 @@
 
 /datum/outfit/security_guard
 	name = "Black mesa guard"
-	uniform = /obj/item/clothing/under/rank/security/officer/peacekeeper
+	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	head = /obj/item/clothing/head/helmet/blueshirt
 	gloves = /obj/item/clothing/gloves/color/black
 	suit = /obj/item/clothing/suit/armor/vest/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
-	back = /obj/item/storage/backpack
+	back = /obj/item/storage/backpack/satchel/blueshield/mesasec
+	belt = /obj/item/storage/belt/security/blackmesa
 	backpack_contents = list(/obj/item/radio, /obj/item/gun/ballistic/automatic/pistol/hl9mm, /obj/item/ammo_box/magazine/pistolm9mm, /obj/item/reagent_containers/food/snacks/donut/apple,)
-	id = /obj/item/card/id/hlguard
-	id_trim = /datum/id_trim/security_guard
+	id = /obj/item/card/id/away/mesasec
 
-/obj/item/card/id/hlguard
-	name = "Black mesa guard"
-	assignment = "Охранник чёрной мезы"
-	icon_state = "retro"
+/obj/item/card/id/away/mesasec
+	name = "Black mesa security id card"
+	assignment = "Black mesa security guard"
+	desc = "An access card designated for \"security members\". Everyone wants your guns, partner. Yee-haw."
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY)
 
-/datum/id_trim/security_guard
-	assignment = "Охранник Чёрной Мезы"
-	trim_state = "retro"
-	access = list(ACCESS_BRIG, ACCESS_SECURITY, ACCESS_AWAY_SEC)
+//одежда?
+
+/obj/item/storage/belt/security/blackmesa/PopulateContents()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/melee/classic_baton(src)
+	update_icon()
+
+
+/obj/item/storage/backpack/satchel/blueshield/mesasec
+	name = "Black mesa security guard satchel"
+	desc = "A robust satchel for security guard related needs."
 
 /obj/item/clothing/under/rank/rnd/scientist/halflife
 	name = "science team costume"
@@ -83,6 +89,8 @@
 	icon_state = "hl_scientist"
 	item_state = "hl_scientist"
 	can_adjust = FALSE
+
+//директор
 
 /obj/effect/mob_spawn/human/black_mesa/sectorhdirector
 	name = "Black mesa sector H director"
@@ -109,20 +117,17 @@
 	head = /obj/item/clothing/head/beret/sci
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
-	back = /obj/item/storage/backpack
+	back = /obj/item/storage/backpack/satchel/leather
 	belt = /obj/item/melee/classic_baton
-	backpack_contents = list(/obj/item/radio, /obj/item/reagent_containers/glass/beaker)
-	id = /obj/item/card/id/sectorhdirector
-	id_trim = /datum/id_trim/sectorhdirector
+	backpack_contents = list(/obj/item/radio, /obj/item/reagent_containers/glass/beaker, /obj/item/storage/wallet)
+	id = /obj/item/card/id/away/mesadirector
 
-/obj/item/card/id/sectorhdirector
-	name = "Sector H director"
-	assignment = "Директор сектора H"
-	icon_state = "retro"
+/obj/item/card/id/away/mesadirector
+	name = "Black mesa sector H director id card"
+	assignment = "Black mesa security guard"
+	desc = "An access card designated for \"the science team leaders\". You are forgotten basically immediately when it comes to the lab."
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS)
 
-/datum/id_trim/sectorhdirector
-	assignment = "Директор сектора H"
-	trim_state = "retro"
 
 //ХЕКУ
 
@@ -220,7 +225,7 @@
 	l_pocket = /obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/choice_beacon/mesabreacher
-	back = /obj/item/storage/backpack/hecu
+	back = /obj/item/storage/backpack/rucksack/green
 	backpack_contents = list(
 		/obj/item/storage/box/survival/radio,
 		/obj/item/storage/firstaid/emergency,
@@ -264,7 +269,7 @@
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = /obj/item/binoculars
 	r_hand = /obj/item/gun/ballistic/automatic/mp5
-	back = /obj/item/storage/backpack/hecu
+	back = /obj/item/storage/backpack/rucksack/green
 	backpack_contents = list(
 		/obj/item/storage/box/survival/radio,
 		/obj/item/storage/firstaid/emergency,
@@ -399,3 +404,4 @@
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
 	new /obj/item/storage/box/survival/radio(src,30,pick("red","yellow","orange"))
 	new /obj/item/kitchen/knife/combat(src)
+
