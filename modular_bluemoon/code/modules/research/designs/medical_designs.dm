@@ -181,7 +181,7 @@
 	construction_time = 150
 	reagents_list = list(/datum/reagent/consumable/organicprecursor/xenochimeric = 200)
 	build_path = /obj/item/organ/alien/hivenode
-	category = list("Experimental Designs")
+	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
 
