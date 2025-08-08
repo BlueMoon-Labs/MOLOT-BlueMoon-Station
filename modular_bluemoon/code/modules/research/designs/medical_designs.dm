@@ -161,7 +161,7 @@
 	min_security_level = SEC_LEVEL_BLUE //You can *ahem, technically* use them as weapons, so blue code is required.
 
 /datum/design/eggsac
-	name = "egg sac"
+	name = "Egg Sac"
 	id = "eggsac"
 	desc = "A design for xenochimeric egg sac."
 	build_type = PROTOLATHE
