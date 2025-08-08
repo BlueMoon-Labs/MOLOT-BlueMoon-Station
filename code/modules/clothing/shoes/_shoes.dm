@@ -11,7 +11,7 @@
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
 	var/blood_state = BLOOD_STATE_NOT_BLOODY
-	var/list/bloody_shoes = list(BLOOD_STATE_BLOOD = 0, BLOOD_STATE_OIL = 0, BLOOD_STATE_NOT_BLOODY = 0)
+	var/list/bloody_shoes = list(BLOOD_STATE_BLOOD = 0, BLOOD_STATE_OIL = 0, BLOOD_STATE_NOT_BLOODY = 0, BLOOD_STATE_POO = 0)
 	var/offset = 0
 	var/equipped_before_drop = FALSE
 
@@ -118,7 +118,7 @@
 
 /obj/item/clothing/shoes/clean_blood(datum/source, strength)
 	. = ..()
-	bloody_shoes = list(BLOOD_STATE_BLOOD = 0, BLOOD_STATE_OIL = 0, BLOOD_STATE_NOT_BLOODY = 0)
+	bloody_shoes = list(BLOOD_STATE_BLOOD = 0, BLOOD_STATE_OIL = 0, BLOOD_STATE_NOT_BLOODY = 0, BLOOD_STATE_POO = 0)
 	blood_state = BLOOD_STATE_NOT_BLOODY
 	if(ismob(loc))
 		var/mob/M = loc
