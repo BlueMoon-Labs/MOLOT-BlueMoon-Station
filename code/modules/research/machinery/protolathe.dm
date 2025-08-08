@@ -16,7 +16,8 @@
 								"Ammo",
 								"Firing Pins",
 								"Computer Parts",
-								"MODsuit Designs"
+								"MODsuit Designs",
+								"Organic Designs" //BLUEMOON ADD: New category for fleshcrafting and some heinous shit to ever exist.
 								)
 	production_animation = "protolathe_n"
 	allowed_buildtypes = PROTOLATHE
