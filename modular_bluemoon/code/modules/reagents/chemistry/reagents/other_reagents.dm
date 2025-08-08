@@ -58,3 +58,9 @@
 
 /datum/reagent/pax/catnip
 	color = "#009900"
+
+/datum/reagent/consumable/organicprecursor/xenochimeric
+	name = "Xenochimeric Sub-Precursor"
+	description = "This precursor can be used in creation of different xenochimeric 'organical' designs. You can use it almost as a sci-fi clay for organic life!"
+	color = "#11002e" // rgb: 17, 0, 46
+	taste_mult = 0 // oderless and tasteless.
