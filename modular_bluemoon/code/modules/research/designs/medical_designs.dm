@@ -186,7 +186,7 @@
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
 
 /datum/design/alientongue
-	name = "Alien tongue"
+	name = "Alien Tongue"
 	id = "alientongue"
 	desc = "A design for xenochimeric alien tongue."
 	build_type = PROTOLATHE
