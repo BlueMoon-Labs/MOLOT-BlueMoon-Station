@@ -121,6 +121,7 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/resinspinner
 	name = "Resin Spinner"
@@ -133,6 +134,7 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/acidgland
 	name = "Acid Gland"
@@ -145,7 +147,7 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
-	min_security_level = SEC_LEVEL_BLUE //You can *ahem, technically* use them as weapons, so blue code is required.
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/neurotoxingland
 	name = "Neurotoxin Gland"
@@ -158,7 +160,7 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
-	min_security_level = SEC_LEVEL_BLUE //You can *ahem, technically* use them as weapons, so blue code is required.
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/eggsac
 	name = "Egg Sac"
@@ -171,7 +173,7 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
-	min_security_level = SEC_LEVEL_BLUE //You can *ahem, technically* use them as weapons, so blue code is required.
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/hivenode
 	name = "Hive node"
@@ -184,6 +186,7 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/alientongue
 	name = "Alien Tongue"
@@ -196,3 +199,4 @@
 	category = list("Organic Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 	materials = list (/datum/material/glass = 30000, /datum/material/plasma = 10000)
+	min_security_level = SEC_LEVEL_RED
