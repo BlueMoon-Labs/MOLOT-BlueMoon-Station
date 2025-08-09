@@ -156,9 +156,8 @@
 	next_flush = world.time + flush_cooldown
 	playsound(src, pick('modular_bluemoon/sound/items/Unitaz.ogg'), 30, rand(0.90,1.10),3)
 	visible_message(span_warning("[M] pressed the flush button and flushed the toilet!"))
-	if(prob(1))
-		create_shitflood()
-
+	
+/*
 /obj/structure/toilet/proc/create_shitflood()
 	visible_message(span_warning("Some idiot was pressing the button so often that they created a flood! The shitflood!!"))
 	var/datum/reagents/R = new/datum/reagents(10)
@@ -168,6 +167,7 @@
 	var/datum/effect_system/foam_spread/watertype/foam = new
 	foam.set_up(50, get_turf(src), R)
 	foam.start()
+*/
 
 // BLUEMOON ADD END
 
