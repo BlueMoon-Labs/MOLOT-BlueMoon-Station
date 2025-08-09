@@ -75,6 +75,11 @@
 /obj/effect/particle_effect/foam/firefighting/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return
 
+/obj/effect/particle_effect/foam/watertype
+	lifetime = 120
+	alpha = 96
+	layer = MOB_LOWER_LAYER
+
 /obj/effect/particle_effect/foam/metal
 	name = "aluminium foam"
 	metal = ALUMINUM_FOAM
@@ -217,6 +222,8 @@
 	effect_type = /obj/effect/particle_effect/foam
 	var/metal = 0
 
+/datum/effect_system/foam_spread/watertype                      //Для ситуаций, когда требуется якобы потоп
+	effect_type = /obj/effect/particle_effect/foam/watertype
 
 /datum/effect_system/foam_spread/metal
 	effect_type = /obj/effect/particle_effect/foam/metal

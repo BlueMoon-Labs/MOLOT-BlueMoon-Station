@@ -25,7 +25,7 @@
 	ReactpHLim 		= 3
 	CurveSharpT 	= 1
 	CurveSharppH 	= 1
-	ThermicConstant = 15
+	ThermicConstant = 5
 	HIonRelease 	= 0.02
 	RateUpLim 		= 1
 	FermiChem		= TRUE
@@ -137,7 +137,7 @@
 	ReactpHLim 		= 3
 	CurveSharpT 	= 1
 	CurveSharppH 	= 1
-	ThermicConstant = 15
+	ThermicConstant = 5
 	HIonRelease 	= 0.02
 	RateUpLim 		= 1
 	FermiChem		= TRUE
