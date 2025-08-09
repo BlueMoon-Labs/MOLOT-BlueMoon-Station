@@ -335,12 +335,7 @@
 //Сигертный дым
 /obj/effect/particle_effect/smoke/cigsmoke
 	lifetime = 4
-	alpha = 32
-
-/obj/effect/particle_effect/smoke/cigsmoke/smoke_mob(mob/living/carbon/M)
-	M.adjustOxyLoss(0.5)
-	if(prob(10))
-		M.emote("cough")
+	alpha = 48
 
 /datum/effect_system/smoke_spread/cigsmoke
 	effect_type = /obj/effect/particle_effect/smoke/cigsmoke

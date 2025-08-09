@@ -235,7 +235,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(M, "<span class='notice'>Your [name] goes out.</span>")
 		qdel(src)
 		return
-	if(vapetime > 4)
+	if((vapetime > rand(4, 8)))
 		new /obj/effect/particle_effect/smoke/cigsmoke(location)
 		vapetime = 0
 	open_flame()
