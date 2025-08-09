@@ -42,3 +42,12 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	var/pacifist = TRUE // if when you enter this zone, you become a pacifist or not
 	var/death = FALSE // if when you enter this zone, you die
 	// network_root_id = "VR"
+
+/area/awaymission/InteQ
+
+	name = "InteQGate"
+	icon_state = "away"
+	has_gravity = STANDARD_GRAVITY
+	// ambience_index = AMBIENCE_AWAY
+	ambientsounds = AWAY_MISSION
+	sound_environment = SOUND_ENVIRONMENT_ROOM
