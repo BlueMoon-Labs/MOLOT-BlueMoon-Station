@@ -39,3 +39,10 @@
 	results = list(/datum/reagent/medicine/spermatex = 2)
 	required_reagents = list(/datum/reagent/medicine/charcoal = 1, /datum/reagent/ammonia  = 1)
 	required_temp = 380
+
+/datum/chemical_reaction/xenochimericprecursor
+	id = "xenochimericprecursor" 
+	results = list(/datum/reagent/consumable/organicprecursor/xenochimeric = 1)
+	required_reagents = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin/mutagen = 1, /datum/reagent/consumable/organicprecursor = 1) //This unlocks capabilities to print stuff, so good luck.
+	required_temp = 500
+	mob_react = FALSE

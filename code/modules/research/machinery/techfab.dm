@@ -26,6 +26,7 @@
 								"Subspace Telecomms",
 								"Research Machinery",
 								"Misc. Machinery",
+								"Organic Designs", //BLUEMOON ADD: New category for fleshcrafting.
 								"Computer Parts",
 								"MODsuit Designs"
 								)
