@@ -17,6 +17,7 @@
 /obj/item/reagent_containers/food/snacks/poo/Initialize()
 	name = pick(list("shit","turd","poop","crap","brownie","jobbie","log","trunk","doodie"))
 	icon_state = pick(list("poop1", "poop2", "poop3","poop4","poop5","poop6","poop7"))
+	START_PROCESSING(SSobj, src)
 	. =..()
 
 /obj/item/reagent_containers/food/snacks/poo/process()
