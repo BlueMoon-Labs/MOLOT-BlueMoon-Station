@@ -113,6 +113,7 @@
 	item_state = "m870"
 	w_class = WEIGHT_CLASS_BULKY
 	recoil = 4
+	attack_speed = 10
 	force = 40
 	fire_delay = 4
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/m870
@@ -220,7 +221,7 @@
 	if(magazine)
 		icon_state = "m16hl"
 	else
-		icon_state = "m16hl_mag"
+		icon_state = "m16hl-e"
 
 /obj/item/gun/ballistic/automatic/mp7
 	name = "\improper mp7"
