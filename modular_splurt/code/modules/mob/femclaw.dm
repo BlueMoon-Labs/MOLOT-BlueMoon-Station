@@ -139,9 +139,6 @@
 	if(get_refraction_dif() > 0)
 		return
 
-	if(rand(1,7) == 7)
-		playlewdinteractionsound(loc, "modular_splurt/sound/lewd/deathclaw_grunt[rand(1, 5)].ogg", 30, 1, -1)
-
 	//One by one... strip em
 
 	//Anything over the suit goes off, we're doing this RAW.
