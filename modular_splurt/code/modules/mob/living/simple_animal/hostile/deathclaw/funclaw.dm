@@ -16,7 +16,7 @@
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one has a strange smell for some reason.."
 	deathclaw_mode = "abomination"
 
-//BLUEMOON ADD START || Фанклав больше не будет даже пытаться атаковать цели, которые не подходят по префам
+//BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
 /mob/living/simple_animal/hostile/deathclaw/funclaw/CanAttack(atom/the_target)
 	. = ..()
 	if(!.)
@@ -26,41 +26,32 @@
 	if(!M)
 		return .
 
-	var/wantsNoncon = FALSE
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return FALSE
 
 	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
-		wantsNoncon = TRUE
+		return TRUE
 
-	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
-		wantsNoncon = FALSE
-
-	return wantsNoncon
+	return FALSE
 //BLUEMOON ADD END
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
-	var/wantsNoncon = FALSE
 
 	if(get_refraction_dif() > 0)
 		onLewdCooldown = TRUE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
-		wantsNoncon = TRUE
-
-	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
-		return
-
 	switch(deathclaw_mode)
 		if("gentle")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("abomination")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("rape")
-			if(onLewdCooldown || !wantsNoncon || M.health > 60)
+			if(onLewdCooldown || M.health > 60)
 				..() // Attack target
 				return
 

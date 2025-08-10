@@ -25,27 +25,42 @@
 	desc = "A massive, wolf like creature with powerful muscles, razor-sharp claws, and aggression to match. This one has a strange smell for some reason.."
 	werewolf_mode = "abomination"
 
+//BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
+/mob/living/simple_animal/hostile/werewolf/funwolf/CanAttack(atom/the_target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/mob/living/M = the_target
+	if(!M)
+		return .
+
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return FALSE
+
+	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+		return TRUE
+
+	return FALSE
+//BLUEMOON ADD END
+
 /mob/living/simple_animal/hostile/werewolf/funwolf/AttackingTarget()
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
-	var/wantsNoncon = FALSE
 
 	if(get_refraction_dif() > 0)
 		onLewdCooldown = TRUE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
-		wantsNoncon = TRUE
-
 	switch(werewolf_mode)
 		if("gentle")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("abomination")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("rape")
-			if(onLewdCooldown || !wantsNoncon || M.health > 60)
+			if(onLewdCooldown || M.health > 60)
 				..() // Attack target
 				return
 
@@ -238,27 +253,42 @@
 	desc = "A massive, ice wolf like creature with powerful muscles, gleaming-cold claws, and aggression to match. This one has a strange smell for some reason.."
 	werewolf_mode = "abomination"
 
+//BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
+/mob/living/simple_animal/hostile/ice_wolf/funwolf/CanAttack(atom/the_target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/mob/living/M = the_target
+	if(!M)
+		return .
+
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return FALSE
+
+	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+		return TRUE
+
+	return FALSE
+//BLUEMOON ADD END
+
 /mob/living/simple_animal/hostile/ice_wolf/funwolf/AttackingTarget()
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
-	var/wantsNoncon = FALSE
 
 	if(get_refraction_dif() > 0)
 		onLewdCooldown = TRUE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
-		wantsNoncon = TRUE
-
 	switch(werewolf_mode)
 		if("gentle")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("abomination")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("rape")
-			if(onLewdCooldown || !wantsNoncon || M.health > 60)
+			if(onLewdCooldown || M.health > 60)
 				..() // Attack target
 				return
 
@@ -452,27 +482,42 @@
 	desc = "A massive, firey wolf like creature with powerful muscles, magama-hot claws, and aggression to match. This one has a strange smell for some reason.."
 	werewolf_mode = "abomination"
 
+//BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
+/mob/living/simple_animal/hostile/hellhound/funwolf/CanAttack(atom/the_target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/mob/living/M = the_target
+	if(!M)
+		return .
+
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return FALSE
+
+	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+		return TRUE
+
+	return FALSE
+//BLUEMOON ADD END
+
 /mob/living/simple_animal/hostile/hellhound/funwolf/AttackingTarget()
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
-	var/wantsNoncon = FALSE
 
 	if(get_refraction_dif() > 0)
 		onLewdCooldown = TRUE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
-		wantsNoncon = TRUE
-
 	switch(werewolf_mode)
 		if("gentle")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("abomination")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("rape")
-			if(onLewdCooldown || !wantsNoncon || M.health > 60)
+			if(onLewdCooldown || M.health > 60)
 				..() // Attack target
 				return
 
@@ -666,27 +711,42 @@
 	desc = "A massive, unknown creature with powerful muscles, glittering-purple claws, and aggression to match. This one has a strange smell for some reason.."
 	werewolf_mode = "abomination"
 
+//BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
+/mob/living/simple_animal/hostile/the_mosley/funwolf/CanAttack(atom/the_target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/mob/living/M = the_target
+	if(!M)
+		return .
+
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return FALSE
+
+	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+		return TRUE
+
+	return FALSE
+//BLUEMOON ADD END
+
 /mob/living/simple_animal/hostile/the_mosley/funwolf/AttackingTarget()
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
-	var/wantsNoncon = FALSE
 
 	if(get_refraction_dif() > 0)
 		onLewdCooldown = TRUE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
-		wantsNoncon = TRUE
-
 	switch(werewolf_mode)
 		if("gentle")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("abomination")
-			if(onLewdCooldown || !wantsNoncon)
+			if(onLewdCooldown)
 				return // Do nothing
 		if("rape")
-			if(onLewdCooldown || !wantsNoncon || M.health > 60)
+			if(onLewdCooldown || M.health > 60)
 				..() // Attack target
 				return
 

@@ -109,23 +109,34 @@
 	else
 		return 1
 
+//BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
+/mob/living/simple_animal/hostile/tentacles/CanAttack(atom/the_target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/mob/living/M = the_target
+	if(!M)
+		return .
+
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return FALSE
+
+	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+		return TRUE
+
+	return FALSE
+//BLUEMOON ADD END
 
 /mob/living/simple_animal/hostile/tentacles/AttackingTarget()
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
-	var/wantsNoncon = FALSE
-
-	if(M.client && M.client?.prefs.mobsexpref == "No")
-		return
 
 	if(get_refraction_dif() > 0)
 		onLewdCooldown = TRUE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
-		wantsNoncon = TRUE
-
-	if(onLewdCooldown || !wantsNoncon)
+	if(onLewdCooldown)
 		return // Do nothing
 
 	if(!M.pulledby)
