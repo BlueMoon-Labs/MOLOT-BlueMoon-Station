@@ -289,9 +289,9 @@
 		visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
 			span_lewd("You [replacetext(message_to_display, "%S%", "")]."))
 		return
-	var/message_to_display = pick("moan%S%", "moan%S% in pleasure")
-	visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
-		span_lewd("You [replacetext(message_to_display, "%S%", "")]."),
+	var/message_to_display = pick("стонет%S%", "постанывает%S% от удовольствия")
+	visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "")]."),
+		span_lewd("Вы [replacetext(message_to_display, "%S%", "е")]."),
 		span_lewd("Вы слышите наполненный удовольствием стон."),
 		ignored_mobs = get_unconsenting(), omni = TRUE)
 
@@ -348,9 +348,9 @@
 	if(src != partner)
 		if(ismob(partner))
 			// BLEMOON ADD START
-			var/partner_has_portal = list(
-				"mouth" = istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties),
-				"groin" = istype(partner:w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties)
+			var/list/partner_has_portal = list(
+				"mouth" = ishuman(partner) && istype(partner:wear_mask, /obj/item/clothing/underwear/briefs/panties/portalpanties),
+				"groin" = ishuman(partner) && istype(partner:w_underwear, /obj/item/clothing/underwear/briefs/panties/portalpanties)
 			)
 			// BLUEMOON ADD END
 			if(!last_genital)
@@ -964,6 +964,10 @@
 	var/bezier = 2 * (1 - t) * t * 13.8 + ((t*t) * 100)
 	/// Probability chance resulting from bezier curve.
 	var/chance = clamp(round(bezier),0,100)
+	// BLUEMOON ADD START || More moan for simple
+	if(amount> 0 && isnull(prefs))
+		chance = max(30, chance)
+	// BLUEMOON ADD END
 
 	if (lust >= threshold)
 		if(prob(30))

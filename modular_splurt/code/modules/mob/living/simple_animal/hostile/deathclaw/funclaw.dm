@@ -33,6 +33,31 @@
 		return TRUE
 
 	return FALSE
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/moan()
+	var/message_to_display = pick("рычит%S%", "рычит%S% от удовольствия")
+	visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "")]."),
+		span_lewd("Вы [replacetext(message_to_display, "%S%", "е")]."),
+		span_lewd("Вы слышите наполненный удовольствием рык."),
+		ignored_mobs = get_unconsenting(), omni = TRUE)
+
+	var/list/moans = list('modular_splurt/sound/lewd/deathclaw_grunt1.ogg',
+					'modular_splurt/sound/lewd/deathclaw_grunt2.ogg',
+					'modular_splurt/sound/lewd/deathclaw_grunt3.ogg',
+					'modular_splurt/sound/lewd/deathclaw_grunt4.ogg',
+					'modular_splurt/sound/lewd/deathclaw_grunt5.ogg'
+					)
+
+	// Pick a sound from the list.
+	var/sound = pick(moans)
+
+	// If the sound is repeated, get a new from a list without it.
+	if (lastmoan == sound)
+		sound = pick(LAZYCOPY(moans) - lastmoan)
+
+	playlewdinteractionsound(loc, sound, 80, 1, -1)
+	lastmoan = sound
+
 //BLUEMOON ADD END
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
@@ -99,14 +124,8 @@
 			chosen_hole = CUM_TARGET_THROAT
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/do_lewd_action(mob/living/M)
-	if(M.client && M.client?.prefs.mobsexpref == "No")
-		return
-
 	if(get_refraction_dif() > 0)
 		return
-
-	if(rand(1,7) == 7)
-		playlewdinteractionsound(loc, "modular_splurt/sound/lewd/deathclaw_grunt[rand(1, 5)].ogg", 30, 1, -1)
 
 	var/datum/interaction/I
 	switch(chosen_hole)
@@ -173,36 +192,38 @@
 	switch(chosen_hole)
 		if(CUM_TARGET_THROAT)
 			if(M.has_mouth() && M.mouth_is_free())
-				message = "shoves their fat reptillian cock deep down \the [M]'s throat and cums."
+	// BLUEMOON EDIT START
+				message = "засовывает свой толстый ящерский член глубоко в глотку \the [M] и кончает!"
 				target_gen = M.getorganslot(ORGAN_SLOT_STOMACH)
 				target_gen.reagents.add_reagent(/datum/reagent/consumable/semen, 30)
 			else
-				message = "cums on \the [M]'s face."
+				message = "кончает на лицо \the [M]!"
 		if(CUM_TARGET_VAGINA)
 			if(M.is_bottomless() && M.has_vagina())
-				message = "rams its meaty cock into \the [M]'s pussy and fills it with sperm."
+				message = "засовывает свой мясистый член в киску \the [M] и наполняет ее спермой!"
 				target_gen = M.getorganslot(ORGAN_SLOT_WOMB)
 				target_gen.reagents.add_reagent(/datum/reagent/consumable/semen, 30)
 				M.impregnate(src, M.getorganslot(ORGAN_SLOT_WOMB), src.type)
 			else
-				message = "cums on \the [M]'s belly."
+				message = "кончает на живот \the [M]!"
 		if(CUM_TARGET_ANUS)
 			if(M.is_bottomless() && M.has_anus())
-				message = "hilts its knot into \the [M]'s ass and floods it with Deathclaw jizz."
+				message = "[pick("вгоняет","вонзает")] свой узловатый член в задницу \the [M] и наполняет ее своей спермой!"
 				target_gen = M.getorganslot(ORGAN_SLOT_ANUS)
 				target_gen.reagents.add_reagent(/datum/reagent/consumable/semen, 30)
 			else
-				message = "cums on \the [M]'s backside."
+				message = "кончает на спину \the [M]!"
 		else
-			message = "кончает, заполняя пространство под собой!"
+			message = "кончает, заливая пространство под собой!"
 
 	if(deathclaw_mode == "abomination" && M.client?.prefs.unholypref == "Yes")
-		message = "cums all over [M]'s body"
+		message = "покрывает все тело \the [M] спермой!"
+	// BLUEMOON EDIT END
 
 	new /obj/effect/decal/cleanable/semen(loc)
 
-	playlewdinteractionsound(loc, "modular_splurt/sound/lewd/deathclaw[rand(1, 2)].ogg", 30, 1, -1)
-	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+	playlewdinteractionsound(loc, "modular_splurt/sound/lewd/deathclaw[rand(1, 2)].ogg", 80, 1, -1) // BLUEMOON EDIT
+	visible_message(span_userlove("<b>\The [src]</b> [message]")) // BLUEMOON EDIT
 	shake_camera(M, 6, 1)
 	set_is_fucking(null ,null)
 
