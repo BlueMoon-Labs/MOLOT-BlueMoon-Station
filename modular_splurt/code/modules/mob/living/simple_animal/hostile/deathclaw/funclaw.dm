@@ -16,6 +16,27 @@
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one has a strange smell for some reason.."
 	deathclaw_mode = "abomination"
 
+//BLUEMOON ADD START || Фанклав больше не будет даже пытаться атаковать цели, которые не подходят по префам
+/mob/living/simple_animal/hostile/deathclaw/funclaw/CanAttack(atom/the_target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/mob/living/M = the_target
+	if(!M)
+		return .
+
+	var/wantsNoncon = FALSE
+
+	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+		wantsNoncon = TRUE
+
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		wantsNoncon = FALSE
+
+	return wantsNoncon
+//BLUEMOON ADD END
+
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
 	var/mob/living/M = target
 
