@@ -512,36 +512,40 @@
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/manipulation/inserter/do_work()
-	var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
-	if(!target_obj)
-		return
+    var/obj/item/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
+    if(!target_obj || QDELETED(target_obj))
+        return
 
-	if(get_dist(get_turf(src), get_turf(target_obj)) > 1)
-		return
+    var/mob/holder = loc
+    if(istype(holder))
+        if(!holder.Adjacent(target_obj))
+            return
+    else
+        if(get_dist(get_turf(src), get_turf(target_obj)) > 1)
+            return
 
-	var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
-	var/mode = get_pin_data(IC_INPUT, 3)
+    var/obj/item/storage/container = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
+    var/mode = get_pin_data(IC_INPUT, 3)
 
-	switch(mode)
+    switch(mode)
+        if(TRUE) // Insert mode 1
+            if(!container || !istype(container,/obj/item/storage))
+                return
 
-		if(TRUE) // Insert mode 1
+            var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+            if(!STR)
+                return
 
-			if(!container || !istype(container,/obj/item/storage) || !Adjacent(container))
-				return
+            STR.attackby(src.loc, target_obj)
 
-			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-			if(!STR)
-				return
+        if(FALSE) // Extract mode 0
+            if(!container || !istype(container,/obj/item/storage))
+                return
 
-			STR.attackby(src, target_obj)
-
-		if(FALSE) // Extract mode 0
-
-			var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
-			if(target_obj in container.contents)
-
-				if(STR)
-					STR.remove_from_storage(target_obj, get_turf(src))
+            var/datum/component/storage/STR = container.GetComponent(/datum/component/storage)
+            if(target_obj in container.contents)
+                if(STR)
+                    STR.remove_from_storage(target_obj, get_turf(src))
 
 // Renamer circuit. Renames the assembly it is in. Useful in cooperation with telecomms-based circuits.
 /obj/item/integrated_circuit/manipulation/renamer
