@@ -474,7 +474,7 @@
 /turf/open/floor/plasteel/yellowsiding/corner,
 /area/commons/fitness/pool)
 "abd" = (
-/obj/structure/closet/lasertag/red,
+/obj/structure/closet/lasertag/blue,
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
 "abe" = (
@@ -499,7 +499,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/closet/lasertag/blue,
+/obj/structure/closet/lasertag/red,
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
 "abi" = (
@@ -711,6 +711,9 @@
 /area/commons/fitness/recreation)
 "abQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/structure/chair/pedalgen{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -2239,6 +2242,13 @@
 "afC" = (
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
@@ -38921,6 +38931,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/yellow,
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
 "bPN" = (
@@ -106667,8 +106680,8 @@ abz
 abH
 abl
 axw
-abg
-axw
+abh
+abd
 ayu
 azC
 axw
@@ -107180,8 +107193,8 @@ aaO
 gzu
 aaF
 abb
-abd
-abh
+axw
+abg
 abQ
 abS
 azD

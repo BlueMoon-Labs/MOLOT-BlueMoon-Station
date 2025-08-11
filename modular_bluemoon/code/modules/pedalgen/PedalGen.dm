@@ -39,7 +39,7 @@
 	desc = "Push it to the limit! Generate power from raw human force! Or just let a monkey handle it."
 	icon = 'modular_bluemoon/icons/obj/pedalgen.dmi'
 	icon_state = "pedalgen"
-	anchored = FALSE
+	anchored = TRUE
 	density = FALSE
 	item_chair = null
 	buildstacktype = null

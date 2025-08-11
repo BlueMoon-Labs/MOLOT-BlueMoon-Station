@@ -18716,6 +18716,7 @@
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 8
 	},
+/obj/structure/weightmachine/stacklifter,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -42519,6 +42520,7 @@
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 4
 	},
+/obj/structure/weightmachine/stacklifter,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -68585,10 +68587,16 @@
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 5
 	},
-/obj/structure/weightmachine/stacklifter,
 /obj/effect/turf_decal/bot/white{
 	name = "storage marker"
 	},
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark/side{
 	dir = 5
 	},
@@ -77070,6 +77078,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
+"nFL" = (
+/obj/effect/turf_decal/trimline/white/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/white/warning{
+	dir = 2
+	},
+/obj/effect/turf_decal/trimline/white/mid_joiner,
+/obj/effect/turf_decal/trimline/white/mid_joiner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark/textured/large,
+/area/security/prison)
 "nFQ" = (
 /obj/effect/turf_decal/trimline/red/filled/line,
 /obj/effect/turf_decal/siding/dark,
@@ -106405,9 +106429,14 @@
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 9
 	},
-/obj/structure/weightmachine/stacklifter,
 /obj/effect/turf_decal/bot/white{
 	name = "storage marker"
+	},
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 9
@@ -108525,6 +108554,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark/textured,
 /area/security/prison)
 "tkq" = (
@@ -292346,8 +292378,8 @@ hXS
 haR
 cnr
 sRz
-xSn
 dlU
+xSn
 pGn
 pWK
 cYU
@@ -292601,7 +292633,7 @@ nId
 vQF
 hXS
 tkk
-cnr
+nFL
 mft
 hzK
 brt
