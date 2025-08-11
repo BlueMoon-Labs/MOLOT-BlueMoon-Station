@@ -344,7 +344,7 @@
 			return
 		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
 			return
-		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH && (user.a_intent != INTENT_DISARM)) //so we can't shoot ourselves (unless mouth selected or disarm intent)
+		if(target == user && (user.a_intent != INTENT_DISARM) && !(user.zone_selected == BODY_ZONE_PRECISE_MOUTH || (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent != INTENT_HELP))) //so we can't shoot ourselves (unless mouth selected or disarm intent) // BLUEMOON EDIT add BODY_ZONE_PRECISE_GROIN
 			return
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
@@ -366,6 +366,12 @@
 		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 			handle_suicide(user, target, params)
 			return
+		// BLUEMOON ADD START
+		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+			if(user.a_intent != INTENT_HELP)
+				shoot_balls(user, target)
+			return
+		// BLUEMOON ADD END
 
 	//Exclude lasertag guns from the TRAIT_CLUMSY check.
 	if(clumsy_check)
@@ -791,6 +797,76 @@
 		chambered.BB.damage *= 10
 
 	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD, stam_cost = getstamcost(user))
+
+// BLUEMOON ADD START
+/obj/item/gun/proc/shoot_balls(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(!ishuman(user) || !ishuman(target))
+		return FALSE
+	if(!istype(src, /obj/item/gun/ballistic/shotgun) || on_cooldown())
+		return FALSE
+	var/obj/item/organ/genital/testicles/balls = target.getorganslot(ORGAN_SLOT_TESTICLES)
+	if(!balls || !(balls.is_exposed() || balls.always_accessible))
+		return FALSE
+	if(target.client?.prefs?.erppref == "No" || user.client?.prefs?.erppref == "No")
+		return FALSE
+	if(user.client?.prefs?.extremeharm == "No")
+		to_chat(user, span_warning("Balls shooting too much for me..."))
+		return FALSE
+	if(target?.client?.prefs?.extremeharm == "No" || user != target && target?.client?.prefs?.nonconpref == "No")
+		to_chat(user, span_warning("Balls shooting too much for they..."))
+		return FALSE
+
+	if(user == target)
+		target.visible_message("<span class='warning'>[user] presses the muzzle [src] to [user.ru_ego()] balls, ready to pull the trigger...</span>", \
+			"<span class='userdanger'>You presses the muzzle [src] to your balls, ready to pull the trigger...</span>")
+	else
+		target.visible_message("<span class='warning'>[user] points [src] at [target]'s balls, ready to pull the trigger...</span>", \
+			"<span class='userdanger'>[user] points [src] at your balls, ready to pull the trigger...</span>")
+
+	busy_action = TRUE
+
+	if(!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_GROIN)
+		if(user == target)
+			user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+		else if(target && target.Adjacent(user))
+			target.visible_message("<span class='notice'>[user] has decided to spare [target] balls.</span>", "<span class='notice'>[user] has decided to spare your balls!</span>")
+		busy_action = FALSE
+		return FALSE
+	busy_action = FALSE
+	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='userdanger'>[user] pulls the trigger!</span>")
+
+	playsound('sound/weapons/dink.ogg', 30, 1)
+
+	var/chambered_damage_type
+	var/chambered_damage = 0
+	if(chambered && chambered.BB)
+		chambered.BB.damage *= 3
+		chambered_damage = chambered.BB.damage
+		chambered_damage_type = chambered.BB.damage_type
+	process_fire(target, user, TRUE, zone_override = BODY_ZONE_PRECISE_GROIN, stam_cost = getstamcost(user))
+	if(chambered_damage_type == BRUTE)
+		target.emote("realagony")
+		target.say("AAAAAAAHHHHHH!!!", forced = "shoot_balls")
+		target.handle_post_sex(chambered_damage*100*(HAS_TRAIT(target, TRAIT_MASO) ? 1 : -1), organ = ORGAN_SLOT_TESTICLES)
+		sleep(3)
+		target.DefaultCombatKnockdown(300)
+		target.Stun(20)
+		target.Jitter(100)
+		target.blind_eyes(20)
+		target.dizziness += 50
+		target.confused += 30
+		target.stuttering += 30
+		var/pain_message = "AAAAAAAHHHHHH!!! MY BALLS SUCH PAIN!!!"
+		if(chambered_damage > 20)
+			pain_message = "AAAAAAAHHHHHH!!! MY BALLS IS GONE!!!"
+			balls.Remove()
+			var/obj/effect/gibspawner/generic/Gibbis = new /obj/effect/gibspawner/generic(get_turf(target))
+			Gibbis.gib_mob_type = /mob/living/carbon/human
+			Gibbis.gib_mob_species = /datum/species/human
+		to_chat(target, span_userdanger(pain_message))
+
+	return TRUE
+// BLUEMOON ADD END
 
 /obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
 	if(pin)

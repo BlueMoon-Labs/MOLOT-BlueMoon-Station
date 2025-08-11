@@ -276,3 +276,53 @@
 			На обратной стороне изображен стеклянный цилиндр с синим космическим кристаллом внутри. \
 			В юбку встроен радар внешнего обзора. Иногда происходит пространственное смещение... стоп ЧТО?!"
 	icon_state = "InlaidDataDress"
+	actions_types = list(/datum/action/item_action/degree_distortion_effect)
+	var/atom/movable/distortion_effect/filter_on_user
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/New()
+	. = ..()
+	filter_on_user = new(src)
+	LAZYADD(vis_contents, filter_on_user)
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/equipped(mob/user, slot)
+	. = ..()
+	LAZYADD(user.vis_contents, filter_on_user)
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/dropped(mob/user)
+	LAZYREMOVE(user.vis_contents, filter_on_user)
+	. = ..()
+
+/atom/movable/distortion_effect
+	icon = 'modular_bluemoon/fluffs/icons/effects/32x32.dmi'
+	icon_state = "distortion_a"
+	pixel_x = 0
+	pixel_y = 0
+	alpha = 120
+	plane = GRAVITY_PULSE_PLANE
+	appearance_flags = PIXEL_SCALE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	vis_flags = VIS_INHERIT_LAYER
+
+/datum/action/item_action/degree_distortion_effect
+	name = "Adjust the degree of distortion"
+
+/datum/action/item_action/degree_distortion_effect/Trigger()
+
+	if(!..())
+		return FALSE
+
+	var/obj/item/clothing/under/donator/bm/inlaid_data_dress/T = target
+
+	if(!T || !istype(T))
+		return FALSE
+
+	if(!T.filter_on_user)
+		return FALSE
+
+	var/alpha = input("Укажите степень искажения от 0 до 255") as num|null
+	if(!alpha)
+		alpha = 120
+
+	T.filter_on_user.alpha = alpha
+
+

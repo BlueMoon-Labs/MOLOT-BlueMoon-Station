@@ -113,7 +113,10 @@
 	owner.adjustBruteLoss(80)
 	owner.Immobilize(20 SECONDS)
 	owner.SetConfused(40 SECONDS)
-	to_chat(owner, "<span class='warning'>A strange prickling sensation moves across your skin... then suddenly the whole world seems to spin around you!</span>")
+	to_chat(owner, "<span class='warning'>Странное покалывание пробегает по вашей коже... и вдруг весь мир начинает вращаться вокруг вас!</span>")
+	balloon_alert_to_viewers("КРЯК!!!")
+	new /obj/effect/gibspawner/generic/animal (owner.loc)
+	owner.emote("realagony")
 
 	if(infection_completed && !QDELETED(src))
 		qdel(src)

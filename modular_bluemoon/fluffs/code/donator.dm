@@ -1,4 +1,5 @@
 //Файл для выдачи предметов донатерам по сикею
+// Сикеи необходимо указывать, аналогично их файлу сохрания лодаута, пример "AA-BB-ab..." нужно записывать как "aabbab"
 
 /*
 /datum/gear/donator/bm
@@ -237,7 +238,7 @@
 	name = "Syndicate Admiral's Cloak"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/cloak/syndieadm
-	ckeywhitelist = list("architect0r", "fanlexa", "herobrine998", "Nyaa-a-a")
+	ckeywhitelist = list("architect0r", "fanlexa", "herobrine998", "nyaaaa")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/sencloak
@@ -1169,7 +1170,7 @@
     name = "Technical Jacket"
     slot = ITEM_SLOT_BACKPACK
     path = /obj/item/clothing/suit/donator/bm/echoes_jacket
-    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980", "heathkit1", "sosnovskii")
+    ckeywhitelist = list("xaeshkavd", "scramblescream", "illa_3000", "discord980", "heathkit1", "sosnovskii", "trora")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/oftok
@@ -1724,21 +1725,21 @@
 	name = "A diamond ring"
 	path = /obj/item/clothing/accessory/ring/diamond
 	slot = ITEM_SLOT_ACCESSORY
-	ckeywhitelist = list("herobrine998", "Nyaa-a-a")
+	ckeywhitelist = list("herobrine998", "nyaaaa")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/cybersun_cloak
 	name = "Cybersun Cloak"
 	path = /obj/item/clothing/neck/cloak/cybersun/civil
 	slot = ITEM_SLOT_NECK
-	ckeywhitelist = list("herobrine998", "Nyaa-a-a")
+	ckeywhitelist = list("herobrine998", "nyaaaa")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/toggles_combat_maid_civil
 	name = "Combat Maid Sleeves"
 	path = /obj/item/clothing/gloves/toggled/hug/combat_maid_civil
 	slot = ITEM_SLOT_GLOVES
-	ckeywhitelist = list("Nyaa-a-a")
+	ckeywhitelist = list("nyaaaa")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/toggles_poly_evening

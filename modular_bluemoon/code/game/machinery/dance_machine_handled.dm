@@ -18,7 +18,8 @@
 	var/list/queuedplaylist = list()
 	var/queuecooldown //This var exists solely to prevent accidental repeats of John Mulaney's 'What's New Pussycat?' incident. Intentional, however......
 	var/repeat = FALSE //BLUEMOON ADD зацикливание плейлистов
-	var/one_area_play = FALSE //BLUEMOON ADD переменная проигрыша джукбокса в одной зоне (для инфдорм)
+	var/area_priority = FALSE //BLUEMOON ADD стационарные джукбоксы имеют приоритет игры внутри своей зоны
+	var/area/privatized_area = null //BLUEMOON ADD зона которая будет забрана для конкретного джукбокса
 
 /obj/item/jukebox/emagged
 	name = "Handled Jukebox"
@@ -248,9 +249,13 @@
 	if(!SSjukeboxes.freejukeboxchannels.len)
 		say("Cannot play song: limit of currently playing tracks has been exceeded.")
 		return FALSE
+	var/area/juke_area = get_area(src)
+	if(juke_area.jukebox_privatized_by && juke_area.jukebox_privatized_by != src)
+		say("Vibration sensor error. A reduction in the number of jukeboxes in the area is required.")
+		return FALSE
 	// BLUEMOON ADD END
 	playing = queuedplaylist[1]
-	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
+	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35)
 	if(jukeboxslottotake)
 		active = TRUE
 		update_icon()
@@ -259,6 +264,9 @@
 		//BLUEMOON ADD повтор плейлиста (трек добавляется в конец плейлиста)
 		if(repeat)
 			queuedplaylist += queuedplaylist[1]
+		// BLUEMOON ADD стационарные джукбоксы забирают приоритет зоны себе и если сидеть в этой зоне играет только их музыка
+		if(area_priority)
+			juke_area.jukebox_privatized_by = src
 		//BLUEMOON ADD END
 		queuedplaylist.Cut(1, 2)
 		say("Сейчас играет: [playing.song_name]")
@@ -268,6 +276,8 @@
 		return FALSE
 
 /obj/item/jukebox/proc/dance_over()
+	if(privatized_area)
+		privatized_area.jukebox_privatized_by = null
 	var/position = SSjukeboxes.findjukeboxindex(src)
 	if(!position)
 		return

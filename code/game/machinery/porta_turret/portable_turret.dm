@@ -412,7 +412,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
-	if(cover && obj_integrity < max_integrity)
+	if(obj_integrity < max_integrity) //BLUEMOON EDIT: removed cover && since it broke the logic and considered the turret to be at 100% at all times. This bug is from 2021, hello. 
 		if(!I.tool_start_check(user, amount=0))
 			return
 		user.visible_message("[user] чинит турель сваркой.", \

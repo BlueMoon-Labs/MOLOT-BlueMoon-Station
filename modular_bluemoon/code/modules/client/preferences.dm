@@ -1,6 +1,7 @@
 /datum/preferences
 	var/body_weight = NAME_WEIGHT_NORMAL
 	var/normalized_size = RESIZE_NORMAL
+	var/custom_laugh = "Default"
 
 #define ACTION_HEADSHOT_LINK_NOOP 0
 #define ACTION_HEADSHOT_LINK_REMOVE -1
@@ -16,6 +17,12 @@
 			set_headshot_link(user, "headshot_link1")
 		if ("headshot2")
 			set_headshot_link(user, "headshot_link2")
+		if ("headshot_naked")
+			set_headshot_link(user, "headshot_naked_link")
+		if ("headshot_naked1")
+			set_headshot_link(user, "headshot_naked_link1")
+		if ("headshot_naked2")
+			set_headshot_link(user, "headshot_naked_link2")
 
 	return ..()
 

@@ -971,6 +971,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["headshot"] 							>> features["headshot_link"] //SPLURT edit
 	S["headshot1"] 							>> features["headshot_link1"] //BLUEMOON edit
 	S["headshot2"] 							>> features["headshot_link2"] //BLUEMOON edit
+	S["headshot_naked"] 						>> features["headshot_naked_link"] //BLUEMOON ADD
+	S["headshot_naked1"] 					>> features["headshot_naked_link1"] //BLUEMOON ADD
+	S["headshot_naked2"] 					>> features["headshot_naked_link2"] //BLUEMOON ADD
 	S["shriek_type"] 						>> shriek_type // BLUEMOON ADD - выбор вида крика для квирка
 	S["summon_nickname"] 					>> summon_nickname // BLUEMOON ADD - выбор прозвища для призываемого
 	S["feature_hardsuit_with_tail"] 		>> features["hardsuit_with_tail"]
@@ -1710,6 +1713,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["headshot1"], features["headshot_link1"])
 	WRITE_FILE(S["headshot2"], features["headshot_link2"])
 	//SPLURT EDIT END
+	// BLUEMOON ADD START
+	WRITE_FILE(S["headshot_naked"], features["headshot_naked_link"])
+	WRITE_FILE(S["headshot_naked1"], features["headshot_naked_link1"])
+	WRITE_FILE(S["headshot_naked2"], features["headshot_naked_link2"])
+	// BLUEMOON ADD END
+
 
 	//gear loadout
 	if(islist(loadout_data))

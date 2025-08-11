@@ -149,7 +149,7 @@
 		to_chat(H, span_love("Кажется тебя немножко забрызгали~"))
 
 /mob/living/carbon/human/proc/getPercentAroused()
-    var/percentage = ((get_lust() / (get_lust_tolerance() * 3)) * 100)
+    var/percentage = ((get_lust() / (get_climax_threshold())) * 100) // BLUEMOON EDIT
     return percentage
 
 /atom/proc/wash_cum()

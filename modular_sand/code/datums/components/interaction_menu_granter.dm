@@ -124,7 +124,7 @@
 	.["target"] = target // target == self can distinguish
 	.["selfAttributes"] = self.list_interaction_attributes(self)
 	.["lust"] = self.get_lust()
-	.["maxLust"] = self.get_lust_tolerance() * 3
+	.["maxLust"] = self.get_climax_threshold() // BLUEMOON EDIT
 
 	.["max_distance"] = 0
 	.["user_is_blacklisted"] = SSinteractions.is_blacklisted(self)
@@ -389,7 +389,7 @@
 			.["theyAllowUnholy"] = !!pref_to_num(target.client.prefs.unholypref) //SPLURT EDIT
 		if(HAS_TRAIT(user, TRAIT_ESTROUS_DETECT))
 			.["theirLust"] = target.get_lust()
-			.["theirMaxLust"] = target.get_lust_tolerance() * 3
+			.["theirMaxLust"] = target.get_climax_threshold() // BLUEMOON EDIT
 		//SPLURT EDIT
 		.["theyHaveBondage"] = FALSE
 		if(iscarbon(target))

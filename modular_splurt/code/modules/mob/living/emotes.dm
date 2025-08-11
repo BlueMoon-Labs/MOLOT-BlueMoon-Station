@@ -27,6 +27,7 @@ To add randomization to your emote, copy and paste this line of code:
 
 
 //Main code edits
+/* BLUEMOON REWRITE check modular_bluemoon\code\modules\mob\living\emote.dm
 /datum/emote/sound/human_emote/laugh/run_emote(mob/user, params)
 	. = ..()
 
@@ -89,6 +90,7 @@ To add randomization to your emote, copy and paste this line of code:
 	// Play laugh sound
 	playsound(carbon_user, laugh_sound, 50, 1)
 
+*/ // BLUEMOON REWRITE END
 
 /datum/emote/sound/human/surrender/run_emote(mob/user, params, type_override, intentional)
 	// Set message with pronouns

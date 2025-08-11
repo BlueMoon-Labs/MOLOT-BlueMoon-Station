@@ -140,8 +140,8 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 
 // BLUEMOON EDIT START - заменил систему ингейм смены флаворов на более простую и релевантную
 /mob/proc/manage_flavor_tests()
-	set name = "Manage Flavor Texts"
-	set desc = "Used to manage your various flavor texts."
+	set name = "Manage Flavor"
+	set desc = "Used to manage your various flavor."
 	set category = "IC"
 
 	if(!isliving(src))
@@ -154,7 +154,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		var/mob/living/carbon/our_mob = src
 		if(!our_mob.dna)
 			return
-		changeable_texts.Add("Флавор", "Обнажённый Флавор", "Лор Расы", "Хедшоты")
+		changeable_texts.Add("Флавор", "Обнажённый Флавор", "Лор Расы", "Хедшоты", "Хедшоты без одежды")
 
 	else if(issilicon(src))
 		if(!src.mind)
@@ -191,23 +191,22 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 				var/new_text = tgui_input_text(our_borgy, "Введите новые ООС-заметки своего киборга (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_borgy.mind.ooc_notes, MAX_FLAVOR_LEN, TRUE, TRUE)
 				if(new_text)
 					our_borgy.mind.ooc_notes = new_text
-		if("Хедшоты")
+		if("Хедшоты", "Хедшоты без одежды")
 			var/mob/living/carbon/our_mob = src
 			var/chosen_headshot_id = tgui_input_list(our_mob, "Выберите номер хедшота, который хотите изменить.", "Управление флавор-текстами", list("1", "2", "3"), "1")
 			// var/max_headshots = 3
 			if(!chosen_headshot_id || !isnum(text2num(chosen_headshot_id)))
 				return
 			chosen_headshot_id = text2num(chosen_headshot_id)
-			if(chosen_headshot_id >= our_mob.dna.headshot_links.len)
-				chosen_headshot_id = our_mob.dna.headshot_links.len || 1
-			var/old_link = our_mob.dna.headshot_links[chosen_headshot_id]
-			var/usr_input = tgui_input_text(our_mob, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", old_link, 100, FALSE, FALSE)
+			var/list/headshots = chosen == "Хедшоты без одежды" ? our_mob.dna.headshot_naked_links : our_mob.dna.headshot_links
+			var/has_headshot_id = chosen_headshot_id <= headshots.len
+			var/usr_input = tgui_input_text(our_mob, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", has_headshot_id ? headshots[chosen_headshot_id] : "", 100, FALSE, FALSE)
 			if(isnull(usr_input))
 				return
 
-			if(!usr_input)
-				our_mob.dna.headshot_links[chosen_headshot_id] = null
-				listclearnulls(our_mob.dna.headshot_links)
+			if(!usr_input && has_headshot_id)
+				headshots[chosen_headshot_id] = null
+				listclearnulls(headshots)
 				return
 
 			var/static/link_regex = regex("^(https://i\\.gyazo\\.com|https://static1\\.e621\\.net|https://i\\.ibb\\.co/)")
@@ -223,13 +222,16 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 
 			var/static/list/repl_chars = list("\n"="#","\t"="#","'"="","\""=""," "="")
 			var/new_link = sanitize(usr_input, repl_chars)
-			if(our_mob.dna.headshot_links[chosen_headshot_id] == new_link)
+			if(has_headshot_id && headshots[chosen_headshot_id] == new_link)
 				return
 
 			to_chat(our_mob, span_notice("Если картинка не отображается в игре должным образом, убедитесь, что это прямая ссылка на изображение, которая правильно открывается в обычном браузере."))
 			to_chat(our_mob, span_notice("Имейте в виду, что размер фотографии будет уменьшен до 256x256 пикселей, поэтому чем квадратнее фотография, тем лучше она будет выглядеть."))
 
-			our_mob.dna.headshot_links[chosen_headshot_id] = new_link
+			if(has_headshot_id)
+				headshots[chosen_headshot_id] = new_link
+			else
+				LAZYADD(headshots, new_link)
 		if("Временный Флавор (Поза)")
 			var/mob/living/our_mob = src
 			var/new_text = tgui_input_text(our_mob, "Введите новую позу своего персонажа (максимум 1024 символа).", "Новая поза", our_mob.tempflavor, 1024, TRUE, TRUE)

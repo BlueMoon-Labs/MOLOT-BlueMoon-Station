@@ -7,6 +7,7 @@
 	loudness = 1
 	dna_cost = 2
 	req_human = TRUE
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 /datum/action/changeling/biodegrade/sting_action(mob/living/carbon/human/user)
 	var/used = FALSE // only one form of shackles removed per use

@@ -99,7 +99,7 @@
 	if(!assembly)
 		activate_pin(3)
 		return
-	idc.access = get_pin_data(IC_INPUT, 4)
+	idc.access = assembly.access_card.access
 	var/turf/a_loc = get_turf(assembly)
 	var/list/P = get_path_to(assembly, locate(get_pin_data(IC_INPUT, 1),get_pin_data(IC_INPUT, 2),a_loc.z), 200, id=idc, exclude=get_turf(get_pin_data_as_type(IC_INPUT,3, /atom)), simulated_only = 0)
 

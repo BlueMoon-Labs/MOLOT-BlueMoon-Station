@@ -27,6 +27,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	var/ooc_notes // hate this
 	var/list/headshot_links = list()
 	// BLUEMOON EDIT END
+	var/list/headshot_naked_links = list() // BLUEMOON ADD
 
 /datum/dna/New(mob/living/new_holder)
 	if(istype(new_holder))
@@ -83,6 +84,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 		destination.dna.ooc_notes = ooc_notes
 		destination.dna.headshot_links = headshot_links.Copy()
 		// BLUEMOON EDIT END
+		destination.dna.headshot_naked_links = headshot_naked_links.Copy() // BLUEMOON ADD
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes
@@ -116,6 +118,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	new_dna.ooc_notes = ooc_notes
 	new_dna.headshot_links = headshot_links.Copy()
 	// BLUEMOON EDIT END
+	new_dna.headshot_naked_links = headshot_naked_links.Copy()
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
 /datum/dna/proc/add_mutation(mutation, class = MUT_OTHER, time)

@@ -178,6 +178,12 @@
 
 /mob/living/simple_animal/hostile/headcrab/mesa
 	faction = list(FACTION_XEN)
+/mob/living/simple_animal/hostile/headcrab/mesa/death(gibbed)
+	. = ..()
+	playsound(src, pick(list(
+		'modular_bluemoon/sound/creatures/mesa/headcrab/die1.ogg',
+		'modular_bluemoon/sound/creatures/mesa/headcrab/die2.ogg'
+	)), 100)
 
 // Houndeye
 

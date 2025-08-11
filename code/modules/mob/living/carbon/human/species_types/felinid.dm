@@ -4,7 +4,7 @@
 	id = SPECIES_FELINID
 	limbs_id = SPECIES_HUMAN
 
-	mutant_bodyparts = list("mam_tail" = "Cat", "mam_ears" = "Cat", "deco_wings" = "None", "mam_body_markings" = list())
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF","mam_tail" = "Cat", "mam_ears" = "Cat","tail_human" = "None", "ears" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade", "mam_body_markings" = list())
 
 	mutanttongue = /obj/item/organ/tongue/feline
 	mutantears = /obj/item/organ/ears/cat

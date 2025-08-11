@@ -116,7 +116,7 @@
 		victim.emote("moan")
 
 	victim.add_lust(20 + rand(0, 50))
-	if(victim.get_lust() >= (victim.get_lust_tolerance() * 3)) //checked before + if a human doesn't have dna something is seriously wrong
+	if(victim.get_lust() >= (victim.get_climax_threshold())) //checked before + if a human doesn't have dna something is seriously wrong // BLUEMOON EDIT
 		victim.mob_fill_container(genital, inserted_item, milking_speed, src) //why is this a mob proc
 		victim.do_jitter_animation()
 

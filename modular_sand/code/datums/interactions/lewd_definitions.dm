@@ -298,7 +298,12 @@
 	// Get reference of the list we're using based on gender.
 	var/list/moans
 	if (gender == FEMALE || (gender == PLURAL && isfeminine(src)))
-		moans = GLOB.lewd_moans_female
+	// BLUEMOON EDIT START
+		if(lust/get_climax_threshold() < 0.55 && last_climax + min(8 MINUTES, world.time) <= world.time)
+			moans = GLOB.lewd_softmoans_female
+		else
+			moans = GLOB.lewd_moans_female
+	// BLUEMOON EDIT END
 	else
 		moans = GLOB.lewd_moans_male
 
@@ -941,18 +946,16 @@
 			add_lust(amount * (arousal_multiplier/100))
 		else
 			add_lust(amount)
-
-	if (use_moaning_multiplier)
-		if(prob(moaning_multiplier))
-			moan()
+	if (amount > 0 && use_moaning_multiplier && prob(moaning_multiplier)) // BLUEMOON EDIT
+		moan()
 
 	// Below is an overengineered bezier curve based chance of moaning.
 	/// The current lust (arousal) amount.
 	var/lust = get_lust()
 	/// The lust tolerance as defined in preferences.
-	var/lust_tolerance = get_lust_tolerance()
+	//var/lust_tolerance = get_lust_tolerance() // BLUEMOON EDIT commeted, check proc get_lust_tolerance()
 	/// The arousal limit upon which you climax.
-	var/climax = lust_tolerance * 3
+	var/climax = get_climax_threshold() // BLUEMOON EDIT
 	/// Threshold where you start moaning.
 	var/threshold = climax/2
 	///Calculation of 't' in bezier quadratic curve. It's a 0 to 1 version of threshold to climax.
@@ -966,9 +969,10 @@
 		if(prob(30))
 			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
 
-		if (!use_moaning_multiplier)
-			if(prob(chance))
-				moan()
+		// BLUEMOON EDIT START
+		if (!use_moaning_multiplier && amount > 0 && prob(chance))
+			moan()
+		// BLUEMOON EDIT END
 
 		if (lust > climax)
 			if (cum(partner, orifice, cum_inside, anonymous)) //SPLURT EDIT - extra argument `cum_inside` and `anonymous`
@@ -988,3 +992,12 @@
 		else
 			nope += M
 	return nope
+
+// BLUEMOON ADD START
+/mob/living/proc/get_climax_threshold()
+	/// The lust tolerance as defined in preferences.
+	var/lust_tolerance = get_lust_tolerance()
+
+	/// The arousal limit upon which you climax.
+	return lust_tolerance * 3
+// BLUEMOON ADD END

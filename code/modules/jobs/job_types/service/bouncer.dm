@@ -53,7 +53,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	//suit =
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/gun/energy/civilian=1, /obj/item/restraints/legcuffs/bola/energy=1, /obj/item/restraints/handcuffs/cable/zipties=2)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/gun/energy/civilian=1, /obj/item/restraints/legcuffs/bola/energy=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/choice_beacon/copgun=1)
 	shoes = /obj/item/clothing/shoes/jackboots
 	accessory = /obj/item/clothing/accessory/permit/special/bouncer
 
@@ -76,7 +76,7 @@
 	pda_slot = ITEM_SLOT_BELT
 	accessory = /obj/item/clothing/accessory/permit/special/bouncer
 
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/syndicate_uplink=1)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/choice_beacon/copgun=1, /obj/item/syndicate_uplink=1)
 
 //BLUEMOON ADD
 /datum/martial_art/krav_maga/restricted/bouncer
