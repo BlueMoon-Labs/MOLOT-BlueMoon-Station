@@ -141,6 +141,7 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 4
 	},
+/obj/machinery/meter,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "bv" = (
@@ -209,12 +210,12 @@
 /obj/effect/turf_decal/siding/red/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/delivery,
 /obj/machinery/door/airlock/hatch{
 	name = "Private Quarters Access";
 	req_access_txt = "150"
 	},
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "bV" = (
@@ -331,14 +332,11 @@
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "dp" = (
-/obj/machinery/atmospherics/pipe/simple/multiz/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/multiz/scrubbers/hidden/layer3{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/ale,
+/obj/machinery/portable_atmospherics/canister,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "dD" = (
@@ -362,6 +360,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "dT" = (
@@ -398,7 +397,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/meter,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "ee" = (
@@ -684,9 +682,12 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "hj" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/turf/open/floor/plasteel/dark/side,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "hq" = (
 /obj/effect/turf_decal/siding/dark{
@@ -1119,17 +1120,23 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "mz" = (
-/obj/structure/lattice/catwalk,
-/obj/machinery/portable_atmospherics/canister,
-/obj/structure/railing{
+/obj/structure/closet,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/item/broom,
+/obj/effect/turf_decal/bot/white,
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/turf/open/floor/plasteel/dark/side{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "mE" = (
 /obj/structure/fluff/railing/corner{
@@ -1342,15 +1349,17 @@
 	},
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "pB" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+	dir = 1
 	},
-/obj/structure/railing{
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/side{
 	dir = 9
 	},
-/turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "pE" = (
 /obj/item/kirbyplants/hedge{
@@ -1571,6 +1580,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/red/corner,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "rX" = (
@@ -2057,6 +2067,13 @@
 /obj/effect/turf_decal/siding/red{
 	dir = 10
 	},
+/obj/item/folder,
+/obj/item/folder{
+	pixel_x = 3
+	},
+/obj/item/folder{
+	pixel_x = 6
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "yA" = (
@@ -2443,6 +2460,10 @@
 /obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 5
 	},
+/obj/machinery/light_switch{
+	pixel_x = 35;
+	pixel_y = 40
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "CP" = (
@@ -2623,12 +2644,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/red/corner,
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/delivery,
 /obj/machinery/door/airlock/hatch{
 	name = "Private Quarters Access";
 	req_access_txt = "150"
 	},
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Fr" = (
@@ -2748,6 +2769,10 @@
 	req_access_txt = "150"
 	},
 /obj/effect/turf_decal/bot/white,
+/obj/item/storage/belt/medical/surgery_belt_adv/cmo{
+	pixel_x = -2;
+	pixel_y = 2
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "GY" = (
@@ -2851,9 +2876,20 @@
 /turf/open/floor/engine/vacuum,
 /area/space)
 "Ip" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Iu" = (
 /obj/effect/turf_decal/siding/red{
@@ -3035,13 +3071,24 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ko" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/closet/cardboard,
-/obj/structure/railing{
+/obj/structure/table,
+/obj/structure/table,
+/obj/item/holosign_creator,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/turf/open/floor/plasteel/dark/side{
 	dir = 5
 	},
-/obj/item/reagent_containers/food/drinks/ale,
-/turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Kq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -3122,6 +3169,7 @@
 	name = "Storage";
 	req_access_txt = "150"
 	},
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Lr" = (
@@ -3428,17 +3476,17 @@
 	},
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ql" = (
-/obj/structure/bed/double/pod{
-	dir = 4
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/bed/double{
+	dir = 1
 	},
 /obj/effect/mob_spawn/human/ds2/syndicate_command/comms{
 	dir = 4
 	},
 /obj/item/bedsheet/black/double{
 	dir = 4
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
 	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -3566,14 +3614,15 @@
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ry" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 9
-	},
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer3{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer1{
+	dir = 9
+	},
+/obj/item/storage/box/lights/bulbs,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -3745,8 +3794,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Tm" = (
-/obj/structure/ladder,
 /obj/structure/spider/stickyweb,
+/obj/structure/closet/cardboard,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -3853,6 +3902,7 @@
 	req_access_txt = "150"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Uu" = (
@@ -4003,6 +4053,7 @@
 	name = "Storage";
 	req_access_txt = "150"
 	},
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ww" = (
@@ -4025,13 +4076,20 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "WG" = (
-/obj/machinery/button/elevator{
-	dir = 1;
-	pixel_y = -24
+/obj/effect/turf_decal/delivery,
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
 	},
-/obj/item/storage/box/lights/bulbs,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "WS" = (
 /obj/machinery/computer/rdconsole/production{
