@@ -22,6 +22,6 @@
 	if(isnull(AM))
 		return
 
-	for(var/obj/effect/mob_spawn/human/hotel_staff/splurt/manager/g in world)
+	for(var/obj/effect/mob_spawn/human/hotel_staff/splurt/guest/g in world)
 		AM.forceMove(g.loc)
 		playsound(src.loc, get_sfx("spark"), 100, 1)
