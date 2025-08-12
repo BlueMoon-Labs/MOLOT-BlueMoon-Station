@@ -142,3 +142,8 @@
 	name = "Army Multitool"
 	path = /obj/item/armyknife
 	cost = 3
+
+/datum/gear/backpack/clipboard
+	name = "Clipboard"
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
+	path = /obj/item/clipboard
