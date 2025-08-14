@@ -123,6 +123,15 @@
 	restraint_check = FALSE
 	sound = 'modular_citadel/sound/voice/hiss.ogg'
 
+/datum/emote/sound/human/hiss/run_emote(mob/user, params)
+	if(isalienadult(user))
+		sound = sound(get_sfx("hiss"))
+	else if(iscatperson(user))
+		sound = 'modular_bluemoon/sound/emotes/felinid_hiss.ogg'
+	else
+		sound = initial(sound)
+	. = ..()
+
 /datum/emote/sound/human/purr
 	key = "purr"
 	key_third_person = "purrs softly"

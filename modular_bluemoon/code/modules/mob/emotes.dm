@@ -543,3 +543,18 @@
 	message = "OvO"
 	sound = 'modular_bluemoon/sound/emotes/owl.ogg'
 	emote_cooldown = 3 SECONDS
+
+/datum/emote/sound/human/snakedies
+	key = "snakedies"
+	key_third_person = "Dying like a Snake"
+	message = "dying like a Snake."
+	sound = 'modular_bluemoon/sound/emotes/snakedies.ogg'
+	emote_cooldown = 4 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/sound/human/felinidhiss
+	key = "felinidhiss"
+	key_third_person = "hisses"
+	message = "шипит!"
+	sound = 'modular_bluemoon/sound/emotes/felinid_hiss.ogg'
+	emote_cooldown = 1 SECONDS

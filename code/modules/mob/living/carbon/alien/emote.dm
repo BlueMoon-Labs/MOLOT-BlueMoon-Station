@@ -1,10 +1,10 @@
 /datum/emote/sound/human/alien/gnarl
-	key = "gnarl"
+	key = "aliengnarl"
 	key_third_person = "gnarls"
 	message = "gnarls and shows its teeth..."
 
 /datum/emote/sound/human/alien/hiss
-	key = "hiss"
+	key = "alienhiss"
 	key_third_person = "hisses"
 	message = "шипит!"
 	message_alien = "hisses."
@@ -13,14 +13,11 @@
 
 /datum/emote/sound/human/alien/hiss/run_emote(mob/user, params)
 	. = ..()
-	if(.)
-		if(isalienadult(user))
-			playsound(user.loc, "hiss", 40, 1, 1)
-		else
-			playsound(user.loc, 'modular_citadel/sound/voice/hiss.ogg', 50, 1, -1)
+	if(. && isalienadult(user))
+		playsound(user.loc, "hiss", 40, 1, 1)
 
 /datum/emote/sound/human/alien/roar
-	key = "roar"
+	key = "alienroar"
 	key_third_person = "roars"
 	message_alien = "roars."
 	message_larva = "softly roars."
