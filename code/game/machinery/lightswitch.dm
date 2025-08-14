@@ -43,7 +43,7 @@
 	if(building)
 		setDir(ndir)
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -26 : 26)
-		pixel_y = (dir & 3)? (dir ==1 ? -26 : 26) : 0
+		pixel_y = (dir & 3)? (dir == 1 ? -26 : 26) : 0
 		update_icon()
 	register_context()
 
