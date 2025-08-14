@@ -24,13 +24,13 @@
 	if(A.always_unpowered)
 		to_chat(user, "<span class='warning'>You cannot place [src] in this area!</span>")
 		return
-	if(gotwallitem(T, ndir, inverse*2))
-		to_chat(user, "<span class='warning'>There's already an item on this wall!</span>")
-		return
+	// if(gotwallitem(T, ndir, inverse*2))
+	// 	to_chat(user, "<span class='warning'>There's already an item on this wall!</span>")
+	// 	return
 
 	return TRUE
 
-/obj/item/wallframe/proc/attach(turf/on_wall, mob/user)
+/obj/item/wallframe/proc/attach(turf/on_wall, mob/user, params)
 	if(result_path)
 		playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
 		user.visible_message("[user.name] attaches [src] to the wall.",
@@ -51,6 +51,16 @@
 					O.pixel_x = pixel_shift
 				if(WEST)
 					O.pixel_x = -pixel_shift
+		var/list/click_params = params2list(params)
+		//Center the icon where the user clicked.
+		if(click_params && click_params["icon-x"] && click_params["icon-y"])
+			if(O.pixel_x != 0)
+				O.pixel_x = O.pixel_x > 0 ? 32 : -32
+			if(O.pixel_y != 0)
+				O.pixel_y = O.pixel_y > 0 ? 32 : -32
+			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
+			O.pixel_x += clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
+			O.pixel_y += clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
 		after_attach(O)
 
 	qdel(src)
