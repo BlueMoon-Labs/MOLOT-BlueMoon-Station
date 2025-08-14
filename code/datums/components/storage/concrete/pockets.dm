@@ -111,3 +111,14 @@
 /datum/component/storage/concrete/pockets/void_cloak/Initialize()
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(/obj/item/living_heart,/obj/item/forbidden_book))
+
+// BLUEMOON ADD Предметы в кустах
+
+/datum/component/storage/concrete/pockets/plants
+	max_items = 1
+	max_w_class = WEIGHT_CLASS_SMALL
+	attack_hand_interact = FALSE
+	silent = FALSE
+	quickdraw = FALSE // квикдроу показался мне не уместным, но если кто-то захочет - можно добавить
+
+// BLUEMOON ADD END

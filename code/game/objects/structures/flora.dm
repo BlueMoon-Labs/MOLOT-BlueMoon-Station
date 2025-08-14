@@ -319,6 +319,9 @@
 	AddElement(/datum/element/tactical)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddElement), list(/datum/element/beauty, 500)), 0)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
+	// BLUEMOON ADD спрятать предмет в кустах
+	AddComponent(/datum/component/storage/concrete/pockets/plants)
+	// BLUEMOON ADD END
 
 //BLUEMOON ADD прикрутить кусты, открутить кусты
 /obj/item/kirbyplants/wrench_act(mob/living/user, obj/item/I)
