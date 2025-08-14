@@ -105,10 +105,17 @@
 /obj/machinery/light_switch/screwdriver_act(mob/living/user, obj/item/I)
 	if(!isemptylist(connected_lights))
 		for(var/obj/machinery/light/L in connected_lights)
+			if(QDELETED(L))
+				connected_lights -= L
+				continue
 			L.individual_switch_state = null
+			var/area/A = get_area(L)
+			A.update_appearance()
+			A.power_change()
 		connected_lights = list()
 		to_chat(user, "You disconnect all individual lights from [src].")
 	if(user.a_intent == INTENT_DISARM)
+		update_appearance()
 		return TRUE // we disconnected lights and we are done.
 	user.visible_message(span_notice("[user] starts unscrewing [src]..."), span_notice("You start unscrewing [src]..."))
 	if(!I.use_tool(src, user, 40, volume = 50))
