@@ -104,7 +104,7 @@
 	seed = /obj/item/seeds/melon
 	name = "melon"
 	desc = "It's full of watery goodness."
-	icon_state = "melon"
+	icon_state = "melon-1"
 	slice_path = /obj/item/reagent_containers/food/snacks/melonslice
 	slices_num = 5
 	dried_type = null
@@ -121,14 +121,15 @@
 
 /obj/item/reagent_containers/food/snacks/grown/melon/update_icon(updates)
 	. = ..()
+	var/state = copytext(icon_state, 1, length(icon_state) - 1) // обрезаем последние 2 символа
 	if(seed)
 		switch(clamp(seed.potency, 0, 100))
-			if(0 to 25)      icon_state += "-4"
-			if(26 to 50)     icon_state += "-3"
-			if(51 to 75)     icon_state += "-2"
-			if(76 to 100)    icon_state += "-1"
+			if(0 to 25)      icon_state = state + "-4"
+			if(26 to 50)     icon_state = state + "-3"
+			if(51 to 75)     icon_state = state + "-2"
+			if(76 to 100)    icon_state = state + "-1"
 	else
-		icon_state += "-1"
+		icon_state = state + "-1"
 
 // Spacemelon
 /obj/item/seeds/melon/space
@@ -137,20 +138,19 @@
 	icon_state = "seed-spacemelon"
 	species = "spacemelon"
 	plantname = "Space Melon Vines"
-	product = /obj/item/reagent_containers/food/snacks/grown/spacemelon
+	product = /obj/item/reagent_containers/food/snacks/grown/melon/space
 	genes = list(/datum/plant_gene/trait/glow/blue)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/space_cleaner = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 20
 
-/obj/item/reagent_containers/food/snacks/grown/spacemelon
+/obj/item/reagent_containers/food/snacks/grown/melon/space
 	seed = /obj/item/seeds/melon/space
 	name = "spacemelon"
 	desc = "It's full of something strange, like a liquid void."
-	icon_state = "spacemelon"
-	slice_path = /obj/item/reagent_containers/food/snacks/spacemelonslice
+	icon_state = "spacemelon-1"
+	slice_path = /obj/item/reagent_containers/food/snacks/melonslice/space
 	filling_color = "#147cb9"
-	dried_type = null
 	wine_power = 50
 	wine_flavor = "void"
 // BLUEMOON ADD END
