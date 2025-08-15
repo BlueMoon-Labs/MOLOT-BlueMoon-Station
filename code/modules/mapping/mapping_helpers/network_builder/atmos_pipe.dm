@@ -58,7 +58,7 @@
 		for(var/obj/machinery/atmospherics/A in T)
 			if((A.piping_layer == piping_layer) && (A.initialize_directions & turn(i, 180)))
 				if((A.color != color) && is_type_in_list(A, check_color_difference))
-					break
+					continue
 				network_directions += i
 				break
 	return network_directions
