@@ -37,7 +37,7 @@
 
 /mob/living/simple_animal/hostile/mannequin/bloodlust //Evil version of mannequin. Hunts people.
 	name = "mannequin?"
-	desc = "A strange,wooden mannequin. Why it has blood on its hands?!"
+	desc = "A strange, wooden mannequin. Why it has blood on its hands?!"
 	gold_core_spawnable = NO_SPAWN
 	turns_per_move = 6
 	maxHealth = 800
@@ -51,10 +51,11 @@
 	speed = -4
 	melee_damage_lower = 20
 	melee_damage_upper = 30
+	spacewalk = TRUE
 
 /mob/living/simple_animal/hostile/mannequin/damaged //Somewhat destroyed evil. Hunts people.
 	name = "mannequin?"
-	desc = "A strange,wooden mannequin. This one looks...damaged."
+	desc = "A strange, wooden mannequin. This one looks...damaged."
 	gold_core_spawnable = NO_SPAWN
 	turns_per_move = 2
 	maxHealth = 500
@@ -70,7 +71,7 @@
 
 /mob/living/simple_animal/hostile/mannequin/abomination //You are fucked. Run.
 	name = "mannequin?"
-	desc = "A strange,wooden mannequin. Why- WHY IT HAS A SKIN ON ITSELF?!"
+	desc = "A strange, wooden mannequin. Why- WHY IT HAS A SKIN ON ITSELF?!"
 	gold_core_spawnable = NO_SPAWN
 	turns_per_move = 8
 	maxHealth = 1500
@@ -85,6 +86,7 @@
 	speed = -8
 	melee_damage_lower = 70
 	melee_damage_upper = 80
+	spacewalk = TRUE
 
 //EVENTS SINCE I LOVE STATION SO MUCH!//
 /obj/item/paper/fax_CC_message/escapee/mannequinrise
