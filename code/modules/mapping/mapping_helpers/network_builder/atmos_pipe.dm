@@ -56,7 +56,8 @@
 		if(found)
 			continue
 		for(var/obj/machinery/atmospherics/A in T)
-			if((A.piping_layer == piping_layer) && (A.initialize_directions & turn(i, 180)))
+			// we can't do /connection_check() since we don't have a pipe yet
+			if(((A.piping_layer == piping_layer) || (A.pipe_flags & PIPING_ALL_LAYER)) && (istype(A, /obj/machinery/atmospherics/pipe/simple/multiz) || (A.initialize_directions & turn(i, 180)))) // (A.initialize_directions & get_dir(A, src)) perhaps?
 				if((A.color != color) && is_type_in_list(A, check_color_difference))
 					continue
 				network_directions += i
