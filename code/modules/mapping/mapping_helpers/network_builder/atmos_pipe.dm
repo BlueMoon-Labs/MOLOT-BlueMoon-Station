@@ -11,7 +11,7 @@
 	var/piping_layer = PIPING_LAYER_DEFAULT
 	/// Color to set our pipes to
 	var/pipe_color
-	/// Whether or not pipes we make are visible
+	// Whether or not pipes we make are visible
 	// var/visible_pipes = TRUE
 	/**
 	 * Helper will try to create exact pipe type if possible. if not - will create default one with needed properties.
@@ -76,7 +76,7 @@
 	 * If any major pipe types reworks have been occured you have to edit this algorithm of exact path creation.
 	 * Otherwise this proc will create default pipes. This might not create major problems. Or will. I'm not resposible for this.
 	 */
-	pipe_type = "/obj/machinery/atmospherics/pipe"
+	pipe_type = "/obj/machinery/atmospherics/pipe" // will become path later
 	var/pipe_color_new = null
 	for(var/i in GLOB.pipe_paint_colors)
 		if((GLOB.pipe_paint_colors[i] == color))
