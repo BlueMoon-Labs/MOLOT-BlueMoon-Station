@@ -1173,6 +1173,7 @@
 							/obj/item/reagent_containers/food/snacks/grown/wheat,
 							/obj/item/reagent_containers/honeycomb,
 							/obj/item/reagent_containers/food/snacks/grown/watermelon,
+							/obj/item/reagent_containers/food/snacks/grown/melon, // BLUEMOON ADD
 							/obj/item/reagent_containers/food/snacks/grown/onion,
 							/obj/item/reagent_containers/food/snacks/grown/peach,
 							/obj/item/reagent_containers/food/snacks/grown/peanut,
@@ -1240,6 +1241,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
 	new /obj/item/reagent_containers/food/snacks/grown/citrus/lime(src)
 	new /obj/item/reagent_containers/food/snacks/grown/watermelon(src)
+	new /obj/item/reagent_containers/food/snacks/grown/melon(src)
 
 /obj/item/storage/box/ingredients/sweets
 	theme_name = "sweets"

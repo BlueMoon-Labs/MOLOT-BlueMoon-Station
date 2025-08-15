@@ -631,12 +631,15 @@
 		/datum/reagent/consumable/applejuice,
 		/datum/reagent/consumable/carrotjuice,
 		/datum/reagent/consumable/pumpkinjuice,
-		/datum/reagent/consumable/watermelonjuice
+		/datum/reagent/consumable/watermelonjuice,
+		/datum/reagent/consumable/melonjuice // BLUEMOON ADD
 	)
 	upgrade_reagents3 = list(
 		/datum/reagent/drug/mushroomhallucinogen,
 		/datum/reagent/consumable/nothing,
-		/datum/reagent/consumable/peachjuice
+		/datum/reagent/consumable/peachjuice,
+		/datum/reagent/consumable/blumpkinjuice, // BLUEMOON ADD
+		/datum/reagent/consumable/coco // BLUEMOON ADD
 	)
 	emagged_reagents = list(
 		/datum/reagent/toxin/mindbreaker,

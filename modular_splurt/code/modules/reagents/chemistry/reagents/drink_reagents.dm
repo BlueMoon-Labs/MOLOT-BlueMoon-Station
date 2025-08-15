@@ -187,13 +187,26 @@
 	glass_name = "glass of Pineapple Milkshake"
 	glass_desc = "A Pineapple milkshake, a bit sweet and a bit sour, but all delicious!"
 
-/datum/reagent/consumable/milkshake_melon
+/datum/reagent/consumable/milkshake_watermelon // BLUEMOON EDIT || melon
 	name = "Watermelon Milkshake"
 	description = "Delicous Watermelon Milkshake"
 	color = "#E37383"
 	nutriment_factor = 1
 	taste_description = "warm sun and sweet cream"
 	glass_icon = 'modular_splurt/icons/obj/drinks.dmi'
-	glass_icon_state = "melonshake"
+	glass_icon_state = "watermelonshake"
 	glass_name = "glass of Watermelon Milkshake"
 	glass_desc = "A Watermelon milkshake, it's like summer all over again!"
+
+// BLUEMOON ADD START || melon
+/datum/reagent/consumable/milkshake_melon
+	name = "Melon Milkshake"
+	description = "Delicous Melon Milkshake"
+	color = "#FFCC00"
+	nutriment_factor = 1
+	taste_description = "warm sun and sweet cream"
+	glass_icon = 'modular_splurt/icons/obj/drinks.dmi'
+	glass_icon_state = "melonshake"
+	glass_name = "glass of Melon Milkshake"
+	glass_desc = "A Melon milkshake, it's like summer all over again!"
+// BLUEMOON ADD END
