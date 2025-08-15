@@ -79,7 +79,7 @@
 	var/pipe_color_new = null
 	for(var/i in GLOB.pipe_paint_colors)
 		if((GLOB.pipe_paint_colors[i] == color))
-			switch(i)
+			switch(i) // check HELPER_NAMED() in mapping.dm
 				if("red")
 					pipe_color_new = "scrubbers"
 				if("blue")
