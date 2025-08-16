@@ -1748,3 +1748,17 @@
 	slot = ITEM_SLOT_GLOVES
 	ckeywhitelist = list("herobrine998")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/moonflower
+	name = "Moonflower"
+	path = /obj/item/reagent_containers/food/snacks/grown/moonflower
+	slot = ITEM_SLOT_HEAD
+	ckeywhitelist = list("herobrine998")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/dildo_flared_huge
+	name = "Gentle Penetrator"
+	path = /obj/item/dildo/flared/huge/gentle
+	slot = ITEM_SLOT_BACKPACK
+	ckeywhitelist = list("borisovych")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

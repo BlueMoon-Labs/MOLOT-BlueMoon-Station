@@ -79,3 +79,7 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = COAT_MAX_TEMP_PROTECT
 	strip_mod = 0.9
+
+/obj/item/clothing/gloves/toggled/hug/poly_evening/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, list("#FEFEFE"), 1)
