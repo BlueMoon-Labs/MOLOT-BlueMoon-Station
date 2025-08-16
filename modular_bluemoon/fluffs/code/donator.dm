@@ -1755,10 +1755,3 @@
 	slot = ITEM_SLOT_HEAD
 	ckeywhitelist = list("herobrine998")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/bm/dildo_flared_huge
-	name = "Gentle Penetrator"
-	path = /obj/item/dildo/flared/huge/gentle
-	slot = ITEM_SLOT_BACKPACK
-	ckeywhitelist = list("borisovych")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02

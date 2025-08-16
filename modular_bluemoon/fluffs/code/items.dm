@@ -54,8 +54,3 @@
 		cut_overlay(enabled)
 
 ////////////////////////
-
-/obj/item/dildo/flared/huge/gentle
-	name = "Gentle Penetrator"
-	desc = "The absurdity of a sex toy and absolutely not harmful."
-	force = 0
