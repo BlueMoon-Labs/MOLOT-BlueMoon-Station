@@ -13,3 +13,9 @@
 	cost = 2
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/backpack/penetrator
+	name = "The Penetrator"
+	path = /obj/item/dildo/flared/huge
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
