@@ -1748,3 +1748,10 @@
 	slot = ITEM_SLOT_GLOVES
 	ckeywhitelist = list("herobrine998")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/hugedildo
+	name = "Penetrator"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/dildo/flared/huge
+	ckeywhitelist = list("borisovych", "pingvas")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
