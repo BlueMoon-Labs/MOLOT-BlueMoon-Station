@@ -42,6 +42,7 @@
 	HELPER_PARTIAL(/obj/machinery/atmospherics/components/binary/pump/off/##Type, "pump_map", Color) \
 	HELPER_PARTIAL(/obj/machinery/atmospherics/components/binary/pump/on/##Type, "pump_on_map", Color) \
 	HELPER_PARTIAL(/obj/machinery/atmospherics/pipe/simple/multiz/##Type, "adapter", Color) \
+	HELPER_PARTIAL(/obj/effect/mapping_helpers/network_builder/atmos_pipe/##Type, "manifold4w", Color) \
 
 #define HELPER_NAMED(Type, Name, Color) \
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/simple/##Type, "pipe11", Name, Color) 		\
@@ -50,6 +51,7 @@
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/components/binary/pump/off/##Type, "pump_map", Name, Color) \
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/components/binary/pump/on/##Type, "pump_on_map", Name, Color) \
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/simple/multiz/##Type, "adapter", Name, Color) \
+	HELPER_PARTIAL_NAMED(/obj/effect/mapping_helpers/network_builder/atmos_pipe/##Type, "manifold4w", Name, Color) \
 
 HELPER(general, null)
 HELPER(yellow, rgb(255, 198, 0))
