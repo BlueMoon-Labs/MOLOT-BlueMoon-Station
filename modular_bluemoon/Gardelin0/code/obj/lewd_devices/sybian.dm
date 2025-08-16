@@ -3,7 +3,7 @@
 	desc = "It provides vibration."
 	icon = 'modular_bluemoon/Gardelin0/icons/obj/lewd_devices.dmi'
 	icon_state = "sybian"
-	anchored = 0
+	anchored = TRUE
 	var/mode = "normal"
 	var/intencity
 	var/on = 0
