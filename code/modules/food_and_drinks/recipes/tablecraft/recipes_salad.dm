@@ -33,10 +33,23 @@
 		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
 		/obj/item/reagent_containers/food/snacks/grown/grapes = 1,
 		/obj/item/reagent_containers/food/snacks/watermelonslice = 2
-
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/fruit
 	subcategory = CAT_SALAD
+
+// BLUEMOON ADD START || melon
+/datum/crafting_recipe/food/fruitsalad/melon
+	name = "Fruit salad (melon)"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
+		/obj/item/reagent_containers/food/snacks/grown/grapes = 1,
+		/obj/item/reagent_containers/food/snacks/melonslice = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/fruit
+	subcategory = CAT_SALAD
+// BLUEMOON ADD END
 
 /datum/crafting_recipe/food/herbsalad
 	name = "Herb salad"
@@ -56,10 +69,23 @@
 		/obj/item/reagent_containers/food/snacks/grown/grapes = 1,
 		/obj/item/reagent_containers/food/snacks/grown/banana = 2,
 		/obj/item/reagent_containers/food/snacks/watermelonslice = 2
-
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/jungle
 	subcategory = CAT_SALAD
+
+// BLUEMOON ADD START || melon
+/datum/crafting_recipe/food/junglesalad/melon
+	name = "Jungle salad (melon)"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
+		/obj/item/reagent_containers/food/snacks/grown/grapes = 1,
+		/obj/item/reagent_containers/food/snacks/grown/banana = 2,
+		/obj/item/reagent_containers/food/snacks/melonslice = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/jungle
+	subcategory = CAT_SALAD
+// BLUEMOON ADD END
 
 /datum/crafting_recipe/food/monkeysdelight
 	name = "Monkeys delight"

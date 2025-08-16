@@ -24,6 +24,7 @@
 				/obj/item/seeds/pineapple = 3,	//	 Pineapple
 				/obj/item/seeds/strawberry = 3,	//	 Strawberry
 				/obj/item/seeds/watermelon = 3,	//	 Watermelon
+				/obj/item/seeds/melon = 3,		//	 Melon || BLUEMOON ADD
 			),
 		),
 

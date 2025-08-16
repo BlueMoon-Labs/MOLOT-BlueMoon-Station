@@ -162,6 +162,7 @@
 					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
 					/obj/item/reagent_containers/food/snacks/grown/banana,
 					/obj/item/reagent_containers/food/snacks/grown/watermelon,
+					/obj/item/reagent_containers/food/snacks/grown/melon, // BLUEMOON ADD
 					/obj/item/reagent_containers/food/snacks/grown/apple,
 					/obj/item/reagent_containers/food/snacks/grown/berries,
 					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,

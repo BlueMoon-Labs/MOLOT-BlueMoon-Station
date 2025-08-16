@@ -282,14 +282,25 @@
 		/datum/reagent/consumable/pineapplejuice = 1
 	)
 
-/datum/chemical_reaction/milkshake_melon
+/datum/chemical_reaction/milkshake_watermelon
 	name = "Watermelon Milkshake"
-	id = /datum/reagent/consumable/milkshake_melon
-	results = list(/datum/reagent/consumable/milkshake_melon = 2)
+	id = /datum/reagent/consumable/milkshake_watermelon
+	results = list(/datum/reagent/consumable/milkshake_watermelon = 2)
 	required_reagents = list(
 		/datum/reagent/consumable/milkshake_base = 1,
 		/datum/reagent/consumable/watermelonjuice = 1
 	)
+
+// BLUEMOON ADD START || melon
+/datum/chemical_reaction/milkshake_melon
+	name = "Melon Milkshake"
+	id = /datum/reagent/consumable/milkshake_melon
+	results = list(/datum/reagent/consumable/milkshake_melon = 2)
+	required_reagents = list(
+		/datum/reagent/consumable/milkshake_base = 1,
+		/datum/reagent/consumable/melonjuice = 1
+	)
+// BLUEMOON ADD END
 
 /datum/chemical_reaction/ionstorm
 	name = "Ion Storm"
