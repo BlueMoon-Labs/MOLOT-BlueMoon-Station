@@ -325,4 +325,15 @@
 
 	T.filter_on_user.alpha = alpha
 
+/obj/item/clothing/under/donator/bm/saareuni
+	name = "SAARE BDU G3"
+	desc = "Standardized GEN3 BATTLE DRESS UNIFORM issued to each operator for all types of tasks performed on the job. Has characteristic SAARE forearm insignia."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/under_digi.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "saare"
+	item_state = "saare"
+	can_adjust = TRUE
 

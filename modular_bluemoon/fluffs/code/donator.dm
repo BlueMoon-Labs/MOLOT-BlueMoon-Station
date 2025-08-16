@@ -1748,3 +1748,24 @@
 	slot = ITEM_SLOT_GLOVES
 	ckeywhitelist = list("herobrine998")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/saareuni
+	name = "SAARE BDU G3"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/under/donator/bm/saareuni
+	ckeywhitelist = list("pingvas", "ordinarylife", "leony24", "kennedykiller", "theatlasplay", "ninjapikachushka", "devildeadspace", "trustmeimengineer", "izakfromrus")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/saareflag
+	name = "SAARE flag"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sign/flag/saaref
+	ckeywhitelist = list("pingvas", "ordinarylife", "leony24", "kennedykiller", "theatlasplay", "ninjapikachushka", "devildeadspace", "trustmeimengineer", "izakfromrus")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/saarepatch
+	name = "SFP Armpatch"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/accessory/armband/sfparmband
+	ckeywhitelist = list("pingvas", "ordinarylife", "leony24", "kennedykiller", "theatlasplay", "ninjapikachushka", "devildeadspace", "trustmeimengineer", "izakfromrus")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

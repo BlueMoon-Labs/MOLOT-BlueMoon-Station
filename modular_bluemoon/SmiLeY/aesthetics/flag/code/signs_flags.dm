@@ -374,3 +374,15 @@
 	flag_type = "ravenheart_alt"
 	icon_state = "mini_alt"
 	sign_path = /obj/structure/sign/flag/ravenheart/alt
+
+/obj/structure/sign/flag/saareflag
+	name = "SAARE flag"
+	desc = "The Hephaestus flag, designed for SAARE, hangs on walls without any physical effort and sits perfectly."
+	icon_state = "flag_saare"
+	item_flag = /obj/item/sign/flag/saaref
+
+/obj/item/sign/flag/saaref
+	name = "folded flag of the Novaya Rossiyskaya Imperiya"
+	desc = "The folded flag of the Novaya Rossiyskaya Imperiya."
+	icon_state = "folded_saare"
+	sign_path = /obj/structure/sign/flag/saareflag
