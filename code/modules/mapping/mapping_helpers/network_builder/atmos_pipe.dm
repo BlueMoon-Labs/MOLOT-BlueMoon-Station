@@ -28,8 +28,9 @@
 	for(var/obj/effect/mapping_helpers/network_builder/atmos_pipe/other in loc)
 		if(other == src)
 			continue
-		if((other.piping_layer == piping_layer) && (other.color == color))
-			return other
+		if(other.piping_layer == piping_layer)
+			if((other.color == color) || isnull(other.color) || isnull(color))
+				return other // we can't check if those pipes will be with the same dir so be wary, this check won't save you from it.
 	for(var/obj/machinery/atmospherics/A in loc)
 		if(A.pipe_flags & PIPING_ALL_LAYER)
 			return A
@@ -49,7 +50,7 @@
 			continue
 		var/found = FALSE
 		for(var/obj/effect/mapping_helpers/network_builder/atmos_pipe/other in T)
-			if((other.piping_layer == piping_layer))
+			if(other.piping_layer == piping_layer)
 				if((other.color == color) || isnull(other.color) || isnull(color))
 					network_directions += i
 					other.network_directions += turn(i, 180)
