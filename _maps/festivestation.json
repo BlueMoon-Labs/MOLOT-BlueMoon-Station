@@ -2,6 +2,10 @@
     "map_name": "FestiveStation",
     "map_path": "map_files/FestiveBall",
     "map_file": "FestiveStation.dmm",
+	"station_ruin_budget": 0,
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"planetary": true,
     "shuttles": {
 	    "cargo": "cargo_box",
 	    "ferry": "ferry_fancy",
@@ -11,7 +15,8 @@
 	"traits": [
 		{
 			"Weather_Icestorm":true,
-			"Gravity": true
+			"Gravity": true,
+			"Baseturf": "/turf/open/floor/plating/asteroid/snow/icemoon"
 		}
 	]
 }
