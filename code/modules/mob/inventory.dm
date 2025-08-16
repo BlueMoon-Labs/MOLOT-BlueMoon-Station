@@ -184,8 +184,9 @@
 		if(I.pulledby)
 			I.pulledby.stop_pulling()
 		update_inv_hands()
-		I.pixel_x = initial(I.pixel_x)
-		I.pixel_y = initial(I.pixel_y)
+		if(!(I.item_flags & NO_PIXEL_RANDOM_DROP))
+			I.pixel_x = initial(I.pixel_x)
+			I.pixel_y = initial(I.pixel_y)
 		I.transform = initial(I.transform)
 		return hand_index || TRUE
 	return FALSE
