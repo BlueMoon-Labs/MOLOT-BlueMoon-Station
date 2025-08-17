@@ -525,7 +525,7 @@ BLUEMOON REMOVAL END */
 	explosion(get_turf(src), GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 	meltdown() //Double kill.
 	power = 0 //we set it to zero so the reactor can be serviced and repaired.
-	SSweather.run_weather("nuclear fallout")
+	SSweather.run_weather("nuclear fallout", z)
 	for(var/X in GLOB.landmarks_list)
 		if(istype(X, /obj/effect/landmark/nuclear_waste_spawner))
 			var/obj/effect/landmark/nuclear_waste_spawner/WS = X

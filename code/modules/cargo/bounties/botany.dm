@@ -76,6 +76,13 @@
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/watermelon)
 	foodtype = "dessert"
 
+// BLUEMOON ADD START || melon
+/datum/bounty/item/botany/Melon
+	name = "Melons"
+	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/melon)
+	foodtype = "dessert"
+// BLUEMOON ADD END
+
 /datum/bounty/item/botany/glowshroom
 	name = "Glowshrooms"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom)

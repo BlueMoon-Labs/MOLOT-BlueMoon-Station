@@ -47,6 +47,13 @@
 
 	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text_combat_mode = barehanded_interactions)
 
+	var/static/list/hovering_item_typechecks = list(
+		/obj/item/wallframe = list(
+			SCREENTIP_CONTEXT_LMB = list(INTENT_GRAB = "Install frame on the table"),
+		),
+	)
+	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
+
 /obj/structure/table/examine(mob/user)
 	. = ..()
 	. += deconstruction_hints(user)
@@ -264,7 +271,11 @@
 				user.unbuckle_mob(carried_mob)
 				tableplace(user, carried_mob)
 		return TRUE
-
+	if(istype(I, /obj/item/wallframe) && user.a_intent == INTENT_GRAB)
+		var/obj/item/wallframe/W = I
+		if(W.try_build(src, user))
+			W.attach(src, user, params)
+		return TRUE
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location()))
 			var/list/click_params = params2list(params)

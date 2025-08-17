@@ -54,6 +54,7 @@ Borg Shaker
 						/datum/reagent/consumable/strawberryjuice,
 						/datum/reagent/consumable/pineapplejuice,
 						/datum/reagent/consumable/watermelonjuice,
+						/datum/reagent/consumable/melonjuice, // BLUEMOON ADD
 						/datum/reagent/consumable/parsnipjuice,
 						/datum/reagent/consumable/grapejuice,
 						/datum/reagent/consumable/potato_juice,

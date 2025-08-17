@@ -33,6 +33,7 @@
 		"carmcorn" = "#FBFF23",
 		"creamsoda" = "#b2b2b2",
 		"watermelon" = "#008000",
+		"melon" = "e0d12b",
 		"chocop" = "#663300",
 		"tutti" = "#FFFFFF",
 		"scinnamon" = "#E4005B",
@@ -76,6 +77,10 @@
 				tastes = list("cream soda" = 1)
 			if("watermelon")
 				tastes = list("watermelon" = 1)
+			// BLUEMOON ADD START || melon
+			if("watermelon")
+				tastes = list("melon" = 1)
+			// BLUEMOON ADD END
 			if("tutti")
 				tastes = list("fruits" = 1)
 			if("scinnamon")
@@ -108,7 +113,7 @@
 			tastes = list(pick("piss", "smegma") = 1)
 		if("purple", "blackberry")
 			list_reagents = list(/datum/reagent/consumable/ethanol/lean = 4)
-		if("green", "margarita", "watermelon")
+		if("green", "margarita", "watermelon", "melon") // BLUEMOON EDIT || melon
 			tastes = list(pick("sweat", "armpit", "feet") = 1)
 			list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sodiumchloride = 3)
 		if("red", "raspberry", "scinnamon")

@@ -19,6 +19,7 @@
 	max_velocity = 90
 	boost_power = 25
 	max_integrity = 80
+	max_occupants = 4
 
 /obj/vehicle/sealed/vectorcraft/truck
 	name = "Hovertruck"
@@ -31,6 +32,7 @@
 	max_velocity = 90
 	boost_power = 10
 	max_integrity = 200
+	max_occupants = 4
 
 /obj/vehicle/sealed/vectorcraft/ambulance
 	name = "Ambulance"
@@ -42,6 +44,7 @@
 	max_velocity = 90
 	boost_power = 40
 	max_integrity = 200
+	max_occupants = 4
 
 /obj/vehicle/sealed/vectorcraft/auto
 	name = "Automatic hovercraft"
