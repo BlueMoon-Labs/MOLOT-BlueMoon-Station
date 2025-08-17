@@ -54,6 +54,26 @@
 	full_name = "Subtler Anti-Ghost Emote"
 	clientside = "subtler-anti-ghost"
 
+//BLUEMOON ADD START
+/datum/keybinding/client/communication/subtler_target
+	hotkey_keys = list("Unbound")
+	name = "Subtler Target"
+	full_name = "Subtler Target Emote"
+	clientside = "subtler-target"
+
+/datum/keybinding/client/communication/subtler_target_indicatored
+	hotkey_keys = list("Unbound")
+	name = "Subtler Target (Indicator)"
+	full_name = "Subtler Target Emote (with indicator)"
+	clientside = "subtler-target-indicatored"
+
+/datum/keybinding/client/communication/subtler_target_indicatored/down(client/user)
+	var/mob/living/L = user.mob
+	if(istype(L))
+		L.subtler_target_indicatored()
+	return TRUE
+//BLUEMOON ADD END
+
 /datum/keybinding/client/communication/whisper
 	hotkey_keys = list("CtrlY")
 	classic_keys = list("Unbound")
