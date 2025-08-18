@@ -195,7 +195,7 @@
 	var/rank = null			//actual job
 	var/access_txt // mapping aid
 	var/bank_support = ID_FREE_BANK_ACCOUNT
-	var/withdraw_allowed = TRUE
+	var/withdraw_allowed = TRUE // BLUEMOON ADD
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
