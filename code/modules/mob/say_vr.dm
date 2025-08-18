@@ -100,12 +100,7 @@
 	user.log_message(message, LOG_SUBTLER)
 	message = "<span class='emote'><b>[user]</b> <i>[user.say_emphasis(message)]</i></span>"
 
-	var/list/ignored_mobs_list = LAZYCOPY(GLOB.dead_mob_list)
-	for(var/mob/living/simple_animal/qareen/Q in range(1, user))
-		if(Q != user && !Q.revealed)
-			LAZYADD(ignored_mobs_list, Q)
-
-	user.visible_message(message = message, self_message = message, vision_distance = 1, ignored_mobs = ignored_mobs_list, omni = TRUE)
+	user.visible_message(message = message, self_message = message, vision_distance = 1, ignored_mobs = GLOB.dead_mob_list, omni = TRUE)
 
 ///////////////// SUBTLE 3: DARE DICE
 
@@ -156,10 +151,6 @@
 		for(var/obj/structure/table/T2 in T.connected_floodfill(25))
 			processed[T2] = TRUE
 			for(var/mob/living/L in range(T2, 1))
-				if(istype(L, /mob/living/simple_animal/qareen))
-					var/mob/living/simple_animal/qareen/Q = L
-					if(!Q.revealed)
-						continue
 				show_to |= L
 
 	for(var/i in show_to)
