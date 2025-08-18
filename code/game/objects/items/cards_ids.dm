@@ -195,6 +195,7 @@
 	var/rank = null			//actual job
 	var/access_txt // mapping aid
 	var/bank_support = ID_FREE_BANK_ACCOUNT
+	var/withdraw_allowed = TRUE
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
@@ -380,7 +381,7 @@
 		return
 
 	// BLUEMOON ADD START
-	if(bank_support == ID_NO_WITHDRAW_BANK_ACCOUNT)
+	if(!withdraw_allowed)
 		var/message = span_warning("ERROR: This card is not allowed withdraw credits.")
 		if(registered_account)
 			registered_account.bank_card_talk(message)
@@ -880,7 +881,7 @@
 	name = "departmental card (FUCK)"
 	desc = "Provides access to the departmental budget."
 	icon_state = "budgetcard"
-	bank_support = ID_NO_WITHDRAW_BANK_ACCOUNT
+	withdraw_allowed = FALSE // BLUEMOON ADD
 	var/department_ID = ACCOUNT_CIV
 	var/department_name = ACCOUNT_CIV_NAME
 

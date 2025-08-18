@@ -39,7 +39,6 @@
 #define ID_NO_BANK_ACCOUNT		0
 #define ID_FREE_BANK_ACCOUNT	1
 #define ID_LOCKED_BANK_ACCOUNT	2
-#define ID_NO_WITHDRAW_BANK_ACCOUNT	4 // BLUEMOON ADD
 
 //Some price defines to help standarize the intended vending value of items. Do not bother adding too many examples.
 #define PRICE_FREE				0 // Sustainance/soviet vendor stuff.
