@@ -379,6 +379,16 @@
 		set_new_account(user)
 		return
 
+	// BLUEMOON ADD START
+	if(bank_support == ID_NO_WITHDRAW_BANK_ACCOUNT)
+		var/message = span_warning("ERROR: This card is not allowed withdraw credits.")
+		if(registered_account)
+			registered_account.bank_card_talk(message)
+		else
+			to_chat(user, message)
+		return
+	// BLUEMOON ADD END
+
 	if (world.time < registered_account.withdrawDelay)
 		registered_account.bank_card_talk("<span class='warning'>ERROR: UNABLE TO LOGIN DUE TO SCHEDULED MAINTENANCE. MAINTENANCE IS SCHEDULED TO COMPLETE IN [(registered_account.withdrawDelay - world.time)/10] SECONDS.</span>", TRUE)
 		return
@@ -870,6 +880,7 @@
 	name = "departmental card (FUCK)"
 	desc = "Provides access to the departmental budget."
 	icon_state = "budgetcard"
+	bank_support = ID_NO_WITHDRAW_BANK_ACCOUNT
 	var/department_ID = ACCOUNT_CIV
 	var/department_name = ACCOUNT_CIV_NAME
 
