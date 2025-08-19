@@ -80,8 +80,8 @@
 		if(istype(sender, /obj/item/organ/genital/penis))
 			var/obj/item/organ/genital/testicles/testicles = sender
 			var/size = testicles.size
-			var/balls_size_0 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "", "", "", "", "", "", "", "", "", "")
-			var/balls_size_1 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "", "", "", "", "")
+			var/balls_size_0 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4")
+			var/balls_size_1 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4")
 			var/balls_size_2 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4")
 			var/balls_size_3 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large")
 			var/balls_size_4 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large")
@@ -139,11 +139,19 @@
 /mob/living/carbon/human
 	var/covered_in_cum = FALSE
 
-/atom/proc/add_cum_overlay(size = "cum_normal", cum_color = "#FFFFFF") //This can go in a better spot, for now its here.
+/atom/proc/add_cum_overlay(state = "cum_normal", cum_color = "#FFFFFF") //This can go in a better spot, for now its here.
 	if(!istype(src, /mob/living/carbon/human))
 		return
+
 	if(initial(icon) && initial(icon_state))
-		add_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', size, color = cum_color), ICON_MULTIPLY)
+		//BLUEMOON ADD START
+		var/list/active_overlays = list()
+		for(var/mutable_appearance/appearance_mirror/MA in src.overlays)
+			if(MA.icon == CUM_DMI && (MA.icon_state in CUM_STATES))
+				active_overlays += MA
+		//BLUEMOON ADD END
+		if(active_overlays.len <= 10) // BLUEMOON EDIT || Не больше 10 оверлеев, иначе будет срабатывать VALIDATE_OVERLAY_LIMIT
+			add_overlay(mutable_appearance(CUM_DMI, state, color = cum_color), ICON_MULTIPLY)
 		var/mob/living/carbon/human/H = src
 		H.covered_in_cum = TRUE
 		to_chat(H, span_love("Кажется тебя немножко забрызгали~"))
@@ -153,12 +161,8 @@
     return percentage
 
 /atom/proc/wash_cum()
-	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal"))
-	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal_1"))
-	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal_2"))
-	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal_3"))
-	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal_4"))
-	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_large"))
+	for(var/state in CUM_STATES)
+		cut_overlay(mutable_appearance(CUM_DMI, state))
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		H.covered_in_cum = FALSE
