@@ -1346,6 +1346,11 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
+/mob/living/simple_animal/bot/medbot{
+	name = "InteQ Hospitality Drone";
+	radio_key = /obj/item/encryptionkey/inteq;
+	radio_channel = "InteQ"
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "eB" = (
@@ -3007,6 +3012,8 @@
 "kj" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
+/obj/item/gun/ballistic/automatic/m90,
+/obj/item/gun/ballistic/automatic/m90,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "kk" = (
@@ -3110,6 +3117,8 @@
 "ky" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/secure,
+/obj/item/gun/ballistic/automatic/scar,
+/obj/item/gun/ballistic/automatic/scar,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "kA" = (
@@ -7198,12 +7207,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/smes{
-	input_level = 10000;
-	inputting = 0;
-	output_level = 200000;
-	outputting = 0
-	},
+/obj/machinery/power/smes/magical,
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
 "xQ" = (
@@ -7806,7 +7810,9 @@
 /turf/open/floor/carpet,
 /area/awaymission/InteQ)
 "zP" = (
-/obj/structure/shipping_container/vitezstvi,
+/obj/structure/shipping_container/vitezstvi{
+	layer = 1
+	},
 /turf/open/floor/plating/ashplanet,
 /area/awaymission/InteQ)
 "zQ" = (
@@ -9174,9 +9180,8 @@
 /turf/open/floor/grass/grass0,
 /area/awaymission/InteQ)
 "Em" = (
-/obj/effect/turf_decal/tile/brown/fourcorners,
-/mob/living/simple_animal/hostile/syndicate/ranged/sniper,
-/turf/open/floor/plasteel/dark,
+/mob/living/simple_animal/hostile/evilborg/bigguy,
+/turf/open/floor/grass/grass0,
 /area/awaymission/InteQ)
 "Eo" = (
 /obj/structure/window/reinforced{
@@ -10043,9 +10048,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/power/smes/engineering{
-	charge = 1e+006
-	},
+/obj/machinery/power/smes/magical,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "Hq" = (
@@ -13741,14 +13744,6 @@
 /obj/effect/turf_decal/tile/brown,
 /obj/structure/alien/weeds/node,
 /mob/living/simple_animal/hostile/alien/drone,
-/turf/open/floor/plasteel/dark,
-/area/awaymission/InteQ)
-"Th" = (
-/mob/living/simple_animal/bot/medbot{
-	name = "InteQ Hospitality Drone";
-	radio_key = /obj/item/encryptionkey/inteq;
-	radio_channel = "InteQ"
-	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "Ti" = (
@@ -23846,7 +23841,7 @@ AO
 BL
 AO
 ip
-Th
+AO
 AO
 LB
 up
@@ -29265,7 +29260,7 @@ YY
 ot
 et
 et
-et
+Em
 YY
 sv
 ot
@@ -29656,7 +29651,7 @@ et
 et
 Id
 YY
-et
+Em
 et
 kA
 et
@@ -31162,7 +31157,7 @@ sv
 yS
 et
 et
-et
+Em
 et
 et
 kA
@@ -34570,7 +34565,7 @@ TX
 TX
 et
 fv
-et
+Em
 YY
 et
 et
@@ -34960,7 +34955,7 @@ et
 et
 et
 et
-et
+Em
 kA
 et
 et
@@ -38585,7 +38580,7 @@ fd
 Ik
 FR
 fd
-Em
+fd
 Un
 Aq
 Ik
