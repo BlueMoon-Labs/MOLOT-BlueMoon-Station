@@ -4,15 +4,15 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/under_digi.dmi'
 
 /obj/item/clothing/under/donator/bm/gorka
-	name = "OMON Turtleneck"
-	desc = "Special Police Detachment uniform. Consists of an UBAC shirt combined with olive camouflage pattern pants. You can see some flags on uniform's shoulders, looks eerily familiar. Probably one of many human states."
+	name = "combat uniform"
+	desc = "A camouflage pattern designed for use in... well, everywhere, really, considering it's origin."
 	icon_state = "omon"
 	item_state = "omon"
 	can_adjust = TRUE
 	unique_reskin = list(
-		"Default" = list("icon_state" = "omon"),
-		"Woodland" = list("icon_state" = "omonwd"),
-		"E2" = list("icon_state" = "omone")
+		"Olive" = list("icon_state" = "omon"),
+		"SAARE" = list("icon_state" = "omonwd"),
+		"Digital" = list("icon_state" = "omone")
 	)
 
 /obj/item/clothing/under/donator/bm/modern_suit
@@ -32,8 +32,8 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/donator/bm/multicam
-	name = "Multicam"
-	desc = "A camouflage pattern designed for use in a wide range of environments and conditions which was specifically developed and is produced by SolFed company Crye Precision"
+	name = "multicam combat uniform"
+	desc = "A camouflage pattern designed for use in a wide range of environments and conditions which was specifically developed and is produced by SCG-originated company Crye Precision."
 	icon_state = "multicam"
 	item_state = "multicam"
 	can_adjust = TRUE
