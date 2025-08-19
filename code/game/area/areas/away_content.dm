@@ -51,3 +51,16 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	// ambience_index = AMBIENCE_AWAY
 	ambientsounds = AWAY_MISSION
 	sound_environment = SOUND_ENVIRONMENT_ROOM
+
+/area/awaymission/InteQ/ForChasmArea //Зона, куда попадают упавшие в чазм
+	name = "pit"
+
+//сам код чазма
+/turf/open/chasm/gateInteQ
+	name = "pit"
+
+/turf/open/chasm/gateInteQ/Initialize(mapload)
+	. = ..()
+	var/turf/T = safepick(get_area_turfs(/area/awaymission/InteQ/ForChasmArea))
+	if(T)
+		set_target(T)
