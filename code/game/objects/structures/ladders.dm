@@ -90,7 +90,7 @@
 	//reopening ladder radial menu ahead
 	T = get_turf(user)
 	var/obj/structure/ladder/ladder_structure = locate() in T
-	if (ladder_structure && (up && down))
+	if (ladder_structure && (ladder_structure.up && ladder_structure.down))
 		ladder_structure.use(user)
 
 /obj/structure/ladder/proc/use(mob/user, is_ghost=FALSE)

@@ -148,7 +148,7 @@
 	// we don't need to update anything.
 	// Most security cameras will end here as they're not moving.
 	var/newturf = get_turf(cam_location)
-	if(last_camera_turf == newturf)
+	if(last_camera_turf == newturf && !isemptylist(cam_screen.vis_contents))
 		return
 
 	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
