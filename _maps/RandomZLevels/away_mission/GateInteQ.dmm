@@ -767,6 +767,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
+"aSX" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/space/basic,
+/area/space)
 "aTl" = (
 /obj/structure/table,
 /obj/item/assembly/prox_sensor,
@@ -1235,7 +1239,8 @@
 "bDp" = (
 /obj/machinery/door/poddoor/preopen,
 /obj/structure/lattice,
-/turf/closed/indestructible/fakeglass,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "bDx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3815,7 +3820,9 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "eTI" = (
-/turf/closed/indestructible/fakeglass,
+/obj/structure/lattice,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "eUe" = (
 /obj/structure/flora/rock/jungle,
@@ -6300,7 +6307,8 @@
 "hYk" = (
 /obj/structure/lattice,
 /obj/machinery/door/poddoor/preopen,
-/turf/closed/indestructible/fakeglass,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "hYO" = (
 /obj/effect/portal/permanent{
@@ -6375,7 +6383,8 @@
 /area/awaymission/InteQ)
 "idn" = (
 /obj/machinery/door/poddoor/preopen,
-/turf/closed/indestructible/fakeglass,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "idw" = (
 /obj/structure/rack/shelf,
@@ -6384,7 +6393,7 @@
 /area/awaymission/InteQ)
 "ieB" = (
 /obj/structure/lattice,
-/turf/closed/indestructible/fakeglass,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "ieQ" = (
 /obj/machinery/light/small{
@@ -7168,9 +7177,9 @@
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
 "iVi" = (
-/obj/structure/emergency_shield,
-/turf/closed/indestructible/fakeglass,
-/area/awaymission/InteQ)
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "iVn" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/space/hardsuit/iron_tombstone{
@@ -8915,7 +8924,8 @@
 /area/awaymission/InteQ)
 "kXd" = (
 /obj/machinery/button/door{
-	pixel_x = 25
+	pixel_x = 25;
+	id = 1
 	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/light{
@@ -11842,7 +11852,8 @@
 	id = "inteqvanguard";
 	name = "InteQ Vanguard shutters"
 	},
-/turf/closed/indestructible/fakeglass,
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "omX" = (
 /obj/item/reagent_containers/food/drinks/bottle/wine,
@@ -44493,9 +44504,9 @@ uad
 uad
 uad
 fbM
-eTI
+jCe
 mnZ
-eTI
+jCe
 fbM
 xqx
 fbM
@@ -45131,7 +45142,7 @@ fbM
 fbM
 fbM
 mnZ
-eTI
+cnA
 fbM
 fbM
 xqx
@@ -45332,7 +45343,7 @@ uad
 fbM
 iNy
 txv
-eTI
+jCe
 txv
 lXl
 fbM
@@ -45557,7 +45568,7 @@ ubJ
 jCe
 xMU
 qGD
-eTI
+cnA
 uMw
 dqG
 oiZ
@@ -45981,7 +45992,7 @@ jPF
 jCe
 jCe
 qGD
-eTI
+cnA
 uMw
 hMp
 hMp
@@ -46189,9 +46200,9 @@ nhe
 qwz
 qwz
 fbM
-eTI
+jCe
 mnZ
-eTI
+jCe
 fbM
 fbM
 uMw
@@ -46617,7 +46628,7 @@ bZH
 jCe
 jCe
 vPj
-eTI
+cnA
 uMw
 hMp
 hMp
@@ -46829,7 +46840,7 @@ pRa
 jCe
 xMU
 afc
-eTI
+cnA
 uMw
 hMp
 hMp
@@ -47041,7 +47052,7 @@ tJH
 ohp
 jCe
 mQy
-eTI
+cnA
 uMw
 uMw
 uMw
@@ -47472,7 +47483,7 @@ cbc
 cbc
 kHD
 uMw
-eTI
+fbM
 uad
 uad
 uad
@@ -47684,7 +47695,7 @@ uMw
 ibt
 kHD
 uMw
-eTI
+fbM
 uad
 uad
 uad
@@ -47896,7 +47907,7 @@ uMw
 uMw
 kHD
 uMw
-eTI
+fbM
 nba
 nba
 nba
@@ -48936,7 +48947,7 @@ jCe
 uMw
 jou
 blU
-eTI
+cnA
 cPD
 noU
 noU
@@ -49148,7 +49159,7 @@ jCe
 jCe
 jCe
 uMw
-eTI
+cnA
 pNL
 jCe
 jCe
@@ -49360,7 +49371,7 @@ vbH
 rXm
 jCe
 ibt
-eTI
+cnA
 pNL
 jCe
 jCe
@@ -50042,7 +50053,7 @@ xqx
 tLt
 xqx
 uMw
-eTI
+jCe
 jCe
 sBn
 fbM
@@ -50480,7 +50491,7 @@ kOZ
 kwd
 enk
 pcm
-eTI
+jCe
 pcm
 pcm
 nlT
@@ -50632,7 +50643,7 @@ vbH
 aJg
 jCe
 ibt
-eTI
+cnA
 pNL
 jCe
 jCe
@@ -50844,7 +50855,7 @@ jCe
 jCe
 jCe
 uMw
-eTI
+cnA
 puM
 jCe
 aPz
@@ -50852,10 +50863,10 @@ jCe
 jCe
 lov
 fbM
-eTI
+jCe
 wfC
 avs
-eTI
+jCe
 fbM
 fbM
 kHD
@@ -50890,7 +50901,7 @@ xqx
 xqx
 xqx
 uMw
-eTI
+jCe
 jCe
 sBn
 fbM
@@ -51056,7 +51067,7 @@ jCe
 uMw
 jou
 blU
-eTI
+cnA
 hnG
 lGL
 uqt
@@ -51122,7 +51133,7 @@ oXd
 fbM
 fbM
 xni
-idn
+bzX
 qxV
 fbM
 pcm
@@ -51472,8 +51483,8 @@ faz
 uad
 pCN
 fbM
-eTI
-eTI
+jCe
+jCe
 fbM
 fbM
 fbM
@@ -51692,9 +51703,9 @@ jCe
 jCe
 rsY
 fnC
-eTI
+cnA
 ejB
-eTI
+cnA
 wDL
 nmo
 rjz
@@ -51904,9 +51915,9 @@ jCe
 jCe
 dHV
 xyE
-eTI
+cnA
 ejB
-eTI
+cnA
 uMw
 kHD
 uMw
@@ -52108,17 +52119,17 @@ hfm
 xCz
 tnP
 pCN
-eTI
-eTI
+jCe
+jCe
 fbM
 eDS
 jCe
 jCe
 dHV
 lXU
-eTI
+cnA
 ejB
-eTI
+cnA
 uMw
 kHD
 uMw
@@ -52360,9 +52371,9 @@ jCe
 jCe
 jCe
 duS
-eTI
+cnA
 kOZ
-eTI
+cnA
 kpo
 duS
 uMw
@@ -52572,9 +52583,9 @@ iuJ
 iuJ
 jGd
 vgo
-eTI
+cnA
 kOZ
-eTI
+cnA
 tNL
 xtq
 jCe
@@ -52784,9 +52795,9 @@ fbM
 fbM
 fbM
 fbM
-eTI
+cnA
 kOZ
-eTI
+cnA
 fbM
 fbM
 fbM
@@ -53458,7 +53469,7 @@ fbM
 fuC
 fuC
 uad
-uad
+aSX
 uad
 uad
 uad
@@ -54471,10 +54482,10 @@ pcm
 cua
 pcm
 pcm
-eTI
+cnA
 pcm
 vaV
-eTI
+cnA
 uMw
 gHw
 mUW
@@ -54875,11 +54886,11 @@ fbM
 fbM
 fbM
 ioX
-eTI
+jCe
 ioX
 fbM
-eTI
-eTI
+cnA
+cnA
 fbM
 fbM
 fbM
@@ -54890,10 +54901,10 @@ fbM
 fbM
 fbM
 fbM
-eTI
+cnA
 tWN
 tWN
-eTI
+cnA
 fbM
 fbM
 fbM
@@ -55085,7 +55096,7 @@ fKp
 fbM
 uFO
 tnP
-ieB
+eTI
 kHD
 kHD
 kHD
@@ -55110,9 +55121,9 @@ fbM
 fEZ
 yif
 diB
-iVi
+diB
 stO
-iVi
+diB
 diB
 diB
 diB
@@ -55297,7 +55308,7 @@ xgV
 fbM
 uFO
 tnP
-eTI
+cnA
 uMw
 kHD
 uMw
@@ -55322,9 +55333,9 @@ fbM
 mlY
 jIP
 wKK
-eTI
+jCe
 ral
-eTI
+jCe
 jCe
 wKK
 diB
@@ -55509,11 +55520,11 @@ fbM
 fbM
 uFO
 tnP
-ieB
+eTI
 uMw
 kHD
 uMw
-eTI
+cnA
 ney
 rmu
 uCD
@@ -55721,11 +55732,11 @@ fbM
 tjs
 iIs
 tnP
-eTI
+cnA
 uMw
 kHD
 uMw
-eTI
+cnA
 ney
 rmu
 uSo
@@ -55933,11 +55944,11 @@ fbM
 uFO
 tjs
 tnP
-ieB
+eTI
 uMw
 kHD
 uMw
-eTI
+cnA
 djF
 rmu
 wBI
@@ -56346,18 +56357,18 @@ iuI
 eZw
 xdY
 jCe
-eTI
+cnA
 mtH
-eTI
+cnA
 fbM
-eTI
+cnA
 mtH
-eTI
+cnA
 fbM
 nNf
 sBW
 sNL
-eTI
+cnA
 kLj
 kHD
 hee
@@ -56553,7 +56564,7 @@ uad
 uad
 clS
 vbF
-eTI
+cnA
 kOh
 usC
 dMl
@@ -56561,11 +56572,11 @@ jCe
 kHD
 cPz
 kHD
-eTI
+cnA
 kHD
 kHD
 kHD
-eTI
+jCe
 kHD
 kHD
 kHD
@@ -56765,7 +56776,7 @@ uad
 uad
 clS
 vbF
-eTI
+cnA
 kOh
 oZa
 kOh
@@ -56781,7 +56792,7 @@ vIS
 uMw
 uMw
 uMw
-eTI
+cnA
 uMw
 kHD
 uMw
@@ -56794,8 +56805,8 @@ wvX
 mIv
 uOE
 fbM
-ieB
-ieB
+eTI
+eTI
 fbM
 fbM
 nWt
@@ -56977,7 +56988,7 @@ uad
 uad
 clS
 vbF
-eTI
+cnA
 oZa
 oZa
 kOh
@@ -56985,11 +56996,11 @@ jCe
 kHD
 bvJ
 kHD
-eTI
+cnA
 ooU
 kHD
 kHD
-eTI
+jCe
 kHD
 kHD
 kHD
@@ -57189,7 +57200,7 @@ uad
 uad
 clS
 tnP
-eTI
+cnA
 iuI
 kOh
 vTQ
@@ -57198,14 +57209,14 @@ gnT
 gnT
 uMw
 fbM
-eTI
+cnA
 pFA
-eTI
+cnA
 fbM
 hHE
 koS
 koS
-eTI
+cnA
 kLj
 kHD
 kHD
@@ -57405,10 +57416,10 @@ wvX
 nss
 kaQ
 dMl
-eTI
-eTI
-eTI
-eTI
+cnA
+cnA
+cnA
+cnA
 fbM
 apY
 xZp
@@ -57427,8 +57438,8 @@ fbM
 wCC
 fbM
 fbM
-ieB
-ieB
+eTI
+eTI
 fbM
 pCN
 pCN
@@ -57613,7 +57624,7 @@ uad
 uad
 clS
 vbF
-eTI
+cnA
 jRx
 jCe
 uqH
@@ -57629,7 +57640,7 @@ fbM
 uFO
 jMm
 tnP
-eTI
+cnA
 uMw
 kHD
 uMw
@@ -57825,7 +57836,7 @@ uad
 uad
 clS
 vbF
-eTI
+cnA
 jUH
 uqH
 jCe
@@ -57841,7 +57852,7 @@ fbM
 uFO
 uFO
 tnP
-eTI
+cnA
 uMw
 kHD
 hee
@@ -58046,8 +58057,8 @@ haj
 jCe
 fcJ
 fbM
-eTI
-eTI
+jCe
+jCe
 ieB
 fbM
 uad
@@ -58265,7 +58276,7 @@ hQf
 hQf
 hfm
 xCz
-uad
+iVi
 fbM
 rfv
 fbM
@@ -58281,10 +58292,10 @@ fbM
 fbM
 pCN
 fbM
-eTI
-eTI
-eTI
-eTI
+cnA
+cnA
+cnA
+cnA
 fbM
 uad
 uad
@@ -58477,7 +58488,7 @@ hfm
 uad
 hfm
 xCz
-uad
+iVi
 fbM
 kHD
 fbM
