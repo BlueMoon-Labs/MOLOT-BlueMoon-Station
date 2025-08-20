@@ -69,20 +69,12 @@
 			sender.set_fluid_id(default)
 
 	if(istype(sender, /obj/item/organ/genital/penis))
-		var/obj/item/genital_equipment/sounding/sounding_rod = locate(/obj/item/genital_equipment/sounding) in sender.contents
-		if(sounding_rod)
-			var/message = ""
-			if(locate(/obj/item/genital_equipment/chastity_cage) in sender.contents)
-				message = "Ты ощущаешь, как стержень упирается в клетку и не может выйти, поток жидкости обтекает его, раздувая твой член и вызывая болезненную пульсацию!"
-				if(HAS_TRAIT(src, TRAIT_MASO))
-					message = span_userlove(message)
-				else
-					message = span_alertwarning(message)
-			else
-				spill = TRUE
-				message = span_userlove("Ты чувствуешь, как стержень выталкивается из твоей уретры вместе со струей оргазменной жидкости!")
-				sounding_rod.forceMove(get_turf(src))
-			to_chat(src, message)
+		var/obj/item/organ/genital/penis/bepis = sender
+		if(locate(/obj/item/genital_equipment/sounding) in bepis.contents)
+			spill = TRUE
+			to_chat(src, "<span class='userlove'>Ты чувствуешь, как стержень выталкивается из твоей уретры вместе со струей оргазменной жидкости!</span>")
+			var/obj/item/genital_equipment/sounding/rod = locate(/obj/item/genital_equipment/sounding) in bepis.contents
+			rod.forceMove(get_turf(src))
 
 	if(cover == TRUE)
 		if(istype(sender, /obj/item/organ/genital/penis) || HAS_TRAIT(src, TRAIT_MESSY))
