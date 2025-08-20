@@ -2703,12 +2703,6 @@
 /mob/living/simple_animal/hostile/syndicate/civilian,
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
-"dug" = (
-/obj/structure/ladder/unbreakable{
-	id = 11
-	},
-/turf/open/floor/catwalk_floor,
-/area/awaymission/InteQ)
 "dur" = (
 /obj/machinery/door/window{
 	dir = 4
@@ -3114,6 +3108,12 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
+/area/awaymission/InteQ)
+"dUb" = (
+/obj/structure/ladder/unbreakable{
+	id = lvl1boss
+	},
+/turf/open/floor/catwalk_floor,
 /area/awaymission/InteQ)
 "dUI" = (
 /obj/structure/railing,
@@ -3713,15 +3713,6 @@
 	dir = 9
 	},
 /area/awaymission/InteQ)
-"eNp" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/ladder/unbreakable{
-	id = gate_intek_lvl1
-	},
-/turf/open/floor/plasteel/bluespace,
-/area/awaymission/InteQ/ForChasmArea)
 "eNy" = (
 /obj/effect/turf_decal/stripes/white/box,
 /obj/structure/closet/crate/large,
@@ -8465,6 +8456,12 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
+"kwz" = (
+/obj/structure/ladder/unbreakable{
+	id = lvl2boss
+	},
+/turf/open/floor/plating,
+/area/awaymission/InteQ)
 "kxc" = (
 /obj/machinery/light{
 	dir = 1
@@ -12793,7 +12790,7 @@
 /area/awaymission/InteQ)
 "pEN" = (
 /obj/structure/ladder/unbreakable{
-	id = ''gate_intek_lvl2''
+	id = lvl1nagrada
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/InteQ)
@@ -15141,6 +15138,12 @@
 /obj/structure/emergency_shield,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
+"sud" = (
+/obj/structure/ladder/unbreakable{
+	id = lvl2boss
+	},
+/turf/open/floor/catwalk_floor,
+/area/awaymission/InteQ)
 "sux" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -15718,12 +15721,6 @@
 "tgl" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/grass/grass0,
-/area/awaymission/InteQ)
-"tgm" = (
-/obj/structure/ladder/unbreakable{
-	id = ''gate_intek_lvl2''
-	},
-/turf/open/floor/plating,
 /area/awaymission/InteQ)
 "tgx" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -16364,6 +16361,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
+"tKf" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/ladder/unbreakable{
+	id = lvl1nagrada
+	},
+/turf/open/floor/plasteel/bluespace,
+/area/awaymission/InteQ/ForChasmArea)
 "tKh" = (
 /obj/machinery/door/airlock/research,
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -29460,7 +29466,7 @@ ibQ
 ibQ
 ibQ
 gaD
-dug
+dUb
 dlE
 ioN
 ioN
@@ -49361,7 +49367,7 @@ xut
 xut
 xut
 vAZ
-pEN
+sud
 fbM
 cPq
 kOZ
@@ -76856,7 +76862,7 @@ hZC
 vxE
 hZC
 xqx
-xqx
+kwz
 fbM
 boO
 div
@@ -77068,7 +77074,7 @@ xqx
 xqx
 xqx
 xqx
-tgm
+xqx
 fbM
 btq
 sLL
@@ -81384,7 +81390,7 @@ xut
 xut
 xut
 tMC
-dug
+sud
 dlE
 xut
 xut
@@ -81397,7 +81403,7 @@ eLN
 puz
 cAs
 cAs
-eNp
+tKf
 cAs
 cAs
 osp
