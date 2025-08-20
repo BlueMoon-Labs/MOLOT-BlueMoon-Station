@@ -3632,6 +3632,24 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
+"eFc" = (
+/obj/machinery/button/door{
+	id = "gate-open";
+	name = "Port Cargo Door Control";
+	pixel_x = -1;
+	pixel_y = -14;
+	req_access_txt = "152"
+	},
+/turf/open/floor/plating/dirt/dark{
+	explosion_power_break_tile = 3000;
+	explosion_power_break_turf = 3000;
+	explosion_power_break_turf_bonus = 3000;
+	explosion_power_minimum_chance_break = 3000;
+	explosion_power_protect_shielded = 3000;
+	explosion_power_turf_scrape = 3000;
+	planetary_atmos = 0
+	},
+/area/awaymission/InteQ)
 "eFt" = (
 /obj/machinery/door/airlock/research,
 /turf/open/floor/plasteel{
@@ -11830,10 +11848,18 @@
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
 "olk" = (
-/mob/living/simple_animal/hostile/nanotrasen/elite{
-	faction = list("Station")
+/obj/machinery/door/poddoor{
+	id = "gate-open"
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/plating/dirt/dark{
+	explosion_power_break_tile = 3000;
+	explosion_power_break_turf = 3000;
+	explosion_power_break_turf_bonus = 3000;
+	explosion_power_minimum_chance_break = 3000;
+	explosion_power_protect_shielded = 3000;
+	explosion_power_turf_scrape = 3000;
+	planetary_atmos = 0
+	},
 /area/awaymission/InteQ)
 "omc" = (
 /obj/machinery/light{
@@ -14641,6 +14667,9 @@
 /mob/living/simple_animal/hostile/grunt,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/InteQ/ForChasmArea)
+"rHh" = (
+/turf/closed/indestructible/riveted/lfwb/cave,
+/area/awaymission/InteQ)
 "rHp" = (
 /obj/structure/closet/l3closet/scientist,
 /obj/structure/window/reinforced/spawner/east,
@@ -21689,7 +21718,7 @@ eLN
 eLN
 eLN
 eLN
-eLN
+rHh
 eLN
 eLN
 pyf
@@ -21901,9 +21930,9 @@ ioN
 ioN
 ioN
 ioN
+olk
 ioN
 ioN
-eLN
 eLN
 eLN
 xYZ
@@ -22112,9 +22141,9 @@ ioN
 ioN
 ioN
 ioN
-ioN
-ioN
-ioN
+eFc
+rHh
+xYZ
 ioN
 ioN
 ioN
@@ -22325,7 +22354,7 @@ ioN
 ioN
 ioN
 ioN
-ioN
+olk
 ioN
 ioN
 ioN
@@ -22531,20 +22560,20 @@ sJt
 hNH
 qnY
 eSO
-olk
+pfF
 ppa
 ioN
 oat
 eLN
 eLN
-eLN
+rHh
 xYZ
 ioN
 ioN
 ioN
 ioN
 ioN
-ioN
+xYZ
 ioN
 ioN
 ioN
@@ -22749,7 +22778,7 @@ ioN
 ioN
 ioN
 eLN
-eLN
+rHh
 eLN
 ioN
 ioN
@@ -22960,8 +22989,8 @@ pGi
 xYZ
 ioN
 ioN
-ioN
-eLN
+eFc
+rHh
 ioN
 ioN
 ioN
@@ -23168,12 +23197,12 @@ eLN
 eLN
 ioN
 ioN
-xYZ
 ioN
 ioN
 ioN
 ioN
 ioN
+olk
 ioN
 ioN
 ioN
@@ -23378,20 +23407,20 @@ fbM
 fbM
 fbM
 fbM
-eLN
-ioN
-ioN
-ioN
-ioN
-ioN
-ioN
-ioN
+rHh
+rHh
+rHh
+rHh
+rHh
+rHh
+rHh
+rHh
 ioN
 xYZ
 ioN
 ioN
 ioN
-ioN
+xYZ
 eLN
 ioN
 ioN
