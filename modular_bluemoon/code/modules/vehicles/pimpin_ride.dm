@@ -14,8 +14,8 @@
 	/// BLUEMOON ADD переключение режимов работы жаникарта
 	var/static/radial_eject_trash = image(icon = 'icons/obj/janitor.dmi', icon_state = "trashbag")
 	var/static/radial_eject_key = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_eject_key")
-	var/static/radial_buffer_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/buffer")
-	var/static/radial_vacuum_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/vacuum")
+	// var/static/radial_buffer_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/buffer")
+	// var/static/radial_vacuum_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/vacuum")
 	var/static/radial_unbuckle = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_eject")
 	var/use_buffer = TRUE
 	var/use_vacuum = TRUE
