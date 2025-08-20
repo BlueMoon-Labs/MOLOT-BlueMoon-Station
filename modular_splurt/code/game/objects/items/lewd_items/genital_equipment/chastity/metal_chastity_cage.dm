@@ -15,10 +15,11 @@
 	var/mob/living/carbon/human/H = G.owner
 	RegisterSignal(H, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
-	skin_overlay = mutable_appearance(icon, "worn_[icon_state]_[cage_sprite]_skin", skin_overlay_layer)
+	var/cock_taur = H?.dna?.features["cock_taur"]
+	skin_overlay = mutable_appearance(mob_overlay_icon, "worn_[icon_state]_[cage_sprite][cock_taur ? "_taur" : ""]_skin", skin_overlay_layer)
 	skin_overlay.color = G.color
 
-	H.add_overlay(skin_overlay)
+	skin_overlay = apply_overlay(G, skin_overlay)
 
 /obj/item/genital_equipment/chastity_cage/metal/proc/on_move(atom/old_loc, dir)
 	SIGNAL_HANDLER
