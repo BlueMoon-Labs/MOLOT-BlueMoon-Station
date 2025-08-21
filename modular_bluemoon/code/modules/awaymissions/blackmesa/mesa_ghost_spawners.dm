@@ -14,6 +14,7 @@
 	category = "offstation"
 	faction = list(FACTION_BLACKMESA)
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+	color = "#9a74ac"
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
@@ -42,6 +43,7 @@
 	outfit = /datum/outfit/security_guard
 	short_desc = "Ты являешься выжившим охранником чёрной мезы"
 	flavour_text = "Ты один из охранников Чёрной Мезы, а конкретно Сектора H. Твоя работа была размеренной и спокойной, но что-то пошло не так. Теперь ты, оставшись со своим напарником, лежишь без сознания в чудом уцелевшем КПП охраны"
+	color = "#656c8f"
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
@@ -105,6 +107,7 @@
 	important_info = "(ПРИ ИСПОЛЬЗОВАНИИ АКТУАЛИЗАТОРА СТРОГО ЗАПРЕЩЕНО ВЫБИРАТЬ ЛЮБУЮ ДРУГУЮ РАСУ КРОМЕ ЧЕЛОВЕКА. ПРИ НАРУШЕНИЯХ ИЛИ ОШИБКАХ ПРОСЬБА ОБРАТИТСЯ К АДМИНИСТРАЦИИ)Не пытайся исследовать комплекс до прибытия экспедиционной группы. В случае, когда прошло 20 минут от начала раунда, а исследователи так и не пришли, ты можешь постепенно продвигаться по комплексу."
 	category = "offstation"
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+	color = "#a2fcff"
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
