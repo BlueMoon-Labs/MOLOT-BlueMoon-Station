@@ -67,8 +67,6 @@
 /obj/item/genital_equipment/chastity_cage/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 
-	//RegisterSignal(equipment.get_wearer(), COMSIG_MOB_GENITAL_TRY_INSERTING)
-
 	if(belt)
 		return belt.handle_cage_equipping(source, G, user)
 
@@ -78,6 +76,7 @@
 
 	//turn that flag on
 	ENABLE_BITFIELD(G.genital_flags, GENITAL_CHASTENED)
+	H.update_genitals()
 
 	var/overlay_icon_state
 
@@ -107,8 +106,9 @@
 
 	cage_overlay = mutable_appearance(mob_overlay_icon, overlay_icon_state, overlay_layer)
 	cage_overlay.color = color //Set the overlay's color to the cage item's
-	
+
 	cage_overlay = apply_overlay(G, cage_overlay)
+	RegisterSignal(H, COMSIG_MOB_UPDATE_GENITALS, PROC_REF(mob_update_genitals))
 
 /obj/item/genital_equipment/chastity_cage/item_removing(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
@@ -152,7 +152,6 @@
 /obj/item/genital_equipment/chastity_cage/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 
-	//UnregisterSignal(equipment.get_wearer(), COMSIG_MOB_GENITAL_TRY_INSERTING)
 	if(belt)
 		return belt.handle_cage_dropping(source, G, user)
 
@@ -162,12 +161,12 @@
 	var/mob/living/carbon/human/H = G.owner
 
 	DISABLE_BITFIELD(G.genital_flags, GENITAL_CHASTENED)
+	UnregisterSignal(H, COMSIG_MOB_UPDATE_GENITALS)
+
 	H.cut_overlay(cage_overlay)
 	is_overlay_on = FALSE
 
 	H.update_genitals()
-
-	UnregisterSignal(H, list(COMSIG_MOB_ITEM_EQUIPPED, COMSIG_MOB_ITEM_DROPPED))
 
 /obj/item/genital_equipment/chastity_cage/proc/equip(mob/user, mob/living/carbon/target, obj/item/organ/genital/penor)
 	. = TRUE
@@ -191,33 +190,45 @@
 		to_chat(user, "<span class='warning'>You got to take [source.p_their()] cage off first!</span>")
 		return TRUE
 
-/obj/item/genital_equipment/chastity_cage/proc/mob_equipped_item(datum/source, obj/item/I)
-	var/mob/living/carbon/human/H = source
-	if(istype(I, /obj/item/clothing/under) && is_overlay_on)
-		H.cut_overlay(cage_overlay)
-		is_overlay_on = FALSE
+// The is_overlay_on changes in this proc, so in child call ..() after your code!
+/obj/item/genital_equipment/chastity_cage/proc/mob_update_genitals(datum/source)
+	var/action = updt_overlay(source, cage_overlay)
+	if(isnull(action))
+		return
+	is_overlay_on = action
 
-/obj/item/genital_equipment/chastity_cage/proc/mob_dropped_item(datum/source, obj/item/I)
-	var/mob/living/carbon/human/H = source
-	if(istype(I, /obj/item/clothing/under) && !is_overlay_on)
-		H.add_overlay(cage_overlay)
-		is_overlay_on = TRUE
+// manipulates overlays while the cage is being worn. return null == no updt, TRUE/FALSE == updt add/cut
+/obj/item/genital_equipment/chastity_cage/proc/updt_overlay(mob/living/carbon/human/target, mutable_appearance/overlay)
+	. = TRUE
+	if(!target || !overlay)
+		return null
 
+	var/obj/item/organ/genital/organ = target.getorganslot(genital_slot)
+	var/organ_exposed = organ && organ.is_exposed()
+
+	if(organ_exposed && !is_overlay_on)
+		target.add_overlay(overlay)
+		return TRUE
+	else if(!organ_exposed && is_overlay_on)
+		target.cut_overlay(overlay)
+		return FALSE
+	else
+		return null // Don't need updt
+
+// adjusts and applies the overlay when putting on the cage
 /obj/item/genital_equipment/chastity_cage/proc/apply_overlay(obj/item/organ/genital/G, mutable_appearance/overlay)
 	if(!G || !overlay)
 		return overlay
 	var/mob/living/carbon/human/H = G.owner
 	overlay = adjust_overlay(G, overlay)
 
-	H.add_overlay(overlay)
-	is_overlay_on = TRUE
-
-	H.update_genitals()
-	RegisterSignal(H, COMSIG_MOB_ITEM_EQUIPPED, PROC_REF(mob_equipped_item))
-	RegisterSignal(H, COMSIG_MOB_ITEM_DROPPED, PROC_REF(mob_dropped_item))
+	if(G.is_exposed())
+		H.add_overlay(overlay)
+		is_overlay_on = TRUE
 
 	return overlay
 
+// adjusts overlay to sprite_accessory of cock
 /obj/item/genital_equipment/chastity_cage/proc/adjust_overlay(obj/item/organ/genital/G, mutable_appearance/overlay)
 	if(!G || !overlay)
 		return overlay
