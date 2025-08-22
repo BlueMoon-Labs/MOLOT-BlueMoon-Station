@@ -125,7 +125,7 @@
 
 /datum/reagent/consumable/lemonjuice
 	name = "Lemon Juice"
-	description = "This juice is VERY sour."	
+	description = "This juice is VERY sour."
 	color = "#AFAF00" // rgb: 175, 175, 0
 	taste_description = "sourness"
 	glass_icon_state  = "lemonglass"
@@ -1128,7 +1128,7 @@
 			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
 	if(ishuman(M) && !(M.client?.prefs.cit_toggles & NO_APHRO))
 		var/mob/living/carbon/human/H = M
-		var/list/adjusted = H.adjust_arousal(5,aphro = TRUE)
+		var/list/adjusted = H.adjust_arousal(5,aphro = TRUE, silent = TRUE)
 		for(var/g in adjusted)
 			var/obj/item/organ/genital/G = g
 			to_chat(M, "<span class='userlove'>You feel like playing with your [G.name]!</span>")

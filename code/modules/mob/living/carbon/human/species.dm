@@ -2025,10 +2025,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		//SPLURT ADDITION END
 		// BLUEMOON EDIT START || It's easy to get aroused, but it's hard to cum.
 		if(ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(40))
-			var/genits = target.adjust_arousal(20,"masochism", maso = TRUE)
-			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(target, span_userlove("[G.arousal_verb]!"))
+			target.adjust_arousal(20,"masochism", maso = TRUE)
 			target.handle_post_sex(NORMAL_LUST, null, null)
 		// BLUEMOON EDIT END
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))

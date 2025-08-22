@@ -43,7 +43,7 @@
 	update_body(TRUE)
 */
 
-/mob/living/carbon/human/proc/adjust_arousal(strength, cause = "manual toggle", aphro = FALSE,maso = FALSE) // returns all genitals that were adjust
+/mob/living/carbon/human/proc/adjust_arousal(strength, cause = "manual toggle", aphro = FALSE,maso = FALSE, silent = FALSE) // returns all genitals that were adjust
 	var/list/obj/item/organ/genital/genit_list = list()
 	if(!client?.prefs.arousable || (aphro && (client?.prefs.cit_toggles & NO_APHRO)) || (maso && !HAS_TRAIT(src, TRAIT_MASO)))
 		return // no adjusting made here
@@ -64,6 +64,9 @@
 			update_body(TRUE)
 			if(G.aroused_state)
 				genit_list += G
+	if(enabling && !silent)
+		for(var/obj/item/organ/genital/g in genit_list)
+			to_chat(src, span_userlove("[g.arousal_verb]!"))
 	return genit_list
 
 /obj/item/organ/genital/proc/climaxable(mob/living/carbon/human/H, silent = FALSE) //returns the fluid source (ergo reagents holder) if found.
