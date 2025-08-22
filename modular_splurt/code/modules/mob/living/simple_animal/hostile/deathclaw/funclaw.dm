@@ -7,6 +7,11 @@
 	gold_core_spawnable = NO_SPAWN // Admin only
 	deathclaw_mode = "rape"
 
+/mob/living/simple_animal/hostile/deathclaw/funclaw/Initialize(mapload)
+	. = ..()
+	if(aggro_vision_range) // Если это не мирный моб, то его нельзя таскать, прятать в ящики и т.д.
+		mob_weight = MOB_WEIGHT_HEAVY_SUPER
+
 /mob/living/simple_animal/hostile/deathclaw/funclaw/gentle
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one has the bedroom eyes.."
 	deathclaw_mode = "gentle"
