@@ -17,3 +17,19 @@
 #define CUM_TARGET_THIGHS "thighs"
 #define CUM_TARGET_BELLY "belly"
 #define CUM_TARGET_ARMPIT "armpit"
+
+//Cum overlays
+#define CUM_DMI 'modular_splurt/icons/effects/cumoverlay.dmi'
+#define CUM_STATES list( \
+    "cum_normal", \
+    "cum_normal_1", \
+    "cum_normal_2", \
+    "cum_normal_3", \
+    "cum_normal_4", \
+    "cum_large" \
+)
+#define CUM_STATES_NEUTRAL list( \
+    "cum_normal_1", \
+    "cum_normal_2", \
+    "cum_normal_3"	\
+)

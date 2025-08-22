@@ -1746,6 +1746,8 @@
 	name = "Polychromic evening gloves"
 	path = /obj/item/clothing/gloves/toggled/hug/poly_evening
 	slot = ITEM_SLOT_GLOVES
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+	loadout_initial_colors = list("#FEFEFE")
 	ckeywhitelist = list("herobrine998")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 

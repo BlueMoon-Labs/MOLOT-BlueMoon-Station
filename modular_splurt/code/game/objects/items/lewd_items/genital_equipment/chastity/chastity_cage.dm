@@ -17,6 +17,7 @@
 	desc = "Feeling submissive yet?"
 	icon = 'modular_splurt/icons/obj/lewd_items/chastity.dmi'
 	icon_state = "standard_cage"
+	mob_overlay_icon = 'modular_splurt/icons/obj/lewd_items/chastity.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	genital_slot = ORGAN_SLOT_PENIS
 
@@ -81,26 +82,33 @@
 	var/overlay_icon_state
 
 	overlay_icon_state = "worn_[worn_icon_state || icon_state]"
+	var/cock_taur = H?.dna?.features["cock_taur"]
 	if(resizeable)
-		switch(G.size)
-			if(1 to 2)
-				cage_sprite = 1
-			if(3 to 4)
-				cage_sprite = 2
-			if(5)
+		if(cock_taur)
+			if(G.size < 3)
+				cage_sprite = G.size
+			else
 				cage_sprite = 3
+		else
+			switch(G.size)
+				if(1 to 2)
+					cage_sprite = 1
+				if(3 to 4)
+					cage_sprite = 2
+				if(5)
+					cage_sprite = 3
 
 		overlay_icon_state += "_[cage_sprite]"
+	if(cock_taur)
+		overlay_icon_state += "_taur"
+		mob_overlay_icon = 'modular_splurt/icons/obj/lewd_items/chastity_taur.dmi'
+	else
+		mob_overlay_icon = initial(mob_overlay_icon)
 
-	cage_overlay = mutable_appearance(icon, overlay_icon_state, overlay_layer)
+	cage_overlay = mutable_appearance(mob_overlay_icon, overlay_icon_state, overlay_layer)
 	cage_overlay.color = color //Set the overlay's color to the cage item's
-
-	H.add_overlay(cage_overlay)
-	is_overlay_on = TRUE
-
-	H.update_genitals()
-	RegisterSignal(H, COMSIG_MOB_ITEM_EQUIPPED, PROC_REF(mob_equipped_item))
-	RegisterSignal(H, COMSIG_MOB_ITEM_DROPPED, PROC_REF(mob_dropped_item))
+	
+	cage_overlay = apply_overlay(G, cage_overlay)
 
 /obj/item/genital_equipment/chastity_cage/item_removing(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
@@ -194,5 +202,41 @@
 	if(istype(I, /obj/item/clothing/under) && !is_overlay_on)
 		H.add_overlay(cage_overlay)
 		is_overlay_on = TRUE
+
+/obj/item/genital_equipment/chastity_cage/proc/apply_overlay(obj/item/organ/genital/G, mutable_appearance/overlay)
+	if(!G || !overlay)
+		return overlay
+	var/mob/living/carbon/human/H = G.owner
+	overlay = adjust_overlay(G, overlay)
+
+	H.add_overlay(overlay)
+	is_overlay_on = TRUE
+
+	H.update_genitals()
+	RegisterSignal(H, COMSIG_MOB_ITEM_EQUIPPED, PROC_REF(mob_equipped_item))
+	RegisterSignal(H, COMSIG_MOB_ITEM_DROPPED, PROC_REF(mob_dropped_item))
+
+	return overlay
+
+/obj/item/genital_equipment/chastity_cage/proc/adjust_overlay(obj/item/organ/genital/G, mutable_appearance/overlay)
+	if(!G || !overlay)
+		return overlay
+	var/datum/sprite_accessory/S = GLOB.cock_shapes_list[G.shape]
+	var/mob/living/carbon/human/H = G.owner
+	if(S && S.icon_state != "none")
+		var/do_center = S.center
+		var/dim_x = S.dimension_x
+		var/dim_y = S.dimension_y
+		// copypaste from update_genitals()
+		if(G.genital_flags & GENITAL_CAN_TAUR && S.taur_icon && (!S.feat_taur || H?.dna?.features[S.feat_taur]) && H?.dna?.species.mutant_bodyparts["taur"])
+			var/datum/sprite_accessory/taur/T = GLOB.taur_list[H?.dna?.features["taur"]]
+			if(T?.taur_mode & S.accepted_taurs)
+				do_center = TRUE
+				dim_x = S.taur_dimension_x
+				dim_y = S.taur_dimension_y
+		if(do_center)
+			overlay = center_image(overlay, dim_x, dim_y)
+
+	return overlay
 
 #undef BLACKLISTED_GENITALS
