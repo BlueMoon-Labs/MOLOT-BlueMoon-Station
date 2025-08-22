@@ -605,7 +605,7 @@
 			REMOVE_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 		var/climax_threshold = M.get_climax_threshold()
 		if(M.lust / climax_threshold < 0.95) // Пока меньше в %, накидываем lust
-			M.add_lust((M.lust + HIGH_LUST < climax_threshold) ? HIGH_LUST : (climax_threshold - M.lust - 1))
+			M.add_lust((M.lust + NORMAL_LUST < climax_threshold) ? NORMAL_LUST : (climax_threshold - M.lust - 1))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.adjust_arousal(100, "hexacrocin", aphro = TRUE) // redundant but should still be here
