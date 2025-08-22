@@ -64,7 +64,7 @@
 
 /obj/item/gun/ballistic/automatic/mp5
 	name = "MP5 machinegun"
-	desc = "Heckler Koch Mp5 является хоть и устаревшим, но невероятно сильным оружием в виду своей скорострельности. Какой идиот вообще подумал, что будет отличной идеей отобрать его у морпеха Хеку?"
+	desc = "Heckler Koch Mp5 является хоть и устаревшим, но невероятно сильным оружием в виду своей скорострельности. Какой идиот вообще подумал, что будет отличной идеей отобрать его у морпеха HECU?"
 	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -105,7 +105,7 @@
 
 /obj/item/gun/ballistic/shotgun/m870
 	name = "m870 shotgun"
-	desc = "Remington 870 - это классический помповый дробовик, который был представлен компанией Remington Arms в 1950 году и до сих пор остается одним из самых популярных и продаваемых ружей в Солнечной Федерации."
+	desc = "Remington 870 - это классический помповый дробовик, который был представлен компанией Remington Arms в 1950 году и до сих пор остается одним из самых популярных и продаваемых ружей в США."
 	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -209,7 +209,7 @@
 
 /obj/item/gun/ballistic/automatic/m16a4/mesa
 	name = "\improper old M16 rifle"
-	desc = "Невероятно старая версия М16 с сломанным подствольным гранатомётом и... Большей отдачей что-ли? Держа её в руках, вы чувствуете странные ощущения"
+	desc = "Невероятно старая версия М16 с сломанным подствольным гранатомётом и... Большей отдачей что-ли? Держа её в руках, вы чувствуете странные ощущения... Да и отряды HECU с таким замечены не были"
 	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
 	icon_state = "m16hl"
 	burst_size = 1
@@ -225,7 +225,7 @@
 
 /obj/item/gun/ballistic/automatic/mp7
 	name = "\improper mp7"
-	desc = "Heckler & Koch MP7 A1 PDW — пистолет-пулемёт, разработанный в начале 2000-х годов немецкой фирмой Heckler & Koch. Отлично подойдёт, если вместо лечения людей медик хочет устроить бойню"
+	desc = "Heckler & Koch MP7 A1 PDW — пистолет-пулемёт, разработанный в начале 2000-х годов немецкой фирмой Heckler & Koch. Отлично подойдёт, если вместо лечения союзников медик вашего отряда HECU хочет устроить бойню"
 	icon = 'modular_bluemoon/icons/obj/guns/projectile.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -277,7 +277,7 @@
 
 /obj/item/gun/ballistic/automatic/scar
 	name = "\improper HC scar"
-	desc = "Модифицированная версия FN Scar, предназначенная для ведения стрельбы на средние и дальние дистанции. В отличие от M4oa1, имеет автоматический режим стрельбы и менее убойный калибр."
+	desc = "Модифицированная версия FN Scar, предназначенная для ведения стрельбы на средние и дальние дистанции. В отличие от M4oa1, имеет автоматический режим стрельбы и менее убойный калибр + крутой песчаный камуфляж (Но вы же помните то, что орудуете только в научном комплексе?)"
 	icon = 'modular_bluemoon/icons/obj/guns/projectile48x32.dmi'
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/weapons/guns_righthand.dmi'
