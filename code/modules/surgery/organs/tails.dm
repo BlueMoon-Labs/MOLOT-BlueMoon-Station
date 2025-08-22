@@ -32,10 +32,10 @@
 			H.update_body()
 
 /obj/item/organ/tail/cat/Remove(special = FALSE)
-	if(!QDELETED(owner) && ishuman(owner))
+	if(!QDELETED(owner) && ishuman(owner) && (owner.dna.features["mam_tail"] == tail_type))
 		var/mob/living/carbon/human/H = owner
 		H.dna.features["mam_tail"] = "None"
-		H.dna.species.mutant_bodyparts -= "mam_tail"
+		H.dna.species.mutant_bodyparts["mam_tail"] = "None"
 		color = H.hair_color
 		H.update_body()
 	return ..()
