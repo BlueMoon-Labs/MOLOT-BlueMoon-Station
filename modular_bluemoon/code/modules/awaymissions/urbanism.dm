@@ -168,8 +168,8 @@
 
 
 /obj/structure/urbanismdisplay
-	name = "Mesa incident display"
-	desc = "Looks broken"
+	name = "Black mesa based display"
+	desc = "Looks like black mesa BIOS is sucks."
 	icon = 'modular_bluemoon/icons/obj/urbanism/mesa_display.dmi'
 	icon_state = "display_broken"
 	anchored = TRUE
@@ -182,7 +182,7 @@
 
 /obj/structure/urbanismdisplay/urbanismchalk
 	name = "Big chalkboard"
-	desc = "Here is many of symbols and text... You barely can understand that text"
+	desc = "Here is many of symbols and text... You barely can understand this smart words and scientific formulas"
 	icon = 'modular_bluemoon/icons/obj/urbanism/mesa_display.dmi'
 	icon_state = "chalkboard"
 	anchored = TRUE
