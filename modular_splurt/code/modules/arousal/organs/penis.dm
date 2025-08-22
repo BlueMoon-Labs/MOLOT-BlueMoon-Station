@@ -88,5 +88,7 @@
 			break
 
 	// splash affected objects
+	var/overlay_state = pick_cum_overlay()
+	var/overlay_color = initial(linked_organ.fluid_id.color)
 	for(var/atom/object in cumsplashed_items)
-		object.add_cum_overlay(length_multiplier > 1 ? "cum_large" : "cum_normal", initial(linked_organ.fluid_id.color))	//тут можно миллиард проверок впихнуть на наличие BIG BALLS/etc но пусть хотя бы так пока работает.
+		object.add_cum_overlay(overlay_state, overlay_color)

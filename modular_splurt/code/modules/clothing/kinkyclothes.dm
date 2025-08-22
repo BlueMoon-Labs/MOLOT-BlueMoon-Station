@@ -114,7 +114,20 @@
 	icon_state = "office_revealing"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	item_state = "office_revealing"
+	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+	unique_reskin = list(
+		"Standart" = list(
+			"icon_state" = "office_revealing",
+			"item_state" = "office_revealing",
+			"name" = "Revealing office uniform"
+		),
+		"Slutty" = list(
+			"icon_state" = "office_revealing_slut",
+			"item_state" = "office_revealing_slut",
+			"name" = "Revealing slutty uniform"
+		)
+	)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/vaultsuit

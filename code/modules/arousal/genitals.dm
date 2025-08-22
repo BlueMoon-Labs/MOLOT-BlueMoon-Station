@@ -112,6 +112,35 @@
 		var/mob/living/carbon/human/H = owner
 		H.update_genitals()
 
+/obj/item/organ/genital/proc/pick_cum_overlay()
+	var/result = pick(CUM_STATES_NEUTRAL)
+
+	if(istype(src, /obj/item/organ/genital/penis) || istype(src, /obj/item/organ/genital/testicles))
+		var/obj/item/organ/genital/testicles/balls
+		if(istype(src, /obj/item/organ/genital/testicles))
+			balls = src
+		else if(linked_organ)
+			balls = linked_organ
+
+		var/list/states = CUM_STATES
+		for(var/i in 1 to states.len) // Делаем список с весом
+			var/key = states[i]
+			states -= key
+			states[key] = 1
+
+		var/const/state_large = "cum_large" // Подменяем вес у state_large в зависимости от размера (Такая оригинальная логика была)
+		if(state_large in states)
+			if(balls.size < BALLS_SIZE_3)
+				states -= state_large
+			else if(balls.size == BALLS_SIZE_3)
+				states[state_large] = 4
+			else
+				states[state_large] = 10
+
+		result = pickweight(states) // Выбираем state
+
+	return result
+
 /mob/living/carbon/verb/toggle_genitals()
 	set category = "IC"
 	set name = "Expose/Hide genitals"

@@ -88,5 +88,7 @@
 			break
 
 	// splash affected objects
+	var/overlay_state = pick_cum_overlay()
+	var/overlay_color = initial(fluid_id.color)
 	for(var/atom/object in cumsplashed_items)
-		object.add_cum_overlay(initial(fluid_id.color), width_multiplier > 1 ? TRUE : FALSE)
+		object.add_cum_overlay(overlay_state, overlay_color)

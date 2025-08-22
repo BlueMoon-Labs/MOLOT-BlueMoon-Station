@@ -24,6 +24,8 @@
 		return
 
 	// splash affected objects
+	var/overlay_state = pick_cum_overlay()
+	var/overlay_color = initial(linked_organ.fluid_id.color)
 	for(var/atom/object in target_turf.contents)
 		if(!istype(object) || isturf(object) || object == owner)
 			continue
@@ -31,4 +33,4 @@
 			var/mob/living/carbon/human/H = object
 			if(!(H.client?.prefs.cit_toggles & CUM_ONTO))
 				continue
-		object.add_cum_overlay(initial(linked_organ.fluid_id.color), get_size(owner) >= 1.5)
+		object.add_cum_overlay(overlay_state, overlay_color)
