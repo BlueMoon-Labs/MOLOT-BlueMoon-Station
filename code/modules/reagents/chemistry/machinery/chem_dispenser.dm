@@ -26,7 +26,7 @@
 	var/powerefficiency = 0.0666666
 	var/dispenceUnit = 5
 	var/amount = 30
-	var/recharge_amount = 10
+	var/recharge_amount = 100 // BLUEMOON EDIT
 	var/recharge_counter = 0
 	var/canStore = TRUE//If this can hold reagents or not
 	var/mutable_appearance/beaker_overlay

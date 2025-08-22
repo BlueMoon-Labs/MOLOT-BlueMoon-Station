@@ -16,6 +16,7 @@
 	var/condi = FALSE
 	var/chosenPillStyle = 1
 	var/chosenPatchStyle = 1 //BM add
+	var/max_create_amount_multiplier = 1 // BLUEMOON ADD
 	var/screen = "home"
 	var/analyzeVars[0]
 	var/useramount = 30 // Last used amount
@@ -65,9 +66,14 @@
 	return ..()
 
 /obj/machinery/chem_master/RefreshParts()
+	max_create_amount_multiplier = initial(max_create_amount_multiplier)
 	reagents.maximum_volume = 0
 	for(var/obj/item/reagent_containers/glass/beaker/B in component_parts)
 		reagents.maximum_volume += B.reagents.maximum_volume
+	// BLUEMOON ADD START
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		max_create_amount_multiplier *= M.rating
+	// BLUEMOON ADD END
 
 /obj/machinery/chem_master/ex_act(severity, target, origin)
 	if(severity < 3)
@@ -201,6 +207,7 @@
 	data["chosenPillStyle"] = chosenPillStyle
 	data["chosenPatchStyle"] = chosenPatchStyle //BM add
 	data["isPillBottleLoaded"] = bottle ? 1 : 0
+	data["max_create_amount_multiplier"] = max_create_amount_multiplier // BLUEMOON ADD
 	if(bottle)
 		var/datum/component/storage/STRB = bottle.GetComponent(/datum/component/storage)
 		data["pillBottleCurrentAmount"] = bottle.contents.len
