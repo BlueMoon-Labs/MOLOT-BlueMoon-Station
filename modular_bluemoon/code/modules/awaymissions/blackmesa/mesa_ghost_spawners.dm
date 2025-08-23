@@ -267,7 +267,7 @@
 	head = /obj/item/clothing/head/beret/sec
 	suit = /obj/item/clothing/suit/armor/hecu
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/military/assault/hecu
+	belt = /obj/item/storage/belt/military/russianweb
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = /obj/item/binoculars

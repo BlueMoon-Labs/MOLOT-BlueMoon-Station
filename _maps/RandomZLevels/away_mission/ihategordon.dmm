@@ -25485,6 +25485,18 @@
 "iUT" = (
 /obj/machinery/door/airlock/research,
 /obj/structure/barricade/wooden,
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/purple/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "iVg" = (
@@ -34489,6 +34501,14 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 5
 	},
+/obj/item/storage/belt/military/russianweb{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/storage/belt/military/russianweb{
+	pixel_x = 7;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/outsideofmesa/hecu_camp)
 "maC" = (
@@ -42715,6 +42735,12 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/awaymission/ihategordon/big_offices)
+"oTA" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/ihategordon/big_offices)
 "oTO" = (
 /obj/effect/turf_decal/stripes{
 	dir = 5
@@ -44000,8 +44026,6 @@
 /area/awaymission/ihategordon/opposing/comlpex)
 "pqy" = (
 /obj/structure/table/glass,
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/obj/effect/turf_decal/trimline/purple/filled/line,
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/big_offices)
 "pqE" = (
@@ -51259,6 +51283,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/big_offices)
+"rWw" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/bottle/salglu_solution{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/salglu_solution{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/white,
+/area/awaymission/ihategordon/dorm_rooms)
 "rWA" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
@@ -58977,6 +59013,18 @@
 	pixel_x = 7;
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/glass/bottle/salglu_solution{
+	pixel_x = -9;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = -1;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/glass/bottle/sodium_thiopental{
+	pixel_x = -9;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/big_offices)
 "uBh" = (
@@ -59432,12 +59480,8 @@
 /obj/structure/flora/rock/pile{
 	color = "#f79668"
 	},
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 6
-	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/end,
+/obj/effect/turf_decal/trimline/purple/filled/end,
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/big_offices)
 "uKW" = (
@@ -67811,10 +67855,8 @@
 /turf/open/floor/plating/ironsand,
 /area/awaymission/ihategordon/outsideofmesa)
 "xOe" = (
-/obj/structure/table/glass,
 /obj/item/relic,
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/obj/effect/turf_decal/trimline/purple/filled/line,
+/obj/structure/table/glass,
 /turf/open/floor/plasteel{
 	icon_state = "damaged2"
 	},
@@ -68300,7 +68342,6 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 5
 	},
-/obj/effect/turf_decal/siding/wideplating_new/dark,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/ihategordon/big_offices)
 "xXc" = (
@@ -91124,7 +91165,7 @@ qUR
 huo
 mvH
 rrR
-niW
+rWw
 qQi
 gDs
 trO
@@ -112402,7 +112443,7 @@ eGu
 huX
 kRq
 aDh
-nAD
+oTA
 weZ
 luD
 bHy
@@ -113173,7 +113214,7 @@ ekB
 hFz
 bHy
 gpO
-nAD
+pqy
 rxG
 mxy
 rmP
