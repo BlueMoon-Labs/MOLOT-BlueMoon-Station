@@ -54,7 +54,7 @@
 		"AC Special Lieutenant",
 		"Big Boss",
 		"Head of Slutcurity",
-		"Head of Studcurity"
+		"Head of Studcurity",
 		"SAARE Senior Operator"
 	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
