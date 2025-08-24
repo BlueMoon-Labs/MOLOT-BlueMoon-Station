@@ -8,6 +8,7 @@
 	body_parts_covered = GROIN
 	can_adjust = FALSE
 	has_sensor = NO_SENSORS
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/costume/loincloth/sensor
 	name = "loincloth"
