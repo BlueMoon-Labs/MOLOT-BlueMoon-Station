@@ -25,7 +25,7 @@
 
 	// splash affected objects
 	var/overlay_state = pick_cum_overlay()
-	var/overlay_color = initial(linked_organ.fluid_id.color)
+	var/overlay_color = linked_organ.fluid_id.color
 	for(var/atom/object in target_turf.contents)
 		if(!istype(object) || isturf(object) || object == owner)
 			continue

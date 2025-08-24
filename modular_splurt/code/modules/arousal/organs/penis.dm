@@ -89,6 +89,6 @@
 
 	// splash affected objects
 	var/overlay_state = pick_cum_overlay()
-	var/overlay_color = initial(linked_organ.fluid_id.color)
+	var/overlay_color = linked_organ.fluid_id.color
 	for(var/atom/object in cumsplashed_items)
 		object.add_cum_overlay(overlay_state, overlay_color)
