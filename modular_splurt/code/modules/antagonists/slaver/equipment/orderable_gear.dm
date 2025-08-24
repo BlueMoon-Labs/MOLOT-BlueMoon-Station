@@ -265,5 +265,5 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	name = "Dark Gygax"
 	description = "A lightweight exosuit, painted in a dark scheme. This model appears to have some modifications. Disabler gun included."
 	build_path = /obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded
-	category = "Firearms"
+	category = "Mech"
 	cost = 100000

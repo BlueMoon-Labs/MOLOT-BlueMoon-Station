@@ -287,8 +287,8 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/shotgun
 	projectile = new /obj/item/projectile/beam/disabler/mecha/scatter
-	projectele_per_shot = 3
-	variance = 10
+	projectele_per_shot = 6
+	variance = 30
 
 /obj/item/projectile/beam/disabler/mecha/scatter
 	damage = 45
