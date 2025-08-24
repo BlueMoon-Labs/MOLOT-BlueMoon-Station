@@ -12,6 +12,7 @@
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 	automatic_burst_overlay = FALSE
 	fire_sound = 'modular_bluemoon/sound/weapons/mesa/9mm.ogg'
+	gunlight_state = "mini-light"
 	can_flashlight = 0
 
 /obj/item/gun/ballistic/automatic/pistol/hl9mm/Initialize(mapload)
