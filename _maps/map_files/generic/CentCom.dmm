@@ -4473,6 +4473,7 @@
 	pixel_x = 28;
 	start_charge = 100
 	},
+/obj/effect/mob_spawn/human/slavers/master,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "awZ" = (
@@ -16975,6 +16976,16 @@
 	},
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
+"hyo" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/bar{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/slavers,
+/turf/open/floor/plasteel/dark,
+/area/slavers)
 "hyx" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Intersection";
@@ -28562,6 +28573,14 @@
 /obj/structure/railing/corner,
 /turf/open/indestructible/cobble,
 /area/centcom/holding)
+"rSY" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/bar{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/slavers,
+/turf/open/floor/plasteel/dark,
+/area/slavers)
 "rTc" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -34105,7 +34124,7 @@
 "wQH" = (
 /obj/machinery/jukebox/disco{
 	req_one_access = null;
-	anchored = 1;
+	anchored = 1
 	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
@@ -79935,11 +79954,11 @@ auN
 aDp
 aNb
 aYS
-aED
+hyo
 aMc
 aNK
 aOX
-aXK
+rSY
 aXw
 aPF
 aZN
@@ -80449,7 +80468,7 @@ auN
 aDp
 aBq
 aYS
-aED
+hyo
 aMN
 aRI
 aPB

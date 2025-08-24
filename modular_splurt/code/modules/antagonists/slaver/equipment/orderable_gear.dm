@@ -238,3 +238,18 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	build_path = /obj/item/storage/backpack/duffelbag/syndie/fal_mix
 	category = "Firearms"
 	cost = 22500
+
+//BLUEMOON ADD
+/datum/slaver_gear/synd_magboots
+	name = "Blood-Red Magboots"
+	description = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in space or on-station during gravitational generator failures. These reverse-engineered knockoffs of Nanotrasen's 'Advanced Magboots' not slow you down in simulated-gravity environments and provide protection against slipping on the space lube"
+	build_path = /obj/item/clothing/shoes/magboots/syndie/advance 
+	category = "Advanced"
+	cost = 7500
+
+/datum/slaver_gear/seclite
+	name = "Seclite"
+	description = "A robust flashlight used by security."
+	build_path = /obj/item/flashlight/seclite
+	category = "Advanced"
+	cost = 100
