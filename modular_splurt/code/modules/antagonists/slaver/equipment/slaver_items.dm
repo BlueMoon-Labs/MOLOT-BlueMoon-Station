@@ -286,11 +286,11 @@
 	internals_req_access = list(ACCESS_SLAVER)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/shotgun
-	projectile = new /obj/item/projectile/beam/disabler/mecha/scatter
-	projectele_per_shot = 6
+	projectile = /obj/item/projectile/beam/disabler/mecha
+	projectiles_per_shot = 6
 	variance = 30
 
-/obj/item/projectile/beam/disabler/mecha/scatter
+/obj/item/projectile/beam/disabler/mecha
 	damage = 45
 
 /obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded/Initialize(mapload)
