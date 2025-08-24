@@ -2840,6 +2840,7 @@
 /obj/structure/sign/poster/contraband/syndicate_recruitment{
 	pixel_y = 32
 	},
+/obj/effect/mob_spawn/human/slavers,
 /turf/open/floor/wood,
 /area/slavers)
 "akT" = (
@@ -3747,6 +3748,7 @@
 /obj/structure/sign/poster/contraband/syndicate_recruitment{
 	pixel_y = 32
 	},
+/obj/effect/mob_spawn/human/slavers,
 /turf/open/floor/wood,
 /area/slavers)
 "arm" = (
@@ -4090,6 +4092,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/slaver_leader,
+/obj/effect/mob_spawn/human/slavers/master,
 /turf/open/floor/wood,
 /area/slavers)
 "aua" = (
@@ -4351,6 +4354,7 @@
 	name = "red bedsheet"
 	},
 /obj/effect/landmark/start/slaver,
+/obj/effect/mob_spawn/human/slavers,
 /turf/open/floor/wood,
 /area/slavers)
 "awj" = (
@@ -4473,7 +4477,6 @@
 	pixel_x = 28;
 	start_charge = 100
 	},
-/obj/effect/mob_spawn/human/slavers/master,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "awZ" = (
@@ -5667,6 +5670,7 @@
 /obj/effect/turf_decal/bot/white,
 /obj/item/storage/box/syndie_kit/space,
 /obj/item/storage/box/syndie_kit/space,
+/obj/item/gun/energy/e_gun/erotaser,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aFC" = (
@@ -7414,6 +7418,8 @@
 /obj/effect/turf_decal/bot/white,
 /obj/item/storage/box/syndie_kit/space,
 /obj/item/storage/box/syndie_kit/space,
+/obj/item/gun/energy/e_gun/erotaser,
+/obj/item/gun/energy/e_gun/erotaser,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aPJ" = (
@@ -7623,6 +7629,7 @@
 	},
 /obj/effect/landmark/start/slaver,
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/mob_spawn/human/slavers,
 /turf/open/floor/wood,
 /area/slavers)
 "aQH" = (
@@ -8386,6 +8393,7 @@
 /obj/effect/turf_decal/bot/white,
 /obj/item/storage/box/syndie_kit/space,
 /obj/item/storage/box/syndie_kit/space,
+/obj/item/gun/energy/e_gun/erotaser,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aUs" = (
@@ -9367,6 +9375,7 @@
 /obj/effect/turf_decal/bot/white,
 /obj/item/storage/box/syndie_kit/space,
 /obj/item/storage/box/syndie_kit/space,
+/obj/item/gun/energy/e_gun/erotaser,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aYZ" = (
@@ -16976,16 +16985,6 @@
 	},
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
-"hyo" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/bar{
-	dir = 4
-	},
-/obj/effect/mob_spawn/human/slavers,
-/turf/open/floor/plasteel/dark,
-/area/slavers)
 "hyx" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Intersection";
@@ -28573,14 +28572,6 @@
 /obj/structure/railing/corner,
 /turf/open/indestructible/cobble,
 /area/centcom/holding)
-"rSY" = (
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/bar{
-	dir = 8
-	},
-/obj/effect/mob_spawn/human/slavers,
-/turf/open/floor/plasteel/dark,
-/area/slavers)
 "rTc" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -79954,11 +79945,11 @@ auN
 aDp
 aNb
 aYS
-hyo
+aED
 aMc
 aNK
 aOX
-rSY
+aXK
 aXw
 aPF
 aZN
@@ -80468,7 +80459,7 @@ auN
 aDp
 aBq
 aYS
-hyo
+aED
 aMN
 aRI
 aPB

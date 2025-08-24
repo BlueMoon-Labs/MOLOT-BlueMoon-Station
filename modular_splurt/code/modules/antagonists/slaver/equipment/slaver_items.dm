@@ -276,3 +276,34 @@
 	new /obj/item/ammo_box/magazine/smg22/rubber(src)
 	new /obj/item/ammo_box/magazine/smg22/rubber(src)
 	new /obj/item/ammo_box/magazine/smg22/rubber(src)
+
+//BLUEMOON ADD
+/obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded
+	max_integrity = 400
+	deflect_chance = 30
+	max_equip = 7
+	operation_req_access = list(ACCESS_SLAVER)
+	internals_req_access = list(ACCESS_SLAVER)
+
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/shotgun
+	projectile = new /obj/item/projectile/beam/disabler/mecha/scatter
+	projectele_per_shot = 3
+	variance = 10
+
+/obj/item/projectile/beam/disabler/mecha/scatter
+	damage = 45
+
+/obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded/Initialize(mapload)
+	. = ..()
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/shotgun
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/medical/sleeper
+	ME.attach(src)

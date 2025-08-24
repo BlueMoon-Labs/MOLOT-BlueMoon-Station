@@ -193,9 +193,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 
 /obj/effect/mob_spawn/human/slavers
 	name = "Slaver"
-	//desc = "An ancient tomb designed for long-term stasis. This one has the word HORNY scratched all over the surface!"
 	short_desc = "Вы член частной компании, нанятой Центральным командованием для перевоспитания сотрудников"
-	//flavour_text
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	mob_name = "Slaver"
@@ -207,10 +205,15 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	use_outfit_name = TRUE
 	outfit = /datum/outfit
 	category = "special"
-	var/announce_text = "Приветствую, Командование Космической Станции. \ На связи Центральное Командование и к вашему сектору были закреплены наши очень хорошие партнёры, которые занимаются перевоспитанием сотрудников в нашей системе максимально годным образом.\ Они оказывают любые и даже экстремальные услуги, так что не бойтесь, каждый из них имеет разрешение на свою деятельность! Если же будут какие бы то не было проблемы - обращайтесь. Мы поможем вам с ними разобраться! \ Опять же. К вам прибудет группа существ, способная исполнить любое ваше желание и они будут снабжены для этого всем необходимым. Донесите информацию о том, что данные сотрудники авторизованы со стороны ЦК: Командованию и Службе Безопасности.\ Это в первую очередь актёры и на метафизическом уровне вы должны демонстрировать свою с ними, якобы, настоящую, но на самом деле фиктивную, фальшивую борьбу. Как только Работорговцы начнут проявлять активность, максимум ваших возможностей - поставить Синий Код и просить сотрудников остерегаться каких-то там страшных существ в технических тоннелях.\ Вам были высланы кредиты для оплаты рабов, которую нужно будет производить как минимум после двадцати минут заключения сотрудников на их аванпосту. "
+	var/announce_text = "Приветствую, Командование Космической Станции. \n На связи Центральное Командование и к вашему сектору были закреплены наши очень хорошие партнёры, которые занимаются перевоспитанием сотрудников в нашей системе максимально годным образом.\n Они оказывают любые и даже экстремальные услуги, так что не бойтесь, каждый из них имеет разрешение на свою деятельность! Если же будут какие бы то не было проблемы - обращайтесь. Мы поможем вам с ними разобраться! \n Опять же. К вам прибудет группа существ, способная исполнить любое ваше желание и они будут снабжены для этого всем необходимым. Донесите информацию о том, что данные сотрудники авторизованы со стороны ЦК: Командованию и Службе Безопасности.\ Это в первую очередь актёры и на метафизическом уровне вы должны демонстрировать свою с ними, якобы, настоящую, но на самом деле фиктивную, фальшивую борьбу. Как только Работорговцы начнут проявлять активность, максимум ваших возможностей - поставить Синий Код и просить сотрудников остерегаться каких-то там страшных существ в технических тоннелях.\n Вам были высланы кредиты для оплаты рабов, которую нужно будет производить как минимум после двадцати минут заключения сотрудников на их аванпосту. "
 	var/first_time = TRUE
 	var/isLeader = FALSE
 	important_info = "В режим игры Extended вы являетесь ЕРП-антагонистом, в Dynamic Light — минорным антагонистом."
+
+/obj/effect/mob_spawn/human/slavers/Initialize(mapload)
+	. = ..()
+	if(GLOB.master_mode == "Dynamic (Light)")
+		src.short_desc = "Вы часть отряда наемников, торгующих рабами. Похищайте экипаж и продавайте их."
 
 /obj/effect/mob_spawn/human/slavers/special(mob/living/new_spawn)
 	. = ..()
@@ -258,16 +261,14 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	glasses = /obj/item/clothing/glasses/hud/slaver
 	accessory = /obj/item/clothing/accessory/permit/special/deviant/lust/slavers
 	backpack_contents = list(/obj/item/storage/box/survival,\
-							/obj/item/kitchen/knife/combat/survival, \
-							/obj/item/gun/energy/e_gun/erotaser)
+							/obj/item/kitchen/knife/combat/survival)
 
 /datum/outfit/slaver/leader/extended
 	name = "Actor Slaver Leader"
 	glasses = /obj/item/clothing/glasses/hud/slaver
 	accessory = /obj/item/clothing/accessory/permit/special/deviant/lust/slavers
 	backpack_contents = list(/obj/item/storage/box/survival,\
-							/obj/item/kitchen/knife/combat/survival, \
-							/obj/item/gun/energy/e_gun/erotaser)
+							/obj/item/kitchen/knife/combat/survival)
 
 ////////////////////////////////////
 // Проки для выдачи трейтов и навыков отдельным гостролям, например, DS-2

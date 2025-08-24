@@ -127,12 +127,12 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	category = "Firearms"
 	cost = 12000
 
-/datum/slaver_gear/smg
-	name = "SMG Kit"
-	description = "WT-550 Semi-Automatic SMG. Spare magazine x 3."
-	build_path = /obj/item/storage/backpack/duffelbag/syndie/smg
-	category = "Firearms"
-	cost = 15000
+//datum/slaver_gear/smg
+//	name = "SMG Kit"
+//	description = "WT-550 Semi-Automatic SMG. Spare magazine x 3."
+//	build_path = /obj/item/storage/backpack/duffelbag/syndie/smg
+//	category = "Firearms"
+//	cost = 15000
 
 /datum/slaver_gear/smg_rubber
 	name = "SMG Kit (rubber)"
@@ -197,12 +197,12 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	category = "Firearms"
 	cost = 10000
 
-/datum/slaver_gear/garandlethal
-	name = "Mars Service Rifle Kit (Lethal)"
-	description = "Mars Semi-Automatic Service rifle with lehtal munitions. Spare clips x 6."
-	build_path = /obj/item/storage/backpack/duffelbag/syndie/garand_lethal
-	category = "Firearms"
-	cost = 15000
+//datum/slaver_gear/garandlethal
+//	name = "Mars Service Rifle Kit (Lethal)"
+//	description = "Mars Semi-Automatic Service rifle with lehtal munitions. Spare clips x 6."
+//	build_path = /obj/item/storage/backpack/duffelbag/syndie/garand_lethal
+//	category = "Firearms"
+//	cost = 15000
 
 /datum/slaver_gear/garandrubber
 	name = "Mars Service Rifle Kit (Rubber)"
@@ -218,12 +218,12 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	category = "Firearms"
 	cost = 12500
 
-/datum/slaver_gear/fallehtal
-	name = "FTU Rifle Kit (Lethal)"
-	description = "Free Trade Union Select Fire rifle with lehtal munitions. Spare Mags x 6."
-	build_path = /obj/item/storage/backpack/duffelbag/syndie/fal_lehtal
-	category = "Firearms"
-	cost = 25000
+//datum/slaver_gear/fallehtal
+//	name = "FTU Rifle Kit (Lethal)"
+//	description = "Free Trade Union Select Fire rifle with lehtal munitions. Spare Mags x 6."
+//	build_path = /obj/item/storage/backpack/duffelbag/syndie/fal_lehtal
+//	category = "Firearms"
+//	cost = 25000
 
 /datum/slaver_gear/falrubber
 	name = "FTU Rifle Kit (rubber)"
@@ -253,3 +253,17 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	build_path = /obj/item/flashlight/seclite
 	category = "Advanced"
 	cost = 100
+
+/datum/slaver_gear/donk_sniper
+	name = "donksoft sniper rifle"
+	description = "Harmless Donk Soft sniper rifle."
+	build_path = /obj/item/gun/ballistic/automatic/sniper_rifle/toy
+	category = "Firearms"
+	cost = 25000
+
+/datum/slaver_gear/gygax
+	name = "Dark Gygax"
+	description = "A lightweight exosuit, painted in a dark scheme. This model appears to have some modifications. Disabler gun included."
+	build_path = /obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded
+	category = "Firearms"
+	cost = 100000
