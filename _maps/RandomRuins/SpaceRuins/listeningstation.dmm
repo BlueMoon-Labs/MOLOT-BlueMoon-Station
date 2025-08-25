@@ -1407,12 +1407,16 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "px" = (
-/obj/machinery/rnd/production/protolathe,
 /obj/effect/turf_decal/siding/red{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/red{
 	dir = 4
+	},
+/obj/structure/frame/machine{
+	anchored = 1;
+	icon_state = "box_1";
+	state = 2
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -2792,10 +2796,6 @@
 "Fc" = (
 /obj/structure/table,
 /obj/item/stack/cable_coil,
-/obj/effect/spawner/lootdrop/high_tools,
-/obj/item/clothing/glasses/science{
-	pixel_x = -4
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
@@ -3156,13 +3156,13 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/item/storage/box/beakers/bluespace{
-	pixel_y = 9;
-	pixel_x = 11
+/obj/item/storage/box/stockparts{
+	pixel_x = 9;
+	pixel_y = 12
 	},
-/obj/item/analyzer/ranged{
-	pixel_y = 10;
-	pixel_x = -5
+/obj/item/storage/box/stockparts{
+	pixel_x = -4;
+	pixel_y = 12
 	},
 /obj/item/storage/part_replacer,
 /turf/open/floor/plating,
@@ -3446,15 +3446,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "ML" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	icon_state = "box_1";
-	state = 2
-	},
 /obj/effect/turf_decal/siding/red/end{
 	dir = 1
 	},
-/obj/item/circuitboard/machine/autolathe,
+/obj/machinery/autolathe/hacked,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "MO" = (
@@ -3482,7 +3477,11 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "MY" = (
 /obj/effect/turf_decal/siding/red/end,
-/obj/machinery/rnd/production/circuit_imprinter,
+/obj/structure/frame/machine{
+	anchored = 1;
+	icon_state = "box_1";
+	state = 2
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Nd" = (
@@ -3540,13 +3539,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/storage/box/stockparts/deluxe{
-	pixel_y = 9;
-	pixel_x = 8
-	},
-/obj/item/storage/box/stockparts/deluxe{
-	pixel_y = 9;
-	pixel_x = -6
+/obj/item/analyzer/ranged{
+	pixel_y = 10;
+	pixel_x = -5
 	},
 /obj/item/pipe_dispenser{
 	pixel_y = -4
@@ -4399,13 +4394,12 @@
 	dir = 4;
 	light_color = "#d8b1b1"
 	},
-/obj/machinery/computer/rdconsole/core{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
 /obj/effect/turf_decal/bot/white,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/high_tools,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "WT" = (
