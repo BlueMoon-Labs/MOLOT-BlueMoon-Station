@@ -371,6 +371,8 @@
 
 /obj/item/kirbyplants/Initialize(mapload)
 	. = ..()
+	if(!mapload)
+		return
 	var/static/list/random_stuff = list(
 		/obj/item/reagent_containers/syringe/heroin = 5,
 		/obj/item/toy/plush/teddybear = 5,
@@ -400,7 +402,7 @@
 		/obj/item/mod/construction/broken_core = 5,
 		/obj/item/trash/candy = 10,
 		/obj/item/trash/syndi_cakes = 10)
-	if(prob(50))
+	if(prob(40))
 		var/picked = pickweight(random_stuff)
 		new picked(src)
 
