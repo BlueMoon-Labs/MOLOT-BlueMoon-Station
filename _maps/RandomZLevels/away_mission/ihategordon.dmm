@@ -2734,11 +2734,6 @@
 "baO" = (
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/gonome)
-"baU" = (
-/turf/open/floor/plasteel{
-	icon_state = "wasteland7"
-	},
-/area/awaymission/ihategordon/outsideofmesa/hecu_camp)
 "bbd" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
@@ -8607,11 +8602,6 @@
 	},
 /turf/open/floor/plating/cobblestone,
 /area/awaymission/ihategordon/underground_tunnels)
-"dcn" = (
-/turf/open/floor/plasteel{
-	icon_state = "wasteland4"
-	},
-/area/awaymission/ihategordon/outsideofmesa/hecu_camp)
 "dcq" = (
 /obj/structure/table/reinforced,
 /obj/item/ammo_box/magazine/mp5,
@@ -38379,9 +38369,12 @@
 /turf/open/floor/plasteel/sepia,
 /area/awaymission/ihategordon/big_offices)
 "ntu" = (
-/turf/open/floor/plasteel{
-	icon_state = "wasteland2"
+/obj/structure/rockpilemesa{
+	icon_state = "stone3";
+	pixel_x = 6;
+	pixel_y = -2
 	},
+/turf/open/floor/plating/cobblestone,
 /area/awaymission/ihategordon/outsideofmesa/hecu_camp)
 "ntx" = (
 /obj/effect/decal/cleanable/glass,
@@ -58950,11 +58943,6 @@
 /obj/item/reagent_containers/food/drinks/mug/tea,
 /turf/open/floor/plasteel/smooth/herringbone,
 /area/awaymission/ihategordon/dining_room)
-"uzK" = (
-/turf/open/floor/plasteel{
-	icon_state = "wasteland11"
-	},
-/area/awaymission/ihategordon/outsideofmesa/hecu_camp)
 "uAn" = (
 /obj/machinery/door/airlock/research/glass,
 /turf/open/floor/plating,
@@ -59643,9 +59631,13 @@
 /turf/open/floor/plasteel,
 /area/awaymission/ihategordon/sectorhsecoffices)
 "uMN" = (
-/turf/open/floor/plasteel{
-	icon_state = "wasteland1"
+/obj/effect/festive/street/streetlineeast,
+/obj/structure/rockpilemesa{
+	icon_state = "stone3";
+	pixel_x = 6;
+	pixel_y = -2
 	},
+/turf/open/floor/plating/cobblestone,
 /area/awaymission/ihategordon/outsideofmesa/hecu_camp)
 "uNk" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
@@ -73622,7 +73614,7 @@ tCW
 tCW
 tCW
 tCW
-tCW
+ntu
 tCW
 tCW
 tCW
@@ -73637,11 +73629,10 @@ fMW
 tCW
 tCW
 tCW
-ntu
+tCW
 tCW
 gBL
 tCW
-uMN
 tCW
 tCW
 tCW
@@ -73653,7 +73644,8 @@ tCW
 tCW
 tCW
 tCW
-ntu
+tCW
+tCW
 tCW
 tCW
 tCW
@@ -73884,10 +73876,10 @@ tCW
 gBL
 tCW
 tCW
-ntu
 tCW
-dcn
-ntu
+tCW
+tCW
+tCW
 tCW
 tCW
 tCW
@@ -73905,11 +73897,11 @@ tCW
 tCW
 tCW
 tCW
-dcn
 tCW
 tCW
 tCW
-ntu
+tCW
+tCW
 tCW
 tCW
 tCW
@@ -74142,15 +74134,15 @@ tCW
 tCW
 tCW
 tCW
-ntu
-dcn
 tCW
-dcn
+tCW
+tCW
+tCW
 tCW
 gBL
 tCW
 tCW
-uMN
+tCW
 tCW
 fMW
 tCW
@@ -74161,9 +74153,9 @@ cAy
 tCW
 tCW
 tCW
+ntu
 tCW
-ntu
-ntu
+tCW
 tCW
 tCW
 tCW
@@ -74410,7 +74402,6 @@ tCW
 tCW
 tCW
 tCW
-dcn
 tCW
 tCW
 tCW
@@ -74426,6 +74417,7 @@ tCW
 tCW
 tCW
 tCW
+ntu
 tCW
 tCW
 tCW
@@ -75177,7 +75169,7 @@ fMW
 tCW
 tCW
 tCW
-baU
+tCW
 lMQ
 tCW
 tCW
@@ -75185,7 +75177,7 @@ tCW
 tCW
 tCW
 tCW
-ntu
+tCW
 tCW
 gBL
 tCW
@@ -75435,7 +75427,7 @@ tCW
 tCW
 tCW
 tCW
-ntu
+tCW
 fMW
 oCs
 tCW
@@ -75686,16 +75678,16 @@ kRr
 kRr
 tCW
 gBL
-uzK
-uzK
 tCW
-ntu
+tCW
+tCW
+tCW
 tCW
 fMW
 tCW
-tCW
-tCW
 ntu
+tCW
+tCW
 tCW
 tCW
 tCW
@@ -75944,11 +75936,11 @@ tCW
 tCW
 fMW
 tCW
-ntu
-ntu
 tCW
 tCW
-uMN
+tCW
+tCW
+tCW
 tCW
 tCW
 tCW
@@ -75956,7 +75948,7 @@ tCW
 tCW
 cAy
 tCW
-baU
+tCW
 tCW
 tCW
 tCW
@@ -76214,8 +76206,6 @@ tCW
 tCW
 tCW
 tCW
-baU
-dcn
 tCW
 tCW
 tCW
@@ -76223,6 +76213,8 @@ tCW
 tCW
 tCW
 tCW
+tCW
+ntu
 tCW
 tCW
 tCW
@@ -76438,7 +76430,7 @@ mpF
 mpF
 tBT
 tBT
-tBT
+uMN
 tBT
 tBT
 tBT
