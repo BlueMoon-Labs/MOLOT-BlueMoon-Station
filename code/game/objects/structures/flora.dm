@@ -386,7 +386,6 @@
 		/obj/item/restraints/handcuffs/fake/kinky = 10,
 		/obj/item/reagent_containers/pill/pendosovka = 5,
 		/obj/item/reagent_containers/pill/zvezdochka = 5,
-		/obj/item/storage/bag/money/c5000 = 1,
 		/obj/item/reagent_containers/food/snacks/cube/tentacles = 5,
 		/obj/item/clothing/underwear/briefs/tentacle/female = 1,
 		/obj/item/clothing/mask/muzzle/ballgag = 5,
