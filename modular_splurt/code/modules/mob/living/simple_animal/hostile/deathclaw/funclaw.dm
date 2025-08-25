@@ -115,7 +115,7 @@
 	if(A in range(vision_range, src))
 		if(A in enemies)
 			enemies -= A
-		enemies.Insert(1, A)
+		enemies.Insert(1, A) // Условно первый в агролисте личных врагов
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/moan()
 	var/message_to_display = pick("рычит%S%", "рычит%S% от удовольствия")
@@ -178,19 +178,6 @@
 			cands += B
 
 	return cands.len ? pick(cands) : null
-
-	/*
-	for(var/pos_targ in Targets) // Выбираем ближайие цели
-		var/atom/A = pos_targ
-		var/target_dist = get_dist(targets_from, target)
-		var/possible_target_distance = get_dist(targets_from, A)
-		if(target_dist < possible_target_distance)
-			Targets -= A
-	for(var/E in enemies) // Если цель во врагах, выбираем ее
-		if(E in Targets)
-			return E
-	return pick(Targets) // Иначе рандом
-	*/
 //BLUEMOON ADD END
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
