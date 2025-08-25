@@ -889,7 +889,7 @@
 	pixel_y = 5
 	},
 /obj/item/inteq_sledgehammer,
-/obj/item/storage/backpack/duffelbag/syndie/inteq/c4,
+/obj/item/inteq/uplink/radio,
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "bbw" = (
@@ -2509,7 +2509,7 @@
 	dir = 6
 	},
 /obj/structure/table,
-/obj/item/storage/firstaid/regular,
+/obj/item/mesmetron,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/InteQ)
 "dcg" = (
@@ -10580,8 +10580,12 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "mmM" = (
-/mob/living/carbon/wendigo,
-/turf/open/floor/padded,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/gigachad_inteq/space,
+/turf/open/floor/plasteel,
 /area/awaymission/InteQ)
 "mnF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16283,7 +16287,7 @@
 "sJt" = (
 /obj/structure/table/reinforced,
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/seedscatter,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/InteQ)
 "sJw" = (
@@ -20016,8 +20020,11 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "xaY" = (
-/obj/item/inteq/uplink/radio/nuclear,
-/turf/open/floor/wood/wood_parquet,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "xbO" = (
 /obj/structure/table/reinforced,
@@ -32881,7 +32888,7 @@ lrM
 nMm
 fzQ
 tAm
-xaY
+pQl
 fex
 ozP
 ozP
@@ -33719,7 +33726,7 @@ ibQ
 ibQ
 hll
 tmN
-hEX
+mmM
 rkD
 fbM
 eLN
@@ -35188,7 +35195,7 @@ fbM
 wiz
 ppn
 jqo
-jqo
+xaY
 qHF
 wiz
 qYh
@@ -37089,7 +37096,7 @@ ifi
 iMV
 fbM
 mpP
-mmM
+xZp
 iMV
 fbM
 kOZ
