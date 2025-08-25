@@ -137,9 +137,10 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 
 	// Breathing - require some oxygen, and no toxins
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 40 // Не могут жить в безвоздушном пространстве, но очень даже могут в разгерметизациях от экипажа с минимальным воздухом и без токсинов
+	minbodytemp = 180 // Не могут жить в безвоздушном пространстве, но очень даже могут в разгерметизациях от экипажа с минимальным воздухом и без токсинов
+	maxbodytemp = 360 // Огнемёт твой друг в борьбе с арахнидами
 	// Temperature
-	unsuitable_atmos_damage = 6.5 // Takes 250% normal damage from being in a hot environment ("kill it with fire!")
+	unsuitable_atmos_damage = 8 // Takes 400% normal damage from being in a hot environment ("kill it with fire!")
 
 	// DEBUG OPTIONS & COMMANDS
 	var/spider_growinstantly = FALSE
