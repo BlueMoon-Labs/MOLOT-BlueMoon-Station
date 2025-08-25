@@ -349,6 +349,7 @@
 
 /obj/item/kirbyplants/examine(mob/user)
 	. = ..()
+	. += span_notice("Вы можете посмотреть что под ним при помощи <b>Alt+Click</b>.")
 	if(in_range(user, src))
 		if(anchored)
 			. += "<span class='notice'>It is <b>bolted</b> to the ground.</span>"
@@ -370,6 +371,8 @@
 
 /obj/item/kirbyplants/Initialize(mapload)
 	. = ..()
+	if(!mapload)
+		return
 	var/static/list/random_stuff = list(
 		/obj/item/reagent_containers/syringe/heroin = 5,
 		/obj/item/toy/plush/teddybear = 5,
@@ -384,8 +387,22 @@
 		/obj/item/reagent_containers/glass/bottle/semen = 10,
 		/obj/item/restraints/handcuffs/fake/kinky = 10,
 		/obj/item/reagent_containers/pill/pendosovka = 5,
-		/obj/item/reagent_containers/pill/zvezdochka = 5)
-	if(prob(20))
+		/obj/item/reagent_containers/pill/zvezdochka = 5,
+		/obj/item/reagent_containers/food/snacks/cube/tentacles = 5,
+		/obj/item/clothing/underwear/briefs/tentacle/female = 1,
+		/obj/item/clothing/mask/muzzle/ballgag = 5,
+		/obj/item/seeds/cannabis = 5,
+		/obj/item/reagent_containers/syringe/contraband/crank = 5,
+		/obj/item/reagent_containers/syringe/contraband/methamphetamine = 1,
+		/obj/item/reagent_containers/syringe/heroin = 5,
+		/obj/item/reagent_containers/pill/lsd = 5,
+		/obj/item/reagent_containers/pill/mdma = 5,
+		/obj/item/reagent_containers/syringe/contraband/fentanyl = 5,
+		/obj/item/reagent_containers/syringe/contraband/krokodil = 5,
+		/obj/item/mod/construction/broken_core = 5,
+		/obj/item/trash/candy = 10,
+		/obj/item/trash/syndi_cakes = 10)
+	if(prob(40))
 		var/picked = pickweight(random_stuff)
 		new picked(src)
 

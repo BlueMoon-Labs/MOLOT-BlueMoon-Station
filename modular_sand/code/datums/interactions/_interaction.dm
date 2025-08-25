@@ -165,3 +165,11 @@
 			soundfile_to_play = interaction_sound
 		playsound(get_turf(user), soundfile_to_play, 50, 1, -1)
 	return
+
+/datum/interaction/cheer/post_interaction(mob/living/user, mob/living/target, apply_cooldown = TRUE)
+    if(user.ckey == "pingvas")
+        if(apply_cooldown)
+            COOLDOWN_START(user, last_interaction_time, 3 SECONDS)
+        playsound(get_turf(user), 'modular_bluemoon/sound/plush/milp7.ogg', 50, FALSE, -1)
+        return
+    . = ..()
