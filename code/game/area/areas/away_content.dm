@@ -52,6 +52,7 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	ambientsounds = AWAY_MISSION
 	sound_environment = SOUND_ENVIRONMENT_ROOM
 
+
 /area/awaymission/InteQ/ForChasmArea //Зона, куда попадают упавшие в чазм
 	name = "pit"
 
