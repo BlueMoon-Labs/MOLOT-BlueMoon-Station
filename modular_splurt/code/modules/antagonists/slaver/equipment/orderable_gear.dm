@@ -273,3 +273,9 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	description = "Upgraded military suit supplied by our Syndicate sponsors. But there is only ONE!"
 	category = "Advanced"
 	cost = 10500
+
+/datum/slaver_gear/headsetUpgrader
+	name = "Headset Upgrader"
+	description = "Upgrader for hedset supplied by our Syndicate sponsors."
+	category = "Advanced"
+	cost = 500
