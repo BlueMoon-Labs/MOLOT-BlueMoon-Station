@@ -263,6 +263,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 
 /datum/outfit/slaver/extended
 	name = "Actor Slaver"
+	var/command_radio = TRUE
 	glasses = /obj/item/clothing/glasses/hud/slaver/upgraded
 	accessory = /obj/item/clothing/accessory/permit/special/deviant/lust/slavers
 	backpack_contents = list(/obj/item/storage/box/survival,\
