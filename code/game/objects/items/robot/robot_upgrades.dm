@@ -166,32 +166,63 @@
 	require_module = 1
 	module_type = list(/obj/item/robot_module/miner)
 	module_flags = BORG_MODULE_MINER
+	// Старая дрель
+	var/obj/item/pickaxe/drill/cyborg/D
+	// Старая лопата
+	var/obj/item/shovel/S
+	// Новая дрель
+	var/obj/item/pickaxe/drill/cyborg/diamond/DD
+
 
 /obj/item/borg/upgrade/ddrill/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		for(var/obj/item/pickaxe/drill/cyborg/D in R.module)
-			R.module.remove_module(D, TRUE)
-		for(var/obj/item/shovel/S in R.module)
-			R.module.remove_module(S, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/pickaxe/drill/cyborg/diamond/DD = new /obj/item/pickaxe/drill/cyborg/diamond(R.module)
-		R.module.basic_modules += DD
-		R.module.add_module(DD, FALSE, TRUE)
+	for(DD in R.module.modules)
+		if(DD)
+			to_chat(user, "<span class='warning'>This unit is already equipped with a BSD module.</span>")
+			return FALSE
+
+	var/D_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старого инструмента
+		D = R.module.modules[i]
+		if(istype(D, /obj/item/pickaxe/drill/cyborg))
+			D_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
+
+	DD = new(R.module)
+	R.module.basic_modules += DD
+	R.module.add_module(DD, FALSE, TRUE)
+	var/DD_index = R.module.modules.Find(DD)
+	for(DD in R.module) // Можно оформить и для старого инструмента, здесь сделано для нового, без разницы.
+		R.module.modules.Swap(D_index, DD_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(D_index, DD_index) // как и `basic_modules +=` и `add.module` выше
+	R.module.remove_module(D, TRUE) // Замена произошла - избавляемся от старого инструмента
+	R.module.remove_module(S, TRUE)
 
 /obj/item/borg/upgrade/ddrill/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if (.)
-		for(var/obj/item/pickaxe/drill/cyborg/diamond/DD in R.module)
-			R.module.remove_module(DD, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/pickaxe/drill/cyborg/D = new (R.module)
-		R.module.basic_modules += D
-		R.module.add_module(D, FALSE, TRUE)
-		var/obj/item/shovel/S = new (R.module)
-		R.module.basic_modules += S
-		R.module.add_module(S, FALSE, TRUE)
+	var/DD_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления.
+		DD = R.module.modules[i]
+		if(istype(DD, /obj/item/pickaxe/drill/cyborg/diamond))
+			DD_index = i
+			break
 
+	D = new(R.module)
+	R.module.basic_modules += D
+	R.module.add_module(D, FALSE, TRUE)
+	R.module.basic_modules += S
+	R.module.add_module(S, FALSE, TRUE)
+	var/D_index = R.module.modules.Find(D)
+	for(D in R.module)
+		R.module.modules.Swap(DD_index, D_index)
+		R.module.basic_modules.Swap(DD_index, D_index)
+	R.module.remove_module(DD, TRUE)
 
 /obj/item/borg/upgrade/advcutter
 	name = "mining cyborg advanced plasma cutter"
@@ -231,28 +262,41 @@
 
 /obj/item/borg/upgrade/premiumka/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		for(var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA in R.module)
-			for(var/obj/item/borg/upgrade/modkit/M in KA.modkits)
-				M.uninstall(KA)
-			R.module.remove_module(KA, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA = new /obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg(R.module)
-		R.module.basic_modules += PKA
-		R.module.add_module(PKA, FALSE, TRUE)
+	// Добавлем счёт кол-ва акселлераторов
+	var/ka_quantity = 0
+	var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA
+	for(PKA in R.module.modules)
+		ka_quantity++
+	if(ka_quantity == 2)
+		to_chat(user, "<span class='warning'>This unit is already equipped with two kinetic accelerators.</span>")
+		return FALSE
 
-// SANDSTORM EDIT START
+	for(var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA in R.module)
+		for(var/obj/item/borg/upgrade/modkit/M in KA.modkits)
+			M.uninstall(KA)
+		R.module.remove_module(KA, TRUE)
+
+	PKA = new /obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg(R.module) // var/ переместили выше как code cleaness
+	R.module.basic_modules += PKA
+	R.module.add_module(PKA, FALSE, TRUE)
+
+// SANDSTORM EDIT START мы это модифицировали
 /obj/item/borg/upgrade/premiumka/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if (.)
-		for(var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA in R.module)
-			for(var/obj/item/borg/upgrade/modkit/M in PKA.modkits)
-				M.uninstall(PKA)
-			R.module.remove_module(PKA, TRUE)
+	if (!.)
+		return
 
-		var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA = new (R.module)
-		R.module.basic_modules += KA
-		R.module.add_module(KA, FALSE, TRUE)
+	for(var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA in R.module)
+		for(var/obj/item/borg/upgrade/modkit/M in PKA.modkits)
+			M.uninstall(PKA)
+		R.module.remove_module(PKA, TRUE)
+
+	var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA = new (R.module)
+	R.module.basic_modules += KA
+	R.module.add_module(KA, FALSE, TRUE)
 // SANDSTORM EDIT END
 
 /obj/item/borg/upgrade/tboh
@@ -262,26 +306,57 @@
 	require_module = 1
 	module_type = list(/obj/item/robot_module/butler)
 	module_flags = BORG_MODULE_JANITOR
+	// Старый мешок
+	var/obj/item/storage/bag/trash/cyborg/oldbag
+	// Новый мешок
+	var/obj/item/storage/bag/trash/bluespace/cyborg/bsbag
 
-/obj/item/borg/upgrade/tboh/action(mob/living/silicon/robot/R)
+/obj/item/borg/upgrade/tboh/action(mob/living/silicon/robot/R, user = src)
 	. = ..()
-	if(.)
-		for(var/obj/item/storage/bag/trash/cyborg/TB in R.module.modules)
-			R.module.remove_module(TB, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/storage/bag/trash/bluespace/cyborg/B = new /obj/item/storage/bag/trash/bluespace/cyborg(R.module)
-		R.module.basic_modules += B
-		R.module.add_module(B, FALSE, TRUE)
+	for(bsbag in R.module.modules)
+		if(bsbag)
+			to_chat(user, "<span class='warning'>This unit is already equipped with a bluespace trash bag module.</span>")
+			return FALSE
+
+	var/oldbag_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старого инструмента
+		oldbag = R.module.modules[i]
+		if(istype(oldbag, /obj/item/storage/bag/trash/cyborg))
+			oldbag_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
+
+	bsbag = new(R.module)
+	R.module.basic_modules += bsbag
+	R.module.add_module(bsbag, FALSE, TRUE)
+	var/bsbag_index = R.module.modules.Find(bsbag)
+	for(bsbag in R.module) // Можно оформить и для старого инструмента, здесь сделано для нового, без разницы.
+		R.module.modules.Swap(oldbag_index, bsbag_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(oldbag_index, bsbag_index) // как и `basic_modules +=` и `add.module` выше
+	R.module.remove_module(oldbag, TRUE) // Замена произошла - избавляемся от старого инструмента
 
 /obj/item/borg/upgrade/tboh/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		for(var/obj/item/storage/bag/trash/bluespace/cyborg/B in R.module.modules)
-			R.module.remove_module(B, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/storage/bag/trash/cyborg/TB = new (R.module)
-		R.module.basic_modules += TB
-		R.module.add_module(TB, FALSE, TRUE)
+	var/bsbag_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления.
+		bsbag = R.module.modules[i]
+		if(istype(bsbag, /obj/item/storage/bag/trash/bluespace/cyborg))
+			bsbag_index = i
+			break
+
+	oldbag = new(R.module)
+	R.module.basic_modules += oldbag
+	R.module.add_module(oldbag, FALSE, TRUE)
+	var/oldbag_index = R.module.modules.Find(oldbag)
+	for(oldbag in R.module)
+		R.module.modules.Swap(bsbag_index, oldbag_index)
+		R.module.basic_modules.Swap(bsbag_index, oldbag_index)
+	R.module.remove_module(bsbag, TRUE)
 
 /obj/item/borg/upgrade/amop
 	name = "janitor cyborg advanced mop"
@@ -290,26 +365,57 @@
 	require_module = 1
 	module_type = list(/obj/item/robot_module/butler)
 	module_flags = BORG_MODULE_JANITOR
+	/// Старая швабра
+	var/obj/item/mop/cyborg/oldmop
+	/// Новая швабра
+	var/obj/item/mop/advanced/cyborg/advmop
 
-/obj/item/borg/upgrade/amop/action(mob/living/silicon/robot/R)
+/obj/item/borg/upgrade/amop/action(mob/living/silicon/robot/R, user = src)
 	. = ..()
-	if(.)
-		for(var/obj/item/mop/cyborg/M in R.module.modules)
-			R.module.remove_module(M, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/mop/advanced/cyborg/A = new /obj/item/mop/advanced/cyborg(R.module)
-		R.module.basic_modules += A
-		R.module.add_module(A, FALSE, TRUE)
+	for (advmop in R.module)
+		if(advmop)
+			to_chat(user, "<span class='warning'>This unit is already equipped with an advanced mop module.</span>")
+			return FALSE
+
+	var/oldmop_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старого инструмента
+		oldmop = R.module.modules[i]
+		if(istype(oldmop, /obj/item/mop/cyborg))
+			oldmop_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
+
+	advmop = new(R.module)
+	R.module.basic_modules += advmop
+	R.module.add_module(advmop, FALSE, TRUE)
+	var/advmop_index = R.module.modules.Find(advmop)
+	for(advmop in R.module) // Можно оформить и для старого инструмента, здесь сделано для нового, без разницы.
+		R.module.modules.Swap(oldmop_index, advmop_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(oldmop_index, advmop_index) // как и `basic_modules +=` и `add.module` выше
+	R.module.remove_module(oldmop, TRUE) // Замена произошла - избавляемся от старой сварки
 
 /obj/item/borg/upgrade/amop/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		for(var/obj/item/mop/advanced/cyborg/A in R.module.modules)
-			R.module.remove_module(A, TRUE)
+	if (!.)
+		return
 
-		var/obj/item/mop/cyborg/M = new (R.module)
-		R.module.basic_modules += M
-		R.module.add_module(M, FALSE, TRUE)
+	var/advmop_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления
+		advmop = R.module.modules[i]
+		if(istype(advmop, /obj/item/mop/advanced/cyborg))
+			advmop_index = i
+			break
+
+	oldmop = new(R.module)
+	R.module.basic_modules += oldmop
+	R.module.add_module(oldmop, FALSE, TRUE)
+	var/oldmop_index = R.module.modules.Find(oldmop)
+	for(oldmop in R.module)
+		R.module.modules.Swap(advmop_index, oldmop_index)
+		R.module.basic_modules.Swap(advmop_index, oldmop_index)
+	R.module.remove_module(advmop, TRUE)
 
 /obj/item/borg/upgrade/syndicate
 	name = "illegal equipment module"
@@ -559,19 +665,57 @@
 		/obj/item/robot_module/medical,
 		/obj/item/robot_module/syndicate_medical)
 	module_flags = BORG_MODULE_MEDICAL
+	// Старый сканер
+	var/obj/item/healthanalyzer/cyborg/AHBasic
+	// Новый сканер
+	var/obj/item/healthanalyzer/advanced/cyborg/AHAdv
 
 /obj/item/borg/upgrade/advhealth/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		var/obj/item/healthanalyzer/advanced/AH = new(R.module)
-		R.module.basic_modules += AH
-		R.module.add_module(AH, FALSE, TRUE)
+	if(!.)
+		return
 
-/obj/item/borg/upgrade/processor/deactivate(mob/living/silicon/robot/R, user = usr)
+	for(AHAdv in R.module.modules)
+		if(AHAdv)
+			to_chat(user, "<span class='warning'>This unit is already equipped with an advanced scanner module.</span>")
+			return FALSE
+
+	var/AHBasic_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старого инструмента
+		AHBasic = R.module.modules[i]
+		if(istype(AHBasic, /obj/item/healthanalyzer/cyborg))
+			AHBasic_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
+
+	AHAdv = new(R.module)
+	R.module.basic_modules += AHAdv
+	R.module.add_module(AHAdv, FALSE, TRUE)
+	var/AHAdv_index = R.module.modules.Find(AHAdv)
+	for(AHAdv in R.module) // Можно оформить и для старого инструмента, здесь сделано для нового, без разницы.
+		R.module.modules.Swap(AHBasic_index, AHAdv_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(AHBasic_index, AHAdv_index) // как и `basic_modules +=` и `add.module` выше
+	R.module.remove_module(AHBasic, TRUE) // Замена произошла - избавляемся от старого РПД
+
+/obj/item/borg/upgrade/advhealth/deactivate(mob/living/silicon/robot/R, user = usr) // BLUEMOON FIX you forgot to change processor to advhealth
 	. = ..()
-	if (.)
-		var/obj/item/healthanalyzer/advanced/AH = locate() in R.module
-		R.module.remove_module(AH, TRUE)
+	if(!.)
+		return
+
+	var/AHAdv_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления.
+		AHAdv = R.module.modules[i]
+		if(istype(AHAdv, /obj/item/healthanalyzer/advanced/cyborg))
+			AHAdv_index = i
+			break
+
+	AHBasic = new(R.module)
+	R.module.basic_modules += AHBasic
+	R.module.add_module(AHBasic, FALSE, TRUE)
+	var/AHBasic_index = R.module.modules.Find(AHBasic)
+	for(AHBasic in R.module)
+		R.module.modules.Swap(AHAdv_index, AHBasic_index)
+		R.module.basic_modules.Swap(AHAdv_index, AHBasic_index)
+	R.module.remove_module(AHAdv, TRUE)
 
 /obj/item/borg/upgrade/ai
 	name = "B.O.R.I.S. module"
@@ -646,36 +790,60 @@
 	require_module = TRUE
 	module_type = list(/obj/item/robot_module/engineering, /obj/item/robot_module/saboteur)
 	module_flags = BORG_MODULE_ENGINEERING
+	// Старый РПЕД
+	var/obj/item/storage/part_replacer/cyborg/RPED
+	// Новый БСРПЕД
+	var/obj/item/storage/part_replacer/bluespace/cyborg/BSRPED
 
 /obj/item/borg/upgrade/rped/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if(!.)
 		return
 
-	// Проверяем есть-ли уже БСРПЕД
-	for(var/obj/item/storage/part_replacer/bluespace/cyborg/BSRPED in R.module.modules)
+	for(BSRPED in R.module.modules)
 		if(BSRPED)
 			to_chat(user, "<span class='warning'>This unit is already equipped with a BSRPED module.</span>")
 			return FALSE
 
-	// Удаляем обычный РПЕД
-	for(var/obj/item/storage/part_replacer/cyborg/RPED in R.module.modules)
-		if(RPED)
-			SEND_SIGNAL(RPED, COMSIG_TRY_STORAGE_QUICK_EMPTY)
-			R.module.remove_module(RPED, TRUE)
-			break
+	var/RPED_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старого инструмента
+		RPED = R.module.modules[i]
+		if(istype(RPED, /obj/item/storage/part_replacer/cyborg))
+			RPED_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
 
-	// Добавляем после всего этого новый БСРПЕД
-	var/obj/item/storage/part_replacer/bluespace/cyborg/BSRPED = new(R.module)
+	BSRPED = new(R.module)
 	R.module.basic_modules += BSRPED
 	R.module.add_module(BSRPED, FALSE, TRUE)
+	var/BSRPED_index = R.module.modules.Find(BSRPED)
+	for(BSRPED in R.module) // Можно оформить и для старого инструмента, здесь сделано для нового, без разницы.
+		R.module.modules.Swap(RPED_index, BSRPED_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(RPED_index, BSRPED_index) // как и `basic_modules +=` и `add.module` выше
+	SEND_SIGNAL(RPED, COMSIG_TRY_STORAGE_QUICK_EMPTY)
+	R.module.remove_module(RPED, TRUE) // Замена произошла - избавляемся от старого инструмента
 
 /obj/item/borg/upgrade/rped/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if (.)
-		var/obj/item/storage/part_replacer/cyborg/RPED = locate() in R.module
-		if (RPED)
-			R.module.remove_module(RPED, TRUE)
+	if(!.)
+		return
+
+	var/BSRPED_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления.
+		BSRPED = R.module.modules[i]
+		if(istype(BSRPED, /obj/item/storage/part_replacer/bluespace/cyborg))
+			BSRPED_index = i
+			break
+
+	RPED = new(R.module)
+	R.module.basic_modules += RPED
+	R.module.add_module(RPED, FALSE, TRUE)
+	var/RPED_index = R.module.modules.Find(RPED)
+	for(RPED in R.module)
+		R.module.modules.Swap(BSRPED_index, RPED_index)
+		R.module.basic_modules.Swap(BSRPED_index, RPED_index)
+	SEND_SIGNAL(BSRPED, COMSIG_TRY_STORAGE_QUICK_EMPTY)
+	R.module.remove_module(BSRPED, TRUE)
+
 
 /obj/item/borg/upgrade/pinpointer
 	name = "medical cyborg crew pinpointer"
@@ -753,31 +921,3 @@
 	action.UpdateButtons()
 
 	return TRUE
-
-/obj/item/borg/upgrade/broomer
-	name = "Experimental Broom"
-	desc = "При активации позволяет толкать предметы перед собой в большой куче."
-	icon_state = "cyborg_upgrade3"
-	require_module = TRUE
-	module_type = list(/obj/item/robot_module/butler)
-	module_flags = BORG_MODULE_JANITOR
-
-/obj/item/borg/upgrade/broomer/action(mob/living/silicon/robot/R, user = usr)
-	. = ..()
-	if (!.)
-		return
-	var/obj/item/broom/cyborg/BR = locate() in R.module.modules
-	if (BR)
-		to_chat(user, span_warning("Этот киборг уже оснащен экспериментальным толкателем!"))
-		return FALSE
-	BR = new(R.module)
-	R.module.basic_modules += BR
-	R.module.add_module(BR, FALSE, TRUE)
-
-/obj/item/borg/upgrade/broomer/deactivate(mob/living/silicon/robot/R, user = usr)
-	. = ..()
-	if (!.)
-		return
-	var/obj/item/broom/cyborg/BR = locate() in R.module.modules
-	if (BR)
-		R.module.remove_module(BR, TRUE)

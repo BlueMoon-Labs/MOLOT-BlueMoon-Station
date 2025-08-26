@@ -605,6 +605,7 @@ RLD
 	icon_state = "ircd"
 	item_state = "ircd"
 	energyfactor = 66
+	delay_mod = 0.8 // Улучшил. Это теперь также улучшение при изучении нелегалов.
 
 /obj/item/construction/rcd/loaded
 	custom_materials = list(/datum/material/iron = 48000, /datum/material/glass = 32000)
