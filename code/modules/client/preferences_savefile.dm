@@ -733,7 +733,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["eorg_enabled"], eorg_enabled)
 
 	var/mob/living/carbon/human/H = parent.mob
-	if(istype(H))
+	if(H)
 		H.set_antag_target_indicator() // Update consent HUD
 	//
 
@@ -1742,6 +1742,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	splurt_character_pref_save(S)
 
 	bluemoon_character_pref_save(S)
+
+	var/mob/living/carbon/human/H = parent.mob
+	if(H)
+		H.set_antag_target_indicator() // Update consent HUD
 
 	if(parent && !silent)
 		to_chat(parent, span_notice("Saved character slot!"))
