@@ -644,10 +644,11 @@
 						prefs.erppref = value
 				if("noncon_pref")
 					if(prefs.nonconpref == value)
-						message_admins("[parent_mob.real_name] меняет параметр Нон-Кон на [value].")
-						log_admin("[parent_mob.real_name] меняет параметр Нон-Кон на [value].")
 						return FALSE
 					else
+						message_admins("[parent_mob.real_name] меняет параметр Non-Con c [prefs.nonconpref] на [value].")
+						log_admin("[parent_mob.real_name] меняет параметр Non-Con c [prefs.nonconpref] на [value].")
+						parent_mob.balloon_alert_to_viewers("Меняет Non-Con c [prefs.nonconpref] на [value].")
 						prefs.nonconpref = value
 				if("vore_pref")
 					if(prefs.vorepref == value)

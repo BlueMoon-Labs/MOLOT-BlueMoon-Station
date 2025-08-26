@@ -4098,6 +4098,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if("No")
 							erppref = "Yes"
 				if("noncon_pref")
+					var/nonconpref_old = nonconpref
 					switch(nonconpref)
 						if("Yes")
 							nonconpref = "Ask"
@@ -4105,6 +4106,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							nonconpref = "No"
 						if("No")
 							nonconpref = "Yes"
+					message_admins("[user.real_name] меняет параметр Non-Con c [nonconpref_old] на [nonconpref].")
+					log_admin("[user.real_name] меняет параметр Non-Con c [nonconpref_old] на [nonconpref].")
+					user.balloon_alert_to_viewers("Меняет Non-Con c [nonconpref_old] на [nonconpref].")
 				if("vore_pref")
 					switch(vorepref)
 						if("Yes")
