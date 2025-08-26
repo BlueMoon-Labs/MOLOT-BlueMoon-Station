@@ -65,3 +65,21 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	var/turf/T = safepick(get_area_turfs(/area/awaymission/InteQ/ForChasmArea))
 	if(T)
 		set_target(T)
+
+/area/awaymission/InteQ/lvl2
+
+	name = "InteQGate"
+	icon_state = "away"
+	has_gravity = STANDARD_GRAVITY
+	// ambience_index = AMBIENCE_AWAY
+	ambientsounds = AWAY_MISSION
+	sound_environment = SOUND_ENVIRONMENT_ROOM
+
+	/area/awaymission/InteQ/lvl3
+
+	name = "InteQGate"
+	icon_state = "away"
+	has_gravity = STANDARD_GRAVITY
+	// ambience_index = AMBIENCE_AWAY
+	ambientsounds = AWAY_MISSION
+	sound_environment = SOUND_ENVIRONMENT_ROOM
