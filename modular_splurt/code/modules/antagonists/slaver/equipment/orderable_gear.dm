@@ -267,3 +267,9 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	build_path = /obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded
 	category = "Mech"
 	cost = 100000
+
+/datum/slaver_gear/elitehardsuits
+	name = "elite syndicate hardsuit"
+	description = "Upgraded military suit supplied by our Syndicate sponsors. But there is only ONE!"
+	category = "Advanced"
+	cost = 10500
