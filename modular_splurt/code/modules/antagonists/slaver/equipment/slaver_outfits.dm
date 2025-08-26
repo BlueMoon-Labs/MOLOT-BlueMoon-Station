@@ -22,6 +22,9 @@
 /obj/item/radio/headset/pirate/bowman //И бовманки
 	bowman = TRUE
 
+/obj/item/radio/headset/pirate/bowman/Initialize(mapload)
+	. = ..()
+	bowmanize()
 
 /datum/outfit/slaver/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
 	. = ..()
