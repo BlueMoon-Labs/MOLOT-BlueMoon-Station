@@ -1,6 +1,7 @@
 //This is the file that handles donator loadout items.
 
 /datum/gear/donator
+	name = "Golden Horn!"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bikehorn/golden
 	category = LOADOUT_CATEGORY_DONATOR
