@@ -199,7 +199,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	death = FALSE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "oldpod"
-	outfit = /datum/outfit/ert/security/alert
+	outfit = /datum/outfit/ert/security/alert/blue
 	assignedrole = "Emergency Response Team Solder"
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
@@ -208,9 +208,9 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 /obj/effect/mob_spawn/human/ert/engineer
 	name = "Emergency Response Team Engineer"
 	assignedrole = "Emergency Response Team Engineer"
-	outfit = /datum/outfit/ert/engineer/alert
+	outfit = /datum/outfit/ert/engineer/blue
 
 /obj/effect/mob_spawn/human/ert/commander
 	name = "Emergency Response Team Commander"
 	assignedrole = "Emergency Response Team Commander"
-	outfit = /datum/outfit/ert/commander/alert
+	outfit = /datum/outfit/ert/commander/blue
