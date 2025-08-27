@@ -58,11 +58,11 @@
 	shockCooldown = 20 SECONDS
 	code = -1
 	frequency = -1
+	verb_say = "states"
 
 /obj/item/electropack/shockcollar/slave/Initialize()
 	GLOB.tracked_slaves += src
 	. = ..()
-
 
 /obj/item/electropack/shockcollar/slave/Destroy()
 	visible_message("<span class='notice'>The [src] detaches from [src.loc]'s neck.</span>", \
@@ -71,6 +71,30 @@
 
 	GLOB.tracked_slaves -= src
 	. = ..()
+
+/obj/item/electropack/shockcollar/slave/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self, clothing_check, list/return_warning)
+	if(!M)
+		return ..()
+
+	var/datum/antagonist/slaver/S = locate() in M?.mind.antag_datums
+	if(S) // Слейвер
+		return FALSE
+
+	// Надевает сам на себя
+	if(!equipper)
+		//Раз сам на себя надевает, префы не проверяем
+		if(!do_after(M, 3 SECONDS, M)) // Защита от миссклика по кнопке одеть
+			return FALSE
+		else
+			return ..()
+	else
+		// Проверяем префы
+		if(M?.client?.prefs.nonconpref == "No" || M?.client?.prefs.erppref == "No")
+			src.say("Операция отклонена. Цель помечена как неприкосновенная.")
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 80, FALSE)
+			return FALSE
+		else
+			return ..()
 
 // Don't let user change frequency.
 /obj/item/electropack/shockcollar/slave/attack_self(mob/living/user)
