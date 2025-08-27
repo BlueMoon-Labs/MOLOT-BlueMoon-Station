@@ -646,8 +646,8 @@
 					if(prefs.nonconpref == value)
 						return FALSE
 					else
-						message_admins("[parent_mob.real_name] меняет параметр Non-Con c [prefs.nonconpref] на [value].")
-						log_admin("[parent_mob.real_name] меняет параметр Non-Con c [prefs.nonconpref] на [value].")
+						message_admins("[parent_mob.ckey]/[parent_mob.real_name][parent_mob.stat == DEAD ? " (DEAD)" : ""] меняет Non-Con c [prefs.nonconpref] на [value].")
+						log_admin("[parent_mob.ckey]/[parent_mob.real_name][parent_mob.stat == DEAD ? " (DEAD)" : ""] меняет Non-Con c [prefs.nonconpref] на [value].")
 						parent_mob.balloon_alert_to_viewers("Меняет Non-Con c [prefs.nonconpref] на [value].")
 						prefs.nonconpref = value
 				if("vore_pref")
