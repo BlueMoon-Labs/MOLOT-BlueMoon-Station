@@ -76,16 +76,17 @@
 	if(!M)
 		return ..()
 
+	var/datum/antagonist/slaver/S = locate() in M?.mind.antag_datums
+	if(S) // Слейвер
+		return FALSE
+
 	// Надевает сам на себя
 	if(!equipper)
-		var/datum/antagonist/slaver/S = locate() in M.mind.antag_datums
-		if(S) // Слейвер
+		//Раз сам на себя надевает, префы не проверяем
+		if(!do_after(M, 3 SECONDS, M)) // Защита от миссклика по кнопке одеть
 			return FALSE
-		else // Не слейвер. Раз сам на себя надевает, префы не проверяем
-			if(!do_after(M, 3 SECONDS, M)) // Защита от миссклика по кнопке одеть
-				return FALSE
-			else
-				return ..()
+		else
+			return ..()
 	else
 		// Проверяем префы
 		if(M?.client?.prefs.nonconpref == "No" || M?.client?.prefs.erppref == "No")
