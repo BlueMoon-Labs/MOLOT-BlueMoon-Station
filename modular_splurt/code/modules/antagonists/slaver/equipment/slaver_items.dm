@@ -9,6 +9,7 @@
 	icon_state = "silencer"
 	item_state = "gizmo"
 	w_class = WEIGHT_CLASS_SMALL
+	verb_say = "states"
 
 /obj/item/slaver/gizmo/attack(mob/living/M, mob/user)
 	if(!M)
