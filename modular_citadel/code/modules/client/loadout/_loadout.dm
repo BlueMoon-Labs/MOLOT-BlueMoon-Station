@@ -45,6 +45,7 @@ GLOBAL_LIST_EMPTY(loadout_whitelist_ids)
 
 
 /datum/gear
+	/// name of any base class must be null to avoid erros during initialize_global_loadout_items()
 	var/name
 	var/category = LOADOUT_CATEGORY_NONE
 	var/subcategory = LOADOUT_SUBCATEGORY_NONE

@@ -153,6 +153,13 @@
 	new_object.setDir(object.dir)
 	if(istype(object, /obj/machinery/door/airlock))
 		new_object.name = object.name
+		var/obj/machinery/door/airlock/new_door = new_object
+		var/obj/machinery/door/airlock/old_door = object
+		new_door.unres_sides = old_door.unres_sides
+		new_door.req_access = old_door.req_access?.Copy()
+		new_door.req_access_txt = old_door.req_access_txt
+		new_door.req_one_access = old_door.req_one_access?.Copy()
+		new_door.req_one_access_txt = old_door.req_one_access_txt
 	qdel(object)
 
 /**
@@ -410,7 +417,7 @@
 /datum/dimension_theme/fancy/apply_theme(turf/affected_turf, skip_sound = FALSE, show_effect = FALSE)
 	if(COOLDOWN_FINISHED(src, carpet_switch_cd))
 		randomize_theme()
-		COOLDOWN_START(src, carpet_switch_cd, 90 SECONDS)
+		COOLDOWN_START(src, carpet_switch_cd, 100 SECONDS)
 	return ..()
 
 /datum/dimension_theme/disco
