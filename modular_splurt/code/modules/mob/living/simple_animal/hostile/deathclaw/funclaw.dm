@@ -73,7 +73,32 @@
 	. = ..()
 	mark_enemy_if_hurt(user, prev)
 
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_animal(mob/living/simple_animal/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+	
 /mob/living/simple_animal/hostile/deathclaw/funclaw/attack_alien(mob/living/carbon/alien/humanoid/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_larva(mob/living/carbon/alien/larva/L)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(L, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_slime(mob/living/simple_animal/slime/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_drone(mob/living/simple_animal/drone/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_paw(mob/living/carbon/monkey/M)
 	var/prev = health
 	. = ..()
 	mark_enemy_if_hurt(M, prev)
