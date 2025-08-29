@@ -91,40 +91,52 @@
 	desc = "Связка боевых жетонов с резиновым ободком по их краям. Выполнены из прочного и износостойкого сплава, с маленьким весом, от чего стали практически незаметными для самого носителя. На правом жетоне выбиты основные данные его владельца, в виде полного имени, группы крови и принадлежности к подразделению. На левом жетоне выбита дополнительная информация и очертания владельца."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-	icon_state = "hateredsoul_dogtag"
-	item_state = "hateredsoul_dogtag"
+	icon_state = "hateredsoul_dogtag_1"
+	item_state = "hateredsoul_dogtag_1"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar
+	var/poly_states = 1
+	var/poly_colors = list("#00BBBB")
+	var/tagname = null
 	unique_reskin = list(
 		"Combat dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_1",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_1"
 		),
 		"Combat Dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_2",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_2"
 		)
 	)
+
+/obj/item/clothing/neck/hateredsoul_dogtag/ComponentInitialize()
+	. = ..()
+	if(!poly_states)
+		return
+	AddElement(/datum/element/polychromic, poly_states)
+
+/obj/item/clothing/neck/hateredsoul_dogtag/attack_self(mob/user)
+	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new tag", tagname, MAX_NAME_LEN)
+	name = tagname ? "[initial(name)] - [tagname]" : initial(name)
 
 /obj/item/clothing/neck/hateredsoul_dogtag/nt
 	name = "NT Combat Dogtag"
 	desc = "Связка боевых жетонов с резиновым ободком по их краям. Выполнены из прочного и износостойкого сплава, с маленьким весом, от чего стали практически незаметными для самого носителя. На правом жетоне выбиты основные данные его владельца, в виде полного имени, группы крови и принадлежности к подразделению. На левом жетоне изображён логотип корпорации NanoTrasen."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-	icon_state = "hateredsoul_dogtag_nt"
-	item_state = "hateredsoul_dogtag_nt"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar
+	icon_state = "hateredsoul_dogtag_nt_1"
+	item_state = "hateredsoul_dogtag_nt_1"
 	unique_reskin = list(
 		"NT Combat Dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_nt_1",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag_nt"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_nt_1"
 		),
 		"NT Combat dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_nt_2",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag_nt"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_nt_2"
 		),
 		"NT combat dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_nt_3",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag_nt"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_nt_3"
 		)
 	)
 
@@ -133,21 +145,20 @@
 	desc = "Связка боевых жетонов с резиновым ободком по их краям. Выполнены из прочного и износостойкого сплава, с маленьким весом, от чего стали практически незаметными для самого носителя. На правом жетоне выбиты основные данные его владельца, в виде полного имени, группы крови и принадлежности к подразделению. На левом жетоне изображена трёхглавая змея Синдиката."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-	icon_state = "hateredsoul_dogtag_syndie"
-	item_state = "hateredsoul_dogtag_syndie"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar
+	icon_state = "hateredsoul_dogtag_syndie_1"
+	item_state = "hateredsoul_dogtag_syndie_1"
 	unique_reskin = list(
 		"Syndie Combat Dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_syndie_1",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag_syndie"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_syndie_1"
 		),
 		"Syndie Combat dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_syndie_2",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag_syndie"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_syndie_2"
 		),
 		"Syndie combat dogtag" = list(
 			RESKIN_ICON_STATE = "hateredsoul_dogtag_syndie_3",
-			RESKIN_ITEM_STATE = "hateredsoul_dogtag_syndie"
+			RESKIN_ITEM_STATE = "hateredsoul_dogtag_syndie_3"
 		)
 	)
 

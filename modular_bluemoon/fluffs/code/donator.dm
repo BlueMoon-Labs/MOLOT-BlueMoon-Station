@@ -940,7 +940,7 @@
 
 /datum/gear/donator/bm/SATT_jackboots
 	name = "SATT jackboots"
-	slot = ITEM_SLOT_FEET
+	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/shoes/jackboots/SATT_jackboots
 	ckeywhitelist = list("allazarius", "flippingtable", "mihana964", "devildeadspace")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
@@ -1294,14 +1294,14 @@
 
 /datum/gear/donator/bm/angel_vulgar_dress
 	name = "Angelic Vulgar Dress"
-	slot = ITEM_SLOT_ICLOTHING
+	slot = ITEM_SLOT_UNDERWEAR
 	path = /obj/item/clothing/under/bm/angelrevskirt
 	ckeywhitelist = list("angrylaska")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /datum/gear/donator/bm/ghotic_vulgar_dress
 	name = "Ghotic Vulgar Dress"
-	slot = ITEM_SLOT_ICLOTHING
+	slot = ITEM_SLOT_UNDERWEAR
 	path = /obj/item/clothing/under/bm/gothrevskirt
 	ckeywhitelist = list("angrylaska")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
