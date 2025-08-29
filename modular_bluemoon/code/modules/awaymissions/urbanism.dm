@@ -77,7 +77,7 @@
 /obj/structure/reagent_dispensers/urbanismbarrel/red
 	icon_state = "redbarrel"
 	reagent_id = /datum/reagent/fuel
-	tank_volume = 200
+	tank_volume = 300
 
 /obj/structure/barricade/urbanism
 	name = "Barricade"
@@ -272,6 +272,6 @@
 	armor = list(MELEE = 50, BULLET =40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
 
 /obj/structure/deadmesa/hecughost
-	name = "ВНЕПРОСТРАНСТВЕННО БРУТАЛЬНЫЙ ЛИДЕР ПОТЕРЯННОГО ОТРЯДА HECU (НАЙДИ ИХ ВСЕХ!!111!1!)"
-	desc = "У этого парня много имён... И он точно перепутал гейт Blackmesa с ihategordon. Появится ли blackmesa и тут? Что значит призрак этого парня? Зачем вы читаете его описание?"
+	name = "ВНЕПРОСТРАНСТВЕННО МЕГАКРУТОЙ ЛИДЕР ПОТЕРЯННОГО ОТРЯДА HECU (НАЙДИ ИХ ВСЕХ!!111!1!)"
+	desc = "Он точно потерялся... И он точно перепутал гейт Blackmesa с ihategordon. Появится ли blackmesa и тут? Что значит призрак этого парня? Зачем вы читаете его описание?"
 	icon_state = "Hecughost"
