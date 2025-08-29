@@ -111,7 +111,7 @@
 			stack.len-- // pop
 
 			if(ismob(B))
-				var/mob/living/M = B
+				var/mob/M = B
 				if(M != user)
 					// ищем максимальную невидимость по цепочке loc вверх
 					var/invis = M.invisibility

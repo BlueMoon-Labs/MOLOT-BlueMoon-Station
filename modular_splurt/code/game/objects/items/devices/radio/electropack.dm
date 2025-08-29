@@ -76,7 +76,7 @@
 	if(!M)
 		return ..()
 
-	var/datum/antagonist/slaver/S = locate() in M?.mind.antag_datums
+	var/datum/antagonist/slaver/S = locate(/datum/antagonist/slaver) in M?.mind.antag_datums
 	if(S) // Слейвер
 		return FALSE
 

@@ -134,8 +134,7 @@
 		on = FALSE
 		return
 
-	for(var/m in buckled_mobs)
-		var/mob/living/carbon/human/M = m
+	for(var/mob/living/carbon/human/M in buckled_mobs)
 
 		var/list/organ_slots = list()
 		if(dual_mode)

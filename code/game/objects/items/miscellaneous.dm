@@ -317,6 +317,8 @@
 // BLUEMOON ADD START
 /obj/item/choice_beacon/box/plushie/AltClick(mob/user)
 	. = ..()
+	if(!user)
+		return .
 	if(user.get_active_held_item() == src && canUseBeacon(user))
 		generate_options(user, TRUE)
 

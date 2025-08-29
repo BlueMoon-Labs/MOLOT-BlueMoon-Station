@@ -204,6 +204,8 @@
 		return null
 
 	var/obj/item/organ/genital/organ = target.getorganslot(genital_slot)
+	if(!istype(organ, /obj/item/organ/genital))
+		organ = null
 	var/organ_exposed = organ && organ.is_exposed()
 
 	if(organ_exposed && !is_overlay_on)

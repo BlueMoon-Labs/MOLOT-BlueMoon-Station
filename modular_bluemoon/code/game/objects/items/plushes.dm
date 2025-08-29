@@ -537,7 +537,7 @@
 
 	for(var/i = 1, i <= 4, i++)
 		if(src.loc != start || partner.loc != end) // Если игрушки передвинули в процессе
-			var/heart_broken_say = list(
+			var/static/list/heart_broken_say = list(
 				"Не-ет!",
 				"Не разлучай нас!",
 				"Верни меня!",

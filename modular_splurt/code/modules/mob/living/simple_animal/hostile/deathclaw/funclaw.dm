@@ -35,10 +35,11 @@
 	if(!.)
 		return .
 
-	var/mob/living/M = the_target
-	if(!M)
+	if(!isliving(the_target))
 		return .
 	
+	var/mob/living/M = the_target
+
 	if(CanRape(M) || (M in enemies))
 		return TRUE
 		
@@ -122,14 +123,14 @@
 /mob/living/simple_animal/hostile/deathclaw/funclaw/bullet_act(obj/item/projectile/Proj)
 	var/prev = health
 	. = ..()
-	var/mob/living/A = ismob(Proj.firer) ? Proj.firer : null
+	var/mob/living/A = isliving(Proj.firer) ? Proj.firer : null
 	mark_enemy_if_hurt(A, prev)
 
 // Броски
 /mob/living/simple_animal/hostile/deathclaw/funclaw/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	var/prev = health
 	. = ..()
-	var/mob/living/A = ismob(throwingdatum?.thrower) ? throwingdatum.thrower : null
+	var/mob/living/A = isliving(throwingdatum?.thrower) ? throwingdatum.thrower : null
 	mark_enemy_if_hurt(A, prev)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/mark_enemy_if_hurt(mob/living/A, prev_hp)
@@ -149,7 +150,7 @@
 		span_lewd("Вы слышите наполненный удовольствием рык."),
 		ignored_mobs = get_unconsenting(), omni = TRUE)
 
-	var/list/moans = list('modular_splurt/sound/lewd/deathclaw_grunt1.ogg',
+	var/static/list/moans = list('modular_splurt/sound/lewd/deathclaw_grunt1.ogg',
 					'modular_splurt/sound/lewd/deathclaw_grunt2.ogg',
 					'modular_splurt/sound/lewd/deathclaw_grunt3.ogg',
 					'modular_splurt/sound/lewd/deathclaw_grunt4.ogg',

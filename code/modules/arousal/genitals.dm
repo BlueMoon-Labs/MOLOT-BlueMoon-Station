@@ -119,8 +119,11 @@
 		var/obj/item/organ/genital/testicles/balls
 		if(istype(src, /obj/item/organ/genital/testicles))
 			balls = src
-		else if(linked_organ)
+		else if(istype(linked_organ, /obj/item/organ/genital/testicles))
 			balls = linked_organ
+
+		if(!balls)
+			return result
 
 		var/list/states = CUM_STATES
 		for(var/i in 1 to states.len) // Делаем список с весом
