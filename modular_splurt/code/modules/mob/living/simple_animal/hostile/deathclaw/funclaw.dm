@@ -35,10 +35,11 @@
 	if(!.)
 		return .
 
-	var/mob/living/M = isliving(the_target) ? the_target : null
-	if(!M)
+	if(!isliving(the_target))
 		return .
 	
+	var/mob/living/M = the_target
+
 	if(CanRape(M) || (M in enemies))
 		return TRUE
 		
