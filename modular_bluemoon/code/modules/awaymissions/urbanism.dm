@@ -77,7 +77,7 @@
 /obj/structure/reagent_dispensers/urbanismbarrel/red
 	icon_state = "redbarrel"
 	reagent_id = /datum/reagent/fuel
-	tank_volume = 200
+	tank_volume = 300
 
 /obj/structure/barricade/urbanism
 	name = "Barricade"
@@ -261,3 +261,17 @@
 	icon_state = "flora1"
 	anchored = TRUE
 	density = FALSE
+
+/obj/structure/deadmesa
+	name = "Damaged body"
+	desc = "Horrific consequences of Resonance Cascade."
+	icon = 'modular_bluemoon/icons/obj/urbanism/deadhuman.dmi'
+	icon_state = "deadhecu"
+	anchored = TRUE
+	density = FALSE
+	armor = list(MELEE = 50, BULLET =40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 10, RAD = 0, FIRE = 50, ACID = 50)
+
+/obj/structure/deadmesa/hecughost
+	name = "ВНЕПРОСТРАНСТВЕННО МЕГАКРУТОЙ ЛИДЕР ПОТЕРЯННОГО ОТРЯДА HECU (НАЙДИ ИХ ВСЕХ!!111!1!)"
+	desc = "Он точно потерялся... И он точно перепутал гейт Blackmesa с ihategordon. Появится ли blackmesa и тут? Что значит призрак этого парня? Зачем вы читаете его описание?"
+	icon_state = "Hecughost"
