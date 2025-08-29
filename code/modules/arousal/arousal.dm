@@ -433,7 +433,7 @@
 
 	//Ok, now we check what they want to do.
 	// BLUEMOON EDIT START
-	var/list/options = list(
+	var/static/list/options = list(
 		"Оргазмировать в одиночестве" = list("icon" = 'icons/obj/genitals/hud.dmi', "state" = "arousal"),
 		"Оргазмировать совместно с кем-то" = list("icon" = 'modular_sand/icons/mob/dogborg.dmi', "state" = "pleasuremaw"),
 		"Оргазмировать на кого-то" = list("icon" = 'modular_splurt/icons/effects/cumoverlay.dmi', "state" = "cum_large"),

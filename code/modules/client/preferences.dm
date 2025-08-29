@@ -4106,7 +4106,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							nonconpref = "No"
 						if("No")
 							nonconpref = "Yes"
-					var/mob/living/C = istype(user?.mind?.current, /mob/living) ? user.mind.current : null
+					var/mob/living/C = isliving(user?.mind?.current) ? user.mind.current : null
 					if(C)
 						message_admins("[user.ckey]/[C.real_name][C.stat == DEAD ? " (DEAD)" : ""] меняет Non-Con c [nonconpref_old] на [nonconpref].")
 						log_admin("[user.ckey]/[C.real_name][C.stat == DEAD ? " (DEAD)" : ""] меняет Non-Con c [nonconpref_old] на [nonconpref].")

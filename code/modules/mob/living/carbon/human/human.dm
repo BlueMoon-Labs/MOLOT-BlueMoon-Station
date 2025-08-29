@@ -457,7 +457,7 @@
 
 	//Check for dresscode violations
 	// BLUEMOON EDIT START
-	var/list/equip_checks = list(
+	var/static/list/equip_checks = list(
 		/obj/item/clothing/head/helmet/space/hardsuit/wizard,
 		/obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard,
 		/obj/item/clothing/head/helmet/space/hardsuit/syndi,
@@ -471,7 +471,7 @@
 		/obj/item/clothing/under/inteq
 	)
 
-	var/list/special_equip_checks = list(/obj/item/clothing/head/wizard = "check_magic_flag")
+	var/static/list/special_equip_checks = list(/obj/item/clothing/head/wizard = "check_magic_flag")
 
 	// main check
 	var/illegal_equipment = FALSE

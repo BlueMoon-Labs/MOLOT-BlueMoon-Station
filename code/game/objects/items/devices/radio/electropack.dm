@@ -185,7 +185,7 @@
 		L.DefaultCombatKnockdown(shockStrength)
 
 		//BLUEMOON ADD START
-		var/mob/living/carbon/human/H = L
+		var/mob/living/carbon/human/H = ishuman(L) ? L : null
 		if(H)
 			if(HAS_TRAIT(H, TRAIT_MASO))
 				H.adjust_arousal(40, "masochism", maso = TRUE)

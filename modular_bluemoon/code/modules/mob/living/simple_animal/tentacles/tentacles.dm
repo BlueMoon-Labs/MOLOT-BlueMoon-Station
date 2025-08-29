@@ -115,7 +115,7 @@
 	if(!.)
 		return .
 
-	var/mob/living/M = the_target
+	var/mob/living/M = isliving(the_target) ? the_target : null
 	if(!M)
 		return .
 

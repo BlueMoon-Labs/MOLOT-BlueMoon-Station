@@ -742,8 +742,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		WRITE_FILE(S["unlockable_loadout"], safe_json_encode(list()))
 
 	if(parent)
-		var/mob/living/carbon/human/H = parent.mob
-		if(H)
+		if(ishuman(parent?.mob))
+			var/mob/living/carbon/human/H = parent.mob
 			H.set_antag_target_indicator() // Update consent HUD
 
 		if(!silent)
@@ -1744,8 +1744,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	bluemoon_character_pref_save(S)
 
 	if(parent)
-		var/mob/living/carbon/human/H = parent?.mob
-		if(H)
+		if(ishuman(parent?.mob))
+			var/mob/living/carbon/human/H = parent.mob
 			H.set_antag_target_indicator() // Update consent HUD
 
 		if(!silent)

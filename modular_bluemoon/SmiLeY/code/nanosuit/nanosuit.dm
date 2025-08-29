@@ -1004,8 +1004,8 @@
 
 /mob/living/simple_animal/attack_hand(mob/user)
 	. = ..()
-	var/mob/living/carbon/human/M = user
-	if(M && ishuman(M) && istype(M.wear_suit, /obj/item/clothing/suit/space/hardsuit/nano))
+	var/mob/living/carbon/human/M = ishuman(user) ? user : null
+	if(M && istype(M.wear_suit, /obj/item/clothing/suit/space/hardsuit/nano))
 		var/obj/item/clothing/suit/space/hardsuit/nano/NS = M.wear_suit
 		NS.kill_cloak()
 
