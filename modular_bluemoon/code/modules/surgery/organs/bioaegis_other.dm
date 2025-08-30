@@ -16,13 +16,13 @@
 		M.remove_quirk(/datum/quirk/less_nightmare, STATUS_EFFECT_TRAIT)
 	if(M.has_quirk(/datum/quirk/lightless))
 		M.remove_quirk(/datum/quirk/lightless, STATUS_EFFECT_TRAIT)
-		to_chat(owner, "<span class = 'notice'>Вы ощущаете как ваш покров становится крепче. Кажется, свет вам более не страшен..</span>")
+		to_chat(owner, "<span class = 'notice'>Р’С‹ РѕС‰СѓС‰Р°РµС‚Рµ РєР°Рє РІР°С€ РїРѕРєСЂРѕРІ СЃС‚Р°РЅРѕРІРёС‚СЃСЏ РєСЂРµРїС‡Рµ. РљР°Р¶РµС‚СЃСЏ, СЃРІРµС‚ РІР°Рј Р±РѕР»РµРµ РЅРµ СЃС‚СЂР°С€РµРЅ..</span>\n")
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "out of shadows", /datum/mood_event/shadowless)
 	else
-		to_chat(owner, "<span class = 'notice'>А...в чём был смысл?...</span>")
+		to_chat(owner, "<span class = 'notice'>Рђ...РІ С‡С‘Рј Р±С‹Р» СЃРјС‹СЃР»?...</span>\n")
 
 /datum/mood_event/shadowless
-	description = "<span class='nicegreen'>Свет стал таким приятным...</span>\n"
+	description = "<span class='nicegreen'>РЎРІРµС‚ СЃС‚Р°Р» С‚Р°РєРёРј РїСЂРёСЏС‚РЅС‹Рј...</span>\n"
 	mood_change = 4 //You just removed a heavy burden from yourself, at least for a time being.
 	timeout = 1 MINUTES //You are happy, but not for long. You are still mortal.
 
@@ -45,11 +45,11 @@
 	M.remove_quirk(/datum/quirk/nyctophobia, STATUS_EFFECT_TRAIT)
 	M.remove_quirk(/datum/quirk/monophobia, STATUS_EFFECT_TRAIT)
 	M.remove_quirk(/datum/quirk/insanity, STATUS_EFFECT_TRAIT) //Cockroaches in the head were silenced
-	to_chat(owner, "<span class='synth'>Странное ощущение спокойствия......</span>")
+	to_chat(owner, "<span class='synth'>РЎС‚СЂР°РЅРЅРѕРµ РѕС‰СѓС‰РµРЅРёРµ СЃРїРѕРєРѕР№СЃС‚РІРёСЏ......</span>\n")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "serenity of mind", /datum/mood_event/serenityofmind)
 
 /datum/mood_event/serenityofmind
-	description = "<span class='synth'>Секунда стала вечностью, и мой разум нашёл своё место в этом мире.</span>\n"
+	description = "<span class='synth'>РЎРµРєСѓРЅРґР° СЃС‚Р°Р»Р° РІРµС‡РЅРѕСЃС‚СЊСЋ, Рё РјРѕР№ СЂР°Р·СѓРј РЅР°С€С‘Р» СЃРІРѕС‘ РјРµСЃС‚Рѕ РІ СЌС‚РѕРј РјРёСЂРµ.</span>\n"
 	mood_change = 3 //You managed to make yourself less of a whimp and more of a decent person, good job.
 
 /obj/item/organ/eyes/night_vision/aegis
