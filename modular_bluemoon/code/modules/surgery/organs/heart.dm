@@ -11,7 +11,7 @@
 
 /obj/item/organ/heart/tier1/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Как ни странно...словно ничего не поменялось.</span>")
+	to_chat(owner, "<span class = 'notice'>Как ни странно...словно ничего не поменялось.</span>\n")
 
 //TIER 2 HEART//
 /obj/item/organ/heart/tier2
@@ -29,7 +29,7 @@
 
 /obj/item/organ/heart/tier2/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Вы ощущаете, словно ваше сердце стало немного больше.</span>")
+	to_chat(owner, "<span class = 'notice'>Вы ощущаете, словно ваше сердце стало немного больше.</span>\n")
 
 //TIER 3 HEART//
 /obj/item/organ/heart/tier3
@@ -43,7 +43,7 @@
 
 /obj/item/organ/heart/tier3/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Ритм вашего нового сердца словно марш легионов.</span>")
+	to_chat(owner, "<span class = 'notice'>Ритм вашего нового сердца словно марш легионов.</span>\n")
 	SEND_SIGNAL(organ_mob, COMSIG_ADD_MOOD_EVENT, "super heart", /datum/mood_event/superheart)
 
 /datum/mood_event/superheart
@@ -56,7 +56,7 @@
 		return
 	H.set_heartattack(FALSE)
 	if(H.stat == CONSCIOUS || H.stat == SOFT_CRIT)
-		to_chat(H, "<span class='notice'>Вы ощущаете как словно ваши собственные вены начали биться в знакомый ритм!</span>")
+		to_chat(H, "<span class='notice'>Вы ощущаете как словно ваши собственные вены начали биться в знакомый ритм!</span>\n")
 
 /obj/item/organ/heart/tier3/on_life()
 	owner.adjustOxyLoss(-0.5, FALSE) //It can pump blood rather well, so it can delay oxy damage to some degree.
