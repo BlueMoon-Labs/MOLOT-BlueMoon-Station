@@ -14,7 +14,7 @@
 
 /obj/item/organ/lungs/tier1/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Что-то неприятно упёрлось внутри живота...</span>")
+	to_chat(owner, "<span class = 'notice'>Р§С‚Рѕ-С‚Рѕ РЅРµРїСЂРёСЏС‚РЅРѕ СѓРїС‘СЂР»РѕСЃСЊ РІРЅСѓС‚СЂРё Р¶РёРІРѕС‚Р°...</span>\n")
 
 //TIER 2 LUNGS//
 /obj/item/organ/lungs/tier2
@@ -37,7 +37,7 @@
 
 /obj/item/organ/lungs/tier2/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Вы ощущаете, словно ваша кровь стала чище.</span>")
+	to_chat(owner, "<span class = 'notice'>Р’С‹ РѕС‰СѓС‰Р°РµС‚Рµ, СЃР»РѕРІРЅРѕ РІР°С€Р° РєСЂРѕРІСЊ СЃС‚Р°Р»Р° С‡РёС‰Рµ.</span>\n")
 
 ///TIER 3 LUNGS//
 /obj/item/organ/lungs/tier3
@@ -69,11 +69,11 @@
 
 /obj/item/organ/lungs/tier3/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Вы можете ощутить малейший запах в комнате...</span>") //This is a *very precise* superior version of liver - you wouldn't feel anything.
+	to_chat(owner, "<span class = 'notice'>Р’С‹ РјРѕР¶РµС‚Рµ РѕС‰СѓС‚РёС‚СЊ РјР°Р»РµР№С€РёР№ Р·Р°РїР°С… РІ РєРѕРјРЅР°С‚Рµ...</span>\n") //This is a *very precise* superior version of liver - you wouldn't feel anything.
 	SEND_SIGNAL(organ_mob, COMSIG_ADD_MOOD_EVENT, "super lungs", /datum/mood_event/superlungs)
 
 /datum/mood_event/superlungs
-	description = "<span class='synth'>Я знаю запах кислорода..Зачем мне это знание...? Это круто, наверное...</span>\n"
+	description = "<span class='synth'>РЇ Р·РЅР°СЋ Р·Р°РїР°С… РєРёСЃР»РѕСЂРѕРґР°..Р—Р°С‡РµРј РјРЅРµ СЌС‚Рѕ Р·РЅР°РЅРёРµ...? Р­С‚Рѕ РєСЂСѓС‚Рѕ, РЅР°РІРµСЂРЅРѕРµ...</span>\n"
 	mood_change = 1 //Less, but persistent mood buff. Hey, handsome, you deserve it.
 
 /obj/item/organ/lungs/tier3/on_life()
@@ -98,7 +98,7 @@
 
 /datum/uplink_item/implants/biomorphedlungs
 	name = "Biomorphed Lungs"
-	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленное восстановление от изнурения и частичную защиту от атмосферных угроз для дыхания."
+	desc = "Р­РєСЃРїРµСЂРёРјРµРЅС‚Р°Р»СЊРЅС‹Р№ РѕСЂРіР°РЅ, С‡С‚Рѕ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РЅРµРєРѕС‚РѕСЂС‹РјРё РѕС‚СЂСЏРґР°РјРё СЃСѓРїРµСЂ-СЃРѕР»РґР°С‚ РІ СЂР°Р·Р»РёС‡РЅС‹С… 'С‡С‘СЂРЅС‹С… РѕРїРµСЂР°С†РёСЏС…'. Р”Р°С‘С‚ СѓСЃРёР»РµРЅРЅРѕРµ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РѕС‚ РёР·РЅСѓСЂРµРЅРёСЏ Рё С‡Р°СЃС‚РёС‡РЅСѓСЋ Р·Р°С‰РёС‚Сѓ РѕС‚ Р°С‚РјРѕСЃС„РµСЂРЅС‹С… СѓРіСЂРѕР· РґР»СЏ РґС‹С…Р°РЅРёСЏ."
 	item = /obj/item/autosurgeon/syndicate/inteq/biomorphedlungs
 	cost = 7
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
