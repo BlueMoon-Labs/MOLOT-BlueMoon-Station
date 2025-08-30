@@ -1716,6 +1716,12 @@
 		// Used for making most food
 		/datum/reagent/consumable/enzyme,
 
+		// Used for making high-end organs and c u m
+		/datum/reagent/consumable/organicprecursor/advbionanites,
+		/datum/reagent/consumable/organicprecursor/bionanites,
+		/datum/reagent/consumable/organicprecursor/xenochimeric,
+		/datum/reagent/consumable/organicprecursor
+
 		/*
 		 * The following reagents have effects
 		 * But are too mild to warrant blacklisting
