@@ -13,7 +13,7 @@
 
 /obj/item/organ/liver/tier1/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Что-то неприятно упёрлось внутри живота...</span>")
+	to_chat(owner, "<span class = 'notice'>Р§С‚Рѕ-С‚Рѕ РЅРµРїСЂРёСЏС‚РЅРѕ СѓРїС‘СЂР»РѕСЃСЊ РІРЅСѓС‚СЂРё Р¶РёРІРѕС‚Р°...</span>\n")
 
 //TIER 2 LIVER//
 /obj/item/organ/liver/tier2
@@ -34,7 +34,7 @@
 
 /obj/item/organ/liver/tier2/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Вы ощущаете, словно ваша кровь стала чище.</span>")
+	to_chat(owner, "<span class = 'notice'>Р’С‹ РѕС‰СѓС‰Р°РµС‚Рµ, СЃР»РѕРІРЅРѕ РІР°С€Р° РєСЂРѕРІСЊ СЃС‚Р°Р»Р° С‡РёС‰Рµ.</span>\n")
 
 ///TIER 3 LIVER//
 /obj/item/organ/liver/tier3
@@ -51,11 +51,11 @@
 
 /obj/item/organ/liver/tier3/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
-	to_chat(owner, "<span class = 'notice'>Вы можете заметить, словно ваша кожа стала светлее...</span>") //This is a *very precise* superior version of liver - you wouldn't feel anything.
+	to_chat(owner, "<span class = 'notice'>Р’С‹ РјРѕР¶РµС‚Рµ Р·Р°РјРµС‚РёС‚СЊ, СЃР»РѕРІРЅРѕ РІР°С€Р° РєРѕР¶Р° СЃС‚Р°Р»Р° СЃРІРµС‚Р»РµРµ...</span>\n") //This is a *very precise* superior version of liver - you wouldn't feel anything.
 	SEND_SIGNAL(organ_mob, COMSIG_ADD_MOOD_EVENT, "super liver", /datum/mood_event/superliver)
 
 /datum/mood_event/superliver
-	description = "<span class='nicegreen'>Алкоголизм мне не помеха!</span>\n"
+	description = "<span class='nicegreen'>РђР»РєРѕРіРѕР»РёР·Рј РјРЅРµ РЅРµ РїРѕРјРµС…Р°!</span>\n"
 	mood_change = 1 //Less, but persistent mood buff. Hey, handsome, you deserve it.
 
 /obj/item/organ/liver/tier3/on_life()
@@ -84,7 +84,7 @@
 
 /datum/uplink_item/implants/biomorphedliver
 	name = "Biomorphed Liver"
-	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленное восстановление от токсинов и уменьшает изнурение."
+	desc = "Р­РєСЃРїРµСЂРёРјРµРЅС‚Р°Р»СЊРЅС‹Р№ РѕСЂРіР°РЅ, С‡С‚Рѕ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РЅРµРєРѕС‚РѕСЂС‹РјРё РѕС‚СЂСЏРґР°РјРё СЃСѓРїРµСЂ-СЃРѕР»РґР°С‚ РІ СЂР°Р·Р»РёС‡РЅС‹С… 'С‡С‘СЂРЅС‹С… РѕРїРµСЂР°С†РёСЏС…'. Р”Р°С‘С‚ СѓСЃРёР»РµРЅРЅРѕРµ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РѕС‚ С‚РѕРєСЃРёРЅРѕРІ Рё СѓРјРµРЅСЊС€Р°РµС‚ РёР·РЅСѓСЂРµРЅРёРµ."
 	item = /obj/item/autosurgeon/syndicate/inteq/biomorphedliver
 	cost = 7
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
