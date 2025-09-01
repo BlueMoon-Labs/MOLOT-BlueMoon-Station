@@ -67,6 +67,7 @@
 
 /obj/machinery/chem_master/RefreshParts()
 	reagents.maximum_volume = 0
+	max_create_amount_multiplier = initial(max_create_amount_multiplier)
 	for(var/obj/item/reagent_containers/glass/beaker/B in component_parts)
 		reagents.maximum_volume += B.reagents.maximum_volume
 	// BLUEMOON ADD START
@@ -74,7 +75,7 @@
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		multiplier += M.rating
 	if(multiplier)
-		max_create_amount_multiplier = initial(max_create_amount_multiplier) * multiplier
+		max_create_amount_multiplier *= multiplier
 	// BLUEMOON ADD END
 
 /obj/machinery/chem_master/ex_act(severity, target, origin)
