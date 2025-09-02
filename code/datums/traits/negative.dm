@@ -544,3 +544,33 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		return
 	// BLUEMOON EDIT END
 	C.RemoveElement(/datum/element/photosynthesis, 1, 1, 0, 0, 0, 0, SHADOW_SPECIES_LIGHT_THRESHOLD, SHADOW_SPECIES_LIGHT_THRESHOLD)
+
+/datum/quirk/less_nightmare/on_spawn()
+	. = ..()
+	give_item(/obj/item/storage/box/deviant_kit/nightmareish, quirk_holder)
+
+/obj/item/storage/box/deviant_kit/nightmareish
+	name = "Nightmare kit"
+	desc = "Kit with special flashdark and permit for people afflicted by nightmare's blood."
+	illustration = "id"
+
+/obj/item/storage/box/deviant_kit/nightmareish/PopulateContents()
+	new /obj/item/flashlight/flashdark/quirk(src)
+	new /obj/item/clothing/accessory/permit/special/lessnightmareish(src)
+
+/obj/item/flashlight/flashdark/quirk
+	name = "command-issued flashdark"
+	desc = "A strange device manufactured with mysterious elements that somehow emits darkness. This one is issued by central-command or some other high-ranking forces."
+	icon_state = "flashdark"
+	item_state = "flashdark"
+	brightness_on = 2.5
+	flashlight_power = -3
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/accessory/permit/special/lessnightmareish
+	icon = 'modular_bluemoon/icons/obj/permits.dmi'
+	icon_state = "agony_permit"
+	name = "Nightmare-afflicted permit"
+	desc = "Вещественное одобрение ЦК на владение и использование технологией 'flashdark'."
+	permitted_weapons = "Flashdark"
+	notes = "Носитель имеет право на ношение и использование технологии 'flashdark', а так же отключение света в месте своей работы, пока это не мешает остальным сотрудникам отдела."
