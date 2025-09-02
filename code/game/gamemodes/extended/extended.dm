@@ -25,7 +25,7 @@
 	for(var/T in subtypesof(/datum/station_goal))
 		var/datum/station_goal/G = new T
 		station_goals += G
-		G.on_report()
+		G.send_report(announce_report = FALSE)
 
 /datum/game_mode/extended/announced/send_intercept(report = 0)
 	if(flipseclevel) //CIT CHANGE - allows the sec level to be flipped roundstart
