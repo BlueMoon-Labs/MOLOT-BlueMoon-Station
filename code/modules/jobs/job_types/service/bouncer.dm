@@ -88,14 +88,14 @@
 	desc = "Use this to summon your personal issued sidearm!"
 
 /obj/item/choice_beacon/bouncer/generate_display_names()
-	var/static/list/cop_gun_list
-	if(!cop_gun_list)
-		cop_gun_list = list()
+	var/static/list/gun_list
+	if(!gun_list)
+		gun_list = list()
 		var/list/templist = subtypesof(/obj/item/storage/secure/briefcase/bouncer/)
 		for(var/V in templist)
 			var/atom/A = V
-			cop_gun_list[initial(A.name)] = A
-	return cop_gun_list
+			gun_list[initial(A.name)] = A
+	return gun_list
 
 /obj/item/storage/secure/briefcase/bouncer/advtaser_box
 	name = "\improper Hybrid taser gun box"
