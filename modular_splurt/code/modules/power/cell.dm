@@ -4,7 +4,7 @@
 	icon_state = "bsreactorcell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=600)
-	chargerate = 200
+	chargerate = 400
 	rating = 5
 	self_recharge = 1
 	cell_is_radioactive = TRUE
