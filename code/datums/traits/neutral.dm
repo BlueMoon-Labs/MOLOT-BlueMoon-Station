@@ -244,7 +244,7 @@
 
 proc/kartavo(message)
 	var/num = rand(1, 3)
-	switch(prob(75) && num)
+	switch(num)
 		if(1)
 			message = replacetextEx(message, "р", "г'")
 			message = replacetextEx(message, "Р", "Г'")
