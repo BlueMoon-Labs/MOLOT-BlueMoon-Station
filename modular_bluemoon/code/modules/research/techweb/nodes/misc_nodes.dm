@@ -3,7 +3,7 @@
 /datum/techweb_node/joule_was_wrong
 	id = "joule_was_wrong"
 	display_name = "Slime Power Theory"
-	description = "We got energy-replenishment data after researching into slime power cells. It does have a lot of potential, but more to do."
+	description = "Seems like Dr. Prescott Joule was wrong. We got energy-replenishment data after researching into slime power cells. It does have a lot of potential, but more to do."
 	prereq_ids = list("datatheory", "biotech")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 
