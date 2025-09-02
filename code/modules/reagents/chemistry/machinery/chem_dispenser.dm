@@ -132,6 +132,12 @@
 			use_power(250*recharge_amount)
 		recharge_counter = 0
 		return
+	if(cell.cell_is_radioactive)
+		if(cell.charge < cell.maxcharge)
+			radiation_pulse(get_turf(src), cell.rad_strength, 1.5)
+			AddComponent(/datum/component/radioactive, 1.1, src)
+		else
+			radiation_pulse(get_turf(src), 15, 1.5)
 	recharge_counter++
 
 /obj/machinery/chem_dispenser/proc/display_beaker()
