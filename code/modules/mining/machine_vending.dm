@@ -106,6 +106,15 @@
 	else
 		icon_state = "[initial(icon_state)]-off"
 
+/obj/machinery/mineral/equipment_vendor/RefreshParts()
+	var/discount_rate = 0.0 // Делаем скидку за части выше Т1
+	for(var/obj/item/stock_parts/matter_bin/bin in component_parts) // За каждый бин внутри отдельно
+		discount_rate += 0.025 * (bin.rating - 1)
+
+	for (var/datum/data/mining_equipment/prize in prize_list)
+		var/original_cost = prize.cost
+		prize.cost = max(1, round(original_cost * (1 - discount_rate)))
+
 /obj/machinery/mineral/equipment_vendor/ui_assets(mob/user)
 	return list(
 		get_asset_datum(/datum/asset/spritesheet/vending),
