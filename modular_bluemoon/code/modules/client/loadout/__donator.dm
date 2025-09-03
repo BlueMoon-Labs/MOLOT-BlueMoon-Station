@@ -19,3 +19,11 @@
 	path = /obj/item/dildo/flared/huge
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/nightmarekit
+	name = "Nightmare-kin Kit"
+	slot = ITEM_SLOT_BACKPACK
+	ckeywhitelist = list()
+	cost = 7
+	path = /obj/item/storage/box/deviant_kit/nightmareish
+	donator_group_id = DONATOR_GROUP_TIER_1
