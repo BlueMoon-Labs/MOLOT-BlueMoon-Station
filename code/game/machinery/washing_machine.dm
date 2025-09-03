@@ -150,8 +150,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
 	var/mutable_appearance/upper_half
 	var/mob_is_immobilized = FALSE //to avoid healing miracles
-	var/static/mob_size_limit = MOB_SIZE_HUMAN //too big creatures won't fit inside
-	var/static/buildstackamount = 5 // BLUEMOON ADD
+	var/mob_size_limit = MOB_SIZE_HUMAN //too big creatures won't fit inside
+	var/buildstackamount = 5 // BLUEMOON ADD
 
 /obj/machinery/washing_machine/Initialize(mapload)
 	. = ..()
