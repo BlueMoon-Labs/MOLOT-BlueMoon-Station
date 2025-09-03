@@ -65,18 +65,19 @@
 /obj/item/stock_parts/cell/process()
 	if(self_recharge)
 		give(chargerate * 0.25)
-		if(cell_is_radioactive)
-			irradiate()
+	if(cell_is_radioactive)
+		irradiate()
 	else
 		return PROCESS_KILL
 
 /// Proc for radioactive cells made with uranium and considered as contaminating its surroundings
-/obj/item/stock_parts/cell/proc/irradiate(obj/item/stock_parts/cell/C)
+/obj/item/stock_parts/cell/proc/irradiate(datum/component/radioactive/Comp)
+	AddComponent(/datum/component/radioactive, 0, src, 0)
+	Comp = GetComponent(/datum/component/radioactive)
 	if(charge < maxcharge)
-		radiation_pulse(get_turf(src), rad_strength, 1.5)
-		AddComponent(/datum/component/radioactive, 1.1, src)
+		Comp.strength = rad_strength
 	else
-		radiation_pulse(get_turf(src), 15, 1.5)
+		Comp.strength = rad_strength/3.1
 
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()

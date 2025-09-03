@@ -1,6 +1,6 @@
 //Jessie Added this
 /datum/design/bluespace_cell_reactor
-	name = "Bluespace Reactor Power Cell"
+	name = "Bluespace Reactor P. Cell (DANGER: Radioactive)"
 	desc = "A power cell that holds 10 MJ of energy."
 	id = "bluespace_cell_reactor"
 	build_type = PROTOLATHE | MECHFAB

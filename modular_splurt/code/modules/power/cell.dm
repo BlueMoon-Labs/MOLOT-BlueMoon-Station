@@ -8,4 +8,4 @@
 	rating = 5
 	self_recharge = 1
 	cell_is_radioactive = TRUE
-	rad_strength = 50
+	rad_strength = 45
