@@ -63,10 +63,12 @@
 	. = ..()
 
 /obj/item/stock_parts/cell/process()
-	if(self_recharge)
-		give(chargerate * 0.25)
-	if(cell_is_radioactive)
-		irradiate()
+	var/has_process = self_recharge || cell_is_radioactive
+	if(has_process)
+		if(self_recharge)
+			give(chargerate * 0.25)
+		if(cell_is_radioactive)
+			irradiate()
 	else
 		return PROCESS_KILL
 
