@@ -175,3 +175,4 @@
 	to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(cutjaws)
+
