@@ -781,6 +781,18 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
+//BLUEMOON ADD START - добовляю расширенные балоны в автолат
+
+/datum/design/extended_emergency
+	name = "Extended emergency oxygen tank"
+	id = "extendedemergency"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/tank/internals/emergency_oxygen/engi/empty
+	category = list("hacked", "Misc")
+
+//BLUEMOON ADD END
+
 /////////////////////////////////////////
 /////////////////Tape////////////////////
 /////////////////////////////////////////
@@ -793,6 +805,17 @@
 	build_path = /obj/item/stack/sticky_tape
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
+//BLUEMOON ADD START - добовляю клейкую ленту в автолат
+/datum/design/tape_sticky
+	name = "Sticky Tape"
+	id = "tapesticky"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/plastic = 750)
+	build_path = /obj/item/stack/sticky_tape
+	category = list("hacked", "Misc")
+
+//BLUEMOON ADD END
 
 /datum/design/super_sticky_tape
 	name = "Super Sticky Tape"

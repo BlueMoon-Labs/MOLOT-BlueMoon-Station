@@ -22,7 +22,7 @@
 /datum/crafting_recipe/double_o2
 	name = "Double emergency oxygen tank"
 	reqs = list(/obj/item/tank/internals/emergency_oxygen/engi = 2,
-				/obj/item/stack/sheet/metal = 1)
+				/obj/item/stack/sticky_tape = 1) //BlUEMOON CHANGE - изменил крафт с метала на клейкую ленту
 	result = /obj/item/tank/internals/emergency_oxygen/double/empty
 	tools = list(TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
