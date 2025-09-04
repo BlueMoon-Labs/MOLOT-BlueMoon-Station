@@ -23,6 +23,6 @@
 /datum/gear/donator/nightmarekit
 	name = "Nightmare-kin Kit"
 	path = /obj/item/storage/box/deviant_kit/nightmareish
-	cost = 3
+	cost = 4
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
