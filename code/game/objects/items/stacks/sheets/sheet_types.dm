@@ -155,6 +155,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("Metal Barricade", /obj/structure/deployable_barricade/metal, 2, time = 1 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("desk bell", /obj/structure/desk_bell, 2, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("light switch frame", /obj/item/wallframe/light_switch, 1), \
+	new/datum/stack_recipe("washing machine", /obj/machinery/washing_machine, 5, time = 2.5 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
 ))
 
 /obj/item/stack/sheet/metal

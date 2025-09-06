@@ -340,7 +340,7 @@
 /obj/item/weldingtool/largetank/cyborg
 	name = "integrated welding tool"
 	desc = "An advanced welder designed to be used in robotic systems."
-	icon = 'icons/obj/items_cyborg.dmi'
+	icon = /*'icons/obj/items_cyborg.dmi'*/ 'modular_bluemoon/icons/obj/items_cyborg.dmi'
 	icon_state = "indwelder_cyborg"
 	toolspeed = 0.5
 

@@ -925,7 +925,8 @@
 		/obj/item/survivalcapsule,
 		/obj/item/hivelordstabilizer,
 		/obj/item/organ/regenerative_core,
-		/obj/item/reagent_containers/hypospray/medipen/survival
+		/obj/item/reagent_containers/hypospray/medipen/survival,
+		/obj/item/stack/ore/plasma
 		)
 
 /obj/item/gripper/medical

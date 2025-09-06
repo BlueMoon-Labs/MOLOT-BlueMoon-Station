@@ -201,7 +201,7 @@
 
 /obj/hotel_things/train/console
 	name = "Train terminal"
-	icon = 'modular_bluemoon/icons/effects/160x160.dmi'
+	icon = 'goon/icons/obj/160x160.dmi'
 	icon_state = "shuttlecock_syndie"
 	layer = 5
 	plane = 12

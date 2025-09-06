@@ -4098,6 +4098,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if("No")
 							erppref = "Yes"
 				if("noncon_pref")
+					var/nonconpref_old = nonconpref
 					switch(nonconpref)
 						if("Yes")
 							nonconpref = "Ask"
@@ -4105,6 +4106,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							nonconpref = "No"
 						if("No")
 							nonconpref = "Yes"
+					if(isliving(user?.mind?.current))
+						var/mob/living/C = user.mind.current
+						message_admins("[user.ckey]/[C.real_name] [ADMIN_FLW(C)][C.stat == DEAD ? " (DEAD)" : ""] меняет Non-Con c [nonconpref_old] на [nonconpref].")
+						log_admin("[user.ckey]/[C.real_name][C.stat == DEAD ? " (DEAD)" : ""] меняет Non-Con c [nonconpref_old] на [nonconpref].")
+						C.balloon_alert_to_viewers("Меняет Non-Con c [nonconpref_old] на [nonconpref].")
 				if("vore_pref")
 					switch(vorepref)
 						if("Yes")

@@ -2527,7 +2527,7 @@
 	if(iscatperson(M)) //"drugs" for felinids
 		M.set_drugginess(30)
 		if(prob(20))
-			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?", "Wanna huuugs~", "Pat me pleeease~", "That corner looks suspicious...", "Rub my belly pleeease~")]</span>")
+			to_chat(M, span_notice(pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?", "Wanna huuugs~", "Pat me pleeease~", "That corner looks suspicious...", "Rub my belly pleeease~")))
 		if(prob(20))
 			M.nextsoundemote = world.time - 10 //"too early BZHZHZH"
 			M.emote(pick("nya","mewo","meow","purr","anyo","uwu","stare","spin"))
@@ -2536,18 +2536,17 @@
 		if(prob(5))
 			M.emote("spin")
 			M.lay_down()
-			to_chat(M, "<span class = 'notice'>[pick("Wanna reeest~","Waaaw~","Wanna plaaay!~","Play with meee~")]</span>")
+			to_chat(M, span_notice(pick("Wanna reeest~","Waaaw~","Wanna plaaay!~","Play with meee~")))
 	else
 		if(prob(20))
 			M.emote("nya")
 		if(prob(20))
-			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
+			to_chat(M, span_notice(pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")))
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/list/adjusted = H.adjust_arousal(2,"catnip", aphro = TRUE)
-		for(var/g in adjusted)
-			var/obj/item/organ/genital/G = g
-			to_chat(M, "<span class='userlove'>You feel like playing with your [G.name]!</span>")
+		var/list/adjusted = H.adjust_arousal(2,"catnip", aphro = TRUE, silent = TRUE)
+		for(var/obj/item/organ/genital/G in adjusted)
+			to_chat(M, span_userlove("You feel like playing with your [G.name]!"))
 	..()
 
 /datum/reagent/preservahyde

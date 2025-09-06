@@ -54,7 +54,8 @@
 		"AC Special Lieutenant",
 		"Big Boss",
 		"Head of Slutcurity",
-		"Head of Studcurity"
+		"Head of Studcurity",
+		"SAARE Senior Operator"
 	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
 		LAZYADD(extra_titles, "Head of Spookcurity")
@@ -405,9 +406,9 @@
 		"Syndicate Combatant",
 		"Civil Protection",
 		"Police Officer",
-		"SAARE Operative",
+		"SAARE Operator",
 		"AC Specialist",
-		"PCRC Operative",
+		"PCRC Operator",
 		"Gorlex Marauders Trainee",
 		"Tyranny Lover",
 		"Cerberus",

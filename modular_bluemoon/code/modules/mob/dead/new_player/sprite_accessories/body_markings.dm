@@ -24,7 +24,7 @@
 	icon = 'modular_bluemoon/icons/mob/body_markings/large-icons/acradors_neck.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
-	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/insect_fluff/acradors_neckfluff/second
 	name = "Neckfluff (Acradors 2)"

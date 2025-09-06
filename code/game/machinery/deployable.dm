@@ -59,6 +59,7 @@
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "woodenbarricade"
 	bar_material = WOOD
+	layer = CLOSED_DOOR_LAYER + 0.01
 	var/drop_amount = 3
 	var/plank_type = /obj/item/stack/sheet/mineral/wood
 	var/wall_type = /turf/closed/wall/mineral/wood/nonmetal

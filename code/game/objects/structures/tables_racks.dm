@@ -755,12 +755,24 @@
 	smooth = SMOOTH_FALSE
 	can_buckle = 1
 	buckle_lying = 1
-	buckle_requires_restraints = 1
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
 // BLUEMOON ADD START
 	var/obj/item/tank/internals/tank = null // баллон внутри
 	var/obj/item/clothing/mask/mask = null // маска внутри
+
+/obj/structure/table/optable/Initialize(mapload)
+	. = ..()
+	register_context()
+
+/obj/structure/table/optable/Destroy()
+	stop_process()
+	. = ..()
+
+/obj/structure/table/optable/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Unbuckle patient")
+	LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_DISARM, "Set internals")
+	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/structure/table/optable/examine(mob/user)
 	. = ..()
@@ -779,10 +791,6 @@
 	if(computer)
 		. += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
 
-/obj/structure/table/optable/Destroy()
-	stop_process()
-	. = ..()
-
 /obj/structure/table/optable/examine_more(mob/user)
 	. = ..()
 	. += span_notice("Убирать кислородный баллон и маску можно через Alt.")
@@ -790,6 +798,8 @@
 
 /obj/structure/table/optable/attack_hand(mob/user, act_intent, attackchain_flags)
 	. = ..()
+	if(user.a_intent != INTENT_DISARM)
+		return
 	if(tank && mask)
 		if(!check_patient())
 			return
@@ -832,6 +842,15 @@
 /obj/structure/table/optable/attack_robot(mob/user)
 	if(Adjacent(user))
 		return attack_hand(user)
+
+/obj/structure/table/optable/post_buckle_mob(mob/living/M)
+	. = ..()
+	check_patient()
+
+/obj/structure/table/optable/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
+	if(user.a_intent == INTENT_DISARM)
+		return
+	. = ..()
 
 /obj/structure/table/optable/process()
 	if(mask?.loc != patient || tank?.loc != src || patient?.loc != loc)

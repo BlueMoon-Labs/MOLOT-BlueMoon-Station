@@ -44792,23 +44792,19 @@
 /area/command/gateway)
 "gWh" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/firingpins{
-	pixel_x = -8;
-	pixel_y = 1
-	},
-/obj/item/storage/box/firingpins{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/storage/box/chemimp{
-	pixel_x = 6;
-	pixel_y = 1
-	},
 /obj/effect/turf_decal/bot/yellow,
 /obj/machinery/light,
-/obj/item/storage/box/trackimp{
-	pixel_x = 6;
-	pixel_y = 7
+/obj/item/storage/barricade{
+	pixel_x = 4;
+	pixel_y = 14
+	},
+/obj/item/storage/barricade{
+	pixel_x = 4;
+	pixel_y = 10
+	},
+/obj/item/storage/barricade{
+	pixel_x = 4;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/textured/large,
 /area/ai_monitored/security/armory)
@@ -64479,16 +64475,14 @@
 /turf/open/floor/wood/wood_parquet,
 /area/command/heads_quarters/hos)
 "ppc" = (
-/obj/effect/turf_decal/bot/yellow,
-/obj/structure/table/reinforced,
-/obj/item/storage/barricade{
-	pixel_x = -10;
-	pixel_y = -10
-	},
-/obj/item/storage/barricade,
-/obj/item/storage/barricade{
-	pixel_x = 10;
-	pixel_y = -10
+/obj/structure/closet/secure_closet/contraband/armory,
+/obj/effect/turf_decal/delivery,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 3;
+	name = "3maintenance loot spawner"
 	},
 /turf/open/floor/plasteel/textured/large,
 /area/ai_monitored/security/armory)
@@ -65429,16 +65423,24 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "pKd" = (
-/obj/structure/rack,
-/obj/item/storage/box/teargas{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/obj/item/storage/box/flashbangs{
-	pixel_x = 1;
-	pixel_y = -1
-	},
 /obj/effect/turf_decal/bot/yellow,
+/obj/structure/rack/shelf,
+/obj/item/storage/box/trackimp{
+	pixel_x = -4;
+	pixel_y = 16
+	},
+/obj/item/storage/box/firingpins{
+	pixel_x = 4;
+	pixel_y = 16
+	},
+/obj/item/storage/box/firingpins{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/storage/box/chemimp{
+	pixel_x = 4;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/textured/large,
 /area/ai_monitored/security/armory)
 "pKR" = (
@@ -67228,17 +67230,25 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "qvg" = (
-/obj/structure/rack,
 /obj/item/storage/box/handcuffs{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/obj/item/storage/box/handcuffs{
-	pixel_x = 1;
-	pixel_y = -1
+	pixel_x = -4;
+	pixel_y = 16
 	},
 /obj/effect/turf_decal/bot/yellow,
 /obj/machinery/airalarm/directional/south,
+/obj/structure/rack/shelf,
+/obj/item/storage/box/handcuffs{
+	pixel_x = 4;
+	pixel_y = 16
+	},
+/obj/item/storage/box/flashbangs{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/storage/box/teargas{
+	pixel_x = 4;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/textured/large,
 /area/ai_monitored/security/armory)
 "qvk" = (
@@ -85374,7 +85384,8 @@
 	pixel_y = 13
 	},
 /obj/item/storage/lockbox/loyalty{
-	pixel_x = 5
+	pixel_x = 15;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/textured/large,
 /area/ai_monitored/security/armory)

@@ -14,7 +14,7 @@
 
 /datum/verbs/menu/Settings/verb/setup_character()
 	set name = "Game Preferences"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 	set desc = "Open Game Preferences Window"
 	usr.client.prefs.current_tab = 1
 	usr.client.prefs.ShowChoices(usr)
@@ -106,7 +106,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Ghost/chatterbox/Events, toggle_arriv
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Ghost, togglemidroundantag)()
 	set name = "Toggle Midround Antagonist"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 	set desc = "Midround Antagonist"
 	usr.client.prefs.toggles ^= MIDROUND_ANTAG
 	usr.client.prefs.save_preferences()
@@ -284,7 +284,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 	set desc = "Show or hide updates to your income"
 	usr.client.prefs.chat_toggles ^= CHAT_BANKCARD
 	usr.client.prefs.save_preferences()
@@ -374,7 +374,7 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 
 /client/verb/toggle_intent_style()
 	set name = "Toggle Intent Selection Style"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 	set desc = "Toggle between directly clicking the desired intent or clicking to rotate through."
 	prefs.toggles ^= INTENT_STYLE
 	to_chat(src, "[(prefs.toggles & INTENT_STYLE) ? "Clicking directly on intents selects them." : "Clicking on intents rotates selection clockwise."]")

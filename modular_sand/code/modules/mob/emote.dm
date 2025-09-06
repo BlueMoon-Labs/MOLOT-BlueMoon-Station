@@ -35,6 +35,7 @@
 	playsound(user, 'modular_sand/sound/voice/peep_once.ogg', 50, 1, -1)
 
 /datum/emote/sound/human/peep2
+	name = "Много пискнуть по-птичьи"
 	key = "peep2"
 	key_third_person = "peeps twice like a bird"
 	message = "peeps twice like a bird!"

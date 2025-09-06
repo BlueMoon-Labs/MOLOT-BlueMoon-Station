@@ -8,14 +8,16 @@
 /datum/surgery_step/extract_implant
 	name = "Изъять Импланты"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 65)
+	repeatable = TRUE
 	time = 64
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	var/obj/item/implant/I = null
 
 /datum/surgery_step/extract_implant/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/implants = list()
 	for(var/obj/item/O in target.implants)
-		I = O
-		break
+		implants[O.name] = O
+	I = show_radial_menu(user, target, implants, require_near = TRUE, tooltips = TRUE)
 	if(I)
 		display_results(user, target, "<span class='notice'>You begin to extract [I] from [target]'s [target_zone]...</span>",
 			"[user] begins to extract [I] from [target]'s [target_zone].",

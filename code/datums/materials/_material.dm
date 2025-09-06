@@ -83,14 +83,16 @@ Simple datum which is instanced once per type and is used for every object of sa
 	if(material_flags & MATERIAL_ADD_PREFIX)
 		source.name = "[name] [source.name]"
 
-	// if(beauty_modifier) returnign in hardsync2 if i ever port ebeauty cmp
-	// 	addtimer(CALLBACK(source, TYPE_PROC_REF(/datum, _AddElement), list(/datum/element/beauty, beauty_modifier * amount)), 0)
+	// if(beauty_modifier)
+	// 	source.AddElement(/datum/element/beauty, beauty_modifier * amount)
 
 	if(istype(source, /obj)) //objs
 		on_applied_obj(source, amount, material_flags)
 
-	if(istype(source, /turf)) //turfs
+	else if(istype(source, /turf)) //turfs
 		on_applied_turf(source, amount, material_flags)
+
+	source.update_appearance()
 
 	source.mat_update_desc(src)
 

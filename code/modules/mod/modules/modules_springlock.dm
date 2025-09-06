@@ -374,12 +374,8 @@
 /**
  * Особый эмоут для антуража (кекв)
  */
-/mob/living/verb/emote_laugh_maniac()
-	set name = "> Маниакально смеяться "
-	set category = "Эмоции.2: Звуковые Действия"
-	emote("laughmaniac")
-
 /datum/emote/sound/human/afton_laugh
+	name = "Маниакально смеяться"
 	key = "laughmaniac"
 	key_third_person = "laughs maniacally"
 	message = "маниакально смеётся!"

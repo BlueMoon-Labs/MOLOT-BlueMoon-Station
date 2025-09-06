@@ -83,3 +83,20 @@
 	desc = "Вещественное одобрение ЦК на проведение мерзкой в общем понимании деятельности"
 	permitted_weapons = "N/A"
 	notes = "Носитель имеет право на раскидывание мусора, быть грязным, вонючим и противным без страха преследования со стороны службы безопасности."
+
+/obj/item/clothing/accessory/permit/special/lessnightmareish
+	icon = 'modular_bluemoon/icons/obj/permits.dmi'
+	icon_state = "agony_permit"
+	name = "Nightmare-afflicted permit"
+	desc = "Вещественное одобрение ЦК на владение и использование технологией 'flashdark'."
+	permitted_weapons = "Flashdark"
+	notes = "Носитель имеет право на ношение и использование технологии 'flashdark', а так же отключение света в месте своей работы, пока это не мешает остальным сотрудникам отдела."
+
+/obj/item/storage/box/deviant_kit/nightmareish
+	name = "Nightmare kit"
+	desc = "Kit with special flashdark and permit for people afflicted by nightmare's blood. Or weirdos that love to masturbate in darkness."
+	illustration = "id"
+
+/obj/item/storage/box/deviant_kit/nightmareish/PopulateContents()
+	new /obj/item/flashlight/flashdark/quirk(src)
+	new /obj/item/clothing/accessory/permit/special/lessnightmareish(src)

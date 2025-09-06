@@ -338,7 +338,8 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никакого краба через ВР
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) // Никакого CRAB-17 через ВР
+	surplus = 0 // Никакого CRAB-17 через ВР
 
 /datum/uplink_item/device_tools/syndicate_teleporter
 	name = "Experimental Syndicate Teleporter"

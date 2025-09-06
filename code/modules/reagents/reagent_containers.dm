@@ -137,6 +137,7 @@
 		log_reagent("SPLASH: [src] mob SplashReagents() onto [key_name(target)] at [TT] ([AREACOORD(TT)])[throwerstring] - [R]")
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
+		playsound(src.loc, 'modular_bluemoon/krashly/sound/items/watersplash.ogg', 40, 1)
 
 	else if(bartender_check(target) && thrown)
 		visible_message("<span class='notice'>[src] lands without spilling a single drop.</span>")
@@ -157,6 +158,7 @@
 		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
+		playsound(src.loc, 'modular_bluemoon/krashly/sound/items/watersplash.ogg', 40, 1)
 
 //melts plastic beakers
 /obj/item/reagent_containers/microwave_act(obj/machinery/microwave/microwave_source, mob/microwaver, randomize_pixel_offset)

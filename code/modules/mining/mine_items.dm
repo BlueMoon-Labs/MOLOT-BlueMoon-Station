@@ -3,8 +3,9 @@
 //this item is intended to give the effect of entering the mine, so that light gradually fades
 /obj/effect/light_emitter
 	name = "Light emitter"
+	icon_state = "lighting_marker"
 	anchored = TRUE
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	var/set_luminosity = 8
 	var/set_cap = 0
 
@@ -17,6 +18,30 @@
 
 /obj/effect/light_emitter/singularity_act()
 	return
+
+/obj/effect/light_emitter/podbay
+	set_cap = 1
+
+/obj/effect/light_emitter/thunderdome
+	set_cap = 1
+	set_luminosity = 1.6
+
+/obj/effect/light_emitter/void
+	light_color = LIGHT_COLOR_LAVENDER
+	set_cap = 1
+	set_luminosity = 5
+
+// A "daylight" light emitter that's "safe" to flood-fill outdoors areas with. I hate this. - Rimi
+/obj/effect/light_emitter/interlink
+	set_luminosity = 4
+	set_cap = 0.5
+
+// almost like interlink but warmer and more "natural"
+/obj/effect/light_emitter/fake_outdoors
+	light_color = COLOR_LIGHT_YELLOW
+	// set_cap = 1 // initial
+	set_luminosity = 4 // interlink
+	set_cap = 0.5 // interlink
 
 /**********************Miner Lockers**************************/
 

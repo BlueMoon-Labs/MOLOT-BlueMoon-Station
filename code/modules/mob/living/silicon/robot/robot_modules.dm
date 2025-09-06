@@ -299,7 +299,7 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/crowbar/cyborg,
 		/obj/item/reagent_containers/borghypo/epi,
-		/obj/item/healthanalyzer,
+		/obj/item/healthanalyzer/cyborg,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/wrench/cyborg,
 		/obj/item/stack/sheet/metal/cyborg,
@@ -323,31 +323,31 @@
 	name = "Medical"
 	added_channels = list(RADIO_CHANNEL_MEDICAL = 1)
 	basic_modules = list(
+		/obj/item/scalpel,
+		/obj/item/retractor,
+		/obj/item/hemostat,
+		/obj/item/circular_saw,
+		/obj/item/cautery,
+		/obj/item/surgicaldrill,
+		/obj/item/bonesetter,
+		/obj/item/surgical_drapes,
+		/obj/item/shockpaddles/cyborg,
+		/obj/item/healthanalyzer/cyborg,
+		/obj/item/reagent_containers/borghypo,
+		/obj/item/sensor_device,
+		/obj/item/roller/robo,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/stack/medical/gauze/cyborg,
+		/obj/item/stack/medical/bone_gel/cyborg,
+		/obj/item/gripper/medical,
+		/obj/item/organ_storage,
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/extinguisher/mini,
 		/obj/item/crowbar/cyborg,
-		/obj/item/healthanalyzer,
-		/obj/item/reagent_containers/borghypo,
-		/obj/item/reagent_containers/dropper,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/gripper/medical,
-		/obj/item/surgical_drapes,
-		/obj/item/retractor,
-		/obj/item/hemostat,
-		/obj/item/cautery,
-		/obj/item/surgicaldrill,
-		/obj/item/scalpel,
-		/obj/item/circular_saw,
-		/obj/item/bonesetter,
-		/obj/item/roller/robo,
-		/obj/item/borg/cyborghug/medical,
-		/obj/item/stack/medical/gauze/cyborg,
-		/obj/item/stack/medical/bone_gel/cyborg,
-		/obj/item/organ_storage,
-		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/gps/cyborg,
-		/obj/item/shockpaddles/cyborg)
+		/obj/item/borg/cyborghug/medical,
+		/obj/item/borg/lollipop)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
@@ -404,6 +404,13 @@
 			var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
 			wide.pixel_x = -16
 			med_icons[a] = wide
+		// BLUEMOON ADD
+		var/list/L_bluemoon = list("HoundTrauma" = "houndtrauma")
+		for(var/b in L_bluemoon)
+			var/image/wide_b = image(icon = 'modular_bluemoon/icons/mob/robots_64x32.dmi', icon_state = L_bluemoon[b])
+			wide_b.pixel_x = -16
+			med_icons[b] = wide_b
+		// BLUEMOON ADD END
 		if(R.client && R.client.ckey == "nezuli")
 			var/image/bad_snowflake = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "alina-med")
 			bad_snowflake.pixel_x = -16
@@ -608,6 +615,15 @@
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
 			hat_offset = 3
 			hasrest = TRUE
+		// BLUEMOON ADD наша гончая травмы
+		if("HoundTrauma")
+			cyborg_base_icon = "houndtrauma"
+			cyborg_icon_override = 'modular_bluemoon/icons/mob/robots_64x32.dmi'
+			sleeper_overlay = "msleeper"
+			moduleselect_icon = "medihound"
+			moduleselect_alternate_icon = 'modular_citadel/icons/ui/screen_cyborg.dmi'
+			dogborg = TRUE
+		// BLUEMOON ADD END
 		else
 			return FALSE
 	return ..()
@@ -616,35 +632,35 @@
 	name = "Engineering"
 	added_channels = list(RADIO_CHANNEL_ENGINEERING = 1)
 	basic_modules = list(
-		/obj/item/assembly/flash/cyborg,
-		/obj/item/gps/cyborg,
-		/obj/item/borg/sight/meson,
 		/obj/item/construction/rcd/borg,
-		/obj/item/pipe_dispenser,
-		/obj/item/extinguisher,
+		/obj/item/pipe_dispenser/cyborg,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/screwdriver/cyborg,
 		/obj/item/wrench/cyborg,
 		/obj/item/crowbar/cyborg,
 		/obj/item/wirecutters/cyborg,
 		/obj/item/multitool/cyborg,
-		/obj/item/t_scanner,
-		/obj/item/analyzer,
 		/obj/item/storage/part_replacer/cyborg,
 		/obj/item/holosign_creator/combifan,
+		/obj/item/borg/sight/meson,
+		/obj/item/t_scanner,
+		/obj/item/analyzer,
 		/obj/item/gripper,
+		/obj/item/areaeditor/blueprints/cyborg,
+		/obj/item/cyborg_inducer,
+		/obj/item/stack/cable_coil/cyborg,
+		/obj/item/electroadaptive_pseudocircuit,
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/gps/cyborg,
+		/obj/item/extinguisher,
 		/obj/item/lightreplacer/cyborg,
 		/obj/item/geiger_counter/cyborg,
 		/obj/item/assembly/signaler/cyborg,
-		/obj/item/areaeditor/blueprints/cyborg,
-		/obj/item/electroadaptive_pseudocircuit,
 		/obj/item/stack/sheet/metal/cyborg,
-		/obj/item/stack/sheet/glass/cyborg,
-		/obj/item/stack/sheet/rglass/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/plasteel/cyborg,
-		/obj/item/stack/cable_coil/cyborg,
-		/obj/item/cyborg_inducer)
+		/obj/item/stack/sheet/glass/cyborg,
+		/obj/item/stack/sheet/rglass/cyborg)
 	emag_modules = list(/obj/item/borg/stun)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/engineer,
@@ -1863,25 +1879,25 @@
 	name = "Miner"
 	added_channels = list(RADIO_CHANNEL_SUPPLY = 1)
 	basic_modules = list(
-		/obj/item/assembly/flash/cyborg,
-		/obj/item/extinguisher/mini,
-		/obj/item/crowbar/cyborg,
-		/obj/item/borg/sight/meson,
-		/obj/item/storage/bag/ore/cyborg,
-		/obj/item/pickaxe/drill/cyborg,
 		/obj/item/kinetic_crusher/cyborg,
-		/obj/item/weldingtool/mini,
-		/obj/item/storage/bag/sheetsnatcher/borg,
-		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/gun/energy/kinetic_accelerator/cyborg,
+		/obj/item/pickaxe/drill/cyborg,
 		/obj/item/gun/energy/plasmacutter/cyborg,
-		/obj/item/gps/cyborg,
+		/obj/item/t_scanner/adv_mining_scanner,
+		/obj/item/storage/bag/ore/cyborg,
+		/obj/item/card/id/miningborg,
+		/obj/item/borg/sight/meson,
 		/obj/item/gripper/mining,
 		/obj/item/cyborg_clamp,
-		/obj/item/stack/marker_beacon/cyborg,
+		/obj/item/storage/bag/sheetsnatcher/borg,
 		/obj/item/dest_tagger,
 		/obj/item/stack/packageWrap/cyborg,
-		/obj/item/card/id/miningborg)
+		/obj/item/stack/marker_beacon/cyborg,
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/extinguisher/mini,
+		/obj/item/weldingtool/mini/cyborg,
+		/obj/item/crowbar/cyborg,
+		/obj/item/gps/cyborg)
 	emag_modules = list(/obj/item/borg/stun)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/miner,
@@ -2144,7 +2160,7 @@
 		/obj/item/reagent_containers/borghypo/syndicate,
 		/obj/item/gripper/medical,
 		/obj/item/shockpaddles/syndicate,
-		/obj/item/healthanalyzer/advanced,
+		/obj/item/healthanalyzer/advanced/cyborg,
 		/obj/item/surgical_drapes/advanced,
 		/obj/item/retractor/advanced,
 		/obj/item/surgicaldrill/advanced,

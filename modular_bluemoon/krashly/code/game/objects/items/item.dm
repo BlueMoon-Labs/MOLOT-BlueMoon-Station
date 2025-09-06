@@ -268,7 +268,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/vape
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/electropack
@@ -276,7 +276,7 @@
 	slot = ITEM_SLOT_HANDS
 	path = /obj/item/electropack
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/straight_jacket
@@ -284,7 +284,7 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/straight_jacket
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/boxing
@@ -292,7 +292,7 @@
 	slot = ITEM_SLOT_GLOVES
 	path = /obj/item/clothing/gloves/boxing
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/coconut_bong

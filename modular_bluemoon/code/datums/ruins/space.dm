@@ -5,7 +5,6 @@
 	suffix = "gallery.dmm"
 	name = "Abandoned Gallery"
 	description = "Unknown gallery from by-gone era."
-	always_place = TRUE
 
 /obj/effect/spawner/lootdrop/statuesevil
 	name = "statuesevil"
@@ -40,15 +39,15 @@
 	desc = "A strange, wooden mannequin. Why it has blood on its hands?!"
 	gold_core_spawnable = NO_SPAWN
 	turns_per_move = 6
-	maxHealth = 800
-	health = 800
+	maxHealth = 600
+	health = 600
 	obj_damage = 50
 	icon_state = "mannequinevil"
 	icon_living = "mannequinevil"
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	move_to_delay = 2
 	del_on_death = TRUE
-	speed = -4
+	speed = -3
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	spacewalk = TRUE
@@ -58,34 +57,34 @@
 	desc = "A strange, wooden mannequin. This one looks...damaged."
 	gold_core_spawnable = NO_SPAWN
 	turns_per_move = 2
-	maxHealth = 500
-	health = 500
+	maxHealth = 400
+	health = 400
 	obj_damage = 25
 	icon_state = "mannequinbroken"
 	icon_living = "mannequinbroken"
 	move_to_delay = 2
 	del_on_death = TRUE
-	speed = -2
-	melee_damage_lower = 40
-	melee_damage_upper = 50
+	speed = 1
+	melee_damage_lower = 25
+	melee_damage_upper = 30
 
 /mob/living/simple_animal/hostile/mannequin/abomination //You are fucked. Run.
 	name = "mannequin?"
 	desc = "A strange, wooden mannequin. Why- WHY IT HAS A SKIN ON ITSELF?!"
 	gold_core_spawnable = NO_SPAWN
 	turns_per_move = 8
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1000
+	health = 1000
 	obj_damage = 50
 	icon_state = "mannequinabomination"
 	icon_living = "mannequinabomination"
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	loot = list(/obj/effect/gibspawner/human) //You..released this poor soul.
-	move_to_delay = 1
+	move_to_delay = 2
 	del_on_death = TRUE
-	speed = -8
-	melee_damage_lower = 70
-	melee_damage_upper = 80
+	speed = -2
+	melee_damage_lower = 35
+	melee_damage_upper = 35
 	spacewalk = TRUE
 
 //EVENTS SINCE I LOVE STATION SO MUCH!//
@@ -95,7 +94,7 @@
 /datum/round_event_control/mannequinrise
 	name = "Unknown Mannequin event"
 	typepath = /datum/round_event/mannequinrise
-	max_occurrences = 3
+	max_occurrences = 2
 	weight = 15
 	category = EVENT_CATEGORY_ENTITIES
 
@@ -132,7 +131,7 @@
 		return MAP_ERROR
 
 	var/turf/T = get_turf(pick(spawn_locs))
-	var/mob/living/simple_animal/hostile/mannequin/abomination/S = new(T)
+	var/mob/living/simple_animal/hostile/mannequin/bloodlust/S = new(T)
 	playsound(S, 'modular_bluemoon/Gardelin0/sound/effect/spook.ogg', 75, 1, 1000)
 	message_admins("An abominable mannequin has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("An abominable mannequin has been spawned at [COORD(T)]")

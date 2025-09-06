@@ -149,7 +149,7 @@
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light-p"
 	result_path = /obj/machinery/light_switch
-	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
 	/// you can connect lights by tapping them with light switch frame
 	var/list/connected_lights = list()
 

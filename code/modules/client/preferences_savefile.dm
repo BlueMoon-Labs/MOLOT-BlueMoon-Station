@@ -732,11 +732,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["view_pixelshift"], view_pixelshift)
 	WRITE_FILE(S["eorg_enabled"], eorg_enabled)
 
-	var/mob/living/carbon/human/H = parent.mob
-	if(istype(H))
-		H.set_antag_target_indicator() // Update consent HUD
-	//
-
 	//SKYRAT CHANGES BEGIN
 	WRITE_FILE(S["see_chat_emotes"], see_chat_emotes)
 	//SKYRAT CHANGES END
@@ -746,8 +741,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		WRITE_FILE(S["unlockable_loadout"], safe_json_encode(list()))
 
-	if(parent && !silent)
-		to_chat(parent, span_notice("Saved preferences!"))
+	if(parent)
+		if(ishuman(parent?.mob))
+			var/mob/living/carbon/human/H = parent.mob
+			H.set_antag_target_indicator() // Update consent HUD
+
+		if(!silent)
+			to_chat(parent, span_notice("Saved preferences!"))
 
 	return S
 
@@ -1743,8 +1743,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	bluemoon_character_pref_save(S)
 
-	if(parent && !silent)
-		to_chat(parent, span_notice("Saved character slot!"))
+	if(parent)
+		if(ishuman(parent?.mob))
+			var/mob/living/carbon/human/H = parent.mob
+			H.set_antag_target_indicator() // Update consent HUD
+
+		if(!silent)
+			to_chat(parent, span_notice("Saved character slot!"))
 
 	return S
 

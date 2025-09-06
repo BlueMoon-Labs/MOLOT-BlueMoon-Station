@@ -93,7 +93,7 @@
 	slot = ORGAN_SLOT_HEART_AID
 
 /obj/item/organ/cyberimp/chest/revitilzer/on_life()
-	owner.adjustToxLoss(-0.4, FALSE) //Provides *very* slow heal to all basic damage. Buffed due to being basically useless against other versions
+	owner.adjustToxLoss(-0.4, TRUE) //Provides *very* slow heal to all basic damage. Buffed due to being basically useless against other versions
 	owner.adjustOxyLoss(-0.4, FALSE)
 	owner.adjustBruteLoss(-0.4, FALSE)
 	owner.adjustFireLoss(-0.4, FALSE)

@@ -570,12 +570,12 @@
 		if(prob(min(current_cycle/4,10)))
 			var/aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
 			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
+		var/climax_threshold = M.get_climax_threshold()
+		if(M.lust / M.get_climax_threshold() < 0.3) // Пока меньше в %, накидываем lust
+			M.add_lust((M.lust + NORMAL_LUST < climax_threshold) ? NORMAL_LUST : (climax_threshold - M.lust - 1)) // Для тех, у кого маленький трешхолд
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(current_cycle, "crocin", aphro = TRUE) // redundant but should still be here
-			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
+			H.adjust_arousal(current_cycle, "crocin", aphro = TRUE) // redundant but should still be here
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -585,8 +585,8 @@
 					permanent increase in libido (commonly referred to as 'bimbofication')."
 	taste_description = "liquid desire"
 	color = "#FF2BFF"//dark pink
-	addiction_threshold = 20
-	overdose_threshold = 20
+	addiction_threshold = 40
+	overdose_threshold = 40
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/M)
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO))
@@ -603,12 +603,12 @@
 				aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
 			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
 			REMOVE_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
+		var/climax_threshold = M.get_climax_threshold()
+		if(M.lust / climax_threshold < 0.95) // Пока меньше в %, накидываем lust
+			M.add_lust((M.lust + NORMAL_LUST < climax_threshold) ? NORMAL_LUST : (climax_threshold - M.lust - 1))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(100, "hexacrocin", aphro = TRUE) // redundant but should still be here
-			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
+			H.adjust_arousal(100, "hexacrocin", aphro = TRUE) // redundant but should still be here
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
@@ -647,7 +647,7 @@
 	if(M && M.client?.prefs.arousable && prob(16))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(-100, "camphor", aphro = TRUE)
+			var/list/genits = H.adjust_arousal(-100, "camphor", aphro = TRUE, silent = TRUE)
 			if(genits.len)
 				to_chat(M, "<span class='notice'>You no longer feel aroused.")
 	..()
@@ -665,7 +665,7 @@
 		REMOVE_TRAIT(M,TRAIT_PERMABONER,APHRO_TRAIT)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(-100, "hexacamphor", aphro = TRUE)
+			var/list/genits = H.adjust_arousal(-100, "hexacamphor", aphro = TRUE, silent = TRUE)
 			if(genits.len)
 				to_chat(M, "<span class='notice'>You no longer feel aroused.")
 

@@ -1,3 +1,5 @@
+#define CATWALK_BELOW_OBJECTS list(/obj/structure/disposalpipe, /obj/structure/cable, /obj/machinery/atmospherics) // BLUEMOON ADD - catwalks_fix
+
 /**
  * ## catwalk flooring
  *
@@ -6,7 +8,7 @@
  * unless you want to!
  */
 /turf/open/floor/catwalk_floor
-	icon = 'icons/turf/floors/catwalk_plating.dmi'
+	icon = 'modular_bluemoon/icons/turf/floors/catwalk_plating.dmi' // BLUEMOON EDIT - catwalks_fix
 	icon_state = "maint_below"
 	floor_tile = /obj/item/stack/tile/catwalk_tile
 	name = "catwalk floor"
@@ -19,10 +21,20 @@
 	intact = FALSE
 	var/covered = TRUE
 	var/catwalk_type = "maint"
+	plane = FLOOR_PLANE // BLUEMOON ADD - catwalks_fix - исправляем, что вокруг кэтволков есть AO
+
+	// BLUEMOON ADD START - catwalks_fix
+/turf/open/floor/catwalk_floor/Destroy()
+	for(var/atom/A in contents)
+		if(is_type_in_list(A, CATWALK_BELOW_OBJECTS))
+			A.layer = initial(A.layer)
+			A.plane = initial(A.plane)
+	. = ..()
+	// BLUEMOON ADD END
 
 /turf/open/floor/catwalk_floor/Initialize(mapload)
 	. = ..()
-	layer = CATWALK_LAYER
+	layer = CATWALK_LAYER - 0.02 // BLUEMOON EDIT - catwalks_fix
 	update_icon(UPDATE_OVERLAYS)
 
 /turf/open/floor/catwalk_floor/update_overlays()
@@ -32,12 +44,23 @@
 		catwalk_overlay = new()
 		catwalk_overlay.icon = icon
 		catwalk_overlay.icon_state = "[catwalk_type]_above"
-		catwalk_overlay.plane = GAME_PLANE
+		catwalk_overlay.plane = FLOOR_PLANE // BLUEMOON EDIT - catwalks_fix
 		catwalk_overlay.layer = CATWALK_LAYER
 		catwalk_overlay = catwalk_overlay.appearance
 
 		. += catwalk_overlay
 
+	// BLUEMOON ADD START - catwalks_fix
+		for(var/atom/A in contents)
+			if(is_type_in_list(A, CATWALK_BELOW_OBJECTS))
+				A.layer = CATWALK_LAYER - 0.01
+				A.plane = -8
+	else
+		for(var/atom/A in contents)
+			if(is_type_in_list(A, CATWALK_BELOW_OBJECTS))
+				A.layer = initial(A.layer)
+				A.plane = initial(A.plane)
+	// BLUEMOON ADD END
 
 /turf/open/floor/catwalk_floor/screwdriver_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -82,3 +105,5 @@
 	icon_state = "smoothiron_below"
 	floor_tile = /obj/item/stack/tile/catwalk_tile/iron_smooth
 	catwalk_type = "smoothiron"
+
+#undef CATWALK_BELOW_OBJECTS // BLUEMOON ADD - catwalks_fix

@@ -1,13 +1,36 @@
 //This is the file that handles donator loadout items.
 
 /datum/gear/donator
-	name = "IF YOU SEE THIS, PING A CODER RIGHT NOW!"
+	name = "Golden Horn!"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bikehorn/golden
 	category = LOADOUT_CATEGORY_DONATOR
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
-	donator_group_id = DONATOR_GROUP_TIER_3 // can be accessed by all donators
-	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/summon_pie
+	name = "Book: Summon Pie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/book/granter/spell/summon_pie
+	cost = 6
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	donator_group_id = DONATOR_GROUP_TIER_2
+
+/datum/gear/donator/foam_lmg
+	name = "Foam LMG"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted/riot
+	cost = 6
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	donator_group_id = DONATOR_GROUP_TIER_2
+
+/datum/gear/donator/foam_lmg_ammo
+	name = "Foam LMG Ammo"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/ammo_box/magazine/toy/m762/riot
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	donator_group_id = DONATOR_GROUP_TIER_2
 
 /datum/gear/donator/cleanercloak
 	name = "Teshari Cleaner Cloak"
@@ -79,12 +102,13 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-// /datum/gear/donator/money
-// 	name = "Money, Motherfucker"
-// 	slot = ITEM_SLOT_BACKPACK
-// 	path = /obj/item/stack/spacecash/c10000
-// 	ckeywhitelist = list()
-// 	donator_group_id = DONATOR_GROUP_TIER_1
+/datum/gear/donator/money
+	name = "Тысяча Денег (красивое)"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/stack/spacecash/c1000
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_2
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/gasmask_syndicate
 	name = "The Syndicate Mask"
@@ -100,15 +124,7 @@
 	ckeywhitelist = list()
 	cost = 4
 	donator_group_id = DONATOR_GROUP_TIER_1
-/*
-/datum/gear/donator/summon_pie
-	name = "Book: Summon Pie"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/book/granter/spell/summon_pie
-	ckeywhitelist = list()
-	cost = 6
-	donator_group_id = DONATOR_GROUP_TIER_1
-*/
+
 /datum/gear/donator/purple_zippo
 	name = "Purple Zippo"
 	slot = ITEM_SLOT_BACKPACK

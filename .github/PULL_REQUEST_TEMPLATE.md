@@ -17,3 +17,25 @@
 	 Вставлять их можно Ctr+C, Ctr+V. -->
 
 <!-- Теперь можешь отправлять пулл-реквест на ревью. Не удаляй ветку, пока его полностью не замерджат. -->
+
+## Changelog
+
+<!-- Если ваш PR изменяет аспекты игры, которые могут быть замечены игроками или администраторами, вам следует добавить список изменений. Если ваши изменения не соответствуют этому описанию, удалите этот раздел. -->
+
+:cl:
+add: Added new mechanics or gameplay changes
+add: Added more things
+del: Removed old things
+qol: made something easier to use
+balance: rebalanced something
+fix: fixed a few things
+sound: added/modified/removed audio or sound effects
+image: added/modified/removed some icons or images
+map: added/modified/removed map content
+spellcheck: fixed a few typos
+code: changed some code
+refactor: refactored some code
+config: changed some config setting
+admin: messed with admin stuff
+server: something server ops should know
+/:cl:

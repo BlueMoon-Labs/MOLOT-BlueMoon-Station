@@ -6,7 +6,6 @@
     item_state = "hardsuit0-fire"
     hardsuit_type = "fire"
     mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-    actions_types = list()
 
 //Хардсьют огненного ертшника
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire

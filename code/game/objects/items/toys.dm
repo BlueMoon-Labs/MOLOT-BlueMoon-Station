@@ -1019,8 +1019,17 @@
 		var/mob/living/carbon/human/cardUser = user
 		if(cardUser.is_holding(src))
 			cardUser.visible_message("[cardUser] checks [cardUser.ru_ego()] card.", "<span class='notice'>The card reads: [cardname].</span>")
-		else
-			. += "<span class='warning'>You need to have the card in your hand to check it!</span>"
+		. += span_notice("[span_bold("Alt-Click")] to flip [src].")
+
+// to prevent exposing holder's card when examining them
+/obj/item/toy/cards/singlecard/get_examine_string(mob/user)
+	if(istype(user) && ismob(loc) && !user.is_holding(src) && flipped)
+		return " a card"
+	return ..()
+
+/obj/item/toy/cards/singlecard/AltClick(mob/user)
+	. = ..()
+	Flip()
 
 /obj/item/toy/cards/singlecard/verb/Flip()
 	set name = "Flip Card"

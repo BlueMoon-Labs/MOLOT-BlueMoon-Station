@@ -68,8 +68,8 @@
 	clientside = "subtler-target-indicatored"
 
 /datum/keybinding/client/communication/subtler_target_indicatored/down(client/user)
-	var/mob/living/L = user.mob
-	if(istype(L))
+	if(isliving(user.mob))
+		var/mob/living/L = user.mob
 		L.subtler_target_indicatored()
 	return TRUE
 //BLUEMOON ADD END

@@ -23,7 +23,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggledigestionnoise)()
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, togglehoundsleeper)()
 	set name = "Toggle Voracious Hound Sleepers"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 	set desc = "Toggles Voracious MediHound Sleepers"
 	usr.client.prefs.cit_toggles ^= MEDIHOUND_SLEEPER
 	usr.client.prefs.save_preferences()

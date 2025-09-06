@@ -70,7 +70,3 @@
 
 /obj/item/storage/briefcase/attack_self(mob/user)
 	playsound(src.loc, on_sound, 40, 1)
-
-/obj/item/reagent_containers/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	playsound(src.loc, 'modular_bluemoon/krashly/sound/items/watersplash.ogg', 40, 1)
-

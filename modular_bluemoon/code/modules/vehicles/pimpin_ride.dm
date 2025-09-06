@@ -14,8 +14,8 @@
 	/// BLUEMOON ADD переключение режимов работы жаникарта
 	var/static/radial_eject_trash = image(icon = 'icons/obj/janitor.dmi', icon_state = "trashbag")
 	var/static/radial_eject_key = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_eject_key")
-	var/static/radial_buffer_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/buffer")
-	var/static/radial_vacuum_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/vacuum")
+	// var/static/radial_buffer_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/buffer")
+	// var/static/radial_vacuum_mode = image(icon = 'icons/obj/service/janicart_upgrade.dmi', icon_state = "/obj/item/janicart_upgrade/vacuum")
 	var/static/radial_unbuckle = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_eject")
 	var/use_buffer = TRUE
 	var/use_vacuum = TRUE
@@ -66,7 +66,13 @@
 		new_upgrade.install(src)
 		to_chat(user, span_notice("You upgrade [src] with [new_upgrade]."))
 		update_appearance()
+		if(new_upgrade.cleaning)
+			initialize_controller_action_type(/datum/action/vehicle/ridden/buffer_mode, VEHICLE_CONTROL_DRIVE)
+		if(new_upgrade.vacuum)
+			initialize_controller_action_type(/datum/action/vehicle/ridden/vacuum_mode, VEHICLE_CONTROL_DRIVE)
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER && installed_upgrade)
+		remove_controller_action_type(/datum/action/vehicle/ridden/buffer_mode, VEHICLE_CONTROL_DRIVE)
+		remove_controller_action_type(/datum/action/vehicle/ridden/vacuum_mode, VEHICLE_CONTROL_DRIVE)
 		installed_upgrade.forceMove(get_turf(user))
 		user.put_in_hands(installed_upgrade)
 		I.play_tool_sound(src, 50)
@@ -108,11 +114,11 @@
 		options["remove trash bag"] = radial_eject_trash
 	if(inserted_key)
 		options["remove key"] = radial_eject_key
-	if(installed_upgrade)
-		if(installed_upgrade.cleaning)
-			options["switch buffer mode"] = radial_buffer_mode
-		if(installed_upgrade.vacuum)
-			options["switch vacuum mode"] = radial_vacuum_mode
+	// if(installed_upgrade)
+	// 	if(installed_upgrade.cleaning)
+	// 		options["switch buffer mode"] = radial_buffer_mode
+	// 	if(installed_upgrade.vacuum)
+	// 		options["switch vacuum mode"] = radial_vacuum_mode
 	if(occupants)
 		options["unbuckle driver"] = radial_unbuckle
 
@@ -123,10 +129,10 @@
 			try_remove_bag(user)
 		if("remove key")
 			AltClick(user)
-		if("switch buffer mode")
-			switch_mode("buffer", user)
-		if("switch vacuum mode")
-			switch_mode("vacuum", user)
+		// if("switch buffer mode")
+		// 	switch_mode("buffer", user)
+		// if("switch vacuum mode")
+		// 	switch_mode("vacuum", user)
 		if("unbuckle driver")
 			user_unbuckle_mob(buckled_mobs[1],user)
 
@@ -196,6 +202,8 @@
 	if(!installed_upgrade)
 		RemoveElement(/datum/element/cleaning)
 		qdel(GetComponent(/datum/component/vacuum))
+		use_buffer = initial(use_buffer)
+		use_vacuum = initial(use_vacuum)
 		return
 
 	if(installed_upgrade.cleaning)
@@ -275,3 +283,46 @@
 	janicart_overlay = "omni_upgrade"
 	cleaning = TRUE
 	vacuum = TRUE
+
+
+/datum/action/vehicle/ridden/buffer_mode
+	name = "buffer"
+	icon_icon = 'icons/obj/service/janicart_upgrade.dmi'
+	button_icon_state = "/obj/item/janicart_upgrade/buffer"
+
+/datum/action/vehicle/ridden/buffer_mode/Trigger()
+	. = ..()
+	if(. && istype(vehicle_ridden_target, /obj/vehicle/ridden/janicart))
+		var/obj/vehicle/ridden/janicart/J = vehicle_ridden_target
+		J.switch_mode("buffer", owner)
+		UpdateButtons()
+
+/datum/action/vehicle/ridden/buffer_mode/UpdateButton(atom/movable/screen/movable/action_button/button, status_only, force)
+	if(istype(vehicle_ridden_target, /obj/vehicle/ridden/janicart))
+		var/obj/vehicle/ridden/janicart/J = vehicle_ridden_target
+		if(J.use_buffer)
+			background_icon_state = "bg_default_on"
+		else
+			background_icon_state = "bg_default"
+	. = ..()
+
+/datum/action/vehicle/ridden/vacuum_mode
+	name = "vacuum"
+	icon_icon = 'icons/obj/service/janicart_upgrade.dmi'
+	button_icon_state = "/obj/item/janicart_upgrade/vacuum"
+
+/datum/action/vehicle/ridden/vacuum_mode/Trigger()
+	. = ..()
+	if(. && istype(vehicle_ridden_target, /obj/vehicle/ridden/janicart))
+		var/obj/vehicle/ridden/janicart/J = vehicle_ridden_target
+		J.switch_mode("vacuum", owner)
+		UpdateButtons()
+
+/datum/action/vehicle/ridden/vacuum_mode/UpdateButton(atom/movable/screen/movable/action_button/button, status_only, force)
+	if(istype(vehicle_ridden_target, /obj/vehicle/ridden/janicart))
+		var/obj/vehicle/ridden/janicart/J = vehicle_ridden_target
+		if(J.use_vacuum)
+			background_icon_state = "bg_default_on"
+		else
+			background_icon_state = "bg_default"
+	. = ..()

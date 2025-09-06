@@ -74,7 +74,7 @@
 	else
 		message = pick(
 			"грубо трахает \the <b>[partner]</b> в задницу с громким чавкающим звуком.",
-			"хватается за волосы \the <b>[partner]</b> и начинает тянуть к самому основанию своего [has_penis ? "органа" : "дилдо"].", // BLUEMOON EDIT
+			"хватает \the <b>[partner]</b> и начинает насаживать попкой на свой [has_penis ? "член" : "дилдо"].", // BLUEMOON EDIT
 			"сильно вращает своими бёдрами и погружается внутрь сфинктера \the <b>[partner]</b>.")
 	//BLUEMOON EDIT END
 		user.set_is_fucking(partner, CUM_TARGET_ANUS, user.getorganslot(ORGAN_SLOT_PENIS))

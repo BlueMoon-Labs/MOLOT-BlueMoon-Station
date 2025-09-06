@@ -315,7 +315,7 @@
 	block_damage_absorption = 3
 	block_damage_multiplier = 0.1
 	block_damage_multiplier_override = list(
-		ATTACK_TYPE_MELEE = 0.25
+		TEXT_ATTACK_TYPE_MELEE = 0.25
 	)
 	block_start_delay = 0.5
 	block_stamina_cost_per_second = 6.5

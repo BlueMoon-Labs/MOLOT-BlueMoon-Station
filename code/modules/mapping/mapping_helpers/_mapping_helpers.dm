@@ -2,6 +2,8 @@
 /obj/effect/mapping_helpers
 	icon = 'icons/effects/mapping_helpers.dmi'
 	icon_state = ""
+	anchored = TRUE
+	layer = ABOVE_ALL_MOB_LAYER
 	var/late = FALSE
 
 /obj/effect/mapping_helpers/Initialize(mapload)
@@ -12,6 +14,7 @@
 //airlock helpers
 /obj/effect/mapping_helpers/airlock
 	layer = DOOR_HELPER_LAYER
+	late = TRUE
 
 /obj/effect/mapping_helpers/airlock/Initialize(mapload)
 	. = ..()
@@ -24,10 +27,39 @@
 	else
 		payload(airlock)
 
-/obj/effect/mapping_helpers/airlock/proc/payload(obj/machinery/door/airlock/payload)
+/obj/effect/mapping_helpers/airlock/LateInitialize()
 	var/obj/machinery/door/airlock/airlock = locate(/obj/machinery/door/airlock) in loc
+	if(!airlock)
+		qdel(src)
+		return
+	if(airlock.cyclelinkeddir)
+		airlock.cyclelinkairlock()
+	if(airlock.closeOtherId)
+		airlock.update_other_id()
+	if(airlock.abandoned)
+		var/outcome = rand(1,10)
+		switch(outcome)
+			if(1 to 3)
+				var/picked_barricade = pick(/obj/structure/barricade/wooden, /obj/structure/barricade/wooden/crude)
+				new picked_barricade(get_turf(airlock))
+			if(4 to 5)
+				airlock.lights = FALSE
+				// These do not use airlock.bolt() because we want to pretend it was always locked. That means no sound effects.
+				airlock.locked = TRUE
+			if(6)
+				airlock.locked = TRUE
+			if(7 to 9)
+				airlock.welded = TRUE
+			if(10)
+				airlock.panel_open = TRUE
 	if(airlock.cutAiWire)
 		airlock.wires.cut(WIRE_AI)
+	if(airlock.autoname)
+		airlock.name = get_area_name(src, TRUE)
+	airlock.update_appearance()
+	qdel(src)
+
+/obj/effect/mapping_helpers/airlock/proc/payload(obj/machinery/door/airlock/payload)
 	return
 
 /obj/effect/mapping_helpers/airlock/cyclelink_helper

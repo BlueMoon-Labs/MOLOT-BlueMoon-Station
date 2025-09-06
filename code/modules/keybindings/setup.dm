@@ -1,7 +1,7 @@
 /datum/proc/key_down(key, client/user, full_key) // Called when a key is pressed down initially
 	SHOULD_CALL_PARENT(TRUE)
-	SEND_SIGNAL(src, COMSIG_MOB_KEYDOWN, key, user, full_key)
 	SHOULD_NOT_SLEEP(TRUE)
+	SEND_SIGNAL(src, COMSIG_MOB_KEYDOWN, key, user, full_key)
 
 /datum/proc/key_up(key, client/user) // Called when a key is released
 	SHOULD_NOT_SLEEP(TRUE)
