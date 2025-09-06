@@ -44,6 +44,12 @@ Assistant
 	else
 		return ..()
 
+/datum/job/assistant/after_spawn(mob/living/spawned, client/player_client, latejoin)
+	. = ..()
+	if(player_client && player_client.prefs && player_client.prefs.alt_titles_preferences[title] == "Blacksmith")
+		var/datum/skill/level/S = GLOB.skill_datums[/datum/skill/level/dwarfy/blacksmithing]
+		spawned.mind?.set_skill_value(S.type, S.get_skill_level_value(ROUND_UP(S.max_levels/5)))
+
 /datum/outfit/job/assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant

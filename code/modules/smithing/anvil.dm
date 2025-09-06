@@ -30,6 +30,9 @@
 #define RECIPE_GLAIVE "usfp" //upset shrink fold punch
 #define RECIPE_PIKE "ddbf" //draw draw bend fold
 
+
+#define RECIPE_COILEDSWORD "ppbbb" //punch punch bend bend bend
+
 /obj/structure/anvil
 	name = "anvil"
 	desc = "Base class of anvil. This shouldn't exist, but is useable."
@@ -68,11 +71,44 @@
 	RECIPE_HALBERD = /obj/item/smithing/halberdhead,
 	RECIPE_GLAIVE = /obj/item/smithing/glaivehead,
 	RECIPE_PIKE = /obj/item/smithing/pikehead,
-	RECIPE_STUNDIL = /obj/item/smithing/stundild)
+	RECIPE_STUNDIL = /obj/item/smithing/stundild,
+	RECIPE_COILEDSWORD = /obj/item/smithing/coiled_sword)
 
 /obj/structure/anvil/Initialize(mapload)
 	. = ..()
 	currentquality = anvilquality
+
+/obj/structure/anvil/examine(mob/user)
+	. = ..()
+	. += span_boldnotice("<a href='?src=[REF(src)];recipes=1'>\[Recipes\]</a>")
+
+/obj/structure/anvil/Topic(href, list/href_list)
+	. = ..()
+	if(.)
+		return
+	if(href_list["recipes"])
+		var/list/output_text = list("<span class='notice'><u><b>KNOWN RECIPES</u></b>")
+		for(var/recipe in smithrecipes)
+			var/list/formula = list()
+			for(var/l in text2charlist(recipe))
+				switch(l)
+					if("f")
+						formula += "fold"
+					if("d")
+						formula += "draw"
+					if("s")
+						formula += "shrink"
+					if("b")
+						formula += "bend"
+					if("p")
+						formula += "punch"
+					if("u")
+						formula += "upset"
+			var/text_formula = formula.Join(" ")
+			var/obj/item/smithing/weapon = smithrecipes[recipe]
+			output_text += "\n[capitalize("[weapon.finalitem.name]")] - [text_formula]"
+		output_text += "</span>"
+		to_chat(usr, "[output_text.Join()]")
 
 /obj/structure/anvil/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/ingot))

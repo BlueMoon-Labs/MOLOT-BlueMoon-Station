@@ -32,3 +32,5 @@
 #define QMOOD_BONDAGE		"mood_bondage"
 /// Mob does not remember its death, due to one of DEATH_FORGETFULLNESS_REASONs
 #define TRAIT_BLUEMOON_DEATH_FORGETFULNESS	"bm_death_forget"
+
+#define TRAIT_MOB_IN_AURA_HEALING "mob_in_aura_healing"
