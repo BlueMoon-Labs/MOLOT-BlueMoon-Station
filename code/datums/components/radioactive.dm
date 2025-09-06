@@ -46,7 +46,7 @@
 /datum/component/radioactive/process()
 	if(!prob(50))
 		return
-	radiation_pulse(parent, strength, RAD_DISTANCE_COEFFICIENT*2, FALSE, can_contaminate)
+	radiation_pulse(get_turf(parent), strength, RAD_DISTANCE_COEFFICIENT*2, FALSE, can_contaminate)
 
 	if(!hl3_release_date)
 		return
@@ -97,7 +97,7 @@
 	examine_list += out.Join()
 
 /datum/component/radioactive/proc/rad_attack(datum/source, atom/movable/target, mob/living/user)
-	radiation_pulse(parent, strength/20)
+	radiation_pulse(get_turf(parent), strength/20)
 	target.rad_act(strength/2)
 	if(!hl3_release_date)
 		return

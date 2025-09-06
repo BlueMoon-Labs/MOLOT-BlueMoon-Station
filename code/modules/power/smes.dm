@@ -45,6 +45,9 @@
 	var/emp_timer = TIMER_ID_NULL
 	var/is_emped = FALSE // to prevent output when emped
 
+	/// Переменная для радиоактивных элементов в СМЕСе
+	var/rad_strg = 0
+
 /obj/machinery/power/smes/examine(user)
 	. = ..()
 	if(!terminal)
@@ -77,6 +80,12 @@
 	for(var/obj/item/stock_parts/cell/PC in component_parts)
 		MC += PC.maxcharge
 		C += PC.charge
+		// Проверка на радиоактивную батарейку
+		if(PC.cell_is_radioactive)
+			rad_strg += 60
+		else
+			rad_strg -= 60
+		rad_strg = clamp(rad_strg, 0, 500) // Гарантируем, что значение не будет ниже нуля, если мы дали вортексы после реакторок, например
 	capacity = MC * SMESCHARGE			//WS Edit - Removes magic number
 	if(!initial(charge) && !charge)
 		charge = C * SMESCHARGE			//WS Edit - Prevents power duping
@@ -322,8 +331,9 @@
 	// only update icon if state changed
 	if(last_disp != chargedisplay() || last_chrg != inputting || last_onln != outputting)
 		update_icon()
-
-
+	// создаём радиоактивный фон, если внутри есть радиоактивные батареи.
+	if(rad_strg > 0)
+		AddComponent(/datum/component/radioactive, rad_strg, src)
 
 // called after all power processes are finished
 // restores charge level to smes if there was excess this ptick

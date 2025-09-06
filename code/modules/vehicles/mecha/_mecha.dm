@@ -466,6 +466,12 @@
 				transfer_moles = pressure_delta*cabin_air.return_volume()/(cabin_air.return_temperature() * R_IDEAL_GAS_EQUATION)
 				cabin_air.transfer_to(t_air, transfer_moles)
 
+	// Добавляем минорное облучение, если батарея радиоактивна. Большей частью ради свечения.
+	if(cell.cell_is_radioactive)
+		AddComponent(/datum/component/radioactive, 1, src, 0)
+	else
+		qdel(GetComponent(/datum/component/radioactive))
+
 	if(LAZYLEN(occupants))
 		for(var/i in occupants)
 			var/mob/living/occupant = i

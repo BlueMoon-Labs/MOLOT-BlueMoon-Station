@@ -269,7 +269,7 @@
 	cell = /obj/item/stock_parts/cell/high
 
 /obj/item/defibrillator/compact/loaded_ert
-	cell = /obj/item/stock_parts/cell/bluespacereactor
+	cell = /obj/item/stock_parts/cell/vortex
 
 /obj/item/defibrillator/compact/combat
 	name = "combat defibrillator"
