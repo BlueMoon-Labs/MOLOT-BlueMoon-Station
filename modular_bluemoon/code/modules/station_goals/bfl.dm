@@ -702,15 +702,13 @@
 
 /obj/effect/bfl_laser/Initialize(mapload)
 	. = ..()
+	RegisterSignal(get_turf(src), COMSIG_ATOM_ENTERED, PROC_REF(burn_stuff)) // /datum/element/connect_loc почему то не работает
 	START_PROCESSING(SSprocessing, src)
 
 /obj/effect/bfl_laser/proc/remove_self()
+	UnregisterSignal(get_turf(src), COMSIG_ATOM_ENTERED)
 	STOP_PROCESSING(SSprocessing, src)
 	qdel(src)
-
-/obj/effect/bfl_laser/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
-	. = ..()
-	burn_stuff(arrived)
 
 /obj/effect/bfl_laser/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum)
@@ -720,12 +718,13 @@
 	burn_stuff()
 
 /obj/effect/bfl_laser/proc/burn_stuff(atom/movable/AM)
+	SIGNAL_HANDLER
 	. = FALSE
 	var/turf/T = get_turf(src)
 	if(!istransparentturf(T) && !isspaceturf(T)) //we're not open. REOPEN
 		T.ScrapeAway(INFINITY)
 	var/thing_to_check = get_turf(src)
-	if(AM)
+	if(AM && !isspaceturf(AM))
 		thing_to_check = list(AM)
 	for(var/thing in thing_to_check)
 		if(thing == src)
@@ -750,9 +749,9 @@
 				var/obj/O = buckle_check
 				if(O.resistance_flags & FIRE_PROOF)
 					continue
-			L.adjustFireLoss(10)
-			if(L) //mobs turning into object corpses could get deleted here.
-				L.adjust_fire_stacks(10)
+			L.adjustFireLoss(50)
+			if(!QDELETED(L)) //mobs turning into object corpses could get deleted here.
+				L.adjust_fire_stacks(20)
 				L.IgniteMob()
 	if(.)
 		playsound(src, 'sound/weapons/sear.ogg', 50, TRUE, -4)
