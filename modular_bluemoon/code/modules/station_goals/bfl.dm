@@ -335,6 +335,9 @@
 	QDEL_NULL(lens)
 	return ..()
 
+/obj/machinery/bfl_receiver/singularity_act()
+	return
+
 /obj/machinery/bfl_receiver/examine(mob/user)
 	. = ..()
 	. += "Счетчик добытой руды: [ore_count]"
@@ -481,6 +484,9 @@
 	new /obj/effect/decal/cleanable/glass/plastitanium(get_turf(src))
 	return ..()
 
+/obj/machinery/bfl_lens/singularity_act()
+	return
+
 /obj/machinery/bfl_lens/update_icon_state()
 	if(state)
 		icon_state = "Lens_On"
@@ -577,9 +583,12 @@
 	QDEL_NULL(internal)
 	. = ..()
 
+/obj/bfl_crack/singularity_act()
+	return
+
 /obj/item/gps/internal/bfl_crack
 	gpstag = "Deep plasma signal"
-	desc = "Deep rich plasma deposit has been pinpointed by station scanners."
+	desc = "Deep rich plasma deposit has been pinpointed by surveillance drone."
 
 /obj/singularity/bfl_red
 	name = "BFL"
