@@ -23,9 +23,8 @@
 	desc = "An improved version of baseline liver. Better tan the baseline counterpart."
 	alcohol_tolerance = 0.001
 	maxHealth = 2.5 * STANDARD_ORGAN_THRESHOLD
-	toxTolerance = 5 * LIVER_DEFAULT_TOX_TOLERANCE
-	toxLethality = 0.4 * LIVER_DEFAULT_TOX_LETHALITY
-	healing_factor = 1.5 * STANDARD_ORGAN_HEALING //Heals itself a bit faster
+	toxTolerance = 2 * LIVER_DEFAULT_TOX_TOLERANCE 
+	toxLethality = 0.4 * LIVER_DEFAULT_TOX_LETHALITY 
 	decay_factor = 0.8 * STANDARD_ORGAN_DECAY //Decays a bit longer
 
 /obj/item/organ/liver/tier2/on_life()
@@ -42,10 +41,10 @@
 	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "exaltedliver"
 	desc = "Something that an alcoholic of the future could use - this version of liver is stronger, better, capable to filter and withstand more, even than cybernetic counterpart!"
-	alcohol_tolerance = 0.0005 //At this point just drink everything.
+	alcohol_tolerance = 0.001
 	maxHealth = 3.5 * STANDARD_ORGAN_THRESHOLD
-	toxTolerance = 7 * LIVER_DEFAULT_TOX_TOLERANCE
-	toxLethality = 0.2 * LIVER_DEFAULT_TOX_LETHALITY
+	toxTolerance = 2 * LIVER_DEFAULT_TOX_TOLERANCE 
+	toxLethality = 0.4 * LIVER_DEFAULT_TOX_LETHALITY 
 	healing_factor = 2.5 * STANDARD_ORGAN_HEALING
 	decay_factor = 0.5 * STANDARD_ORGAN_DECAY
 
@@ -67,11 +66,6 @@
 	name = "biomorphed liver"
 	desc = "A very secretive weapon against alcoholism, or NT's safety regarding chemicals!"
 	icon_state = "exaltedliver"
-	maxHealth = 4.5 * STANDARD_ORGAN_THRESHOLD
-	toxTolerance = 9 * LIVER_DEFAULT_TOX_TOLERANCE
-	toxLethality = 0.1 * LIVER_DEFAULT_TOX_LETHALITY
-	healing_factor = 3.5 * STANDARD_ORGAN_HEALING
-	decay_factor = 0.1 * STANDARD_ORGAN_DECAY
 
 /obj/item/organ/liver/tier3/antag/on_life()
 	owner.adjustToxLoss(-5, TRUE) //Heals like hell.
@@ -86,5 +80,5 @@
 	name = "Biomorphed Liver"
 	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленное восстановление от токсинов и уменьшает изнурение."
 	item = /obj/item/autosurgeon/syndicate/inteq/biomorphedliver
-	cost = 7
+	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
