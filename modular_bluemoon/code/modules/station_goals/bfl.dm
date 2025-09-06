@@ -315,7 +315,6 @@
 	var/mining = FALSE
 	///Receiver's internal storage for ore
 	var/obj/item/storage/bag/ore/bfl_storage/internal
-	var/internal_type = /obj/item/storage/bag/ore/bfl_storage
 	var/obj/machinery/bfl_lens/lens = null
 	var/ore_type = FALSE
 	///An "overlay"-like light for receiver to indicate storage filling
@@ -329,7 +328,7 @@
 /obj/machinery/bfl_receiver/Initialize(mapload)
 	. = ..()
 	//it just works ¯\_(ツ)_/¯
-	internal = new internal_type(src)
+	internal = new (src)
 	receiver_light = new (loc)
 	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
 	var/turf/turf_under = get_turf(src)
@@ -373,9 +372,7 @@
 			if(state)
 				to_chat(user, span_warning("Внутренний голос подсказывает, что сначала нужно закрыть шахту."))
 				return
-			SEND_SIGNAL(internal, COMSIG_TRY_STORAGE_QUICK_EMPTY)
-			// var/turf/location = get_turf(src)
-			// internal.empty_storage(location)
+			SEND_SIGNAL(internal, COMSIG_TRY_STORAGE_QUICK_EMPTY, drop_location())
 			ore_count = 0
 			update_state()
 
