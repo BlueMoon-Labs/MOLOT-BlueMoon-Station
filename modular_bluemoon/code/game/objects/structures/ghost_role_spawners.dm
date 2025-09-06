@@ -213,7 +213,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	important_info = "В режим игры Extended вы являетесь ЕРП-антагонистом, в Dynamic Light - минорным антагонистом. Вы можете похищать экипаж, но лишь с преференсами Noncon YES. Если у игрока стоит ASK, вы ОБЯЗАНЫ спросить в LOOC разрешения."
 
 /obj/effect/mob_spawn/human/slavers/attack_ghost(mob/user, latejoinercalling)
-	if(GLOB.master_mode == ROUNDTYPE_EXTENDED || GLOB.master_mode == ROUNDTYPE_DYNAMIC_LIGHT)
+	if(GLOB.master_mode in list(ROUNDTYPE_EXTENDED, ROUNDTYPE_DYNAMIC_LIGHT))
 		return . = ..()
 	else
 		return to_chat(user, "<span class='warning'>Игра за слейверов допускается лишь в режим Extended или Dynamic Light!</span>")
