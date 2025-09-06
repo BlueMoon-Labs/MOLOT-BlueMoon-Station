@@ -212,17 +212,21 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	var/isLeader = FALSE
 	important_info = "В режим игры Extended вы являетесь ЕРП-антагонистом, в Dynamic Light - минорным антагонистом. Вы можете похищать экипаж, но лишь с преференсами Noncon YES. Если у игрока стоит ASK, вы ОБЯЗАНЫ спросить в LOOC разрешения."
 
+/obj/effect/mob_spawn/human/slavers/attack_ghost(mob/user, latejoinercalling)
+	if(GLOB.master_mode == ROUNDTYPE_EXTENDED && ROUNDTYPE_DYNAMIC_LIGHT)
+		return . = ..()
+	else
+		return to_chat(user, "<span class='warning'>Игра за слейверов допускается лишь в режим Extended или Dynamic Light!</span>")
+
 /obj/effect/mob_spawn/human/slavers/Initialize(mapload)
 	. = ..()
-	if(GLOB.master_mode == "Dynamic (Light)")
-		src.short_desc = "Вы часть отряда наемников, торгующих рабами. Похищайте экипаж и продавайте их. "
 
 /obj/effect/mob_spawn/human/slavers/special(mob/living/new_spawn)
 	. = ..()
 	var/datum/antagonist/slaver/slaver =  new /datum/antagonist/slaver
 	var/obj/effect/mob_spawn/human/slavers/all_avaible_spawnpods = list(locate(/obj/effect/mob_spawn/human/slavers))
 	var/obj/effect/mob_spawn/human/slavers/one_is_spawnpods = pick(all_avaible_spawnpods)
-	if(GLOB.master_mode == "Extended")
+	if(GLOB.master_mode == ROUNDTYPE_EXTENDED)
 		slaver.slaver_outfit = /datum/outfit/slaver/extended
 		slaver.send_to_spawnpoint = FALSE
 		if(one_is_spawnpods.first_time)
@@ -245,7 +249,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	var/datum/antagonist/slaver/leader/slaver =  new /datum/antagonist/slaver/leader
 	var/obj/effect/mob_spawn/human/slavers/all_avaible_spawnpods = list(locate(/obj/effect/mob_spawn/human/slavers))
 	var/obj/effect/mob_spawn/human/slavers/one_is_spawnpods = pick(all_avaible_spawnpods)
-	if(GLOB.master_mode == "Extended")
+	if(GLOB.master_mode == ROUNDTYPE_EXTENDED)
 		slaver.slaver_outfit = /datum/outfit/slaver/leader/extended
 		slaver.send_to_spawnpoint = FALSE
 		if(one_is_spawnpods.first_time)
