@@ -306,3 +306,26 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring))
 
 ////////////////////////////////////
+
+/obj/effect/mob_spawn/human/ert
+	name = "Emergency Response Team Solder"
+	short_desc = "Вы - Член экспедиционного корпуса НТ,ваша задача: Уничтожить логово InteQ. Не покидайте гейт без одобрения администрации. Не пытайтесь в одиночку начать штурм, противник имеют глубоко спланированную оборону, так что дождитесь подкрепления со станции ПАКТа"
+	roundstart = FALSE
+	death = FALSE
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "oldpod"
+	outfit = /datum/outfit/ert/security/green
+	assignedrole = "Emergency Response Team Solder"
+	can_load_appearance = TRUE
+	loadout_enabled = TRUE
+	category = "ERT"
+
+/obj/effect/mob_spawn/human/ert/engineer
+	name = "Emergency Response Team Engineer"
+	assignedrole = "Emergency Response Team Engineer"
+	outfit = /datum/outfit/ert/engineer
+
+/obj/effect/mob_spawn/human/ert/commander
+	name = "Emergency Response Team Commander"
+	assignedrole = "Emergency Response Team Commander"
+	outfit = /datum/outfit/ert/commander
