@@ -33,7 +33,7 @@
 /// Mob does not remember its death, due to one of DEATH_FORGETFULLNESS_REASONs
 #define TRAIT_BLUEMOON_DEATH_FORGETFULNESS	"bm_death_forget"
 
-///Chasms will be safe to cross while they've this trait.
-///Этот трейт не работает "в полном объеме" как на новотг/парадизе и является заплаткой, которая может иметь ограниченный функционал.
-///На данный момент присваивается атому (турфу).
+/// Chasms will be safe to cross while they've this trait.
+/// Этот трейт не работает "в полном объеме" как на новотг/парадизе и является заплаткой, которая может иметь ограниченный функционал.
+/// На данный момент присваивается атому (турфу). После снятия этого трейта желательно запустить процесс обработки падения предметов в чазм или вызвать /drop_stuff().
 #define TRAIT_CHASM_STOPPED "chasm_stopped"

@@ -105,7 +105,7 @@
 	density = TRUE
 	use_power = NO_POWER_USE
 	idle_power_usage = 100000
-	active_power_usage = 500000
+	active_power_usage = 400000 // в сумме будет 500kW, так как idle присутствует всегда
 	var/state = FALSE
 	var/first_connection = TRUE // for goal crate unlocking
 	var/obj/singularity/bfl_red/laser = null
@@ -283,25 +283,10 @@
 ////////////
 //Receiver//
 ////////////
-#define PLASMA 2
-#define SAND 1
-#define NOTHING 0
-
-/obj/item/storage/bag/ore/bfl_storage/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
-	STR.max_items = INFINITY
-	STR.max_combined_w_class = INFINITY
-	STR.max_combined_stack_amount = 500
-
-// /obj/item/storage/bag/ore/bfl_storage/proc/empty_storage(turf/location)
-// 	for(var/obj/item/I in contents)
-// 		remove_from_storage(I, location)
-// 		CHECK_TICK
 
 /obj/machinery/bfl_receiver
 	name = "BFL Receiver"
-	desc = "Кнопка активации выглядит подозрительно. Возможно, следует открыть шахту вручную с помощью лома."
+	desc = "Кнопка активации выглядит подозрительно. Возможно, следует открыть шахту вручную с помощью лома. Контейнер вмещает до 500 единиц руды."
 	icon = 'modular_bluemoon/icons/obj/machines/BFL_mission/Hole.dmi'
 	icon_state = "Receiver_Off"
 	anchored = TRUE
@@ -313,10 +298,12 @@
 	base_pixel_y = -32
 	var/state = FALSE
 	var/mining = FALSE
-	///Receiver's internal storage for ore
-	var/obj/item/storage/bag/ore/bfl_storage/internal
 	var/obj/machinery/bfl_lens/lens = null
-	var/ore_type = FALSE
+	var/ore_type_mining = null
+	var/list/ore_type_contained = list(
+		/obj/item/stack/ore/plasma = 0,
+		/obj/item/stack/ore/glass/basalt = 0,
+	)
 	///An "overlay"-like light for receiver to indicate storage filling
 	var/atom/movable/bfl_receiver_light/receiver_light = null
 	///Used to define bits of ore mined, instead of stacks.
@@ -328,16 +315,15 @@
 /obj/machinery/bfl_receiver/Initialize(mapload)
 	. = ..()
 	//it just works ¯\_(ツ)_/¯
-	internal = new (src)
 	receiver_light = new (loc)
 	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
 	var/turf/turf_under = get_turf(src)
 	if(locate(/obj/bfl_crack) in turf_under)
-		ore_type = PLASMA
+		ore_type_mining = /obj/item/stack/ore/plasma
 	else if(istype(turf_under, /turf/open/floor/plating/asteroid/basalt/lava_land_surface))
-		ore_type = SAND
+		ore_type_mining = /obj/item/stack/ore/glass/basalt
 	else
-		ore_type = NOTHING
+		ore_type_mining = null
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
@@ -345,11 +331,13 @@
 
 
 /obj/machinery/bfl_receiver/Destroy()
-	QDEL_NULL(internal)
 	QDEL_NULL(receiver_light)
 	QDEL_NULL(lens)
 	return ..()
 
+/obj/machinery/bfl_receiver/examine(mob/user)
+	. = ..()
+	. += "Счетчик добытой руды: [ore_count]"
 
 /obj/machinery/bfl_receiver/attack_hand(mob/user)
 	if(..())
@@ -372,7 +360,12 @@
 			if(state)
 				to_chat(user, span_warning("Внутренний голос подсказывает, что сначала нужно закрыть шахту."))
 				return
-			SEND_SIGNAL(internal, COMSIG_TRY_STORAGE_QUICK_EMPTY, drop_location())
+			var/drop_where = drop_location()
+			for(var/ore_type in ore_type_contained)
+				while(ore_type_contained[ore_type] > 0)
+					new ore_type(drop_where)
+					ore_type_contained[ore_type]--
+					CHECK_TICK
 			ore_count = 0
 			update_state()
 
@@ -388,7 +381,7 @@
 
 ///This proc handles light updating on borders of BFL receiver.
 /obj/machinery/bfl_receiver/proc/update_state()
-	var/light_state = clamp(length(internal.contents), 0, 20)
+	var/light_state = clamp(round(20*ore_count/500), 0, 20)
 	if(last_light_state_number == light_state)
 		return
 	receiver_light.light_amount = light_state
@@ -397,19 +390,12 @@
 
 
 /obj/machinery/bfl_receiver/process()
-	if(!(mining && state))
+	if(!(mining && state) || isnull(ore_type_mining))
 		return
-	var/datum/component/storage/concrete/stack/STR = internal.GetComponent(/datum/component/storage/concrete/stack)
-	if(ore_count >= STR.max_combined_stack_amount)
+	if(ore_count >= 500)
 		return
-	switch(ore_type)
-		if(PLASMA)
-			STR.handle_item_insertion(new /obj/item/stack/ore/plasma, TRUE)
-			ore_count += 1
-		if(SAND)
-			STR.handle_item_insertion(new /obj/item/stack/ore/glass/basalt, TRUE)
-			ore_count += 1
-
+	ore_type_contained[ore_type_mining]++
+	ore_count++
 	update_state()
 
 
@@ -421,7 +407,12 @@
 	state = TRUE
 	update_icon(UPDATE_ICON_STATE)
 	var/turf/T = get_turf(src)
-	T.ChangeTurf(/turf/open/chasm/lavaland)
+	// if(SSmapping.get_turf_below(T))
+	// 	T.ChangeTurf(/turf/open/openspace)
+	if(is_mining_level(T.z))
+		T.ChangeTurf(/turf/open/chasm/lavaland)
+	else
+		T.ScrapeAway(INFINITY, flags = CHANGETURF_INHERIT_AIR)
 
 /obj/machinery/bfl_receiver/proc/receiver_deactivate()
 	var/turf/turf_under = get_step(src, SOUTH)
@@ -436,11 +427,6 @@
 	if(istype(arrived, /obj/machinery/bfl_lens))
 		var/obj/machinery/bfl_lens/bfl_lens = arrived
 		bfl_lens.step_count = 0
-
-
-#undef PLASMA
-#undef SAND
-#undef NOTHING
 
 /atom/movable/bfl_receiver_light
 	name = ""
@@ -476,6 +462,7 @@
 	density = TRUE
 	anchored = FALSE
 	armor = list(MELEE = 0, BULLET = 0, LASER = 100, ENERGY = 100, BOMB = 0, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
+	throwforce = 10 // when lens is falling down through the floor
 	var/step_count = 0
 	var/state = FALSE
 
@@ -537,12 +524,17 @@
 		var/obj/machinery/bfl_receiver/receiver = locate() in get_turf(src)
 		if(receiver)
 			receiver.lens = anchored ? src : null
-			var/turf/open/chasm/C = get_turf(src)
-			if(istype(C))
+			var/turf/T = get_turf(src)
+			if(ischasm(T))
+				var/turf/open/chasm/C = T
 				if(anchored)
 					ADD_TRAIT(C, TRAIT_CHASM_STOPPED, src)
 				else
 					REMOVE_TRAIT(C, TRAIT_CHASM_STOPPED, src)
+					var/datum/component/chasm/ch = C.GetComponent(/datum/component/chasm)
+					ch?.drop_stuff()
+			else if(istype(T, /turf/open/openspace))
+				T.Entered(src)
 			// var/static/list/give_turf_traits
 			// if(!give_turf_traits)
 			// 	give_turf_traits = string_list(list(TRAIT_CHASM_STOPPED))
@@ -550,7 +542,8 @@
 			// 	AddElement(/datum/element/give_turf_traits, give_turf_traits)
 			// else
 			// 	RemoveElement(/datum/element/give_turf_traits, give_turf_traits)
-	update_icon()
+	if(!QDELETED(src))
+		update_icon()
 
 /obj/machinery/bfl_lens/Move(atom/newloc, direct = NONE, glide_size_override = 0, update_dir = TRUE)
 	. = ..()
