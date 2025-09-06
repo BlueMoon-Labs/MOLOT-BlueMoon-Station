@@ -4,3 +4,7 @@
 	icon = 'modular_bluemoon/icons/obj/crates.dmi'
 	icon_state = "radiation_secure_crate"
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/structure/closet/crate/secure/engineering/bfl/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, INNATE_TRAIT)

@@ -108,7 +108,7 @@
 	var/damage = max(0, 10 + ((src.mob_weight - MOB_WEIGHT_NORMAL) * 25))
 	var/combat_knockdown = max(0, 20 + ((src.mob_weight - MOB_WEIGHT_NORMAL) * 20))
 	// BLUEMOON ADDITION END
-	if(throwingdatum?.thrower != src)
+	if(throwingdatum && throwingdatum.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(GetComponent(/datum/component/tackler))
 		return
