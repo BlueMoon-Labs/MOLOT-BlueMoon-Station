@@ -8,30 +8,39 @@
 
 /datum/supply_pack/engineering/bfl
 	name = "BFL assembly crate"
-	cost = 10
+	cost = 10000
 	special = TRUE
 	contains = list(
 					/obj/item/circuitboard/machine/bfl_emitter,
 					/obj/item/circuitboard/machine/bfl_receiver
 					)
 	crate_name = "BFL assembly crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering/bfl
 	// required_tech = list("engineering" = 5, "powerstorage" = 4, "bluespace" = 6, "plasmatech" = 6)
 
 /datum/supply_pack/engineering/bfl_lens
 	name = "BFL High-precision lens"
-	cost = 50
+	cost = 5000
 	special = TRUE
 	contains = list(
 					/obj/machinery/bfl_lens
 					)
 	crate_name = "BFL High-precision lens"
+	crate_type = /obj/structure/closet/crate/secure/engineering/bfl
 	// required_tech = list("materials" = 7, "bluespace" = 4)
 
 /datum/supply_pack/engineering/bfl_goal
 	name = "BFL Mission goal"
-	cost = 10
+	cost = 50000
 	special = TRUE
 	contains = list(
-					/obj/structure/toilet/golden_toilet/bfl_goal
+					/obj/structure/toilet/golden_toilet/bfl_goal,
+					// /obj/structure/toilet/golden_toilet/bfl_goal // здесь будет кое-что еще
 					)
 	crate_name = "Goal crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering/bfl
+
+/datum/supply_pack/engineering/bfl_goal/fill(obj/structure/closet/crate/C)
+	var/list/L = contains.Copy()
+	var/item = pick_n_take(L)
+	new item(C)

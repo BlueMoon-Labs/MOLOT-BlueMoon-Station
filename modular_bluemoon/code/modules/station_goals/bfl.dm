@@ -22,8 +22,8 @@
 	P =  SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_lens]
 	P.special_enabled = TRUE
 
-	P =  SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_goal]
-	P.special_enabled = TRUE
+	// P =  SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_goal]
+	// P.special_enabled = TRUE
 
 	// if(length(SScargo_quests.plasma_quests) > COUNT_PLASMA_QUESTS)
 	// 	return
@@ -38,7 +38,7 @@
 	// if(goal_pack.times_ordered >= 1)
 	// 	return TRUE
 	for(var/obj/structure/toilet/golden_toilet/bfl_goal/B in world)
-		if(B && is_station_level(B.z))
+		if(B && (is_station_level(B.z) || is_centcom_level(B.z)))
 			return TRUE
 	return FALSE
 
@@ -86,6 +86,7 @@
 	idle_power_usage = 100000
 	active_power_usage = 500000
 	var/state = FALSE
+	var/first_connection = TRUE // for goal crate unlocking
 	var/obj/singularity/bfl_red/laser = null
 	var/obj/machinery/bfl_receiver/receiver = null
 	var/list/obj/effect/bfl_laser/turf_lasers = list()
@@ -221,6 +222,10 @@
 				receiver = bfl_receiver
 				break
 	receiver_test()
+	if(first_connection && receiver?.mining)
+		first_connection = FALSE
+		var/datum/supply_pack/engineering/P = SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_goal]
+		P.special_enabled = TRUE
 
 
 /obj/machinery/power/bfl_emitter/proc/emitter_deactivate()
@@ -240,7 +245,7 @@
 	set waitfor = FALSE
 	while(state)
 		playsound(src, 'modular_bluemoon/sound/BFL/emitter.ogg', 100, TRUE)
-		sleep(25)
+		stoplag(25)
 
 
 /obj/machinery/power/bfl_emitter/update_icon_state()
@@ -258,7 +263,7 @@
 	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.max_items = INFINITY
 	STR.max_combined_w_class = INFINITY
-	STR.max_combined_stack_amount = 50
+	STR.max_combined_stack_amount = 500
 
 // /obj/item/storage/bag/ore/bfl_storage/proc/empty_storage(turf/location)
 // 	for(var/obj/item/I in contents)
@@ -272,6 +277,7 @@
 	icon_state = "Receiver_Off"
 	anchored = TRUE
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_SET_MACHINE
+	resistance_flags = LAVA_PROOF|FIRE_PROOF|ACID_PROOF
 	pixel_x = -32
 	pixel_y = -32
 	base_pixel_x = -32
@@ -300,7 +306,7 @@
 	var/turf/turf_under = get_turf(src)
 	if(locate(/obj/bfl_crack) in turf_under)
 		ore_type = PLASMA
-	else if(istype(turf_under, /turf/open/lava/smooth/lava_land_surface))
+	else if(istype(turf_under, /turf/open/floor/plating/asteroid/basalt/lava_land_surface))
 		ore_type = SAND
 	else
 		ore_type = NOTHING
@@ -368,14 +374,14 @@
 	if(!(mining && state))
 		return
 	var/datum/component/storage/concrete/stack/STR = internal.GetComponent(/datum/component/storage/concrete/stack)
-	if(ore_count >= STR.max_combined_stack_amount * 50)
+	if(ore_count >= STR.max_combined_stack_amount)
 		return
 	switch(ore_type)
 		if(PLASMA)
 			STR.handle_item_insertion(new /obj/item/stack/ore/plasma, TRUE)
 			ore_count += 1
 		if(SAND)
-			STR.handle_item_insertion(new /obj/item/stack/ore/glass, TRUE)
+			STR.handle_item_insertion(new /obj/item/stack/ore/glass/basalt, TRUE)
 			ore_count += 1
 
 	update_state()
@@ -449,6 +455,7 @@
 
 /obj/machinery/bfl_lens/Initialize()
 	. = ..()
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, INNATE_TRAIT)
 	pixel_x = -32
 	pixel_y = -32
 
@@ -493,7 +500,7 @@
 	set waitfor = FALSE
 	while(state)
 		playsound(src, 'modular_bluemoon/sound/BFL/receiver.ogg', 100, TRUE)
-		sleep(25)
+		stoplag(25)
 
 
 /obj/machinery/bfl_lens/wrench_act(mob/user, obj/item/I)
