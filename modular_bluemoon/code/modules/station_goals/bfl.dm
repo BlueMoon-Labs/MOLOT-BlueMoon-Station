@@ -22,8 +22,8 @@
 	Для завершения цели вы должны заказать особый груз, именуемый "BFL Mission goal", а после можете насладиться вашей наградой.
 	<br>
 	Конструкция состоит из трёх компонентов: Излучателя, Приемника и Линзы. Излучатель устанавливается на станции, Приемник сооружается прямо над жилой, а \
-	Линза устанавливается над Приемником. Если конструкция установлена и настроена правильно, Излучатель сможет направлять лазер точно в Приемник и тот будет собирать \
-	добытую лазером руду, в противном случае возможно незначительное смещение лазера относительно местонахождения жилы.
+	Линза устанавливается над Приемником. Приемник должен иметь открытые створки. Если конструкция установлена и настроена правильно, Излучатель сможет \
+	направлять лазер точно в Приемник и тот будет собирать добытую лазером руду, в противном случае возможно незначительное смещение лазера относительно местонахождения жилы.
 	<br><br>
 	Не подведите нас.
 	<br><br>
@@ -41,12 +41,6 @@
 	// P =  SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_goal]
 	// P.special_enabled = TRUE
 
-	// if(length(SScargo_quests.plasma_quests) > COUNT_PLASMA_QUESTS)
-	// 	return
-
-	// for(var/I = 1 to COUNT_PLASMA_QUESTS)
-	// 	SScargo_quests.create_new_quest(pick(SScargo_quests.plasma_departaments))
-
 /datum/station_goal/bfl/check_completion()
 	if(..())
 		return TRUE
@@ -62,12 +56,6 @@
 		if(!isnull(T) && (is_station_level(T.z) || is_centcom_level(T.z)))
 			return TRUE
 	return FALSE
-
-// /datum/station_goal/bfl/Destroy()
-// 	. = ..()
-// 	if(locate(/datum/station_goal/bfl) in SSticker.mode.station_goals)
-// 		return
-// 	SScargo_quests.remove_bfl_quests(COUNT_PLASMA_QUESTS)
 
 ////////////
 //Building//
@@ -209,7 +197,6 @@
 	if(!receiver || !receiver.state || (obj_flags & EMAGGED) || !receiver.lens || !receiver.lens.anchored)
 		var/turf/rand_location = locate(rand(50, 150), rand(50, 150), lavaland_z_lvl)
 		laser = new (rand_location)
-		// laser.move = rand_location.x
 		visible_message(span_tinynoticeital("Еле заметный индикатор калибровки лазера сообщает об ошибке корректировки лазера с BFL приемником."))
 		log_admin("BFL emitter has been activated without proper BFL receiver connection or it has been emagged at [AREACOORD(src)]")
 		notify_ghosts("BFL выжигает лаваленд!", source = laser, action = NOTIFY_ORBIT, header = "BFL")
@@ -286,7 +273,7 @@
 
 /obj/machinery/bfl_receiver
 	name = "BFL Receiver"
-	desc = "Кнопка активации выглядит подозрительно. Возможно, следует открыть шахту вручную с помощью лома. Контейнер вмещает до 500 единиц руды."
+	desc = "Кнопка активации выглядит подозрительно. Возможно, следует открыть шахту вручную с помощью лома."
 	icon = 'modular_bluemoon/icons/obj/machines/BFL_mission/Hole.dmi'
 	icon_state = "Receiver_Off"
 	anchored = TRUE
@@ -304,6 +291,7 @@
 		/obj/item/stack/ore/plasma = 0,
 		/obj/item/stack/ore/glass/basalt = 0,
 	)
+	var/max_ore_storage_capacity = 500
 	///An "overlay"-like light for receiver to indicate storage filling
 	var/atom/movable/bfl_receiver_light/receiver_light = null
 	///Used to define bits of ore mined, instead of stacks.
@@ -340,6 +328,7 @@
 
 /obj/machinery/bfl_receiver/examine(mob/user)
 	. = ..()
+	. += "Контейнер вмещает до [max_ore_storage_capacity] единиц руды."
 	. += "Счетчик добытой руды: [ore_count]"
 
 /obj/machinery/bfl_receiver/attack_hand(mob/user)
@@ -384,7 +373,7 @@
 
 ///This proc handles light updating on borders of BFL receiver.
 /obj/machinery/bfl_receiver/proc/update_state()
-	var/light_state = clamp(round(20*ore_count/500), 0, 20)
+	var/light_state = clamp(round(20*ore_count/max_ore_storage_capacity), 0, 20)
 	if(last_light_state_number == light_state)
 		return
 	receiver_light.light_amount = light_state
@@ -395,7 +384,7 @@
 /obj/machinery/bfl_receiver/process()
 	if(!(mining && state) || isnull(ore_type_mining))
 		return
-	if(ore_count >= 500)
+	if(ore_count >= max_ore_storage_capacity)
 		return
 	ore_type_contained[ore_type_mining]++
 	ore_count++
@@ -410,8 +399,6 @@
 	state = TRUE
 	update_icon(UPDATE_ICON_STATE)
 	var/turf/T = get_turf(src)
-	// if(SSmapping.get_turf_below(T))
-	// 	T.ChangeTurf(/turf/open/openspace)
 	if(is_mining_level(T.z))
 		T.ChangeTurf(/turf/open/chasm/lavaland)
 	else
@@ -541,13 +528,6 @@
 					ch?.drop_stuff()
 			else if(istype(T, /turf/open/openspace))
 				T.Entered(src)
-			// var/static/list/give_turf_traits
-			// if(!give_turf_traits)
-			// 	give_turf_traits = string_list(list(TRAIT_CHASM_STOPPED))
-			// if(anchored)
-			// 	AddElement(/datum/element/give_turf_traits, give_turf_traits)
-			// else
-			// 	RemoveElement(/datum/element/give_turf_traits, give_turf_traits)
 	if(!QDELETED(src))
 		update_icon()
 
