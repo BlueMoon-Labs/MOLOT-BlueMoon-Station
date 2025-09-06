@@ -44,7 +44,7 @@
 	id = "bioaegis1"
 	display_name = "Bio-Organic Theory"
 	description = "It was known that with certain technology it was possible to replicate flesh, or even improve it - but as NanoTrasen department declared, it was barely legal."
-	prereq_ids = list("syndicate_basic", "alien_bio")
+	prereq_ids = list("syndicate_basic")
 	design_ids = list("bioaegisboard", "hearttier1", "livertier1", "lungstier1")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000) //A gateway to better organs. Gaining points with all 5-6 options is really that easy, so steel yourself.
 
