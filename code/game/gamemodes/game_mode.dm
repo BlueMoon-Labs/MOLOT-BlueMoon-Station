@@ -552,6 +552,9 @@
 	if(flipseclevel && !(config_tag == "Extended")) //CIT CHANGE - allows the sec level to be flipped roundstart
 		for(var/T in subtypesof(/datum/station_goal))
 			var/datum/station_goal/G = new T
+			if(!G.can_be_selected())
+				qdel(G)
+				continue
 			station_goals += G
 			G.on_report()
 		return
@@ -563,9 +566,13 @@
 		possible += T
 	var/goal_weights = 0
 	while(possible.len && goal_weights < STATION_GOAL_BUDGET)
-		var/datum/station_goal/picked = pick_n_take(possible)
+		var/p = pick_n_take(possible)
+		var/datum/station_goal/picked = new p
+		if(!picked.can_be_selected())
+			qdel(picked)
+			continue
 		goal_weights += initial(picked.weight)
-		station_goals += new picked
+		station_goals += picked
 
 
 /datum/game_mode/proc/generate_report() //Generates a small text blurb for the gamemode in centcom report

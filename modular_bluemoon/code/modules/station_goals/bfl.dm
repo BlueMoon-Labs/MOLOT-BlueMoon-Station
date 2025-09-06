@@ -3,13 +3,29 @@
 /datum/station_goal/bfl
 	name = "BFL Mining laser"
 
+/datum/station_goal/bfl/can_be_selected()
+	. = ..()
+	var/list/L = SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS))
+	if(isemptylist(L))
+		return FALSE
+	var/lava_z = pick(L)
+	var/station_z = pick(SSmapping.levels_by_trait(ZTRAIT_STATION))
+	if(is_mining_level(station_z) || station_z == lava_z || SSmapping.config.minetype == "none")
+		return FALSE
+
 /datum/station_goal/bfl/get_report()
-	return {"<b>Mining laser construcion</b><br>
-	Our surveillance drone detected an enormous deposit, oozing with plasma. We need you to construct a BFL system to collect plasma and send it to the Central Command via cargo shuttle.
+	return {"<b>Сооружение добывающего лазера</b><br>
+	Наш разведывательный дрон обнаружил огромную жилу, изобилующей плазмой. Нам нужно, чтобы вы построили BFL систему для добычи плазмы и отправки её на ЦК через шаттл карго.
 	<br>
-	Its base parts should be available for shipping by your cargo shuttle.
+	Базовые компоненты конструкции должны быть доступны для покупки через шаттл карго.
 	<br>
-	In order to complete the mission, you must to order a special pack in cargo called BFL Mission goal, and enjoy your reward.
+	Для завершения цели вы должны заказать особый груз, именуемый "BFL Mission goal", а после можете насладиться вашей наградой.
+	<br>
+	Конструкция состоит из трёх компонентов: Излучателя, Приемника и Линзы. Излучатель устанавливается на станции, Приемник сооружается прямо над жилой, а \
+	Линза устанавливается над Приемником. Если конструкция установлена и настроена правильно, Излучатель сможет направлять лазер точно в Приемник и тот будет собирать \
+	добытую лазером руду, в противном случае возможно незначительное смещение лазера относительно местонахождения жилы.
+	<br><br>
+	Не подведите нас.
 	<br><br>
 	-Nanotrasen Naval Command"}
 
@@ -104,7 +120,15 @@
 //TODO: Replace this,bsa and gravgen with some big machinery datum
 /obj/machinery/power/bfl_emitter/Initialize()
 	. = ..()
-	lavaland_z_lvl = pick(SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS)))
+	var/list/possible_lvls = SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS))
+	if(!isemptylist(possible_lvls))
+		lavaland_z_lvl = pick(possible_lvls)
+	else
+		possible_lvls = SSmapping.levels_by_trait(ZTRAIT_MINING)
+		if(!isemptylist(possible_lvls))
+			lavaland_z_lvl = pick(possible_lvls)
+		else
+			CRASH("No mining levels detected.")
 	pixel_x = -32
 	pixel_y = 0
 	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
@@ -595,7 +619,15 @@
 	x_upper_border = world.maxx - (2*TRANSITIONEDGE)
 	go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
 	starting_energy = 250
-	lavaland_z_lvl = pick(SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS)))
+	var/list/possible_lvls = SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS))
+	if(!isemptylist(possible_lvls))
+		lavaland_z_lvl = pick(possible_lvls)
+	else
+		possible_lvls = SSmapping.levels_by_trait(ZTRAIT_MINING)
+		if(!isemptylist(possible_lvls))
+			lavaland_z_lvl = pick(possible_lvls)
+		else
+			CRASH("No mining levels detected.")
 	. = ..(loc, starting_energy, temp)
 
 /obj/singularity/bfl_red/Initialize(mapload, starting_energy)

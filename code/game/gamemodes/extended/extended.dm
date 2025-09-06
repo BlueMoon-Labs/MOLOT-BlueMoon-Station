@@ -24,6 +24,9 @@
 		return ..()
 	for(var/T in subtypesof(/datum/station_goal))
 		var/datum/station_goal/G = new T
+		if(!G.can_be_selected())
+			qdel(G)
+			continue
 		station_goals += G
 		G.send_report(announce_report = FALSE)
 

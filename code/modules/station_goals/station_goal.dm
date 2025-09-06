@@ -51,6 +51,9 @@
 	else if(href_list["complete"])
 		completed = TRUE
 
+/datum/station_goal/proc/can_be_selected()
+	return TRUE
+
 /*
 //Crew has to create alien intelligence detector
 // Requires a lot of minerals
