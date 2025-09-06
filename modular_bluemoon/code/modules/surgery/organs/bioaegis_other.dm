@@ -44,6 +44,8 @@
 	M.remove_quirk(/datum/quirk/prosopagnosia, STATUS_EFFECT_TRAIT)
 	M.remove_quirk(/datum/quirk/nyctophobia, STATUS_EFFECT_TRAIT)
 	M.remove_quirk(/datum/quirk/monophobia, STATUS_EFFECT_TRAIT)
+	M.remove_quirk(/datum/quirk/depression, STATUS_EFFECT_TRAIT)
+	M.remove_quirk(/datum/quirk/brainproblems, STATUS_EFFECT_TRAIT)
 	M.remove_quirk(/datum/quirk/insanity, STATUS_EFFECT_TRAIT) //Cockroaches in the head were silenced
 	to_chat(owner, "<span class='synth'>Странное ощущение спокойствия......</span>\n")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "serenity of mind", /datum/mood_event/serenityofmind)

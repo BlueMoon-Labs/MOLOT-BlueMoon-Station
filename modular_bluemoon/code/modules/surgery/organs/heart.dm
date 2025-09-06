@@ -61,6 +61,7 @@
 /obj/item/organ/heart/tier3/on_life()
 	owner.adjustOxyLoss(-0.5, FALSE) //It can pump blood rather well, so it can delay oxy damage to some degree.
 	owner.adjustBruteLoss(-1.5, FALSE)
+	owner.adjustStaminaLoss(-2.5, 0)
 
 //ANTAG HEART//
 /obj/item/organ/heart/tier3/antag //antag organ that can be found in some shitty places or in antag uplink since why not?
@@ -76,6 +77,7 @@
 	owner.adjustOxyLoss(-2, FALSE)
 	owner.adjustBruteLoss(-2, FALSE)
 	owner.adjustFireLoss(-2, FALSE)
+	owner.adjustStaminaLoss(-3, 0)
 
 /obj/item/autosurgeon/syndicate/inteq/biomorphedheart
 	uses = 1
@@ -83,7 +85,7 @@
 
 /datum/uplink_item/implants/biomorphedheart
 	name = "Biomorphed Heart"
-	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленную регенерацию, и защиту от сердечного удара."
+	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленную регенерацию, и защиту от сердечного приступа."
 	item = /obj/item/autosurgeon/syndicate/inteq/biomorphedheart
-	cost = 7
+	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)

@@ -8,8 +8,8 @@
 	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "weakliver"
 	maxHealth = 1.5 * STANDARD_ORGAN_THRESHOLD
-	toxTolerance = 2 * LIVER_DEFAULT_TOX_TOLERANCE //15 units of toxin purging
-	toxLethality = 0.4 * LIVER_DEFAULT_TOX_LETHALITY //60% less damage than a normal liver
+	toxTolerance = 2 * LIVER_DEFAULT_TOX_TOLERANCE
+	toxLethality = 0.4 * LIVER_DEFAULT_TOX_LETHALITY
 
 /obj/item/organ/liver/tier1/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
@@ -28,9 +28,27 @@
 	healing_factor = 1.5 * STANDARD_ORGAN_HEALING //Heals itself a bit faster
 	decay_factor = 0.8 * STANDARD_ORGAN_DECAY //Decays a bit longer
 
-/obj/item/organ/liver/tier2/on_life()
+/obj/item/organ/liver/tier2/on_life(seconds, times_fired)
+	. = ..()
+	if(!. || !owner)//can't process reagents with a failing liver
+		return
+
+	if(filterToxins && !HAS_TRAIT(owner, TRAIT_TOXINLOVER))
+		//handle liver toxin filtration
+		for(var/datum/reagent/toxin/T in owner.reagents.reagent_list)
+			var/thisamount = owner.reagents.get_reagent_amount(T.type)
+			if (thisamount && thisamount <= toxTolerance)
+				owner.reagents.remove_reagent(T.type, 1)
+			else
+				damage += (thisamount*toxLethality)
+
+	//metabolize reagents
 	owner.adjustToxLoss(-0.4, TRUE) //Doesn't kill slimes. Yes.
 	owner.adjustFireLoss(-0.4, FALSE)
+	owner.reagents.metabolize(owner, seconds, times_fired, can_overdose=TRUE)
+
+	if(damage > 10 && prob(damage/3))//the higher the damage the higher the probability
+		to_chat(owner, "<span class='warning'>You feel a dull pain in your abdomen.</span>")
 
 /obj/item/organ/liver/tier2/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
 	. = ..()
@@ -58,9 +76,27 @@
 	description = "<span class='nicegreen'>Алкоголизм мне не помеха!</span>\n"
 	mood_change = 1 //Less, but persistent mood buff. Hey, handsome, you deserve it.
 
-/obj/item/organ/liver/tier3/on_life()
+/obj/item/organ/liver/tier3/on_life(seconds, times_fired)
+	. = ..()
+	if(!. || !owner)//can't process reagents with a failing liver
+		return
+
+	if(filterToxins && !HAS_TRAIT(owner, TRAIT_TOXINLOVER))
+		//handle liver toxin filtration
+		for(var/datum/reagent/toxin/T in owner.reagents.reagent_list)
+			var/thisamount = owner.reagents.get_reagent_amount(T.type)
+			if (thisamount && thisamount <= toxTolerance)
+				owner.reagents.remove_reagent(T.type, 1)
+			else
+				damage += (thisamount*toxLethality)
+
+	//metabolize reagents
 	owner.adjustToxLoss(-3, TRUE)
 	owner.adjustFireLoss(-0.5, FALSE)
+	owner.reagents.metabolize(owner, seconds, times_fired, can_overdose=TRUE)
+
+	if(damage > 10 && prob(damage/3))//the higher the damage the higher the probability
+		to_chat(owner, "<span class='warning'>You feel a dull pain in your abdomen.</span>")
 
 //ANTAG LIVER//
 /obj/item/organ/liver/tier3/antag //antag organ that can be found in some shitty places or in antag uplink since why not?
@@ -86,5 +122,5 @@
 	name = "Biomorphed Liver"
 	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленное восстановление от токсинов и уменьшает изнурение."
 	item = /obj/item/autosurgeon/syndicate/inteq/biomorphedliver
-	cost = 7
+	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)

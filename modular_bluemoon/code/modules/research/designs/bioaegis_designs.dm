@@ -134,7 +134,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 400)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 200)
 	build_path = /obj/item/organ/heart/tier2
 	category = list("Advanced Designs")
 	materials = list (/datum/material/plasma = 30000)
@@ -145,7 +145,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 400)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 200)
 	build_path = /obj/item/organ/lungs/tier2
 	category = list("Advanced Designs")
 	materials = list (/datum/material/plasma = 30000)
@@ -156,7 +156,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 400)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 200)
 	build_path = /obj/item/organ/liver/tier2
 	category = list("Advanced Designs")
 	materials = list (/datum/material/plasma = 30000)
@@ -168,7 +168,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 300)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 150)
 	build_path = /obj/item/organ/liver/tier3
 	category = list("Experimental Designs")
 	materials = list (/datum/material/plasma = 30000)
@@ -180,7 +180,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 300)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 150)
 	build_path = /obj/item/organ/lungs/tier3
 	category = list("Experimental Designs")
 	materials = list (/datum/material/plasma = 30000)
@@ -192,7 +192,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 300)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 150)
 	build_path = /obj/item/organ/heart/tier3
 	category = list("Experimental Designs")
 	materials = list (/datum/material/plasma = 30000)
@@ -227,7 +227,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 250)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/bionanites = 150)
 	build_path = /obj/item/organ/eyes/night_vision/aegis
 	category = list("Species-specific Designs")
 	materials = list (/datum/material/plasma = 15000)
@@ -238,7 +238,7 @@
 	desc = "A design for biological organ."
 	build_type = BIOAEGIS
 	construction_time = 150
-	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 250)
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 150)
 	build_path = /obj/item/organ/eyes/thermalaegis
 	category = list("Species-specific Designs")
 	min_security_level = SEC_LEVEL_RED

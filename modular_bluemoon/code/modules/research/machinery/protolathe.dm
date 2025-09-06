@@ -21,11 +21,3 @@
 	name = "Bio-organical Printer (Machine Board)"
 	icon_state = "abductor_mod"
 	build_path = /obj/machinery/rnd/production/protolathe/bioaegis
-	req_components = list(
-		/obj/item/stack/cable_coil = 25,
-		/obj/item/stock_parts/matter_bin/darkmatter = 5,
-		/obj/item/stock_parts/manipulator/atto = 5,
-		/obj/item/stock_parts/micro_laser/super_quadultra = 5,
-		/obj/item/stock_parts/capacitor/giga = 2,
-		/obj/item/reagent_containers/glass/beaker/ultimate = 2,
-		/obj/item/stock_parts/scanning_module/unilatera_triphasic = 2)
