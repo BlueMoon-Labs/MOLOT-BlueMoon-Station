@@ -38,7 +38,12 @@
 	// if(goal_pack.times_ordered >= 1)
 	// 	return TRUE
 	for(var/obj/structure/toilet/golden_toilet/bfl_goal/B in world)
-		if(B && (is_station_level(B.z) || is_centcom_level(B.z)))
+		var/turf/T = istype(B) ? get_turf(B) : null
+		if(!isnull(T) && (is_station_level(T.z) || is_centcom_level(T.z)))
+			return TRUE
+	for(var/obj/item/case_with_bipki/B in world)
+		var/turf/T = istype(B) ? get_turf(B) : null
+		if(!isnull(T) && (is_station_level(T.z) || is_centcom_level(T.z)))
 			return TRUE
 	return FALSE
 

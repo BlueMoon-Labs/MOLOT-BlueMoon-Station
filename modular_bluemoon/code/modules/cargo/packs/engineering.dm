@@ -35,7 +35,7 @@
 	special = TRUE
 	contains = list(
 					/obj/structure/toilet/golden_toilet/bfl_goal,
-					// /obj/structure/toilet/golden_toilet/bfl_goal // здесь будет кое-что еще
+					/obj/item/case_with_bipki
 					)
 	crate_name = "Goal crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering/bfl
