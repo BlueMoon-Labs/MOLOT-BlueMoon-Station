@@ -85,13 +85,45 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 100000
 	active_power_usage = 500000
-
 	var/state = FALSE
-	var/obj/singularity/gravitational/bfl_red/laser = null
-	var/obj/machinery/bfl_receiver/receiver = FALSE
+	var/obj/singularity/bfl_red/laser = null
+	var/obj/machinery/bfl_receiver/receiver = null
 	var/list/obj/effect/bfl_laser/turf_lasers = list()
 	var/deactivate_time = 0
 	var/list/obj/structure/fillers = list()
+	var/lavaland_z_lvl // у нас 2 лаваленда
+
+//code stolen from bluespace_tap, including comment below. He was right about the new datum
+//code stolen from dna vault, inculding comment below. Taking bets on that datum being made ever.
+//TODO: Replace this,bsa and gravgen with some big machinery datum
+/obj/machinery/power/bfl_emitter/Initialize()
+	. = ..()
+	lavaland_z_lvl = pick(SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS)))
+	pixel_x = -32
+	pixel_y = 0
+	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
+	var/list/occupied = list()
+	for(var/direction in list(NORTH, NORTHWEST, NORTHEAST, EAST, WEST))
+		occupied += get_step(src, direction)
+	occupied += locate(x, y + 2, z)
+	occupied += locate(x + 1, y + 2, z)
+	occupied += locate(x - 1, y + 2, z)
+	for(var/T in occupied)
+		var/obj/structure/filler/F = new(T)
+		F.parent = src
+		fillers += F
+	if(!powernet)
+		connect_to_network()
+
+/obj/machinery/power/bfl_emitter/Destroy()
+	emitter_deactivate()
+	QDEL_LIST(fillers)
+	return ..()
+
+/obj/machinery/power/bfl_emitter/examine(mob/user)
+	. = ..()
+	if(istype(laser))
+		. += span_tinynoticeital("Еле заметный индикатор калибровки лазера сообщает об ошибке корректировки лазера с BFL приемником.")
 
 /obj/machinery/power/bfl_emitter/attack_hand(mob/user as mob)
 	if(..())
@@ -107,7 +139,7 @@
 		if("Деактивировать")
 			if(obj_flags & EMAGGED)
 				visible_message(span_notice("Обновление ПО BFL, пожалуйста подождите.<br>Завершено на 99%"))
-				playsound(src, 'modular_bluemoon/sound/BFL/prank.ogg', 100, TRUE)
+				playsound(src, 'modular_bluemoon/sound/BFL/prank.ogg', 100, FALSE)
 			else
 				emitter_deactivate()
 				deactivate_time = world.time
@@ -124,7 +156,6 @@
 				emitter_activate()
 			else
 				visible_message(span_warning("Ошибка: излучатель всё ещё охлаждается"))
-
 
 
 /obj/machinery/power/bfl_emitter/emag_act(mob/user)
@@ -145,20 +176,21 @@
 	add_load(active_power_usage)
 	if(laser)
 		return
-
 	if(!receiver || !receiver.state || (obj_flags & EMAGGED) || !receiver.lens || !receiver.lens.anchored)
-		var/turf/rand_location = locate(rand((2*TRANSITIONEDGE), world.maxx - (2*TRANSITIONEDGE)), rand((2*TRANSITIONEDGE), world.maxy - (2*TRANSITIONEDGE)), SSmapping.levels_by_trait(ZTRAIT_MINING))
+		var/turf/rand_location = locate(rand(50, 150), rand(50, 150), lavaland_z_lvl)
 		laser = new (rand_location)
+		// laser.move = rand_location.x
+		visible_message(span_tinynoticeital("Еле заметный индикатор калибровки лазера сообщает об ошибке корректировки лазера с BFL приемником."))
+		log_admin("BFL emitter has been activated without proper BFL receiver connection or it has been emagged at [AREACOORD(src)]")
+		notify_ghosts("BFL выжигает лаваленд!", source = laser, action = NOTIFY_ORBIT, header = "BFL")
 		for(var/M in GLOB.alive_mob_list)
 			var/turf/mob_turf = get_turf(M)
-			if(mob_turf?.z && is_mining_level(mob_turf?.z) && !is_blind(M))
-				to_chat(M, span_boldwarning("Вы видите яркую красную вспышку в небе. Затем клубы дыма рассеиваются, открывая гигантский красный луч, бьющий с небес."))
-		laser.move = rand_location.x
+			if(mob_turf?.z == lavaland_z_lvl && !is_blind(M))
+				to_chat(M, span_userdanger("Вы видите яркую красную вспышку в небе. Затем клубы дыма рассеиваются, открывая гигантский красный луч, бьющий с небес."))
 		if(receiver)
 			receiver.mining = FALSE
 			if(receiver.lens)
 				receiver.lens.deactivate_lens()
-
 
 /obj/machinery/power/bfl_emitter/proc/receiver_test()
 	if(receiver)
@@ -170,26 +202,24 @@
 
 /obj/machinery/power/bfl_emitter/proc/emitter_activate()
 	state = TRUE
+	log_admin("[key_name(usr)] activated BFL at [AREACOORD(src)]")
 	update_icon(UPDATE_ICON_STATE)
 	var/turf/location = get_step(src, NORTH)
-	location.ChangeTurf(location.baseturfs)
+	location.ScrapeAway(INFINITY)
 	working_sound()
 	var/turf/below = SSmapping.get_turf_below(location)
 	while(below)
 		var/obj/effect/bfl_laser/turf_laser = new(below)
 		turf_lasers += turf_laser
 		below = SSmapping.get_turf_below(below) // dig deeper and try another laser
-
 	if(QDELETED(receiver))
 		receiver = null
-
 	if(!receiver)
 		for(var/obj/machinery/bfl_receiver/bfl_receiver in SSmachines.get_machines_by_type(/obj/machinery/bfl_receiver))
 			var/turf/receiver_turf = get_turf(bfl_receiver)
-			if(is_mining_level(receiver_turf.z))
+			if(receiver_turf.z == lavaland_z_lvl)
 				receiver = bfl_receiver
 				break
-
 	receiver_test()
 
 
@@ -200,11 +230,9 @@
 		receiver.mining = FALSE
 		if(receiver.lens?.state)
 			receiver.lens.deactivate_lens()
-
 	if(laser)
 		qdel(laser)
 		laser = null
-
 	for(var/obj/effect/bfl_laser/turf_laser in turf_lasers)
 		turf_laser.remove_self()
 
@@ -217,36 +245,6 @@
 
 /obj/machinery/power/bfl_emitter/update_icon_state()
 	icon_state = "Emitter_[state ? "On" : "Off"]"
-
-
-
-//code stolen from bluespace_tap, including comment below. He was right about the new datum
-//code stolen from dna vault, inculding comment below. Taking bets on that datum being made ever.
-//TODO: Replace this,bsa and gravgen with some big machinery datum
-/obj/machinery/power/bfl_emitter/Initialize()
-	.=..()
-	pixel_x = -32
-	pixel_y = 0
-	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
-
-	var/list/occupied = list()
-	for(var/direction in list(NORTH, NORTHWEST, NORTHEAST, EAST, WEST))
-		occupied += get_step(src, direction)
-	occupied += locate(x, y + 2, z)
-	occupied += locate(x + 1, y + 2, z)
-	occupied += locate(x - 1, y + 2, z)
-	for(var/T in occupied)
-		var/obj/structure/filler/F = new(T)
-		F.parent = src
-		fillers += F
-
-	if(!powernet)
-		connect_to_network()
-
-/obj/machinery/power/bfl_emitter/Destroy()
-	emitter_deactivate()
-	QDEL_LIST(fillers)
-	return ..()
 
 ////////////
 //Receiver//
@@ -285,7 +283,6 @@
 	var/internal_type = /obj/item/storage/bag/ore/bfl_storage
 	var/obj/machinery/bfl_lens/lens = null
 	var/ore_type = FALSE
-	var/last_user_ckey
 	///An "overlay"-like light for receiver to indicate storage filling
 	var/atom/movable/bfl_receiver_light/receiver_light = null
 	///Used to define bits of ore mined, instead of stacks.
@@ -300,7 +297,6 @@
 	internal = new internal_type(src)
 	receiver_light = new (loc)
 	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
-
 	var/turf/turf_under = get_turf(src)
 	if(locate(/obj/bfl_crack) in turf_under)
 		ore_type = PLASMA
@@ -308,7 +304,6 @@
 		ore_type = SAND
 	else
 		ore_type = NOTHING
-
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
@@ -331,7 +326,6 @@
 		response = tgui_alert(user, "Вы пытаетесь деактивировать приёмник BFL. Уверены?", "Приёмник BFL", list("Деактивировать", "Очистить хранилище руды", "Отмена"))
 	else
 		response = tgui_alert(user, "Вы пытаетесь активировать приёмник BFL. Уверены?", "Приёмник BFL", list("Активировать", "Очистить хранилище руды", "Отмена"))
-
 	switch(response)
 		if("Деактивировать")
 			to_chat(user, span_warning("Нет питания.<br>Попробуйте открыть шахту вручную с помощью лома."))
@@ -341,9 +335,8 @@
 			if(lens)
 				to_chat(user, span_warning("Линза создаёт помехи - невозможно получить руду из хранилища."))
 				return
-			if(state && (user.ckey != last_user_ckey))
+			if(state)
 				to_chat(user, span_warning("Внутренний голос подсказывает, что сначала нужно закрыть шахту."))
-				last_user_ckey = user.ckey
 				return
 			SEND_SIGNAL(internal, COMSIG_TRY_STORAGE_QUICK_EMPTY)
 			// var/turf/location = get_turf(src)
@@ -408,7 +401,6 @@
 
 /obj/machinery/bfl_receiver/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
-
 	if(istype(arrived, /obj/machinery/bfl_lens))
 		var/obj/machinery/bfl_lens/bfl_lens = arrived
 		bfl_lens.step_count = 0
@@ -447,12 +439,27 @@
 	desc = "Чрезвычайно хрупкая, обращайтесь осторожно."
 	icon = 'modular_bluemoon/icons/obj/machines/BFL_Mission/Hole.dmi'
 	icon_state = "Lens_Pull"
-	max_integrity = 40
+	max_integrity = 10
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
-
+	anchored = FALSE
+	armor = list(MELEE = 0, BULLET = 0, LASER = 100, ENERGY = 100, BOMB = 0, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
 	var/step_count = 0
 	var/state = FALSE
+
+/obj/machinery/bfl_lens/Initialize()
+	. = ..()
+	pixel_x = -32
+	pixel_y = -32
+
+
+/obj/machinery/bfl_lens/Destroy()
+	visible_message(span_danger("Линза разлетается на миллионы осколков!"))
+	playsound(src, "shatter", 70, 1)
+	new /obj/effect/decal/cleanable/glass(get_turf(src))
+	new /obj/effect/decal/cleanable/glass/titanium(get_turf(src))
+	new /obj/effect/decal/cleanable/glass/plastitanium(get_turf(src))
+	return ..()
 
 /obj/machinery/bfl_lens/update_icon_state()
 	if(state)
@@ -510,21 +517,7 @@
 			// 	AddElement(/datum/element/give_turf_traits, give_turf_traits)
 			// else
 			// 	RemoveElement(/datum/element/give_turf_traits, give_turf_traits)
-
 	update_icon()
-
-
-/obj/machinery/bfl_lens/Initialize()
-	. = ..()
-	pixel_x = -32
-	pixel_y = -32
-
-
-/obj/machinery/bfl_lens/Destroy()
-	visible_message(span_danger("Линза разлетается на миллионы осколков!"))
-	playsound(src, "shatter", 70, 1)
-	return ..()
-
 
 /obj/machinery/bfl_lens/Move(atom/newloc, direct = NONE, glide_size_override = 0, update_dir = TRUE)
 	. = ..()
@@ -562,50 +555,100 @@
 	gpstag = "Deep plasma signal"
 	desc = "Deep rich plasma deposit has been pinpointed by station scanners."
 
-/obj/singularity/gravitational/bfl_red
+/obj/singularity/bfl_red
 	name = "BFL"
 	desc = "Гигантский лазер, предназначенный для добычи руды."
 	icon = 'modular_bluemoon/icons/obj/machines/BFL_Mission/Laser.dmi'
 	icon_state = "Laser_Red"
-	var/move = 0
-	var/lavaland_z_lvl		// Определяется кодом по имени лаваленда
+	pixel_x = -32
+	pixel_y = 0
+	base_pixel_x = -32
+	base_pixel_y = 0
+	dissipate = FALSE
+	grav_pull = 1
+	move_force = INFINITY
+	move_resist = INFINITY
+	pull_force = INFINITY
+	var/go_to_coords = list()
+	var/devastation_range = 1
+	var/lavaland_z_lvl // у нас 2 лаваленда
+	// Выжигать некрополис и эшовские дома забавно, но что-то на грани гриферства))
+	var/x_lower_border = 2*TRANSITIONEDGE
+	var/x_upper_border = 255 - (2*TRANSITIONEDGE)
+	var/y_lower_border = 2*TRANSITIONEDGE
+	var/y_upper_border = 195
 
-/obj/singularity/gravitational/bfl_red/Initialize(mapload, starting_energy)
+/obj/singularity/bfl_red/New(loc, starting_energy = 50, temp = 0)
+	// world.maxx works only afer initialization, so better safe than sorry
+	x_upper_border = world.maxx - (2*TRANSITIONEDGE)
+	go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
+	starting_energy = 250
+	lavaland_z_lvl = pick(SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS)))
+	. = ..(loc, starting_energy, temp)
+
+/obj/singularity/bfl_red/Initialize(mapload, starting_energy)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/singularity/gravitational/bfl_red/Destroy()
+/obj/singularity/bfl_red/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	. = ..()
 
-/obj/singularity/gravitational/bfl_red/move(force_move)
+/obj/singularity/bfl_red/process(delta_time)
+	move()
+	devastate()
+
+/obj/singularity/bfl_red/proc/devastate() // almost like /eat() but without pulling
+	set waitfor = FALSE
+	for(var/tile in spiral_range_turfs(grav_pull, src))
+		var/turf/T = tile
+		if(!T || !isturf(loc))
+			continue
+		if(get_dist(T, src) <= devastation_range)
+			consume(T)
+		for(var/thing in T)
+			if(isturf(loc) && thing != src)
+				var/atom/movable/X = thing
+				if(get_dist(X, src) <= devastation_range)
+					consume(X) ///turf/open/genturf
+			CHECK_TICK
+
+/obj/singularity/bfl_red/move(force_move)
 	if(!move_self)
-		return 0
-
+		return FALSE
 	var/movement_dir = pick(GLOB.alldirs - last_failed_movement)
-
-	if(force_move)
+	if(force_move || loc.z != lavaland_z_lvl)
 		movement_dir = force_move
 		step(src, movement_dir)
 	else
-		move++
-		forceMove(locate((move % 255) + 1, (sin(move + 1) + 1)*125 + 3, SSmapping.levels_by_trait(ZTRAIT_MINING)))
+		if(isemptylist(go_to_coords) || (loc.x == go_to_coords[1] && loc.y == go_to_coords[2]))
+			go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
+		movement_dir = get_dir(src, locate(go_to_coords[1], go_to_coords[2], lavaland_z_lvl))
+		forceMove(get_step(src, movement_dir))
 
-/obj/singularity/gravitational/bfl_red/expand()
-	. = ..()
-	icon = 'modular_bluemoon/icons/obj/machines/BFL_Mission/Laser.dmi'
-	icon_state = "Laser_Red"
-	pixel_x = -32
-	pixel_y = 0
-	grav_pull = 1
+/obj/singularity/bfl_red/consume(atom/A)
+	if(istype(A, /obj/machinery/power/supermatter_crystal))
+		var/obj/machinery/power/supermatter_crystal/SM = A
+		SM.explode()
+	else
+		. = ..()
 
-/obj/singularity/gravitational/bfl_red/singularity_act()
-	return 0
+/obj/singularity/bfl_red/singularity_act()
+	return FALSE
 
-/obj/singularity/gravitational/bfl_red/New(loc, var/starting_energy = 50, var/temp = 0)
-	starting_energy = 250
-	. = ..(loc, starting_energy, temp)
+/obj/singularity/bfl_red/event()
+	return FALSE
+
+/obj/singularity/bfl_red/attack_tk(mob/user)
+	return
+
+/obj/singularity/bfl_red/ex_act(severity, target, origin)
+	return
+
+/obj/singularity/bfl_red/bullet_act(obj/item/projectile/P)
+	qdel(P)
+	return BULLET_ACT_HIT //Will there be an impact? Who knows.  Will we see it? No.
 
 /obj/effect/bfl_laser
 	name = "big laser beam"
@@ -636,8 +679,7 @@
 	. = FALSE
 	var/turf/T = get_turf(src)
 	if(!istransparentturf(T) && !isspaceturf(T)) //we're not open. REOPEN
-		T.ChangeTurf(T.baseturfs)
-
+		T.ScrapeAway(INFINITY)
 	var/thing_to_check = get_turf(src)
 	if(AM)
 		thing_to_check = list(AM)
@@ -654,7 +696,6 @@
 			if(O.armor.getRating(FIRE) > 50) //obj with 100% fire armor still get slowly burned away.
 				O.armor = O.armor.setRating(FIRE = 50)
 			O.fire_act(null, 2000, 1000)
-
 		else if(isliving(thing))
 			. = TRUE
 			var/mob/living/L = thing
