@@ -63,7 +63,7 @@
 				continue
 			var/weight = LOGISTIC_FUNCTION(1.5*class.weight,0,class.chaos,0)
 			weights[C] = weight * 1000
-	var/choice = pickweight(weights, 0)
+	var/choice = pickweight(weights)
 	if(!choice)
 		choice = TRAITOR_HUMAN // it's an "easter egg"
 	var/datum/traitor_class/actual_class = GLOB.traitor_classes[choice]

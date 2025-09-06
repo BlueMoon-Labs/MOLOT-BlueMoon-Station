@@ -74,7 +74,7 @@
 	var/list/total = list(TEXT_NORTH, TEXT_SOUTH, TEXT_EAST, TEXT_WEST)
 	for(var/i in votes)
 		total[num2text(votes[i])] += 1
-	. = text2num(pickweight(total, 0))
+	. = text2num(pickweight(total))
 	if(wipe_votes)
 		votes.len = 0
 

@@ -323,7 +323,7 @@
 	var/datum/ai_laws/lawtype
 	var/list/law_weights = CONFIG_GET(keyed_list/law_weight)
 	while(!lawtype && law_weights.len)
-		var/possible_id = pickweight(law_weights, 0)
+		var/possible_id = pickweight(law_weights)
 		lawtype = lawid_to_type(possible_id)
 		if(!lawtype)
 			law_weights -= possible_id
