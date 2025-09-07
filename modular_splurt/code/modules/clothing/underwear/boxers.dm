@@ -13,7 +13,6 @@
 	icon = 'modular_splurt/icons/obj/clothing/underwear.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/underwear.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	body_parts_covered = NONE
 
 /obj/item/clothing/underwear/briefs/panties/maebari/ComponentInitialize()
 	. = ..()
