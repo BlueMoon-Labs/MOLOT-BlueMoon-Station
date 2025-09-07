@@ -566,8 +566,8 @@
 		possible += T
 	var/goal_weights = 0
 	while(possible.len && goal_weights < STATION_GOAL_BUDGET)
-		var/p = pick_n_take(possible)
-		var/datum/station_goal/picked = new p
+		var/datum/station_goal/picked = pick_n_take(possible)
+		picked = new picked
 		if(!picked.can_be_selected())
 			qdel(picked)
 			continue
