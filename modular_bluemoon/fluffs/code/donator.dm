@@ -1833,3 +1833,10 @@
 	path = /obj/item/choice_beacon/pet/emma
 	ckeywhitelist = list("ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
+
+/datum/gear/donator/bm/skirt_tacticool
+	name = "Tactical skirt"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/under/dress/skirt/tacticool
+	ckeywhitelist = list("DefinitelyNotNesuby")
+	subcategory = LOADOUT_SUBCATEGORIES_DON03

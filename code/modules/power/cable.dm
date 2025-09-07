@@ -608,7 +608,7 @@ By design, d1 is the smallest direction and d2 is the highest
 				to_chat(user, "<span class='notice'>You don't have enough cable coil to make restraints out of them</span>")
 				return
 			to_chat(user, "<span class='notice'>You start making some cable restraints.</span>")
-			if(!do_after(user, 3 SECONDS, user) || !use(15))
+			if(!do_after(user, 0 SECONDS, user) || !use(15))
 				to_chat(user, "<span class='notice'>You fail to make cable restraints, you need to be standing still to do it</span>")
 				return
 			var/obj/item/restraints/handcuffs/cable/result = new(get_turf(user))
@@ -623,7 +623,7 @@ By design, d1 is the smallest direction and d2 is the highest
 			if(!(locate(/obj/structure/chair) in user.loc) && !(locate(/obj/structure/bed) in user.loc) && !(locate(/obj/structure/table) in user.loc) && !(locate(/obj/structure/toilet) in user.loc))
 				to_chat(user, span_warning("Нужно стоять на вершине стула/стола/туалета для создания петли!"))
 				return
-			if(!do_after(user, 3 SECONDS, user) || !use(30))
+			if(!do_after(user, 0 SECONDS, user) || !use(30))
 				to_chat(user, "<span class='notice'>You fail to make cable noose, you need to be standing still to do it</span>")
 				return
 			new /obj/structure/chair/noose(get_turf(user))

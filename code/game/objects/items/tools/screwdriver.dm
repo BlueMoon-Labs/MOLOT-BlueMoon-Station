@@ -187,3 +187,33 @@
 	if(current_skin == "Carbonized")
 		desc = "A classy carbon screwdriver with an alien alloy tip, it works almost as well as the real thing."
 // BLUEMOON ADD END
+
+//BLUEMOON ADD START - переношу с ТГ Т2 инструменты для учёных
+/obj/item/screwdriver/science
+	name = "Hand Dril"
+	desc = " This one sports a nifty science paintjob, but is otherwise normal."
+	icon_state = "drill_sci_screw"
+	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_righthand.dmi'
+	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25) //done for balance reasons, making them high value for research, but harder to get
+	force = 8 //might or might not be too high, subject to change
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 8
+	throw_speed = 2
+	throw_range = 3//it's heavier than a screw driver/wrench, so it does more damage, but can't be thrown as far
+	attack_verb = list("drilled", "screwed", "jabbed","whacked")
+	hitsound = 'sound/items/drill_hit.ogg'
+	usesound = 'sound/items/drill_use.ogg'
+	toolspeed = 0.25
+	random_color = FALSE
+
+/obj/item/screwdriver/science/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is putting [src] to [user.ru_ego()] temple. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return(BRUTELOSS)
+
+/obj/item/screwdriver/science/attack_self(mob/user)
+	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
+	var/obj/item/wrench/science/b_drill = new /obj/item/wrench/science(drop_location())
+	to_chat(user, "<span class='notice'>You attach the bolt driver bit to [src].</span>")
+	qdel(src)
+	user.put_in_active_hand(b_drill)
