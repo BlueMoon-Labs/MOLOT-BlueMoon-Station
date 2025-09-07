@@ -41,22 +41,6 @@
 	// P =  SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_goal]
 	// P.special_enabled = TRUE
 
-/datum/station_goal/bfl/check_completion()
-	if(..())
-		return TRUE
-	// var/datum/supply_pack/engineering/bfl_goal/goal_pack = SSshuttle.supply_packs[/datum/supply_pack/engineering/bfl_goal]
-	// if(goal_pack.times_ordered >= 1)
-	// 	return TRUE
-	for(var/obj/structure/toilet/golden_toilet/bfl_goal/B in world)
-		var/turf/T = istype(B) ? get_turf(B) : null
-		if(!isnull(T) && (is_station_level(T.z) || is_centcom_level(T.z)))
-			return TRUE
-	for(var/obj/item/case_with_bipki/B in world)
-		var/turf/T = istype(B) ? get_turf(B) : null
-		if(!isnull(T) && (is_station_level(T.z) || is_centcom_level(T.z)))
-			return TRUE
-	return FALSE
-
 ////////////
 //Building//
 ////////////
@@ -116,7 +100,8 @@
 		if(!isemptylist(possible_lvls))
 			lavaland_z_lvl = pick(possible_lvls)
 		else
-			CRASH("No mining levels detected.")
+			lavaland_z_lvl = loc.z
+			WARNING("No mining levels detected but BFL Emitter has been created anyway. Hereby I disclaim all responsibility for anything that might happen later.")
 	pixel_x = -32
 	pixel_y = 0
 	playsound(src, 'modular_bluemoon/sound/BFL/drill_sound.ogg', 100, TRUE)
@@ -598,6 +583,9 @@
 	x_upper_border = world.maxx - (2*TRANSITIONEDGE)
 	go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
 	starting_energy = 250
+	. = ..(loc, starting_energy, temp)
+
+/obj/singularity/bfl_red/Initialize(mapload, starting_energy)
 	var/list/possible_lvls = SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS))
 	if(!isemptylist(possible_lvls))
 		lavaland_z_lvl = pick(possible_lvls)
@@ -606,10 +594,8 @@
 		if(!isemptylist(possible_lvls))
 			lavaland_z_lvl = pick(possible_lvls)
 		else
-			CRASH("No mining levels detected.")
-	. = ..(loc, starting_energy, temp)
-
-/obj/singularity/bfl_red/Initialize(mapload, starting_energy)
+			lavaland_z_lvl = loc.z
+			WARNING("No mining levels detected but BFL has been created anyway. Hereby I disclaim all responsibility for anything that might happen later.")
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
 	START_PROCESSING(SSfastprocess, src)
@@ -624,6 +610,7 @@
 
 /obj/singularity/bfl_red/proc/devastate() // almost like /eat() but without pulling
 	set waitfor = FALSE
+	CHECK_TICK
 	for(var/tile in spiral_range_turfs(grav_pull, src))
 		var/turf/T = tile
 		if(!T || !isturf(loc))

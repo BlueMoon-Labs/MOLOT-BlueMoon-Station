@@ -44,3 +44,5 @@
 	var/list/L = contains.Copy()
 	var/item = pick_n_take(L)
 	new item(C)
+	var/datum/station_goal/bfl/B = locate() in SSticker.mode.station_goals
+	B?.completed = TRUE
