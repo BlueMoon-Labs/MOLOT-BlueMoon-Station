@@ -21,3 +21,20 @@
 	name = "Bio-organical Printer (Machine Board)"
 	icon_state = "abductor_mod"
 	build_path = /obj/machinery/rnd/production/protolathe/bioaegis
+
+/obj/machinery/rnd/production/protolathe/bioaegis/syndicate
+	name = "Syndicate Bio-Organical Printer"
+	desc = "Experimental printer that can print advanced biological designs. Ruled illegal in several sectors under Nanotrasen banner. This one was modified by Bioaegis Directive and 'accepted' by Cybersun."
+	icon = 'modular_bluemoon/icons/obj/machines/research.dmi'
+	icon_state = "protolathe-syn"
+	production_animation = "protolathe_n-syn"
+	flags_1 = NODECONSTRUCT_1 //'No.'
+
+/obj/item/circuitboard/machine/protolathe/bioaegis/syndicate //Modred did somewhat moderate amout of fuckery with broken liver, so here is the reward.
+	name = "Syndicate Bio-organical Printer (Machine Board)"
+	icon_state = "command"
+	build_path = /obj/machinery/rnd/production/protolathe/bioaegis/syndicate
+	req_components = list(
+		/obj/item/stock_parts/matter_bin/replicantmatter = 2, //Cybersun's ops: LEMME STEAL THIS SHIT IT IS REALLY FREE ESTATE.
+		/obj/item/stock_parts/manipulator/zepto = 2,
+		/obj/item/reagent_containers/glass/beaker/ultimate = 2)
