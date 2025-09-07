@@ -1095,13 +1095,9 @@ B --><-- A
 	if(matches.len==0)
 		return
 
-	var/chosen
-	if(matches.len==1)
-		chosen = matches[1]
-	else
-		chosen = input("Select a type", "Pick Type", matches[1]) as null|anything in matches
-		if(!chosen)
-			return
+	var/chosen = matches.len == 1 ? matches[1] : tgui_input_list(usr, "Select a type", "Pick Type", matches)
+	if(!chosen)
+		return
 	chosen = matches[chosen]
 	return chosen
 

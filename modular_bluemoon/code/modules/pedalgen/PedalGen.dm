@@ -19,8 +19,6 @@
 		else
 			raw_power --
 			add_avail(power_produced)
-	if(Pedals.has_buckled_mobs() && ismonkey(Pedals.buckled_mobs[1]) && !Pedals.buckled_mobs[1].client)
-		Pedals.pedal(Pedals.buckled_mobs[1])
 
 /obj/machinery/power/dynamo/RefreshParts()
 	var/parts_mult = 0
@@ -153,10 +151,16 @@
 	// 		SEND_SIGNAL(pedaler, COMSIG_ADD_MOOD_EVENT, "swole", /datum/mood_event/swole, pain_amount)
 	// 		pedaler.update_body()
 	//adjust nutriments greatly since we are not chilling here, we are breaking a sweat.
-	if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
-		C.adjust_nutrition(-10*HUNGER_FACTOR)
-	if(!HAS_TRAIT(src, TRAIT_NOTHIRST))
-		C.adjust_thirst(-10*THIRST_FACTOR)
+	if(!HAS_TRAIT(C, TRAIT_NOHUNGER))
+		if(ismonkey(C))
+			C.adjust_nutrition(-HUNGER_FACTOR) // I don't want a player to be monkey's babysitter.
+		else
+			C.adjust_nutrition(-10*HUNGER_FACTOR) // we are burning calories.
+	if(!HAS_TRAIT(C, TRAIT_NOTHIRST))
+		if(ismonkey(C))
+			C.adjust_nutrition(-THIRST_FACTOR)
+		else
+			C.adjust_thirst(-10*THIRST_FACTOR)
 	// pedal_left_leg = !pedal_left_leg
 	// if(buckled_mobs[1].halloss > 80)
 	// 	to_chat(user, "You pushed yourself too hard.")
@@ -193,10 +197,34 @@
 		M.pixel_x = new_pixel_x
 		M.pixel_y = new_pixel_y
 
+/obj/structure/chair/pedalgen/post_buckle_mob(mob/living/M)
+	. = ..()
+	if(ismonkey(M) && !M.client)
+		RegisterSignal(M, COMSIG_PARENT_ATTACKBY, PROC_REF(apply_motivation))
+		START_PROCESSING(SSobj, src)
+
+/obj/structure/chair/pedalgen/proc/apply_motivation(mob/living/carbon/monkey/M, obj/item/I, mob/living/L, params)
+	SIGNAL_HANDLER
+	if(I.force >= 10 && istype(M))
+		if(M.IsUnconscious())
+			M.SetUnconscious(0)
+		M.emote("scream")
+		pedal(M)
+		M.set_lust(0) // some whips appy lust damage. no comments.
+
 /obj/structure/chair/pedalgen/post_unbuckle_mob(mob/living/M)
 	. = ..()
+	UnregisterSignal(M, COMSIG_PARENT_ATTACKBY)
+	STOP_PROCESSING(SSobj, src)
 	M.pixel_x = M.get_standard_pixel_x_offset(M.lying)
 	M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
+
+/obj/structure/chair/pedalgen/process(delta_time)
+	if(!has_buckled_mobs() || !ismonkey(buckled_mobs[1]))
+		STOP_PROCESSING(SSobj, src)
+		return
+	if(next_pedal < world.time)
+		pedal(buckled_mobs[1])
 
 /obj/structure/chair/pedalgen/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0)
 	. = ..()

@@ -550,19 +550,19 @@ BLUEMOON REMOVAL END*/
 		var/cost = (ruleset in rulesets_picked) ? ruleset.scaling_cost : ruleset.cost
 		if (cost == 0)
 			stack_trace("[ruleset] cost 0, this is going to result in an infinite loop.")
-			drafted_rules[ruleset] = null
+			drafted_rules[ruleset] = 0
 			continue
 
 		if (cost > round_start_budget_left)
-			drafted_rules[ruleset] = null
+			drafted_rules[ruleset] = 0
 			continue
 
 		if (check_blocking(ruleset.blocking_rules, rulesets_picked))
-			drafted_rules[ruleset] = null
+			drafted_rules[ruleset] = 0
 			continue
 		// BLUEMOON ADD START - проверки для вариаций динамика
 		if(!(GLOB.round_type in ruleset.required_round_type))
-			drafted_rules[ruleset] = null
+			drafted_rules[ruleset] = 0
 			continue
 		// BLUEMOON ADD END
 		round_start_budget_left -= cost
@@ -573,10 +573,10 @@ BLUEMOON REMOVAL END*/
 			for (var/_other_ruleset in drafted_rules)
 				var/datum/dynamic_ruleset/other_ruleset = _other_ruleset
 				if (other_ruleset.flags & HIGH_IMPACT_RULESET)
-					drafted_rules[other_ruleset] = null
+					drafted_rules[other_ruleset] = 0
 
 		if (ruleset.flags & LONE_RULESET)
-			drafted_rules[ruleset] = null
+			drafted_rules[ruleset] = 0
 
 	for (var/ruleset in rulesets_picked)
 		spend_roundstart_budget(picking_roundstart_rule(ruleset, rulesets_picked[ruleset] - 1))

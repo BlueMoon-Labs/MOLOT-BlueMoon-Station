@@ -223,11 +223,8 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engineerin
   */
 
 /proc/get_sub_areas_turfs(area/A, target_z = 0, include_base = TRUE)
-	var/list/contents = get_sub_areas_contents(A, include_base)
-	. = list()
-	for(var/turf/T in contents)
-		if(target_z == 0 || target_z == T.z)
-			. += T
+	return get_area_turfs(get_sub_areas(A, include_base), target_z)
+
 /**
   * Simple proc that returns a sum of all contents from every sub area,
   * Think of the above but for all contents, not just turfs, and without target z.

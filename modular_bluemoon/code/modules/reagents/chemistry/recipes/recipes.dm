@@ -46,3 +46,20 @@
 	required_reagents = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin/mutagen = 1, /datum/reagent/consumable/organicprecursor = 1) //This unlocks capabilities to print stuff, so good luck.
 	required_temp = 500
 	mob_react = FALSE
+
+//BIOAEGIS CHEMS
+/datum/chemical_reaction/bionanites //Very simple nanites which you use for /datum/techweb_node/bioaegis1/2.
+	name = "Deactivated Printing Nanites"
+	id = "bionanites"
+	results = list(/datum/reagent/consumable/organicprecursor/bionanites = 2) //x2 since other recipe is evil af.
+	required_reagents = list(/datum/reagent/mercury = 1, /datum/reagent/silicon = 1, /datum/reagent/consumable/organicprecursor = 1)
+	required_temp = 380
+	mob_react = FALSE
+
+/datum/chemical_reaction/advbionanites //Advanced nanites that can be used for /datum/techweb_node/bioaegis3/special/dangerous
+	name = "Volatile Printing Nanites"
+	id = "advbionanites"
+	results = list(/datum/reagent/consumable/organicprecursor/advbionanites = 25) //You can potentially print them nonstop, so there is a stagger.
+	required_reagents = list(/datum/reagent/blackpowder = 50, /datum/reagent/teslium = 50, /datum/reagent/consumable/organicprecursor/bionanites = 50)
+	required_temp = 470 //Tricky, be mindful about temp. 474 *is the detonation* for both blackpowder and teslium.
+	mob_react = FALSE

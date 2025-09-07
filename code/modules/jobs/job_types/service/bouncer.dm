@@ -53,7 +53,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	//suit =
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/gun/energy/civilian=1, /obj/item/restraints/legcuffs/bola/energy=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/choice_beacon/copgun=1)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/gun/energy/civilian=1, /obj/item/restraints/legcuffs/bola/energy=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/choice_beacon/bouncer=1)
 	shoes = /obj/item/clothing/shoes/jackboots
 	accessory = /obj/item/clothing/accessory/permit/special/bouncer
 
@@ -82,6 +82,41 @@
 /datum/martial_art/krav_maga/restricted/bouncer
 	name = "Krav Maga (bouncer edition)"
 	valid_areas = list(/area/service/bar/atrium, /area/service/bar)
+
+/obj/item/choice_beacon/bouncer
+	name = "personal weapon beacon"
+	desc = "Use this to summon your personal issued sidearm!"
+
+/obj/item/choice_beacon/bouncer/generate_display_names()
+	var/static/list/gun_list
+	if(!gun_list)
+		gun_list = list()
+		var/list/templist = subtypesof(/obj/item/storage/secure/briefcase/bouncer/)
+		for(var/V in templist)
+			var/atom/A = V
+			gun_list[initial(A.name)] = A
+	return gun_list
+
+/obj/item/storage/secure/briefcase/bouncer/advtaser_box
+	name = "\improper Hybrid taser gun box"
+	desc = "A storage case for a high-tech energy firearm."
+
+/obj/item/storage/secure/briefcase/bouncer/advtaser_box/PopulateContents()
+	new /obj/item/gun/energy/e_gun/advtaser(src)
+
+/obj/item/storage/secure/briefcase/bouncer/e45_box
+	name = "\improper Enforcer handgun box"
+	desc = "A storage case for a Mk. 58 Enforcer. Peace through power!"
+
+/obj/item/storage/secure/briefcase/bouncer/e45_box/PopulateContents()
+	var/obj/item/gun/ballistic/automatic/pistol/enforcer/pistol = new /obj/item/gun/ballistic/automatic/pistol/enforcer/nomag(src)
+	var/pin_type = initial(/obj/item/gun/ballistic/automatic/pistol/enforcer::pin)
+	if(pin_type)
+		QDEL_NULL(pistol.pin)
+		pistol.pin = new pin_type(pistol) // Нет никого смысла ограничивать пистолет баунсеру на синий код, это не СБ
+	new /obj/item/ammo_box/magazine/e45/taser(src)
+	new /obj/item/ammo_box/magazine/e45/taser(src)
+	new /obj/item/ammo_box/magazine/e45/taser(src)
 //BLUEMOON ADD END
 /*
 /datum/martial_art/bouncer

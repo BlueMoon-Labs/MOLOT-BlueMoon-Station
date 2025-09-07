@@ -370,7 +370,7 @@
 	duration = 100
 
 /datum/status_effect/tarcookie/tick()
-	for(var/mob/living/carbon/human/L in range(get_turf(owner),1))
+	for(var/mob/living/carbon/human/L in range(get_turf(owner),2))
 		if(L != owner)
 			L.apply_status_effect(/datum/status_effect/tarfoot)
 
@@ -411,7 +411,7 @@
 	duration = 100
 
 /datum/status_effect/peacecookie/tick()
-	for(var/mob/living/L in range(get_turf(owner),1))
+	for(var/mob/living/L in range(get_turf(owner),2))
 		L.apply_status_effect(/datum/status_effect/plur)
 
 /datum/status_effect/plur
