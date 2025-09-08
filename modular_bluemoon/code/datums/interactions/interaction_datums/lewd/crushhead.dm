@@ -79,4 +79,3 @@
 				"вздрагивает, закатывая свои глаза.")]"))
 		if(prob(30) && isclownjob(user))
 			user.visible_message(span_lewd("<b>[user]</b> забавно хонкает!"))
-	
