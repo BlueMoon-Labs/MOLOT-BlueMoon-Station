@@ -2,24 +2,9 @@
 	description = "Убийственно. Сжать голову бёдрами."
 	require_target_legs = REQUIRE_ANY
 	require_target_num_legs = 2
-	//required_from_target = INTERACTION_REQUIRE_MOUTH
-	/*
-	required_from_target_exposed = NONE
-	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
-	required_from_user_unexposed = INTERACTION_REQUIRE_MOUTH
-	*/
 	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_EXTREME_CONTENT
 	write_log_user = "trying to squeeze"
 	write_log_target = "was squeezed by"
-	/*
-	required_from_user_unexposed = INTERACTION_REQUIRE_FEET
-	required_from_target_unexposed = INTERACTION_REQUIRE_MOUTH
-	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_EXTREME_CONTENT
-
-	write_log_user = "trying to squeeze"
-	write_log_target = "was squeezed by"
-	*/
 	additional_details = list(
 		list(
 			"info" = "При включенном предпочтении при сильных повреждениях может взорвать голову",
@@ -85,7 +70,7 @@
 	
 	var/const/basic_scream_chance = 25 // %
 	// basic% + (% of lust - basic%)
-	if(prob(basic_scream_chance + max(ceil(partner.get_lust() - partner.get_climax_threshold())-basic_scream_chance, 0)))
+	if(prob(basic_scream_chance + max(ceil(partner.get_lust() - partner.get_climax_threshold())*100-basic_scream_chance, 0)))
 		partner.visible_message(span_lewd("<b>\The [partner]</b> [pick("дрожит от боли.",
 				"тихо вскрикивает.",
 				"выдыхает болезненный стон.",
