@@ -243,3 +243,27 @@
 	category = list("Species-specific Designs")
 	min_security_level = SEC_LEVEL_RED
 	materials = list (/datum/material/plasma = 15000)
+
+/datum/design/bodyoverload
+	name = "Optimia ossmodula"
+	id = "bodyoverload"
+	desc = "A design for biological organ."
+	build_type = BIOAEGIS
+	construction_time = 150
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 150)
+	build_path = /obj/item/organ/bodyoverload
+	category = list("Dangerous Designs")
+	min_security_level = SEC_LEVEL_RED
+	materials = list (/datum/material/plasma = 15000)
+
+/datum/design/neuralderanger
+	name = "Nemedia ossmodula"
+	id = "neuralderanger"
+	desc = "A design for biological organ."
+	build_type = BIOAEGIS
+	construction_time = 150
+	reagents_list = list(/datum/reagent/consumable/organicprecursor/advbionanites = 150)
+	build_path = /obj/item/organ/neuralderanger
+	category = list("Dangerous Designs")
+	min_security_level = SEC_LEVEL_RED
+	materials = list (/datum/material/plasma = 15000)
