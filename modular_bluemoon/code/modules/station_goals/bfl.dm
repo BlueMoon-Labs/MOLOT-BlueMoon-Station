@@ -128,7 +128,9 @@
 /obj/machinery/power/bfl_emitter/examine(mob/user)
 	. = ..()
 	if(istype(laser))
-		. += span_tinynoticeital("Еле заметный индикатор калибровки лазера сообщает об ошибке корректировки лазера с BFL приемником.")
+		. += span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит красненьким.")
+	else if(state && receiver?.mining == TRUE)
+		. += span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит зелёненьким.")
 
 /obj/machinery/power/bfl_emitter/attack_hand(mob/user as mob)
 	if(..())
@@ -184,7 +186,7 @@
 	if(!receiver || !receiver.state || (obj_flags & EMAGGED) || !receiver.lens || !receiver.lens.anchored)
 		var/turf/rand_location = locate(rand(50, 150), rand(50, 150), lavaland_z_lvl)
 		laser = new (rand_location)
-		visible_message(span_tinynoticeital("Еле заметный индикатор калибровки лазера сообщает об ошибке корректировки лазера с BFL приемником."))
+		visible_message(span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит красненьким."))
 		log_admin("BFL emitter has been activated without proper BFL receiver connection or it has been emagged at [AREACOORD(src)]")
 		notify_ghosts("BFL выжигает лаваленд!", source = laser, action = NOTIFY_ORBIT, header = "BFL")
 		for(var/M in GLOB.alive_mob_list)
@@ -201,6 +203,7 @@
 		if(receiver.state && receiver.lens)
 			receiver.lens.activate_lens()
 			receiver.mining = TRUE
+			visible_message(span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит зелёненьким."))
 		return TRUE
 
 
