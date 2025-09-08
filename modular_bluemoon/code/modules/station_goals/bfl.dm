@@ -608,18 +608,19 @@
 
 /obj/singularity/bfl_red/process(delta_time)
 	move()
-	devastate()
 
 /obj/singularity/bfl_red/proc/devastate() // almost like /eat() but without pulling
 	set waitfor = FALSE
-	for(var/tile in spiral_range_turfs(devastation_range, src))
-		var/turf/T = tile
-		if(!T || !isturf(loc))
-			continue
-		for(var/thing in T)
-			if(isturf(loc) && thing != src)
-				consume(thing)
-			CHECK_TICK
+	var/turf/T = get_turf(src)
+	if(!T || !isturf(loc))
+		return
+	for(var/thing in T)
+		if(isturf(loc) && thing != src)
+			consume(thing)
+		CHECK_TICK
+	for(var/i = 1 to 5) // prevent potential loops
+		if(T.type == T.baseturfs)
+			break
 		consume(T)
 
 /obj/singularity/bfl_red/move(force_move)
@@ -633,7 +634,29 @@
 		if(isemptylist(go_to_coords) || (loc.x == go_to_coords[1] && loc.y == go_to_coords[2]))
 			go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
 		movement_dir = get_dir(src, locate(go_to_coords[1], go_to_coords[2], lavaland_z_lvl))
-		forceMove(get_step(src, movement_dir))
+		if(prob(50))
+			var/ang = dir2angle(movement_dir)
+			ang += rand() ? 90 : -90
+			movement_dir = angle2dir(ang)
+		switch(movement_dir) // диагонально расположенная лава выглядит ущербно с этими сраными ромбиками
+			if(NORTHEAST)
+				forceMove(get_step(src, EAST))
+				forceMove(get_step(src, NORTH))
+			if(NORTHWEST)
+				forceMove(get_step(src, WEST))
+				forceMove(get_step(src, NORTH))
+			if(SOUTHEAST)
+				forceMove(get_step(src, EAST))
+				forceMove(get_step(src, SOUTH))
+			if(SOUTHWEST)
+				forceMove(get_step(src, WEST))
+				forceMove(get_step(src, SOUTH))
+			else
+				forceMove(get_step(src, movement_dir))
+
+/obj/singularity/bfl_red/Moved(atom/OldLoc, Dir)
+	. = ..()
+	devastate()
 
 /obj/singularity/bfl_red/consume(atom/A)
 	if(istype(A, /obj/machinery/power/supermatter_crystal))
