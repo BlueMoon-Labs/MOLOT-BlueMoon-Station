@@ -2828,7 +2828,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/biolab)
 "cgc" = (
 /obj/structure/disposalpipe/segment{
@@ -2935,11 +2935,11 @@
 /area/mine/xenoarch_area_a)
 "cix" = (
 /obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/dark{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
@@ -3232,7 +3232,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/chemistry)
 "cww" = (
 /turf/closed/wall,
@@ -11479,6 +11479,12 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
+"jlM" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "jlN" = (
 /obj/structure/stone_tile/center/burnt,
 /obj/structure/stone_tile/surrounding/cracked{
@@ -14890,6 +14896,7 @@
 /obj/item/mmi/posibrain/syndie{
 	pixel_x = 0
 	},
+/obj/item/borg/upgrade/transform/syndicatejack,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "lKI" = (
@@ -15963,6 +15970,13 @@
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/lavaland/unpowered/ash_walkers)
+"mBf" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "mBU" = (
 /obj/machinery/light{
 	dir = 4
@@ -16261,7 +16275,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/dark{
 	dir = 4
 	},
@@ -17141,6 +17154,9 @@
 /obj/structure/sign/flag/syndicate{
 	pixel_x = 32
 	},
+/obj/effect/turf_decal/stripes/red{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "npd" = (
@@ -17409,6 +17425,9 @@
 /obj/structure/sign/flag/syndicate{
 	pixel_y = null;
 	pixel_x = -32
+	},
+/obj/effect/turf_decal/stripes/red{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
@@ -20021,9 +20040,6 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/dark{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -23374,6 +23390,10 @@
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
 	},
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical{
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/biolab)
 "skE" = (
@@ -24101,12 +24121,6 @@
 /area/lavaland/necropolis)
 "sQe" = (
 /obj/effect/turf_decal/stripes/blue,
-/obj/structure/tank_holder/anesthetic{
-	pixel_x = 10
-	},
-/obj/item/clothing/mask/breath/medical{
-	pixel_x = 10
-	},
 /obj/effect/turf_decal/tile/blue{
 	alpha = 255;
 	dir = 4
@@ -28895,6 +28909,13 @@
 /obj/effect/turf_decal/bot/white,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
+"wIu" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "wIv" = (
 /obj/structure/railing{
 	dir = 4
@@ -29778,6 +29799,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_b)
+"xkj" = (
+/obj/effect/turf_decal/loading_area/red{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "xkn" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/yellow{
@@ -30525,6 +30552,13 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
+"xLn" = (
+/obj/effect/turf_decal/caution/red,
+/obj/effect/turf_decal/stripes/red{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "xLB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
@@ -48347,11 +48381,11 @@ dee
 cMu
 cMu
 cMu
-gGk
-gGk
-gGk
+wIu
+wIu
+wIu
 cMu
-cMu
+bZG
 qPi
 nzU
 cea
@@ -48601,16 +48635,16 @@ llq
 dee
 dee
 dee
-cMu
-cMu
-cMu
-cMu
-cMu
-cMu
-cMu
-cMu
+bZG
+bZG
+bZG
+bZG
+bZG
+bZG
+bZG
+bZG
 qPi
-siL
+xLn
 cea
 nHw
 mtp
@@ -48861,11 +48895,11 @@ dee
 cMu
 cMu
 cMu
-lfL
-lfL
-lfL
-lfL
-lfL
+mBf
+mBf
+mBf
+mBf
+jlM
 rRr
 noZ
 mAF
@@ -49139,8 +49173,8 @@ lfL
 lfL
 cMu
 hNp
-feF
 cix
+kKw
 kKw
 kKw
 aOl
@@ -49653,7 +49687,7 @@ tfw
 hNp
 bpT
 uoc
-feF
+xkj
 cWG
 qnF
 ueH
