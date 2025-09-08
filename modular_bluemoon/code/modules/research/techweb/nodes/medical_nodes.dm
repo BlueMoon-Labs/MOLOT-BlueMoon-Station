@@ -72,10 +72,10 @@
 	design_ids = list("adaptiveeyes", "thermalaegiseyes", "darkveilorgan", "optisiaorgan")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 
-///datum/techweb_node/bioaegis_danger Dangerous ones, that might kill you.
-//	id = "bioaegis_danger"
-//	display_name = "Experimental Organic Designs"
-//	description = "Some evil shithead decided to fuck around and *DID* find out."
-//	prereq_ids = list("bioaegis3")
-//	design_ids = list(#EMPTY)
-//	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 30000)
+datum/techweb_node/bioaegis_danger //Dangerous ones, that might kill you.
+	id = "bioaegis_danger"
+	display_name = "Experimental Organic Designs"
+	description = "Some evil scientist decided to fuck around and did find out."
+	prereq_ids = list("bioaegis3")
+	design_ids = list("neuralderanger", "bodyoverload")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
