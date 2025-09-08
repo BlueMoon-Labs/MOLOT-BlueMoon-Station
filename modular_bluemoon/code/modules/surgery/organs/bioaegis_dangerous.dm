@@ -33,11 +33,11 @@
 	ADD_TRAIT(owner, TRAIT_FREESPRINT, GENETIC_MUTATION)
 
 /obj/item/organ/neuralderanger/on_life()
-  owner.adjustStaminaLoss(-100, 0) //You can run non-stop...
 	var/chem_to_add = pick(possible_reagents)
 	owner.reagents.add_reagent(chem_to_add, 1.5) //....But stupidly high on drugs all the time.
 	owner.adjustToxLoss(-1, TRUE, TRUE)
 	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1) //Labebium and Co hurts brain, so let us heal it just a little bit to offset the threat.
+	owner.adjustStaminaLoss(-100, 0) //You can run non-stop...
 
 /obj/item/organ/neuralderanger/Remove(special = FALSE)
 	REMOVE_TRAIT(owner, TRAIT_FREESPRINT, GENETIC_MUTATION)
