@@ -567,7 +567,7 @@
 	base_pixel_x = -32
 	base_pixel_y = 0
 	dissipate = FALSE
-	grav_pull = 1
+	grav_pull = 0
 	move_force = INFINITY
 	move_resist = INFINITY
 	pull_force = INFINITY
@@ -612,19 +612,15 @@
 
 /obj/singularity/bfl_red/proc/devastate() // almost like /eat() but without pulling
 	set waitfor = FALSE
-	CHECK_TICK
-	for(var/tile in spiral_range_turfs(grav_pull, src))
+	for(var/tile in spiral_range_turfs(devastation_range, src))
 		var/turf/T = tile
 		if(!T || !isturf(loc))
 			continue
-		if(get_dist(T, src) <= devastation_range)
-			consume(T)
 		for(var/thing in T)
 			if(isturf(loc) && thing != src)
-				var/atom/movable/X = thing
-				if(get_dist(X, src) <= devastation_range)
-					consume(X) ///turf/open/genturf
+				consume(thing)
 			CHECK_TICK
+		consume(T)
 
 /obj/singularity/bfl_red/move(force_move)
 	if(!move_self)
