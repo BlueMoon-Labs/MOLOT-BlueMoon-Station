@@ -1320,7 +1320,7 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
     if(!head) return
     head.drop_limb()
     head.drop_organs()
-    visible_message(span_userdanger("Сдавливает голову, разбрызгивая мозги по полу!"),
+    visible_message(span_userdanger("голова лопается, разбрызгивая мозги по полу!"),
         span_userdanger("ВОТ БЛ-"))
     playsound(get_turf(attacker), 'modular_bluemoon/SmiLeY/sounds/squishy.ogg', 140, TRUE, -1)
     death(FALSE)
