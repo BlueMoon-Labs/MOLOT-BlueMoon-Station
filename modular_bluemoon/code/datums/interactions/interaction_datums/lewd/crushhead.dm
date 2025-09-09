@@ -70,7 +70,7 @@
 
 	var/const/basic_scream_chance = 25 // %
 	// basic% + (% of lust - basic%)
-	if(prob(basic_scream_chance + max(ceil(partner.get_lust() - partner.get_climax_threshold()*100)-basic_scream_chance, 0)))
+	if(prob(basic_scream_chance + max(ceil(partner.get_lust() / partner.get_climax_threshold()*100)-basic_scream_chance, 0)))
 		partner.visible_message(span_lewd("<b>\The [partner]</b> [pick("дрожит от боли.",
 				"тихо вскрикивает.",
 				"выдыхает болезненный стон.",
