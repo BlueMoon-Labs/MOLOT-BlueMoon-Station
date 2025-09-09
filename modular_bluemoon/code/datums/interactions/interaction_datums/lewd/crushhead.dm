@@ -1,7 +1,7 @@
 /datum/interaction/lewd/crushhead
 	description = "Убийственно. Сжать голову бёдрами."
-	require_target_legs = REQUIRE_ANY
-	require_target_num_legs = 2
+	require_user_legs = REQUIRE_ANY
+	require_user_num_legs = 2
 	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_EXTREME_CONTENT
 	write_log_user = "trying to squeeze"
 	write_log_target = "was squeezed by"
@@ -49,17 +49,15 @@
 				damage_amount += rand(3,6)
 			
 			// HeadStomp
-			if(partner.InFullCritical()) 
-				partner.visible_message(span_userdanger("Голова <b>[partner]</b> лопается, разбрызгивая мозги по полу!"),span_userdanger("ААААА ГОЛОВ-"))
-				playsound(get_turf(partner), 'modular_bluemoon/SmiLeY/sounds/squishy.ogg', 140, TRUE, -1)
+			if(H.InFullCritical()) 
+				H.visible_message(span_userdanger("Голова <b>[H]</b> лопается, разбрызгивая мозги по полу!"),span_userdanger("ААААА ГОЛОВ-"))
+				playsound(get_turf(H), 'modular_bluemoon/SmiLeY/sounds/squishy.ogg', 140, TRUE, -1)
 				head.drop_limb()
 				head.drop_organs()
 				qdel(head)
-				log_combat(user, partner, "head stomped")
-				partner.death(FALSE)
-				var/obj/effect/gibspawner/generic/Gibbis = new /obj/effect/gibspawner/generic(get_turf(partner))
-				Gibbis.gib_mob_type = /mob/living/carbon/human
-				Gibbis.gib_mob_species = /datum/species/human
+				H.death(FALSE) // ИПЦ выкидывает мозг из себя, но не умирает и выглядит словно в ССД, так что оставлю это
+				log_combat(user, H, "head stomped")
+				new /obj/effect/gibspawner/generic(get_turf(H), H)
 				return
 
 		message = span_danger("<b>\The [user]</b> [message]")
