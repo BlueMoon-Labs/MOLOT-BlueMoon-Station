@@ -19,7 +19,7 @@
 	p13target_emote = PLUG13_EMOTE_MASOCHISM
 
 /datum/interaction/lewd/crushhead/display_interaction(mob/living/user, mob/living/partner)
-	if(!D.get_bodypart(BODY_ZONE_HEAD))
+	if(!partner.has_mouth())
 		to_chat(user,span_warning("У цели отсутствует голова!"))
 		return
 	var/message = "[pick("нежно прижимается к <b>[partner]</b>, обхватывая голову ляжками.",
@@ -41,8 +41,7 @@
 
 		var/mob/living/carbon/human/H = partner
 		if(istype(H) && partner.client)
-			if(partner.client.prefs.extremeharm != "No")
-				HeadStomp(user, partner)
+			if(partner?.client.prefs.extremeharm != "No" && user?.client.prefs.extremeharm != "No")
 				if(prob(30))
 					H.bleed(2)
 					H.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
@@ -50,6 +49,7 @@
 				if(prob(25))
 					H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,3))
 					partner.adjustBruteLoss(rand(6,12))
+				HeadStomp(user, partner)
 
 		message = span_danger("<b>\The [user]</b> [message]")
 	else
