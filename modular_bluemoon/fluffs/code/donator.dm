@@ -1838,5 +1838,5 @@
 	name = "Tactical skirt"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/under/dress/skirt/tacticool
-	ckeywhitelist = list("DefinitelyNotNesuby")
+	ckeywhitelist = list("definitelynotnesuby")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
