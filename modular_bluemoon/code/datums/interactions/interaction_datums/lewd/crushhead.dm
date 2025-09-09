@@ -7,9 +7,9 @@
 	write_log_target = "was squeezed by"
 	additional_details = list(
 		list(
-			"info" = "При включенном предпочтении во время критического состояния может взорвать голову",
+			"info" = "Предпочтение ExtremeHarm и агрессивные намерения в критическом состоянии приведут к взрыву головы.",
 			"icon" = "brain",
-			"color" = "blue"
+			"color" = "yellow"
 		)
 	)
 	p13user_emote = PLUG13_EMOTE_FACE
@@ -19,7 +19,8 @@
 	p13target_emote = PLUG13_EMOTE_MASOCHISM
 
 /datum/interaction/lewd/crushhead/display_interaction(mob/living/user, mob/living/partner)
-	if(!partner.has_mouth())
+	var/obj/item/bodypart/head/head = partner.get_bodypart(BODY_ZONE_HEAD)
+	if(!head)
 		to_chat(user,span_warning("У цели отсутствует голова!"))
 		return
 	var/message = "[pick("нежно прижимается к <b>[partner]</b>, обхватывая голову ляжками.",
@@ -32,7 +33,7 @@
 
 	if(user.a_intent == INTENT_HARM)
 		lust_amount = NORMAL_LUST
-		damage_amount = rand(8, 15)
+		damage_amount = rand(6, 12)
 		message = "[pick("прижимается к <b>[partner]</b>, своими бедрами, с силой сжимая голову.",
 					"резко сдавливает ляжками <b>[partner]</b>, тем самым вызывая утробный стон жертвы.",
 					"крепко прижимает <b>[partner]</b> к своему паху, сжимая голову с хрустом в шее.",
@@ -40,16 +41,25 @@
 					"максимально грубым образом сдавливает голову <b>[partner]</b> до хруста в шее.")]"
 
 		var/mob/living/carbon/human/H = partner
-		if(istype(H) && partner.client)
-			if(partner?.client.prefs.extremeharm != "No" && user?.client.prefs.extremeharm != "No")
-				if(prob(30))
-					H.bleed(2)
-					H.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
-					new/obj/effect/decal/cleanable/blood
-				if(prob(25))
-					H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,3))
-					partner.adjustBruteLoss(rand(6,12))
-				HeadStomp(user, partner)
+		if(istype(H) && partner?.client.prefs.extremeharm != "No" && user?.client.prefs.extremeharm != "No")
+			if(prob(10))
+				H.bleed(2)
+			else if(prob(10))
+				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,3))
+				damage_amount += rand(3,6)
+			
+			if(partner.health / partner.getMaxHealth() < 0.07) // HeadStomp
+				partner.visible_message(span_userdanger("Голова <b>[partner]</b> лопается, разбрызгивая мозги по полу!"),span_userdanger("ААААА ГОЛОВ-"))
+				playsound(get_turf(partner), 'modular_bluemoon/SmiLeY/sounds/squishy.ogg', 140, TRUE, -1)
+				head.drop_limb()
+				head.drop_organs()
+				qdel(head)
+				log_combat(user, partner, "head stomped")
+				partner.death(FALSE)
+				var/obj/effect/gibspawner/generic/Gibbis = new /obj/effect/gibspawner/generic(get_turf(partner))
+				Gibbis.gib_mob_type = /mob/living/carbon/human
+				Gibbis.gib_mob_species = /datum/species/human
+				return
 
 		message = span_danger("<b>\The [user]</b> [message]")
 	else
@@ -68,17 +78,13 @@
 		partner.handle_post_sex(lust_amount, null, user)
 
 	var/const/basic_scream_chance = 25 // %
-	// basic% + (% of lust - basic%)
-	if(prob(basic_scream_chance + max(ceil(partner.get_lust() / partner.get_climax_threshold()*100)-basic_scream_chance, 0)))
-		partner.visible_message(span_lewd("<b>\The [partner]</b> [pick("дрожит от боли.",
-				"тихо вскрикивает.",
-				"выдыхает болезненный стон.",
-				"звучно вздыхает от боли.",
-				"сильно вздрагивает.",
-				"вздрагивает, закатывая свои глаза.")]"))
+	if(prob(max(basic_scream_chance, ceil(partner.get_lust() / partner.get_climax_threshold()*100))))
 		if(prob(30) && isclownjob(user))
 			user.visible_message(span_lewd("<b>[user]</b> забавно хонкает!"))
-
-/datum/interaction/lewd/crushhead/proc/HeadStomp(mob/living/carbon/human/A, mob/living/carbon/human/D)
-    if((D.health / D.getMaxHealth()) < 0.1)
-        D.crush_head(A)
+		else
+			partner.visible_message(span_lewd("<b>\The [partner]</b> [pick("дрожит от боли.",
+					"тихо вскрикивает.",
+					"выдыхает болезненный стон.",
+					"звучно вздыхает от боли.",
+					"сильно вздрагивает.",
+					"вздрагивает, закатывая свои глаза.")]"))
