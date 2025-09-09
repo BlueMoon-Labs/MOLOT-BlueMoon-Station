@@ -48,7 +48,8 @@
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,3))
 				damage_amount += rand(3,6)
 			
-			if(partner.health / partner.getMaxHealth() < 0.07) // HeadStomp
+			// HeadStomp
+			if(partner.InFullCritical()) 
 				partner.visible_message(span_userdanger("Голова <b>[partner]</b> лопается, разбрызгивая мозги по полу!"),span_userdanger("ААААА ГОЛОВ-"))
 				playsound(get_turf(partner), 'modular_bluemoon/SmiLeY/sounds/squishy.ogg', 140, TRUE, -1)
 				head.drop_limb()
