@@ -48,3 +48,15 @@
 	can_adjust = FALSE
 	icon_state = "ryodan"
 	item_state = "syndicate-black"
+
+/obj/item/clothing/under/dress/skirt/tacticool
+	name = "Tactical skirt"
+	desc = "A non-descript and slightly suspicious looking skirt."
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/uniforms.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/uniforms.dmi'
+	icon_state = "skirt_tacticool"
+	item_state = "skirt_tacticool"
+	body_parts_covered = GROIN
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = NO_FEMALE_UNIFORM
+	can_adjust = FALSE

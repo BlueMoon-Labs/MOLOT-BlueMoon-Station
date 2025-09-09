@@ -149,3 +149,30 @@
 		)
 	)
 // BLUEMOON ADD END
+
+//BLUEMOON ADD START - переношу с ТГ Т2 инструменты для учёных
+/obj/item/crowbar/science
+	name = "Hybrid cutters"
+	desc = "Quite similar to the jaws of life, this tool combines the utility of a crowbar and a set of wirecutters without the hydraulic force required to pry open doors."
+	icon_state = "jaws_sci_pry"
+	item_state = "jawsoflife"
+	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_righthand.dmi'
+	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25)
+	force = 15
+	toolspeed = 0.25
+	usesound = 'sound/items/jaws_pry.ogg'
+
+/obj/item/crowbar/science/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is putting [user.ru_ego()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!</span>")
+	playsound(loc, 'sound/items/jaws_pry.ogg', 50, 1, -1)
+	return (BRUTELOSS)
+
+/obj/item/crowbar/science/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
+	var/obj/item/wirecutters/science/cutjaws = new /obj/item/wirecutters/science(drop_location())
+	cutjaws.name = name
+	to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
+	qdel(src)
+	user.put_in_active_hand(cutjaws)
+

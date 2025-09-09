@@ -212,17 +212,21 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	var/isLeader = FALSE
 	important_info = "В режим игры Extended вы являетесь ЕРП-антагонистом, в Dynamic Light - минорным антагонистом. Вы можете похищать экипаж, но лишь с преференсами Noncon YES. Если у игрока стоит ASK, вы ОБЯЗАНЫ спросить в LOOC разрешения."
 
+/obj/effect/mob_spawn/human/slavers/attack_ghost(mob/user, latejoinercalling)
+	if(GLOB.master_mode in list(ROUNDTYPE_EXTENDED, ROUNDTYPE_DYNAMIC_LIGHT))
+		return . = ..()
+	else
+		return to_chat(user, "<span class='warning'>Игра за слейверов допускается лишь в режим Extended или Dynamic Light!</span>")
+
 /obj/effect/mob_spawn/human/slavers/Initialize(mapload)
 	. = ..()
-	if(GLOB.master_mode == "Dynamic (Light)")
-		src.short_desc = "Вы часть отряда наемников, торгующих рабами. Похищайте экипаж и продавайте их. "
 
 /obj/effect/mob_spawn/human/slavers/special(mob/living/new_spawn)
 	. = ..()
 	var/datum/antagonist/slaver/slaver =  new /datum/antagonist/slaver
 	var/obj/effect/mob_spawn/human/slavers/all_avaible_spawnpods = list(locate(/obj/effect/mob_spawn/human/slavers))
 	var/obj/effect/mob_spawn/human/slavers/one_is_spawnpods = pick(all_avaible_spawnpods)
-	if(GLOB.master_mode == "Extended")
+	if(GLOB.master_mode == ROUNDTYPE_EXTENDED)
 		slaver.slaver_outfit = /datum/outfit/slaver/extended
 		slaver.send_to_spawnpoint = FALSE
 		if(one_is_spawnpods.first_time)
@@ -245,7 +249,7 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	var/datum/antagonist/slaver/leader/slaver =  new /datum/antagonist/slaver/leader
 	var/obj/effect/mob_spawn/human/slavers/all_avaible_spawnpods = list(locate(/obj/effect/mob_spawn/human/slavers))
 	var/obj/effect/mob_spawn/human/slavers/one_is_spawnpods = pick(all_avaible_spawnpods)
-	if(GLOB.master_mode == "Extended")
+	if(GLOB.master_mode == ROUNDTYPE_EXTENDED)
 		slaver.slaver_outfit = /datum/outfit/slaver/leader/extended
 		slaver.send_to_spawnpoint = FALSE
 		if(one_is_spawnpods.first_time)
@@ -302,3 +306,26 @@ mob/living/proc/ghost_cafe_traits(switch_on = FALSE, additional_area)
 	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring))
 
 ////////////////////////////////////
+
+/obj/effect/mob_spawn/human/ert
+	name = "Emergency Response Team Solder"
+	short_desc = "Вы - Член экспедиционного корпуса НТ,ваша задача: Уничтожить логово InteQ. Не покидайте гейт без одобрения администрации. Не пытайтесь в одиночку начать штурм, противник имеют глубоко спланированную оборону, так что дождитесь подкрепления со станции ПАКТа"
+	roundstart = FALSE
+	death = FALSE
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "oldpod"
+	outfit = /datum/outfit/ert/security/green
+	assignedrole = "Emergency Response Team Solder"
+	can_load_appearance = TRUE
+	loadout_enabled = TRUE
+	category = "ERT"
+
+/obj/effect/mob_spawn/human/ert/engineer
+	name = "Emergency Response Team Engineer"
+	assignedrole = "Emergency Response Team Engineer"
+	outfit = /datum/outfit/ert/engineer
+
+/obj/effect/mob_spawn/human/ert/commander
+	name = "Emergency Response Team Commander"
+	assignedrole = "Emergency Response Team Commander"
+	outfit = /datum/outfit/ert/commander

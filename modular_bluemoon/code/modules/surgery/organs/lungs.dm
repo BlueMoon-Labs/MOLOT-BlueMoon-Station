@@ -77,8 +77,9 @@
 	mood_change = 1 //Less, but persistent mood buff. Hey, handsome, you deserve it.
 
 /obj/item/organ/lungs/tier3/on_life()
-	owner.adjustOxyLoss(-1.5, FALSE)
+	owner.adjustOxyLoss(-3, FALSE)
 	owner.adjustFireLoss(-1.5, FALSE)
+	owner.adjustStaminaLoss(-5, 0)
 
 //ANTAG LUNGS//
 /obj/item/organ/lungs/tier3/antag //antag organ that can be found in some shitty places or in antag uplink since why not?
@@ -90,7 +91,8 @@
 
 /obj/item/organ/lungs/tier3/antag/on_life()
 	owner.adjustOxyLoss(-5, FALSE)
-	owner.adjustStaminaLoss(-5, 0)
+	owner.adjustFireLoss(-1.5, FALSE)
+	owner.adjustStaminaLoss(-7.5, 0)
 
 /obj/item/autosurgeon/syndicate/inteq/biomorphedlungs
 	uses = 1
@@ -100,5 +102,5 @@
 	name = "Biomorphed Lungs"
 	desc = "Экспериментальный орган, что используется некоторыми отрядами супер-солдат в различных 'чёрных операциях'. Даёт усиленное восстановление от изнурения и частичную защиту от атмосферных угроз для дыхания."
 	item = /obj/item/autosurgeon/syndicate/inteq/biomorphedlungs
-	cost = 7
+	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
