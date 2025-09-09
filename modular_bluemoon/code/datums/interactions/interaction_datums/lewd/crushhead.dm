@@ -42,6 +42,7 @@
 		var/mob/living/carbon/human/H = partner
 		if(istype(H) && partner.client)
 			if(partner.client.prefs.extremeharm != "No")
+				HeadStomp(user, partner)
 				if(prob(30))
 					H.bleed(2)
 					H.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
@@ -55,8 +56,6 @@
 		message = span_lewd("<b>\The [user]</b> [message]")
 
 	partner.apply_damage(damage_amount, BRUTE, BODY_ZONE_HEAD, partner.run_armor_check(BODY_ZONE_HEAD, MELEE))
-
-	HeadStomp(user, partner)
 
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(user.loc)
