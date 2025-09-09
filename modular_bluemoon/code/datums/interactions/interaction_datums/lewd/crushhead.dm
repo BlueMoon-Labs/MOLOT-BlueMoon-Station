@@ -7,7 +7,7 @@
 	write_log_target = "was squeezed by"
 	additional_details = list(
 		list(
-			"info" = "При включенном предпочтении при сильных повреждениях может взорвать голову",
+			"info" = "При включенном предпочтении во время критического состояния может взорвать голову",
 			"icon" = "brain",
 			"color" = "blue"
 		)
@@ -19,7 +19,7 @@
 	p13target_emote = PLUG13_EMOTE_MASOCHISM
 
 /datum/interaction/lewd/crushhead/display_interaction(mob/living/user, mob/living/partner)
-	if(!partner.has_mouth())
+	if(!D.get_bodypart(BODY_ZONE_HEAD))
 		to_chat(user,span_warning("У цели отсутствует голова!"))
 		return
 	var/message = "[pick("нежно прижимается к <b>[partner]</b>, обхватывая голову ляжками.",
