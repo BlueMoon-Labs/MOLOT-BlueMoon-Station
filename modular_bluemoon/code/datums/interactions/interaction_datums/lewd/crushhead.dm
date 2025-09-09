@@ -56,6 +56,7 @@
 
 	partner.apply_damage(damage_amount, BRUTE, BODY_ZONE_HEAD, partner.run_armor_check(BODY_ZONE_HEAD, MELEE))
 
+	HeadStomp(user, partner)
 
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(user.loc)
@@ -78,3 +79,7 @@
 				"вздрагивает, закатывая свои глаза.")]"))
 		if(prob(30) && isclownjob(user))
 			user.visible_message(span_lewd("<b>[user]</b> забавно хонкает!"))
+
+/datum/interaction/lewd/crushhead/proc/HeadStomp(mob/living/carbon/human/A, mob/living/carbon/human/D)
+    if((D.health / D.getMaxHealth()) < 0.1)
+        D.crush_head(A)

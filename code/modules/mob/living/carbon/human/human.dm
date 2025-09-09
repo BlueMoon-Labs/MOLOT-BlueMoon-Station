@@ -1314,3 +1314,14 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 		AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = 32, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = flags_pass)
 	else
 		AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = cost, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = flags_pass)
+
+/mob/living/carbon/human/proc/crush_head(mob/living/carbon/human/attacker)
+    var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
+    if(!head) return
+    head.drop_limb()
+    head.drop_organs()
+    visible_message(span_warning("Сдавливает <b>[src]</b> голову, разбрызгивая мозги по полу!"),
+        span_userdanger("ВОТ БЛ-"))
+    playsound(get_turf(attacker), 'modular_bluemoon/SmiLeY/sounds/squishy.ogg', 140, TRUE, -1)
+    death(FALSE)
+    log_combat(attacker, src, "head stomped")
