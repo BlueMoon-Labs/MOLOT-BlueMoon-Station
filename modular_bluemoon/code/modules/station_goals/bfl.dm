@@ -213,6 +213,15 @@
 	update_icon(UPDATE_ICON_STATE)
 	var/turf/location = get_step(src, NORTH)
 	location.ScrapeAway(INFINITY)
+	if(istype(location))
+		for(var/atom/thing in location)
+			if(!isobj(thing) && !isliving(thing))
+				continue
+			if(isliving(thing))
+				var/mob/living/L = thing
+				L.dust(TRUE, TRUE)
+			else
+				thing.singularity_act()
 	working_sound()
 	var/turf/below = SSmapping.get_turf_below(location)
 	while(below)
@@ -719,8 +728,14 @@
 	for(var/thing in thing_to_check)
 		if(thing == src)
 			continue
-		var/atom/movable/M = thing
-		M.singularity_act()
+		if(!isobj(thing) && !isliving(thing))
+			continue
+		if(isliving(thing))
+			var/mob/living/L = thing
+			L.dust(TRUE, TRUE)
+		else
+			var/atom/movable/M = thing
+			M.singularity_act()
 		. = TRUE
 		// if(isobj(thing))
 		// 	var/obj/O = thing
