@@ -12,7 +12,8 @@
 	special = TRUE
 	contains = list(
 					/obj/item/circuitboard/machine/bfl_emitter,
-					/obj/item/circuitboard/machine/bfl_receiver
+					/obj/item/circuitboard/machine/bfl_receiver,
+					/obj/item/paper/bfl
 					)
 	crate_name = "BFL assembly crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering/bfl
