@@ -281,7 +281,7 @@
 		/obj/item/stack/ore/plasma = 0,
 		/obj/item/stack/ore/glass/basalt = 0,
 	)
-	var/max_ore_storage_capacity = 500
+	var/max_ore_storage_capacity = 1000
 	///An "overlay"-like light for receiver to indicate storage filling
 	var/atom/movable/bfl_receiver_light/receiver_light = null
 	///Used to define bits of ore mined, instead of stacks.
@@ -344,9 +344,9 @@
 				return
 			var/drop_where = drop_location()
 			for(var/ore_type in ore_type_contained)
-				while(ore_type_contained[ore_type] > 0)
-					new ore_type(drop_where)
-					ore_type_contained[ore_type]--
+				if(ore_type_contained[ore_type] > 0)
+					new ore_type(drop_where, ore_type_contained[ore_type])
+					ore_type_contained[ore_type] = 0
 					CHECK_TICK
 			ore_count = 0
 			update_state()
