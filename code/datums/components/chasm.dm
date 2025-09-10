@@ -95,6 +95,8 @@
 			var/mob/living/L = AM
 			L.DefaultCombatKnockdown(100)
 			L.adjustBruteLoss(30)
+		if(isobj(AM))
+			AM.onZImpact(T)
 		falling_atoms -= AM
 
 	else

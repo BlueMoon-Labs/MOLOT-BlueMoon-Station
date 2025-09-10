@@ -442,7 +442,7 @@
 	density = TRUE
 	anchored = FALSE
 	armor = list(MELEE = 0, BULLET = 0, LASER = 100, ENERGY = 100, BOMB = 0, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
-	throwforce = 10 // when lens is falling down through the floor
+	throwforce = 10 // when lens falls down through the floor
 	var/step_count = 0
 	var/state = FALSE
 
@@ -719,32 +719,28 @@
 	for(var/thing in thing_to_check)
 		if(thing == src)
 			continue
-		if(isobj(thing))
-			var/obj/O = thing
-			if(/*(O.item_flags & ABSTRACT) || */!(O.obj_flags & CAN_BE_HIT))
-				continue
-			if((O.resistance_flags & (FIRE_PROOF)) && !(O.resistance_flags & FLAMMABLE) || O.throwing)
-				continue
-			. = TRUE
-			if(O.armor.getRating(FIRE) > 50) //obj with 100% fire armor still get slowly burned away.
-				O.armor = O.armor.setRating(FIRE = 50)
-			O.fire_act(null, 2000, 1000)
-		else if(isliving(thing))
-			. = TRUE
-			var/mob/living/L = thing
-			var/buckle_check = L.buckling
-			if(!buckle_check)
-				buckle_check = L.buckled
-			if(isobj(buckle_check))
-				var/obj/O = buckle_check
-				if(O.resistance_flags & FIRE_PROOF)
-					continue
-			L.adjustFireLoss(50)
-			if(!QDELETED(L)) //mobs turning into object corpses could get deleted here.
-				L.adjust_fire_stacks(20)
-				L.IgniteMob()
+		var/atom/movable/M = thing
+		M.singularity_act()
+		. = TRUE
+		// if(isobj(thing))
+		// 	var/obj/O = thing
+		// 	if(O.invisibility >= INVISIBILITY_ABSTRACT)
+		// 		continue
+		// 	if(isitem(thing))
+		// 		var/obj/item/I = thing
+		// 		if(I.item_flags & ABSTRACT)
+		// 			continue
+		// 	. = TRUE
+		// 	O.fire_act(2000, 1000)
+		// if(isliving(thing))
+		// 	var/mob/living/L = thing
+		// 	if(L.invisibility >= INVISIBILITY_ABSTRACT)
+		// 		continue
+		// 	. = TRUE
+		// 	L.fire_act(2000, 1000)
+
 	if(.)
-		playsound(src, 'sound/weapons/sear.ogg', 50, TRUE, -4)
+		playsound(src, 'sound/weapons/sear.ogg', 50, TRUE)
 
 /obj/effect/bfl_laser/ex_act(severity)
 	return
