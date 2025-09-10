@@ -10,3 +10,4 @@
 
 /obj/structure/toilet/golden_toilet/bfl_goal
 	name = "\[NT REDACTED\]"
+	anchored = FALSE
