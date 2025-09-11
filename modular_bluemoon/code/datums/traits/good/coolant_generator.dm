@@ -15,3 +15,16 @@
 		for(var/datum/quirk/Q as anything in user_quirks)
 			qdel(Q)
 		qdel(src)
+
+/datum/quirk/powersaving/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!istype(H) || !isrobotic(H))
+		return
+	H.physiology.hunger_mod *= 1.15
+
+/datum/quirk/powersaving/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!istype(H) || !isrobotic(H))
+		return
+	H.physiology.hunger_mod /= 1.15
+
