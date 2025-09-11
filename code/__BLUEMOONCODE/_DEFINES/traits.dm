@@ -6,6 +6,10 @@
 #define TRAIT_BLUEMOON_SHRIEK				"shriek"
 #define TRAIT_BLUEMOON_SHOWER_NEED			"shower_need"
 #define TRAIT_BLUEMOON_COMPLEX_MAINTENANCE	"high_quality_maintenance"
+#define TRAIT_BLUEMOON_RESTORATIVE_NANOBOTS	"restorative_nanobots_trait"
+#define TRAIT_BLUEMOON_SYSCLEANER			"syscleaner_trait"
+#define TRAIT_BLUEMOON_POWERSAVING			"robotic_powersaving"
+#define TRAIT_BLUEMOON_COOLANT_GENERATOR	"coolant_generator"
 #define TRAIT_LEWD_JOB						"lewd_job"
 #define TRAIT_LEWD_SUMMON					"Призываемый"
 #define TRAIT_LEWD_SUMMONED					"lewd_summoned"
@@ -17,10 +21,12 @@
 
 // Отдельные наименования для квирков, чтобы не повторять их в настройках
 #define BLUEMOON_TRAIT_NAME_SHRIEK				"Крикун"
-
 #define BLUEMOON_TRAIT_NAME_SHOWER_NEED			"Потребность в душе"
-
 #define BLUEMOON_TRAIT_NAME_COMPLEX_MAINTENANCE "Сложное обслуживание"
+#define BLUEMOON_TRAIT_NAME_RESTORATIVE_NANOBOTS "Восстановительные Наноботы"
+#define BLUEMOON_TRAIT_NAME_SYSCLEANER			"Система Бэкапов"
+#define BLUEMOON_TRAIT_NAME_POWERSAVING			"Эффективное Энергопотребление"
+#define BLUEMOON_TRAIT_NAME_COOLANT_GENERATOR	"Генератор Хладагента"
 
 // Трейты для рас
 #define CAN_BE_OPERATED_WITHOUT_PAIN		"can_be_operated_without_pain"
@@ -34,3 +40,10 @@
 #define TRAIT_BLUEMOON_DEATH_FORGETFULNESS	"bm_death_forget"
 
 #define TRAIT_MOB_IN_AURA_HEALING "mob_in_aura_healing"
+
+
+/// Whether nanobots from TRAIT_BLUEMOON_RESTORATIVE_NANOBOTS are working RIGHT NOW
+#define TRAIT_NANOBOT_REPAIR_IN_PROGRESS "nanobot_repair_in_progress"
+
+/// Whether syscorruption cleaner from TRAIT_BLUEMOON_SYSCLEANER is working RIGHT NOW
+#define TRAIT_SYSCLEANER_IN_PROGRESS "nanobot_syscleaner_in_progress"
