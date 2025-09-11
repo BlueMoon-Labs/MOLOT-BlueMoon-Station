@@ -4,11 +4,12 @@
 	value = 2
 	gain_text = span_danger("Интересно, у органиков иногда возникает желание пустить воду по вене?")
 	lose_text = span_notice("Охлаждение водой - прошлый век. Я буду охлаждаться на пиве, прямо как РБМК!")
+	on_spawn_immediate = FALSE // иначе on_spawn из-за потенциального удаления квирка ломается
 	mob_trait = TRAIT_BLUEMOON_COOLANT_GENERATOR
 
 /datum/quirk/coolant_generator/on_spawn()
 	. = ..()
-	if(!isrobotic(quirk_holder)) // только персонажи-синтетики могут пользоваться этим квирком
+	if(!isrobotic(quirk_holder))
 		to_chat(quirk_holder, span_warning("Все квирки были сброшены, т.к. квирк [src] не подходит виду персонажа."))
 		var/list/user_quirks = quirk_holder.roundstart_quirks
 		user_quirks -= src

@@ -60,7 +60,7 @@
 
 /datum/quirk/restorative_nanobots/on_spawn()
 	. = ..()
-	if(!isrobotic(quirk_holder)) // только персонажи-синтетики могут пользоваться этим квирком
+	if(!isrobotic(quirk_holder))
 		to_chat(quirk_holder, span_warning("Все квирки были сброшены, т.к. квирк [src] не подходит виду персонажа."))
 		var/list/user_quirks = quirk_holder.roundstart_quirks
 		user_quirks -= src
@@ -91,7 +91,7 @@
 	var/heal_multiplier = H.getMaxHealth() / 100
 	var/bruteheal = -0.5
 	var/burnheal = -0.5
-	if (consumed_damage > 40 * heal_multiplier) // if the damage exceeds the threshold the speed of healing significantly reduse
+	if (consumed_damage > 40 * heal_multiplier)
 		heal_multiplier *= 0.4
 	H.adjustBruteLoss(bruteheal * heal_multiplier, TRUE, TRUE, TRUE, FALSE)
 	H.adjustFireLoss(burnheal * heal_multiplier, TRUE, TRUE, TRUE, FALSE)

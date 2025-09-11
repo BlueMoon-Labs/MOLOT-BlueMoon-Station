@@ -11,7 +11,7 @@
 
 /datum/quirk/syscleaner/on_spawn()
 	. = ..()
-	if(!isrobotic(quirk_holder)) // только персонажи-синтетики могут пользоваться этим квирком
+	if(!isrobotic(quirk_holder))
 		to_chat(quirk_holder, span_warning("Все квирки были сброшены, т.к. квирк [src] не подходит виду персонажа."))
 		var/list/user_quirks = quirk_holder.roundstart_quirks
 		user_quirks -= src
@@ -41,7 +41,7 @@
 	var/heal_multiplier = H.getMaxHealth() / 100
 	var/toxheal = -0.4
 
-	if (consumed_damage > 30 * heal_multiplier) // if the damage exceeds the threshold the speed of healing significantly reduse
+	if (consumed_damage > 30 * heal_multiplier)
 		heal_multiplier *= 0.4
 	H.adjustToxLoss(toxheal * heal_multiplier, TRUE, TRUE, TOX_SYSCORRUPT)
 
