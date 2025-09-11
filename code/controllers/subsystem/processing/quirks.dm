@@ -44,7 +44,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 						  list(BLUEMOON_TRAIT_NAME_POWERSAVING, "Бездонный Желудок"),
 						  list(BLUEMOON_TRAIT_NAME_SYSCLEANER, "Восстановительный Метаболизм"),
 						  list(BLUEMOON_TRAIT_NAME_RESTORATIVE_NANOBOTS, "Восстановительный Метаболизм"),
-						  list(BLUEMOON_TRAIT_NAME_RESTORATIVE_NANOBOTS, "Восстановительный Метаболизм"),
 						  list(BLUEMOON_TRAIT_NAME_COOLANT_GENERATOR, "Жаждущий")
 						  )
 		//BLUEMOON ADD END
