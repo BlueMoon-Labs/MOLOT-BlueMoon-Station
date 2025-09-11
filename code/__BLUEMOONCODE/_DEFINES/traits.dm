@@ -9,6 +9,7 @@
 #define TRAIT_BLUEMOON_RESTORATIVE_NANOBOTS	"restorative_nanobots_trait"
 #define TRAIT_BLUEMOON_SYSCLEANER			"syscleaner_trait"
 #define TRAIT_BLUEMOON_POWERSAVING			"robotic_powersaving"
+#define TRAIT_BLUEMOON_POWERSHARING			"robotic_powersharing"
 #define TRAIT_BLUEMOON_COOLANT_GENERATOR	"coolant_generator"
 #define TRAIT_LEWD_JOB						"lewd_job"
 #define TRAIT_LEWD_SUMMON					"Призываемый"
@@ -26,6 +27,7 @@
 #define BLUEMOON_TRAIT_NAME_RESTORATIVE_NANOBOTS "Восстановительные Наноботы"
 #define BLUEMOON_TRAIT_NAME_SYSCLEANER			"Система Бэкапов"
 #define BLUEMOON_TRAIT_NAME_POWERSAVING			"Эффективное Энергопотребление"
+#define BLUEMOON_TRAIT_NAME_POWERSHARING		"Двусторонняя Зарядка"
 #define BLUEMOON_TRAIT_NAME_COOLANT_GENERATOR	"Генератор Хладагента"
 
 // Трейты для рас
