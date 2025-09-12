@@ -351,7 +351,7 @@
 
 	if(loc == human_user && isrobotic(human_user) && HAS_TRAIT(human_user, TRAIT_BLUEMOON_POWERSHARING))
 		. += span_info("Powersharing capabilities are currently <b>[power_sharing_mod ? "ON" : "OFF"]</b>, you can toggle them by <b>using in hand</b> your power cord")
-		. += span_green("\n You currently have <b>[human_user.nutrition]</b> charge units or roughly <b>[human_user.nutrition * 3]W</b> left")
+		. += span_green("\n You currently have <b>[human_user.nutrition]</b> charge units or roughly <b>[human_user.nutrition * 6]W</b> left")
 
 /obj/item/apc_powercord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	user.DelayNextAction(CLICK_CD_MELEE)
@@ -472,10 +472,10 @@
 		if(A.cell.charge >= 500)
 			do_sparks(1, FALSE, A)
 			H.adjust_nutrition(50)
-			A.cell.use(150)
+			A.cell.use(300)
 			to_chat(H, "<span class='notice'>You siphon off some of the stored charge for your own use.</span>")
 		else
-			H.adjust_nutrition(A.cell.charge/10)
+			H.adjust_nutrition(A.cell.charge/6)
 			A.cell.use(A.cell.charge)
 			to_chat(H, "<span class='notice'>You siphon off as much as [A] can spare.</span>")
 			break
@@ -505,7 +505,7 @@
 			break
 
 		H.adjust_nutrition(-50)
-		A.cell.give(150)
+		A.cell.give(300)
 		to_chat(H, span_notice("You share some charge with [A]"))
 
 	in_use = FALSE
@@ -547,7 +547,7 @@
 			break
 
 		H.adjust_nutrition(-50)
-		C.give(150)
+		C.give(300)
 		do_sparks(1, FALSE, C)
 		to_chat(H, span_notice("You share some charge with [C]"))
 
@@ -602,7 +602,7 @@
 			break
 
 		H.adjust_nutrition(-50)
-		B.cell.give(150)
+		B.cell.give(300)
 		do_sparks(1, FALSE, B)
 		to_chat(H, span_notice("You share some charge with [B]"))
 
