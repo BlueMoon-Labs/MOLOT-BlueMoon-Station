@@ -340,6 +340,19 @@
 	/// Powercord shares power with others, not draws
 	var/power_sharing_mod = FALSE
 
+/obj/item/apc_powercord/examine(user)
+	. = ..()
+	if(in_use)
+		. += span_info("It's already connected to something")
+
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/human_user = user
+
+	if(loc == human_user && isrobotic(human_user) && HAS_TRAIT(human_user, TRAIT_BLUEMOON_POWERSHARING))
+		. += span_info("Powersharing capabilities are currently <b>[power_sharing_mod ? "ON" : "OFF"]</b>, you can toggle them by <b>using in hand</b> your power cord")
+		. += span_green("\n You currently have <b>[human_user.nutrition]</b> charge units or roughly <b>[human_user.nutrition * 3]W</b> left")
+
 /obj/item/apc_powercord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	user.DelayNextAction(CLICK_CD_MELEE)
 
@@ -394,6 +407,7 @@
 			if(comrade.nutrition >= NUTRITION_LEVEL_WELL_FED)
 				to_chat(H, span_warning("[comrade] is already charged!"))
 				return
+			playsound(src, 'sound/misc/menu/ui_select1.ogg', 30, 1, -1)
 			synth_powershare_loop(comrade, H)
 
 		else if(istype(target, /mob/living/silicon/robot))
@@ -405,6 +419,7 @@
 				to_chat(H, span_warning("[borgy] is already charged!"))
 				return
 			in_use = TRUE
+			playsound(src, 'sound/misc/menu/ui_select1.ogg', 30, 1, -1)
 			cyborg_powershare_loop(borgy, H)
 
 		to_chat(H, span_warning("You can't charge [target]!"))
@@ -441,6 +456,7 @@
 		to_chat(H, span_warning("У вас нет приспособлений для раздачи энергии!"))
 		return
 	power_sharing_mod = !power_sharing_mod
+	playsound(src, 'sound/misc/menu/ui_select1.ogg', 30, 1, -1)
 	to_chat(H, span_notice("Раздача энергии [power_sharing_mod ? "включена" : "выключена"]."))
 
 /obj/item/apc_powercord/proc/apc_powerdraw_loop(obj/machinery/power/apc/A, mob/living/carbon/human/H)
@@ -532,6 +548,7 @@
 
 		H.adjust_nutrition(-50)
 		C.give(150)
+		do_sparks(1, FALSE, C)
 		to_chat(H, span_notice("You share some charge with [C]"))
 
 	in_use = FALSE
@@ -559,6 +576,7 @@
 
 		H.adjust_nutrition(-50)
 		charged_synth.adjust_nutrition(50)
+		do_sparks(1, FALSE, charged_synth)
 		to_chat(H, span_notice("You share some charge with [charged_synth]"))
 
 	in_use = FALSE
@@ -585,6 +603,7 @@
 
 		H.adjust_nutrition(-50)
 		B.cell.give(150)
+		do_sparks(1, FALSE, B)
 		to_chat(H, span_notice("You share some charge with [B]"))
 
 	in_use = FALSE
