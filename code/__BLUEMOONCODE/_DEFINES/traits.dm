@@ -41,8 +41,13 @@
 /// Mob does not remember its death, due to one of DEATH_FORGETFULLNESS_REASONs
 #define TRAIT_BLUEMOON_DEATH_FORGETFULNESS	"bm_death_forget"
 
-#define TRAIT_MOB_IN_AURA_HEALING "mob_in_aura_healing"
 
+/// Chasms will be safe to cross while they've this trait.
+/// Этот трейт не работает "в полном объеме" как на новотг/парадизе и является заплаткой, которая может иметь ограниченный функционал.
+/// На данный момент присваивается атому (турфу). После снятия этого трейта желательно запустить процесс обработки падения предметов в чазм или вызвать /drop_stuff().
+#define TRAIT_CHASM_STOPPED "chasm_stopped"
+
+#define TRAIT_MOB_IN_AURA_HEALING "mob_in_aura_healing"
 
 /// Whether nanobots from TRAIT_BLUEMOON_RESTORATIVE_NANOBOTS are working RIGHT NOW
 #define TRAIT_NANOBOT_REPAIR_IN_PROGRESS "nanobot_repair_in_progress"

@@ -11,8 +11,9 @@
 	var/completed = FALSE
 	var/report_message = "Complete this goal."
 
-/datum/station_goal/proc/send_report()
-	priority_announce("Приоритетная директива Нанотрейзен получена. Детали о проекте \"[name]\" прилагаются.", "Срочное входящее сообщение", SSstation.announcer.get_rand_report_sound())
+/datum/station_goal/proc/send_report(announce_report = TRUE)
+	if(announce_report)
+		priority_announce("Приоритетная директива Нанотрейзен получена. Детали о проекте \"[name]\" прилагаются.", "Срочное входящее сообщение", SSstation.announcer.get_rand_report_sound())
 	print_command_report(get_report(),"Директива Нанотрейзен [pick(GLOB.phonetic_alphabet)] \Roman[rand(1,50)]", announce=FALSE)
 	on_report()
 
@@ -43,12 +44,15 @@
 		return
 
 	if(href_list["announce"])
-		on_report()
+		// on_report()
 		send_report()
 	else if(href_list["remove"])
 		qdel(src)
 	else if(href_list["complete"])
 		completed = TRUE
+
+/datum/station_goal/proc/can_be_selected()
+	return TRUE
 
 /*
 //Crew has to create alien intelligence detector

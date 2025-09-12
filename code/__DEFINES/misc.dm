@@ -42,9 +42,9 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define BODYPARTS_LAYER			38		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
 #define MARKING_LAYER			37		//Matrixed body markings because clashing with snouts?
 #define BODY_ADJ_LAYER			36		//certain mutantrace features (snout, body markings) that must appear above the body parts
-#define BODY_LAYER				35		//underwear, undershirts, socks, eyes, lips(makeup)
-#define BODY_ADJ_UPPER_LAYER	34
-#define GENITALS_FRONT_LAYER	33		//Draws some genitalia above clothes and the TAUR body if need be.
+#define GENITALS_FRONT_LAYER	35		//Draws some genitalia above clothes and the TAUR body if need be.
+#define BODY_LAYER				34		//underwear, undershirts, socks, eyes, lips(makeup)
+#define BODY_ADJ_UPPER_LAYER	33
 #define FRONT_MUTATIONS_LAYER	32		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
 #define UNDERWEAR_LAYER			31
 #define SOCKS_LAYER				30

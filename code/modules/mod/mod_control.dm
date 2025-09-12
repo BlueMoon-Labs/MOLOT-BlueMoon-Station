@@ -195,6 +195,9 @@
 	if((!cell || !cell.charge) && active && !activating)
 		power_off()
 		return PROCESS_KILL
+	// Добавляем минорное облучение, если батарея радиоактивна. Большей частью ради свечения.
+	if(cell.cell_is_radioactive)
+		AddComponent(/datum/component/radioactive, 1, src)
 	var/malfunctioning_charge_drain = 0
 	if(malfunctioning)
 		malfunctioning_charge_drain = rand(1,20)

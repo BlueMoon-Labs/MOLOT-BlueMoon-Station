@@ -45,6 +45,27 @@
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/melee_righthand.dmi'
 
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/portalabomination_kit
+	name = "Telescopic Abomination Tool Kit"
+	desc = "A modkit for making an telescopic baton into a god forbidden weapon. Hold it tight."
+	product = /obj/item/melee/classic_baton/telescopic/portal_abomination
+	fromitem = list(/obj/item/melee/classic_baton/telescopic)
+
+/obj/item/melee/classic_baton/telescopic/portal_abomination
+	name = "Otherworld Portal Weapon"
+	desc = "A portal tool, revealing some part of otherworld undescribable abomination. Use it carefully or it will use you. Who openned the gates to this thing?!"
+	icon_state = "portalabomination"
+	icon = 'modular_bluemoon/fluffs/icons/obj/UngodlyAbomination.dmi'
+	item_state = "portalabomination"
+	on_icon_state = "portalabomination_active"
+	off_icon_state = "portalabomination"
+	on_item_state = "portalabomination_active"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	hitsound = 'modular_bluemoon/fluffs/sound/weapon/Abomination.ogg'
+
 // /obj/item/modkit/esword_kit
 // 	name = "Energy sword Kit"
 // 	desc = "A modkit for making a plasma sword into an energy sword."
