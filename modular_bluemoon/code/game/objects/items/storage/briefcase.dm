@@ -48,7 +48,7 @@
 	stoplag(5 SECONDS)
 	// user.dust()
 	if(loc == user)
-		user.dropItemToGround(src, TRUE, TRUE)
+		user.dropItemToGround(src, silent = TRUE)
 	user.fakedeath(src, FALSE)
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, cure_fakedeath)), 60 SECONDS)
 	stoplag(5 SECONDS)
