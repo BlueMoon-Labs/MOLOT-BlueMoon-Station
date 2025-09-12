@@ -17,7 +17,7 @@
 	new /obj/item/paper_bin(src)
 
 /obj/item/case_with_bipki
-	name = "bipki case"
+	name = "\proper bipki case"
 	desc = "Легендарный чемодан с бипками! Стоп, а что такое бипки?"
 	icon = 'modular_bluemoon/icons/obj/bipki.dmi'
 	icon_state = "briefcase_bipki"
@@ -28,9 +28,13 @@
 	attack_verb = list("ударил", "огрел")
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	w_class = WEIGHT_CLASS_BULKY
+	light_color = LIGHT_COLOR_HOLY_MAGIC
+	light_power = 10
 	var/opened = FALSE
 
 /obj/item/case_with_bipki/interact(mob/living/carbon/user)
+	if(opened)
+		return
 	if(!istype(user))
 		to_chat(user, "У вас не получается открыть этот чемодан.")
 		return
@@ -39,15 +43,18 @@
 		return
 	opened = TRUE
 	update_icon(UPDATE_ICON_STATE)
+	set_light(5)
 	to_chat(user, "<span class='large_brass bold'>Вы видите бипки.</span>")
-	stoplag(3 SECONDS)
+	stoplag(5 SECONDS)
 	// user.dust()
-	user.dropItemToGround(src, TRUE, TRUE)
+	if(loc == user)
+		user.dropItemToGround(src, TRUE, TRUE)
 	user.fakedeath(src, FALSE)
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, cure_fakedeath)), 60 SECONDS)
-	stoplag(4 SECONDS)
+	stoplag(5 SECONDS)
 	opened = FALSE
 	update_icon(UPDATE_ICON_STATE)
+	set_light(0)
 
 /obj/item/case_with_bipki/update_icon_state()
 	. = ..()
