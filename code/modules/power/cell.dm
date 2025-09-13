@@ -73,10 +73,10 @@
 		return PROCESS_KILL
 
 /// Proc for radioactive cells made with uranium and considered as contaminating its surroundings
-/obj/item/stock_parts/cell/proc/irradiate()
+/obj/item/stock_parts/cell/proc/irradiate(datum/component/radioactive/Comp)
 	AddComponent(/datum/component/radioactive, 0, src, 0)
-	if(prob(75))
-		radiation_pulse(get_turf(src), rad_strength*(charge < maxcharge ? 1 : 0.5), RAD_DISTANCE_COEFFICIENT*2)
+	Comp = GetComponent(/datum/component/radioactive)
+	Comp.strength = round(rad_strength*(charge < maxcharge ? 1 : 0.5), 0.5) // Округляем к ближайшей целой половине
 
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()
