@@ -68,9 +68,9 @@
 		return FALSE
 
 	for(var/atom/X = A; X; X = X.loc)
-		if(istype(X, /turf)) // "голые" турфы не защищают
+		if(istype(X, /turf)) // "Голые" турфы не защищают
 			break
-		// если у контейнера задан флаг защиты, радейка заблокируется
+		// Если у контейнера задан флаг защиты, радейка заблокируется
 		if(istype(X, /obj/structure/closet) && (X.rad_flags & RAD_PROTECT_CONTENTS))
 			return TRUE
 
