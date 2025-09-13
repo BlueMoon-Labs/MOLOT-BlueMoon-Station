@@ -1,5 +1,5 @@
 /obj/item/storage/briefcase/lawyer/family/loadout //changed due to PopulateContents() containing other stuff
-	name = "battered  briefcase"
+	name = "battered briefcase"
 	icon_state = "gbriefcase"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
