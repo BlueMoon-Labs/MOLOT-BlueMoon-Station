@@ -20,7 +20,7 @@
 	name = "changed liver"
 	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "weakliver"
-	desc = "An improved version of baseline liver. Better tan the baseline counterpart."
+	desc = "An improved version of baseline liver. Better than the baseline counterpart."
 	alcohol_tolerance = 0.001
 	maxHealth = 2.5 * STANDARD_ORGAN_THRESHOLD
 	toxTolerance = 5 * LIVER_DEFAULT_TOX_TOLERANCE

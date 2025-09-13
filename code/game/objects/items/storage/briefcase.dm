@@ -39,7 +39,7 @@
 	folder_path = /obj/item/folder/blue
 
 /obj/item/storage/briefcase/lawyer/family
-	name = "battered  briefcase"
+	name = "battered briefcase"
 	icon_state = "gbriefcase"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
