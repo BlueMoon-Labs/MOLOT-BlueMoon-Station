@@ -37,7 +37,7 @@
 	req_components = list(
 		/obj/item/stock_parts/matter_bin/replicantmatter = 2,
 		/obj/item/stock_parts/manipulator/zepto = 2,
-		/obj/item/reagent_containers/glass/beaker/ultimate= 2)
+		/obj/item/reagent_containers/glass/beaker/ultimate = 2)
 
 /obj/machinery/rnd/production/protolathe/bioaegis/syndicate/Initialize(mapload) //It took me soo fucking long since other stuff just runtimed or said 'fuck you' and shat itself.
 	. = ..()
