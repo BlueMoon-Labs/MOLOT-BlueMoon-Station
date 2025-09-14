@@ -109,8 +109,7 @@
 		return ..()
 	if(isliving(AM))
 		var/mob/living/victim = AM
-		// В противном случае этим будет заниматься контроллер
-		if(!controller && ishuman(victim) && isrobotic(victim) && HAS_TRAIT(victim, TRAIT_BLUEMOON_WATER_VULNERABILITY) && victim.stat == CONSCIOUS && prob(60))
+		if(ishuman(victim) && isrobotic(victim) && HAS_TRAIT(victim, TRAIT_BLUEMOON_WATER_VULNERABILITY) && victim.stat == CONSCIOUS && prob(60))
 			var/mob/living/carbon/human/iphonemaxpro = victim
 			if(prob(80))
 				iphonemaxpro.visible_message(span_warning("[iphonemaxpro] сильно искрит, когда [iphonemaxpro.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))

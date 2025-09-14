@@ -52,7 +52,7 @@
 	// Делаем больно синтетикам с уязвимостью к ЭМИ
 	for(var/i in GLOB.human_list)
 		var/mob/living/carbon/human/H = i
-		if(!istype(H) || !QDELETED(H))
+		if(!istype(H) || QDELETED(H))
 			continue
 		if(H.z in safe_z_levels)
 			continue
