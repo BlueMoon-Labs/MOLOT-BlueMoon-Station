@@ -158,7 +158,7 @@
 	if(user == H)
 		user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [H]'s [affecting.name].</span>",
 			"<span class='notice'>You start fixing some of the dents on [H]'s [affecting.name].</span>")
-		if(!do_mob(user, H, 30))
+		if(!do_mob(user, H, 20))
 			robotic_healing_in_process = FALSE
 			return
 	else if(!do_mob(user, H, 5))
