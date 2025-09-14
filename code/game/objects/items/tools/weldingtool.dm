@@ -37,6 +37,7 @@
 	var/light_intensity = 2 //how powerful the emitted light is when used.
 	var/progress_flash_divisor = 10
 	var/burned_fuel_for = 0	//when fuel was last removed
+	var/robotic_healing_in_process = FALSE
 	heat = 3800
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 1
@@ -133,6 +134,9 @@
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 
 	if(affecting && affecting.is_robotic_limb() && user.a_intent != INTENT_HARM)
+		if(robotic_healing_in_process)
+			to_chat(H, span_warning("Не так быстро!"))
+			return
 		try_heal_robotic(H, user)
 	else
 		return ..()
@@ -145,15 +149,20 @@
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 
 	if(!affecting || !affecting.is_robotic_limb())
+		robotic_healing_in_process = FALSE
 		return
 	if(!use_tool(H, user, 0, volume=50, amount=1))
+		robotic_healing_in_process = FALSE
 		return
+	robotic_healing_in_process = TRUE
 	if(user == H)
 		user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [H]'s [affecting.name].</span>",
 			"<span class='notice'>You start fixing some of the dents on [H]'s [affecting.name].</span>")
 		if(!do_mob(user, H, 30))
+			robotic_healing_in_process = FALSE
 			return
 	else if(!do_mob(user, H, 5))
+		robotic_healing_in_process = FALSE
 		return
 	damage = affecting.brute_dam
 	affecting.update_threshhold_state(burn = FALSE)
@@ -161,10 +170,13 @@
 		heal_amount = min(heal_amount, damage - affecting.threshhold_passed_mindamage)
 		if(!heal_amount)
 			to_chat(user, span_notice("[user == H ? "Ваша [affecting.ru_name]" : "[affecting.ru_name_capital] [H]"] подверглась сильным внутренним повреждениям. Требуется углубленный ремонт с хирургической точностью."))
+			robotic_healing_in_process = FALSE
 			return
 	if(item_heal_robotic(H, user, heal_amount, 0))
 		// повторяем
 		INVOKE_ASYNC(src, PROC_REF(try_heal_robotic), H, user)
+	else
+		robotic_healing_in_process = FALSE
 
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)

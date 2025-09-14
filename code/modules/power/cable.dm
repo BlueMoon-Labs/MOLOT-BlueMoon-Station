@@ -519,6 +519,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	grind_results = list(/datum/reagent/copper = 2) //2 copper per cable in the coil
 	usesound = 'sound/items/deconstruct.ogg'
 	used_skills = list(/datum/skill/level/job/wiring)
+	var/robotic_healing_in_process = FALSE
 
 /obj/item/stack/cable_coil/cyborg
 	is_cyborg = TRUE
@@ -556,6 +557,9 @@ By design, d1 is the smallest direction and d2 is the highest
 
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && affecting.is_robotic_limb())
+		if(robotic_healing_in_process)
+			to_chat(H, span_warning("Не так быстро!"))
+			return
 		try_heal_robotic(H, user)
 	else
 		return ..()
@@ -566,14 +570,16 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 
 	if(!affecting || !affecting.is_robotic_limb())
+		robotic_healing_in_process = FALSE
 		return
-	if(!use_tool(H, user, 0, volume=30, amount=1))
-		return
+	robotic_healing_in_process = TRUE
 	if(user == H)
 		user.visible_message("<span class='notice'>[user] starts to fix some of the wires in [H]'s [affecting.name].</span>", "<span class='notice'>You start fixing some of the wires in [H]'s [affecting.name].</span>")
 		if(!do_mob(user, H, 30))
+			robotic_healing_in_process = FALSE
 			return
 	else if(!do_mob(user, H, 5))
+		robotic_healing_in_process = FALSE
 		return
 	var/damage = affecting.burn_dam
 	affecting.update_threshhold_state(brute = FALSE)
@@ -581,6 +587,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		heal_amount = min(heal_amount, damage - affecting.threshhold_passed_mindamage)
 		if(!heal_amount)
 			to_chat(user, span_notice("[user == H ? "Ваша [affecting.ru_name]" : "[affecting.ru_name_capital] [H]"] подверглась сильным внутренним повреждениям. Требуется углубленный ремонт с хирургической точностью."))
+			robotic_healing_in_process = FALSE
 			return
 	if(item_heal_robotic(H, user, 0, heal_amount))
 		if(amount > 1)
@@ -588,6 +595,7 @@ By design, d1 is the smallest direction and d2 is the highest
 			// повторяем
 			INVOKE_ASYNC(src, PROC_REF(try_heal_robotic), H, user)
 		else
+			robotic_healing_in_process = FALSE
 			use(1)
 
 /obj/item/stack/cable_coil/update_icon_state()
