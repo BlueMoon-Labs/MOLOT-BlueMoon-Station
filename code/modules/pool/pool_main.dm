@@ -122,8 +122,8 @@
 				iphonemaxpro.visible_message(span_warning("[iphonemaxpro] отключается от короткого замыкания и идёт ко дну!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
 				do_sparks(4, TRUE, iphonemaxpro)
 				iphonemaxpro.apply_damage(40, BURN)
-				droiphonemaxprownee.AdjustUnconscious(100)
-		if(!HAS_TRAIT(victim, TRAIT_SWIMMING) && !isrobotic(drownee))		//poor guy not swimming time to dunk them!
+				iphonemaxpro.AdjustUnconscious(100)
+		if(!HAS_TRAIT(victim, TRAIT_SWIMMING) && !isrobotic(victim))		//poor guy not swimming time to dunk them!
 			victim.AddElement(/datum/element/swimming)
 			controller?.mobs_in_pool += victim
 			if(locate(/obj/structure/pool/ladder) in src)		//safe climbing
