@@ -254,14 +254,14 @@
 						if(prob(80))
 							drownee.visible_message(span_warning("[drownee] сильно искрит, когда [drownee.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
 							do_sparks(2, TRUE, drownee)
-							drownee.Confused(5 SECONDS)
-							drownee.Jitter(10 SECONDS)
+							drownee.Confused(30)
+							drownee.Jitter(40)
 							drownee.apply_damage(15, BURN)
 						else
 							drownee.visible_message(span_warning("[drownee] отключается от короткого замыкания и идёт ко дну!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
 							do_sparks(4, TRUE, drownee)
 							drownee.apply_damage(40, BURN)
-							drownee.AdjustUnconscious(30 SECONDS)
+							drownee.AdjustUnconscious(100)
 				continue
 			if(HAS_TRAIT(drownee, TRAIT_NOBREATH))
 				continue

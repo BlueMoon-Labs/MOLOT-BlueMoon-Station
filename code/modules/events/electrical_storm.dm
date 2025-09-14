@@ -55,9 +55,9 @@
 				continue
 			H.visible_message(span_warning("[H] вздрагивает, когда сквозь [H.ru_ego()] корпус проходит электромагнитный импульс."), span_boldwarning("Электромагнитная буря задела вас! Ауч!"))
 			H.apply_damage(20, BURN)
-			H.adjustToxLoss(30, toxins_type = TOX_SYSCORRUPT)
-			H.Jitter(20 SECONDS)
-			H.Confused(10 SECONDS)
-			H.Stun(1 SECONDS)
-			H.Dizzy(7 SECONDS)
+			H.adjustToxLoss(20, toxins_type = TOX_SYSCORRUPT)
+			H.Jitter(50)
+			H.Confused(30)
+			H.Stun(5)
+			H.Dizzy(20)
 
