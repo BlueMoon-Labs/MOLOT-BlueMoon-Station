@@ -45,3 +45,19 @@
 			satellties_count++
 			satellite.malfunction()
 	//BLUEMOON ADD START
+
+	// Делаем больно синтетикам с уязвимостью к ЭМИ
+	for(var/i in GLOB.human_list)
+		var/mob/living/carbon/human/H = i
+		if(!QDELETED(H) && isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_EMP_VULNERABILITY) && H.stat != DEAD)
+			var/protection = SEND_SIGNAL(H, COMSIG_ATOM_EMP_ACT, 1)
+			if(protection & EMP_PROTECT_CONTENTS)
+				continue
+			H.visible_message(span_warning("[H] вздрагивает, когда сквозь [H.ru_ego()] корпус проходит электромагнитный импульс."), span_boldwarning("Электромагнитная буря задела вас! Ауч!"))
+			H.apply_damage(20, BURN)
+			H.adjustToxLoss(30, toxins_type = TOX_SYSCORRUPT)
+			H.Jitter(20 SECONDS)
+			H.Confused(10 SECONDS)
+			H.Stun(1 SECONDS)
+			H.Dizzy(7 SECONDS)
+

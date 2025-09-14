@@ -247,7 +247,24 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/drownee = M
 			if(!drownee || drownee.stat == DEAD)
-				return
+				continue
+			if(isrobotic(drownee))
+				if(HAS_TRAIT(drownee, TRAIT_BLUEMOON_WATER_VULNERABILITY))
+					if(drownee.stat == CONSCIOUS && prob(30))
+						if(prob(80))
+							drownee.visible_message(span_warning("[drownee] сильно искрит, когда [drownee.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
+							do_sparks(2, TRUE, drownee)
+							drownee.Confused(5 SECONDS)
+							drownee.Jitter(10 SECONDS)
+							drownee.apply_damage(15, BURN)
+						else
+							drownee.visible_message(span_warning("[drownee] отключается от короткого замыкания и идёт ко дну!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
+							do_sparks(4, TRUE, drownee)
+							drownee.apply_damage(40, BURN)
+							drownee.AdjustUnconscious(30 SECONDS)
+				continue
+			if(HAS_TRAIT(drownee, TRAIT_NOBREATH))
+				continue
 			if(drownee.resting && !drownee.internal)
 				if(drownee.stat != CONSCIOUS)
 					drownee.adjustOxyLoss(9)

@@ -5,6 +5,7 @@
 	gain_text = span_danger("Интересно, у органиков иногда возникает желание пустить воду по вене?")
 	lose_text = span_notice("Охлаждение водой - прошлый век. Я буду охлаждаться на пиве, прямо как РБМК!")
 	on_spawn_immediate = FALSE // иначе on_spawn из-за потенциального удаления квирка ломается
+	// Сама работа квирка заключается в этом трейте, который влияет на метаболизацию воды
 	mob_trait = TRAIT_BLUEMOON_COOLANT_GENERATOR
 
 /datum/quirk/coolant_generator/on_spawn()
@@ -17,13 +18,13 @@
 			qdel(Q)
 		qdel(src)
 
-/datum/quirk/powersaving/add()
+/datum/quirk/coolant_generator/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!istype(H) || !isrobotic(H))
 		return
 	H.physiology.hunger_mod *= 1.15
 
-/datum/quirk/powersaving/remove()
+/datum/quirk/coolant_generator/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!istype(H) || !isrobotic(H))
 		return

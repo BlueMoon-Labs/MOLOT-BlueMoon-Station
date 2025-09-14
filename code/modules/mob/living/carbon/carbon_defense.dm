@@ -230,11 +230,14 @@
 		// BLUEMOON ADD - кулдаун по получению ЕМП у синтетиков
 		if(istype(src, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = src
-			var/emp_shield_duration = 7 SECONDS
+			var/emp_shield_duration = 10 SECONDS
 			if(HAS_TRAIT(H, TRAIT_SYSCLEANER_IN_PROGRESS))
 				emp_shield_duration /= 2
 			if(HAS_TRAIT(H, TRAIT_NANOBOT_REPAIR_IN_PROGRESS))
 				emp_shield_duration /= 2
+			if(HAS_TRAIT(H, TRAIT_BLUEMOON_EMP_VULNERABILITY))
+				emp_shield_duration /= 4
+			emp_shield_duration = clamp(emp_shield_duration, 1 SECONDS, 10 SECONDS)
 			AddElement(/datum/element/empprotection, EMP_PROTECT_CONTENTS)
 			H.physiology.hunger_mod *= 5
 			addtimer(CALLBACK(H, PROC_REF(rollback_emp_protection)), emp_shield_duration)
