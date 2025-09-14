@@ -85,12 +85,15 @@
 			if(prob(botEmagChance))
 				bot.emag_act()
 
+	var/list/safe_z_levels = list()
+	safe_z_levels |= SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
+	safe_z_levels |= SSmapping.levels_by_trait(ZTRAIT_VR)
 	// Делаем больно синтетикам с уязвимостью к ЭМИ
 	for(var/i in GLOB.human_list)
 		var/mob/living/carbon/human/H = i
-		if(!QDELETED(H))
+		if(!istype(H) || !QDELETED(H))
 			continue
-		if(H.z == SSmapping.levels_by_trait(ZTRAIT_CENTCOM))
+		if(H.z in safe_z_levels)
 			continue
 		if(isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_EMP_VULNERABILITY) && H.stat != DEAD)
 			var/protection = SEND_SIGNAL(H, COMSIG_ATOM_EMP_ACT, 1)

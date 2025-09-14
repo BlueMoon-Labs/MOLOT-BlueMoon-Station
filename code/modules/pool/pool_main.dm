@@ -109,7 +109,21 @@
 		return ..()
 	if(isliving(AM))
 		var/mob/living/victim = AM
-		if(!HAS_TRAIT(victim, TRAIT_SWIMMING))		//poor guy not swimming time to dunk them!
+		// В противном случае этим будет заниматься контроллер
+		if(!controller && ishuman(victim) && isrobotic(victim) && HAS_TRAIT(victim, TRAIT_BLUEMOON_WATER_VULNERABILITY) && victim.stat == CONSCIOUS && prob(60))
+			var/mob/living/carbon/human/iphonemaxpro = victim
+			if(prob(80))
+				iphonemaxpro.visible_message(span_warning("[iphonemaxpro] сильно искрит, когда [iphonemaxpro.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
+				do_sparks(2, TRUE, iphonemaxpro)
+				iphonemaxpro.Confused(30)
+				iphonemaxpro.Jitter(40)
+				iphonemaxpro.apply_damage(15, BURN)
+			else
+				iphonemaxpro.visible_message(span_warning("[iphonemaxpro] отключается от короткого замыкания и идёт ко дну!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
+				do_sparks(4, TRUE, iphonemaxpro)
+				iphonemaxpro.apply_damage(40, BURN)
+				droiphonemaxprownee.AdjustUnconscious(100)
+		if(!HAS_TRAIT(victim, TRAIT_SWIMMING) && !isrobotic(drownee))		//poor guy not swimming time to dunk them!
 			victim.AddElement(/datum/element/swimming)
 			controller?.mobs_in_pool += victim
 			if(locate(/obj/structure/pool/ladder) in src)		//safe climbing

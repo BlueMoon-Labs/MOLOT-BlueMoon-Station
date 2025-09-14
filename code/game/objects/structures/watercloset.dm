@@ -439,7 +439,7 @@
 			var/washears = TRUE
 			var/washglasses = TRUE
 
-			if(isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_WATER_VULNERABILITY) && H.stat == CONSCIOUS && prob(30))
+			if(isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_WATER_VULNERABILITY) && H.stat == CONSCIOUS && prob(70))
 				if(prob(80))
 					H.visible_message(span_warning("[H] искрит, когда [H.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
 					do_sparks(2, TRUE, H)
