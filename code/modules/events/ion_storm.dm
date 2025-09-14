@@ -88,7 +88,11 @@
 	// Делаем больно синтетикам с уязвимостью к ЭМИ
 	for(var/i in GLOB.human_list)
 		var/mob/living/carbon/human/H = i
-		if(!QDELETED(H) && isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_EMP_VULNERABILITY) && H.stat != DEAD)
+		if(!QDELETED(H))
+			continue
+		if(H.z == SSmapping.levels_by_trait(ZTRAIT_CENTCOM))
+			continue
+		if(isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_EMP_VULNERABILITY) && H.stat != DEAD)
 			var/protection = SEND_SIGNAL(H, COMSIG_ATOM_EMP_ACT, 1)
 			if(protection & EMP_PROTECT_CONTENTS)
 				continue
