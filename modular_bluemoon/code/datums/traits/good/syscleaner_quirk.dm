@@ -39,10 +39,10 @@
 		syscleaning_in_progress = TRUE
 
 	var/heal_multiplier = H.getMaxHealth() / 100
-	var/toxheal = -0.4
+	var/toxheal = -0.6
 
-	if (consumed_damage > 30 * heal_multiplier)
-		heal_multiplier *= 0.4
+	if (consumed_damage > 40 * heal_multiplier)
+		heal_multiplier *= 0.5
 	H.adjustToxLoss(toxheal * heal_multiplier, TRUE, TRUE, TOX_SYSCORRUPT)
 
 /datum/quirk/syscleaner/remove()

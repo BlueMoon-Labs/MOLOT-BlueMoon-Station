@@ -89,10 +89,10 @@
 		healing_in_progress = TRUE
 
 	var/heal_multiplier = H.getMaxHealth() / 100
-	var/bruteheal = -0.5
-	var/burnheal = -0.5
-	if (consumed_damage > 40 * heal_multiplier)
-		heal_multiplier *= 0.4
+	var/bruteheal = -0.6
+	var/burnheal = -0.6
+	if (consumed_damage > 50 * heal_multiplier)
+		heal_multiplier *= 0.5
 	H.adjustBruteLoss(bruteheal * heal_multiplier, TRUE, TRUE, TRUE, FALSE)
 	H.adjustFireLoss(burnheal * heal_multiplier, TRUE, TRUE, TRUE, FALSE)
 
