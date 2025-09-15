@@ -1838,5 +1838,12 @@
 	name = "Tactical skirt"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/under/dress/skirt/tacticool
-	ckeywhitelist = list("DefinitelyNotNesuby")
+	ckeywhitelist = list("definitelynotnesuby")
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
+
+/datum/gear/donator/bm/portalabomination_kit
+	name = "The WRONG portal kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/portalabomination_kit
+	ckeywhitelist = list("architect0r")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03

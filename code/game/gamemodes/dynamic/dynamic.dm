@@ -339,15 +339,15 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 	// BLUEMOON ADD START - присвоение минимального и максимального возможного уровня угрозы
 	switch(GLOB.round_type)
 		if(ROUNDTYPE_DYNAMIC_TEAMBASED)
-			GLOB.dynamic_type_threat_min = 75 //от 1 до 2 командных антагов
+			GLOB.dynamic_type_threat_min = 90 //от 1 до 2 командных антагов
 			GLOB.dynamic_type_threat_max = 100
 			GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
 		if(ROUNDTYPE_DYNAMIC_HARD)
-			GLOB.dynamic_type_threat_min = 75
+			GLOB.dynamic_type_threat_min = 90
 			GLOB.dynamic_type_threat_max = 100
 		if(ROUNDTYPE_DYNAMIC_MEDIUM)
-			GLOB.dynamic_type_threat_min = 40
-			GLOB.dynamic_type_threat_max = 60
+			GLOB.dynamic_type_threat_min = 50
+			GLOB.dynamic_type_threat_max = 100
 		if(ROUNDTYPE_DYNAMIC_LIGHT)
 			GLOB.dynamic_type_threat_min = 50
 			GLOB.dynamic_type_threat_max = 70

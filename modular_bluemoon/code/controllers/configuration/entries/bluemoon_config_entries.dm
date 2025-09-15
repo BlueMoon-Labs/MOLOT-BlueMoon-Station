@@ -17,3 +17,13 @@
 	default = list()
 
 /datum/config_entry/string/chat_suspect_login
+
+/datum/config_entry/number/chaos_for_a_hard_dynamic
+	default = 200
+	integer = TRUE
+	min_val = 0
+
+/datum/config_entry/number/chaos_for_a_medium_dynamic
+	default = 100
+	integer = TRUE
+	min_val = 0

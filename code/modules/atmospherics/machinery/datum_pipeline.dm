@@ -81,12 +81,21 @@
 
 	air.set_volume(volume)
 
+/**
+ *  For a machine to properly "connect" to a pipeline and share gases,
+ *  the pipeline needs to acknowledge a gas mixture as its member.
+ *  This is currently handled by the other_airs list in the pipeline datum.
+ *
+ *	Other_airs itself is populated by gas mixtures through the parents list that each machineries have.
+ *	This parents list is populated when a machinery calls update_parents and is then added into the queue by the controller.
+ */
 /datum/pipeline/proc/addMachineryMember(obj/machinery/atmospherics/components/C)
 	other_atmosmch |= C
-	var/datum/gas_mixture/G = C.returnPipenetAir(src)
-	if(!G)
-		stack_trace("addMachineryMember: Null gasmix added to pipeline datum from [C] which is of type [C.type]. Nearby: ([C.x], [C.y], [C.z])")
-	other_airs |= G
+	var/list/returned_airs = C.returnPipenetAirs(src)
+	if (!length(returned_airs) || (null in returned_airs))
+		stack_trace("addMachineryMember: Nonexistent (empty list) or null machinery gasmix added to pipeline datum from [C] \
+		which is of type [C.type]. Nearby: ([C.x], [C.y], [C.z])")
+	other_airs |= returned_airs
 
 /datum/pipeline/proc/addMember(obj/machinery/atmospherics/A, obj/machinery/atmospherics/N)
 	if(istype(A, /obj/machinery/atmospherics/pipe))
@@ -117,8 +126,8 @@
 	air.merge(E.air)
 	for(var/obj/machinery/atmospherics/components/C in E.other_atmosmch)
 		C.replacePipenet(E, src)
-	other_atmosmch.Add(E.other_atmosmch)
-	other_airs.Add(E.other_airs)
+	other_atmosmch |= E.other_atmosmch
+	other_airs |= E.other_airs
 	E.members.Cut()
 	E.other_atmosmch.Cut()
 	update = TRUE

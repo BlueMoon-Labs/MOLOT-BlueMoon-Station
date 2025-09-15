@@ -375,7 +375,7 @@
 		/obj/item/rcd_ammo/large=2,
 		/obj/item/construction/rcd/combat=1,
 		/obj/item/inducer=1,
-		/obj/item/stock_parts/cell/bluespacereactor=1,
+		/obj/item/stock_parts/cell/vortex=1,
 	)
 
 	cybernetic_implants = list(
@@ -402,7 +402,7 @@
 		/obj/item/rcd_ammo/large=2,
 		/obj/item/construction/rcd/combat=1,
 		/obj/item/inducer=1,
-		/obj/item/stock_parts/cell/bluespacereactor=1,
+		/obj/item/stock_parts/cell/vortex=1,
 		)
 
 	cybernetic_implants = list(
@@ -433,7 +433,7 @@
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/construction/rcd/combat=1,
 		/obj/item/inducer/sci/combat=1,
-		/obj/item/stock_parts/cell/bluespacereactor=1,
+		/obj/item/stock_parts/cell/vortex=1,
 		)
 
 	cybernetic_implants = list(
@@ -455,7 +455,7 @@
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/construction/rcd/combat=1,
 		/obj/item/inducer/sci/combat=1,
-		/obj/item/stock_parts/cell/bluespacereactor=1,
+		/obj/item/stock_parts/cell/vortex=1,
 		)
 
 	cybernetic_implants = list(

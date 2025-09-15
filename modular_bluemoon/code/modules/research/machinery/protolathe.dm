@@ -28,13 +28,24 @@
 	icon = 'modular_bluemoon/icons/obj/machines/research.dmi'
 	icon_state = "protolathe-syn"
 	production_animation = "protolathe_n-syn"
-	flags_1 = NODECONSTRUCT_1 //'No.'
+	flags_1 = NODECONSTRUCT_1 //Should prevent any attempt to take t6 parts or something else. Same with chem dispensers in all honesty.
 
-/obj/item/circuitboard/machine/protolathe/bioaegis/syndicate //Modred did somewhat moderate amout of fuckery with broken liver, so here is the reward.
+/obj/item/circuitboard/machine/protolathe/bioaegis/syndicate //I make it so some tests/checks don't fuck up. You can't get it anyway without debug/spawn
 	name = "Syndicate Bio-organical Printer (Machine Board)"
 	icon_state = "command"
 	build_path = /obj/machinery/rnd/production/protolathe/bioaegis/syndicate
 	req_components = list(
-		/obj/item/stock_parts/matter_bin/replicantmatter = 2, //Cybersun's ops: LEMME STEAL THIS SHIT IT IS REALLY FREE ESTATE.
+		/obj/item/stock_parts/matter_bin/replicantmatter = 2,
 		/obj/item/stock_parts/manipulator/zepto = 2,
 		/obj/item/reagent_containers/glass/beaker/ultimate = 2)
+
+/obj/machinery/rnd/production/protolathe/bioaegis/syndicate/Initialize(mapload) //It took me soo fucking long since other stuff just runtimed or said 'fuck you' and shat itself.
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/matter_bin/replicantmatter(null)
+	component_parts += new /obj/item/stock_parts/matter_bin/replicantmatter(null)
+	component_parts += new /obj/item/stock_parts/manipulator/zepto(null)
+	component_parts += new /obj/item/stock_parts/manipulator/zepto(null)
+	component_parts += new /obj/item/reagent_containers/glass/beaker/ultimate(null)
+	component_parts += new /obj/item/reagent_containers/glass/beaker/ultimate(null)
+	RefreshParts()

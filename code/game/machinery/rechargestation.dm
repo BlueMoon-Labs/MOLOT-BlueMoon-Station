@@ -49,6 +49,11 @@
 		repairs += M.rating - 1
 	for(var/obj/item/stock_parts/cell/C in component_parts)
 		recharge_speed *= C.maxcharge / 10000
+		// Добавляем минорное облучение, если батарея радиоактивна. Большей частью ради свечения.
+		if(C.cell_is_radioactive)
+			AddComponent(/datum/component/radioactive, C.rad_strength/2.5, src, 0)
+		else
+			qdel(GetComponent(/datum/component/radioactive))
 
 /obj/machinery/recharge_station/examine(mob/user)
 	. = ..()

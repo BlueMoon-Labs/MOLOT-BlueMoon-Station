@@ -170,10 +170,11 @@
 	. = ..()
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		var/obj/item/stack/tile/plasteel/P = C
-		if(P.use(1))
-			to_chat(user, "<span class='notice'>You construct a floor plating, as lava settles around the rods.</span>")
-			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-			new /turf/open/floor/plating(locate(x, y, z))
-		else
-			to_chat(user, "<span class='warning'>You need one floor tile to build atop [src].</span>")
-		return
+		if(!P.use(1))
+			to_chat(user, span_warning("You need one floor tile to build atop [src]."))
+			return
+		to_chat(user, span_notice("You construct new plating with [src] as support."))
+		playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
+		var/turf/turf_we_place_on = get_turf(src)
+		turf_we_place_on.PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
+		qdel(src)
