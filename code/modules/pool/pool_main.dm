@@ -115,7 +115,7 @@
 			if (iphonemaxpro.wear_suit && iphonemaxpro.head && istype(iphonemaxpro.wear_suit, /obj/item/clothing) && istype(iphonemaxpro.head, /obj/item/clothing))
 				var/obj/item/clothing/worn_suit = iphonemaxpro.wear_suit
 				var/obj/item/clothing/worn_helmet = iphonemaxpro.head
-				if (worn_suit.clothing_flags & worn_helmet.clothing_flags & THICKMATERIAL)
+				if (worn_suit.clothing_flags & worn_helmet.clothing_flags & STOPSPRESSUREDAMAGE)
 					protected = TRUE
 			if (!protected)
 				if(prob(80))
