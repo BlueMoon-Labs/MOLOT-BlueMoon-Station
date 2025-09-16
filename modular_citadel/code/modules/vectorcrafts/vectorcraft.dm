@@ -60,7 +60,6 @@
 			\nSwitch [span_bold("Intents (1,2,3,4)")] to change gears while holding a direction (make sure the clutch is enabled when you change gears, you should hear a sound when you've successfully changed gears). \
 			\nSwitch [span_bold("Move Intent (Alt)")] for brake. \
 			\nToggle [span_bold("Throw Mode (R)")] to toggle handbrake. \
-			\nPress [span_bold("Sprint (Shift)")] for boost (the machine will beep when the boost is recharged)! \
 			\nIf you hear an ebbing sound like \"brbrbrbrbr\" you need to gear down, the whining sound means you need to gear up. Hearing a pleasant \"whumwhumwhum\" is optimal gearage! It can be a lil slow to start, so make sure you're in the 1st gear.\n</i></span>")
 	return ..()
 
@@ -115,7 +114,7 @@
 		mob_exit(driver)
 	dir = cached_direction
 	check_gears()
-	check_boost()
+	// check_boost()
 	calc_acceleration()
 	calc_vector(cached_direction)
 	/*
@@ -143,7 +142,7 @@
 
 //Passive hover drift
 /obj/vehicle/sealed/vectorcraft/proc/hover_loop()
-	check_boost()
+	// check_boost()
 	if(driver.m_intent == MOVE_INTENT_WALK)
 		var/deceleration = max_deceleration
 		if(driver.throw_mode)
@@ -249,15 +248,15 @@
 //////////////////////////////////////////////////////////////
 
 //check the cooldown on the boost
-/obj/vehicle/sealed/vectorcraft/proc/check_boost()
-	if(enginesound_delay < world.time)
-		enginesound_delay = 0
-	if(!boost_cooldown)
-		return
-	if(boost_cooldown < world.time)
-		boost_cooldown = 0
-		playsound(src.loc,'sound/vehicles/boost_ready.ogg', 65, 0)
-	return
+// /obj/vehicle/sealed/vectorcraft/proc/check_boost()
+// 	if(enginesound_delay < world.time)
+// 		enginesound_delay = 0
+// 	if(!boost_cooldown)
+// 		return
+// 	if(boost_cooldown < world.time)
+// 		boost_cooldown = 0
+// 		playsound(src.loc,'sound/vehicles/boost_ready.ogg', 65, 0)
+// 	return
 
 //Make sure the clutch is on while changing gears!!
 /obj/vehicle/sealed/vectorcraft/proc/check_gears()
@@ -340,7 +339,7 @@
 	var/healthratio = ((obj_integrity/max_integrity)/4) + 0.75
 	max_acceleration = initial(max_acceleration) * healthratio
 	max_deceleration = initial(max_deceleration) * healthratio
-	boost_power = initial(boost_power) * healthratio
+	// boost_power = initial(boost_power) * healthratio
 	update_icon()
 
 /obj/vehicle/sealed/vectorcraft/update_overlays()
@@ -521,6 +520,8 @@ if(driver.sprinting && !(boost_cooldown))
 
 //Calculates the acceleration
 /obj/vehicle/sealed/vectorcraft/proc/calc_acceleration() //Make speed 0 - 100 regardless of gear here
+	if(enginesound_delay < world.time)
+		enginesound_delay = 0
 	if(SEND_SIGNAL(driver, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))//clutch is on
 		return FALSE
 	if(calc_speed() == 0)
@@ -556,10 +557,10 @@ if(driver.sprinting && !(boost_cooldown))
 		if(!enginesound_delay)
 			playsound(src.loc,'sound/vehicles/low_eng.ogg', 25, 0)
 			enginesound_delay = world.time + 16
-	else if (acceleration > max_accel)
+	else if (acceleration >= max_accel)
 		// acceleration -= accel_step
 		acceleration = max_accel
-		if(!enginesound_delay)
+		if(!enginesound_delay && gear_val != 4)
 			playsound(src.loc,'sound/vehicles/high_eng.ogg', 25, 0)
 			enginesound_delay = world.time + 16
 	else
@@ -583,11 +584,11 @@ if(driver.sprinting && !(boost_cooldown))
 		return FALSE
 	var/cached_acceleration = acceleration
 	var/boost_active = FALSE
-	if((driver.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && !(boost_cooldown))
-		cached_acceleration += boost_power //You got boost power!
-		boost_cooldown = world.time + 80
-		playsound(src.loc,'sound/vehicles/boost.ogg', 100, 0)
-		boost_active = TRUE
+	// if((driver.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && !(boost_cooldown))
+	// 	cached_acceleration += boost_power //You got boost power!
+	// 	boost_cooldown = world.time + 80
+	// 	playsound(src.loc,'sound/vehicles/boost.ogg', 100, 0)
+	// 	boost_active = TRUE
 		//playsound
 
 	var/result_vector = vector

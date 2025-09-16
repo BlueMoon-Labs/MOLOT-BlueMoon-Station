@@ -409,44 +409,25 @@ SUBSYSTEM_DEF(vote)
 	var/restart = 0
 	if(.)
 		switch(mode)
-			if("roundtype") //CIT CHANGE - adds the roundstart extended/dynamic vote
-				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
+			if("roundtype")
+				if(SSticker.current_state > GAME_STATE_PREGAME)
 					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-				// BLUEMOON CHANGES START - если не экста, то берётся случайная вариация динамика
 				if(. != ROUNDTYPE_EXTENDED)
-					var/list/dynamic_pick = list()
-
 					// Если прошлой вариацией была тимбаза или хард, то они не могут выпасть повторно
-					var/last_dynamic_type = SSpersistence.last_dynamic_gamemode
-					if(SSpersistence.last_dynamic_gamemode in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD))
-						last_dynamic_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD)
+					// var/last_dynamic_type = SSpersistence.last_dynamic_gamemode
+					// if(SSpersistence.last_dynamic_gamemode in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD))
+					// 	last_dynamic_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD)
 
-					switch(length(GLOB.clients))
+					. = pick_dynamic_type_by_chaos(GLOB.player_list)
+					SSpersistence.RecordDynamicType(.)
 
-						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_LOWPOP_MIN to ROUNDTYPE_PLAYERCOUNT_DYNAMIC_LOWPOP_MAX)
-							dynamic_pick = list(ROUNDTYPE_DYNAMIC_LIGHT)
+					GLOB.round_type = .
+					GLOB.master_mode = .
 
-						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MIN to ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MAX)
-							dynamic_pick = list(ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - last_dynamic_type
-
-						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN to INFINITY)
-							dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - last_dynamic_type
-
-					if(dynamic_pick.len > 0)
-						. = pick(dynamic_pick)
-						SSpersistence.RecordDynamicType(.)
-					else
-						. = ROUNDTYPE_EXTENDED
-						to_chat(world, "<span class='boldannounce'>Недостаточно игроков для иных режимов, кроме [ROUNDTYPE_EXTENDED].</span>")
-
-				GLOB.round_type = . // Выбранная вариация становится типом раунда, который используется для пресетов антагонистов
-				GLOB.master_mode = .
-				// BLUEMOON CHANGES END
-				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
-				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
 			if("restart")
 				if(. == "Restart Round")
 					restart = 1
+
 			if("map")
 				// BLUEMOON ADD START - перезагрузка сервера с ротацией карты в случае краша прошлого раунда
 				if(. == "Не менять карту") // Вариант доступен только если воут выскочил в результате краша
@@ -459,6 +440,7 @@ SUBSYSTEM_DEF(vote)
 						SSticker.start_immediately = FALSE
 						SSticker.SetTimeLeft(2400)
 					return .
+
 				var/datum/map_config/VM = config.maplist[.]
 				message_admins("The map has been voted for and will change to: [VM.map_name]")
 				log_admin("The map has been voted for and will change to: [VM.map_name]")
@@ -955,6 +937,34 @@ SUBSYSTEM_DEF(vote)
 		var/datum/player_details/P = GLOB.player_details[owner.ckey]
 		if(P)
 			P.player_actions -= src
+
+/proc/pick_dynamic_type_by_chaos(list/players, last_dynamic_type)
+	var/total_chaos = 0
+
+	for(var/mob/player in players)
+		if(!player?.client?.prefs)
+			continue
+		var/chaos = player.client.prefs.preferred_chaos_level
+		if(isnum(chaos))
+			total_chaos += chaos
+
+	var/list/available_hard = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD)
+	var/list/available_medium = list(ROUNDTYPE_DYNAMIC_MEDIUM)
+	// var/list/available_medium = list(ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - last_dynamic_type
+
+	var/dynamic_type
+	if(total_chaos >= CONFIG_GET(number/chaos_for_a_hard_dynamic) && length(available_hard))
+		dynamic_type = pick(available_hard)
+	else
+		dynamic_type = pick(available_medium)
+
+	// Логируем детали выбора
+	message_admins("Выбранный Динамик: [dynamic_type]. Количество игроков - [players.len]. \
+	Уровень хаоса от игроков - [total_chaos]. [CONFIG_GET(number/chaos_for_a_hard_dynamic)] было нужно для Хард-Динамика.")
+	log_admin("Выбранный Динамик: [dynamic_type]. Количество игроков - [players.len]. \
+	Уровень хаоса от игроков - [total_chaos]. [CONFIG_GET(number/chaos_for_a_hard_dynamic)] было нужно для Хард-Динамика.")
+
+	return dynamic_type
 
 // BLUEMOON ADD START - дефайны для нужного количества игроков на режимы динамика, чтобы не дублировать
 #undef ROUNDTYPE_PLAYERCOUNT_EXTENDED_MAX

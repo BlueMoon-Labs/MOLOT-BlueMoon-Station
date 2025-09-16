@@ -101,7 +101,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/inquisitive_ghost = 1
 	var/allow_midround_antag = 1
 	var/preferred_map = null
-	var/preferred_chaos = null
 	var/be_victim = null
 	var/use_new_playerpanel = TRUE // BLUEMOON - ENABELING-MODERN-PLAYER-PANEL-AS-DEFAULT
 	var/disable_combat_cursor = FALSE
@@ -426,6 +425,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/char_queue
 
 	var/silicon_lawset
+
+	var/preferred_chaos_level = 2
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -1545,6 +1546,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Ghost Sight:</b> <a href='?_src_=prefs;preference=ghost_sight'>[(chat_toggles & CHAT_GHOSTSIGHT) ? "All Emotes" : "Nearest Creatures"]</a><br>"
 					dat += "<b>Ghost Whispers:</b> <a href='?_src_=prefs;preference=ghost_whispers'>[(chat_toggles & CHAT_GHOSTWHISPER) ? "All Speech" : "Nearest Creatures"]</a><br>"
 					dat += "<b>Ghost PDA:</b> <a href='?_src_=prefs;preference=ghost_pda'>[(chat_toggles & CHAT_GHOSTPDA) ? "All Messages" : "Nearest Creatures"]</a><br>"
+					dat += "<br>"
+					dat += "<b>Preferred Chaos Level:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=preferred_chaos_level;task=input'>[preferred_chaos_level]</a><br>"
 
 					dat += "</td>"
 
@@ -1653,12 +1656,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (user && user.client && !user.client.prefs.screenshake==0)
 						dat += "<b>Damage Screen Shake:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "On" : ((damagescreenshake==0) ? "Off" : "Only when down")]</a><br>"
 					dat += "<b>Recoil Screen Push:</b> <a href='?_src_=prefs;preference=recoil_screenshake'>[(recoil_screenshake==100) ? "Full" : ((recoil_screenshake==0) ? "None" : "[screenshake]")]</a><br>"
-					var/p_chaos
-					if (!preferred_chaos)
-						p_chaos = "No preference"
-					else
-						p_chaos = preferred_chaos
-					dat += "<b>Preferred Chaos Amount:</b> <a href='?_src_=prefs;preference=preferred_chaos;task=input'>[p_chaos]</a><br>"
 
 					//SPLURT Edit
 					dat += "<h2>S.P.L.U.R.T. Preferences</h2>"
@@ -3647,9 +3644,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (pickedmap)
 						preferred_map = maplist[pickedmap]
 
-				if ("preferred_chaos")
-					var/pickedchaos = tgui_input_list(user, "Choose your preferred level of chaos. This will help with dynamic threat level ratings.", "Character Preference", list(CHAOS_NONE,CHAOS_LOW,CHAOS_MED,CHAOS_HIGH,CHAOS_MAX))
-					preferred_chaos = pickedchaos
 				if ("be_victim")
 					var/pickedvictim = tgui_input_list(user, "Are you ok with antagonists interacting with you (e.g. kidnapping)? ERP consent is seperate: This setting does NOT mean they are allowed to rape you.", "Antag Victim Consent", list(BEVICTIM_NO,BEVICTIM_ASK,BEVICTIM_YES))
 					be_victim = pickedvictim
@@ -3703,6 +3697,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
 					if (!isnull(desiredlength))
 						max_chat_length = clamp(desiredlength, 1, CHAT_MESSAGE_MAX_LENGTH)
+				if ("preferred_chaos_level")
+					var/chaos_level = tgui_input_number(user, "Выбирайте число в зависимости от своих предпочтений \
+										к стилю игры. От предпочтений к Хаосу зависит режим Динамика, \
+										который будет выбран. \
+										0. - ничего не ожидайте от меня. Я убегу при первой же возможности. \
+										1. - предпочитаю спокойную игру, но могу ввязаться в неприятности, если потребуется. \
+										2. - не против Хаоса и неожиданных ситуаций, готов рисковать ради интереса. \
+										3. - СЛАВА ХАОСУ НЕДЕЛИМОМУ. Готов к любым безумствам и опасностям.", "Предпочитаемый Уровень Хаоса", 2, 3, 0)
+					if(preferred_chaos_level)
+						preferred_chaos_level = chaos_level
 
 				//Sandstorm changes begin
 				if("personal_chat_color")

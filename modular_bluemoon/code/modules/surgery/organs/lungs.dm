@@ -20,7 +20,7 @@
 /obj/item/organ/lungs/tier2
 	name = "changed lungs"
 	icon_state = "weaklungs"
-	desc = "An improved version of baseline lungs. Better tan the baseline counterpart."
+	desc = "An improved version of baseline lungs. Better than the baseline counterpart."
 	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "weaklungs"
 	maxHealth = 4.5 * STANDARD_ORGAN_THRESHOLD

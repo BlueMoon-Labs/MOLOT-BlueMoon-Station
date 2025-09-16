@@ -149,6 +149,6 @@
 	path = /obj/item/clipboard
 
 /datum/gear/backpack/lawyerbriefcase
-	name = "Battered  Briefcase"
+	name = "Battered Briefcase"
 	path = /obj/item/storage/briefcase/lawyer/family/loadout
 	cost = 3

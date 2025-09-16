@@ -45,3 +45,11 @@ TICKET_PING_FREQUENCY 600
 ## Plug13 sex toys integration
 PLUG13_URL http://localhost:3000
 PLUG13_SECRET VerySecretString
+
+### При выборе Динамика идёт сбор preferred_chaos_level (стандарт - 2, вариация от 0 до 3) с игроков.
+### Для старта Медиум-Динамика (50 очков) требуется 25 игроков со стандартным значением preferred_chaos_level (2).
+# Минимальное количество Очков, которое потребуется для выбора Хард-Динамика.
+CHAOS_FOR_A_HARD_DYNAMIC 100
+
+# Минимальное количество Очков, которое потребуется для выбора Медиум-Динамика.
+CHAOS_FOR_A_MEDIUM_DYNAMIC 50

@@ -173,3 +173,11 @@
         playsound(get_turf(user), 'modular_bluemoon/sound/plush/milp7.ogg', 50, FALSE, -1)
         return
     . = ..()
+
+/datum/interaction/lewd/titgrope_self/post_interaction(mob/living/user, mob/living/target, apply_cooldown = TRUE)
+    if(user.ckey == "dimakr")
+        if(apply_cooldown)
+            COOLDOWN_START(user, last_interaction_time, 3 SECONDS)
+        playsound(get_turf(user), 'modular_bluemoon/sound/plush/milp6.ogg', 50, FALSE, -1)
+        return
+    . = ..()

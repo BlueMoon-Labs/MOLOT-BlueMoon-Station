@@ -16,7 +16,7 @@
 //TIER 2 HEART//
 /obj/item/organ/heart/tier2
 	name = "changed heart"
-	desc = "An improved version of baseline heart. Better tan the baseline counterpart."
+	desc = "An improved version of baseline heart. Better than the baseline counterpart."
 	icon = 'modular_bluemoon/icons/obj/surgery.dmi'
 	icon_state = "weakheart"
 	maxHealth = 2.5 * STANDARD_ORGAN_THRESHOLD //Usual factor is 2x, so...

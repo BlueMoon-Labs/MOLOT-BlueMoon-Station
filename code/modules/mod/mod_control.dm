@@ -258,7 +258,7 @@
 			balloon_alert(user, "no cell!")
 			return
 		balloon_alert(user, "removing cell...")
-		if(!do_after(user, 1.5 SECONDS, target = src))
+		if(!do_after(user, 1 SECONDS, target = src))
 			balloon_alert(user, "interrupted!")
 			return
 		balloon_alert(user, "cell removed")
@@ -291,7 +291,7 @@
 		return FALSE
 	balloon_alert(user, "[open ? "closing" : "opening"] panel...")
 	screwdriver.play_tool_sound(src, 100)
-	if(screwdriver.use_tool(src, user, 1 SECONDS))
+	if(screwdriver.use_tool(src, user, 0.5 SECONDS))
 		if(active || activating)
 			balloon_alert(user, "deactivate suit first!")
 		screwdriver.play_tool_sound(src, 100)
@@ -348,9 +348,17 @@
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return FALSE
 		if(cell)
-			balloon_alert(user, "cell already installed!")
-			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-			return FALSE
+			//balloon_alert(user, "cell already installed!")
+			//playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
+			//return FALSE
+			balloon_alert(user, "removing cell...")
+			if(!do_after(user, 1 SECONDS, target = src))
+				balloon_alert(user, "interrupted!")
+				return FALSE
+			balloon_alert(user, "cell removed")
+			playsound(src, 'sound/machines/click.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
+			cell.forceMove(drop_location())
+			user.put_in_hands(cell)
 		attacking_item.forceMove(src)
 		cell = attacking_item
 		balloon_alert(user, "cell installed")
