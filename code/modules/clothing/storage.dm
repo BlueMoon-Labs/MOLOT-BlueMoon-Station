@@ -9,8 +9,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
-	STR.max_volume = 16
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_volume = 70
+	STR.can_hold = typecacheof(/obj/item/clothing)
 
 /obj/item/storage/garment_case/captain/PopulateContents()
 	new /obj/item/clothing/suit/toggle/captains_parade(src)
@@ -54,8 +54,28 @@
 	new /obj/item/clothing/head/hopcap/beret(src)
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/head/hopcap/beret/white(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/hop(src)
+	new /obj/item/clothing/shoes/sneakers/brown(src)
 
-//obj/item/storage/garment_case/hos/PopulateContents()
+/obj/item/storage/garment_case/hos/PopulateContents() // Я не знаю почему тут было закоменченно, но факт того что отдел был пустой заставил меня плакать.
+	new /obj/item/clothing/neck/cloak/hos(src)
+	new /obj/item/clothing/suit/toggle/armor/hos/hos_formal(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/parade(src)
+	new /obj/item/clothing/under/rank/security/officer/blueshirt/seccorp/hoscorp(src)
+	new /obj/item/clothing/suit/armor/vest/leather(src)
+	new /obj/item/clothing/suit/armor/hos(src)
+	new /obj/item/clothing/suit/armor/hos/platecarrier(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/skirt(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/alt(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/alt/skirt(src)
+	new /obj/item/clothing/head/HoS(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/grey(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/hos(src)
 
 /obj/item/storage/garment_case/ntr/PopulateContents()
 	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
@@ -64,6 +84,9 @@
 	new /obj/item/clothing/under/syndicate(src)
 	new /obj/item/clothing/head/beret/sec/ntr_beret(src)
 	new /obj/item/clothing/head/HoS/beret/syndicate(src)
+	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
+	new /obj/item/clothing/gloves/combat(src)
 
 /obj/item/storage/garment_case/quartermaster/PopulateContents()
 	new /obj/item/clothing/neck/cloak/qm(src)
@@ -96,3 +119,17 @@
 	new /obj/item/clothing/gloves/color/latex(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/rd(src)
+
+/obj/item/storage/garment_case/warden/PopulateContents()
+	new /obj/item/clothing/head/warden(src)
+	new /obj/item/clothing/head/warden/drill(src)
+	new /obj/item/clothing/head/beret/sec/navywarden(src)
+	new /obj/item/clothing/suit/armor/vest/warden/alt(src)
+	new /obj/item/clothing/under/rank/security/officer/blueshirt/seccorp/wardencorp(src)
+	new /obj/item/clothing/under/rank/security/warden/formal(src)
+	new /obj/item/clothing/under/rank/security/warden/skirt(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/clothing/head/beret/sec/corporatewarden(src)
+	new /obj/item/clothing/suit/armor/vest/warden(src)
+	new /obj/item/clothing/head/warden(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
