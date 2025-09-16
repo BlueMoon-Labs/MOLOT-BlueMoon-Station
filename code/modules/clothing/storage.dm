@@ -10,7 +10,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = 70
-	STR.can_hold = typecacheof(/obj/item/clothing)
+	STR.can_hold = typecacheof(list(/obj/item/clothing))
 
 /obj/item/storage/garment_case/captain/PopulateContents()
 	new /obj/item/clothing/suit/toggle/captains_parade(src)
@@ -78,15 +78,28 @@
 	new /obj/item/clothing/suit/hooded/wintercoat/hos(src)
 
 /obj/item/storage/garment_case/ntr/PopulateContents()
+	new /obj/item/clothing/head/beret/sec/ntr_beret(src)
+	new /obj/item/clothing/head/beret/sec/ntr_hat(src)
+	new /obj/item/clothing/head/HoS/beret/syndicate(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
 	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
 	new /obj/item/clothing/neck/cloak/syndiecap(src)
-	new /obj/item/clothing/under/rank/centcom/officer_alt(src)
-	new /obj/item/clothing/under/syndicate(src)
-	new /obj/item/clothing/head/beret/sec/ntr_beret(src)
-	new /obj/item/clothing/head/HoS/beret/syndicate(src)
-	new /obj/item/clothing/shoes/sneakers/brown(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/centcom(src)
+	new /obj/item/clothing/suit/toggle/armor/vest/centcom_formal(src)
 	new /obj/item/clothing/gloves/combat(src)
+	new /obj/item/clothing/gloves/combat/centcom(src)
+	new /obj/item/clothing/under/rank/centcom/officer(src)
+	new /obj/item/clothing/under/rank/centcom/intern(src)
+	new /obj/item/clothing/under/syndicate(src)
+	new /obj/item/clothing/under/rank/centcom/highranking(src)
+	new /obj/item/clothing/under/rank/centcom/highrankingfem(src)
+	new /obj/item/clothing/under/rank/centcom/officer/turtleneck(src)
+	new /obj/item/clothing/under/rank/centcom/sweater(src)
+	new /obj/item/clothing/under/rank/centcom/sweaterfem(src)
+	new /obj/item/clothing/under/rank/centcom/consultant(src)
+	new /obj/item/clothing/under/rank/centcom/consultant/skirt(src)
+	new /obj/item/clothing/shoes/sneakers/brown(src)
+
 
 /obj/item/storage/garment_case/quartermaster/PopulateContents()
 	new /obj/item/clothing/neck/cloak/qm(src)
