@@ -1,9 +1,9 @@
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("punches through the broodmother's womb, ripping out a little goliath which is promptly shoved on their mouth!", "rips off the broodmother's tentacles by hand, then knees their head until it caves in!"), \
-		messages_crusher = list("rams the broodmother's torso the hilt of their crusher, which they promptly lift up and let gravity impale the broodmother!"), \
-		messages_pka = list("shoots the broodmother's face, exploding it!"), \
-		messages_pka_bayonet = list("stabs the broodmother's eye and gouges it out, shoving it into their maw, making them eat it!"), \
+		messages_unarmed = list("пробивает кулаком матку прародителя и выдирает оттуда маленького голиафа, что тут же был вонзён в рот своего создателя!", "отрывает щупальца прародителя голыми руками, а затем вбивает голову той в колени, пока та не прогнётся!"), \
+		messages_crusher = list("таранит туловище прародителя рукояткой своего крашера, который тут же был поднят и позволяет гравитации пронзить матерь голиафов!"), \
+		messages_pka = list("стреляет прародителю в лицо, взрывая его!"), \
+		messages_pka_bayonet = list("вонзает нож в глаза прародителя и выдирает их, после чего вбивает их в рот бывшей владелицы, заставляя её съесть их!"), \
 		health_given = 50, \
 		threshold = (maxHealth/10 * 0.625))

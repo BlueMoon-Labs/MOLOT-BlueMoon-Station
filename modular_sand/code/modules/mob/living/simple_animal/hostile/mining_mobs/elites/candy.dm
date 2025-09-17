@@ -46,10 +46,10 @@
 /mob/living/simple_animal/hostile/asteroid/elite/candy/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("tries punching Candy's head, but they parry it and grab their hand! However, another hard punch comes through with the other arm, this time killing the demon swiftly and exploding their skull!", "grabs Candy by their neck, then pressures into until it explodes and it's head comes flying off!"), \
-		messages_crusher = list("slashes Candy in half vertically with their crusher, each of the parts falling off onto the ground limply!"), \
-		messages_pka = list("shoots at Candy's head, breaking their skull open and revealing their brain! Then, they bash the brain into mush with their PKA's stock!", "kicks Candy into the ground, and repeatedly slams their PKA against their skull until they finally die!"), \
-		messages_pka_bayonet = list("stabs through Candy's maw and lifts them into the air, shooting their PKA and exploding their head as the limp body falls off!"), \
+		messages_unarmed = list("пытается ударить Кэнди в лицо, но тот парирует удар! Однако на него обрушивается ещё один мощный апперкот, на этот раз убивающий демона и взрывающий его череп!", "хватает Кэнди за шею и сдавливает её до тех пор, пока его голова не слетит с плеч!"), \
+		messages_crusher = list("рубит Кэнди пополам вертикально, отчего обе части безжизненно падают на землю, ознаменуя победу!"), \
+		messages_pka = list("стреляет в череп Кэнди, раскрывая его как скорлупу ореха! Затем, они начинают дробить его мозг прикладом своего протокинетического ускорителя до тех пор, пока от него ничего не остаётся!", "валит Кэнди на землю после чего многократно наносит грубые удары своим протокинетическим ускорителем до тех пока, пока тот не умрёт!"), \
+		messages_pka_bayonet = list("вонзает нож в челюсть Кэнди и поднимает его над землей, после чего взрывает их голову завершающим выстрелом, позволяя безжизненному телу упасть на землю!"), \
 		health_given = 50, \
 		threshold = (maxHealth/10 * 0.625))
 
