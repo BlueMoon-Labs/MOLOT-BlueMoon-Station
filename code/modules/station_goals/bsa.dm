@@ -21,7 +21,7 @@
 
 /datum/station_goal/bluespace_cannon/check_completion()
 	if(!..())
-		return
+		return FALSE
 	for(var/obj/machinery/bsa/full/B in SSmachines.get_machines_by_type(/obj/machinery/bsa/full))
 		if(B && !B.machine_stat && (is_station_level(B.z) || is_mining_level(B.z)))
 			return TRUE

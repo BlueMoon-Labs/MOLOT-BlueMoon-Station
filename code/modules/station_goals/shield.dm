@@ -43,7 +43,7 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 		coverage |= view(A.kill_range,A)
 	var/counter = 0
 	counter += count_by_type(coverage, /turf/open/space)
-	counter += count_by_type(coverage, /turf/open/openspace)
+	counter += count_by_type(coverage, /turf/open/openspace) // for multi-z stations
 	return counter
 
 /obj/machinery/computer/sat_control
