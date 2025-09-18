@@ -49,7 +49,7 @@
 	else if(href_list["remove"])
 		qdel(src)
 	else if(href_list["complete"])
-		completed = TRUE
+		completed = !completed
 
 /datum/station_goal/proc/can_be_selected()
 	return TRUE

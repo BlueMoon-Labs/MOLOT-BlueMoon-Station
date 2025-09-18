@@ -1323,8 +1323,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Tip")
 
 /client/proc/modify_goals()
-	set category = "Debug"
-	set name = "Modify goals"
+	set name = "Station Goals"
+	set category = "Admin.Events"
 
 	if(!check_rights(R_ADMIN))
 		return
@@ -1333,8 +1333,11 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /datum/admins/proc/modify_goals()
 	var/dat = ""
-	for(var/datum/station_goal/S in SSticker.mode.station_goals)
-		dat += "[S.name] - <a href='?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='?src=[REF(S)];[HrefToken()];remove=1'>Remove</a> | <a href='?src=[REF(S)];[HrefToken()];complete=1'>Complete</a><br>"
+	for(var/datum/station_goal/S in SSticker.mode?.station_goals)
+		dat += "[S.check_completion() ? "<font color='green'><b>[S.name]</b></font>" : "<font color='red'>[S.name]</font>"] - \
+		<a href='?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | \
+		<a href='?src=[REF(S)];[HrefToken()];remove=1'>Remove</a> | \
+		<a href='?src=[REF(S)];[HrefToken()];complete=1'>Toggle completion flag</a><br>"
 	dat += "<br><a href='?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
 	usr << browse(dat, "window=goals;size=400x400")
 
