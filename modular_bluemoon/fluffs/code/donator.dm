@@ -1847,3 +1847,10 @@
 	path = /obj/item/modkit/portalabomination_kit
 	ckeywhitelist = list("architect0r")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
+
+/datum/gear/donator/bm/hecu_black
+	name = "Black HECU Backpack"
+	path = /obj/item/storage/backpack/hecu/black
+	slot = ITEM_SLOT_BACKPACK
+	ckeywhitelist = list("xaeshkavd")
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
