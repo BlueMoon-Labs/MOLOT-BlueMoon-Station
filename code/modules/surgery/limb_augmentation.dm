@@ -37,6 +37,9 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "surgery_any"
 
 //The augmentation surgery for synthetic limbs
 /datum/surgery/augmentation/synth

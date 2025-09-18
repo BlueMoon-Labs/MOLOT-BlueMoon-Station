@@ -3,6 +3,9 @@
 	steps = list(/datum/surgery_step/drill, /datum/surgery_step/insert_pill)
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "pill0"
 
 /datum/surgery_step/insert_pill
 	name = "Имплантировать Таблетку"

@@ -10,6 +10,8 @@
 	/datum/surgery_step/reprogram,
 	/datum/surgery_step/mechanic_wrench,
 	/datum/surgery_step/mechanic_close)
+	
+	is_healing = FALSE // BLUEMOON ADD
 
 /datum/surgery/advanced/reprogramming/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())

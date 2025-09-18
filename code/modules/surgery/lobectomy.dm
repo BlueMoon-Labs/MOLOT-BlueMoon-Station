@@ -5,6 +5,8 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "lungs"
 
 /datum/surgery/lobectomy/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)

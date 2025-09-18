@@ -11,6 +11,8 @@
 	requires_bodypart_type = NONE
 	replaced_by = /datum/surgery
 	ignore_clothes = TRUE
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "patch1"
 	var/healing_step_type
 	var/antispam = FALSE
 
@@ -101,6 +103,7 @@
 /***************************BRUTE***************************/
 /datum/surgery/healing/brute
 	name = "Tend Wounds (Bruises)"
+	icon_state = "patch2"
 
 /datum/surgery/healing/brute/basic
 	name = "Tend Wounds (Bruises, Basic)"
@@ -139,6 +142,7 @@
 /***************************BURN***************************/
 /datum/surgery/healing/burn
 	name = "Tend Wounds (Burn)"
+	icon_state = "patch3"
 
 /datum/surgery/healing/burn/basic
 	name = "Tend Wounds (Burn, Basic)"

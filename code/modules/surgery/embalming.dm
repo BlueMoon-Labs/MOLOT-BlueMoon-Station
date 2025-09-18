@@ -8,6 +8,9 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/mob/human_parts_greyscale.dmi'
+	icon_state = "human_chest_m"
 
 /datum/surgery_step/embalming
 	name = "Бальмазировать Тело"

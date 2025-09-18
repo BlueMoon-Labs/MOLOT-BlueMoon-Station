@@ -52,8 +52,38 @@
 
 		if(!available_surgeries.len)
 			return
+		// BLUEMOON ADD START
+		var/static/list/options = list(
+		"Лечение" = list("icon" = 'modular_citadel/icons/mob/citadel_refs/borg HUDs.dmi', "state" = "medihound"),
+		"Остальное" = list("icon" = 'modular_citadel/icons/mob/citadel_refs/borg HUDs.dmi', "state" = "science")
+		)
 
-		var/P = input("Begin which procedure?", "Surgery", null, null) as null|anything in available_surgeries
+		var/list/choices = list()
+		for(var/text in options)
+			var/info = options[text]
+			var/mutable_appearance/app = new /mutable_appearance(info["icon"], info["state"])
+			app.name = text
+			choices[text] = app
+
+		var/P = show_radial_menu(user, M, choices, require_near = TRUE)
+		if(!P)
+			return
+
+		choices = list()
+		for(var/S_name in available_surgeries)
+			var/datum/surgery/S = available_surgeries[S_name]
+			if((P == "Лечение") != S.is_healing) // for understanding: if(P == "Лечение" && !S.is_healing || P != "Лечение" && S.is_healing)
+				continue
+			var/mutable_appearance/app = new /mutable_appearance()
+			app.icon = S.icon
+			app.icon_state = S.icon_state
+			app.name = S.name
+			choices[S] = app
+
+		P = show_radial_menu(user, M, choices, require_near = TRUE)
+		//var/P = input("Begin which procedure?", "Surgery", null, null) as null|anything in available_surgeries
+		// BLUEMOON ADD END
+
 		if(P && user && user.Adjacent(M) && (I in user))
 			var/datum/surgery/S = available_surgeries[P]
 

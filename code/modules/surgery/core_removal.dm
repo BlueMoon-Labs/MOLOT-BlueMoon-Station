@@ -5,6 +5,8 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	lying_required = FALSE
 	ignore_clothes = TRUE
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "brain-s"
 
 /datum/surgery/core_removal/can_start(mob/user, mob/living/target, obj/item/tool)
 	if(target.stat == DEAD)

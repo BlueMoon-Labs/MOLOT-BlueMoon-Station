@@ -5,6 +5,8 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
+	icon = 'icons/obj/defibrillators.dmi'
+	icon_state = "defibpaddles0"
 
 /datum/surgery_step/ventricular_electrotherapy
 	name = "Желудочковая Электротерапия"

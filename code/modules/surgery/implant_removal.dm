@@ -3,6 +3,9 @@
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/extract_implant, /datum/surgery_step/close)
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "chest_implant"
 
 //extract implant
 /datum/surgery_step/extract_implant

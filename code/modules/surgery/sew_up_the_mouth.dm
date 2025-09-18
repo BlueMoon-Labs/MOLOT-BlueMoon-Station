@@ -3,6 +3,7 @@
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/incise, /datum/surgery_step/sew_up_the_mouth, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
+	is_healing = FALSE // BLUEMOON ADD
 
 /datum/surgery_step/sew_up_the_mouth
 	name = "Зашить или Прижечь Рот"
@@ -39,6 +40,7 @@
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/unsew_up_the_mouth, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
+	is_healing = FALSE // BLUEMOON ADD
 
 /datum/surgery_step/unsew_up_the_mouth
 	name = "Расшить Рот"
