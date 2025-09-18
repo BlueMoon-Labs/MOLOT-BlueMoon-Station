@@ -10,6 +10,9 @@
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	bioware_target = BIOWARE_NERVES
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "stunbaton_active"
+
 /datum/surgery_step/splice_nerves
 	name = "splice nerves"
 	accept_hand = TRUE

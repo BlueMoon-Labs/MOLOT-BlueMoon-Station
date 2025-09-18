@@ -6,7 +6,7 @@
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,
-				/datum/surgery_step/dissectioqn,
+				/datum/surgery_step/dissection,
 				/datum/surgery_step/clamp_bleeders,
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
@@ -14,8 +14,8 @@
 	replaced_by = /datum/surgery/advanced/experimental_dissection/adv
 	requires_tech = FALSE
 	is_healing = FALSE // BLUEMOON ADD
-	icon = 'icons/obj/surgery.dmi'
-	icon_state = "scalpel"
+	icon = 'icons/obj/device.dmi'
+	icon_state = "forensicnew"
 	var/value_multiplier = 1
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target, obj/item/tool)

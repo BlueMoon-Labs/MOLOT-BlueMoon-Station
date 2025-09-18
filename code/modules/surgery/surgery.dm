@@ -18,11 +18,11 @@
 	var/lying_required = TRUE								//Does the vicitm needs to be lying down.
 	var/requires_tech = FALSE
 	var/replaced_by
-	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
-	var/datum/wound/targetable_wound							//The wound type this surgery targets
+	var/datum/wound/operated_wound							//The actual wound datum instance we're targeting
+	var/datum/wound/targetable_wound						//The wound type this surgery targets
 	var/is_healing = TRUE									//BLUEMOON ADD || Is this healing operation or improving/other
-	var/icon												//BLUEMOON ADD || icon file for radial menu
-	var/icon_state											//BLUEMOON ADD || icon state for radial menu
+	var/icon = 'icons/obj/surgery.dmi'						//BLUEMOON ADD || icon file for radial menu
+	var/icon_state = "scalpel"								//BLUEMOON ADD || icon state for radial menu
 
 	var/list/special_surgery_traits = list() // BLUEMOON ADD - наши особые трейты для операции
 

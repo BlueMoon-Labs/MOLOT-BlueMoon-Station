@@ -38,7 +38,6 @@
 	requires_real_bodypart = TRUE
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 	is_healing = FALSE // BLUEMOON ADD
-	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgery_any"
 
 //The augmentation surgery for synthetic limbs

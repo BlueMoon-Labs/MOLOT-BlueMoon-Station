@@ -5,7 +5,6 @@
 	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
 	requires_bodypart = FALSE //need a missing limb
 	requires_bodypart_type = 0
-	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgery_any"
 
 /datum/surgery/prosthetic_replacement/can_start(mob/user, mob/living/carbon/target, obj/item/tool)

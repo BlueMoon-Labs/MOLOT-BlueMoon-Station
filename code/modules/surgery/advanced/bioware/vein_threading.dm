@@ -10,6 +10,9 @@
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	bioware_target = BIOWARE_CIRCULATION
+	icon = 'icons/mob/screen_alert.dmi'
+	icon_state = "panacea"
+
 /datum/surgery_step/thread_veins
 	name = "thread veins"
 	accept_hand = TRUE

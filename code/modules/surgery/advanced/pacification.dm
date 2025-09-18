@@ -12,6 +12,9 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "mood6"
+
 
 //	special_surgery_traits = list(OPERATION_MUST_BE_PERFORMED_AWAKE) // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
 
@@ -20,7 +23,7 @@
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
 		return FALSE
-		
+
 /datum/surgery_step/pacify
 	name = "Провести Пацификацию"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)

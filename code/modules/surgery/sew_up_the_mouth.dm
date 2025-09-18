@@ -4,6 +4,13 @@
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
 	is_healing = FALSE // BLUEMOON ADD
+	icon_state = "surgery_mouth"
+
+/datum/surgery/sew_up_the_mouth/can_start(mob/user, mob/living/patient, obj/item/tool)
+	. = ..()
+	if(!.)
+		return .
+	. = !(HAS_TRAIT_FROM(patient, TRAIT_MUTE, GENETIC_MUTATION))
 
 /datum/surgery_step/sew_up_the_mouth
 	name = "Зашить или Прижечь Рот"
@@ -40,7 +47,13 @@
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/unsew_up_the_mouth, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
-	is_healing = FALSE // BLUEMOON ADD
+	icon_state = "surgery_mouth"
+
+/datum/surgery/unsew_up_the_mouth/can_start(mob/user, mob/living/patient, obj/item/tool)
+	. = ..()
+	if(!.)
+		return .
+	. = HAS_TRAIT_FROM(patient, TRAIT_MUTE, GENETIC_MUTATION)
 
 /datum/surgery_step/unsew_up_the_mouth
 	name = "Расшить Рот"

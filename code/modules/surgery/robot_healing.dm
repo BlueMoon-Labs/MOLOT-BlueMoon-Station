@@ -14,6 +14,7 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0 //You can do this on anyone, but it won't really be useful on people without augments.
 	ignore_clothes = TRUE
+	icon_state = "robot_healing"
 	var/healing_step_type
 	var/antispam = FALSE
 

@@ -15,7 +15,6 @@
 		/datum/surgery_step/close
 		)
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
-	icon = 'icons/obj/surgery.dmi'
 	icon_state = "hemostat"
 
 /datum/surgery/organ_manipulation/soft

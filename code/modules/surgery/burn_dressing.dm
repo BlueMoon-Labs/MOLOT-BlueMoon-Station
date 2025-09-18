@@ -9,7 +9,6 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/burn
-	icon = 'icons/obj/surgery.dmi'
 	icon_state = "fugu_gland"
 
 /datum/surgery/debride/can_start(mob/living/user, mob/living/carbon/target)

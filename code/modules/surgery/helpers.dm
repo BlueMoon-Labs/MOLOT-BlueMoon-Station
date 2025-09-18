@@ -53,6 +53,7 @@
 		if(!available_surgeries.len)
 			return
 		// BLUEMOON ADD START
+		// Sorted operations to healing and improving
 		var/static/list/options = list(
 		"Лечение" = list("icon" = 'modular_citadel/icons/mob/citadel_refs/borg HUDs.dmi', "state" = "medihound"),
 		"Остальное" = list("icon" = 'modular_citadel/icons/mob/citadel_refs/borg HUDs.dmi', "state" = "science")
@@ -61,7 +62,9 @@
 		var/list/choices = list()
 		for(var/text in options)
 			var/info = options[text]
-			var/mutable_appearance/app = new /mutable_appearance(info["icon"], info["state"])
+			var/mutable_appearance/app = new /mutable_appearance()
+			app.icon = info["icon"]
+			app.icon_state = info["state"]
 			app.name = text
 			choices[text] = app
 
@@ -69,6 +72,7 @@
 		if(!P)
 			return
 
+		// get mutable_appearance for available_surgeries
 		choices = list()
 		for(var/S_name in available_surgeries)
 			var/datum/surgery/S = available_surgeries[S_name]
@@ -78,7 +82,26 @@
 			app.icon = S.icon
 			app.icon_state = S.icon_state
 			app.name = S.name
-			choices[S] = app
+			choices[S_name] = app
+
+		// prioritization of lists, treating operations in the first place
+		var/list/prioritized = list()
+		var/list/others = list()
+
+		for (var/S_name in choices)
+			var/S = available_surgeries[S_name]
+			if (istype(S, /datum/surgery/healing) || istype(S, /datum/surgery/robot_healing))
+				prioritized[S_name] = choices[S_name]
+			else
+				others[S_name] = choices[S_name]
+
+		var/list/final_choices = list()
+		for (var/t in prioritized)
+			final_choices[t] = prioritized[t]
+		for (var/t in others)
+			final_choices[t] = others[t]
+
+		choices = final_choices
 
 		P = show_radial_menu(user, M, choices, require_near = TRUE)
 		//var/P = input("Begin which procedure?", "Surgery", null, null) as null|anything in available_surgeries

@@ -12,6 +12,8 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 
+	icon_state = "brain"
+
 //	special_surgery_traits = list(OPERATION_MUST_BE_PERFORMED_AWAKE) // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
 
 /datum/surgery_step/fix_brain
@@ -22,8 +24,6 @@
 	preop_sound = 'sound/surgery/hemostat1.ogg'
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
-	icon = 'icons/obj/surgery.dmi'
-	icon_state = "brain"
 
 /datum/surgery/brain_surgery/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)

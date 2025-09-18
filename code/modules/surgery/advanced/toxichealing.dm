@@ -14,6 +14,8 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "patch7"
 
 /datum/surgery_step/toxichealing
 	name = "Изъять Токсичную Субстанцию и Плоть"

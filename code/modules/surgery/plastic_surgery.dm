@@ -4,7 +4,6 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = BODYPART_ORGANIC
 	is_healing = FALSE // BLUEMOON ADD
-	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgery_head"
 
 //reshape_face

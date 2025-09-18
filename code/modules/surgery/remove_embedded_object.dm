@@ -2,10 +2,18 @@
 	name = "Removal of Embedded Objects"
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/remove_object)
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
+	icon_state = "embeddedobject"
 
 /datum/surgery/embedded_removal/robot
 	requires_bodypart_type = BODYPART_ROBOTIC
 	steps = list(/datum/surgery_step/mechanic_open, /datum/surgery_step/open_hatch, /datum/surgery_step/remove_object)
+
+/datum/surgery/embedded_removal/can_start(mob/user, mob/living/patient, obj/item/tool)
+	. = ..()
+	if(!.)
+		return .
+	if(!operated_bodypart?.embedded_objects.len)
+		. = FALSE
 
 /datum/surgery_step/remove_object
 	name = "remove embedded objects"

@@ -18,6 +18,8 @@
 			/datum/surgery_step/mechanic_close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	target_mobtypes = list(/mob/living/carbon/human)
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/tools.dmi'
+	icon_state = "multitool_yellow"
 
 /datum/surgery/robot_purge_reagents/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	. = ..()

@@ -19,6 +19,8 @@
 	target_mobtypes = list(/mob/living/carbon/human)
 	possible_locs = list(BODY_ZONE_HEAD)
 	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/mob/screen_alert.dmi'
+	icon_state = "hypnosis"
 
 //	special_surgery_traits = list(OPERATION_MUST_BE_PERFORMED_AWAKE) // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
 
