@@ -56,8 +56,8 @@
 			"<span class='notice'>[user] successfully excises some of the infected flesh from  [target]'s [parse_zone(target_zone)]!</span>")
 		log_combat(user, target, "excised infected flesh in", addition="INTENT: [uppertext(user.a_intent)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
-		burn_wound.infestation -= 0.5
-		burn_wound.sanitization += 0.5
+		burn_wound.infestation -= 1.5
+		burn_wound.sanitization += 1.5
 		if(burn_wound.infestation <= 0)
 			repeatable = FALSE
 	else

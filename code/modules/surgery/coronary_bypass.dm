@@ -10,9 +10,8 @@
 
 /datum/surgery/coronary_bypass/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
-	if(H)
-		if(H.damage > 60 && !H.operated)
-			return TRUE
+	if(H && H.damage)
+		return TRUE
 	return FALSE
 
 //an incision but with greater bleed, and a 90% base success chance
@@ -63,15 +62,14 @@
 	failure_sound = 'sound/surgery/organ2.ogg'
 
 /datum/surgery_step/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
+	time = max(ceil(heart.damage/heart.maxHealth) * time, 30)
 	display_results(user, target, "<span class='notice'>You begin to graft a bypass onto [target]'s heart...</span>",
 			"[user] begins to graft something onto [target]'s heart!",
 			"[user] begins to graft something onto [target]'s heart!")
 
 /datum/surgery_step/coronary_bypass/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	target.setOrganLoss(ORGAN_SLOT_HEART, 60)
-	var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
-	if(heart)	//slightly worrying if we lost our heart mid-operation, but that's life
-		heart.operated = TRUE
+	target.setOrganLoss(ORGAN_SLOT_HEART, 0)
 	display_results(user, target, "<span class='notice'>You successfully graft a bypass onto [target]'s heart.</span>",
 			"[user] finishes grafting something onto [target]'s heart.",
 			"[user] finishes grafting something onto [target]'s heart.")
