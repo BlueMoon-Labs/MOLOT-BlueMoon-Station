@@ -8,6 +8,7 @@
 /datum/station_goal/bluespace_cannon/get_report()
 	return {" <b>Наше военное присутствие в вашем секторе недостаточно.</b><br>
 	Нам нужно, чтобы вы построили артиллерийскую установку BSA-[rand(1,99)] на борту вашей станции.
+	После постройки необходимо проверить работоспособность, выстрелив по любой цели.
 	<br><br>
 	Основа для артиллерии доступна к заказу в карго.
 	<br>
@@ -19,11 +20,11 @@
 	P.special_enabled = TRUE
 
 /datum/station_goal/bluespace_cannon/check_completion()
-	if(..())
-		return TRUE
-	var/obj/machinery/bsa/full/B = locate()
-	if(B && !B.machine_stat)
-		return TRUE
+	if(!..())
+		return FALSE
+	for(var/obj/machinery/bsa/full/B in SSmachines.get_machines_by_type(/obj/machinery/bsa/full))
+		if(B && !B.machine_stat && (is_station_level(B.z) || is_mining_level(B.z)))
+			return TRUE
 	return FALSE
 
 /obj/machinery/bsa
@@ -207,6 +208,9 @@
 		message_admins("[ADMIN_LOOKUPFLW(user)] has launched an artillery strike targeting [ADMIN_VERBOSEJMP(bullseye)].")
 		log_game("[key_name(user)] has launched an artillery strike targeting [AREACOORD(bullseye)].")
 		explosion(bullseye, ex_power, ex_power*2, ex_power*4)
+		if(is_station_level(z) || is_mining_level(z))
+			var/datum/station_goal/bluespace_cannon/B = locate() in SSticker.mode?.station_goals
+			B?.completed = TRUE
 	else
 		message_admins("[ADMIN_LOOKUPFLW(user)] has launched an artillery strike targeting [ADMIN_VERBOSEJMP(bullseye)] but it was blocked by [blocker] at [ADMIN_VERBOSEJMP(target)].")
 		log_game("[key_name(user)] has launched an artillery strike targeting [AREACOORD(bullseye)] but it was blocked by [blocker] at [AREACOORD(target)].")

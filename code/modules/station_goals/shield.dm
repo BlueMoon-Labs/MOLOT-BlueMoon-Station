@@ -5,7 +5,12 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 // Satellites be actived to generate a shield that will block unorganic matter from passing it.
 /datum/station_goal/station_shield
 	name = "Station Shield"
-	var/coverage_goal = 500
+	var/coverage_goal = 5000 // один средне расположенный спутник покрывает больше 1000 тайлов.
+
+/datum/station_goal/station_shield/can_be_selected()
+	. = ..()
+	if(SSmapping.config.planetary)
+		return FALSE
 
 /datum/station_goal/station_shield/get_report()
 	return {" <b>Сооружение щитов станции</b><br>
@@ -36,7 +41,10 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 		if(!A.active || !is_station_level(A.z))
 			continue
 		coverage |= view(A.kill_range,A)
-	return coverage.len
+	var/counter = 0
+	counter += count_by_type(coverage, /turf/open/space)
+	counter += count_by_type(coverage, /turf/open/openspace) // for multi-z stations
+	return counter
 
 /obj/machinery/computer/sat_control
 	name = "satellite control"
