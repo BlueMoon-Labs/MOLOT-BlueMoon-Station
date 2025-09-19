@@ -68,12 +68,14 @@
 			app.name = text
 			choices[text] = app
 
-		var/P = show_radial_menu(user, M, choices, require_near = TRUE)
+		var/P = show_radial_menu(user, M, choices, require_near = TRUE, radius = 20)
 		if(!P)
 			return
 
 		// get mutable_appearance for available_surgeries
 		choices = list()
+		var/list/order = list() // names
+		var/list/prios = list() // prioritys
 		for(var/S_name in available_surgeries)
 			var/datum/surgery/S = available_surgeries[S_name]
 			if((P == "Лечение") != S.is_healing) // for understanding: if(P == "Лечение" && !S.is_healing || P != "Лечение" && S.is_healing)
@@ -84,27 +86,22 @@
 			app.name = S.name
 			choices[S_name] = app
 
-		// prioritization of lists, treating operations in the first place
-		var/list/prioritized = list()
-		var/list/others = list()
+			// prioritization of lists, treating operations in the first place
+			var/p = S.radial_priority
+			var/i = 1
+			while (i <= prios.len && prios[i] <= p)
+				i++
+			prios.Insert(i, p)
+			order.Insert(i, S_name)
+		
+		// reassembling list
+		var/list/sorted = list()
+		for (var/i = 1 to order.len)
+			var/key = order[i]
+			sorted[key] = choices[key]
+		choices = sorted
 
-		for (var/S_name in choices)
-			var/S = available_surgeries[S_name]
-			if (istype(S, /datum/surgery/healing) || istype(S, /datum/surgery/robot_healing))
-				prioritized[S_name] = choices[S_name]
-			else
-				others[S_name] = choices[S_name]
-
-		var/list/final_choices = list()
-		for (var/t in prioritized)
-			final_choices[t] = prioritized[t]
-		for (var/t in others)
-			final_choices[t] = others[t]
-
-		choices = final_choices
-
-		P = show_radial_menu(user, M, choices, require_near = TRUE)
-		//var/P = input("Begin which procedure?", "Surgery", null, null) as null|anything in available_surgeries
+		P = show_radial_menu(user, M, choices, require_near = TRUE, radius = 27, tooltips = TRUE)
 		// BLUEMOON ADD END
 
 		if(P && user && user.Adjacent(M) && (I in user))

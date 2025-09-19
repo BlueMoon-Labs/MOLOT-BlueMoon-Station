@@ -7,6 +7,7 @@
 	is_healing = FALSE // BLUEMOON ADD
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "fernetbottle"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_SECOND
 
 /datum/surgery/lipoplasty/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(HAS_TRAIT(target, TRAIT_FAT))

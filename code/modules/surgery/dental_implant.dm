@@ -6,6 +6,7 @@
 	is_healing = FALSE // BLUEMOON ADD
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "pill0"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_SECOND
 
 /datum/surgery_step/insert_pill
 	name = "Имплантировать Таблетку"

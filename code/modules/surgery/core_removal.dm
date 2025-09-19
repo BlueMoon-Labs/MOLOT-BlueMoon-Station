@@ -6,6 +6,7 @@
 	lying_required = FALSE
 	ignore_clothes = TRUE
 	icon_state = "brain-s"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ADDITIONAL
 
 /datum/surgery/core_removal/can_start(mob/user, mob/living/target, obj/item/tool)
 	if(target.stat == DEAD)

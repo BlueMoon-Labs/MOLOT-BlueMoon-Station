@@ -7,6 +7,14 @@
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 	icon = 'icons/obj/defibrillators.dmi'
 	icon_state = "syndiepaddles1"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EMERGENCY
+
+/datum/surgery/cardioversion/can_start(mob/user, mob/living/patient, obj/item/tool)
+	. = ..()
+	if(!.)
+		return .
+	if(patient.stat != DEAD)
+		. = FALSE
 
 /datum/surgery_step/ventricular_electrotherapy
 	name = "Желудочковая Электротерапия"

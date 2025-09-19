@@ -5,6 +5,7 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	is_healing = FALSE // BLUEMOON ADD
 	icon_state = "chest_implant"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FIRST
 
 //extract implant
 /datum/surgery_step/extract_implant

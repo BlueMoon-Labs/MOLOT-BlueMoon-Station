@@ -6,6 +6,7 @@
 	is_healing = FALSE // BLUEMOON ADD
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "gland"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FIRST
 
 /datum/surgery/organ_extraction/can_start(mob/user, mob/living/carbon/target)
 	if(!ishuman(user))

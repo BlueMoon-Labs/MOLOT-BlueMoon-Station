@@ -21,6 +21,7 @@
 	is_healing = FALSE // BLUEMOON ADD
 	icon = 'icons/mob/screen_alert.dmi'
 	icon_state = "hypnosis"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FIRST
 
 //	special_surgery_traits = list(OPERATION_MUST_BE_PERFORMED_AWAKE) // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
 

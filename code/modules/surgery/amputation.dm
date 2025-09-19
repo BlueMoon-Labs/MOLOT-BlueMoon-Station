@@ -6,6 +6,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC // BLUEMOON EDIT - было 0, изменено для отдельных ампутаций робоконечностям
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 	icon_state = "saw"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ADDITIONAL
 
 /datum/surgery_step/sever_limb
 	name = "Отделить Конечность"

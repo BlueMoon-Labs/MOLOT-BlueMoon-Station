@@ -5,6 +5,7 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	is_healing = FALSE // BLUEMOON ADD
 	icon_state = "drill"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_SECOND
 
 //handle cavity
 /datum/surgery_step/handle_cavity

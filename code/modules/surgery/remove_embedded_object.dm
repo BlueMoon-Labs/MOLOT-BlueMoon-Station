@@ -3,6 +3,7 @@
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/remove_object)
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	icon_state = "embeddedobject"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EMERGENCY
 
 /datum/surgery/embedded_removal/robot
 	requires_bodypart_type = BODYPART_ROBOTIC

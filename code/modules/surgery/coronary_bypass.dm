@@ -6,6 +6,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 	icon_state = "heart-off"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ORGAN
 
 /datum/surgery/coronary_bypass/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)

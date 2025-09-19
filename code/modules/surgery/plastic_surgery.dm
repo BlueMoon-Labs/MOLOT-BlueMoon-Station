@@ -5,6 +5,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 	is_healing = FALSE // BLUEMOON ADD
 	icon_state = "surgery_head"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_SECOND
 
 //reshape_face
 /datum/surgery_step/reshape_face

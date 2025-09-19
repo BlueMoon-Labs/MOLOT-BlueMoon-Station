@@ -20,6 +20,7 @@
 	target_mobtypes = list(/mob/living/carbon/human)
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/tools.dmi'
 	icon_state = "multitool_yellow"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ADDITIONAL
 
 /datum/surgery/robot_purge_reagents/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	. = ..()

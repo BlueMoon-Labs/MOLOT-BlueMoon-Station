@@ -23,6 +23,7 @@
 	var/is_healing = TRUE									//BLUEMOON ADD || Is this healing operation or improving/other
 	var/icon = 'icons/obj/surgery.dmi'						//BLUEMOON ADD || icon file for radial menu
 	var/icon_state = "scalpel"								//BLUEMOON ADD || icon state for radial menu
+	var/radial_priority = SURGERY_RADIAL_PRIORITY			//BLUEMOON ADD || icon state for radial menu
 
 	var/list/special_surgery_traits = list() // BLUEMOON ADD - наши особые трейты для операции
 

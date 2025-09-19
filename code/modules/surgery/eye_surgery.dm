@@ -5,6 +5,7 @@
 	possible_locs = list(BODY_ZONE_PRECISE_EYES)
 	requires_bodypart_type = BODYPART_ORGANIC
 	icon_state = "eyeballs"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ORGAN
 
 //fix eyes
 /datum/surgery_step/fix_eyes

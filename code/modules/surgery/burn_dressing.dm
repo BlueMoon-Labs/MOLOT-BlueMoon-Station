@@ -10,6 +10,7 @@
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/burn
 	icon_state = "fugu_gland"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_WOUND
 
 /datum/surgery/debride/can_start(mob/living/user, mob/living/carbon/target)
 	if(..())

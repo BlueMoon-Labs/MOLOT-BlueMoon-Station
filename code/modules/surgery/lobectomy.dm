@@ -6,6 +6,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 	icon_state = "lungs"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ORGAN
 
 /datum/surgery/lobectomy/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)

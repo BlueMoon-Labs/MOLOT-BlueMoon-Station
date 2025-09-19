@@ -16,6 +16,7 @@
 	requires_bodypart_type = 0
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "patch7"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EXTRA
 
 /datum/surgery_step/toxichealing
 	name = "Изъять Токсичную Субстанцию и Плоть"

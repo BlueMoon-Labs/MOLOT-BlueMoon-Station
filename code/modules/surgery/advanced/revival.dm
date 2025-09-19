@@ -13,6 +13,7 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 	icon_state = "defibpaddles0"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EMERGENCY
 
 /datum/surgery/advanced/revival/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())

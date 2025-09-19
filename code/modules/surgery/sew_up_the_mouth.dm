@@ -5,6 +5,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 	is_healing = FALSE // BLUEMOON ADD
 	icon_state = "surgery_mouth"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_THIRD
 
 /datum/surgery/sew_up_the_mouth/can_start(mob/user, mob/living/patient, obj/item/tool)
 	. = ..()
@@ -48,6 +49,7 @@
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
 	icon_state = "surgery_mouth"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EMERGENCY
 
 /datum/surgery/unsew_up_the_mouth/can_start(mob/user, mob/living/patient, obj/item/tool)
 	. = ..()

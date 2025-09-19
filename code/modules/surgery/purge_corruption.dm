@@ -20,6 +20,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey) //If admins made a monkey into a robotic supersoldier or something.
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "patch7"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EXTRA
 
 /datum/surgery/purge_corruption/robotic
 	requires_bodypart_type = BODYPART_ROBOTIC

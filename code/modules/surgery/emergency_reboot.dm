@@ -8,6 +8,7 @@
 	steps = list(/datum/surgery_step/mechanic_open, /datum/surgery_step/open_hatch, /datum/surgery_step/mechanic_unwrench, /datum/surgery_step/force_reboot, /datum/surgery_step/mechanic_wrench, /datum/surgery_step/mechanic_close)
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/tools.dmi'
 	icon_state = "multitool_wiring"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EMERGENCY
 
 /datum/surgery/emergency_reboot/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())

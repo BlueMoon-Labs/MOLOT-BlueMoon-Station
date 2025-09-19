@@ -13,6 +13,7 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 	icon_state = "posibrain-ipc"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_STATIC
 
 /datum/surgery_step/fix_robot_brain
 	name = "Отремонтировать Пози-Мозг (Мультитул)"

@@ -16,6 +16,7 @@
 	is_healing = FALSE // BLUEMOON ADD
 	icon = 'icons/obj/device.dmi'
 	icon_state = "forensicnew"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FOURTH
 	var/value_multiplier = 1
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target, obj/item/tool)

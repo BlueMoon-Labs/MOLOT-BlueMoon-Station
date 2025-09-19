@@ -11,6 +11,7 @@
 	is_healing = FALSE // BLUEMOON ADD
 	icon = 'icons/mob/human_parts_greyscale.dmi'
 	icon_state = "human_chest_m"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_SECOND
 
 /datum/surgery_step/embalming
 	name = "Бальмазировать Тело"

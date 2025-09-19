@@ -15,6 +15,7 @@
 	targetable_wound = /datum/wound/pierce
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "suture_3"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_WOUND
 
 /datum/surgery/repair_puncture/biomech
 	requires_bodypart_type = BODYPART_HYBRID
