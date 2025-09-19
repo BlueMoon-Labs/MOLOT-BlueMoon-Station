@@ -75,7 +75,7 @@
 		// get mutable_appearance for available_surgeries
 		choices = list()
 		var/list/order = list() // names
-		var/list/prios = list() // prioritys
+		var/list/prios = list() // priorities
 		for(var/S_name in available_surgeries)
 			var/datum/surgery/S = available_surgeries[S_name]
 			if((P == "Лечение") != S.is_healing) // for understanding: if(P == "Лечение" && !S.is_healing || P != "Лечение" && S.is_healing)

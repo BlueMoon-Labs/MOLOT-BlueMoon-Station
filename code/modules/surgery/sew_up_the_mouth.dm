@@ -11,7 +11,7 @@
 	. = ..()
 	if(!.)
 		return .
-	. = !(HAS_TRAIT_FROM(patient, TRAIT_MUTE, GENETIC_MUTATION))
+	. = !(HAS_TRAIT_FROM(patient, TRAIT_MUTE, ORGAN_TRAIT))
 
 /datum/surgery_step/sew_up_the_mouth
 	name = "Зашить или Прижечь Рот"
@@ -41,7 +41,7 @@
 	return ..()
 
 /datum/surgery_step/proc/sew_up_the_mouth(mob/living/carbon/target)
-	ADD_TRAIT(target, TRAIT_MUTE, GENETIC_MUTATION)
+	ADD_TRAIT(target, TRAIT_MUTE, ORGAN_TRAIT)
 
 /datum/surgery/unsew_up_the_mouth
 	name = "Расшить Рот"
@@ -55,7 +55,7 @@
 	. = ..()
 	if(!.)
 		return .
-	. = HAS_TRAIT_FROM(patient, TRAIT_MUTE, GENETIC_MUTATION)
+	. = HAS_TRAIT_FROM(patient, TRAIT_MUTE, ORGAN_TRAIT)
 
 /datum/surgery_step/unsew_up_the_mouth
 	name = "Расшить Рот"
@@ -85,4 +85,4 @@
 	return ..()
 
 /datum/surgery_step/proc/unsew_up_the_mouth(mob/living/carbon/target)
-	REMOVE_TRAIT(target, TRAIT_MUTE, GENETIC_MUTATION)
+	REMOVE_TRAIT(target, TRAIT_MUTE, ORGAN_TRAIT)
