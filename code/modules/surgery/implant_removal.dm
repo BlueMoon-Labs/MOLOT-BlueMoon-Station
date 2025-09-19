@@ -4,7 +4,8 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	is_healing = FALSE // BLUEMOON ADD
-	icon_state = "chest_implant"
+	icon = 'icons/obj/syringe.dmi'
+	icon_state = "implantcase-0"
 	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FIRST
 
 //extract implant
