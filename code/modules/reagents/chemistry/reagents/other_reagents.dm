@@ -299,7 +299,10 @@
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(M.blood_volume)
-		M.adjust_integration_blood(0.1) // water is good for you!
+		var/blood_restoration_multiplier = 0.5
+		if(isrobotic(M) && HAS_TRAIT(M, TRAIT_BLUEMOON_COOLANT_GENERATOR))
+			blood_restoration_multiplier *= 5 // ~0.5 юнитов крови в тик
+		M.adjust_integration_blood(blood_restoration_multiplier * metabolization_rate) // water is good for you!
 
 /*
  *	Water reaction to turf

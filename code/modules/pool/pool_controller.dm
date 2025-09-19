@@ -247,7 +247,31 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/drownee = M
 			if(!drownee || drownee.stat == DEAD)
-				return
+				continue
+			if(isrobotic(drownee))
+				if(HAS_TRAIT(drownee, TRAIT_BLUEMOON_WATER_VULNERABILITY))
+					if(drownee.stat == CONSCIOUS && prob(70))
+						var/protected = FALSE
+						if (drownee.wear_suit && drownee.head && istype(drownee.wear_suit, /obj/item/clothing) && istype(drownee.head, /obj/item/clothing))
+							var/obj/item/clothing/worn_suit = drownee.wear_suit
+							var/obj/item/clothing/worn_helmet = drownee.head
+							if (worn_suit.clothing_flags & worn_helmet.clothing_flags & STOPSPRESSUREDAMAGE)
+								protected = TRUE
+						if (!protected)
+							if(prob(80))
+								drownee.visible_message(span_warning("[drownee] сильно искрит, когда [drownee.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
+								do_sparks(2, TRUE, drownee)
+								drownee.Confused(15)
+								drownee.Jitter(10)
+								drownee.apply_damage(15, BURN)
+							else
+								drownee.visible_message(span_warning("[drownee] отключается от короткого замыкания и идёт ко дну!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
+								do_sparks(4, TRUE, drownee)
+								drownee.apply_damage(40, BURN)
+								drownee.AdjustUnconscious(100)
+				continue
+			if(HAS_TRAIT(drownee, TRAIT_NOBREATH))
+				continue
 			if(drownee.resting && !drownee.internal)
 				if(drownee.stat != CONSCIOUS)
 					drownee.adjustOxyLoss(9)

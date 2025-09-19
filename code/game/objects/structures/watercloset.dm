@@ -439,6 +439,30 @@
 			var/washears = TRUE
 			var/washglasses = TRUE
 
+			if(isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_WATER_VULNERABILITY) && H.stat == CONSCIOUS && prob(70))
+				var/protected = FALSE
+				if (H.wear_suit && H.head && istype(H.wear_suit, /obj/item/clothing) && istype(H.head, /obj/item/clothing))
+					var/obj/item/clothing/worn_suit = H.wear_suit
+					var/obj/item/clothing/worn_helmet = H.head
+					if (worn_suit.clothing_flags & worn_helmet.clothing_flags & THICKMATERIAL)
+						protected = TRUE
+				if (!protected)
+					if(prob(80))
+						H.visible_message(span_warning("[H] искрит, когда [H.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
+						do_sparks(2, TRUE, H)
+						H.Confused(15)
+						H.Jitter(20)
+						H.apply_damage(10, BURN)
+					else
+						H.visible_message(span_warning("[H] сильно искрит, падая на землю!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
+						do_sparks(3, TRUE, H)
+						playsound(H, 'sound/machines/hiss.ogg', 40, FALSE)
+						playsound(H, 'modular_splurt/sound/misc/connection_terminated.ogg', 40, FALSE)
+						H.apply_damage(25, BURN)
+						H.AdjustUnconscious(20)
+						H.Confused(20)
+						H.Jitter(30)
+
 			if(H.wear_suit)
 				washgloves = !(H.wear_suit.flags_inv & HIDEGLOVES)
 				washshoes = !(H.wear_suit.flags_inv & HIDESHOES)
