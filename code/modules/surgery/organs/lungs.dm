@@ -12,7 +12,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 	var/failed = FALSE
-	var/operated = FALSE	//whether we can still have our damages fixed through surgery
 
 	//health
 	maxHealth = 3 * STANDARD_ORGAN_THRESHOLD

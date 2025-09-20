@@ -86,14 +86,14 @@
 			app.name = S.name
 			choices[S_name] = app
 
-			// prioritization of lists, treating operations in the first place
+			// prioritization of lists
 			var/p = S.radial_priority
 			var/i = 1
 			while (i <= prios.len && prios[i] <= p)
 				i++
 			prios.Insert(i, p)
 			order.Insert(i, S_name)
-		
+
 		// reassembling list
 		var/list/sorted = list()
 		for (var/i = 1 to order.len)

@@ -177,7 +177,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -power*REM) //additional heal for brain
 		for(var/organ in M.internal_organs)
 			var/obj/item/organ/O = organ
-			if ((!(O.organ_flags & ORGAN_FAILING)) && (!(O.organ_flags & ORGAN_FAILING)) && (!(O.organ_flags & ORGAN_FAILING))) //Check for organ failure
+			if (!(O.organ_flags & ORGAN_FAILING)) //Check for organ failure
 				O.applyOrganDamage(-1 * power) //Use reverse damage for heal
 		for(var/i in M.all_wounds)
 			var/datum/wound/iter_wound = i
