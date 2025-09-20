@@ -511,14 +511,19 @@ SUBSYSTEM_DEF(job)
 		flavor_display_text += "<p>Начните своё сообщение с :р или .р, чтобы воспользоваться радиоканалом вашего отдела. Другие префиксы указаны на вашей гарнитуре.\n</p>"
 		flavor_display_text += "<b class='notice_l'>Обратите внимание:\n</b>"
 		if(job.req_admin_notify)
-			flavor_display_text += "\n<li><span class='notice'>вы играете роль, важную для прогрессии раунда. Если вам необходимо отключиться, пожалуйста, уведомите администрацию и верните всю экипировку в шкафчик.</span></li>"
+			flavor_display_text += "\n<li><span class='notice'>Вы играете роль, важную для прогрессии раунда. Если вам необходимо отключиться, пожалуйста, уведомите администрацию и верните всю экипировку в шкафчик.</span></li>"
 		if(CONFIG_GET(number/minimal_access_threshold) && !CONFIG_GET(flag/jobs_have_minimal_access))
-			flavor_display_text += "\n<li>ввиду критической нехватки персонала, ваша ID-карта имеет дополнительный доступ.</li>"
+			flavor_display_text += "\n<li>Ввиду критической нехватки персонала, ваша ID-карта имеет дополнительный доступ.</li>"
 		if(job.custom_spawn_text)
-			flavor_display_text += "\n<li>[job.custom_spawn_text]</li>"
+			flavor_display_text += "\n<li>[capitalize(job.custom_spawn_text)]</li>"
+	if(H.mind.assigned_role == "Head of Security") // Секция добавления штук для ГСБ
+		for(var/obj/structure/safe/floor/syndi/armory/brigsafe in world)
+			var/code_text = "[brigsafe.tumblers.Join("-")]"
+			flavor_display_text += "\n<li><span class='red'>Вам известен код сейфа оружейной:<br><B>[code_text].</B></span>\n</li>"
+			H.mind.memory += ("Код сейфа оружейной: [code_text].\n") // Нет, add_memory не работает, этот брутфорс был нужен.
 	if(ishuman(H))
 		var/mob/living/carbon/human/wageslave = H
-		flavor_display_text += "\n<li>номер вашего банковского аккаунта - [wageslave.account_id].</li>"
+		flavor_display_text += "\n<li>Номер вашего банковского аккаунта - [wageslave.account_id].</li>"
 		H.add_memory("Номер вашего банковского аккаунта - [wageslave.account_id].")
 	to_chat(M, examine_block(flavor_display_text))
 	// BLUEMOON EDIT END

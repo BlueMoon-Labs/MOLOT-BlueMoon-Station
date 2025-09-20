@@ -56,7 +56,7 @@
 	notify_players = FALSE
 	rename_team = "Deathsquad"
 	code = "EPSILON"
-	mission = "уничтожить Космическую Станцию, включая активы, в том числе весь Экипаж."
+	mission = "уничтожить Космическую Станцию, включая активы, в том числе весь экипаж."
 	polldesc = "an Elite Nanotrasen Strike Team"
 	ertphrase = "modular_bluemoon/sound/ert/deathsquad_send_in.ogg"
 
