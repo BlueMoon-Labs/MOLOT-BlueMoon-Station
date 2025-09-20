@@ -12,6 +12,9 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 
+	icon_state = "brain"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_STATIC
+
 //	special_surgery_traits = list(OPERATION_MUST_BE_PERFORMED_AWAKE) // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
 
 /datum/surgery_step/fix_brain

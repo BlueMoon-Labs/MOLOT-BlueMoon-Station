@@ -13,6 +13,10 @@
 	target_mobtypes = list(/mob/living) //Feel free to dissect devils but they're magic.
 	replaced_by = /datum/surgery/advanced/experimental_dissection/adv
 	requires_tech = FALSE
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/obj/device.dmi'
+	icon_state = "forensicnew"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FOURTH
 	var/value_multiplier = 1
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target, obj/item/tool)

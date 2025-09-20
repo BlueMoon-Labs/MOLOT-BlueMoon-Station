@@ -11,6 +11,11 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "mood6"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_THIRD
+
 
 //	special_surgery_traits = list(OPERATION_MUST_BE_PERFORMED_AWAKE) // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
 

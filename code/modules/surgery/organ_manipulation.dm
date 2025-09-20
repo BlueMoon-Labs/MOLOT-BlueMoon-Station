@@ -1,5 +1,5 @@
 /datum/surgery/organ_manipulation
-	name = "organ manipulation"
+	name = "Organ manipulation"
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
 	requires_bodypart_type = BODYPART_ORGANIC
@@ -15,6 +15,8 @@
 		/datum/surgery_step/close
 		)
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
+	icon_state = "hemostat"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_STATIC
 
 /datum/surgery/organ_manipulation/soft
 	possible_locs = list(BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)

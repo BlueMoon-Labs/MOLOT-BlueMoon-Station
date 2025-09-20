@@ -5,19 +5,19 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
+	icon_state = "lungs"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ORGAN
 
 /datum/surgery/lobectomy/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
+	. = ..()
+	if(!.)
+		return .
 	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)
-	if(L)
-		if(L.damage > 60 && !L.operated)
-			return TRUE
-	return FALSE
+	return (L && L.damage && !(L.organ_flags & ORGAN_FAILING))
 
-
-//lobectomy, removes the most damaged lung lobe with a 95% base success chance
 /datum/surgery_step/lobectomy
 	name = "Удалить Поврежденный Узел Лёгкого"
-	implements = list(TOOL_SCALPEL = 95, /obj/item/melee/transforming/energy/sword = 65, /obj/item/kitchen/knife = 45,
+	implements = list(TOOL_SCALPEL = 100, /obj/item/melee/transforming/energy/sword = 65, /obj/item/kitchen/knife = 45,
 		/obj/item/shard = 35)
 	time = 42
 	preop_sound = 'sound/surgery/scalpel1.ogg'
@@ -32,9 +32,7 @@
 /datum/surgery_step/lobectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		var/obj/item/organ/lungs/L = H.getorganslot(ORGAN_SLOT_LUNGS)
-		L.operated = TRUE
-		H.setOrganLoss(ORGAN_SLOT_LUNGS, 60)
+		H.setOrganLoss(ORGAN_SLOT_LUNGS, 0)
 		display_results(user, target, "<span class='notice'>You successfully excise [H]'s most damaged lobe.</span>",
 			"Successfully removes a piece of [H]'s lungs.",
 			"")

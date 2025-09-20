@@ -5,13 +5,16 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
 	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
+	icon_state = "heart-off"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_ORGAN
 
 /datum/surgery/coronary_bypass/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
+	. = ..()
+	if(!.)
+		return .
+
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
-	if(H)
-		if(H.damage > 60 && !H.operated)
-			return TRUE
-	return FALSE
+	return (H && H.damage && !(H.organ_flags & ORGAN_FAILING))
 
 //an incision but with greater bleed, and a 90% base success chance
 /datum/surgery_step/incise_heart
@@ -61,15 +64,14 @@
 	failure_sound = 'sound/surgery/organ2.ogg'
 
 /datum/surgery_step/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	//var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
+	//time = max(ceil(heart.damage/heart.maxHealth) * time, 30)
 	display_results(user, target, "<span class='notice'>You begin to graft a bypass onto [target]'s heart...</span>",
 			"[user] begins to graft something onto [target]'s heart!",
 			"[user] begins to graft something onto [target]'s heart!")
 
 /datum/surgery_step/coronary_bypass/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	target.setOrganLoss(ORGAN_SLOT_HEART, 60)
-	var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
-	if(heart)	//slightly worrying if we lost our heart mid-operation, but that's life
-		heart.operated = TRUE
+	target.setOrganLoss(ORGAN_SLOT_HEART, 0)
 	display_results(user, target, "<span class='notice'>You successfully graft a bypass onto [target]'s heart.</span>",
 			"[user] finishes grafting something onto [target]'s heart.",
 			"[user] finishes grafting something onto [target]'s heart.")

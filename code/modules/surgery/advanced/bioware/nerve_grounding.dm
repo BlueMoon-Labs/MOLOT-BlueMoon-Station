@@ -10,6 +10,8 @@
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	bioware_target = BIOWARE_NERVES
+	icon = 'icons/obj/clothing/gloves.dmi'
+	icon_state = "yellow"
 
 /datum/surgery_step/ground_nerves
 	name = "ground nerves"

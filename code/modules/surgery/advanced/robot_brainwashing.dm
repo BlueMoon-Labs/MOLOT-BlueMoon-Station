@@ -11,6 +11,11 @@
 	/datum/surgery_step/mechanic_wrench,
 	/datum/surgery_step/mechanic_close)
 
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/mob/screen_alert.dmi'
+	icon_state = "hypnosis"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FIRST
+
 /datum/surgery/advanced/reprogramming/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())
 		return FALSE

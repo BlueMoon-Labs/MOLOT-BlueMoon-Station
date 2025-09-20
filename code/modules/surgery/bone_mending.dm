@@ -9,6 +9,8 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/blunt/severe
+	icon_state = "bonesetter"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_WOUND
 
 /datum/surgery/repair_bone_hairline/can_start(mob/living/user, mob/living/carbon/target)
 	if(..())
@@ -27,6 +29,8 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/blunt/critical
+	icon_state = "bone-gel"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_WOUND
 
 /datum/surgery/repair_bone_compound/biomech
 	requires_bodypart_type = BODYPART_HYBRID

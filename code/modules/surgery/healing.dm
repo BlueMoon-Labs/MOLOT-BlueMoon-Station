@@ -11,6 +11,9 @@
 	requires_bodypart_type = NONE
 	replaced_by = /datum/surgery
 	ignore_clothes = TRUE
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "patch1"
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_BASE
 	var/healing_step_type
 	var/antispam = FALSE
 
@@ -101,6 +104,7 @@
 /***************************BRUTE***************************/
 /datum/surgery/healing/brute
 	name = "Tend Wounds (Bruises)"
+	icon_state = "patch2"
 
 /datum/surgery/healing/brute/basic
 	name = "Tend Wounds (Bruises, Basic)"
@@ -139,6 +143,7 @@
 /***************************BURN***************************/
 /datum/surgery/healing/burn
 	name = "Tend Wounds (Burn)"
+	icon_state = "patch3"
 
 /datum/surgery/healing/burn/basic
 	name = "Tend Wounds (Burn, Basic)"
@@ -176,13 +181,12 @@
 
 /***************************COMBO***************************/
 /datum/surgery/healing/combo
-
-/datum/surgery/healing/combo
 	name = "Tend Wounds (Mixture, Basic)"
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/combo
 	desc = "A surgical procedure that provides basic treatment for a patient's burns and brute traumas. Heals slightly more when the patient is severely injured."
+	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_BASE_COMBO
 
 /datum/surgery/healing/combo/upgraded
 	name = "Tend Wounds (Mixture, Adv.)"
