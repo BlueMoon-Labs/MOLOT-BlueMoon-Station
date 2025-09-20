@@ -22,7 +22,7 @@
 	var/conduction_coefficient = 0.3
 
 	var/obj/item/reagent_containers/glass/beaker = null
-	var/reagent_transfer = 0
+	var/beaker_transfer_count = 0
 
 	var/obj/item/radio/radio
 	var/radio_key = /obj/item/encryptionkey/headset_med
@@ -32,7 +32,8 @@
 
 	var/escape_in_progress = FALSE
 	var/message_cooldown
-	var/breakout_time = 300
+	var/breakout_time = 10 SECONDS
+	var/breakout_time_unconscious = 30 SECONDS
 	///Cryo will continue to treat people with 0 damage but existing wounds, but will sound off when damage healing is done in case doctors want to directly treat the wounds instead
 	var/treating_wounds = FALSE
 	var/treating_organs = FALSE
@@ -57,7 +58,6 @@
 	var/C
 	for(var/obj/item/stock_parts/matter_bin/M in component_parts)
 		C += M.rating
-	// 2 bins total, so C ranges from 2 to 8.
 	efficiency = initial(efficiency) * C
 	knockout_factor = initial(knockout_factor) / max(1, (C * 0.33))
 	heat_capacity = initial(heat_capacity) / C
@@ -176,9 +176,17 @@
 	if(mob_occupant.stat == DEAD) // We don't bother with dead people.
 		return
 
-	if(mob_occupant.health >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
-		if(iscarbon(mob_occupant))
-			var/mob/living/carbon/C = mob_occupant
+	var/mob/living/carbon/C = iscarbon(mob_occupant) && mob_occupant
+	var/prostheticDamage = 0
+	// We do not take into account damage of mechanical parts
+	if(C)
+		for(var/obj/item/bodypart/BP in C.bodyparts)
+			if(!BP.is_organic_limb())
+				prostheticDamage += BP.get_damage()
+
+	if(mob_occupant.health + prostheticDamage >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
+		if(C)
+			/*
 			var/anyOrganDamage = FALSE
 			for(var/organ in C.internal_organs)
 				var/obj/item/organ/O = organ
@@ -192,8 +200,16 @@
 					radio.talk_into(src, msg, radio_channel)
 			else
 				treating_organs = FALSE
+			*/
 
-			if(C.all_wounds)
+			var/has_wound = FALSE
+			for(var/datum/wound/wound in C.all_wounds)
+				if(wound.wound_type != WOUND_BURN || !wound?.limb?.is_organic_limb())
+					continue
+				has_wound = TRUE
+				break
+
+			if(has_wound)
 				if(!treating_wounds) // if we have wounds and haven't already alerted the doctors we're only dealing with the wounds, let them know
 					treating_wounds = TRUE
 					playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
@@ -222,12 +238,11 @@
 			mob_occupant.Sleeping(amount)
 			mob_occupant.Unconscious(amount)
 		if(beaker)
-			if(reagent_transfer == 0) // Magically transfer reagents. Because cryo magic.
-				beaker.reagents.trans_to(occupant, 1, efficiency * 0.25) // Transfer reagents.
-				beaker.reagents.reaction(occupant, VAPOR)
+			if(beaker_transfer_count == 0)
+				beaker.reagents.trans_to(occupant, 1, efficiency * 2.5) // Remove 1 and add (2.5 * efficiency) reagents to occupant
 				air1.adjust_moles(GAS_O2, -max(0,air1.get_moles(GAS_O2) - 2 / efficiency)) //Let's use gas for this
-			if(++reagent_transfer >= 10 * efficiency) // Throttle reagent transfer (higher efficiency will transfer the same amount but consume less from the beaker).
-				reagent_transfer = 0
+			if(++beaker_transfer_count >= 10) // Every X process
+				beaker_transfer_count = 0
 
 	return TRUE
 
@@ -272,7 +287,7 @@
 		message_cooldown = world.time + 50
 		to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/open_machine(drop = 0)
+/obj/machinery/atmospherics/components/unary/cryo_cell/open_machine(drop = FALSE)
 	if(!state_open && !panel_open)
 		on = FALSE
 		..()
@@ -287,18 +302,29 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/close_machine(mob/living/carbon/user)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
 		..(user)
-		reagent_transfer = 0
+		beaker_transfer_count = 0
 		return occupant
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/container_resist(mob/living/user)
-	user.visible_message("<span class='notice'>You see [user] kicking against the glass of [src]!</span>", \
-		"<span class='notice'>You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span class='italics'>You hear a thump from [src].</span>")
-	if(do_after(user, breakout_time, target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+	if(INTERACTING_WITH(user, src))
+		return
+	if(user.stat != CONSCIOUS)
+		user.visible_message(\
+			span_notice("Вы видите, как [user] активирует программу высвобождения из [src]!"), \
+			span_notice("Ты активируешь программу экстренного высвобождения из [src]... (это займет примерно [DisplayTimeText(breakout_time_unconscious)].)"), \
+			"<span class='italics'>Вы слышите как [src] начинает сливать жидкость.</span>")
+		playsound(src, 'sound/rig/beep.ogg',80,TRUE)
+	else
+		user.visible_message(\
+			span_notice("Вы видите, как [user] пытается раздвинуть створки [src]!"), \
+			span_notice("Ты пытаешься выбраться из [src], раздвигая створки... (это займет примерно [DisplayTimeText(breakout_time)].)"), \
+			"<span class='italics'>Вы слышите гул сервоприводов от [src].</span>")
+		playsound(src, 'sound/machines/airlock_alien_prying.ogg',60,TRUE)
+
+	if(do_after(user, (user.stat != CONSCIOUS ? breakout_time_unconscious : breakout_time), src, IGNORE_INCAPACITATED))
+		if(!user || user.loc != src)
 			return
-		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
-			"<span class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message(span_warning("[user] выбирается из [src]!</span>"))
 		open_machine()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/examine(mob/user)
@@ -318,7 +344,7 @@
 		close_machine(target)
 	else
 		user.visible_message("<b>[user]</b> starts shoving [target] inside [src].", "<span class='notice'>You start shoving [target] inside [src].</span>")
-		if (do_after(user, 25, target=target))
+		if (do_after(user, 1.5 SECONDS, target))
 			close_machine(target)
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/attackby(obj/item/I, mob/user, params)
@@ -442,13 +468,18 @@
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/AltClick(mob/user)
 	. = ..()
-	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		if(state_open)
-			close_machine()
-		else
-			open_machine()
-		update_icon()
+	if(user.loc == src)
+		container_resist(user)
 		return TRUE
+	else if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return .
+
+	if(state_open)
+		close_machine()
+	else
+		open_machine()
+	update_icon()
+	return TRUE
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/update_remote_sight(mob/living/user)
 	return // we don't see the pipe network while inside cryo.
