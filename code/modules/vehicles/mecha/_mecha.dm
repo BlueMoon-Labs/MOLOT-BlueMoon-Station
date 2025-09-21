@@ -422,9 +422,9 @@
 				if(int_tank_air.return_pressure() > internal_tank.maximum_pressure && !(internal_damage & MECHA_INT_TANK_BREACH))
 					setInternalDamage(MECHA_INT_TANK_BREACH)
 				if(int_tank_air && int_tank_air.return_volume() > 0) //heat the air_contents
-					int_tank_air.set_temperature(min(6000+T0C, int_tank_air.return_temperature()+rand(10,15)))
+					int_tank_air.set_temperature(min(1500+T0C, int_tank_air.return_temperature()+rand(10,15)))
 			if(cabin_air && cabin_air.return_volume()>0)
-				cabin_air.set_temperature(min(6000+T0C, cabin_air.return_temperature()+rand(10,15)))
+				cabin_air.set_temperature(min(1500+T0C, cabin_air.return_temperature()+rand(10,15)))
 				if(cabin_air.return_temperature() > max_temperature/2)
 					take_damage(4/round(max_temperature/cabin_air.return_temperature(),0.1), BURN, 0, 0)
 
