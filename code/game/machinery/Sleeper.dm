@@ -18,10 +18,12 @@
 	var/list/available_chems
 	var/controls_inside = FALSE
 	var/list/possible_chems = list(
-		list(/datum/reagent/medicine/epinephrine, /datum/reagent/medicine/morphine, /datum/reagent/medicine/salbutamol, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/kelotane),
+		list(/datum/reagent/medicine/epinephrine, /datum/reagent/medicine/morphine, /datum/reagent/medicine/salbutamol, /datum/reagent/medicine/charcoal, /datum/reagent/medicine/salglu_solution),
 		list(/datum/reagent/medicine/oculine,/datum/reagent/medicine/inacusiate),
-		list(/datum/reagent/medicine/antitoxin, /datum/reagent/medicine/mutadone, /datum/reagent/medicine/mannitol, /datum/reagent/medicine/pen_acid),
-		list(/datum/reagent/medicine/omnizine)
+		list(/datum/reagent/medicine/mutadone, /datum/reagent/medicine/mannitol),
+		list(/datum/reagent/medicine/antitoxin, /datum/reagent/medicine/omnizine),
+		list(/datum/reagent/medicine/bicaridine, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/atropine),
+		list(/datum/reagent/medicine/perfluorodecalin, /datum/reagent/medicine/neurine, /datum/reagent/medicine/sal_acid, /datum/reagent/medicine/oxandrolone)
 	)
 	var/list/chem_buttons	//Used when emagged to scramble which chem is used, eg: antitoxin -> morphine
 	var/scrambled_chems = FALSE //Are chem buttons scrambled? used as a warning
@@ -50,7 +52,7 @@
 	efficiency = initial(efficiency)* E
 	min_health = initial(min_health) - (10*(E-1)) // CIT CHANGE - changes min health equation to be min_health - (matterbin rating * 10)
 	available_chems = list()
-	I = clamp(I, 1, 5) //patch for T6, fix it later
+	I = clamp(I, 1, possible_chems.len)
 	for(var/i in 1 to I)
 		available_chems |= possible_chems[i]
 	reset_chem_buttons()

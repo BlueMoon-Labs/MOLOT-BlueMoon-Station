@@ -43,7 +43,7 @@ export const Sleeper = (props, context) => {
   return (
     <Window
       width={310}
-      height={465}>
+      height={505}>
       <Window.Content>
         <Section
           title={occupant.name ? occupant.name : 'No Occupant'}
@@ -96,7 +96,7 @@ export const Sleeper = (props, context) => {
         </Section>
         <Section
           title="Medicines"
-          minHeight="205px"
+          minHeight="245px"
           buttons={(
             <Button
               icon={open ? 'door-open' : 'door-closed'}
