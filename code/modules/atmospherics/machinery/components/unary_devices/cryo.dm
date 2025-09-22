@@ -239,7 +239,11 @@
 			mob_occupant.Unconscious(amount)
 		if(beaker)
 			if(beaker_transfer_count == 0)
-				beaker.reagents.trans_to(occupant, 1, efficiency * 2.5) // Remove 1 and add (2.5 * efficiency) reagents to occupant
+				// Remove 1 and add (2.5 * efficiency) reagents to occupant
+				var/transfer_amount = efficiency * 2.5
+				var/fraction = min(transfer_amount / beaker.reagents.total_volume, 1)
+				beaker.reagents.reaction(occupant, VAPOR, fraction)
+				beaker.reagents.remove_all(1)
 				air1.adjust_moles(GAS_O2, -max(0,air1.get_moles(GAS_O2) - 2 / efficiency)) //Let's use gas for this
 			if(++beaker_transfer_count >= 10) // Every X process
 				beaker_transfer_count = 0
