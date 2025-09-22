@@ -112,9 +112,14 @@
 	var/datum/surgery_step/S = get_surgery_step()
 	if(S)
 		var/obj/item/tool = user.get_active_held_item()
+		if(istype(tool, /obj/item/stack/medical/mesh))
+			var/obj/item/stack/medical/mesh/T = tool
+			if(!T.is_open)
+				//to_chat(user, span_warning("Вам нужно вскрыть упаковку, прежде чем приступать к операции!"))
+				return
 		if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
 			return TRUE
-		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
+		if((tool && tool.item_flags & SURGICAL_TOOL) || (S.implement_type in S.implements)) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
 			/* BLUERMOON REMOVAL START - перенесено в try_op
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 			/ BLUEMOON REMOVAL END */
