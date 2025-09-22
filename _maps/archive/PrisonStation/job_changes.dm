@@ -155,7 +155,7 @@
 	total_positions = 0
 	spawn_positions = 0
 
-/datum/job/expeditor/New()
+/datum/job/vanguard_operative/New()
 	..()
 	MAP_JOB_CHECK
 	total_positions = 0
