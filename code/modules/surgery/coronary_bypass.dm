@@ -64,8 +64,6 @@
 	failure_sound = 'sound/surgery/organ2.ogg'
 
 /datum/surgery_step/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	//var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
-	//time = max(ceil(heart.damage/heart.maxHealth) * time, 30)
 	display_results(user, target, "<span class='notice'>You begin to graft a bypass onto [target]'s heart...</span>",
 			"[user] begins to graft something onto [target]'s heart!",
 			"[user] begins to graft something onto [target]'s heart!")
