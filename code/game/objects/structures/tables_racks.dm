@@ -277,18 +277,21 @@
 			W.attach(src, user, params)
 		return TRUE
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
-		if(user.transferItemToLoc(I, drop_location()))
-			var/list/click_params = params2list(params)
-			//Center the icon where the user clicked.
-			if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
-				return
-			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-			I.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
-			I.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
-			AfterPutItemOnTable(I, user)
-			return TRUE
+		return PutItemOnTable(I, user, params)
 	else
 		return ..()
+
+/obj/structure/table/proc/PutItemOnTable(obj/item/I, mob/living/user, params)
+	if(user.transferItemToLoc(I, drop_location()))
+		var/list/click_params = params2list(params)
+		//Center the icon where the user clicked.
+		if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
+			return
+		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
+		I.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
+		I.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+		AfterPutItemOnTable(I, user)
+		return TRUE
 
 /obj/structure/table/proc/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	return
@@ -798,7 +801,6 @@
 	if(tank || mask)
 		. += span_notice("Ctrl-Click: Отсоединить от стола баллон и маску.")
 
-
 /obj/structure/table/optable/AltClick(mob/living/user)
 	. = ..()
 	if(!isliving(user) || !user.canUseTopic(src, BE_CLOSE))
@@ -894,6 +896,10 @@
 		mask = null
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
+
+// We dont wont put item
+/obj/structure/table/optable/PutItemOnTable(obj/item/I, mob/living/user, params)
+	return
 
 /obj/structure/table/optable/attackby(obj/item/I, mob/living/user, attackchain_flags, damage_multiplier)
 	if(user.a_intent == INTENT_HELP)
