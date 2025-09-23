@@ -4,6 +4,7 @@
 
 /datum/surgery/graft_synthtissue
 	name = "Graft synthtissue"
+	desc = "Хирургическая процедура, по трансплантации синтетической ткани (Synthtissue). Восстанавливает внутренние органы пациента. При чистоте ткани более 80%, способна исцелить даже органы полностью пораженные некрозом."
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES)
 	steps = list(

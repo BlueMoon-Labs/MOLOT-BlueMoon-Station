@@ -110,21 +110,21 @@
 	name = "Tend Wounds (Bruises, Basic)"
 	replaced_by = /datum/surgery/healing/brute/upgraded
 	healing_step_type = /datum/surgery_step/heal/brute/basic
-	desc = "A surgical procedure that provides basic treatment for a patient's brute traumas. Heals slightly more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает базовое лечение травмированных тканей пациента. При серьезных повреждениях заживление идет немного быстрее."
 
 /datum/surgery/healing/brute/upgraded
 	name = "Tend Wounds (Bruises, Adv.)"
 	replaced_by = /datum/surgery/healing/brute/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded
-	desc = "A surgical procedure that provides advanced treatment for a patient's brute traumas. Heals more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает эффективное лечение травмированных тканей пациента. При серьезных повреждениях заживление происходит быстрее."
 
 /datum/surgery/healing/brute/upgraded/femto
 	name = "Tend Wounds (Bruises, Exp.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded/femto
-	desc = "A surgical procedure that provides experimental treatment for a patient's brute traumas. Heals considerably more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение травмированных тканей пациента. При серьезных повреждениях заживление происходит значительно быстрее."
 
 /********************BRUTE STEPS********************/
 /datum/surgery_step/heal/brute/basic
@@ -149,21 +149,21 @@
 	name = "Tend Wounds (Burn, Basic)"
 	replaced_by = /datum/surgery/healing/burn/upgraded
 	healing_step_type = /datum/surgery_step/heal/burn/basic
-	desc = "A surgical procedure that provides basic treatment for a patient's burns. Heals slightly more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает базовое лечение обожженных тканей пациента. При серьезных травмах заживление идет немного быстрее."
 
 /datum/surgery/healing/burn/upgraded
 	name = "Tend Wounds (Burn, Adv.)"
 	replaced_by = /datum/surgery/healing/burn/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded
-	desc = "A surgical procedure that provides advanced treatment for a patient's burns. Heals more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает эффективное обожженных тканей тканей пациента. При серьезных травмах заживление происходит быстрее."
 
 /datum/surgery/healing/burn/upgraded/femto
 	name = "Tend Wounds (Burn, Exp.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded/femto
-	desc = "A surgical procedure that provides experimental treatment for a patient's burns. Heals considerably more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное обожженных тканей тканей пациента. При серьезных травмах заживление происходит значительно быстрее."
 
 /********************BURN STEPS********************/
 /datum/surgery_step/heal/burn/basic

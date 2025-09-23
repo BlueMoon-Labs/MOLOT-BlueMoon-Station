@@ -1,6 +1,6 @@
 /datum/surgery/embalming //Fast and easy way to husk bodys
 	name = "Embalming"
-	desc = "A surgical procedure that prevents a corpse from producing miasma."
+	desc = "Хирургическая процедура, которая предотвращает выделение миазмов из трупа."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/embalming,
 				/datum/surgery_step/close)

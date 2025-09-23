@@ -1,5 +1,6 @@
 /datum/surgery/cardioversion
 	name = "Emergency Cardioversion Induction"
+	desc = "Хирургическая шоковая процедура, используемая для экстренного запуска сердца. Способна запустить, даже сердце пораженное некрозом. Разряд электричества так-же стимулирует мозг, заставляя его заработать, даже при некрозе."
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/saw, /datum/surgery_step/clamp_bleeders,
 				 /datum/surgery_step/incise_heart, /datum/surgery_step/ventricular_electrotherapy, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)

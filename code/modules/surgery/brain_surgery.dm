@@ -1,5 +1,6 @@
 /datum/surgery/brain_surgery
 	name = "Brain surgery"
+	desc = "Хирургическая процедура, направленная на устранение повреждений или незначительных травм мозга пациента."
 	steps = list(
 	/datum/surgery_step/incise,
 	/datum/surgery_step/retract_skin,

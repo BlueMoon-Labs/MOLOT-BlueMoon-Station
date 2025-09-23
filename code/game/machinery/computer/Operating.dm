@@ -55,6 +55,17 @@
 /obj/machinery/computer/operating/ui_data(mob/user)
 	var/list/data = list()
 	data["table"] = table
+	var/static/list/surgeries_base = list()
+	if(!surgeries_base.len)
+		for(var/path in BASE_MED_SURGERY_OPERATIONS)
+			var/datum/surgery/S = path
+			surgeries_base += list( \
+				list(
+					"name" = initial(S.name),
+					"desc" = initial(S.desc)
+				))
+
+	data["surgeries_base"] = surgeries_base
 	if(table)
 		var/list/surgeries = list()
 		for(var/X in advanced_surgeries)
@@ -64,7 +75,11 @@
 			surgery["desc"] = initial(S.desc)
 			surgeries += list(surgery)
 		data["surgeries"] = surgeries
-		if(table.check_patient())
+		if(!table.check_patient())
+			data["patient"] = null
+			return data
+		/* // Commented: Duplicate code
+		else
 			data["patient"] = list()
 			patient = table.patient
 			switch(patient.stat)
@@ -96,23 +111,31 @@
 					var/chems_needed = surgery_step.get_chem_list()
 					var/alternative_step
 					var/alt_chems_needed = ""
+					var/list/next_step_tools = surgery_step.get_max_chance_implements()
+					var/list/alternative_step_tools = list()
 					if(surgery_step.repeatable)
 						var/datum/surgery_step/next_step = procedure.get_surgery_next_step()
 						if(next_step)
 							alternative_step = capitalize(next_step.name)
 							alt_chems_needed = next_step.get_chem_list()
+							alternative_step_tools = next_step.get_max_chance_implements()
 						else
 							alternative_step = "Finish operation"
-					data["procedures"] += list(list(
-						"name" = capitalize(procedure.name),
-						"next_step" = capitalize(surgery_step.name),
-						"chems_needed" = chems_needed,
-						"alternative_step" = alternative_step,
-						"alt_chems_needed" = alt_chems_needed
-					))
-		else
-			data["patient"] = null
-			return data
+					data["procedures"] += list( \
+							list(
+							"name" = capitalize(procedure.name),
+							"next_step" = capitalize(surgery_step.name),
+							"next_step_tools" = next_step_tools,
+							"chems_needed" = chems_needed,
+							"alternative_step" = alternative_step,
+							"alternative_step_tools" = alternative_step_tools,
+							"alt_chems_needed" = alt_chems_needed
+							) \
+					)
+			*/	
+	
+	data["patient"] = list()
+	patient = table.patient
 	switch(patient.stat)
 		if(CONSCIOUS)
 			data["patient"]["stat"] = "Conscious"
@@ -134,6 +157,7 @@
 	data["patient"]["fireLoss"] = patient.getFireLoss()
 	data["patient"]["toxLoss"] = patient.getToxLoss()
 	data["patient"]["oxyLoss"] = patient.getOxyLoss()
+	data["patient"]["is_robotic_organism"] = HAS_TRAIT(patient, TRAIT_ROBOTIC_ORGANISM)
 	data["procedures"] = list()
 	if(patient.surgeries.len)
 		for(var/datum/surgery/procedure in patient.surgeries)
@@ -141,18 +165,23 @@
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step
 			var/alt_chems_needed = ""
+			var/list/next_step_tools = surgery_step.get_max_chance_implements()
+			var/list/alternative_step_tools = list()
 			if(surgery_step.repeatable)
 				var/datum/surgery_step/next_step = procedure.get_surgery_next_step()
 				if(next_step)
 					alternative_step = capitalize(next_step.name)
 					alt_chems_needed = next_step.get_chem_list()
+					alternative_step_tools = next_step.get_max_chance_implements()
 				else
 					alternative_step = "Finish operation"
 			data["procedures"] += list(list(
 				"name" = capitalize("[parse_zone(procedure.location)] - [procedure.name]"),
 				"next_step" = capitalize(surgery_step.name),
+				"next_step_tools" = next_step_tools,
 				"chems_needed" = chems_needed,
 				"alternative_step" = alternative_step,
+				"alternative_step_tools" = alternative_step_tools,
 				"alt_chems_needed" = alt_chems_needed
 			))
 	return data

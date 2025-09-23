@@ -13,6 +13,7 @@
 	var/success_sound //Sound played if the step succeeded
 	var/failure_sound //Sound played if the step fails
 	var/stop_implements = FALSE // Stop chain of use implements (like stops the mesh from being applied during the operation etc.)
+	var/static/list/_max_chance_implements = list() // cache for proc get_max_chance_implements()
 
 /datum/surgery_step/proc/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	var/success = FALSE
@@ -208,3 +209,19 @@
 		target_detailed = TRUE
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	user.visible_message(vague_message, "", ignored_mobs = detailed_mobs)
+
+/datum/surgery_step/proc/get_max_chance_implements()
+	if(_max_chance_implements[type])
+		return _max_chance_implements[type]
+
+	var/list/result = list()
+	var/maxval = -999
+	for(var/k in implements)
+		if(implements[k] > maxval)
+			maxval = implements[k]
+	for(var/k in implements)
+		if(implements[k] == maxval)
+			result += capitalize(ispath(k) ? initial(k:name) : k)
+
+	_max_chance_implements[type] = result
+	return result
