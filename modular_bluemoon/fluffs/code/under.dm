@@ -277,20 +277,38 @@
 			В юбку встроен радар внешнего обзора. Иногда происходит пространственное смещение... стоп ЧТО?!"
 	icon_state = "InlaidDataDress"
 	actions_types = list(/datum/action/item_action/degree_distortion_effect)
+	can_adjust = TRUE
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	var/atom/movable/distortion_effect/filter_on_user
+	var/overlay_sync
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/New()
 	. = ..()
+
 	filter_on_user = new(src)
 	LAZYADD(vis_contents, filter_on_user)
+	LAZYADD(overlays, image('modular_bluemoon/fluffs/icons/effects/32x32.dmi', "roselia_sync"))
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/equipped(mob/user, slot)
 	. = ..()
 	LAZYADD(user.vis_contents, filter_on_user)
+	overlay_sync = SSvis_overlays.add_vis_overlay(user, 'modular_bluemoon/fluffs/icons/effects/32x32.dmi', "roselia_sync")
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/dropped(mob/user)
 	LAZYREMOVE(user.vis_contents, filter_on_user)
+	SSvis_overlays.remove_vis_overlay(user, list(overlay_sync))
 	. = ..()
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/toggle_jumpsuit_adjust()
+	if(!body_parts_covered)
+		icon_state = "InlaidDataDress"
+		item_state = "InlaidDataDress"
+		body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	else
+		icon_state = "InlaidDataDress_open"
+		item_state = "InlaidDataDress_open"
+		body_parts_covered = NONE
+	return TRUE
 
 /atom/movable/distortion_effect
 	icon = 'modular_bluemoon/fluffs/icons/effects/32x32.dmi'
