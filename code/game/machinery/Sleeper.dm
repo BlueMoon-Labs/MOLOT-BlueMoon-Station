@@ -21,7 +21,7 @@
 		list(/datum/reagent/medicine/epinephrine, /datum/reagent/medicine/morphine, /datum/reagent/medicine/salbutamol, /datum/reagent/medicine/charcoal, /datum/reagent/medicine/salglu_solution),
 		list(/datum/reagent/medicine/oculine,/datum/reagent/medicine/inacusiate),
 		list(/datum/reagent/medicine/mutadone, /datum/reagent/medicine/mannitol),
-		list(/datum/reagent/medicine/antitoxin, /datum/reagent/medicine/omnizine),
+		list(/datum/reagent/medicine/omnizine),
 		list(/datum/reagent/medicine/bicaridine, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/atropine),
 		list(/datum/reagent/medicine/perfluorodecalin, /datum/reagent/medicine/neurine, /datum/reagent/medicine/sal_acid, /datum/reagent/medicine/oxandrolone)
 	)
