@@ -47,10 +47,10 @@
 /mob/living/simple_animal/hostile/asteroid/elite/minerpriest/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("grabs the priest's arm and breaks it, exposing sharp bone which is promptly shoved inside their skull!", "punches into the priest's guts, ripping off their stomach and whatever else was inside!"), \
-		messages_crusher = list("chops the priest's leg off with their crusher, then uses it to beat their skull open while they're downed!"), \
-		messages_pka = list("shoots at the priest's hand, exploding it and making them let go of their axe, which is promptly grabbed and slashes their neck open!", "kicks the priest on the ground, then shoots their guts and viscera off with a PKA blast to the chest!"), \
-		messages_pka_bayonet = list("stabs through the priest's heart and pulls it out, letting them see one last beat before they die!"), \
+		messages_unarmed = list("хватает культиста за руку и ломает её, вонзая обнажённую кость прямиком в его голову!", "наносит крепкий удар в живот культиста и выдирает его органы, выставляя их отдохнуть на свежем воздухе!"), \
+		messages_crusher = list("отсекает ногу культиста, после чего использует её для того, чтобы избить череп того до характерного хруста!"), \
+		messages_pka = list("стреляет в руку культиста, взрывая её и отбрасывая топор, что тут же был взят для нанесения рубящего удара по его шее!", "валит культиста на землю, после чего точным выстрелом из протокинетического ускорителя взрывает его внутренности!"), \
+		messages_pka_bayonet = list("вонзает нож прямиком в сердце культиста и выдирает его, позволяя тому увидеть его последнее сокращение перед смертью!"), \
 		health_given = 50, \
 		threshold = (maxHealth/10 * 0.625))
 

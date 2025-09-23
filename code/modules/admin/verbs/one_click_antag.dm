@@ -465,7 +465,7 @@
 		ertemplate.ertphrase = prefs["ertphrase"]["value"]
 		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" ? TRUE : FALSE
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes" ? TRUE : FALSE
-		ertemplate.notify_players = prefs["notify_players"]["value"] == "Yes"
+		ertemplate.notify_players = prefs["notify_players"]["value"] == "Yes" ? TRUE : FALSE
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		if(ertemplate.notify_players)
 			priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/sound/ert/ert_send.ogg') //BlueMoon sound
@@ -574,6 +574,8 @@
 				message_admins("[ertemplate.polldesc] были отправлены на станцию со следующей миссией: [ertemplate.mission]")
 				if(ertemplate.notify_players)
 					priority_announce("Внимание, [station_name()]. Мы отправляем поздразделение - [ertemplate.polldesc]. Вам следует приготовиться.", "Подготовка Отряда Быстрого Реагирования", ertemplate.ertphrase) //BlueMoon sound
+				if(ertemplate.code == "EPSILON")
+					set_security_level(SEC_LEVEL_EPSILON)
 
 			//Open the Armory doors
 			if(ertemplate.opendoors)

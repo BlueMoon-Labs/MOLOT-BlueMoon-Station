@@ -266,7 +266,7 @@
 	var/selection = alert(user, "Which setting would you want to modify?", "Firing Pin Settings", "Minimum Level Setting", "Maximum Level Setting", "Lethals Only Toggle")
 	if(QDELETED(src) || QDELETED(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
-	var/static/list/till_designs_pr_isnt_merged = list("green", "blue", "amber", "red", "lambda", "delta")
+	var/static/list/till_designs_pr_isnt_merged = list("green", "blue", "amber", "red", "lambda", "gamma", "epsilon", "delta")
 	switch(selection)
 		if("Minimum Level Setting")
 			var/input = input(user, "Input the new minimum level setting.", "Firing Pin Settings", NUM2SECLEVEL(min_sec_level)) as null|anything in till_designs_pr_isnt_merged
@@ -306,8 +306,10 @@
 				overlay.color = "#ff3f34" //light red
 			if(SEC_LEVEL_AMBER)
 				overlay.color = "#ffae42" //light yellow/orange
+			if(SEC_LEVEL_GAMMA)
+				overlay.color = "#7f7f7f"
 			if(SEC_LEVEL_EPSILON)
-				overlay.color = "#ffffff" //light yellow/orange
+				overlay.color = "#ffffff"
 			else
 				overlay.color = "#fe59c2" //neon fuchsia
 		. += overlay

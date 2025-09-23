@@ -76,10 +76,7 @@
 /obj/item/stock_parts/cell/proc/irradiate(datum/component/radioactive/Comp)
 	AddComponent(/datum/component/radioactive, 0, src, 0)
 	Comp = GetComponent(/datum/component/radioactive)
-	if(charge < maxcharge)
-		Comp.strength = rad_strength
-	else
-		Comp.strength = rad_strength/3.1
+	Comp.strength = round(rad_strength*(charge < maxcharge ? 1 : 0.5), 0.5) // Округляем к ближайшей целой половине
 
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()

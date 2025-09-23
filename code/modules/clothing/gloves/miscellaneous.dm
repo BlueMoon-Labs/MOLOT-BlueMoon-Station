@@ -357,6 +357,12 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 80, ACID = 50)
 	strip_mod = 1.5
 
+/obj/item/clothing/gloves/combat/centcom
+	name = "CentCom gloves"
+	desc = "Exotic green gloves, with a nice gold trim, a emerald anti-shock coating, and an integrated thermal barrier. Swanky. Given to CentCom Commanders."
+	icon_state = "centcom"
+	item_state = "centcom"
+
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
 	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."

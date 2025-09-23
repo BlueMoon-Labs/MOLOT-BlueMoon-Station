@@ -5,7 +5,7 @@
 	rename_team = "NT Flametroopers Squad"
 	code = "Red"
 	mission = "экипаж станции не справляется с активной биологической угрозой. Окажите соответствующую поддержку."
-	polldesc = "elite Nanotrasen Fire Team"
+	polldesc = "Elite Nanotrasen Fire Team"
 	ertphrase = "modular_bluemoon/sound/ert/ert_firesquad_send.ogg"
 
 /datum/ert/heavysquad // Удар молота
@@ -14,7 +14,7 @@
 	rename_team = "NT Heavy Weapons Squad"
 	code = "Delta"
 	mission = "по имеющимся разведанным на станции присутствует особо опасный и тяжеловооруженный противник. Корпорация заинтересована в сохранении своих активов. Разберитесь с проблемой."
-	polldesc = "elite Nanotrasen Heavy Team"
+	polldesc = "Elite Nanotrasen Heavy Team"
 	ertphrase = "modular_bluemoon/sound/ert/ert_heavysquad_send.ogg"
 
 /datum/ert/russian_ert // НРИ
@@ -57,10 +57,10 @@
 /datum/ert/maid_ert // рофлоЕРТ горничных
 	roles = list(/datum/antagonist/ert/maid)
 	leader_role = /datum/antagonist/ert/maid_leader
-	rename_team = "Elite maid Squad"
+	rename_team = "Elite Maid Squad"
 	code = "Delta"
 	mission = "наведите порядок на станции, если вы понимаете, что офицер ССО имел ввиду."
-	polldesc = "Elite maid Squad"
+	polldesc = "Elite Maid Squad"
 	teamsize = 5
 	//ertphrase = "modular_bluemoon/sound/ert/sol_send.ogg"
 

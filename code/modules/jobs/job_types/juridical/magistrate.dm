@@ -96,6 +96,12 @@
 	icon_state = "ntrberet"
 	item_state = "ntrberet"
 
+/obj/item/clothing/head/beret/sec/ntr_hat
+	name = "nanotrasen consultant's hat"
+	desc = "A cap made from durathread, it has an insignia on the front denoting the rank of \"Nanotrasen Consultant\"."
+	icon_state = "ntrhat"
+	item_state = "ntrhat"
+
 /obj/item/clothing/shoes/laceup/ntr // даем великому и ужасному судье раундстартом ноуслип туфли
 	name = "distinguished laceup shoes"
 	clothing_flags = NOSLIP

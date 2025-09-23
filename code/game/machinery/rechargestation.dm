@@ -51,7 +51,7 @@
 		recharge_speed *= C.maxcharge / 10000
 		// Добавляем минорное облучение, если батарея радиоактивна. Большей частью ради свечения.
 		if(C.cell_is_radioactive)
-			AddComponent(/datum/component/radioactive, C.rad_strength/2.5, src, 0)
+			AddComponent(/datum/component/radioactive, 0, src, 0)
 		else
 			qdel(GetComponent(/datum/component/radioactive))
 

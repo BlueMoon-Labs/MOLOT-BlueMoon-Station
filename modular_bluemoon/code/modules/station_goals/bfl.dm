@@ -10,7 +10,7 @@
 		return FALSE
 	var/lava_z = pick(L)
 	var/station_z = pick(SSmapping.levels_by_trait(ZTRAIT_STATION))
-	if(is_mining_level(station_z) || station_z == lava_z || SSmapping.config.minetype == "none")
+	if(is_mining_level(station_z) || station_z == lava_z || SSmapping.config.minetype == "none" || SSmapping.config.planetary)
 		return FALSE
 
 /datum/station_goal/bfl/get_report()

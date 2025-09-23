@@ -44,9 +44,10 @@
 	return ..()
 
 /datum/component/radioactive/process()
-	if(!prob(50))
+	var/turf/T = get_turf(parent)
+	if(!prob(50) || is_radiation_blocked(parent) || !T) // Кроме 50%-ного шанса, проверяем или есть защита на радиацию
 		return
-	radiation_pulse(get_turf(parent), strength, RAD_DISTANCE_COEFFICIENT*2, FALSE, can_contaminate)
+	radiation_pulse(T, strength, RAD_DISTANCE_COEFFICIENT*2, FALSE, can_contaminate)
 
 	if(!hl3_release_date)
 		return
@@ -97,7 +98,10 @@
 	examine_list += out.Join()
 
 /datum/component/radioactive/proc/rad_attack(datum/source, atom/movable/target, mob/living/user)
-	radiation_pulse(get_turf(parent), strength/20)
+	var/turf/T = get_turf(parent)
+	if(is_radiation_blocked(parent || !T)) // Проверяем или есть защита на радиацию
+		return
+	radiation_pulse(T, strength/20)
 	target.rad_act(strength/2)
 	if(!hl3_release_date)
 		return

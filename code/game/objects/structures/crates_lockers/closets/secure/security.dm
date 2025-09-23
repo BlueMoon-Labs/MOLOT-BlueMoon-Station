@@ -26,7 +26,6 @@
 	..()
 	new /obj/item/cartridge/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
-	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/deviants(src) // bluemoon edit
@@ -40,8 +39,6 @@
 	new /obj/item/door_remote/civillian(src)
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/storage/photo_album/HoP(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/hop(src)
-	new /obj/item/clothing/head/hopcap/beret/white(src)
 	new /obj/item/storage/garment_case/hop(src) // BLUEMOON add
 
 /obj/structure/closet/secure_closet/hos
@@ -50,28 +47,12 @@
 	icon_state = "hos"
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
-	new /obj/item/clothing/neck/cloak/hos(src)
-	new /obj/item/clothing/suit/toggle/armor/hos/hos_formal(src)
 	new /obj/item/cartridge/hos(src)
 	new /obj/item/radio/headset/heads/hos(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/parade(src)
-	new /obj/item/clothing/under/rank/security/officer/blueshirt/seccorp/hoscorp(src)
-	new /obj/item/clothing/suit/armor/vest/leather(src)
-	new /obj/item/clothing/suit/armor/hos(src)
-	new /obj/item/clothing/suit/armor/hos/platecarrier(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/skirt(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/alt(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/alt/skirt(src)
-	new /obj/item/clothing/head/HoS(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/grey(src)
 	new /obj/item/storage/lockbox/medal/sec(src)
 	new /obj/item/megaphone/sec(src)
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/storage/lockbox/loyalty(src)
-	new /obj/item/clothing/mask/gas/sechailer/swat(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
@@ -79,10 +60,10 @@
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/hos(src)
 	new /obj/item/mod/construction/armor/safeguard(src)
 	new /obj/item/mod/module/jetpack(src)
 	new /obj/item/mod/module/holster(src)
+	new /obj/item/storage/garment_case/hos(src) //Bluemoon add
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
@@ -92,17 +73,7 @@
 	..()
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/stamp/warden(src)
-	new /obj/item/clothing/suit/armor/vest/warden(src)
-	new /obj/item/clothing/head/warden(src)
-	new /obj/item/clothing/head/warden/drill(src)
-	new /obj/item/clothing/head/beret/sec/navywarden(src)
-	new /obj/item/clothing/suit/armor/vest/warden/alt(src)
-	new /obj/item/clothing/under/rank/security/officer/blueshirt/seccorp/wardencorp(src)
-	new /obj/item/clothing/under/rank/security/warden/formal(src)
-	new /obj/item/clothing/under/rank/security/warden/skirt(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
 	new /obj/item/storage/box/body_camera(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
@@ -111,7 +82,7 @@
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/warden(src)
-	new /obj/item/clothing/head/beret/sec/corporatewarden(src)
+	new /obj/item/storage/garment_case/warden(src) // Bluemoon Add
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"

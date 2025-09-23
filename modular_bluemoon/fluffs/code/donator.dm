@@ -1847,3 +1847,17 @@
 	path = /obj/item/modkit/portalabomination_kit
 	ckeywhitelist = list("architect0r")
 	subcategory = LOADOUT_SUBCATEGORIES_DON03
+
+/datum/gear/donator/bm/hecu_black
+	name = "Black HECU Backpack"
+	path = /obj/item/storage/backpack/hecu/black
+	slot = ITEM_SLOT_BACKPACK
+	ckeywhitelist = list("xaeshkavd")
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
+
+/datum/gear/donator/bm/legion_mask
+	name = "Legion mask"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/gas/syndicate/legion_mask
+	ckeywhitelist = list("dimofon", "devildeadspace", "dimakr", "oroshimuraiori", "troubleneko17th", "dcp9371", "oni3288")
+	subcategory = LOADOUT_SUBCATEGORIES_DON03

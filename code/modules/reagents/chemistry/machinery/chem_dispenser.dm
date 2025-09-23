@@ -474,7 +474,7 @@
 		cell = P
 		// Добавляем минорное облучение, если батарея радиоактивна. Большей частью ради свечения.
 		if(P.cell_is_radioactive)
-			AddComponent(/datum/component/radioactive, P.rad_strength/2.5, src, 0)
+			AddComponent(/datum/component/radioactive, 0, src, 0)
 		else
 			qdel(GetComponent(/datum/component/radioactive))
 	for(var/obj/item/stock_parts/matter_bin/M in component_parts)

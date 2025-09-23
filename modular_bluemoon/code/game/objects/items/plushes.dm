@@ -605,3 +605,16 @@
 	icon_state = "carrion"
 	attack_verb = list("squish", "glorp", "blorp")
 	squeak_override = list('modular_bluemoon/sound/voice/fleshy_squish.ogg' = 1)
+
+/obj/item/toy/plush/bm/loki
+	name = "Loki plushie"
+	desc = "Плюшевая версия зелёного авали по имени Локи. Игрушка приятная на ощупь, её поверхность покрыта мягкими пушинками, а на передних лапках и основании хвоста имеются искусственные перья. Пахнет лаймом и мятой. При нажатии на игрушку воспроизводится тихое чириканье, а ушки слегка шевелятся."
+	icon_state = "loki"
+	squeak_override = list('modular_splurt/sound/voice/chirp.ogg' = 2, 'modular_splurt/sound/voice/teshtrill.ogg' = 1,)
+
+/obj/item/toy/plush/bm/uchi
+	name = "Uchi plushie"
+	desc = "Эта игрушка в форме авали достаточно мягка на ощупь и притягивает своим ярковатым видом, от нее пахнет очистителем и мылом. Безмятежная улыбка на ней внушает спокойствие и легкую радость, а держа долго ее в руках, появляется смутное желание оттирать каждое пятнышко на своем рабочем месте.  Искусственные перья на лапах игрушки чуть-чуть щекочут руки держащего."
+	icon_state = "yuchi"
+	attack_verb = list("squish", "glorp", "blorp")
+	squeak_override = list('modular_splurt/sound/voice/chirp.ogg' = 2, 'modular_splurt/sound/voice/teshtrill.ogg' = 1,)

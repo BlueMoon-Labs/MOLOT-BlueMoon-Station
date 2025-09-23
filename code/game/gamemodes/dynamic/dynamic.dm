@@ -349,7 +349,7 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 			GLOB.dynamic_type_threat_min = 50
 			GLOB.dynamic_type_threat_max = 100
 		if(ROUNDTYPE_DYNAMIC_LIGHT)
-			GLOB.dynamic_type_threat_min = 50
+			GLOB.dynamic_type_threat_min = 30
 			GLOB.dynamic_type_threat_max = 70
 		if(ROUNDTYPE_EXTENDED)
 			GLOB.dynamic_type_threat_min = 0

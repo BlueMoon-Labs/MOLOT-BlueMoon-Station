@@ -6,6 +6,7 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
 //SEC_LEVEL_AMBER = code amber
 //SEC_LEVEL_RED = code red
 //SEC_LEVEL_LAMBDA = code lambda
+//SEC_LEVEL_GAMMA = code gamma
 //SEC_LEVEL_EPSILON = code epsilon
 //SEC_LEVEL_DELTA = code delta
 
@@ -24,7 +25,9 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
 		if(SEC_LEVEL_RED)
 			return "<font color=#ff3f34>КРАСНЫЙ</font>"
 		if(SEC_LEVEL_LAMBDA)
-			return "<font color=#ffffff>ЛЯМБДА</font>"
+			return "<font color=#ffae42>ЛЯМБДА</font>"
+		if(SEC_LEVEL_GAMMA)
+			return "<font color=#7f7f7f>ГАММА</font>"
 		if(SEC_LEVEL_EPSILON)
 			return "<font color=#ffffff>ЭПСИЛОН</font>"
 		if(SEC_LEVEL_DELTA)
@@ -34,7 +37,7 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
   * All security levels, per ascending alert. Nothing too fancy, really.
   * Their positions should also match their numerical values.
   */
-GLOBAL_LIST_INIT(all_security_levels, list("green", "blue", "orange", "violet", "amber", "red", "lambda", "epsilon", "delta"))
+GLOBAL_LIST_INIT(all_security_levels, list("green", "blue", "orange", "violet", "amber", "red", "lambda", "gamma", "epsilon", "delta"))
 
 //config.alert_desc_blue_downto
 

@@ -276,7 +276,7 @@ GLOBAL_LIST_INIT(deathgasp_sounds, list(
 	"Свинья" =				'modular_bluemoon/SmiLeY/code/mob/pig/death.ogg',
 	"Офицер ГО" =			'modular_bluemoon/SmiLeY/sounds/combine_death.ogg',
 	"Свинья" =				'modular_bluemoon/sound/voice/death_gasps/pig.ogg',
-	"Свинья 2" =				'modular_bluemoon/sound/voice/death_gasps/pig2.ogg'
+	"Свинья 2" =				'modular_bluemoon/sound/voice/death_gasps/pig2.ogg',
+	"Фрэнк" =				'modular_bluemoon/sound/voice/death_gasps/frank.ogg',
+	"Сьюзи" =				'modular_bluemoon/sound/voice/death_gasps/susie.ogg'
 	))
-
-
