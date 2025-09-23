@@ -144,20 +144,24 @@
 	var/propability = 0.5
 	var/turf/T = get_turf(target)
 
-	if(locate(/obj/structure/table/optable/abductor, T))
-		propability += 1
-	else if(locate(/obj/structure/table/optable, T))
-		propability += 0.5
-	else if(locate(/obj/machinery/stasis))
-		propability += 0.4
-	else if(locate(/obj/structure/table, T))
-		propability += 0.3
-	else if(locate(/obj/structure/bed, T))
-		propability += 0.1
+	//It is important that the value with the highest chance is always on top.
+	var/static/list/prop_sources = list(
+		/obj/structure/table/optable/abductor 	= 1,
+		/obj/structure/table/optable           	= 0.5,
+		/obj/machinery/stasis                  	= 0.4,
+		/obj/structure/bed/roller             	= 0.35,
+		/obj/structure/table                   	= 0.3,
+		/obj/structure/bed                     	= 0.1
+		)
+
+	for (var/path in prop_sources)
+		if (locate(path, T))
+			propability += prop_sources[path]
+			break
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(target.mob_weight > MOB_WEIGHT_HEAVY)
-		propability = 0.8
+		propability = max(propability, 0.8)
 
 	// Шансы на операции в зависимости от состояния пациента
 	var/check_for_painkillers = FALSE

@@ -93,15 +93,23 @@
 
 /obj/structure/bed/roller/MouseDrop(over_object, src_location, over_location)
 	. = ..()
-	if(over_object == usr && Adjacent(usr))
-		if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE))
+	if(over_object != usr)
+		return .
+	fold_roller(usr)
+
+/obj/structure/bed/roller/proc/fold_roller(mob/user)
+	if(Adjacent(user))
+		if(!ishuman(user) || !user.canUseTopic(src, BE_CLOSE))
 			return FALSE
 		if(has_buckled_mobs())
 			return FALSE
-		usr.visible_message("[usr] collapses \the [src.name].", "<span class='notice'>You collapse \the [src.name].</span>")
+		user.visible_message("[user] collapses \the [src.name].", "<span class='notice'>You collapse \the [src.name].</span>")
 		var/obj/structure/bed/roller/B = new foldabletype(get_turf(src))
-		usr.put_in_hands(B)
-		qdel(src)
+		. = B
+		user.put_in_hands(B)
+
+/obj/structure/bed/roller/proc/after_fold_roller(mob/user, /obj/item/roller/I)
+	qdel(src)
 
 // BLUEMOON ADD AHEAD - сверхтяжёлых персонажей нельзя помещать на обычные носилки (предотвращает абуз через толкание + повышает значимость боргов, халков и других сверхтяжёлых персонажей)
 /obj/structure/bed/roller/pre_buckle_mob(mob/living/M)
@@ -134,6 +142,7 @@
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	w_class = WEIGHT_CLASS_NORMAL // No more excuses, stop getting blood everywhere
+	var/rollertype = /obj/structure/bed/roller
 
 /obj/item/roller/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/roller/robo))
@@ -159,8 +168,12 @@
 		deploy_roller(user, target)
 
 /obj/item/roller/proc/deploy_roller(mob/user, atom/location)
-	var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(location)
+	var/obj/structure/bed/roller/R = new rollertype(location)
+	. = R
 	R.add_fingerprint(user)
+	after_deploy_roller(user, R)
+
+/obj/item/roller/proc/after_deploy_roller(mob/user, obj/structure/bed/roller/R)
 	qdel(src)
 
 /obj/item/roller/robo //ROLLER ROBO DA!
