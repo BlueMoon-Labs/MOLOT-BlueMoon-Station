@@ -13,37 +13,40 @@
 	if(!.)
 		return .
 	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)
-	return (L && L.damage && !(L.organ_flags & ORGAN_FAILING))
+	return (L && !L.operated && (L.organ_flags & ORGAN_FAILING))
 
 /datum/surgery_step/lobectomy
 	name = "Удалить Поврежденный Узел Лёгкого"
 	implements = list(TOOL_SCALPEL = 100, /obj/item/melee/transforming/energy/sword = 65, /obj/item/kitchen/knife = 45,
 		/obj/item/shard = 35)
-	time = 42
+	time = 90
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 
 /datum/surgery_step/lobectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to make an incision in [target]'s lungs...</span>",
-		"[user] begins to make an incision in [target].",
-		"[user] begins to make an incision in [target].")
+	display_results(user, target, span_notice("Вы начинаете делать надрез легких [target]..."),
+		"[user] начинает делать надрез в легих [target].",
+		"[user] начинает делать надрез внутри [target].")
 
 /datum/surgery_step/lobectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.setOrganLoss(ORGAN_SLOT_LUNGS, 0)
-		display_results(user, target, "<span class='notice'>You successfully excise [H]'s most damaged lobe.</span>",
-			"Successfully removes a piece of [H]'s lungs.",
+	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)
+	if(L)
+		L.operated = TRUE
+	target.setOrganLoss(ORGAN_SLOT_LUNGS, 0)
+	display_results(user, target, span_notice("Вы успешно удалили долю легких [target] пораженную некрозом."),
+		"Успешно удаляет часть легких [target].",
 			"")
 	return TRUE
 
 /datum/surgery_step/lobectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		display_results(user, target, "<span class='warning'>You screw up, failing to excise [H]'s damaged lobe!</span>",
-			"<span class='warning'>[user] screws up!</span>",
-			"<span class='warning'>[user] screws up!</span>")
+		display_results(user, target, span_warning("Вы облажались, не сумев удалить поврежденную долю легкого [H]!"),
+			span_warning("[user] допускает ошибку при операции!"),
+			span_warning("[user] допускает ошибку при операции!"))
 		H.losebreath += 4
 		H.adjustOrganLoss(ORGAN_SLOT_LUNGS, 10)
+		var/obj/item/bodypart/BP = H.get_bodypart(target_zone)
+		BP.take_damage(20, BRUTE, MELEE)
 	return FALSE

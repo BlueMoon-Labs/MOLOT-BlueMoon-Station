@@ -75,18 +75,25 @@
 	name = "Манипулировать с Органами"
 	repeatable = 1
 	implements = list(/obj/item/organ = 100, /obj/item/organ_storage = 100)
+	stop_implements = TRUE
 	preop_sound = 'sound/surgery/organ2.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	var/list/implements_extract = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 55)
 	var/list/implements_heal = list(/obj/item/stack/medical/mesh = 100, /obj/item/stack/medical/ointment = 75, /obj/item/stack/medical/suture = 65, /obj/item/stack/medical/bone_gel = 35, /obj/item/stack/medical/gauze = 15)
+	//organs that we can treat
+	var/list/heal_allowed_organs = list(/obj/item/organ/heart, /obj/item/organ/lungs,/obj/item/organ/ears, /obj/item/organ/stomach, /obj/item/organ/tongue, /obj/item/organ/liver)
 	var/current_type
 	var/obj/item/organ/I = null
-	//organs that we can treat
-	var/list/heal_allowed_organs = list(/obj/item/organ/ears, /obj/item/organ/stomach, /obj/item/organ/tongue, /obj/item/organ/liver)
 
 /datum/surgery_step/manipulate_organs/New()
 	..()
 	implements = implements + implements_extract + implements_heal
+
+/datum/surgery_step/manipulate_organs/initiate(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail)
+	. = ..()
+	if(. && istype(tool, /obj/item/stack))
+		var/obj/item/stack/T = tool
+		T.use(1)
 
 /datum/surgery_step/manipulate_organs/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	I = null
@@ -199,9 +206,6 @@
 				display_results(user, target, span_notice("Вы успешно исцелили [target] [I]."),
 					"[user] успешно закончил лечение [target] [I]!",
 					"[user] закончил что-то делать внутри [target]!")
-				if(istype(tool, /obj/item/stack))
-					var/obj/item/stack/T = tool
-					T.use(1)
 				I.setOrganDamage(0)
 			else
 				display_results(user, target, span_warning("Вам ничего не удалось исцелить в [parse_zone(target_zone)] [target]!"),

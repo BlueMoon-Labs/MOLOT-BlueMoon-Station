@@ -119,7 +119,7 @@
 				return
 		if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
 			return TRUE
-		if((tool && tool.item_flags & SURGICAL_TOOL) || (S.implement_type in S.implements)) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
+		if((tool && tool.item_flags & SURGICAL_TOOL) || (S.stop_implements && (S.implement_type in S.implements))) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
 			/* BLUERMOON REMOVAL START - перенесено в try_op
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 			/ BLUEMOON REMOVAL END */
