@@ -1,6 +1,6 @@
 /datum/surgery/coronary_bypass
 	name = "Coronary Bypass"
-	desc = "Хирургическая процедура, при которой создаётся обходной путь для восстановления кровотока в артериях сердца. Способна исправить некроз, но необратимо повреждает сердце, не позволяя провести процедуру повторно."
+	desc = "Хирургическая процедура, при которой создаётся обходной путь для восстановления кровотока в артериях сердца. Способна исправить некроз, но необратимо изменяет сосуды сердца, не позволяя провести процедуру повторно."
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/saw, /datum/surgery_step/clamp_bleeders,
 				 /datum/surgery_step/incise_heart, /datum/surgery_step/coronary_bypass, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
