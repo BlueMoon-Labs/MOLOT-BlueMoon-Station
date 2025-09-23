@@ -75,7 +75,7 @@
 
 //close incision
 /datum/surgery_step/close
-	name = "Заштопать Разрез"
+	name = "Прижечь Разрез"
 	implements = list(TOOL_CAUTERY = 100, /obj/item/gun/energy/laser = 90, TOOL_WELDER = 70,
 		/obj/item = 30) // 30% success with any hot item.
 	time = 24
