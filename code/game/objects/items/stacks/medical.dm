@@ -199,6 +199,7 @@
 	other_delay = 30
 	absorption_rate = 0.15
 	absorption_capacity = 4
+	splint_factor = 0.15
 
 /obj/item/stack/medical/gauze/adv
 	name = "sterilized medical gauze"
@@ -209,7 +210,7 @@
 	other_delay = 15
 	absorption_rate = 0.5
 	absorption_capacity = 12
-	splint_factor = 0.15
+	splint_factor = 0.5
 
 /obj/item/stack/medical/gauze/adv/one
 	amount = 1
