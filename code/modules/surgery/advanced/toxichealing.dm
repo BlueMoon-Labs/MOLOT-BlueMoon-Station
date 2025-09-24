@@ -14,8 +14,7 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "patch7"
+	icon_state = "toxin"
 	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_EXTRA
 
 /datum/surgery_step/toxichealing

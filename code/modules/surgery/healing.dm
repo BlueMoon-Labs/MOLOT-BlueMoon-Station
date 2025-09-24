@@ -11,8 +11,7 @@
 	requires_bodypart_type = NONE
 	replaced_by = /datum/surgery
 	ignore_clothes = TRUE
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "patch1"
+	icon_state = "combo"
 	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_BASE
 	var/healing_step_type
 	var/antispam = FALSE
@@ -104,7 +103,7 @@
 /***************************BRUTE***************************/
 /datum/surgery/healing/brute
 	name = "Tend Wounds (Bruises)"
-	icon_state = "patch2"
+	icon_state = "brute"
 
 /datum/surgery/healing/brute/basic
 	name = "Tend Wounds (Bruises, Basic)"
@@ -143,7 +142,7 @@
 /***************************BURN***************************/
 /datum/surgery/healing/burn
 	name = "Tend Wounds (Burn)"
-	icon_state = "patch3"
+	icon_state = "burn"
 
 /datum/surgery/healing/burn/basic
 	name = "Tend Wounds (Burn, Basic)"
@@ -192,7 +191,7 @@
 	name = "Tend Wounds (Mixture, Adv.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
-	desc = "Хирургическая процедура, которая обеспечивает эффективное лечение травмированных и обожженных тканей пациента. При серьезных травмах заживление идет немного быстрее.
+	desc = "Хирургическая процедура, которая обеспечивает эффективное лечение травмированных и обожженных тканей пациента. При серьезных травмах заживление идет немного быстрее."
 
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
