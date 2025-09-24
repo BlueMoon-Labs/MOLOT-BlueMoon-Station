@@ -91,7 +91,7 @@
 	var/list/obj/effect/bfl_laser/turf_lasers = list()
 	var/deactivate_time = 0
 	var/list/obj/structure/fillers = list()
-	var/lavaland_z_lvl // у нас 2 лаваленда
+	var/lavaland_z_lvl = null // у нас 2 лаваленда
 
 //code stolen from bluespace_tap, including comment below. He was right about the new datum
 //code stolen from dna vault, inculding comment below. Taking bets on that datum being made ever.
@@ -128,13 +128,6 @@
 	emitter_deactivate()
 	QDEL_LIST(fillers)
 	return ..()
-
-// /obj/machinery/power/bfl_emitter/examine(mob/user)
-// 	. = ..()
-// 	if(istype(laser))
-// 		. += span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит красненьким.")
-// 	else if(state && receiver?.mining == TRUE)
-// 		. += span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит зелёненьким.")
 
 /obj/machinery/power/bfl_emitter/attack_hand(mob/user as mob)
 	if(..())
@@ -185,12 +178,13 @@
 		emitter_deactivate()
 		return
 	add_load(active_power_usage)
+	if(src.z == lavaland_z_lvl)
+		return
 	if(laser)
 		return
 	if(!receiver || !receiver.state || (obj_flags & EMAGGED) || !receiver.lens || !receiver.lens.anchored)
 		var/turf/rand_location = locate(rand(50, 150), rand(50, 150), lavaland_z_lvl)
 		laser = new (rand_location)
-		// visible_message(span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит красненьким."))
 		log_admin("BFL emitter has been activated without proper BFL receiver connection or it has been emagged at [AREACOORD(src)]")
 		notify_ghosts("BFL выжигает лаваленд!", source = laser, action = NOTIFY_ORBIT, header = "BFL")
 		for(var/M in GLOB.alive_mob_list)
@@ -207,7 +201,6 @@
 		if(receiver.state && receiver.lens)
 			receiver.lens.activate_lens()
 			receiver.mining = TRUE
-			// visible_message(span_tinynoticeital("Еле заметный индикатор корректировки лазера с BFL приемником горит зелёненьким."))
 		return TRUE
 
 
@@ -237,7 +230,7 @@
 	if(!receiver)
 		for(var/obj/machinery/bfl_receiver/bfl_receiver in SSmachines.get_machines_by_type(/obj/machinery/bfl_receiver))
 			var/turf/receiver_turf = get_turf(bfl_receiver)
-			if(receiver_turf.z == lavaland_z_lvl)
+			if((receiver_turf.z == lavaland_z_lvl) && (src.z != bfl_receiver.z))
 				receiver = bfl_receiver
 				break
 	receiver_test()
@@ -345,9 +338,9 @@
 		response = tgui_alert(user, "Вы пытаетесь активировать приёмник BFL. Уверены?", "Приёмник BFL", list("Активировать", "Очистить хранилище руды", "Отмена"))
 	switch(response)
 		if("Деактивировать")
-			to_chat(user, span_warning("Нет питания.<br>Попробуйте открыть шахту вручную с помощью лома."))
+			to_chat(user, span_warning("Потускневшая кнопка звонко кликает. Ничего не происходит.<br>Попробуйте закрыть шахту вручную с помощью лома."))
 		if("Активировать")
-			to_chat(user, span_warning("Нет питания.<br>Попробуйте открыть шахту вручную с помощью лома."))
+			to_chat(user, span_warning("Потускневшая кнопка звонко кликает. Ничего не происходит.<br>Попробуйте открыть шахту вручную с помощью лома."))
 		if("Очистить хранилище руды")
 			if(lens)
 				to_chat(user, span_warning("Линза создаёт помехи - невозможно получить руду из хранилища."))
@@ -589,7 +582,7 @@
 	pull_force = INFINITY
 	var/go_to_coords = list()
 	var/devastation_range = 1
-	var/lavaland_z_lvl // у нас 2 лаваленда
+	var/initial_z_lvl = null
 	// Выжигать некрополис и эшовские дома забавно, но что-то на грани гриферства))
 	var/x_lower_border = 2*TRANSITIONEDGE
 	var/x_upper_border = 255 - (2*TRANSITIONEDGE)
@@ -604,16 +597,7 @@
 	. = ..(loc, starting_energy, temp)
 
 /obj/singularity/bfl_red/Initialize(mapload, starting_energy)
-	var/list/possible_lvls = SSmapping.levels_by_all_trait(list(ZTRAIT_MINING, ZTRAIT_LAVA_RUINS))
-	if(!isemptylist(possible_lvls))
-		lavaland_z_lvl = pick(possible_lvls)
-	else
-		possible_lvls = SSmapping.levels_by_trait(ZTRAIT_MINING)
-		if(!isemptylist(possible_lvls))
-			lavaland_z_lvl = pick(possible_lvls)
-		else
-			lavaland_z_lvl = loc.z
-			WARNING("No mining levels detected but BFL has been created anyway. Hereby I disclaim all responsibility for anything that might happen later.")
+	initial_z_lvl = loc.z
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
 	START_PROCESSING(SSfastprocess, src)
@@ -643,13 +627,13 @@
 	if(!move_self)
 		return FALSE
 	var/movement_dir = pick(GLOB.alldirs - last_failed_movement)
-	if(force_move || loc.z != lavaland_z_lvl)
+	if(force_move || loc.z != initial_z_lvl)
 		movement_dir = force_move
 		step(src, movement_dir)
 	else
 		if(isemptylist(go_to_coords) || (loc.x == go_to_coords[1] && loc.y == go_to_coords[2]))
 			go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
-		movement_dir = get_dir(src, locate(go_to_coords[1], go_to_coords[2], lavaland_z_lvl))
+		movement_dir = get_dir(src, locate(go_to_coords[1], go_to_coords[2], initial_z_lvl))
 		if(prob(50))
 			var/ang = dir2angle(movement_dir)
 			ang += rand() ? 90 : -90
