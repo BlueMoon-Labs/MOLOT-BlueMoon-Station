@@ -276,29 +276,43 @@
 			На обратной стороне изображен стеклянный цилиндр с синим космическим кристаллом внутри. \
 			В юбку встроен радар внешнего обзора. Иногда происходит пространственное смещение... стоп ЧТО?!"
 	icon_state = "InlaidDataDress"
-	actions_types = list(/datum/action/item_action/degree_distortion_effect)
+	actions_types = list(/datum/action/item_action/degree_distortion_effect, /datum/action/item_action/toggle_echo_effect_dress)
 	can_adjust = TRUE
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	species_restricted = list("I.P.C.", "Synthetic Lizardperson", "Synthetic", "Military Synth")
 	var/obj/effect/distortion_effect/filter_on_user
 	var/obj/effect/dress_particle_holder/particle_effect_holder
+	var/obj/echo
+	var/active_echo = TRUE
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/New()
 	. = ..()
 
+	echo = new(src)
+	echo.plane = FIELD_OF_VISION_LAYER
+
 	filter_on_user = new(src)
 	particle_effect_holder = new(src)
+
 	LAZYADD(vis_contents, filter_on_user)
 	LAZYADD(vis_contents, particle_effect_holder)
+
+	START_PROCESSING(SSfastprocess, src)
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/equipped(mob/user, slot)
 	. = ..()
 	LAZYADD(user.vis_contents, filter_on_user)
 	LAZYADD(user.vis_contents, particle_effect_holder)
+	LAZYADD(user.vis_contents, echo)
 
+	echo.render_source = user.render_target
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/dropped(mob/user)
 	LAZYREMOVE(user.vis_contents, filter_on_user)
 	LAZYREMOVE(user.vis_contents, particle_effect_holder)
+	LAZYREMOVE(user.vis_contents, echo)
+
+	echo.render_source = null
 	. = ..()
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/toggle_jumpsuit_adjust()
@@ -328,8 +342,16 @@
 	if(particle_effect_holder)
 		particle_effect_holder.remove_atom_colour(coloration, colour_priority)
 
-	if(overlay_sync)
-		overlay_sync.remove_atom_colour(coloration, colour_priority)
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/process(delta_time)
+	if(active_echo)
+		echo_animation()
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/proc/echo_animation()
+	var/matrix/m = matrix()
+	m.Translate(rand(-4, 4), rand(-2, 2))
+
+	animate(echo, transform = m, alpha = 48, time = 2, loop=0, flags=ANIMATION_END_NOW)
+	animate(transform = m.Invert(), alpha = 0, time = 2)
 
 /obj/effect/distortion_effect
 	icon = 'modular_bluemoon/fluffs/icons/effects/32x32.dmi'
@@ -364,8 +386,23 @@
 
 	T.filter_on_user.alpha = alpha
 
+/datum/action/item_action/toggle_echo_effect_dress
+	name = "Toggle Echo"
+
+/datum/action/item_action/toggle_echo_effect_dress/Trigger()
+
+	if(!..())
+		return FALSE
+
+	var/obj/item/clothing/under/donator/bm/inlaid_data_dress/T = target
+
+	if(!T || !istype(T))
+		return FALSE
+
+	T.active_echo = !T.active_echo
+
 /obj/effect/dress_particle_holder
-	pixel_y = -10
+	pixel_y = -8
 	alpha = 150
 	plane = FIELD_OF_VISION_LAYER
 	appearance_flags = PIXEL_SCALE
@@ -381,8 +418,10 @@
 	icon_state = "dress_particle"
 	width = 96
 	height = 96
-	count = 100
+	count = 40
 	spawning = 8
-	lifespan = 2
+	lifespan = 4
+	scale = list(0.75, 0.75)
 	position = generator("circle", 0, 10)
-	velocity = generator("circle", 1, 3)
+	velocity = generator("circle", 0.3, 1)
+	fade = 1
