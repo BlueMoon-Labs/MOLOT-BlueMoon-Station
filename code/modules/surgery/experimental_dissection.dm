@@ -2,7 +2,7 @@
 
 /datum/surgery/advanced/experimental_dissection
 	name = "Dissection"
-	desc = "A surgical procedure which analyzes the biology of a corpse, and automatically adds new findings to the research database."
+	desc = "Хирургическая процедура, которая анализирует биологию трупа и автоматически добавляет новые данные в базу данных исследований."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,

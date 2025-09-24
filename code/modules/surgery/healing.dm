@@ -185,21 +185,21 @@
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/combo
-	desc = "A surgical procedure that provides basic treatment for a patient's burns and brute traumas. Heals slightly more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает базовое лечение травмированных и обожженных тканей пациента. При серьезных травмах заживление идет немного быстрее."
 	radial_priority = SURGERY_RADIAL_PRIORITY_HEAL_BASE_COMBO
 
 /datum/surgery/healing/combo/upgraded
 	name = "Tend Wounds (Mixture, Adv.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
-	desc = "A surgical procedure that provides advanced treatment for a patient's burns and brute traumas. Heals more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает эффективное лечение травмированных и обожженных тканей пациента. При серьезных травмах заживление идет немного быстрее.
 
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
 	name = "Tend Wounds (Mixture, Exp.)"
 	replaced_by = null
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded/femto
-	desc = "A surgical procedure that provides experimental treatment for a patient's burns and brute traumas. Heals considerably more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение травмированных и обожженных тканей пациента. При серьезных травмах заживление идет немного быстрее."
 
 /********************COMBO STEPS********************/
 /datum/surgery_step/heal/combo

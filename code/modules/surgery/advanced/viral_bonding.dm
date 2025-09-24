@@ -1,6 +1,6 @@
 /datum/surgery/advanced/viral_bonding
 	name = "Viral Bonding"
-	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with spaceacillin, virus food, and formaldehyde."
+	desc = "Хирургическая процедура, которая устанавливает симбиотические отношения между вирусом и его носителем. Пациенту необходимо ввести спейсациллин, вирусную пищу и формальдегид."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,

@@ -1,6 +1,6 @@
 /datum/surgery/advanced/pacify
 	name = "Pacification"
-	desc = "A surgical procedure which permanently inhibits the aggression center of the brain, making the patient unwilling to cause direct harm."
+	desc = "Хирургическая процедура, которая навсегда подавляет центр агрессии в мозге, лишая пациента желания причинять прямой вред."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/saw,

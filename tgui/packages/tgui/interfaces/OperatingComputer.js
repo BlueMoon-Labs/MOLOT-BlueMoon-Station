@@ -122,12 +122,12 @@ const PatientStateView = (props, context) => {
               {procedure.next_step}
             </LabeledList.Item>
             {procedure.next_step_tools.length > 0 && (
-              <LabeledList.Item label="Инструменты">
+              <LabeledList.Item label={`Инструмент${procedure.next_step_tools.length > 1 ? 'ы' : ''}`}>
                 {procedure.next_step_tools.join(', ')}
               </LabeledList.Item>
             )}
             {procedure.chems_needed && (
-              <LabeledList.Item label="Необходимы химикаты">
+              <LabeledList.Item label="Необходимые химикаты">
                 {procedure.chems_needed}
               </LabeledList.Item>
             )}
@@ -138,12 +138,12 @@ const PatientStateView = (props, context) => {
                   {procedure.alternative_step}
                 </LabeledList.Item>
                 {procedure.alternative_step_tools.length > 0 && (
-                  <LabeledList.Item label="Инструменты">
+                  <LabeledList.Item label={`Инструмент${procedure.next_step_tools.length > 1 ? 'ы' : ''}`}>
                     {procedure.alternative_step_tools.join(', ')}
                   </LabeledList.Item>
                 )}
                 {procedure.alt_chems_needed && (
-                  <LabeledList.Item label="Необходимы химикаты">
+                  <LabeledList.Item label="Необходимые химикаты">
                     {procedure.alt_chems_needed}
                   </LabeledList.Item>
                 )}

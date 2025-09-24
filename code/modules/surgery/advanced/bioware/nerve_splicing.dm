@@ -1,6 +1,6 @@
 /datum/surgery/advanced/bioware/nerve_splicing
 	name = "Nerve Splicing"
-	desc = "A surgical procedure which splices the patient's nerves, making them more resistant to stuns."
+	desc = "Хирургическая процедура, которая сращивает нервы пациента, делая их более устойчивыми к оглушению."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,

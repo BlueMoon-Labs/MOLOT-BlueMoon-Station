@@ -1,7 +1,7 @@
 /datum/surgery/advanced/bioware/ligament_hook
 	name = "Ligament Hook"
-	desc = "A surgical procedure which reshapes the connections between torso and limbs, making it so limbs can be attached manually if severed. \
-	However this weakens the connection, making them easier to detach as well."
+	desc = "Хирургическая процедура, которая изменяет форму связок между туловищем и конечностями, позволяя прикреплять конечности вручную, если они оторваны. \
+	Однако это ослабляет связки и облегчает их травматическое отсоединение."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,

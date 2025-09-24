@@ -1,6 +1,6 @@
 /datum/surgery/advanced/toxichealing
 	name = "Body Rejuvenation"
-	desc = "A surgical procedure that helps deal with oxygen  deprivation, and treats parts damaged due to toxic compounds. Works on corpses and alive alike without chemicals."
+	desc = "Хирургическая процедура, которая помогает справиться с кислородным голоданием, лечит части тела, поврежденные из-за токсичных соединений и выводит все реагенты из крови. Работает как с трупами, так и с живыми."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
@@ -29,7 +29,7 @@
 
 /datum/surgery_step/toxichealing/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(..())
-		while((target.getToxLoss() >= 1) || (target.getOxyLoss() >= 1))
+		while((target.getToxLoss() >= 1) || (target.getOxyLoss() >= 1) || (target.reagents && target.reagents.total_volume >= 1))
 			. = ..()
 			if(!.)
 				break
@@ -39,6 +39,8 @@
 	target.heal_bodypart_damage(0,0,30) //Heals stam
 	target.adjustToxLoss(-15, 0, TRUE)
 	target.adjustOxyLoss(-20, 0)
+	if(target.reagents)
+		target.reagents.remove_all(10)
 	return TRUE
 
 /datum/surgery_step/toxichealing/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

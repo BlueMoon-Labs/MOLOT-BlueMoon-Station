@@ -1,6 +1,6 @@
 /datum/surgery/advanced/robot_brainwashing
 	name = "Reprogramming"
-	desc = "A surgical procedure which hardcodes a directive into the patient's logic subroutines, making it their absolute priority. It can be purged using a mindshield implant."
+	desc = "Хирургическая процедура, при которой директивы жестко встраиваются в логические программы пациента, что делает их абсолютным приоритетом. Их можно удалить с помощью имплантата mindshield."
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = BODYPART_ROBOTIC
 	steps = list(/datum/surgery_step/mechanic_open,

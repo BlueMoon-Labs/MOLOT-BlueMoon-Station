@@ -1,6 +1,6 @@
 /datum/surgery/advanced/revival
 	name = "Revival"
-	desc = "An experimental surgical procedure which involves reconstruction and reactivation of the patient's brain even long after death. The body must still be able to sustain life."
+	desc = "Экспериментальная хирургическая процедура, которая включает в себя реконструкцию и реактивацию мозга пациента даже спустя долгое время после смерти. Организм должен оставаться в состоянии поддерживать жизнедеятельность. Обеспечивает минимальное функционирование всем органам пораженным некрозом."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/saw,
