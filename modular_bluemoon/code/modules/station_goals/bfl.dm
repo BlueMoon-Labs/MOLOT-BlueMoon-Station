@@ -580,7 +580,7 @@
 	move_force = INFINITY
 	move_resist = INFINITY
 	pull_force = INFINITY
-	var/go_to_coords = list()
+	var/list/go_to_coords = list()
 	var/devastation_range = 1
 	var/initial_z_lvl = null
 	// Выжигать некрополис и эшовские дома забавно, но что-то на грани гриферства))
