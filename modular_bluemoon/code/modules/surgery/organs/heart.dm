@@ -21,7 +21,7 @@
 	icon_state = "weakheart"
 	maxHealth = 2.5 * STANDARD_ORGAN_THRESHOLD //Usual factor is 2x, so...
 	healing_factor = 2.5 * STANDARD_ORGAN_HEALING //Heals itself a bit faster
-	decay_factor = 1.5 * STANDARD_ORGAN_DECAY //Decays a bit longer
+	decay_factor = 0.8 * STANDARD_ORGAN_DECAY //Decays a bit longer
 
 /obj/item/organ/heart/tier2/on_life()
 	owner.adjustOxyLoss(-0.4, FALSE) //Only two healing factors, but heals really, really good. An exchange for being way too problematic to create.
