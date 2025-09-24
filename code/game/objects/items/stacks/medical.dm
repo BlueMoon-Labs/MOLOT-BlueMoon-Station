@@ -204,7 +204,7 @@
 	name = "sterilized medical gauze"
 	singular_name = "sterilized medical gauze"
 	desc = "A roll of elastic sterilized cloth that is extremely effective at stopping bleeding and covering burns."
-	heal_brute = 6
+	heal_brute = 7
 	self_delay = 45
 	other_delay = 15
 	absorption_rate = 0.5
@@ -231,14 +231,14 @@
 	amount = 15
 	max_amount = 15
 	repeating = TRUE
-	heal_brute = 10
+	heal_brute = 13
 	stop_bleeding = 0.6
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 
 /obj/item/stack/medical/suture/emergency
 	name = "emergency suture"
 	desc = "A value pack of cheap sutures, not very good at repairing damage, but still decent at stopping bleeding."
-	heal_brute = 5
+	heal_brute = 10
 	amount = 5
 	max_amount = 5
 
@@ -252,8 +252,12 @@
 	name = "medicated suture"
 	icon_state = "suture_purp"
 	desc = "A suture infused with drugs that speed up wound healing of the treated laceration."
-	heal_brute = 15
+	heal_brute = 20
+	stop_bleeding = 1
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
+
+/obj/item/stack/medical/suture/medicated/one
+	amount = 1
 
 /obj/item/stack/medical/suture/one
 	amount = 1
@@ -291,9 +295,9 @@
 	self_delay = 40
 	other_delay = 20
 
-	heal_burn = 5
+	heal_burn = 10
 	flesh_regeneration = 2.5
-	sanitization = 0.3
+	sanitization = 0.4
 	grind_results = list(/datum/reagent/medicine/kelotane = 10)
 
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
@@ -318,7 +322,7 @@
 	other_delay = 10
 	amount = 15
 	max_amount = 15
-	heal_burn = 10
+	heal_burn = 13
 	repeating = TRUE
 	sanitization = 0.75
 	flesh_regeneration = 3
@@ -337,7 +341,9 @@
 	gender = PLURAL
 	singular_name = "advanced regenerative mesh"
 	icon_state = "aloe_mesh"
-	heal_burn = 15
+	heal_burn = 20
+	sanitization = 1.25
+	flesh_regeneration = 5
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 
 /obj/item/stack/medical/mesh/advanced/one
