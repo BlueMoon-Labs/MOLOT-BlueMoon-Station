@@ -630,7 +630,7 @@
 		return ..()
 	if(isemptylist(go_to_coords) || (loc.x == go_to_coords[1] && loc.y == go_to_coords[2]))
 		go_to_coords = list(rand(x_lower_border, x_upper_border), rand(y_lower_border, y_upper_border))
-	movement_dir = get_dir(src, locate(go_to_coords[1], go_to_coords[2], initial_z_lvl))
+	var/movement_dir = get_dir(src, locate(go_to_coords[1], go_to_coords[2], initial_z_lvl))
 	if(prob(50))
 		var/ang = dir2angle(movement_dir)
 		ang += rand() ? 90 : -90
