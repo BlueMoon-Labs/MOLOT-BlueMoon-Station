@@ -68,7 +68,15 @@
 	icon_state = "down"
 	anchored = FALSE
 	resistance_flags = NONE
+	var/up = FALSE
 	var/foldabletype = /obj/item/roller
+
+/obj/structure/bed/roller/update_icon_state()
+	. = ..()
+	if(up)
+		icon_state = "up"
+	else
+		icon_state = "down"
 
 /obj/structure/bed/roller/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/roller/robo))
@@ -104,9 +112,10 @@
 		if(has_buckled_mobs())
 			return FALSE
 		user.visible_message("[user] collapses \the [src.name].", "<span class='notice'>You collapse \the [src.name].</span>")
-		var/obj/structure/bed/roller/B = new foldabletype(get_turf(src))
-		. = B
-		user.put_in_hands(B)
+		var/obj/item/roller/I = new foldabletype(get_turf(src))
+		. = I
+		user.put_in_hands(I)
+		after_fold_roller(user, I)
 
 /obj/structure/bed/roller/proc/after_fold_roller(mob/user, /obj/item/roller/I)
 	qdel(src)
@@ -122,8 +131,9 @@
 
 /obj/structure/bed/roller/post_buckle_mob(mob/living/M)
 	density = TRUE
-	icon_state = "up"
+	up = TRUE
 	M.pixel_y = initial(M.pixel_y)
+	update_appearance()
 
 /obj/structure/bed/roller/Moved()
 	. = ..()
@@ -132,9 +142,10 @@
 
 /obj/structure/bed/roller/post_unbuckle_mob(mob/living/M)
 	density = FALSE
-	icon_state = "down"
+	up = FALSE
 	M.pixel_x = M.get_standard_pixel_x_offset(M.lying)
 	M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
+	update_appearance()
 
 /obj/item/roller
 	name = "roller bed"
@@ -168,12 +179,11 @@
 		deploy_roller(user, target)
 
 /obj/item/roller/proc/deploy_roller(mob/user, atom/location)
-	var/obj/structure/bed/roller/R = new rollertype(location)
-	. = R
-	R.add_fingerprint(user)
-	after_deploy_roller(user, R)
+	. = new rollertype(location)
+	after_deploy_roller(user, .)
 
 /obj/item/roller/proc/after_deploy_roller(mob/user, obj/structure/bed/roller/R)
+	R.add_fingerprint(user)
 	qdel(src)
 
 /obj/item/roller/robo //ROLLER ROBO DA!
@@ -193,6 +203,7 @@
 	if(loaded)
 		var/obj/structure/bed/roller/R = loaded
 		R.forceMove(location)
+		. = R
 		user.visible_message("[user] deploys [loaded].", "<span class='notice'>You deploy [loaded].</span>")
 		loaded = null
 	else

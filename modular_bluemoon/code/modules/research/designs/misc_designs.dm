@@ -18,6 +18,16 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL|DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/roller_stasis
+	name = "stasis roller bed"
+	desc = "A collapsed roller bed with a stasis function that can be carried around."
+	id = "stasis_roller_bed"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 4000, /datum/material/glass = 400, /datum/material/silver = 2000)
+	build_path = /obj/item/roller/stasis
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL|DEPARTMENTAL_FLAG_SECURITY
+
 /datum/techweb_node/base/New()
 	var/extra_designs = list(
 		"heavy_roller_bed",
