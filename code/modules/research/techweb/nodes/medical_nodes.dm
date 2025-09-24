@@ -16,6 +16,14 @@
 	design_ids = list("splitbeaker", "cryotube", "cryo_Grenade", "stasis")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 
+/datum/techweb_node/adv_cryotech
+	id = "adv_cryotech"
+	display_name = "Advanced Cryostasis Technology"
+	description = "Stasis, but now mobile!"
+	prereq_ids = list("cryotech", "adv_biotech")
+	design_ids = list("stasis_roller_bed")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+
 /datum/techweb_node/adv_defibrillator_tec
 	id = "adv_defibrillator_tec"
 	display_name = "Defibrillator Upgrades"

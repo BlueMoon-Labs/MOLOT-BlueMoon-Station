@@ -63,7 +63,8 @@
  * Roller beds
  */
 /obj/structure/bed/roller
-	name = "roller bed"
+	name = "Roller bed"
+	desc = "A collapsed roller bed that can be carried around."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "down"
 	anchored = FALSE
@@ -148,7 +149,7 @@
 	update_appearance()
 
 /obj/item/roller
-	name = "roller bed"
+	name = "Roller bed"
 	desc = "A collapsed roller bed that can be carried around."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
@@ -187,7 +188,7 @@
 	qdel(src)
 
 /obj/item/roller/robo //ROLLER ROBO DA!
-	name = "roller bed dock"
+	name = "Roller bed dock"
 	var/loaded = null
 
 /obj/item/roller/robo/New()

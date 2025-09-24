@@ -7,6 +7,7 @@
 
 /obj/structure/bed/roller/heavy
 	name = "heavy roller bed"
+	desc = "A collapsed roller bed that can be carried around. Can be used to move heavy spacemens and spacevulfs."
 	icon = 'modular_bluemoon/icons/obj/heavy_rollerbed.dmi'
 	foldabletype = /obj/item/roller/heavy
 	pixel_x = -16
@@ -35,6 +36,7 @@
 
 /obj/structure/bed/roller/stasis
 	name = "stasis roller bed"
+	desc = "A collapsed roller bed with a stasis function that can be carried around."
 	icon = 'modular_bluemoon/icons/obj/rollerbed.dmi'
 	foldabletype = /obj/item/roller/stasis
 	buckle_lying = 90
@@ -72,6 +74,7 @@
 	var/const/overlay_name = "stasis"
 	if(!mattress_overlay)
 		mattress_overlay = SSvis_overlays.add_vis_overlay(src, icon, overlay_name, layer, plane, dir, alpha = 0, unique = TRUE)
+		mattress_overlay.vis_flags = VIS_INHERIT_PLANE | VIS_INHERIT_LAYER | VIS_INHERIT_DIR | VIS_INHERIT_ID
 	else
 		vis_contents += mattress_overlay
 		if(managed_vis_overlays)
@@ -153,7 +156,7 @@
 		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = sound_freq)
 
 /obj/structure/bed/roller/stasis/proc/get_occupant()
-	if(buckled_mobs.len && isliving(buckled_mobs[1]))
+	if(buckled_mobs && buckled_mobs.len && isliving(buckled_mobs[1]))
 		return buckled_mobs[1]
 
 /obj/structure/bed/roller/stasis/proc/chill_out(mob/living/target)
@@ -172,7 +175,7 @@
 	target.clear_alert("painkiller", /atom/movable/screen/alert/painkiller)
 
 /obj/item/roller/stasis
-	name = "stasis roller bed"
+	name = "Stasis roller bed"
 	desc = "A collapsed roller bed with a stasis function that can be carried around."
 	icon = 'modular_bluemoon/icons/obj/rollerbed.dmi'
 	rollertype = /obj/structure/bed/roller/stasis
