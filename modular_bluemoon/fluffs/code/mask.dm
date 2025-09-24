@@ -62,3 +62,4 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/mask.dmi'
 	icon_state = "hair_module_mask"
 	item_state = "hair_module_mask"
+	body_parts_covered = NONE

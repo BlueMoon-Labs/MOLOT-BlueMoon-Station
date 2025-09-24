@@ -279,24 +279,26 @@
 	actions_types = list(/datum/action/item_action/degree_distortion_effect)
 	can_adjust = TRUE
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	var/atom/movable/distortion_effect/filter_on_user
-	var/overlay_sync
+	var/obj/effect/distortion_effect/filter_on_user
+	var/obj/effect/dress_particle_holder/particle_effect_holder
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/New()
 	. = ..()
 
 	filter_on_user = new(src)
+	particle_effect_holder = new(src)
 	LAZYADD(vis_contents, filter_on_user)
-	LAZYADD(overlays, image('modular_bluemoon/fluffs/icons/effects/32x32.dmi', "roselia_sync"))
+	LAZYADD(vis_contents, particle_effect_holder)
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/equipped(mob/user, slot)
 	. = ..()
 	LAZYADD(user.vis_contents, filter_on_user)
-	overlay_sync = SSvis_overlays.add_vis_overlay(user, 'modular_bluemoon/fluffs/icons/effects/32x32.dmi', "roselia_sync")
+	LAZYADD(user.vis_contents, particle_effect_holder)
+
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/dropped(mob/user)
 	LAZYREMOVE(user.vis_contents, filter_on_user)
-	SSvis_overlays.remove_vis_overlay(user, list(overlay_sync))
+	LAZYREMOVE(user.vis_contents, particle_effect_holder)
 	. = ..()
 
 /obj/item/clothing/under/donator/bm/inlaid_data_dress/toggle_jumpsuit_adjust()
@@ -310,7 +312,26 @@
 		body_parts_covered = NONE
 	return TRUE
 
-/atom/movable/distortion_effect
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/add_atom_colour(coloration, colour_priority)
+	. = ..()
+	if(filter_on_user)
+		filter_on_user.add_atom_colour(coloration, colour_priority)
+
+	if(particle_effect_holder)
+		particle_effect_holder.add_atom_colour(coloration, colour_priority)
+
+/obj/item/clothing/under/donator/bm/inlaid_data_dress/remove_atom_colour(colour_priority, coloration)
+	. = ..()
+	if(filter_on_user)
+		filter_on_user.remove_atom_colour(coloration, colour_priority)
+
+	if(particle_effect_holder)
+		particle_effect_holder.remove_atom_colour(coloration, colour_priority)
+
+	if(overlay_sync)
+		overlay_sync.remove_atom_colour(coloration, colour_priority)
+
+/obj/effect/distortion_effect
 	icon = 'modular_bluemoon/fluffs/icons/effects/32x32.dmi'
 	icon_state = "distortion_a"
 	pixel_x = 0
@@ -343,4 +364,25 @@
 
 	T.filter_on_user.alpha = alpha
 
+/obj/effect/dress_particle_holder
+	pixel_y = -10
+	alpha = 150
+	plane = FIELD_OF_VISION_LAYER
+	appearance_flags = PIXEL_SCALE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	vis_flags = VIS_INHERIT_LAYER
 
+/obj/effect/dress_particle_holder/New(loc, ...)
+	. = ..()
+	particles = new /particles/dress_particles()
+
+/particles/dress_particles
+	icon = 'modular_bluemoon/fluffs/icons/effects/32x32.dmi'
+	icon_state = "dress_particle"
+	width = 96
+	height = 96
+	count = 100
+	spawning = 8
+	lifespan = 2
+	position = generator("circle", 0, 10)
+	velocity = generator("circle", 1, 3)
