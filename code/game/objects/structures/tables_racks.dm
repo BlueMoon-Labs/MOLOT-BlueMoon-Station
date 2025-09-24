@@ -47,6 +47,13 @@
 
 	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text_combat_mode = barehanded_interactions)
 
+	var/static/list/hovering_item_typechecks = list(
+		/obj/item/wallframe = list(
+			SCREENTIP_CONTEXT_LMB = list(INTENT_GRAB = "Install frame on the table"),
+		),
+	)
+	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
+
 /obj/structure/table/examine(mob/user)
 	. = ..()
 	. += deconstruction_hints(user)
@@ -264,7 +271,11 @@
 				user.unbuckle_mob(carried_mob)
 				tableplace(user, carried_mob)
 		return TRUE
-
+	if(istype(I, /obj/item/wallframe) && user.a_intent == INTENT_GRAB)
+		var/obj/item/wallframe/W = I
+		if(W.try_build(src, user))
+			W.attach(src, user, params)
+		return TRUE
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location()))
 			var/list/click_params = params2list(params)
@@ -743,13 +754,26 @@
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smooth = SMOOTH_FALSE
 	can_buckle = 1
-	buckle_lying = 1
-	buckle_requires_restraints = 1
+	buckle_lying = 90
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
 // BLUEMOON ADD START
 	var/obj/item/tank/internals/tank = null // баллон внутри
 	var/obj/item/clothing/mask/mask = null // маска внутри
+
+/obj/structure/table/optable/Initialize(mapload)
+	. = ..()
+	register_context()
+
+/obj/structure/table/optable/Destroy()
+	stop_process()
+	. = ..()
+
+/obj/structure/table/optable/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Unbuckle patient")
+	LAZYSET(context[SCREENTIP_CONTEXT_ALT_LMB], INTENT_ANY, "Set internals")
+	LAZYSET(context[SCREENTIP_CONTEXT_CTRL_LMB], INTENT_ANY, "Remove tank and mask")
+	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/structure/table/optable/examine(mob/user)
 	. = ..()
@@ -768,17 +792,17 @@
 	if(computer)
 		. += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
 
-/obj/structure/table/optable/Destroy()
-	stop_process()
-	. = ..()
+	if(tank && mask)
+		. += span_notice("Alt-Click: Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
 
-/obj/structure/table/optable/examine_more(mob/user)
-	. = ..()
-	. += span_notice("Убирать кислородный баллон и маску можно через Alt.")
-	if(tank && mask) . += span_info("<br>Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
+	if(tank || mask)
+		. += span_notice("Ctrl-Click: Отсоединить от стола баллон и маску.")
 
-/obj/structure/table/optable/attack_hand(mob/user, act_intent, attackchain_flags)
+
+/obj/structure/table/optable/AltClick(mob/living/user)
 	. = ..()
+	if(!isliving(user) || !user.canUseTopic(src, BE_CLOSE))
+		return
 	if(tank && mask)
 		if(!check_patient())
 			return
@@ -818,9 +842,32 @@
 		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона или маски!"))
 		return
 
+/obj/structure/table/optable/CtrlClick(mob/user)
+	. = ..()
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
+	if(!isliving(user))
+		to_chat(user, span_warning("Это слишком сложно для вас!"))
+		return
+	if(check_patient())
+		to_chat(user, span_warning("Сначала нужно убрать пациента!"))
+		return
+	if(tank && !patient?.internal)
+		to_chat(user, span_notice("Вы убираете [tank] с бока операционного стола."))
+		user.put_in_hands(tank)
+		tank = null
+	else if(mask && !patient?.internal)
+		to_chat(user, span_notice("Вы убираете [mask] со стойки операционного стола."))
+		user.put_in_hands(mask)
+		mask = null
+
 /obj/structure/table/optable/attack_robot(mob/user)
 	if(Adjacent(user))
 		return attack_hand(user)
+
+/obj/structure/table/optable/post_buckle_mob(mob/living/M)
+	. = ..()
+	check_patient()
 
 /obj/structure/table/optable/process()
 	if(mask?.loc != patient || tank?.loc != src || patient?.loc != loc)
@@ -837,23 +884,6 @@
 		patient.transferItemToLoc(mask, src, TRUE)
 	patient.internal = null
 	patient = null
-
-/obj/structure/table/optable/AltClick(mob/living/user)
-	..()
-	if(!ishuman(user))
-		to_chat(user, span_warning("Это слишком сложно для вас!"))
-		return
-	if(patient)
-		to_chat(user, span_warning("Сначала нужно убрать пациента!"))
-		return
-	if(tank && !patient?.internal)
-		to_chat(user, span_notice("Вы убираете [tank] с бока операционного стола."))
-		user.put_in_hands(tank)
-		tank = null
-	else if(mask && !patient?.internal)
-		to_chat(user, span_notice("Вы убираете [mask] со стойки операционного стола."))
-		user.put_in_hands(mask)
-		mask = null
 
 /obj/structure/table/optable/Destroy()
 	if(tank)

@@ -14,6 +14,7 @@
 	category = "offstation"
 	faction = list(FACTION_BLACKMESA)
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+	color = "#9a74ac"
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
@@ -42,6 +43,7 @@
 	outfit = /datum/outfit/security_guard
 	short_desc = "Ты являешься выжившим охранником чёрной мезы"
 	flavour_text = "Ты один из охранников Чёрной Мезы, а конкретно Сектора H. Твоя работа была размеренной и спокойной, но что-то пошло не так. Теперь ты, оставшись со своим напарником, лежишь без сознания в чудом уцелевшем КПП охраны"
+	color = "#656c8f"
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
@@ -64,7 +66,7 @@
 	name = "Black mesa security id card"
 	assignment = "Black mesa security guard"
 	desc = "An access card designated for \"security members\". Everyone wants your guns, partner. Yee-haw."
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY)
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_BRIG, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY)
 
 //одежда?
 
@@ -105,6 +107,7 @@
 	important_info = "(ПРИ ИСПОЛЬЗОВАНИИ АКТУАЛИЗАТОРА СТРОГО ЗАПРЕЩЕНО ВЫБИРАТЬ ЛЮБУЮ ДРУГУЮ РАСУ КРОМЕ ЧЕЛОВЕКА. ПРИ НАРУШЕНИЯХ ИЛИ ОШИБКАХ ПРОСЬБА ОБРАТИТСЯ К АДМИНИСТРАЦИИ)Не пытайся исследовать комплекс до прибытия экспедиционной группы. В случае, когда прошло 20 минут от начала раунда, а исследователи так и не пришли, ты можешь постепенно продвигаться по комплексу."
 	category = "offstation"
 	antagonist_type = /datum/antagonist/ghost_role/black_mesa
+	color = "#a2fcff"
 
 /obj/effect/mob_spawn/human/black_mesa/special(mob/living/carbon/human/spawned_human)
 	. = ..()
@@ -126,7 +129,7 @@
 	name = "Black mesa sector H director id card"
 	assignment = "Black mesa security guard"
 	desc = "An access card designated for \"the science team leaders\". You are forgotten basically immediately when it comes to the lab."
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS)
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_SEC_DOORS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_RD)
 
 
 //ХЕКУ
@@ -264,7 +267,7 @@
 	head = /obj/item/clothing/head/beret/sec
 	suit = /obj/item/clothing/suit/armor/hecu
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/military/assault/hecu
+	belt = /obj/item/storage/belt/military/russianweb
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = /obj/item/binoculars

@@ -8,7 +8,7 @@
 
 /datum/species/mammal/shadekin
 	limbs_id = SPECIES_SHADEKIN
-	icon_limbs = 'modular_splurt/icons/mob/human_parts_greyscale.dmi'
+	icon_limbs = DEFAULT_BODYPART_ICON_ORGANIC
 
 /datum/species/mammal/teshari
 	limbs_id = SPECIES_TESHARI

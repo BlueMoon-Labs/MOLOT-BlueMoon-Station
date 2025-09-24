@@ -150,3 +150,76 @@
 	soundpath = 'modular_bluemoon/sound/voice/barks/monkey.ogg'
 	minspeed = 5
 	maxspeed = 10
+
+/datum/bark/xenomorph_1
+	name = "Xenomorph 1"
+	id = "xenomorph1"
+	soundpath = 'modular_bluemoon/sound/voice/barks/xenomorph1.ogg'
+	maxspeed = 10
+
+/datum/bark/xenomorph_2
+	name = "Xenomorph 2"
+	id = "xenomorph2"
+	soundpath = 'modular_bluemoon/sound/voice/barks/xenomorph2.ogg'
+	minspeed = 4
+	maxspeed = 10
+
+/datum/bark/xenomorph_3
+	name = "Xenomorph 3"
+	id = "xenomorph3"
+	soundpath = 'modular_bluemoon/sound/voice/barks/xenomorph3.ogg'
+	minspeed = 4
+	maxspeed = 12
+
+/datum/bark/xenomorph_4
+	name = "Xenomorph 4"
+	id = "xenomorph4"
+	soundpath = 'modular_bluemoon/sound/voice/barks/xenomorph4.ogg'
+	maxspeed = 10
+
+/datum/bark/xenomorph_5
+	name = "Xenomorph 5"
+	id = "xenomorph5"
+	soundpath = 'modular_bluemoon/sound/voice/barks/xenomorph5.ogg'
+	minspeed = 4
+	maxspeed = 10
+
+/datum/bark/xenomorph_6
+	name = "Xenomorph 6"
+	id = "xenomorph6"
+	soundpath = 'modular_bluemoon/sound/voice/barks/xenomorph6.ogg'
+	maxspeed = 10
+
+/datum/bark/spider_1
+	name = "Spider 1"
+	id = "spider1"
+	soundpath = 'sound/creatures/terrorspiders/speech_1.ogg'
+
+/datum/bark/spider_2
+	name = "Spider 2"
+	id = "spider2"
+	soundpath = 'sound/creatures/terrorspiders/speech_2.ogg'
+	minspeed = 4
+
+/datum/bark/spider_3
+	name = "Spider 3"
+	id = "spider3"
+	soundpath = 'sound/creatures/terrorspiders/speech_3.ogg'
+	minspeed = 6
+
+/datum/bark/spiders_4
+	name = "Spider 4"
+	id = "spider4"
+	soundpath = 'sound/creatures/terrorspiders/speech_4.ogg'
+	minspeed = 4
+
+/datum/bark/spiders_5
+	name = "Spider 5"
+	id = "spider5"
+	soundpath = 'sound/creatures/terrorspiders/speech_5.ogg'
+
+/datum/bark/spiders_6
+	name = "Spider 6"
+	id = "spider6"
+	soundpath = 'sound/creatures/terrorspiders/speech_6.ogg'
+	minspeed = 4

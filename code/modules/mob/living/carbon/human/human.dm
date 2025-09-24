@@ -8,10 +8,6 @@
 /mob/living/carbon/human/Initialize(mapload)
 	add_verb(src, /mob/living/proc/mob_sleep)
 	add_verb(src, /mob/living/proc/lay_down)
-	//add_verb(src, /mob/living/carbon/human/verb/underwear_toggle)
-	add_verb(src, /mob/living/verb/subtle)
-	add_verb(src, /mob/living/verb/subtler)
-	add_verb(src, /mob/living/verb/surrender) // Sandstorm change
 	//initialize limbs first
 	create_bodyparts()
 
@@ -461,7 +457,7 @@
 
 	//Check for dresscode violations
 	// BLUEMOON EDIT START
-	var/list/equip_checks = list(
+	var/static/list/equip_checks = list(
 		/obj/item/clothing/head/helmet/space/hardsuit/wizard,
 		/obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard,
 		/obj/item/clothing/head/helmet/space/hardsuit/syndi,
@@ -475,7 +471,7 @@
 		/obj/item/clothing/under/inteq
 	)
 
-	var/list/special_equip_checks = list(/obj/item/clothing/head/wizard = "check_magic_flag")
+	var/static/list/special_equip_checks = list(/obj/item/clothing/head/wizard = "check_magic_flag")
 
 	// main check
 	var/illegal_equipment = FALSE

@@ -21,10 +21,7 @@
 	if(istype(H))
 		// BLUEMOON EDIT START || It's easy to get aroused, but it's hard to cum.
 		if(HAS_TRAIT(H, TRAIT_MASO) && H.has_dna() && prob(40))
-			var/genits = H.adjust_arousal(20,"masochism", maso = TRUE)
-			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(H, span_userlove("[G.arousal_verb]!"))
+			H.adjust_arousal(20,"masochism", maso = TRUE)
 			H.handle_post_sex(NORMAL_LUST, null, null)
 		// BLUEMOON EDIT END
 	if(!HAS_TRAIT(src, TRAIT_PERMABONER))

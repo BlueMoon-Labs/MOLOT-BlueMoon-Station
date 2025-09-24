@@ -91,7 +91,7 @@
 		span_userdanger("[user] starts picking you up!"))
 	source.balloon_alert(user, "picking up")
 	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
-	if(get_size(source) > 0.5 && user.mob_weight < MOB_WEIGHT_NORMAL) //BLUEMOON ADD лёгкие большие персонажи дольше поднимают тех, кто имеет размер больше 50%
+	if(user.mob_weight < MOB_WEIGHT_NORMAL && source.mob_weight > user.mob_weight && get_size(source) > 0.5) //BLUEMOON ADD лёгкие большие персонажи дольше поднимают тех, кто имеет размер больше 50%, если это тоже не легкий персонаж
 		time_required += 8 SECONDS //BLUEMOON ADD END
 	if(!do_after(user, time_required, source))
 		return FALSE

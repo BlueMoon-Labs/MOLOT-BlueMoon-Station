@@ -6,6 +6,7 @@
 	icon_state = "tunic"
 	can_adjust = FALSE
 	mutantrace_variation = NONE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/latex
 	name = "full latex jumpsuit"
@@ -95,6 +96,7 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_covered = CHEST
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/blutigen_undergarment
 	name = "Blutigen Undergarments"
@@ -106,6 +108,7 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_covered = CHEST
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/bunnysuit/white
 	name = "white bunny outfit"
@@ -125,6 +128,7 @@
 	can_adjust = FALSE
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/security/skirt/slut
 	name = "slutty security jumpskirt"

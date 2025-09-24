@@ -37,7 +37,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	minimum_distance = 1
 // Bluemoon Add
-	speak_emote = list("бубнит","хрипит")
+	speak_emote = list("бубнит","рычит","хрипит")
 	speak = list(
         "Доченька... такая большая стала... скоро папа вернётся.....",
         "Вылазка... мы скоро вернемся... Не переживай цветик, ладно ?",
@@ -45,25 +45,30 @@
         "Найти.. собрать... хрррр...",
         "найти артефакты... найти артефакты......",
         "Болит ай болиииит....",
+		"Некрополь зовёт...",
+		"Уб-бить...",
+		"Голова... болит... нужно.. убивать...",
+		"Чужак... Покинь это место... пока ещё жив..",
+		"Обратной.. дороги... нет..."
     )
 	speak_chance = 10
 
 	emote_taunt = list(
-        "Некрополь зовет...",
-        "уб-бить...",
-        "Голова... болит... нужно.. убивать...",
-        "*рычит*",
-        "Обратной.. дороги... нет...",
-        "чужак...",)
+        "угрожающе взмахивает крашером",
+        "тяжело дышит",
+        "на мгновение оглядывается по сторонам, устремляя свой взор",
+        "пытается что-то сказать",
+        "устремляет свой кровожадный взор",
+        "протирает свой пропитанный кровью крашер, указывая им")
 	taunt_chance = 30
 //Bluemood END
 /mob/living/simple_animal/hostile/asteroid/miner/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("grabs the miner's eyes and rips them out, shoving the bloody miner aside!", "grabs and crushes the miner's skull apart with their bare hands!", "rips the miner's head clean off with their bare hands!"), \
-		messages_pka = list("sticks their PKA into the miner's mouth and shoots it, showering everything in gore!", "bashes the miner's head into their chest with their PKA!", "shoots off both legs of the miner with their PKA!"), \
-		messages_pka_bayonet = list("slices the imp's head off by the neck with the PKA's bayonet!", "repeatedly stabs the miner in their gut with the PKA's bayonet!"), \
-		messages_crusher = list("chops the miner horizontally in half with their crusher in one swift move!", "chops off the miner's legs with their crusher and kicks their face hard, exploding it while they're in the air!", "slashes each of the miner's arms off by the shoulder with their crusher!"), \
+		messages_unarmed = list("хватает шахтёра за череп и вырывает его глаза, отбрасывая бездыханное тело в сторону!", "хватает шахтёра за голову и сдавливает её голыми руками, словно скорлупу ореха!", "отрывает голову от тела шахтёра голыми руками!"), \
+		messages_pka = list("вонзает свой протокинетический ускоритель в рот шахтёра и выстреливает из него, осыпая всё вокруг ошмётками его плоти!", "вдавливает голову шахтёра в его корпус при помощи протокинетического ускорителя!", "отстреливает обе ноги шахтёра, оставляя его умирать от обильной кровопотери!"), \
+		messages_pka_bayonet = list("отсекает голову с плеч шахтёра при помощи своего протокинетического ускорителя!", "многократно протыкает корпус шахтёра, позволяя его органам вывалиться наружу!"), \
+		messages_crusher = list("рассекает тело шахтёра горизонтально на две части при помощи своего крашера!", "отсекает обе ноги шахтёра своим крашером и пинает его в лицо, взрывая последующим выстрелом!", "хладнокровно отсекает обе руки шахтёра при помощи своего крашера и пинком усаживает бездыханное тело на колени перед собой!"), \
 		health_given = 7.5, \
 		threshold = (maxHealth/10 * 1.5), \
 		crusher_drop_mod = 2)

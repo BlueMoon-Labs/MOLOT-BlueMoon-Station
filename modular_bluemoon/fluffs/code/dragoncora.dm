@@ -5,7 +5,7 @@
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/helmet/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/head/helmet/dragoncora
 	name = "Agent Headgear"
@@ -22,7 +22,7 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/armor/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/suit/armor/dragoncora
 	name = "Agent Vest"
@@ -40,7 +40,7 @@
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/helmet/skull/ftu
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/head/helmet/skull/ftu
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
@@ -52,7 +52,7 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/armor/vest/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/suit/armor/vest/dragoncora
 	name = "FTU Security Armor"
@@ -73,7 +73,7 @@
 	slot = ITEM_SLOT_GLOVES
 	path = /obj/item/clothing/gloves/color/black/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/gloves/color/black/dragoncora
 	name = "SpecOps Guerrilla Gloves"
@@ -91,7 +91,7 @@
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/inteq/tactical_gorka
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 // // // // // // // //
 
@@ -100,7 +100,7 @@
 	slot = ITEM_SLOT_FEET
 	path = /obj/item/clothing/shoes/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/shoes/dragoncora
 	name = "Combat Boots"
@@ -117,7 +117,7 @@
 	slot = ITEM_SLOT_BACK
 	path = /obj/item/storage/backpack/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/storage/backpack/dragoncora
 	name = "Tactical Backpack"
@@ -130,7 +130,7 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/det_suit/lanyard/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/clothing/suit/det_suit/lanyard/dragoncora
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
@@ -142,7 +142,7 @@
 	slot = ITEM_SLOT_EARS
 	path = /obj/item/radio/headset/dragoncora
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 /obj/item/radio/headset/dragoncora
 	name = "Alien Headset"
@@ -158,6 +158,6 @@
 	slot = ITEM_SLOT_MASK
 	path = /obj/item/clothing/mask/russian_balaclava
 	ckeywhitelist = list("dragoncora")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	subcategory = LOADOUT_SUBCATEGORIES_DON03
 
 // // // // // // // //

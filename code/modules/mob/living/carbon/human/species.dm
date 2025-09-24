@@ -1758,7 +1758,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hair_style == "Bald") && (HAIR in species_traits))
 			to_chat(H, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
-			addtimer(CALLBACK(src, PROC_REF(go_bald), H), 50)
+			go_bald(H)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
 	if(QDELETED(H))	//may be called from a timer
@@ -2025,10 +2025,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		//SPLURT ADDITION END
 		// BLUEMOON EDIT START || It's easy to get aroused, but it's hard to cum.
 		if(ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(40))
-			var/genits = target.adjust_arousal(20,"masochism", maso = TRUE)
-			for(var/g in genits)
-				var/obj/item/organ/genital/G = g
-				to_chat(target, span_userlove("[G.arousal_verb]!"))
+			target.adjust_arousal(20,"masochism", maso = TRUE)
 			target.handle_post_sex(NORMAL_LUST, null, null)
 		// BLUEMOON EDIT END
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
@@ -2357,9 +2354,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, user, user.zone_selected)
 
 		if(CHECK_MOBILITY(target, MOBILITY_STAND))
-			target.adjustStaminaLoss(5)
+			target.adjustStaminaLoss(5 + user.dna.species.disarm_bonus) // BLUEMOON EDIT - xenohybrids_improvements - добавлено "+ disarm_bonus"
 		else
-			target.adjustStaminaLoss(IS_STAMCRIT(target)? 2 : 10)
+			target.adjustStaminaLoss((IS_STAMCRIT(target)? 2 : 10) + user.dna.species.disarm_bonus) // BLUEMOON EDIT - xenohybrids_improvements - добавлено "+ disarm_bonus"
 
 		if(target.is_shove_knockdown_blocked())
 			return
@@ -2420,7 +2417,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!!</span>",
 							"<span class='danger'>You drop \the [target_held_item]!!</span>", null, COMBAT_MESSAGE_RANGE)
 						append_message += ", causing them to drop [target_held_item]"
-		target.ShoveOffBalance(SHOVE_OFFBALANCE_DURATION)
+		target.ShoveOffBalance(SHOVE_OFFBALANCE_DURATION + user.dna.species.disarm_bonus) // BLUEMOON EDIT - xenohybrids_improvements - добавлено "+ disarm_bonus"
 		log_combat(user, target, "shoved", append_message)
 
 /datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)

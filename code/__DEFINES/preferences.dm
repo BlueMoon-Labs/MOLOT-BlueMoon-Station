@@ -97,13 +97,6 @@
 #define JP_MEDIUM 2
 #define JP_HIGH 3
 
-//Chaos levels for dynamic voting
-#define CHAOS_NONE "None (Extended)"
-#define CHAOS_LOW "Low"
-#define CHAOS_MED "Medium"
-#define CHAOS_HIGH "High"
-#define CHAOS_MAX "Maximum"
-
 // 'Be Victim' consent options for preferences panel / antag target HUD
 #define BEVICTIM_NO "No"
 #define BEVICTIM_ASK "Ask"

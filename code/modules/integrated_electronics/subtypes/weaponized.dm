@@ -317,46 +317,46 @@
 		G.update_outputs()
 
 
-/obj/item/integrated_circuit/weaponized/stun
-	name = "electronic stun module"
-	desc = "Used to stun a target holding the device via electricity."
-	icon_state = "power_relay"
-	extended_desc = "Attempts to stun the holder of this device, with the strength input being the strength of the stun, from 1 to 70."
-	complexity = 20
-	size = 4
-	inputs = list(
-		"strength" = IC_PINTYPE_NUMBER,
-		"target" = IC_PINTYPE_REF)
-	activators = list("stun" = IC_PINTYPE_PULSE_IN, "on success" = IC_PINTYPE_PULSE_OUT, "on fail" = IC_PINTYPE_PULSE_OUT)
-	spawn_flags = IC_SPAWN_RESEARCH
-	power_draw_per_use = 2000
-	cooldown_per_use = 250
-	ext_cooldown = 25
+// /obj/item/integrated_circuit/weaponized/stun
+// 	name = "electronic stun module"
+// 	desc = "Used to stun a target holding the device via electricity."
+// 	icon_state = "power_relay"
+// 	extended_desc = "Attempts to stun the holder of this device, with the strength input being the strength of the stun, from 1 to 70."
+// 	complexity = 20
+// 	size = 4
+// 	inputs = list(
+// 		"strength" = IC_PINTYPE_NUMBER,
+// 		"target" = IC_PINTYPE_REF)
+// 	activators = list("stun" = IC_PINTYPE_PULSE_IN, "on success" = IC_PINTYPE_PULSE_OUT, "on fail" = IC_PINTYPE_PULSE_OUT)
+// 	spawn_flags = IC_SPAWN_RESEARCH
+// 	power_draw_per_use = 2000
+// 	cooldown_per_use = 250
+// 	ext_cooldown = 25
 
 
-/obj/item/integrated_circuit/weaponized/stun/do_work()
-	var/stunforce = clamp(get_pin_data(IC_INPUT, 1),1,70)
-	var/mob/living/L = get_pin_data_as_type(IC_INPUT, 2, /mob/living)
-	if(attempt_stun(L,stunforce))
-		activate_pin(2)
-	else
-		activate_pin(3)
+// /obj/item/integrated_circuit/weaponized/stun/do_work()
+// 	var/stunforce = clamp(get_pin_data(IC_INPUT, 1),1,70)
+// 	var/mob/living/L = get_pin_data_as_type(IC_INPUT, 2, /mob/living)
+// 	if(attempt_stun(L,stunforce))
+// 		activate_pin(2)
+// 	else
+// 		activate_pin(3)
 
-/obj/item/integrated_circuit/weaponized/proc/attempt_stun(var/mob/living/L,var/stunforce = 70) //Copied from stunbaton code.
+// /obj/item/integrated_circuit/weaponized/proc/attempt_stun(var/mob/living/L,var/stunforce = 70) //Copied from stunbaton code.
 
-	if(!L || !isliving(L))
-		return FALSE
+// 	if(!L || !isliving(L))
+// 		return FALSE
 
-	L.DefaultCombatKnockdown(stunforce)
-	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
+// 	L.DefaultCombatKnockdown(stunforce)
+// 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 
-	message_admins("stunned someone with an assembly. Last touches: Assembly: [assembly.fingerprintslast] Circuit: [fingerprintslast]")
+// 	message_admins("stunned someone with an assembly. Last touches: Assembly: [assembly.fingerprintslast] Circuit: [fingerprintslast]")
 
-	L.visible_message("<span class='danger'>\The [assembly] has stunned \the [L] with \the [src]!</span>", "<span class='userdanger'>\The [assembly] has stunned you with \the [src]!</span>")
-	playsound(loc, 'sound/weapons/Taser.ogg', 50, 1, -1)
-	playsound(L.loc, 'sound/weapons/taserhit.ogg', 50, 1, -1)
-	if(ishuman(L))
-		var/mob/living/carbon/human/H = L
-		H.forcesay(GLOB.hit_appends)
+// 	L.visible_message("<span class='danger'>\The [assembly] has stunned \the [L] with \the [src]!</span>", "<span class='userdanger'>\The [assembly] has stunned you with \the [src]!</span>")
+// 	playsound(loc, 'sound/weapons/Taser.ogg', 50, 1, -1)
+// 	playsound(L.loc, 'sound/weapons/taserhit.ogg', 50, 1, -1)
+// 	if(ishuman(L))
+// 		var/mob/living/carbon/human/H = L
+// 		H.forcesay(GLOB.hit_appends)
 
-	return TRUE
+// 	return TRUE

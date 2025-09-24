@@ -50,7 +50,7 @@
 	else
 		if(!user.UseStaminaBuffer(2, warn = TRUE))
 			return
-		recentpump = world.time + 10
+		recentpump = world.time + 4
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -94,9 +94,10 @@
 	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "gun_wielded"
-	fire_delay = 7
+	fire_delay = 5
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
+	spread = 0.5
 	unique_reskin = list(
 		"Tactical" = list("icon_state" = "riotshotgun"),
 		"Wood Stock" = list("icon_state" = "wood_riotshotgun")

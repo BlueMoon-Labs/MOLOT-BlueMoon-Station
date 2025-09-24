@@ -14,7 +14,7 @@
 	. = ..()
 	var/conflict = check_duplicates()
 	if(conflict)
-		stack_trace("WARNING: [type] network building helper found check_duplicates() conflict [conflict] in its location.!")
+		stack_trace("WARNING: [type] network building helper found check_duplicates() conflict [conflict] in its location at [AREACOORD(src)]!")
 		return INITIALIZE_HINT_QDEL
 	if(!mapload)
 		if(GLOB.Debug2)

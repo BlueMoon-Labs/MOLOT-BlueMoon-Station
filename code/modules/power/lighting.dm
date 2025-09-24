@@ -224,6 +224,14 @@
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 	var/hijacked = FALSE	// if true, the light is in a hijacked area
+	/**
+	 * Light can be connected to its individual light switch by tapping it with light switch frame.
+	 * This variable changes during flipping individual switch.
+	 * If this variable is:
+	 * 		null -> light works as usual.
+	 * 		TRUE/FALSE -> area.lightswitch will be ingored and this variable will be checked instead.
+	 */
+	var/individual_switch_state = null
 
 /obj/machinery/light/directional/north //Pixel offsets get overwritten on New()
 	dir = NORTH
@@ -474,6 +482,7 @@
 			. += "The [fitting] has been smashed."
 	if(cell)
 		. += "Its backup power charge meter reads [round((cell.charge / cell.maxcharge) * 100, 0.1)]%."
+	. += span_notice("You can connect light switch frame to it.")
 
 
 
@@ -598,12 +607,16 @@
 // if a light is turned off, it won't activate emergency power
 /obj/machinery/light/proc/turned_off()
 	var/area/A = get_area(src)
+	if(!isnull(individual_switch_state))
+		return !individual_switch_state && A.power_light || flickering
 	return !A.lightswitch && A.power_light || flickering
 
 // returns whether this light has power
 // true if area has power and lightswitch is on
 /obj/machinery/light/proc/has_power()
 	var/area/A = get_area(src)
+	if(!isnull(individual_switch_state))
+		return individual_switch_state && A.power_light
 	return A.lightswitch && A.power_light
 
 // returns whether this light has emergency power
@@ -768,7 +781,10 @@
 // called when area power state changes
 /obj/machinery/light/power_change()
 	var/area/A = get_area(src)
-	seton(A.lightswitch && A.power_light)
+	if(!isnull(individual_switch_state))
+		seton(individual_switch_state && A.power_light)
+	else
+		seton(A.lightswitch && A.power_light)
 
 // called when on fire
 

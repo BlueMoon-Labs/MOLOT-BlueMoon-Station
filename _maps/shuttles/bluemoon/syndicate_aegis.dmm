@@ -280,7 +280,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/shieldgen,
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "fL" = (
@@ -451,7 +450,6 @@
 	},
 /area/shuttle/syndicate/frigate)
 "ic" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -461,6 +459,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/machinery/power/smes/magical,
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "it" = (
@@ -938,6 +937,7 @@
 /area/shuttle/syndicate/frigate)
 "sI" = (
 /obj/vehicle/ridden/atv,
+/obj/item/key,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/frigate)
 "sN" = (
@@ -1044,7 +1044,6 @@
 	icon_state = "2-4"
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/machinery/shieldgen,
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "vG" = (
@@ -1072,38 +1071,8 @@
 /turf/template_noop,
 /area/template_noop)
 "wu" = (
-/obj/structure/closet/wall/orange{
-	name = "Engineering locker";
-	pixel_y = 30
-	},
-/obj/item/tank/internals/oxygen,
-/obj/item/extinguisher/advanced,
-/obj/item/storage/toolbox/syndicate{
-	name = "syndicate toolbox";
-	pixel_x = -3;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/utility{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/utility{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/utility/syndicate,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/suit/hooded/wintercoat/engineering,
-/obj/item/holosign_creator/atmos,
-/obj/item/clothing/gloves/color/orange,
-/obj/item/clothing/neck/scarf/orange,
-/obj/item/clothing/glasses/hud/diagnostic/night,
-/obj/item/clothing/glasses/meson/engine/tray,
-/obj/item/clothing/gloves/color/yellow,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark/textured,
+/obj/machinery/suit_storage_unit/syndicate/cybersun,
+/turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/frigate)
 "wC" = (
 /obj/machinery/light_switch{
@@ -1415,7 +1384,7 @@
 /area/shuttle/syndicate/frigate)
 "DV" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/suit_storage_unit/syndicate,
+/obj/machinery/suit_storage_unit/syndicate/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/frigate)
 "DX" = (
@@ -1622,7 +1591,34 @@
 	pixel_x = -25;
 	req_one_access_txt = "151"
 	},
-/obj/machinery/shieldgen,
+/obj/structure/closet/wall/orange{
+	name = "Engineering locker";
+	pixel_y = 30
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/glasses/meson/engine/tray,
+/obj/item/clothing/glasses/hud/diagnostic/night,
+/obj/item/clothing/neck/scarf/orange,
+/obj/item/clothing/gloves/color/orange,
+/obj/item/holosign_creator/atmos,
+/obj/item/storage/toolbox/syndicate{
+	name = "syndicate toolbox";
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/storage/belt/utility{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/clothing/suit/hooded/wintercoat/engineering,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/belt/utility{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/extinguisher/advanced,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "It" = (
@@ -1811,8 +1807,16 @@
 	},
 /obj/item/clothing/suit/space/syndicate/black/engie,
 /obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/tank/internals/oxygen,
 /obj/item/extinguisher/advanced,
+/obj/item/clothing/gloves/color/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/clothing/glasses/meson/engine/tray,
+/obj/item/clothing/glasses/hud/diagnostic/night,
+/obj/item/clothing/neck/scarf/orange,
+/obj/item/clothing/gloves/color/orange,
+/obj/item/holosign_creator/atmos,
 /obj/item/storage/toolbox/syndicate{
 	name = "syndicate toolbox";
 	pixel_x = -3;
@@ -1822,22 +1826,13 @@
 	pixel_x = 3;
 	pixel_y = 5
 	},
+/obj/item/clothing/suit/hooded/wintercoat/engineering,
+/obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/utility{
 	pixel_x = 3;
 	pixel_y = 5
 	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/suit/hooded/wintercoat/engineering,
-/obj/item/holosign_creator/atmos,
-/obj/item/clothing/gloves/color/orange,
-/obj/item/clothing/neck/scarf/orange,
-/obj/item/clothing/glasses/hud/diagnostic/night,
-/obj/item/clothing/glasses/meson/engine/tray,
-/obj/item/clothing/gloves/color/yellow,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/shieldgen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "Lt" = (
@@ -2040,11 +2035,11 @@
 	},
 /area/shuttle/syndicate/frigate)
 "PX" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/power/smes/magical,
 /turf/open/floor/plasteel/dark/textured,
 /area/shuttle/syndicate/frigate)
 "Qd" = (
@@ -2406,7 +2401,7 @@
 /area/shuttle/syndicate/frigate)
 "ZU" = (
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/suit_storage_unit/syndicate,
+/obj/machinery/suit_storage_unit/syndicate/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/frigate)
 "ZW" = (
@@ -2493,7 +2488,7 @@ XZ
 XZ
 ZU
 iJ
-Ho
+wu
 jf
 NQ
 iJ
@@ -2559,9 +2554,9 @@ Ju
 Ju
 Ju
 XZ
-Ho
+wu
 iJ
-Ho
+wu
 sI
 sI
 iJ
@@ -2848,7 +2843,7 @@ vh
 te
 gB
 XZ
-wu
+ny
 yb
 mt
 Mb

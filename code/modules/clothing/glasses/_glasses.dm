@@ -405,11 +405,11 @@
 
 /obj/item/clothing/glasses/sunglasses/blindfold/white/equipped(mob/living/carbon/human/user, slot)
 	if(ishuman(user) && slot == ITEM_SLOT_EYES)
-		update_icon(user)
+		update_icon(ALL, user)
 		user.update_inv_glasses() //Color might have been changed by update_icon.
 	..()
 
-/obj/item/clothing/glasses/sunglasses/blindfold/white/update_icon(mob/living/carbon/human/user)
+/obj/item/clothing/glasses/sunglasses/blindfold/white/update_icon(updates, mob/living/carbon/human/user)
 	. = ..()
 	if(ishuman(user) && !colored_before)
 		add_atom_colour("#[user.left_eye_color]", FIXED_COLOUR_PRIORITY)

@@ -36,6 +36,7 @@
 	sound = 'sound/machines/chime.ogg'
 
 /datum/emote/sound/silicon/honk
+	name = "Хонкнуть"
 	key = "honk"
 	key_third_person = "honks"
 	message = "honks."

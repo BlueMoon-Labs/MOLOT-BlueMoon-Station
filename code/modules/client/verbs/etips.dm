@@ -1,7 +1,7 @@
 /client/verb/toggle_tips()
 	set name = "Toggle examine tooltips"
 	set desc = "Toggles examine hover-over tooltips"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 
 	prefs.enable_tips = !prefs.enable_tips
 	prefs.save_preferences()
@@ -10,7 +10,7 @@
 /client/verb/change_tip_delay()
 	set name = "Set examine tooltip delay"
 	set desc = "Sets the delay in milliseconds before examine tooltips appear"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 
 	var/indelay = stripped_input(usr, "Enter the tooltip delay in milliseconds (default: 500)", "Enter tooltip delay", "", 10)
 	indelay = text2num(indelay)
@@ -22,7 +22,7 @@
 /client/verb/toggle_hover_outline()
 	set name = "Toggle hover outline"
 	set desc = "Toggles hover-over item outline"
-	set category = "Preferences"
+	set category = "Preferences.Game"
 
 	prefs.outline_enabled = !prefs.outline_enabled
 	prefs.save_preferences()

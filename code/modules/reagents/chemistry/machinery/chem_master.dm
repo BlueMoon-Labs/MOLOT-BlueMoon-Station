@@ -16,6 +16,7 @@
 	var/condi = FALSE
 	var/chosenPillStyle = 1
 	var/chosenPatchStyle = 1 //BM add
+	var/max_create_amount_multiplier = 1 // BLUEMOON ADD
 	var/screen = "home"
 	var/analyzeVars[0]
 	var/useramount = 30 // Last used amount
@@ -66,8 +67,16 @@
 
 /obj/machinery/chem_master/RefreshParts()
 	reagents.maximum_volume = 0
+	max_create_amount_multiplier = initial(max_create_amount_multiplier)
 	for(var/obj/item/reagent_containers/glass/beaker/B in component_parts)
 		reagents.maximum_volume += B.reagents.maximum_volume
+	// BLUEMOON ADD START
+	var/multiplier = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		multiplier += M.rating
+	if(multiplier)
+		max_create_amount_multiplier *= multiplier
+	// BLUEMOON ADD END
 
 /obj/machinery/chem_master/ex_act(severity, target, origin)
 	if(severity < 3)
@@ -201,6 +210,7 @@
 	data["chosenPillStyle"] = chosenPillStyle
 	data["chosenPatchStyle"] = chosenPatchStyle //BM add
 	data["isPillBottleLoaded"] = bottle ? 1 : 0
+	data["max_create_amount_multiplier"] = max_create_amount_multiplier // BLUEMOON ADD
 	if(bottle)
 		var/datum/component/storage/STRB = bottle.GetComponent(/datum/component/storage)
 		data["pillBottleCurrentAmount"] = bottle.contents.len
@@ -288,9 +298,9 @@
 		var/amount = text2num(params["amount"])
 		if(amount == null)
 			amount = text2num(input(usr,
-				"Max 20. Buffer content will be split evenly.",
+				"Max [20 * max_create_amount_multiplier]. Buffer content will be split evenly.",
 				"How many to make?", 1))
-		amount = clamp(round(amount), 0, 20)
+		amount = clamp(round(amount), 0, 20 * max_create_amount_multiplier)
 		if (amount <= 0)
 			return FALSE
 		// Get units per item

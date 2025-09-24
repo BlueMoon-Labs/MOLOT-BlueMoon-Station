@@ -48,8 +48,8 @@
 	)
 	premium = list(
 		/obj/item/coin/antagtoken = 1,
-		/obj/item/clothing/gloves/tackler = 4, //BlueMoon edit
-		/obj/item/grenade/stingbang = 4, //BlueMoon edit
+		/obj/item/clothing/gloves/tackler = 4,
+		/obj/item/grenade/stingbang = 4,
 		/obj/item/ssword_kit = 1,
 		/obj/item/storage/belt/bandolier = 2,
 		/obj/item/storage/belt/military = 2,
@@ -59,6 +59,7 @@
 		/obj/item/storage/backpack/hipbag/tan = 1,
 		/obj/item/storage/backpack/hipbag/green = 1,
 		/obj/item/storage/bag/ammo = 3,
+		/obj/item/stamp/security = 3,
 	)
 	refill_canister = /obj/item/vending_refill/security
 	default_price = PRICE_ALMOST_EXPENSIVE

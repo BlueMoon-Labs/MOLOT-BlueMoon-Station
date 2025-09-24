@@ -605,6 +605,7 @@ RLD
 	icon_state = "ircd"
 	item_state = "ircd"
 	energyfactor = 66
+	delay_mod = 0.8 // Улучшил. Это теперь также улучшение при изучении нелегалов.
 
 /obj/item/construction/rcd/loaded
 	custom_materials = list(/datum/material/iron = 48000, /datum/material/glass = 32000)
@@ -645,14 +646,14 @@ RLD
 	item_state = "rcdammo"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
-	custom_materials = list(/datum/material/iron=12000, /datum/material/glass=8000)
-	var/ammoamt = 40
+	custom_materials = list(/datum/material/iron=24000, /datum/material/glass=16000)
+	var/ammoamt = 80
 
 /obj/item/rcd_ammo/large
 	name = "large compressed matter cartridge"
 	desc = "Highly compressed matter for the RCD. Has four times the matter packed into the same space as a normal cartridge."
-	custom_materials = list(/datum/material/iron=48000, /datum/material/glass=32000)
-	ammoamt = 160
+	custom_materials = list(/datum/material/iron=96000, /datum/material/glass=64000)
+	ammoamt = 320 
 
 
 /obj/item/construction/rcd/combat/admin

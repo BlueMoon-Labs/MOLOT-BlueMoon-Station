@@ -5,6 +5,7 @@
 	sound = 'modular_splurt/sound/voice/huh.ogg'
 
 /datum/emote/sound/human/whine
+	name = "Скулить"
 	key = "whine"
 	key_third_person = "whines"
 	message = "whines."

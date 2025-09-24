@@ -201,6 +201,20 @@
 		"Space Alta" = /mob/living/simple_animal/pet/cat/space/alta,
 		"Zlat" = /mob/living/simple_animal/pet/dog/corgi/Lisa/zlatchek)
 
+/obj/item/choice_beacon/pet/emma
+	pets = list("Crab" = /mob/living/simple_animal/crab,
+		"Cat" = /mob/living/simple_animal/pet/cat,
+		"Space cat" = /mob/living/simple_animal/pet/cat/space,
+		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
+		"Dog" = /mob/living/simple_animal/pet/dog,
+		"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+		"Pug" = /mob/living/simple_animal/pet/dog/pug,
+		"Exotic Corgi" = /mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+		"Fox" = /mob/living/simple_animal/pet/fox,
+		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+		"Possum" = /mob/living/simple_animal/opossum,
+		"Emma" = /mob/living/simple_animal/pet/fox/emma)
+
 /obj/item/choice_beacon/pet/jruttie
 	pets = list("Jruttie" = /mob/living/simple_animal/pet/cat/jruttie)
 
@@ -303,6 +317,8 @@
 // BLUEMOON ADD START
 /obj/item/choice_beacon/box/plushie/AltClick(mob/user)
 	. = ..()
+	if(!user)
+		return .
 	if(user.get_active_held_item() == src && canUseBeacon(user))
 		generate_options(user, TRUE)
 

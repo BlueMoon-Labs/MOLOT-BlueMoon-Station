@@ -164,7 +164,7 @@
 
 
 /obj/item/tank/internals/emergency_oxygen/populate_gas()
-	air_contents.set_moles(GAS_O2, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.set_moles(GAS_O2, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 	return
 
 /obj/item/tank/internals/emergency_oxygen/empty/populate_gas()

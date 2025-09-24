@@ -5,7 +5,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	gloves = /obj/item/clothing/gloves/color/black
 	back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/pirate
+	ears = /obj/item/radio/headset/pirate/bowman //BLUEMOON ADD
 	id = /obj/item/card/id/syndicate/slaver
 	backpack_contents = list(/obj/item/storage/box/survival,\
 		/obj/item/kitchen/knife/combat/survival)
@@ -19,6 +19,13 @@
 	command_radio = TRUE
 
 // BLUEMOON ADD START - командная коробочка для командира
+/obj/item/radio/headset/pirate/bowman //И бовманки
+	bowman = TRUE
+
+/obj/item/radio/headset/pirate/bowman/Initialize(mapload)
+	. = ..()
+	bowmanize()
+
 /datum/outfit/slaver/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
 	. = ..()
 	var/list/extra_backpack_items = list(

@@ -16,6 +16,9 @@
 	// Remove typing indicator
 	clear_typing_indicator()
 
+	if(!input_message)
+		return
+	
 	// Run subtle emote with input
 	usr.emote("subtler", message = input_message)
 
@@ -45,4 +48,3 @@
 
 /datum/emote/sound/human/subtler_table
 	emote_cooldown = 0
-

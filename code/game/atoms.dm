@@ -594,6 +594,8 @@
 				if(user.can_see_reagents()) //Show each individual reagent
 					for(var/datum/reagent/R in reagents.reagent_list)
 						. += "[R.volume] units of [R.name]"
+					. += span_engradio("Temperature: [round(reagents.chem_temp, 1)] K ([round(reagents.chem_temp-T0C, 1)] &deg;C)")
+					. += span_radio("pH: [round(reagents.pH, 0.01)]")
 				else //Otherwise, just show the total volume
 					var/total_volume = 0
 					for(var/datum/reagent/R in reagents.reagent_list)

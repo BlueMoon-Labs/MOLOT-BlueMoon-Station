@@ -1,7 +1,7 @@
-#define LOADOUT_SUBCATEGORIES_DON01 "Tier One"
-#define LOADOUT_SUBCATEGORIES_DON02 "Tier Two"
-#define LOADOUT_SUBCATEGORIES_DON03 "Tier Three"
-#define LOADOUT_SUBCATEGORIES_DON04 "Contributors" // Раздел для разработчиков, мапперов и спрайтеров, вносящих вклад в проект
+#define LOADOUT_SUBCATEGORIES_DON01 "Подписчики"
+#define LOADOUT_SUBCATEGORIES_DON02 "Спонсоры"
+#define LOADOUT_SUBCATEGORIES_DON03 "Приватные Вещи"
+#define LOADOUT_SUBCATEGORIES_DON04 "Контрибьюторы" // Раздел для разработчиков, мапперов и спрайтеров, вносящих вклад в проект
 
 GLOBAL_LIST_INIT(loadout_categories, list(
 	LOADOUT_CATEGORY_BACKPACK = list(LOADOUT_SUBCATEGORY_BACKPACK_GENERAL, LOADOUT_SUBCATEGORY_BACKPACK_TOYS),

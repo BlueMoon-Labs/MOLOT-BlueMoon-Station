@@ -49,8 +49,10 @@
 
 /obj/machinery/vending/cola/random/Initialize(mapload)
 	. = ..()
-	var/T = pick(subtypesof(/obj/machinery/vending/cola) - /obj/machinery/vending/cola/random)
-	new T(loc)
+	var/obj/machinery/vending/cola/T = pick(subtypesof(/obj/machinery/vending/cola) - /obj/machinery/vending/cola/random)
+	T = new T(loc)
+	T.pixel_x = pixel_x
+	T.pixel_y = pixel_y
 	return INITIALIZE_HINT_QDEL
 
 /obj/machinery/vending/cola/blue

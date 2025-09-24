@@ -611,7 +611,7 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	. += span_boldnotice("Профиль персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>")
 
 	if(activity)
-		. += "Деятельность: [activity]"
+		. += span_nicegreen("<b>Деятельность:</b> [activity]")
 
 	// send signal last so everything else prioritizes above
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now

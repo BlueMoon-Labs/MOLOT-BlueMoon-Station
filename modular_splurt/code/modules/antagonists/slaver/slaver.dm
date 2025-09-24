@@ -9,6 +9,7 @@ GLOBAL_VAR_INIT(slavers_slaves_sold, 0)
 /// Price table for when trying to set slave prices automatically
 GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Captain" 					= 500000,
+	"NanoTrasen Representative" = 500000, //Bluemoon edit
 	"Head of Personnel" 		= 200000,
 	"Head of Security" 			= 150000,
 	"Chief Engineer" 			= 120000,
@@ -21,7 +22,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Brig Physician" 			= 40000,
 	"Security Officer" 			= 40000,
 	"Detective" 				= 40000,
-	"NanoTrasen Representative" = 80000,
+//	"NanoTrasen Representative" = 80000,
 
 	"Quartermaster" 			= 40000,
 	"Cargo Technician" 			= SLAVER_STANDARD_RANSOM,

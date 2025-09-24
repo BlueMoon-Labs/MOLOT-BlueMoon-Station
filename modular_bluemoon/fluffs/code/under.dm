@@ -4,15 +4,15 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/under_digi.dmi'
 
 /obj/item/clothing/under/donator/bm/gorka
-	name = "OMON Turtleneck"
-	desc = "Special Police Detachment uniform. Consists of an UBAC shirt combined with olive camouflage pattern pants. You can see some flags on uniform's shoulders, looks eerily familiar. Probably one of many human states."
+	name = "combat uniform"
+	desc = "A camouflage pattern designed for use in... well, everywhere, really, considering it's origin."
 	icon_state = "omon"
 	item_state = "omon"
 	can_adjust = TRUE
 	unique_reskin = list(
-		"Default" = list("icon_state" = "omon"),
-		"Woodland" = list("icon_state" = "omonwd"),
-		"E2" = list("icon_state" = "omone")
+		"Olive" = list("icon_state" = "omon"),
+		"SAARE" = list("icon_state" = "omonwd"),
+		"Digital" = list("icon_state" = "omone")
 	)
 
 /obj/item/clothing/under/donator/bm/modern_suit
@@ -32,8 +32,8 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/donator/bm/multicam
-	name = "Multicam"
-	desc = "A camouflage pattern designed for use in a wide range of environments and conditions which was specifically developed and is produced by SolFed company Crye Precision"
+	name = "multicam combat uniform"
+	desc = "A camouflage pattern designed for use in a wide range of environments and conditions which was specifically developed and is produced by SCG-originated company Crye Precision."
 	icon_state = "multicam"
 	item_state = "multicam"
 	can_adjust = TRUE
@@ -425,3 +425,16 @@
 	position = generator("circle", 0, 10)
 	velocity = generator("circle", 0.3, 1)
 	fade = 1
+
+/obj/item/clothing/under/donator/bm/saareuni
+	name = "SAARE BDU G3"
+	desc = "Standardized GEN3 BATTLE DRESS UNIFORM issued to each operator for all types of tasks performed on the job. Has characteristic SAARE forearm insignia."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/under_digi.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "saare"
+	item_state = "saare"
+	can_adjust = TRUE
+

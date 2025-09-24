@@ -80,10 +80,12 @@
 	return choosen_sound.len ? choosen_sound : null
 
 /datum/emote/sound/human_emote/laugh/soft
+	name = "Тихо смеяться"
 	key = "laugh_soft"
 	key_third_person = "laughs soft"
 
 /datum/emote/sound/human/sniff/snuffle
+	name = "Шмыгнуть"
 	key = "snuffle"
 	key_third_person = "snuffles"
 	message = "шмыгает носом."

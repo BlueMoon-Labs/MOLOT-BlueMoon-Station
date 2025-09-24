@@ -7,7 +7,7 @@
 	var/wikiurltg = CONFIG_GET(string/wikiurltg)
 	if(wikiurl)
 		if(query)
-			var/output = wikiurl + "?search=" + query
+			var/output = wikiurl + "/index.php?title=Служебная:Поиск&search=" + query
 			src << link(output)
 			output = wikiurltg + "/index.php?title=Special%3ASearch&profile=default&search=" + query
 			src << link(output)
@@ -61,9 +61,21 @@
 	set name = "report-issue"
 	set desc = "Report an issue"
 	set hidden = 1
+	var/reportissue = CONFIG_GET(string/reportissue)
+	var/message
+	if(reportissue)
+		message = "This will open the issue reporter in your browser. Are you sure?"
+		if(GLOB.revdata.testmerge.len)
+			message += "<br>The following experimental changes are active and are probably the cause of any new or sudden issues you may experience. If possible, please try to find a specific thread for your issue instead of posting to the general issue tracker:<br>"
+			message += GLOB.revdata.GetTestMergeInfo(FALSE)
+		if(tgalert(src, message, "Report Issue","Да","Нет")!="Да")
+			return
+		src << link(reportissue)
+		return
+
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		var/message = "This will open the Github issue reporter in your browser. Are you sure?"
+		message = "This will open the Github issue reporter in your browser. Are you sure?"
 		if(GLOB.revdata.testmerge.len)
 			message += "<br>The following experimental changes are active and are probably the cause of any new or sudden issues you may experience. If possible, please try to find a specific thread for your issue instead of posting to the general issue tracker:<br>"
 			message += GLOB.revdata.GetTestMergeInfo(FALSE)

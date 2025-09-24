@@ -13,8 +13,7 @@
 
 /obj/item/genital_equipment/chastity_cage/flat/item_inserting(datum/source, obj/item/organ/genital/G, mob/user)
 	var/obj/item/organ/genital/penis/P = G
-	//if(P.length >= 15)
-	if(round(P.length * (P.owner ? get_size(P.owner) : 1), 0.25) >= 15)
+	if(G.owner?.dna?.features["cock_taur"] || round(P.length * (P.owner ? get_size(P.owner) : 1), 0.25) >= 15)
 		to_chat(user, span_warning("This penis is too big for such a little cage."))
 		return FALSE
 	. = ..()

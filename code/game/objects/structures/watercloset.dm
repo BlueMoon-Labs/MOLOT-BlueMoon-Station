@@ -13,6 +13,8 @@
 	var/mob/living/swirlie = null	//the mob being given a swirlie
 	var/buildstacktype = /obj/item/stack/sheet/metal //they're metal now, shut up
 	var/buildstackamount = 1
+	var/flush_cooldown = 150
+	var/next_flush = 0
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 
@@ -143,6 +145,18 @@
 		playsound(src, 'sound/effects/Glassbr2.ogg', 70, TRUE)
 		unbuckle_mob(M, TRUE)
 		deconstruct(FALSE)
+
+//Смыв воды для иммерсивности и smeshnoe
+/obj/structure/toilet/AltClick(mob/living/M)
+	. = ..()
+	add_fingerprint(M)
+	if(world.time <= next_flush)
+		to_chat(M, "<span class='warning'>[src] is filling with water. Please wait [DisplayTimeText(next_flush - world.time)].</span>")
+		return
+	next_flush = world.time + flush_cooldown
+	playsound(src, pick('modular_bluemoon/sound/items/Unitaz.ogg'), 30, rand(0.90,1.10),3)
+	visible_message(span_warning("[M] pressed the flush button and flushed the toilet!"))
+
 // BLUEMOON ADD END
 
 /obj/structure/toilet/secret
@@ -424,6 +438,30 @@
 			var/washmask = TRUE
 			var/washears = TRUE
 			var/washglasses = TRUE
+
+			if(isrobotic(H) && HAS_TRAIT(H, TRAIT_BLUEMOON_WATER_VULNERABILITY) && H.stat == CONSCIOUS && prob(70))
+				var/protected = FALSE
+				if (H.wear_suit && H.head && istype(H.wear_suit, /obj/item/clothing) && istype(H.head, /obj/item/clothing))
+					var/obj/item/clothing/worn_suit = H.wear_suit
+					var/obj/item/clothing/worn_helmet = H.head
+					if (worn_suit.clothing_flags & worn_helmet.clothing_flags & THICKMATERIAL)
+						protected = TRUE
+				if (!protected)
+					if(prob(80))
+						H.visible_message(span_warning("[H] искрит, когда [H.ru_ego()] схемы замыкает попавшая влага!"), span_boldwarning("Влага замыкает ваши схемы!"))
+						do_sparks(2, TRUE, H)
+						H.Confused(15)
+						H.Jitter(20)
+						H.apply_damage(10, BURN)
+					else
+						H.visible_message(span_warning("[H] сильно искрит, падая на землю!"), span_boldwarning("ПЛАВАТЬ БЫЛО ПЛОХОЙ ИДЕ..."))
+						do_sparks(3, TRUE, H)
+						playsound(H, 'sound/machines/hiss.ogg', 40, FALSE)
+						playsound(H, 'modular_splurt/sound/misc/connection_terminated.ogg', 40, FALSE)
+						H.apply_damage(25, BURN)
+						H.AdjustUnconscious(20)
+						H.Confused(20)
+						H.Jitter(30)
 
 			if(H.wear_suit)
 				washgloves = !(H.wear_suit.flags_inv & HIDEGLOVES)

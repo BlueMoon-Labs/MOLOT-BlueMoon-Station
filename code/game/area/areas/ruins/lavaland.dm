@@ -100,6 +100,9 @@
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories
 	name = "DS-1 'Dune' | Dormitories"
 
+/area/ruin/lavaland/unpowered/deepspaceone/biolab
+	name = "DS-1 'Dune' | Biolab"
+
 /area/ruin/lavaland/unpowered/deepspaceone/telecomms
 	name = "DS-1 'Dune' | Telecommunications"
 

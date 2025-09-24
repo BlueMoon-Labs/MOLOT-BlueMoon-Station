@@ -31,7 +31,7 @@
 /datum/component/storage/concrete/emergency/check_locked(datum/source, mob/user, message = FALSE)
 	. = locked && GLOB.security_level < SEC_LEVEL_RED
 	if(message && . && user)
-		to_chat(user, "The storage unit will only unlock during a Red, Lambda or Delta security alert.")
+		to_chat(user, "The storage unit will only unlock during a Red, Lambda, Gamma or Delta security alert.")
 
 /datum/component/storage/concrete/emergency/proc/unlock_me(datum/source)
 	if(locked)

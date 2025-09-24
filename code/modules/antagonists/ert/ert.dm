@@ -47,7 +47,7 @@
 	ADD_TRAIT(owner, TRAIT_DISK_VERIFIER, DEATHSQUAD_TRAIT)
 
 	var/code
-	for (var/obj/machinery/nuclearbomb/selfdestruct/bombue in GLOB.machines)
+	for (var/obj/machinery/nuclearbomb/selfdestruct/bombue in GLOB.nuke_list)
 		if (length(bombue.r_code) <= 5 && bombue.r_code != initial(bombue.r_code))
 			code = bombue.r_code
 			break

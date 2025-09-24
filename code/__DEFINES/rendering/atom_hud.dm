@@ -128,6 +128,11 @@
 #define SECHUD_AGONY  "hudagony"
 #define SECHUD_MUCK  "hudmuck"
 
+// Hotel HUDs
+#define SECHUD_HOTEL_STAFF "hudhotelstaff"
+#define SECHUD_HOTEL_SECURITY "hudhotelsec"
+#define SECHUD_HOTEL_MANAGER "hudhotelmanager"
+
 #define SECHUD_EMERGENCY_RESPONSE_TEAM_COMMANDER "hudemergencyresponseteamcommander"
 #define SECHUD_SECURITY_RESPONSE_OFFICER "hudsecurityresponseofficer"
 #define SECHUD_ENGINEERING_RESPONSE_OFFICER "hudengineeringresponseofficer"

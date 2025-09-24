@@ -79,7 +79,7 @@
 	// Check if owner has eye protection
 	if(action_owner.get_eye_protection())
 		// Warn the user, then return
-		to_chat(action_owner, span_warning("Your eyes need to be visible for this ability to work."))
+//		to_chat(action_owner, span_warning("Your eyes need to be visible for this ability to work.")) // REDMOON REMOVAL - hypno_less_spam
 		return FALSE
 
 	// Define owner's eyes

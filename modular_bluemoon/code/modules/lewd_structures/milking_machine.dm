@@ -399,7 +399,7 @@
 	// var/static/list/pleasure_amounts = list("off" = 0, "low" = LOW_LUST, "medium" = NORMAL_LUST, "hard" = HIGH_LUST)
 	// var/static/list/pain_amounts = list("off" = 0, "low" = 0, "medium" = 0.2, "hard" = 0.5)
 
-	current_mob?.adjust_arousal(arousal_amounts[current_mode] * delta_time)
+	current_mob?.adjust_arousal(arousal_amounts[current_mode] * delta_time, "milking machine")
 	// current_mob?.add_lust(pleasure_amounts[current_mode] * delta_time)
 	// current_mob.adjust_pain(pain_amounts[current_mode] * delta_time)
 

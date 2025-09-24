@@ -47,24 +47,25 @@
 	roles = list(/datum/antagonist/ert/security/red, /datum/antagonist/ert/medic/red, /datum/antagonist/ert/engineer/red)
 	opendoors = TRUE
 	code = "Red"
-	mission = "устраните угрозы Космической Станции. Её утеря стала бы серьёзным ударом для функционирования Пакта." // BLUEMOON ADD
+	mission = "устраните угрозы Космической Станции. Её утеря стала бы серьёзным ударом для функционирования ПАКТ." // BLUEMOON ADD
 
 /datum/ert/deathsquad
 	roles = list(/datum/antagonist/ert/deathsquad)
 	leader_role = /datum/antagonist/ert/deathsquad/leader
 	opendoors = TRUE
+	notify_players = FALSE
 	rename_team = "Deathsquad"
-	code = "Delta"
-	mission = "уничтожить Космическую Станцию, включая активы, в том числе весь Экипаж."
-	polldesc = "an elite Nanotrasen Strike Team"
+	code = "EPSILON"
+	mission = "уничтожить Космическую Станцию, включая активы, в том числе весь экипаж."
+	polldesc = "an Elite Nanotrasen Strike Team"
 	ertphrase = "modular_bluemoon/sound/ert/deathsquad_send_in.ogg"
 
 /datum/ert/asset_protection
 	roles = list(/datum/antagonist/ert/asset_protection)
 	leader_role = /datum/antagonist/ert/asset_protection/leader
 	rename_team = "Asset Protection Team"
-	code = "Epsilon"
-	mission = "защитите Активы Пакта. Сотрудники Пакта тоже являются Активами Пакта."
+	code = "LAMBDA"
+	mission = "защитите Активы ПАКТ. Сотрудники ПАКТ тоже являются Активами ПАКТ."
 	polldesc = "a Nanotrasen Asset Protection Team"
 	ertphrase = "modular_bluemoon/sound/ert/asset_protection_send.ogg"
 
@@ -73,7 +74,7 @@
 	leader_role = /datum/antagonist/ert/syndiesquad/leader
 	opendoors = TRUE
 	rename_team = "Syndicate Strike Team"
-	code = "Crimson"
+	code = "GAMMA"
 	mission = "разберитесь с проблемами, достойными Дельта-Кода."
 	polldesc = "an elite Syndicate Strike Team"
 

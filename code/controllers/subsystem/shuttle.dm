@@ -263,7 +263,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/emergency_reason = "\nПричина вызова:\n\n[call_reason]"
 	var/security_num = GLOB.security_level
 	switch(security_num)
-		if(SEC_LEVEL_RED,SEC_LEVEL_DELTA,SEC_LEVEL_LAMBDA)
+		if(SEC_LEVEL_RED,SEC_LEVEL_DELTA,SEC_LEVEL_LAMBDA,SEC_LEVEL_GAMMA)
 			emergency.request(null, signal_origin, html_decode(emergency_reason), 1) //There is a serious threat we gotta move no time to give them five minutes.
 		else
 			emergency.request(null, signal_origin, html_decode(emergency_reason), 0)

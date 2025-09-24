@@ -14152,6 +14152,13 @@
 	},
 /turf/open/floor/engine,
 /area/science/storage)
+"eQZ" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel,
+/area/cargo/office)
 "eRw" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -30134,10 +30141,9 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
-/obj/structure/chair{
-	dir = 8
+/obj/machinery/autolathe/secure{
+	name = "public autolathe"
 	},
-/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "kyh" = (
@@ -37386,22 +37392,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
-/obj/structure/rack,
-/obj/item/stack/packageWrap{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/stack/packageWrap{
-	pixel_x = -1;
-	pixel_y = -1
-	},
-/obj/item/stack/packageWrap{
-	pixel_x = 2;
-	pixel_y = -3
-	},
-/obj/item/stack/sheet/cardboard{
-	amount = 14
-	},
+/obj/machinery/computer/piratepad_control/civilian,
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "mSY" = (
@@ -45420,9 +45411,6 @@
 /turf/open/floor/wood/wood_large,
 /area/service/library)
 "pMh" = (
-/obj/machinery/piratepad/civilian{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
@@ -47533,16 +47521,28 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/structure/chair{
-	pixel_y = -2
-	},
-/obj/effect/landmark/start/assistant,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/camera{
 	c_tag = "Cargo - Foyer"
+	},
+/obj/structure/rack,
+/obj/item/stack/sheet/cardboard{
+	amount = 14
+	},
+/obj/item/stack/packageWrap{
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/obj/item/stack/packageWrap{
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/item/stack/packageWrap{
+	pixel_x = -3;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel,
 /area/cargo/office)
@@ -47615,9 +47615,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/autolathe/secure{
-	name = "public autolathe"
-	},
+/obj/machinery/piratepad/civilian,
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "qAs" = (
@@ -48851,10 +48849,6 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "qWb" = (
-/obj/machinery/computer/cargo{
-	dir = 8
-	},
-/obj/effect/turf_decal/bot/yellow,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -52792,6 +52786,17 @@
 /obj/structure/closet,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
+"soM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/chair{
+	pixel_y = -2;
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel,
+/area/cargo/office)
 "soV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -54751,6 +54756,10 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Cargo Bay - Port";
+	dir = 4
+	},
+/obj/effect/turf_decal/bot/yellow,
+/obj/machinery/computer/cargo{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -91082,8 +91091,8 @@ pRz
 qog
 qxt
 qkH
-nqU
-qkH
+soM
+eQZ
 wGW
 wni
 uar

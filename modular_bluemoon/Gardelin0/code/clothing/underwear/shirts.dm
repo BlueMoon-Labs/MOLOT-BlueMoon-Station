@@ -16,7 +16,7 @@
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/underwear.dmi'
 	icon_state = "longsleeve_croptop"
 	under_type = /obj/item/clothing/underwear/shirt
-	body_parts_covered = ARMS
+	body_parts_covered = CHEST | ARMS
 	slot_flags = ITEM_SLOT_SHIRT
 
 /obj/item/clothing/underwear/shirt/longsleeve_croptop_female
@@ -26,7 +26,7 @@
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/underwear.dmi'
 	icon_state = "longsleeve_croptop_female"
 	under_type = /obj/item/clothing/underwear/shirt
-	body_parts_covered = ARMS
+	body_parts_covered = CHEST | ARMS
 	slot_flags = ITEM_SLOT_SHIRT
 	fitted = NO_FEMALE_UNIFORM
 
@@ -52,7 +52,7 @@
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/underwear.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/underwear.dmi'
 	icon_state = "poly_lightshirt"
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST | ARMS
 
 /obj/item/clothing/underwear/shirt/formalshirt_light
 	name = "light formal shirt"
@@ -68,6 +68,7 @@
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/underwear.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/underwear.dmi'
 	icon_state = "transparent_top"
+	body_parts_covered = CHEST
 
 /obj/item/clothing/underwear/shirt/poly_corset
 	name = "polychromic corset"

@@ -21,6 +21,89 @@
 	var/datum/crafting_recipe/recipe_type = /datum/crafting_recipe/blast_doors
 	var/deconstruction = BLASTDOOR_FINISHED // deconstruction step
 
+/obj/machinery/door/poddoor/Initialize(mapload)
+	. = ..()
+	register_context()
+
+/obj/machinery/door/poddoor/examine(mob/user)
+	. = ..()
+	if(panel_open)
+		if(deconstruction == BLASTDOOR_FINISHED)
+			. += span_notice("The maintenance panel is opened and the electronics could be <b>pried</b> out.")
+			. += span_notice("\The [src] could be calibrated to a blast door controller ID with a <b>multitool</b> or a <b>blast door controller</b>.")
+		else if(deconstruction == BLASTDOOR_NEEDS_ELECTRONICS)
+			. += span_notice("The <i>electronics</i> are missing and there are some <b>wires</b> sticking out.")
+		else if(deconstruction == BLASTDOOR_NEEDS_WIRES)
+			. += span_notice("The <i>wires</i> have been removed and it's ready to be <b>sliced apart</b>.")
+
+/obj/machinery/door/poddoor/add_context(atom/source, list/context, obj/item/held_item, mob/user)
+	. = ..()
+	if(isnull(held_item))
+		return NONE
+	if(deconstruction == BLASTDOOR_NEEDS_WIRES && istype(held_item, /obj/item/stack/cable_coil))
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Wire assembly")
+		return CONTEXTUAL_SCREENTIP_SET
+	if(deconstruction == BLASTDOOR_NEEDS_ELECTRONICS && istype(held_item, /obj/item/electronics/airlock))
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Add electronics")
+		return CONTEXTUAL_SCREENTIP_SET
+	if(deconstruction == BLASTDOOR_FINISHED && istype(held_item, /obj/item/assembly/control))
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Calibrate ID")
+		return CONTEXTUAL_SCREENTIP_SET
+	//we do not check for special effects like if they can actually perform the action because they will be told they can't do it when they try,
+	//with feedback on what they have to do in order to do so.
+	switch(held_item.tool_behaviour)
+		if(TOOL_SCREWDRIVER)
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Open panel")
+			return CONTEXTUAL_SCREENTIP_SET
+		if(TOOL_MULTITOOL)
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Calibrate ID")
+			return CONTEXTUAL_SCREENTIP_SET
+		if(TOOL_CROWBAR)
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Remove electronics")
+			return CONTEXTUAL_SCREENTIP_SET
+		if(TOOL_WIRECUTTER)
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Remove wires")
+			return CONTEXTUAL_SCREENTIP_SET
+		if(TOOL_WELDER)
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Disassemble")
+			return CONTEXTUAL_SCREENTIP_SET
+
+/obj/machinery/door/poddoor/attackby(obj/item/I, mob/user, params)
+	if(deconstruction == BLASTDOOR_NEEDS_WIRES && istype(I, /obj/item/stack/cable_coil))
+		var/obj/item/stack/cable_coil/coil = I
+		var/datum/crafting_recipe/recipe = locate(recipe_type) in GLOB.crafting_recipes
+		var/amount_needed = recipe.reqs[/obj/item/stack/cable_coil]
+		if(coil.get_amount() < amount_needed)
+			balloon_alert(user, "not enough cable!")
+			return
+		balloon_alert(user, "adding cables...")
+		if(!do_after(user, 5 SECONDS, src))
+			return
+		coil.use(amount_needed)
+		deconstruction = BLASTDOOR_NEEDS_ELECTRONICS
+		balloon_alert(user, "cables added")
+		return
+	if(deconstruction == BLASTDOOR_NEEDS_ELECTRONICS && istype(I, /obj/item/electronics/airlock))
+		balloon_alert(user, "adding electronics...")
+		if(!do_after(user, 10 SECONDS, src))
+			return
+		qdel(I)
+		balloon_alert(user, "electronics added")
+		deconstruction = BLASTDOOR_FINISHED
+		return
+	if(deconstruction == BLASTDOOR_FINISHED && istype(I, /obj/item/assembly/control))
+		if(density)
+			balloon_alert(user, "open the door first!")
+			return
+		if(!panel_open)
+			balloon_alert(user, "open the panel first!")
+			return
+		var/obj/item/assembly/control/controller_item = I
+		id = controller_item.id
+		balloon_alert(user, "id changed")
+		return
+	return ..()
+
 /obj/machinery/door/poddoor/screwdriver_act(mob/living/user, obj/item/tool)
 	. = ..()
 	if (density)
@@ -35,10 +118,11 @@
 		balloon_alert(user, "open the door first!")
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	if (!panel_open)
+		balloon_alert(user, "open the panel first!")
 		return
 	if (deconstruction != BLASTDOOR_FINISHED)
 		return
-	var/change_id = tgui_input_number(user, "Set the door controllers ID", "Door Controller ID", id, 100)
+	var/change_id = tgui_input_number(user, "Set the door controllers ID (Current: [id])", "Door Controller ID", isnum(id) ? id : null, 100)
 	if(!change_id || QDELETED(usr) || QDELETED(src) || !usr.canUseTopic(src, be_close = TRUE, no_dextery = FALSE, no_tk = TRUE))
 		return
 	id = change_id
@@ -55,6 +139,7 @@
 		balloon_alert(user, "open the door first!")
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	if (!panel_open)
+		balloon_alert(user, "open the panel first!")
 		return
 	if (deconstruction != BLASTDOOR_FINISHED)
 		return
@@ -72,6 +157,7 @@
 		balloon_alert(user, "open the door first!")
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	if (!panel_open)
+		balloon_alert(user, "open the panel first!")
 		return
 	if (deconstruction != BLASTDOOR_NEEDS_ELECTRONICS)
 		return
@@ -90,6 +176,7 @@
 		balloon_alert(user, "open the door first!")
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	if (!panel_open)
+		balloon_alert(user, "open the panel first!")
 		return
 	if (deconstruction != BLASTDOOR_NEEDS_WIRES)
 		return
@@ -101,16 +188,6 @@
 		user.balloon_alert(user, "torn apart")
 		qdel(src)
 	return TOOL_ACT_TOOLTYPE_SUCCESS
-
-/obj/machinery/door/poddoor/examine(mob/user)
-	. = ..()
-	if(panel_open)
-		if(deconstruction == BLASTDOOR_FINISHED)
-			. += span_notice("The maintenance panel is opened and the electronics could be <b>pried</b> out.")
-		else if(deconstruction == BLASTDOOR_NEEDS_ELECTRONICS)
-			. += span_notice("The <i>electronics</i> are missing and there are some <b>wires</b> sticking out.")
-		else if(deconstruction == BLASTDOOR_NEEDS_WIRES)
-			. += span_notice("The <i>wires</i> have been removed and it's ready to be <b>sliced apart</b>.")
 
 /obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
 	id = "[idnum][id]"

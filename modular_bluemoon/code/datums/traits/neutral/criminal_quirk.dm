@@ -1,7 +1,8 @@
-/* GLOBAL_VAR_INIT(bluemoon_criminal_quirk_warden_name, "") // имя для вардена, чтобы во всех записях было одинаковым
+GLOBAL_VAR_INIT(bluemoon_criminal_quirk_warden_name, "") // имя для вардена, чтобы во всех записях было одинаковым
 GLOBAL_VAR_INIT(bluemoon_criminal_quirk_sergeants_names, "")
 GLOBAL_VAR_INIT(bluemoon_criminal_quirk_hos_name, "")
 GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
+GLOBAL_LIST_EMPTY(bluemoon_criminal_characters)
 
 #define ISSUER_TYPE_SECURITY_OFFICER 	1 // типы написания для корректировки послесловий, чтобы коммандер не писал "я увольняюсь"
 #define ISSUER_TYPE_SECURITY_WARDEN		2
@@ -29,8 +30,16 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 	var/mob/living/carbon/human/H = quirk_holder
 	var/time_before_creating_crimes = 1 MINUTES
+	if(quirk_holder.real_name in GLOB.bluemoon_criminal_characters)
+		qdel(src) // Предотвращает повторную выдачу квирка, если персонажа актуализируют
+		return
 	H.start_create_security_crime_timer(time_before_creating_crimes)
 	addtimer(CALLBACK(src, PROC_REF(on_crime_creation)), time_before_creating_crimes + 10 SECONDS, TIMER_DELETE_ME) // Если вызвать qdel сразу после объявления таймера, будет рантайм
+
+/datum/quirk/bluemoon_criminal/Destroy()
+	if(!(quirk_holder.real_name in GLOB.bluemoon_criminal_characters))
+		GLOB.bluemoon_criminal_characters += quirk_holder.name
+	. = ..()
 
 /datum/quirk/bluemoon_criminal/proc/on_crime_creation()
 	qdel(src)
@@ -78,9 +87,10 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 			crime_issued_by_officer = "Central Command Intern [random_unique_name(pick(MALE,FEMALE))]"
 			crime_issued_by_officer_type = ISSUER_TYPE_INTERN
 
-	if(prob(60))
-		target_records.fields["criminal"] = SEC_RECORD_STATUS_ARREST
-		sec_hud_set_security_status()
+	target_records.fields["criminal"] = SEC_RECORD_STATUS_ARREST
+	sec_hud_set_security_status()
+
+	to_chat(src, span_info("OOC: Наличие квирка нарушителя НЕ ЯВЛЯЕТСЯ оправданием для самоантагонизма. Он создан для интересных ситуаций и взаимодействия СБ с персоналом на почве нарушений вне станции. Be cool."))
 
 	var/know_about_crime_title = pick( // заголовок
 	"Вы нарушили закон!", "За вами охотятся арбитры!", "Ваши нарушения не остались без внимания!", "О вас не забыли!", "О вас не забудут!", \
@@ -143,7 +153,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 			if(2) // Оскорбления младших глав
 				victim_job = pick(victim_job_senior)
-				crime_number = "101-O-3"
+				crime_number = "101"
 				crime_description = pick(\
 				"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
 				know_about_crime_description = pick("Кажется, вы наговорили много лишнего и оскорбительного в адрес [victim_name]... Кажется, это был [victim_job]?...")
@@ -159,9 +169,6 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				crime_description = pick(\
 				"[pick("Засорял[ru_a()] эфир", "Неприлично спорил[ru_a()] в радиоканал", "Засорение рации", "Долго руга[ru_sya()] в радио")]")
 				know_about_crime_description = pick("Вы очень неплохо поругались с кем-то в рацию не так давно. Почему ощущение, что это может аукнуться?")
-
-
-	// СТАТЬИ 200-ОЙ КАТЕГОРИИ
 			if(5) // Оскорбления глав/корпораций
 				var/major_disgrace = FALSE
 				var/major_name = pick("НаноТрейзен", "НТ", "Синдиката", "Триглава", "Корпорации")
@@ -171,7 +178,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Распространние недостоверных слухов о", "Распространение клеветы о", "Распространение слухов о", "Клевета в адрес", "Оскорбление сотрудников")] [major_name]")
 				else
 					victim_job = pick(victim_job_command)
-				crime_number = "201-1"
+				crime_number = "101"
 				crime_description = pick(\
 				"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
 				if(major_disgrace)
@@ -179,26 +186,16 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				else
 					know_about_crime_description = pick("Кажется, вы наговорили много лишнего и оскорбительного в адрес [victim_name]... Кажется, это был [victim_job]?")
 
+	// СТАТЬИ 200-ОЙ КАТЕГОРИИ
 			if(6) // Драка
-				var/punched = FALSE
 				crime_number = "202"
 				crime_description = pick(\
-				"[pick("Толкал[ru_a()]","Пихал[ru_a()]","Толкнул[ru_a()]")] [victim_name] ([victim_job])")
-				if(prob(60))
-					punched = TRUE
-					crime_description = pick(\
-					"[pick("Побил[ru_a()]","Вступил[ru_a()] в драку с","Нападение на","Напал[ru_a()] на","Атаковал[ru_a()]","Ударил[ru_a()]","Ударил[ru_a()] несколько раз")] [victim_name] ([victim_job])")
-				if(punched)
-					know_about_crime_description = pick("Вы [pick("устроили драку","подрались")] с [victim_name] ([victim_job])")
-					know_about_crime_description += pick(\
-					", но уже плохо помните, за что.", " за оскорбление вашего родственника. Повезло, что вас оттащили друзья - иначе синяками бы не отделался.",\
-					" из-за какой-то хрени... Даже стыдно сейчас.", " из-за разных политических взглядов. С такими иначе не получается.")
-				else
-					know_about_crime_description = pick("Вы пару раз толкнули [victim_name] ([victim_job])")
-					know_about_crime_description += pick(\
-					", но уже плохо помните, за что.", " за оскорбление вашего родственника.",\
-					" из-за какой-то хрени... Даже стыдно сейчас.", " из-за разных политических взглядов.")
-				know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
+				"[pick("Побил[ru_a()]","Вступил[ru_a()] в драку с","Нападение на","Напал[ru_a()] на","Атаковал[ru_a()]","Ударил[ru_a()]","Ударил[ru_a()] несколько раз")] [victim_name] ([victim_job])")
+				know_about_crime_description = pick("Вы [pick("устроили драку","подрались")] с [victim_name] ([victim_job])")
+				know_about_crime_description += pick(\
+				", но уже плохо помните, за что.", " за оскорбление вашего родственника. Повезло, что вас оттащили друзья - иначе синяками бы не отделался.",\
+				" из-за какой-то хрени... Даже стыдно сейчас.", " из-за разных политических взглядов. С такими иначе не получается.")
+				know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как подрался
 
 			if(7) // Нежелательный контакт
 				victim_job = pick(victim_job_generic + victim_job_senior + victim_job_command)
@@ -211,7 +208,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				"Вы на спор попытались переспать с [victim_name]. То, как вам ответили - отличная смешная история, которую можно будет рассказать друзьям.")
 
 			if(8) // Превышение самообороны
-				crime_number = "302-П-2"
+				crime_number = "302"
 				crime_description = pick(\
 				"Во время драки с [victim_name] превысил[ru_a()] самооборону, чуть не убив", \
 				"Добивал[ru_a()] лежавшего на полу [victim_name] после нападения на себя", \
@@ -221,7 +218,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				"Вы помните, как на вас напал какой-то обмудок, из-за чего вы жёстко его избили. Охране это не понравилось, но удалось уйти.",\
 				"На вас кто-то напал и пришлось защититься, но кажется, вы превысили самооборону...",\
 				"Этот мудила, что влетев на вас с ножом, явно не ожидал, что один удар ногой сложит его пополам. Интересно, после пятого удара ногой в голову он вообще живой остался?")
-				know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
+				know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как подрался
 
 			if(9) // Неисполнение приказа
 				crime_number = "203"
@@ -357,6 +354,8 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 			if(ISSUER_TYPE_INTERN)
 				crime_description = "[pick(crime_number, "я кушать хочу...", "???", "Накажите там", "---")]"
 
+		crime_description += " (Ордер обязателен)"
+
 		// Добавление записи в БД
 		var/crime = GLOB.data_core.createCrimeEntry(crime_number, crime_description, crime_issued_by_officer, crime_time, TRUE)
 		GLOB.data_core.addMinorCrime(target_records.fields["id"], crime)
@@ -367,4 +366,4 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 #undef ISSUER_TYPE_SECURITY_SERGEANT
 #undef ISSUER_TYPE_SECURITY_HEAD
 #undef ISSUER_TYPE_COMMANDER
-#undef ISSUER_TYPE_INTERN */
+#undef ISSUER_TYPE_INTERN

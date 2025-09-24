@@ -32,6 +32,8 @@ SUBSYSTEM_DEF(materials)
 	var/list/rigid_stack_recipes = list(
 		new /datum/stack_recipe("Carving block", /obj/structure/carving_block, 5, time = 5, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
 	)
+	///A list of dimensional themes used by the dimensional anomaly and other things, most of which require materials to function.
+	var/list/datum/dimension_theme/dimensional_themes
 
 ///Ran on initialize, populated the materials and materials_by_category dictionaries with their appropiate vars (See these variables for more info)
 /datum/controller/subsystem/materials/proc/InitializeMaterials()
@@ -46,6 +48,7 @@ SUBSYSTEM_DEF(materials)
 		for(var/c in ref.categories)
 			materials_by_category[c] += list(ref)
 			materialtypes_by_category[c] += list(type)
+	dimensional_themes = init_subtypes_w_path_keys(/datum/dimension_theme)
 
 /datum/controller/subsystem/materials/proc/GetMaterialRef(datum/material/fakemat)
 	if(!materials)

@@ -802,10 +802,10 @@
 /obj/item/gun/proc/shoot_balls(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(!ishuman(user) || !ishuman(target))
 		return FALSE
-	if(!istype(src, /obj/item/gun/ballistic/shotgun) || on_cooldown())
+	if(!(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver/doublebarrel)) || on_cooldown())
 		return FALSE
 	var/obj/item/organ/genital/testicles/balls = target.getorganslot(ORGAN_SLOT_TESTICLES)
-	if(!balls || !(balls.is_exposed() || balls.always_accessible))
+	if(!istype(balls) || !(balls.is_exposed() || balls.always_accessible))
 		return FALSE
 	if(target.client?.prefs?.erppref == "No" || user.client?.prefs?.erppref == "No")
 		return FALSE

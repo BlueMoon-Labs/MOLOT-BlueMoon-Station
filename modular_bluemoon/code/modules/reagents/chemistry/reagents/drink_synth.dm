@@ -424,10 +424,7 @@
 			M.dna.features["ipc_screen"] = "Heart"
 			M.update_body()
 	if(prob(min(current_cycle/5,10)))
-		var/list/genits = M.adjust_arousal(current_cycle, "crocin", aphro = TRUE)
-		for(var/g in genits)
-			var/obj/item/organ/genital/G = g
-			to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
+		M.adjust_arousal(current_cycle, "crocin", aphro = TRUE)
 
 /datum/reagent/consumable/synthdrink/synthanol/database_dropper
 	name = "Database Dropper"

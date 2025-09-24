@@ -1,5 +1,5 @@
 # BlueMoon Station
-[![CI Suite](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/workflows/CI%20Suite/badge.svg)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station//actions?query=workflow%3A%22CI+Suite%22) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/pulls) [![HitCount](https://hits.dwyl.com/BlueMoon-Labs/MOLOT-BlueMoon-Station.svg)](https://hits.dwyl.com/BlueMoon-Labs/MOLOT-BlueMoon-Station) [![Одумайся](https://camo.githubusercontent.com/557504a5326b02363676cd365a4ec29e50199149db8e9d5afed26e2b99c7dc26/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617274253230776974682d7768792533462d627269676874677265656e2e7376673f7374796c653d666c6174)](https://www.youtube.com/watch?v=doA9R9k4C9s)
+[![CI Suite](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/workflows/CI%20Suite/badge.svg)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station//actions?query=workflow%3A%22CI+Suite%22) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/pulls) [![Одумайся](https://img.shields.io/badge/It-will%20eat%20you-red)](https://www.youtube.com/watch?v=doA9R9k4C9s)
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/e6pRWzMVMA) [![Boosty](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://boosty.to/bluemoon-ss13) [![Wiki](https://img.shields.io/badge/Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white)](https://wiki.ss13-bluemoon.ru/wiki/Заглавная_страница)
 
@@ -50,12 +50,12 @@
 * **Peace Syndicate Station**
 * **Festive Station**
 * **Kilo Station**
-* **OmegaStation**
-* **PubbyStation**
-* **LayeniaStation**
+* **Omega Station**
+* **Pubby Station**
+* **Layenia Station**
 * **Tau Station**
 * **Cog Station**
-* **Smexi Station**
+* **IceMoon Station**
 
 Если вы желаете заняться маппингом, настоятельно рекомендуем использовать инструмент [StrongDMM](https://github.com/SpaiR/StrongDMM), и ознакомиться с [Map Merging tools](http://tgstation13.org/wiki/Map_Merger).
 

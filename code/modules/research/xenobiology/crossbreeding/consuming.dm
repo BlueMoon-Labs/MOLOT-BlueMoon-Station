@@ -214,22 +214,14 @@ Consuming extracts:
 /obj/item/slime_cookie/bluespace/do_effect(mob/living/M, mob/user)
 	var/list/L = get_sub_areas_turfs(get_area(M))
 	var/turf/target
-	while (L.len && !target)
-		var/I = rand(1, L.len)
-		var/turf/T = L[I]
+	while (L.len)
+		var/turf/T = pick_n_take(L)
 		if (is_centcom_level(T.z))
-			L.Cut(I,I+1)
 			continue
-		if(!T.density)
-			var/clear = TRUE
-			for(var/obj/O in T)
-				if(O.density)
-					clear = FALSE
-					break
-			if(clear)
-				target = T
-		if (!target)
-			L.Cut(I,I+1)
+		if (T.is_blocked_turf())
+			continue
+		target = T
+		break
 
 	if(target)
 		do_teleport(M, target, 0, asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)

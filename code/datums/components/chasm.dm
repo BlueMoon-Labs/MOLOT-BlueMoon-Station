@@ -51,8 +51,9 @@
 	. = 0
 	if (is_safe())
 		return FALSE
-
 	var/atom/parent = src.parent
+	if(HAS_TRAIT(parent, TRAIT_CHASM_STOPPED))
+		return FALSE
 	var/to_check = AM ? list(AM) : parent.contents
 	for (var/thing in to_check)
 		if (droppable(thing))
@@ -65,7 +66,7 @@
 		return FALSE
 	if(!isliving(AM) && !isobj(AM))
 		return FALSE
-	if(is_type_in_typecache(AM, forbidden_types) || AM.throwing || (AM.movement_type & FLOATING))
+	if(is_type_in_typecache(AM, forbidden_types) || AM.throwing || (AM.movement_type & FLOATING) || AM.anchored)
 		return FALSE
 	//Flies right over the chasm
 	if(ismob(AM))
@@ -94,6 +95,8 @@
 			var/mob/living/L = AM
 			L.DefaultCombatKnockdown(100)
 			L.adjustBruteLoss(30)
+		if(isobj(AM))
+			AM.onZImpact(T)
 		falling_atoms -= AM
 
 	else

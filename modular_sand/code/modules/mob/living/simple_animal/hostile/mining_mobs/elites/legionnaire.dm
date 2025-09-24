@@ -1,9 +1,9 @@
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("grabs the legionnaire's skull and rips it off, bashing them with it until they break apart and die!"), \
-		messages_crusher = list("chops off both of the legionnaire's legs with the crusher in one single move, then stabs through their angry flying head with the hilt of it!"), \
-		messages_pka = list("shoots the legionnaire's skull which fucking explodes, and then shoots the ribcage of the angry body which also explodes!"), \
-		messages_pka_bayonet = list("stabs through the legionnaire's skull with the bayonet, which they promptly bash the rest of the body into dust with!"), \
+		messages_unarmed = list("хватает Легионнера за череп и избивает его им же, пока тот не рассыпется на кости!"), \
+		messages_crusher = list("отсекает ноги Легионнера одним взмахом крашера, после чего вонзает рукоятку в его злобный череп!"), \
+		messages_pka = list("отстреливает череп Легионнера, что разрывается на тысячу осколков, после чего завершает всё выстрелом в рёбра, также взрывая их!"), \
+		messages_pka_bayonet = list("втыкает свой нож в череп Легионнера, которым же и добили оставшуюся часть тела до праха!"), \
 		health_given = 50, \
 		threshold = (maxHealth/10 * 0.625))

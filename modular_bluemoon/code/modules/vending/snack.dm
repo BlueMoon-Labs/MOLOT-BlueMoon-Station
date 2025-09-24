@@ -56,8 +56,10 @@
 
 /obj/machinery/vending/snack/random/Initialize(mapload)
 	. = ..()
-	var/T = pick(subtypesof(/obj/machinery/vending/snack) - /obj/machinery/vending/snack/random)
-	new T(loc)
+	var/obj/machinery/vending/snack/T = pick(subtypesof(/obj/machinery/vending/snack) - /obj/machinery/vending/snack/random)
+	T = new T(loc)
+	T.pixel_x = pixel_x
+	T.pixel_y = pixel_y
 	return INITIALIZE_HINT_QDEL
 
 /obj/machinery/vending/snack/blue

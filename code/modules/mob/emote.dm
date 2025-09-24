@@ -42,6 +42,7 @@
 		return
 
 /datum/emote/flip
+	name = "Сделать Кувырок"
 	key = "flip"
 	key_third_person = "flips"
 	restraint_check = TRUE

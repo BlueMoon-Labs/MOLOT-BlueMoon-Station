@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/uniforms.dmi'
 	icon_state = "boobsuit"
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/civilian/lawyer/boobblouse
 	name = "custom-tailored blouse"
@@ -13,4 +14,5 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/uniforms.dmi'
 	icon_state = "m_hollysuit"
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
 

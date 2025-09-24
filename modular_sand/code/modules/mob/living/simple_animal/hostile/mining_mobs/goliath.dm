@@ -1,10 +1,10 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("punches violently into the goliath's skull, ripping out what could be described as their brain!", "rips off one of the goliath's tentacles bare-handed, then whips them with it until they die in humiliation!", "stomps their boot hard down on the goliath's jaw, ripping one of its fangs off with their hand and stabbing it in the eye"), \
-		messages_pka = list("climbs on top of the goliath, then shoots their skull open in a violent blast with their pka!"), \
-		messages_pka_bayonet = list("stabs the goliath's eyes out with their bayonet, then sticks them into the beast's mouth!", "slices off many of the tentacles of the goliath with their bayonet, until it finally gives out!"), \
-		messages_crusher = list("crushers the face of the goliath in one swift move with their crusher!"), \
+		messages_unarmed = list("хладнокровно разбивает череп голиафа, выдирая из него то, что может описываться как его мозг!", "отрывает щупальце голиафа голой рукой, избивая им его до смерти!", "вдавливает ботинок в нижнюю челюсть голиафа и вырывает его клык, вонзая его прямиком в глаз бывшего владельца!"), \
+		messages_pka = list("взбирается на голову голиафа и, вонзив свой протокинетический ускоритель, производит выстрел, оставляя на его месте огромную дыру!"), \
+		messages_pka_bayonet = list("выкалывает глаза голиафа свои ножом, после чего наносит финальный удар в его нёбо!", "отсекает почти все щупальца голиафа до тех пор, пока тот не сдастся!"), \
+		messages_crusher = list("рассекает лицо голиафа на части при помощи своего крашера!"), \
 		health_given = 7.5, \
 		threshold = (maxHealth/10 * 1.5), \
 		crusher_drop_mod = 2)

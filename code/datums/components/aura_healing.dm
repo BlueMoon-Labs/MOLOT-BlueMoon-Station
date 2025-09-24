@@ -41,6 +41,9 @@
 	/// The color to give the healing visual
 	var/healing_color = COLOR_GREEN
 
+	/// If false, any mob already having restricted (not stackable) aura healing will be ignored by another restricted aura healing source.
+	var/stackable = TRUE
+
 	/// A list of being healed to active alerts
 	var/list/mob/living/current_alerts = list()
 
@@ -60,6 +63,7 @@
 	simple_heal = 0,
 	limit_to_trait = null,
 	healing_color = COLOR_GREEN,
+	stackable = TRUE,
 )
 	if (!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -78,6 +82,7 @@
 	src.simple_heal = simple_heal
 	src.limit_to_trait = limit_to_trait
 	src.healing_color = healing_color
+	src.stackable = stackable
 
 /datum/component/aura_healing/Destroy(force)
 	STOP_PROCESSING(SSaura, src)
@@ -85,6 +90,8 @@
 
 	for(var/mob/living/alert_holder as anything in current_alerts)
 		alert_holder.clear_alert(alert_category)
+		if(!stackable)
+			REMOVE_TRAIT(alert_holder, TRAIT_MOB_IN_AURA_HEALING, src)
 	current_alerts.Cut()
 
 	return ..()
@@ -101,10 +108,14 @@
 		for(var/mob/living/candidate in view(range, parent))
 			if (!isnull(limit_to_trait) && !HAS_TRAIT(candidate, limit_to_trait))
 				continue
+			if(!stackable && HAS_TRAIT_NOT_FROM(candidate, TRAIT_MOB_IN_AURA_HEALING, src))
+				continue
 			to_heal[candidate] = TRUE
 	else
 		for(var/mob/living/candidate in range(range, parent))
 			if (!isnull(limit_to_trait) && !HAS_TRAIT(candidate, limit_to_trait))
+				continue
+			if(!stackable && HAS_TRAIT_NOT_FROM(candidate, TRAIT_MOB_IN_AURA_HEALING, src))
 				continue
 			to_heal[candidate] = TRUE
 
@@ -113,6 +124,8 @@
 			var/atom/movable/screen/alert/aura_healing/alert = candidate.throw_alert(alert_category, /atom/movable/screen/alert/aura_healing, new_master = parent)
 			alert.desc = "You are being healed by [parent]."
 			current_alerts[candidate] = TRUE
+			if(!stackable)
+				ADD_TRAIT(candidate, TRAIT_MOB_IN_AURA_HEALING, src)
 
 		if (should_show_effect && candidate.health < candidate.maxHealth)
 			new /obj/effect/temp_visual/heal(get_turf(candidate), healing_color)
@@ -142,6 +155,8 @@
 	for (var/mob/living/remove_alert_from as anything in current_alerts - to_heal)
 		remove_alert_from.clear_alert(alert_category)
 		current_alerts -= remove_alert_from
+		if(!stackable)
+			REMOVE_TRAIT(remove_alert_from, TRAIT_MOB_IN_AURA_HEALING, src)
 
 /atom/movable/screen/alert/aura_healing
 	name = "Aura Healing"

@@ -49,10 +49,12 @@ GLOBAL_LIST_EMPTY(bluespace_pipe_networks)
 /obj/machinery/atmospherics/pipe/bluespace/hide()
 	update_icon()
 
-/obj/machinery/atmospherics/pipe/bluespace/update_icon(showpipe)
+/obj/machinery/atmospherics/pipe/bluespace/update_icon(updates, showpipe)
 	underlays.Cut()
 
 	var/turf/T = loc
+	if(isnull(T))
+		return
 	if(level == 2 || !T.intact)
 		showpipe = TRUE
 		plane = GAME_PLANE

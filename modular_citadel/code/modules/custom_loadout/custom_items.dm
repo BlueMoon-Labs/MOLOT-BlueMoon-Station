@@ -399,7 +399,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/zuliecloak
 	body_parts_covered = CHEST|ARMS
-	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
+	slot_flags = ITEM_SLOT_OCLOTHING //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/cloakhood/zuliecloak

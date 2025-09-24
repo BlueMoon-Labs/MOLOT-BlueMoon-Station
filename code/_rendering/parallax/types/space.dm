@@ -1,7 +1,7 @@
 /datum/parallax/space
 	var/static/planet_offset_x = rand(100, 130)
 	var/static/planet_offset_y = rand(100, 130)
-	var/static/random_layer = pickweightAllowZero(list(
+	var/static/random_layer = pickweight(list(
 		/atom/movable/screen/parallax_layer/space/random/asteroids = 35,
 		/atom/movable/screen/parallax_layer/space/random/space_gas = 35,
 		null = 30

@@ -195,6 +195,7 @@
 	var/rank = null			//actual job
 	var/access_txt // mapping aid
 	var/bank_support = ID_FREE_BANK_ACCOUNT
+	var/withdraw_allowed = TRUE // BLUEMOON ADD
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
@@ -378,6 +379,16 @@
 	if(!registered_account && bank_support == ID_FREE_BANK_ACCOUNT)
 		set_new_account(user)
 		return
+
+	// BLUEMOON ADD START
+	if(!withdraw_allowed)
+		var/message = span_warning("ERROR: This card is not allowed withdraw credits.")
+		if(registered_account)
+			registered_account.bank_card_talk(message)
+		else
+			to_chat(user, message)
+		return
+	// BLUEMOON ADD END
 
 	if (world.time < registered_account.withdrawDelay)
 		registered_account.bank_card_talk("<span class='warning'>ERROR: UNABLE TO LOGIN DUE TO SCHEDULED MAINTENANCE. MAINTENANCE IS SCHEDULED TO COMPLETE IN [(registered_account.withdrawDelay - world.time)/10] SECONDS.</span>", TRUE)
@@ -870,6 +881,7 @@
 	name = "departmental card (FUCK)"
 	desc = "Provides access to the departmental budget."
 	icon_state = "budgetcard"
+	withdraw_allowed = FALSE // BLUEMOON ADD
 	var/department_ID = ACCOUNT_CIV
 	var/department_name = ACCOUNT_CIV_NAME
 

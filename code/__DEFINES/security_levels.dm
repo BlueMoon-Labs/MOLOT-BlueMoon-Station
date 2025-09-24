@@ -9,8 +9,9 @@
 #define SEC_LEVEL_AMBER 5
 #define SEC_LEVEL_RED	6
 #define SEC_LEVEL_LAMBDA 7
-#define SEC_LEVEL_EPSILON 8
-#define SEC_LEVEL_DELTA 9
+#define SEC_LEVEL_GAMMA 8
+#define SEC_LEVEL_EPSILON 9
+#define SEC_LEVEL_DELTA 10
 
 //Macro helpers.
 #define SECLEVEL2NUM(text)	(GLOB.all_security_levels.Find(text))

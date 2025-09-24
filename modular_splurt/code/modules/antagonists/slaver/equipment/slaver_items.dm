@@ -9,8 +9,12 @@
 	icon_state = "silencer"
 	item_state = "gizmo"
 	w_class = WEIGHT_CLASS_SMALL
+	verb_say = "states"
 
 /obj/item/slaver/gizmo/attack(mob/living/M, mob/user)
+	if(!M)
+		return
+
 	var/datum/antagonist/slaver/S = locate() in user.mind.antag_datums
 	if(!S) // Is not a slaver antag.
 		to_chat(user, "<span class='warning'>You aren't sure how to use this tech!</span>")
@@ -18,6 +22,12 @@
 
 	if(user == M)
 		to_chat(user, "<span class='warning'>You can't teleport yourself!</span>")
+		return
+
+	// Проверка префов
+	if(M?.client?.prefs.nonconpref == "No" || M?.client?.prefs.erppref == "No")
+		src.say("Операция отклонена. Цель помечена как неприкосновенная.")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 80, TRUE)
 		return
 
 	// Find a location to teleport to
@@ -276,3 +286,34 @@
 	new /obj/item/ammo_box/magazine/smg22/rubber(src)
 	new /obj/item/ammo_box/magazine/smg22/rubber(src)
 	new /obj/item/ammo_box/magazine/smg22/rubber(src)
+
+//BLUEMOON ADD
+/obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded
+	max_integrity = 400
+	deflect_chance = 30
+	max_equip = 7
+	operation_req_access = list(ACCESS_SLAVER)
+	internals_req_access = list(ACCESS_SLAVER)
+
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/shotgun
+	projectile = /obj/item/projectile/beam/disabler/mecha
+	projectiles_per_shot = 6
+	variance = 30
+
+/obj/item/projectile/beam/disabler/mecha
+	damage = 45
+
+/obj/vehicle/sealed/mecha/combat/gygax/dark/disable_loaded/Initialize(mapload)
+	. = ..()
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/shotgun
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/medical/sleeper
+	ME.attach(src)

@@ -5,16 +5,18 @@
 	// "Hi." -> [2, '.']
 	// "HALP GEROGE MELLONS, that swine, is GRIFFIN ME!"
 	// -> [4, 6, 7, ',', 4, 5, ',', '2', 7, 2, '!']
-	// "fuck,thissentenceissquashed" -> [4, ',', 21]
+	// "fuck,thissentenceissquashed" -> [4, ',', 22]
 
 	var/list/punctuation = list(",",":",";",".","?","!","\'","-")
-	var/regex/R = regex("(\[\\l\\d]*)(\[^\\l\\d\\s])?", "g")
+	var/regex/R = regex(@"([\l\d]*)([А-ЯЁа-яё]*)([^\l\d\sА-ЯЁа-яё])?", "g")
 	var/list/letter_count = list()
 	while(R.Find(message) != 0)
 		if(R.group[1])
 			letter_count += length(R.group[1])
-		if(R.group[2])
-			letter_count += R.group[2]
+		if(R.group[2]) // one cyrillic symbol is counted for two for some reason
+			letter_count += length(R.group[2])/2
+		if(R.group[3])
+			letter_count += R.group[3]
 
 	spawn(0)
 		for(var/item in letter_count)
@@ -38,7 +40,7 @@
 	var/path = "sound/chatter/[phomeme]_[length].ogg"
 
 	playsound(loc, path,
-		vol = 40, vary = 0, extrarange = 3)
+		vol = 50, vary = 0, extrarange = 3)
 
 	sleep((length + 1) * chatter_get_sleep_multiplier(phomeme))
 

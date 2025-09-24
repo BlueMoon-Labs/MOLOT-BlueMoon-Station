@@ -89,6 +89,7 @@
 	var/obj/item/note //Any papers pinned to the airlock
 	var/detonated = FALSE
 	var/abandoned = FALSE
+	var/autoname = FALSE
 	var/doorOpen = 'sound/machines/airlock.ogg'
 	var/doorClose = 'sound/machines/airlockclose.ogg'
 	var/doorDeni = 'sound/machines/deniedbeep.ogg' // i'm thinkin' Deni's
@@ -143,33 +144,6 @@
 	diag_hud_set_electrified()
 
 	return INITIALIZE_HINT_LATELOAD
-
-/obj/machinery/door/airlock/LateInitialize()
-	. = ..()
-	if (cyclelinkeddir)
-		cyclelinkairlock()
-	if(abandoned)
-		var/outcome = rand(1,100)
-		switch(outcome)
-			if(1 to 9)
-				var/turf/here = get_turf(src)
-				for(var/turf/closed/T in range(2, src))
-					here.PlaceOnTop(T.type)
-					qdel(src)
-					return
-				here.PlaceOnTop(/turf/closed/wall)
-				qdel(src)
-				return
-			if(9 to 11)
-				lights = FALSE
-				locked = TRUE
-			if(12 to 15)
-				locked = TRUE
-			if(16 to 23)
-				welded = TRUE
-			if(24 to 30)
-				panel_open = TRUE
-	update_icon()
 
 /obj/machinery/door/airlock/ComponentInitialize()
 	. = ..()
@@ -354,12 +328,6 @@
 				if(G.siemens_coefficient)//not insulated
 					new /datum/hallucination/shock(H)
 					return
-	if (cyclelinkedairlock)
-		if (!shuttledocked && !emergency && !cyclelinkedairlock.shuttledocked && !cyclelinkedairlock.emergency && allowed(user))
-			if(cyclelinkedairlock.operating)
-				cyclelinkedairlock.delayed_close_requested = TRUE
-			else
-				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2 DECISECONDS)
 	if(ishuman(user) && prob(5) && src.density)
 		var/mob/living/carbon/human/H = user
 		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
@@ -461,7 +429,7 @@
 	else
 		return FALSE
 
-/obj/machinery/door/airlock/update_icon(state=0, override=0)
+/obj/machinery/door/airlock/update_icon(updates, state=0, override=0)
 	if(operating && !override)
 		return
 	switch(state)
@@ -671,14 +639,14 @@
 /obj/machinery/door/airlock/do_animate(animation)
 	switch(animation)
 		if("opening")
-			update_icon(AIRLOCK_OPENING)
+			update_icon(ALL, AIRLOCK_OPENING)
 		if("closing")
-			update_icon(AIRLOCK_CLOSING)
+			update_icon(ALL, AIRLOCK_CLOSING)
 		if("deny")
 			if(machine_stat)
 				return
 
-			update_icon(AIRLOCK_DENY)
+			update_icon(ALL, AIRLOCK_DENY)
 			playsound(src, doorDeni, 50, 0, 3)
 			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon), AIRLOCK_CLOSED), 6 DECISECONDS, TIMER_DELETE_ME)
 
@@ -858,7 +826,6 @@
 		note = null
 		update_icon()
 		return
-	
 	return ..()
 
 /obj/machinery/door/airlock/attempt_wire_interaction(mob/user)
@@ -1197,7 +1164,7 @@
 			return FALSE
 	if(charge && !detonated)
 		panel_open = TRUE
-		update_icon(AIRLOCK_OPENING)
+		update_icon(ALL, AIRLOCK_OPENING)
 		visible_message("<span class='warning'>[src]'s panel is blown off in a spray of deadly shrapnel!</span>")
 		charge.forceMove(drop_location())
 		charge.ex_act(EXPLODE_DEVASTATE)
@@ -1223,8 +1190,14 @@
 
 	if(!density)
 		return TRUE
+	if (cyclelinkedairlock)
+		if (!shuttledocked && !emergency && !cyclelinkedairlock.shuttledocked && !cyclelinkedairlock.emergency)
+			if(cyclelinkedairlock.operating)
+				cyclelinkedairlock.delayed_close_requested = TRUE
+			else
+				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2 DECISECONDS)
 	operating = TRUE
-	update_icon(AIRLOCK_OPENING, 1)
+	update_icon(ALL, AIRLOCK_OPENING, 1)
 	sleep(1)
 	set_opacity(0)
 	update_freelook_sight()
@@ -1233,7 +1206,7 @@
 	air_update_turf(TRUE)
 	sleep(1)
 	layer = OPEN_DOOR_LAYER
-	update_icon(AIRLOCK_OPEN, 1)
+	update_icon(ALL, AIRLOCK_OPEN, 1)
 	operating = FALSE
 	if(delayed_close_requested)
 		delayed_close_requested = FALSE
@@ -1280,7 +1253,7 @@
 		killthis.ex_act(EXPLODE_HEAVY)//Smashin windows
 
 	operating = TRUE
-	update_icon(AIRLOCK_CLOSING, 1)
+	update_icon(ALL, AIRLOCK_CLOSING, 1)
 	layer = CLOSED_DOOR_LAYER
 	if(air_tight)
 		density = TRUE
@@ -1296,7 +1269,7 @@
 		set_opacity(1)
 	update_freelook_sight()
 	sleep(1)
-	update_icon(AIRLOCK_CLOSED, 1)
+	update_icon(ALL, AIRLOCK_CLOSED, 1)
 	operating = FALSE
 	delayed_close_requested = FALSE
 	if(safe)
@@ -1348,7 +1321,7 @@
 		return
 
 	operating = TRUE
-	update_icon(AIRLOCK_EMAG, 1)
+	update_icon(ALL, AIRLOCK_EMAG, 1)
 	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	addtimer(CALLBACK(src, PROC_REF(open_sesame)), 6 DECISECONDS, TIMER_DELETE_ME)
 
@@ -1357,7 +1330,7 @@
 /obj/machinery/door/airlock/proc/open_sesame()
 	operating = FALSE
 	if(!open())
-		update_icon(AIRLOCK_CLOSED, 1)
+		update_icon(ALL, AIRLOCK_CLOSED, 1)
 	obj_flags |= EMAGGED
 	lights = FALSE
 	locked = TRUE

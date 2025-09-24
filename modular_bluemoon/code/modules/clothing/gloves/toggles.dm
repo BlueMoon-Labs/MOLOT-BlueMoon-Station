@@ -23,6 +23,9 @@
 	. = ..()
 	if(!ishuman(user))
 		return
+	var/datum/action/item_action/button = actiontype
+	if(!button || button.type != /datum/action/item_action/toggle_gloves)
+		return
 	toggle(user)
 
 /obj/item/clothing/gloves/toggled/CtrlClick(mob/user)

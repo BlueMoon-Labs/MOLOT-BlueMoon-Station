@@ -13,6 +13,7 @@
 	flags_1 = NODECONSTRUCT_1
 	bolts = FALSE
 	var/static/mutable_appearance/nest_overlay = mutable_appearance('icons/mob/alien.dmi', "nestoverlay", LYING_MOB_LAYER)
+	var/weak = FALSE // BLUEMOON ADD - xenohybrids_improvements - если включено, из гнезда очень легко вырваться
 
 /obj/structure/bed/nest/user_unbuckle_mob(mob/living/buckled_mob, mob/living/user)
 	if(has_buckled_mobs())
@@ -34,7 +35,7 @@
 					"<span class='warning'>[M.name] struggles to break free from the gelatinous resin!</span>",\
 					"<span class='notice'>You struggle to break free from the gelatinous resin... (Stay still for two minutes.)</span>",\
 					"<span class='italics'>You hear squelching...</span>")
-				if(!do_after(M, 2 MINUTES, target = src, timed_action_flags = (IGNORE_HELD_ITEM | IGNORE_INCAPACITATED), extra_checks = CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, cuff_resist_check))))
+				if(!do_after(M, weak ? 2 SECONDS : 2 MINUTES, target = src, timed_action_flags = (IGNORE_HELD_ITEM | IGNORE_INCAPACITATED), extra_checks = CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, cuff_resist_check)))) // BLUEMOON EDUT - xenohybrids_improvements - добавлена проверка на weak
 					if(M && M.buckled)
 						to_chat(M, "<span class='warning'>You fail to unbuckle yourself!</span>")
 					return
@@ -54,7 +55,7 @@
 
 	if(M.getorgan(/obj/item/organ/alien/plasmavessel))
 		return
-	if(!user.getorgan(/obj/item/organ/alien/plasmavessel))
+	if(!user.getorgan(/obj/item/organ/alien/plasmavessel) && !user.getorgan(/obj/item/organ/alien/resinspinner/hybrids))
 		return
 
 	if(has_buckled_mobs())

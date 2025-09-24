@@ -85,11 +85,13 @@
 	var/equipment_name = "generic"
 	var/equipment_path = null
 	var/cost = 0
+	var/base_cost = 0
 
 /datum/data/mining_equipment/New(name, path, cost)
 	src.equipment_name = name
 	src.equipment_path = path
 	src.cost = cost
+	src.base_cost = cost
 
 /obj/machinery/mineral/equipment_vendor/Initialize(mapload)
 	. = ..()
@@ -105,6 +107,16 @@
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]-off"
+
+/obj/machinery/mineral/equipment_vendor/RefreshParts()
+	var/discount_rate = 0.0 // Делаем скидку за части выше Т1
+	for(var/obj/item/stock_parts/matter_bin/bin in component_parts) // За каждый бин внутри отдельно.
+		discount_rate += 0.025 * (bin.rating - 1) // По 2.5% за тир выше первого.
+
+	for (var/datum/data/mining_equipment/prize in prize_list)
+		if(ispath(prize.equipment_path, /obj/item/card/mining_point_card)) // Чтобы карточки по 50 и 500 очков не стоили меньше нужного.
+			continue
+		prize.cost = max(1, round(prize.base_cost * (1 - discount_rate)))
 
 /obj/machinery/mineral/equipment_vendor/ui_assets(mob/user)
 	return list(

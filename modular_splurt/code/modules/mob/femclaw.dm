@@ -71,6 +71,11 @@
 	gib()
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw/AttackingTarget()
+
+	if(!CanRape(target))
+		..() // Attack target to death
+		return
+
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
@@ -81,6 +86,10 @@
 	if(onLewdCooldown)
 		LosePatience()
 		return // Do nothing
+
+	if((target in enemies) && M.health > M.maxHealth * 0.4)
+		..() // Attack target
+		return
 
 	if(!M.pulledby)
 		if(!M.buckled && !M.density)

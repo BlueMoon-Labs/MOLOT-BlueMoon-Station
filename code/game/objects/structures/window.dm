@@ -496,9 +496,6 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		if(!(flags_1 & NODECONSTRUCT_1))
 			for(var/obj/item/shard/debris in spawnDebris(drop_location()))
 				transfer_fingerprints_to(debris) // transfer fingerprints to shards only
-	if(electrochromatic_status != NOT_ELECTROCHROMATIC)		//eh fine keep your kit.
-		new /obj/item/electronics/electrochromatic_kit(drop_location())
-		// Intentionally not setting the ID so you can't decon one to know all of the IDs.
 	qdel(src)
 	update_nearby_icons()
 
@@ -546,6 +543,9 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	density = FALSE
 	air_update_turf(TRUE)
 	update_nearby_icons()
+	if(electrochromatic_status != NOT_ELECTROCHROMATIC)
+		new /obj/item/electronics/electrochromatic_kit(drop_location())
+		// Intentionally not setting the ID so you can't decon one to know all of the IDs.
 	remove_electrochromatic()
 	return ..()
 

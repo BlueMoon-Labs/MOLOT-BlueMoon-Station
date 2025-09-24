@@ -1328,6 +1328,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
 /area/security/prison)
 "adC" = (
@@ -51257,6 +51260,9 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 5
 	},
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "clQ" = (
@@ -71152,6 +71158,9 @@
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
 "hXt" = (
@@ -74765,6 +74774,22 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/crew_quarters/dorms)
+"kzf" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/commons/fitness/recreation)
 "kzi" = (
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 2;
@@ -77950,6 +77975,12 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4
+	},
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
@@ -92573,6 +92604,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/circuit)
+"wNv" = (
+/obj/structure/chair/pedalgen{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/security/prison)
 "wOj" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -135245,7 +135286,7 @@ abA
 abQ
 acm
 acR
-abT
+wNv
 adB
 ady
 afg
@@ -199877,7 +199918,7 @@ yjn
 gQq
 qVC
 gzu
-gzu
+kzf
 gzu
 gzu
 tIT

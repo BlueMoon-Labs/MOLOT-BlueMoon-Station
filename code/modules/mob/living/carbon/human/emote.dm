@@ -1,4 +1,5 @@
 /datum/emote/sound/human/carbon/human/cry
+	name = "Плакать"
 	key = "cry"
 	key_third_person = "cries"
 	message = "рыдает."
@@ -25,6 +26,7 @@
 	restraint_check = TRUE
 
 /datum/emote/sound/human/carbon/human/eyebrow
+	name = "Приподнять бровь"
 	key = "eyebrow"
 	message = "поднимает бровь."
 
@@ -35,6 +37,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human/carbon/human/handshake
+	name = "Пожать Руку"
 	key = "handshake"
 	message = "пожимает собственные руки."
 	message_param = "пожимает руку %t."
@@ -42,6 +45,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human/carbon/human/hug
+	name = "Обниматься"
 	key = "hug"
 	key_third_person = "hugs"
 	message = "обнимает себя."
@@ -65,27 +69,32 @@
 	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
 /datum/emote/sound/human/carbon/human/mumble
+	name = "Бормотать"
 	key = "mumble"
 	key_third_person = "mumbles"
 	message = "бормочет!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human/carbon/human/pale
+	name = "Бледнеть"
 	key = "pale"
 	message = "бледнеет на секунду."
 
 /datum/emote/sound/human/carbon/human/raise
+	name = "Поднять руку"
 	key = "raise"
 	key_third_person = "raises"
 	message = "демонстративно поднимает свою руку."
 	restraint_check = TRUE
 
 /datum/emote/sound/human/carbon/human/shrug
+	name = "Пожать плечами"
 	key = "shrug"
 	key_third_person = "shrugs"
 	message = "пожимает плечами."
 
 /datum/emote/sound/human/carbon/human/wag
+	name = "Махать хвостом"
 	key = "wag"
 	key_third_person = "wags"
 	message = "начинает вилять своим хвостом."
@@ -179,6 +188,7 @@
 	muzzle_ignore = TRUE
 
 /datum/emote/sound/human/buzz
+	name = "Механически жужжать"
 	key = "buzz"
 	key_third_person = "buzzes"
 	message = "жужжит."
@@ -186,11 +196,13 @@
 	sound = 'sound/machines/buzz-sigh.ogg'
 
 /datum/emote/sound/human/buzz2
+	name = "Механически жужжать раздраженно"
 	key = "buzz2"
 	message = "жужжит дважды."
 	sound = 'sound/machines/buzz-two.ogg'
 
 /datum/emote/sound/human/ping
+	name = "Механически Звенеть"
 	key = "ping"
 	key_third_person = "pings"
 	message = "звенит."
@@ -215,6 +227,7 @@
 	sound = 'sound/voice/shriek1.ogg'
 
 /datum/emote/sound/human/syndicate
+	name = "Задание Синдиката"
 	key = "syndicate"
 	key_third_person = "syndicates"
 	message = "получает миссию со стороны Синдиката."
@@ -277,12 +290,15 @@
 	message = "пытается играть в 'Камень-Ножницы-Бумага'!"
 
 /datum/emote/sound/human/carbon/human/rockpaperscissors/rock
+	name = "Рошамбо: Камень"
 	key = "rock"
 
 /datum/emote/sound/human/carbon/human/rockpaperscissors/paper
+	name = "Рошамбо: Бумага"
 	key = "paper"
 
 /datum/emote/sound/human/carbon/human/rockpaperscissors/scissors
+	name = "Рошамбо: Ножницы"
 	key = "scissors"
 
 /datum/emote/sound/human/carbon/human/rockpaperscissors/run_emote(mob/living/carbon/human/user, params)

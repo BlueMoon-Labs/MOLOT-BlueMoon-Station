@@ -129,3 +129,8 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Head of Security, Warden, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Blueshield")
+
+/datum/gear/head/saints
+    name = "Saints hat"
+    subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+    path = /obj/item/clothing/head/saints

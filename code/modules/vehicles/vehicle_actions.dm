@@ -20,6 +20,11 @@
 	for(var/i in occupants)
 		grant_controller_actions(i)	//refresh
 
+/obj/vehicle/proc/remove_controller_action_type(actiontype, control_flag)
+	autogrant_actions_controller["[control_flag]"] -= actiontype
+	for(var/i in occupants)
+		remove_action_type_from_mob(actiontype, i)
+
 /obj/vehicle/proc/grant_action_type_to_mob(actiontype, mob/m)
 	if(isnull(LAZYACCESS(occupants, m)) || !actiontype)
 		return FALSE

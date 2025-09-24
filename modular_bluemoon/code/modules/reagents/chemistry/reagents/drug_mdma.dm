@@ -22,7 +22,7 @@
 	ReactpHLim 		= 3
 	CurveSharpT 	= 1
 	CurveSharppH 	= 1
-	ThermicConstant = 15
+	ThermicConstant = 10
 	HIonRelease 	= 0.02
 	RateUpLim 		= 1
 	FermiChem		= TRUE
@@ -49,7 +49,7 @@
 	reagent_state = LIQUID
 	taste_description = "plastic"
 	overdose_threshold = 30
-	metabolization_rate = 0.15
+	metabolization_rate = 0.10
 	metabolizing = FALSE
 
 /datum/chemical_reaction/mdma
@@ -130,7 +130,7 @@
 	list_reagents = list(/datum/reagent/drug/mdma = 5)
 
 /obj/item/reagent_containers/pill/mdma/Initialize()
-	icon_state = pick(list("pill7", "pill8", "pill10","pill11","pill12",))
+	icon_state = pick(list("pill7", "pill8", "pill10","pill11","pill12"))
 	. =..()
 
 
@@ -139,12 +139,12 @@
 	desc = "Горстка небольших кристаликов нежно-розового цвета."
 	icon = 'modular_bluemoon/icons/obj/moredrugs.dmi'
 	icon_state = "mdmapowder"
-	volume = 10
-	list_reagents = list(/datum/reagent/drug/mdma = 10)
+	volume = 5
+	list_reagents = list(/datum/reagent/drug/mdma = 5)
 
 /datum/chemical_reaction/powder_mdma
 	is_cold_recipe = TRUE
-	required_reagents = list(/datum/reagent/drug/mdma = 10)
+	required_reagents = list(/datum/reagent/drug/mdma = 5)
 	results = list()
 	required_temp = 250
 	mix_message = "Смесь выпадает в осадок, формируя маленькие кристалы нежно-розового цвета."

@@ -115,9 +115,10 @@
 	if(!.)
 		return .
 
-	var/mob/living/M = the_target
-	if(!M)
+	if(!isliving(the_target))
 		return .
+
+	var/mob/living/M = the_target
 
 	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
 		return FALSE

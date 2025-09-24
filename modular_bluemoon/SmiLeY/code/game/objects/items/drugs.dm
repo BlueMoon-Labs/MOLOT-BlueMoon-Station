@@ -405,7 +405,7 @@
 	image_state = "berrypile"
 	var/list/states = list("berrypile", "chilipepper", "eggplant", "soybeans", \
 		"plumphelmet", "carrot", "corn", "corn2", "corn_cob", "tomato", "ambrosiavulgaris", \
-		"watermelon", "apple", "applestub", "appleold", "lime", "lemon", "poisonberrypile", \
+		"watermelon", "melon", "apple", "applestub", "appleold", "lime", "lemon", "poisonberrypile", \
 		"grapes", "cabbage", "greengrapes", "orange", "potato", "potato-peeled", "wheat", \
 		"ashroom", "cshroom", "eshroom", "fshroom", "amanita", "gshroom", "bshroom", "dshroom", \
 		"bezglaznik", "krovnik", "pumpkin", "rice", "goldenapple", "gryab", "curer", "otorvyannik", \

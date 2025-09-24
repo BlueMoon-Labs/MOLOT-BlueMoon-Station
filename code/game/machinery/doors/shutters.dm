@@ -8,6 +8,7 @@
 	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 75, BOMB = 25, BIO = 100, RAD = 100, FIRE = 100, ACID = 70)
 	damage_deflection = 20
 	max_integrity = 100
+	recipe_type = /datum/crafting_recipe/shutters
 
 /obj/machinery/door/poddoor/shutters/preopen
 	icon_state = "open"

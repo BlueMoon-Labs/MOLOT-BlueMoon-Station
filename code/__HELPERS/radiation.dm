@@ -59,3 +59,22 @@
 	if(log)
 		log_game("Radiation pulse with intensity: [intensity] and range modifier: [range_modifier] in [loc_name(PL)][spawn_waves ? "" : " (contained by [nested_loc.name])"]")
 	return TRUE
+
+/// Bluemoon add.
+/// Если какой-либо нужный нам item фонит радиацией - этот прок используется для проверок на изоляцию.
+/// Это нужно для того, чтобы предметы в инвентаре, РПЕД и т.д. могли фонить, но не в радмешке для тел или радящике.
+/proc/is_radiation_blocked(atom/A)
+	if(!A)
+		return FALSE
+
+	for(var/atom/X = A; X; X = X.loc)
+		if(istype(X, /turf)) // "Голые" турфы не защищают
+			break
+		// Если у контейнера задан флаг защиты, радейка заблокируется
+		if(istype(X, /obj/structure/closet) && (X.rad_flags & RAD_PROTECT_CONTENTS))
+			return TRUE
+
+	if(A.rad_flags & RAD_PROTECT_CONTENTS)
+		return TRUE
+
+	return FALSE

@@ -415,6 +415,13 @@
 		var/obj/item/card/id/card = src
 		if (card.assignment == initial(card.assignment))
 			return "inteq"
+	if (istype(src, /obj/item/card/id/away/hotel/splurt)) // Чтобы не проверяло все карты одну за одной, если она и так не отеля
+		if (src.type == /obj/item/card/id/away/hotel/splurt) // Чтобы не подтягивало первый родительский для остальных карт
+			return "hotelstaff"
+		else if (istype(src, /obj/item/card/id/away/hotel/splurt/security))
+			return "hotelsec"
+		else if (istype(src, /obj/item/card/id/away/hotel/splurt/manager))
+			return "hotelmanager"
 	var/obj/item/card/id/I = GetID()
 	if(!I)
 		return

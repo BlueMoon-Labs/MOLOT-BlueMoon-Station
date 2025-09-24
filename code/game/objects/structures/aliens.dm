@@ -171,6 +171,7 @@
 	light_power = 0.5
 	var/lon_range = 4
 	var/node_range = NODERANGE
+	var/weak = FALSE // BLUEMOON ADD - xenohybrids_improvements - если включено, то трава не распространяется
 
 /obj/structure/alien/weeds/node/Initialize(mapload)
 	icon = 'icons/obj/smooth_structures/alien/weednode.dmi'
@@ -179,7 +180,8 @@
 	var/obj/structure/alien/weeds/W = locate(/obj/structure/alien/weeds) in loc
 	if(W && W != src)
 		qdel(W)
-	START_PROCESSING(SSobj, src)
+	if(!weak) // BLUEMOON ADD - xenohybrids_improvements
+		START_PROCESSING(SSobj, src)
 
 /obj/structure/alien/weeds/node/Destroy()
 	STOP_PROCESSING(SSobj, src)

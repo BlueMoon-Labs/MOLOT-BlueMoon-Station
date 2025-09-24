@@ -4,8 +4,15 @@
 	var/change_target_hole_cooldown = 0
 	var/chosen_hole
 	var/voremode = FALSE // Fixes runtime when grabbing victim
+	stat_attack = UNCONSCIOUS
+	robust_searching = TRUE
 	gold_core_spawnable = NO_SPAWN // Admin only
 	deathclaw_mode = "rape"
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/Initialize(mapload)
+	. = ..()
+	if(aggro_vision_range) // Если это не мирный моб, то его нельзя таскать, прятать в ящики и т.д.
+		mob_weight = MOB_WEIGHT_HEAVY_SUPER
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/gentle
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one has the bedroom eyes.."
@@ -17,22 +24,124 @@
 	deathclaw_mode = "abomination"
 
 //BLUEMOON ADD START || The sex mob will no longer even try to attack targets that are not suitable for prefs.
+/mob/living/simple_animal/hostile/deathclaw/funclaw/ListTargets()
+	. = ..()
+	for(var/E in enemies) // Ебашим врагов до смерти
+		if(!(E in .) && can_see(src, E, vision_range))
+			. += E
+
 /mob/living/simple_animal/hostile/deathclaw/funclaw/CanAttack(atom/the_target)
 	. = ..()
 	if(!.)
 		return .
 
-	var/mob/living/M = the_target
-	if(!M)
+	if(!isliving(the_target))
 		return .
+	
+	var/mob/living/M = the_target
 
-	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+	if(CanRape(M) || (M in enemies))
+		return TRUE
+		
+	return FALSE
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/CanRape(mob/living/M)
+	. = FALSE
+
+	if(!M.client)
 		return FALSE
 
-	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref != "No")
+	//So the new pref mobsexpref checks - Gardelin0
+	if(M.client?.prefs.mobsexpref == "No" \
+		|| M.client?.prefs.erppref != "Yes" \
+		|| M.client?.prefs.nonconpref == "No")
+		return FALSE
+
+	if(CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT))
 		return TRUE
 
-	return FALSE
+	return .
+
+// Если фанклава обидели, он будет защищаться 
+// Удары
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_hand(mob/living/user)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(user, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attackby(obj/item/I, mob/living/user, params, attackchain_flags, damage_multiplier)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(user, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_animal(mob/living/simple_animal/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+	
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_alien(mob/living/carbon/alien/humanoid/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_larva(mob/living/carbon/alien/larva/L)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(L, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_slime(mob/living/simple_animal/slime/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_drone(mob/living/simple_animal/drone/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_paw(mob/living/carbon/monkey/M)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(M, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_hulk(mob/living/carbon/human/user, does_attack_animation)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(user, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/attack_robot(mob/living/user)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(user, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/mech_melee_attack(obj/vehicle/sealed/mecha/mecha_attacker, mob/user)
+	var/prev = health
+	. = ..()
+	mark_enemy_if_hurt(user, prev)
+
+// Дальнее оружие
+/mob/living/simple_animal/hostile/deathclaw/funclaw/bullet_act(obj/item/projectile/Proj)
+	var/prev = health
+	. = ..()
+	var/mob/living/A = isliving(Proj.firer) ? Proj.firer : null
+	mark_enemy_if_hurt(A, prev)
+
+// Броски
+/mob/living/simple_animal/hostile/deathclaw/funclaw/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	var/prev = health
+	. = ..()
+	var/mob/living/A = isliving(throwingdatum?.thrower) ? throwingdatum.thrower : null
+	mark_enemy_if_hurt(A, prev)
+
+/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/mark_enemy_if_hurt(mob/living/A, prev_hp)
+	if(!A)
+		return
+	if(prev_hp <= health)
+		return
+	if(A in range(vision_range, src))
+		if(A in enemies)
+			enemies -= A
+		enemies.Insert(1, A) // Условно первый в агролисте личных врагов
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/moan()
 	var/message_to_display = pick("рычит%S%", "рычит%S% от удовольствия")
@@ -41,7 +150,7 @@
 		span_lewd("Вы слышите наполненный удовольствием рык."),
 		ignored_mobs = get_unconsenting(), omni = TRUE)
 
-	var/list/moans = list('modular_splurt/sound/lewd/deathclaw_grunt1.ogg',
+	var/static/list/moans = list('modular_splurt/sound/lewd/deathclaw_grunt1.ogg',
 					'modular_splurt/sound/lewd/deathclaw_grunt2.ogg',
 					'modular_splurt/sound/lewd/deathclaw_grunt3.ogg',
 					'modular_splurt/sound/lewd/deathclaw_grunt4.ogg',
@@ -58,9 +167,51 @@
 	playlewdinteractionsound(loc, sound, 80, 1, -1)
 	lastmoan = sound
 
+/mob/living/simple_animal/hostile/deathclaw/funclaw/PickTarget(list/Targets)
+	//. = ..() Не требуется
+
+	// targets_from — точка, от которой считаем дистанцию
+	// Targets — список возможных целей
+	// enemies — список личных врагов
+
+	var/list/cands = list()
+	var/min_d = vision_range * 5 // Большая мин дист, что бы перебить при проверке
+
+	// 1) ближайший ЛИЧНЫЙ враг
+	for(var/atom/A in Targets)
+		if(!(A in enemies))
+			continue
+		var/d = get_dist(targets_from, A)
+		if(d < min_d)
+			min_d = d
+			cands = list(A)
+		else if(d == min_d)
+			cands += A
+
+	if(cands.len)
+		return pick(cands)
+
+	// 2) ближайшая ОБЫЧНАЯ цель
+	cands.Cut()
+	min_d = vision_range * 5 // Большая мин дист, что бы перебить при проверке
+
+	for(var/atom/B in Targets)
+		var/d2 = get_dist(targets_from, B)
+		if(d2 < min_d)
+			min_d = d2
+			cands = list(B)
+		else if(d2 == min_d)
+			cands += B
+
+	return cands.len ? pick(cands) : null
 //BLUEMOON ADD END
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
+
+	if(!CanRape(target))
+		..() // Attack target to death
+		return
+
 	var/mob/living/M = target
 
 	var/onLewdCooldown = FALSE
@@ -76,9 +227,13 @@
 			if(onLewdCooldown)
 				return // Do nothing
 		if("rape")
-			if(onLewdCooldown || M.health > 60)
+			if(onLewdCooldown || M.health > M.maxHealth * 0.4)
 				..() // Attack target
 				return
+		
+	if((target in enemies) && M.health > M.maxHealth * 0.4)
+		..() // Attack target
+		return
 
 	if(!M.pulledby)
 		if(!M.buckled && !M.density)
@@ -110,6 +265,9 @@
 	if(deathclaw_mode != "abomination" || M.client?.prefs.unholypref != "Yes")
 		addtimer(CALLBACK(src, PROC_REF(do_lewd_action), M), rand(12, 16))
 
+/mob/living/simple_animal/hostile/deathclaw/LoseTarget()
+	. = ..()
+	stop_pulling()
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
 	switch(rand(2))

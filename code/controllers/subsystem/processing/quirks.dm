@@ -39,7 +39,13 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 						  list("Звериный Дух", "Дуллахан"),
 						  list("Хорошо слышимый", "Немота"),
 						  list(BLUEMOON_TRAIT_NAME_SHRIEK, "Немота"),
-						  list("Сотрудник НаноТрейзен", "Сотрудник Синдиката")
+						  list("Сотрудник НаноТрейзен", "Сотрудник Синдиката"),
+						  list(BLUEMOON_TRAIT_NAME_POWERSAVING, "Жаждущий"),
+						  list(BLUEMOON_TRAIT_NAME_POWERSAVING, "Бездонный Желудок"),
+						  list(BLUEMOON_TRAIT_NAME_SYSCLEANER, "Восстановительный Метаболизм"),
+						  list(BLUEMOON_TRAIT_NAME_RESTORATIVE_NANOBOTS, "Восстановительный Метаболизм"),
+						  list(BLUEMOON_TRAIT_NAME_COOLANT_GENERATOR, "Жаждущий"),
+						  list(BLUEMOON_TRAIT_NAME_WATER_VULNERABILITY, BLUEMOON_TRAIT_NAME_SHOWER_NEED)
 						  )
 		//BLUEMOON ADD END
 	return ..()

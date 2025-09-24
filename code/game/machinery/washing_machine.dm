@@ -150,12 +150,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
 	var/mutable_appearance/upper_half
 	var/mob_is_immobilized = FALSE //to avoid healing miracles
-	var/mob_size_limit = 1.20 //too big creatures won't fit inside
+	var/mob_size_limit = MOB_SIZE_HUMAN //too big creatures won't fit inside
+	var/buildstackamount = 5 // BLUEMOON ADD
 
 /obj/machinery/washing_machine/Initialize(mapload)
 	. = ..()
 	upper_half = mutable_appearance(icon, "wm_upper_half")
 	upper_half.layer = ABOVE_MOB_LAYER
+	register_context()
 
 /obj/machinery/washing_machine/Destroy()
 	if(has_buckled_mobs())
@@ -177,7 +179,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		to_chat(user, "<span class='notice'>[src] is busy.</span>")
 		return TRUE
 	if(has_buckled_mobs())
-		to_chat(user, "<span class='notice'>Someone is stuck in it.</span>")
+		to_chat(user, span_warning("Someone is stuck in it."))
 		return TRUE
 	if(!state_open)
 		open_machine()
@@ -304,13 +306,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		. += "wm_panel"
 
 /obj/machinery/washing_machine/attackby(obj/item/W, mob/user, params)
-	if(panel_open && !busy && default_unfasten_wrench(user, W))
-		return
-
-	if(default_deconstruction_screwdriver(user, null, null, W))
-		update_icon()
-		return
-
 	if(istype(W, /obj/item/clothing/head/mob_holder))
 		to_chat(user, "<span class='warning'>It's too unwieldly to put in this way.</span>")
 		return TRUE
@@ -325,7 +320,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			to_chat(user, "<span class='warning'>[src] must be cleaned up first.</span>")
 			return TRUE
 
-		if(contents.len >= max_wash_capacity)
+		if(contents.len >= max_wash_capacity || has_buckled_mobs())
 			to_chat(user, "<span class='warning'>The washing machine is full!</span>")
 			return TRUE
 
@@ -345,6 +340,32 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	else
 		return ..()
+
+// Deconstruct
+/obj/machinery/washing_machine/wrench_act(mob/living/user, obj/item/tool)
+	if(!panel_open || busy)
+		return FALSE
+	if(user.a_intent == INTENT_HARM)
+		if(has_buckled_mobs())
+			to_chat(user, span_warning("Someone is stuck in it!"))
+			return TRUE
+		tool.play_tool_sound(src)
+		if(tool.use_tool(src, user, 3 SECONDS))
+			playsound(user, 'sound/items/deconstruct.ogg', 50, vary = TRUE)
+			deconstruct(TRUE)
+			return TOOL_ACT_TOOLTYPE_SUCCESS
+		return TRUE
+	if(user.a_intent == INTENT_HELP)
+		if(default_unfasten_wrench(user, tool))
+			return TOOL_ACT_TOOLTYPE_SUCCESS
+		return TRUE
+	return ..()
+
+/obj/machinery/washing_machine/screwdriver_act(mob/living/user, obj/item/I)
+	if(default_deconstruction_screwdriver(user, null, null, I))
+		update_icon()
+		return TOOL_ACT_TOOLTYPE_SUCCESS
+	return TRUE
 
 /obj/machinery/washing_machine/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling) && !has_buckled_mobs())
@@ -387,8 +408,32 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 200)
 		START_PROCESSING(SSfastprocess, src)
 
+/obj/machinery/washing_machine/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	. = ..()
+	. = CONTEXTUAL_SCREENTIP_SET
+	LAZYSET(context[SCREENTIP_CONTEXT_ALT_LMB], INTENT_ANY, state_open ? "Закрыть крышку" : "Открыть крышку")
+
+	if(held_item?.tool_behaviour == TOOL_SCREWDRIVER)
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, panel_open ? "Закрутить панель" : "Открутить панель")
+		return .
+
+	if(panel_open && held_item?.tool_behaviour == TOOL_WRENCH)
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_HELP, "Открутить")
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_HARM, "Разобрать")
+		return .
+	
+	var/message = ""
+	if(user.get_active_held_item())
+		message = "Положить"
+	else
+		if(state_open)
+			message = "Опустошить"
+		else
+			message = "Включить"
+	LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, message)
+
 /obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
-	new /obj/item/stack/sheet/metal (loc, 2)
+	new /obj/item/stack/sheet/metal (loc, buildstackamount)
 	qdel(src)
 
 /obj/machinery/washing_machine/open_machine(drop = FALSE)
@@ -402,7 +447,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return FALSE
 
 /obj/machinery/washing_machine/proc/TryStuck(mob/living/carbon/human/user, unusual_chance = 5, usual_chance = 2)
-	if(get_size(user) >= mob_size_limit)
+	if(user.mob_size > mob_size_limit)
 		return FALSE
 	var/stuck_chance = (iscatperson(user) || HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_FAT) || HAS_TRAIT(user, TRAIT_CURSED) || HAS_TRAIT(user, TRAIT_NYMPHO) || isclownjob(user)) ? unusual_chance : usual_chance
 	if((user.client && user.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(user.client?.prefs.toggles, VERB_CONSENT) && user.client?.prefs.nonconpref == "Yes"))
@@ -416,7 +461,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/user_buckle_mob(mob/living/carbon/human/H, mob/living/user, check_loc)
 	if(!ishuman(H))
 		return
-	if(get_size(H) >= mob_size_limit)
+	if(H.mob_size > mob_size_limit)
 		to_chat(user, "<span class='danger'>[H] is too big for [src].")
 		return
 	var/shoving_time = 2 SECONDS

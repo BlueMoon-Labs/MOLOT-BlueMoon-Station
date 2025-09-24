@@ -45,7 +45,7 @@
 	item_state = "backpack"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-	force = 5
+	force = 11
 
 /obj/item/storage/backpack/satchel/cheese
 	name = "Cheese Backpack"
@@ -54,7 +54,18 @@
 	item_state = "satchel"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-	force = 5
+	force = 11
+
+/obj/item/storage/backpack/breadpack
+	name = "Breadpack"
+	desc = "Рюкзак выглядящий в стиле буханки хлеба, на этом весь интерес кончается. Пахнет вульпой. Это точно можно использовать в качестве оружия!"
+	icon_state = "breadpack"
+	item_state = "breadpack"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	force = 11
 
 /obj/item/storage/box/donator/bm/wh_kit
 	name = "A box of Unholy Armor"

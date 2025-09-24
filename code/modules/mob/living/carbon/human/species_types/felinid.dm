@@ -4,7 +4,7 @@
 	id = SPECIES_FELINID
 	limbs_id = SPECIES_HUMAN
 
-	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF","mam_tail" = "Cat", "mam_ears" = "Cat","tail_human" = "None", "ears" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade", "mam_body_markings" = list())
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF","mam_tail" = "Cat", "mam_ears" = "Cat", "deco_wings" = "None", "mam_body_markings" = list())
 
 	mutanttongue = /obj/item/organ/tongue/feline
 	mutantears = /obj/item/organ/ears/cat
@@ -41,7 +41,7 @@
 	var/obj/item/organ/ears/cat/ears = H.getorgan(/obj/item/organ/ears/cat)
 	var/obj/item/organ/tail/cat/tail = H.getorgan(/obj/item/organ/tail/cat)
 
-	if(ears)
+	if(ears && !istype(new_species, src.type))
 		var/obj/item/organ/ears/NE
 		if(new_species && new_species.mutantears)
 			// Roundstart cat ears override new_species.mutantears, reset it here.
@@ -53,7 +53,7 @@
 			NE = new /obj/item/organ/ears
 		NE.Insert(H, drop_if_replaced = FALSE)
 
-	if(tail)
+	if(tail && !istype(new_species, src.type))
 		var/obj/item/organ/tail/NT
 		if(new_species && new_species.mutanttail)
 			// Roundstart cat tail overrides new_species.mutanttail, reset it here.

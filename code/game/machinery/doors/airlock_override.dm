@@ -186,7 +186,13 @@
 		update_appearance()
 		return
 
-	if(level == SEC_LEVEL_EPSILON)
+	if(level == SEC_LEVEL_GAMMA)
+		security_override = TRUE
+		normalspeed = FALSE
+		update_appearance()
+		return
+
+	if(level == SEC_LEVEL_DELTA)
 		security_override = TRUE
 		normalspeed = FALSE
 		update_appearance()

@@ -41,6 +41,24 @@
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/watermelonjuice = 5)
 
+// BLUEMOON ADD START || melon
+/obj/item/reagent_containers/food/snacks/melonslice
+	name = "melon slice"
+	desc = "A slice of watery goodness."
+	icon_state = "melonslice"
+	filling_color = "#FFCC00"
+	tastes = list("melon" = 1)
+	foodtype = FRUIT
+	juice_results = list(/datum/reagent/consumable/melonjuice = 5)
+
+/obj/item/reagent_containers/food/snacks/melonslice/space
+	name = "space melon slice"
+	desc = "A slice of something strange, like a liquid void."
+	icon_state = "spacemelonslice"
+	filling_color = "#147cb9"
+	tastes = list("spacemelon" = 1)
+// BLUEMOON ADD END
+
 /obj/item/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
 	desc = "It's a handful of candy corn. Can be stored in a detective's hat."

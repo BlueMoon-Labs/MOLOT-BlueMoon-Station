@@ -137,7 +137,7 @@ GLOBAL_VAR_INIT(emergency_access, FALSE)
 	for(var/area/maintenance/A in world)
 		for(var/obj/machinery/door/airlock/D in A)
 			D.emergency = TRUE
-			D.update_icon(0)
+			D.update_icon(ALL, 0)
 	minor_announce("Ограничения на доступ в тоннели и внешние шлюзы были сняты.", "Внимание! Объявлен режим ЧС!",1)
 	GLOB.emergency_access = TRUE
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("emergency maintenance access", "enabled"))
@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(emergency_access, FALSE)
 	for(var/area/maintenance/A in world)
 		for(var/obj/machinery/door/airlock/D in A)
 			D.emergency = FALSE
-			D.update_icon(0)
+			D.update_icon(ALL, 0)
 	minor_announce("Ограничения на доступ в тоннели технического обслуживания были восстановлены.", "Внимание! Режим ЧС на станции был отменён:")
 	GLOB.emergency_access = FALSE
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("emergency maintenance access", "disabled"))

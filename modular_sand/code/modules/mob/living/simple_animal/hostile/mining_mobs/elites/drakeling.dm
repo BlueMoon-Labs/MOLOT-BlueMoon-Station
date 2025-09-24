@@ -46,10 +46,10 @@
 /mob/living/simple_animal/hostile/asteroid/elite/drakeling/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/glory_kill, \
-		messages_unarmed = list("rips off the little dragon's horns, then shoves them into their mouth!", "grabs the drakeling's head and rips it off violently from their neck with their bare hands!"), \
-		messages_crusher = list("slashes the drakeling's head in half with their crusher, dividing it in two!"), \
-		messages_pka = list("hits the drakeling's maw repeatedly with the stock of their PKA until it breaks off, then shoots it in the head for good measure!", "grabs the drakeling's neck, and shoots it's head off with their PKA!"), \
-		messages_pka_bayonet = list("kicks the drakeling onto the ground belly up, then slices their tummy open with the bayonet as it screams in agony!"), \
+		messages_unarmed = list("отрывает рога маленького дрейка, после чего вонзает их в его рот!", "хватает дрейклинга за голову и отрывает её от тела голыми руками!"), \
+		messages_crusher = list("разрубает голову дрейклинга своим крашером пополам, оставляя обе половины висеть на чудом целой шее!"), \
+		messages_pka = list("несколько раз ударяет по челюсти дрейклинга прикладом своего протокинетического ускорителя, пока та не отломится, а затем для пущего эффекта стреляет ему в голову!", "хватает дрейклинга за шею, после чего отстреливает его голову при помощи своего протокинетического ускорителя!"), \
+		messages_pka_bayonet = list("пинает дрейклинга на землю спиной, после чего вспарывает его брюхо ножом, пока беззащитный зверь кричит в агонии!"), \
 		health_given = 50, \
 		threshold = (maxHealth/10 * 0.625))
 

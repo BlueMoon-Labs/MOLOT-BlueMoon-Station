@@ -60,6 +60,10 @@
 				sound = 'modular_citadel/sound/voice/scream_moth.ogg'
 			if(is_species(user, /datum/species/mammal/vox))
 				sound = 'modular_bluemoon/kovac_shitcode/sound/species/voxscream.ogg'
+			// BLUEMOON ADD START - xenohybrids_improvements - вариация крика для ксеногибридов (АДАМ, ПЕРЕПИШИ ГОВНОКОД СВЕРХУ, ПОЖАЛУЙСТА)
+			if(is_species(user, /datum/species/xeno))
+				sound = pick('sound/alien/Voice/hurt1.ogg', 'sound/alien/Voice/hurt2.ogg')
+			// BLUEMOON ADD END
 		if(isalien(user))
 			sound = 'sound/voice/hiss6.ogg'
 		LAZYINITLIST(user.alternate_screams)
@@ -74,6 +78,7 @@
 	. = ..()
 
 /datum/emote/sound/human/snap
+	name = "Щелкнуть Пальцами"
 	key = "snap"
 	key_third_person = "snaps"
 	message = "щёлкает пальцами."
@@ -84,6 +89,7 @@
 	sound = 'modular_citadel/sound/voice/snap.ogg'
 
 /datum/emote/sound/human/snap2
+	name = "Пару раз Щёлкнуть Пальцами"
 	key = "snap2"
 	key_third_person = "snaps2"
 	name = "snap twice"
@@ -95,6 +101,7 @@
 	sound = 'modular_citadel/sound/voice/snap2.ogg'
 
 /datum/emote/sound/human/snap3
+	name = "Трижды Щёлкнуть Пальцами"
 	key = "snap3"
 	key_third_person = "snaps thrice"
 	name = "snap thrice"
@@ -106,6 +113,7 @@
 	sound = 'modular_citadel/sound/voice/snap3.ogg'
 
 /datum/emote/sound/human/awoo
+	name = "Выть"
 	key = "awoo"
 	key_third_person = "lets out an awoo"
 	message = "воет!"
@@ -115,6 +123,7 @@
 	sound = 'modular_citadel/sound/voice/awoo.ogg'
 
 /datum/emote/sound/human/hiss
+	name = "Шипеть"
 	key = "hiss"
 	key_third_person = "hisses"
 	message = "шипит!"
@@ -123,7 +132,17 @@
 	restraint_check = FALSE
 	sound = 'modular_citadel/sound/voice/hiss.ogg'
 
+/datum/emote/sound/human/hiss/run_emote(mob/user, params)
+	if(isalienadult(user))
+		sound = sound(get_sfx("hiss"))
+	else if(iscatperson(user))
+		sound = 'modular_bluemoon/sound/emotes/felinid_hiss.ogg'
+	else
+		sound = initial(sound)
+	. = ..()
+
 /datum/emote/sound/human/purr
+	name = "Мурчать"
 	key = "purr"
 	key_third_person = "purrs softly"
 	message = "мягко мурлычет."
@@ -142,6 +161,7 @@
 	sound = 'modular_citadel/sound/voice/nya.ogg'
 
 /datum/emote/sound/human/weh
+	name = "Вех"
 	key = "weh"
 	key_third_person = "lets out a weh"
 	message = "издаёт ВЕХ!"
@@ -151,6 +171,7 @@
 	sound = 'modular_citadel/sound/voice/weh.ogg'
 
 /datum/emote/sound/human/peep
+	name = "Пискнуть по-птичьи 1"
 	key = "peep"
 	key_third_person = "peeps like a bird"
 	message = "чирикает!"
@@ -167,6 +188,7 @@
 	restraint_check = TRUE
 
 /datum/emote/sound/human/mothsqueak
+	name = "Пищать словно Крыска"
 	key = "msqueak"
 	key_third_person = "lets out a tiny squeak"
 	message = "пищит!"
@@ -199,6 +221,7 @@
 	. = ..()
 
 /datum/emote/sound/human/squish
+	name = "Хлюпать"
 	key = "squish"
 	key_third_person = "squishes"
 	message = "сквишает!"
@@ -224,6 +247,7 @@
 	. = ..()
 
 /datum/emote/sound/human/clap1
+	name = "Единично хлопнуть"
 	key = "clap1"
 	key_third_person = "clap1s"
 	name = "clap once"

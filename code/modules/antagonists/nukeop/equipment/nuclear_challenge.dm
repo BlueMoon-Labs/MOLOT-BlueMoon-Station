@@ -1,7 +1,7 @@
-#define CHALLENGE_TELECRYSTALS 500
+#define CHALLENGE_TELECRYSTALS 300
 #define PLAYER_SCALING 1.5
 #define CHALLENGE_TIME_LIMIT 25000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
-#define CHALLENGE_PLAYERS_TARGET 50 //target players population. anything below is a malus to the challenge tc bonus.
+#define CHALLENGE_PLAYERS_TARGET 25 //target players population. anything below is a malus to the challenge tc bonus.
 #define TELECRYSTALS_MALUS_SCALING 1.5 //the higher the value, the bigger the malus.
 #define CHALLENGE_SHUTTLE_DELAY 25000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
 

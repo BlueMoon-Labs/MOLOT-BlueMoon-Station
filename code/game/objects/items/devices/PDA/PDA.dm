@@ -307,13 +307,12 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<ul>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)]Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)]Messenger</a></li>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=41'>[PDAIMG(notes)]View Crew Manifest</a></li>" // BLUEMOON ADD
 
 				if (cartridge)
 					if (cartridge.access & CART_CLOWN)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=Honk'>[PDAIMG(honk)]Honk Synthesizer</a></li>"
 						dat += "<li><a href='byond://?src=[REF(src)];choice=Trombone'>[PDAIMG(honk)]Sad Trombone</a></li>"
-					if (cartridge.access & CART_MANIFEST)
-						dat += "<li><a href='byond://?src=[REF(src)];choice=41'>[PDAIMG(notes)]View Crew Manifest</a></li>"
 					if(cartridge.access & CART_STATUS_DISPLAY)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=42'>[PDAIMG(status)]Set Status Display</a></li>"
 					dat += "</ul>"
@@ -450,6 +449,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 					dat += "Temperature: [round(environment.return_temperature()-T0C)]&deg;C<br>"
 				dat += "<br>"
+			if (41) //crew manifest
+				dat += "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
+				dat += "<center>[GLOB.data_core.get_manifest_bm(monochrome=TRUE)]</center>"
 			else//Else it links to the cart menu proc. Although, it really uses menu hub 4--menu 4 doesn't really exist as it simply redirects to hub.
 				dat += cartridge.generate_menu()
 

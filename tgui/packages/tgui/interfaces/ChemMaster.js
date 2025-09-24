@@ -188,7 +188,8 @@ const ChemicalBufferEntry = (props, context) => {
   );
 };
 
-const PackagingControlsItem = props => {
+const PackagingControlsItem = (props, context) => {
+  const { data } = useBackend(context);
   const {
     label,
     amountUnit,
@@ -206,7 +207,7 @@ const PackagingControlsItem = props => {
         stepPixelSize={15}
         value={amount}
         minValue={1}
-        maxValue={20}
+        maxValue={20 * (data.max_create_amount_multiplier || 1)}
         onChange={onChangeAmount} />
       <Button
         ml={1}

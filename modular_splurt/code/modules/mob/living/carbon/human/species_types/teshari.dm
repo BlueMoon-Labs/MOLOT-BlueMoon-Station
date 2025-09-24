@@ -39,6 +39,7 @@
 
 
 /datum/species/mammal/teshari/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load)
+	. = ..() // BLUEMOON ADD - явно забыли
 	if(ishuman(C))
 		C.verbs += /mob/living/carbon/human/proc/sonar_ping
 		C.verbs += /mob/living/carbon/human/proc/hide

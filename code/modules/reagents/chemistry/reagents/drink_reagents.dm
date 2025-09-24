@@ -111,10 +111,22 @@
 	glass_name = "glass of watermelon juice"
 	glass_desc = "A glass of watermelon juice."
 
+// BLUEMOON ADD START
+/datum/reagent/consumable/melonjuice
+	name = "Melon Juice"
+	description = "Delicious juice made from melon."
+	color = "#FFCC00" // rgb(255, 204, 0)
+	taste_description = "juicy melon"
+	glass_icon_state = "glass_yellow"
+	glass_name = "glass of melon juice"
+	glass_desc = "A glass of melon juice."
+	hydration = 4
+// BLUEMOON ADD END
+
 /datum/reagent/consumable/lemonjuice
 	name = "Lemon Juice"
 	description = "This juice is VERY sour."
-	color = "#863333" // rgb: 175, 175, 0
+	color = "#AFAF00" // rgb: 175, 175, 0
 	taste_description = "sourness"
 	glass_icon_state  = "lemonglass"
 	glass_name = "glass of lemon juice"
@@ -124,7 +136,7 @@
 /datum/reagent/consumable/banana
 	name = "Banana Juice"
 	description = "The raw essence of a banana. HONK"
-	color = "#863333" // rgb: 175, 175, 0
+	color = "#AFAF00" // rgb: 175, 175, 0
 	taste_description = "banana"
 	glass_icon_state = "banana"
 	glass_name = "glass of banana juice"
@@ -1116,7 +1128,7 @@
 			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
 	if(ishuman(M) && !(M.client?.prefs.cit_toggles & NO_APHRO))
 		var/mob/living/carbon/human/H = M
-		var/list/adjusted = H.adjust_arousal(5,aphro = TRUE)
+		var/list/adjusted = H.adjust_arousal(5,aphro = TRUE, silent = TRUE)
 		for(var/g in adjusted)
 			var/obj/item/organ/genital/G = g
 			to_chat(M, "<span class='userlove'>You feel like playing with your [G.name]!</span>")

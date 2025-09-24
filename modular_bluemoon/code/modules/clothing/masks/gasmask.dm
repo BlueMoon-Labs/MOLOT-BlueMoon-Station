@@ -59,3 +59,28 @@
 	item_state = "hahun_eidovox"
 
 /////////////////////////////////////////////////////
+
+/obj/item/clothing/mask/gas/syndicate/legion_mask
+	name = "Legion mask"
+	desc = "A mad smile that haunts its victims in their nightmares."
+	icon_state = "frank"
+	item_state = "frank"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Frank" = list(
+			RESKIN_ICON_STATE = "frank",
+			RESKIN_ITEM_STATE = "frank"
+		),
+		"Julie" = list(
+			RESKIN_ICON_STATE = "julie",
+			RESKIN_ITEM_STATE = "julie"
+		),
+		"Joey" = list(
+			RESKIN_ICON_STATE = "joey",
+			RESKIN_ITEM_STATE = "joey"
+		),
+		"Susie" = list(
+			RESKIN_ICON_STATE = "susie",
+			RESKIN_ITEM_STATE = "susie"
+		),
+	)

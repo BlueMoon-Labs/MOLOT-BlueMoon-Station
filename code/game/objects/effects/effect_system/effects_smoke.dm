@@ -331,3 +331,11 @@
 	smoke.effect_type = smoke_type
 	smoke.set_up(range, location)
 	smoke.start()
+
+//Сигертный дым
+/obj/effect/particle_effect/smoke/cigsmoke
+	lifetime = 4
+	alpha = 48
+
+/datum/effect_system/smoke_spread/cigsmoke
+	effect_type = /obj/effect/particle_effect/smoke/cigsmoke

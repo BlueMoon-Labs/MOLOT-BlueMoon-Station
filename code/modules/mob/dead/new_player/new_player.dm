@@ -585,6 +585,8 @@
 			level = "red"
 		if(SEC_LEVEL_LAMBDA)
 			level = "lambda"
+		if(SEC_LEVEL_GAMMA)
+			level = "gamma"
 		if(SEC_LEVEL_EPSILON)
 			level = "epsilon"
 		if(SEC_LEVEL_DELTA)

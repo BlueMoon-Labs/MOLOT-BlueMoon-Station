@@ -36,6 +36,7 @@
 	icon_state = "steyr_m1912"
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/steyr_shoot.ogg'
+	pin = /obj/item/firing_pin/alert_level/blue
 
 /obj/item/modkit/auto9_kit
 	name = "Auto 9 Kit"
@@ -723,6 +724,7 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
 	icon_state = "anstrum"
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/anstrumshot.ogg'
+	pin = /obj/item/firing_pin/alert_level/blue
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -893,7 +895,7 @@
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/rshfuture_shot.ogg'
-	
+
 /obj/item/modkit/rsh_future
 	name = "Special .38 Mars Kit"
 	desc = "A modkit for making a .38 Mars Special into a RSH-Future."

@@ -1,3 +1,4 @@
+
 /obj/item/borg/upgrade/xwelding
 	name = "engineering cyborg experimental welding tool"
 	desc = "An experimental welding tool replacement for the engineering module's standard welding tool."
@@ -5,33 +6,57 @@
 	require_module = TRUE
 	module_type = list(/obj/item/robot_module/engineering)
 	module_flags = BORG_MODULE_ENGINEERING
+	/// Старая сварка
+	var/obj/item/weldingtool/largetank/cyborg/oldtool
+	/// Новая сварка
+	var/obj/item/weldingtool/experimental/cyborg/exptool
 
 /obj/item/borg/upgrade/xwelding/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		var/obj/item/weldingtool/largetank/cyborg/WT = locate() in R
-		var/obj/item/weldingtool/experimental/XW = locate() in R
-		if(!WT)
-			WT = locate() in R.module
-		if(!XW)
-			XW = locate() in R.module
-		if(XW)
-			to_chat(user, "<span class='warning'>This unit is already equipped with an experimental welding tool module.</span>")
+	if(!.)
+		return
+
+	for (exptool in R.module)
+		if(exptool)
+			to_chat(user, "<span class='warning'>This unit is already equipped with an experimental welder module.</span>")
 			return FALSE
-		XW = new(R.module)
-		qdel(WT)
-		R.module.basic_modules += XW
-		R.module.add_module(XW, FALSE, TRUE)
+
+	var/oldtool_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старой сварки
+		oldtool = R.module.modules[i]
+		if(istype(oldtool, /obj/item/weldingtool/largetank/cyborg))
+			oldtool_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
+
+	exptool = new(R.module)
+	R.module.basic_modules += exptool
+	R.module.add_module(exptool, FALSE, TRUE)
+	var/newtool_index = R.module.modules.Find(exptool)
+	for(exptool in R.module) // Можно оформить и для старой сварки, здесь сделано для новой, без разницы.
+		R.module.modules.Swap(oldtool_index, newtool_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(oldtool_index, newtool_index) // как и `basic_modules +=` и `add.module` выше
+	R.module.remove_module(oldtool, TRUE) // Замена произошла - избавляемся от старой сварки
 
 /obj/item/borg/upgrade/xwelding/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if (.)
-		for(var/obj/item/weldingtool/experimental/XW in R.module)
-			R.module.remove_module(XW, TRUE)
+	if (!.)
+		return
 
-		var/obj/item/weldingtool/largetank/cyborg/WT = new (R.module)
-		R.module.basic_modules += WT
-		R.module.add_module(WT, FALSE, TRUE)
+	var/newtool_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления
+		exptool = R.module.modules[i]
+		if(istype(exptool, /obj/item/weldingtool/experimental/cyborg))
+			newtool_index = i
+			break
+
+	oldtool = new(R.module)
+	R.module.basic_modules += oldtool
+	R.module.add_module(oldtool, FALSE, TRUE)
+	var/oldtool_index = R.module.modules.Find(oldtool)
+	for(oldtool in R.module)
+		R.module.modules.Swap(newtool_index, oldtool_index)
+		R.module.basic_modules.Swap(newtool_index, oldtool_index)
+	R.module.remove_module(exptool, TRUE)
 
 /* Shit doesnt work, work on it later
 /obj/item/borg/upgrade/plasma
@@ -72,34 +97,57 @@
 	require_module = TRUE
 	module_type = list(/obj/item/robot_module/engineering)
 	module_flags = BORG_MODULE_ENGINEERING
+	/// Старый РПД
+	var/obj/item/pipe_dispenser/cyborg/RPD
+	/// Новый РПД
+	var/obj/item/pipe_dispenser/bluespace/cyborg/BRPD
 
 /obj/item/borg/upgrade/bsrpd/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
-		var/obj/item/pipe_dispenser/PD = locate() in R
-		var/obj/item/pipe_dispenser/bluespace/BD = locate() in R // Skyrat edit
-		if(!PD)
-			PD = locate() in R.module
-		if(!BD)
-			BD = locate() in R.module //There's gotta be a smarter way to do this.
-		if(BD)
+	if(!.)
+		return
+
+	for(BRPD in R.module.modules)
+		if(BRPD)
 			to_chat(user, "<span class='warning'>This unit is already equipped with a BSRPD module.</span>")
 			return FALSE
 
-		BD = new(R.module)
-		qdel(PD)
-		R.module.basic_modules += BD
-		R.module.add_module(BD, FALSE, TRUE)
+	var/RPD_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Начинаем искать индекс старого инструмента
+		RPD = R.module.modules[i]
+		if(istype(RPD, /obj/item/pipe_dispenser/cyborg))
+			RPD_index = i
+			break // Находим - прекращаем, не обрабатываем for'ом весь список.
+
+	BRPD = new(R.module)
+	R.module.basic_modules += BRPD
+	R.module.add_module(BRPD, FALSE, TRUE)
+	var/BRPD_index = R.module.modules.Find(BRPD)
+	for(BRPD in R.module) // Можно оформить и для старого инструмента, здесь сделано для нового, без разницы.
+		R.module.modules.Swap(RPD_index, BRPD_index) // Swap в обоих листах важно настолько же
+		R.module.basic_modules.Swap(RPD_index, BRPD_index) // как и `basic_modules +=` и `add.module` выше
+	R.module.remove_module(RPD, TRUE) // Замена произошла - избавляемся от старого инструмента
 
 /obj/item/borg/upgrade/bsrpd/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if (.)
-		for(var/obj/item/pipe_dispenser/bluespace/BD in R.module) // Skyrat edit
-			R.module.remove_module(BD, TRUE)
+	if(!.)
+		return
 
-		var/obj/item/pipe_dispenser/PD = new (R.module)
-		R.module.basic_modules += PD
-		R.module.add_module(PD, FALSE, TRUE)
+	var/BRPD_index = 0
+	for(var/i = 1, i <= R.module.modules.len, i++) // Этот алгоритм зеркален тому, что для добавления.
+		BRPD = R.module.modules[i]
+		if(istype(BRPD, /obj/item/pipe_dispenser/bluespace/cyborg))
+			BRPD_index = i
+			break
+
+	RPD = new(R.module)
+	R.module.basic_modules += RPD
+	R.module.add_module(RPD, FALSE, TRUE)
+	var/RPD_index = R.module.modules.Find(RPD)
+	for(RPD in R.module)
+		R.module.modules.Swap(BRPD_index, RPD_index)
+		R.module.basic_modules.Swap(BRPD_index, RPD_index)
+	R.module.remove_module(BRPD, TRUE)
 
 /obj/item/borg/upgrade/expand/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()

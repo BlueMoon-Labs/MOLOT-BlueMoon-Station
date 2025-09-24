@@ -18,6 +18,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/brain/whistle
+	name = "Свистеть"
 	key = "whistle"
 	key_third_person = "whistles"
 	message = "свистит!"

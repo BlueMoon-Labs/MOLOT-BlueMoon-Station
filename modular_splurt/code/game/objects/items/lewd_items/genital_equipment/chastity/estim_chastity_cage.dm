@@ -26,7 +26,6 @@
 	if(!COOLDOWN_FINISHED(src, last_activation))
 		return
 	var/mob/living/carbon/human/H = estim_cage.equipment.holder_genital.owner
-	var/genits = null // BLUEMOON ADD
 	switch(estim_cage.mode)
 		if("shock")
 			playsound(H, get_sfx("sparks"), 20*power)
@@ -38,7 +37,7 @@
 
 			if(HAS_TRAIT(H, TRAIT_MASO))
 				//BLUEMOON EDIT START
-				genits = H.adjust_arousal(20*power, "masochism", maso = TRUE)
+				H.adjust_arousal(20*power, "masochism", maso = TRUE)
 				H.handle_post_sex(NORMAL_LUST*power, null, null, H.getorganslot(CUM_TARGET_PENIS))
 
 				if(prob(30))
@@ -55,12 +54,8 @@
 			if(prob(30))
 				H.emote(pick("moan", "shiver", "blush"))
 
-			genits = H.adjust_arousal(20*power, "e-stimcage")
+			H.adjust_arousal(20*power, "e-stimcage")
 			H.handle_post_sex(LOW_LUST*power, null, null, H.getorganslot(CUM_TARGET_PENIS))
-	if(genits)
-		for(var/g in genits)
-			var/obj/item/organ/genital/G = g
-			to_chat(H, span_userlove("[G.arousal_verb]!"))
 		//BLUEMOON EDIT END
 
 	COOLDOWN_START(src, last_activation, 1 SECONDS)

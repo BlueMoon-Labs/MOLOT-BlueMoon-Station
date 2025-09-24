@@ -22,7 +22,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/david
 	body_parts_covered = CHEST|ARMS
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi' //BLUEMOON ADD мы хотим чтобы даже когда оно на шее оно смотрело именно сюда, а не в файл одежды шеи
-	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_OCLOTHING
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cloakhood/david

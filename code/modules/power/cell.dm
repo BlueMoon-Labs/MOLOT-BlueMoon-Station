@@ -28,6 +28,11 @@
 	var/has_charge_overlay = TRUE
 	rad_flags = RAD_NO_CONTAMINATE // Prevent the same cheese as with the stock parts
 
+	/// If a cell emits any radiation
+	var/cell_is_radioactive = FALSE
+	/// The strength of emmited radiation
+	var/rad_strength = 0
+
 /obj/item/stock_parts/cell/get_cell()
 	return src
 
@@ -58,10 +63,20 @@
 	. = ..()
 
 /obj/item/stock_parts/cell/process()
-	if(self_recharge)
-		give(chargerate * 0.25)
+	var/has_process = self_recharge || cell_is_radioactive
+	if(has_process)
+		if(self_recharge)
+			give(chargerate * 0.25)
+		if(cell_is_radioactive)
+			irradiate()
 	else
 		return PROCESS_KILL
+
+/// Proc for radioactive cells made with uranium and considered as contaminating its surroundings
+/obj/item/stock_parts/cell/proc/irradiate(datum/component/radioactive/Comp)
+	AddComponent(/datum/component/radioactive, 0, src, 0)
+	Comp = GetComponent(/datum/component/radioactive)
+	Comp.strength = round(rad_strength*(charge < maxcharge ? 1 : 0.5), 0.5) // Округляем к ближайшей целой половине
 
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()
