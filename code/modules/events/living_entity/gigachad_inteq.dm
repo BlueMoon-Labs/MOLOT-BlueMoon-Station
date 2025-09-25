@@ -281,8 +281,10 @@
 	adjustHealth(200 / severity)
 	src.AIStatus = AI_OFF
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, 0)
-	sleep(20)
-	src.AIStatus = AI_ON
+	addtimer(CALLBACK(src, PROC_REF(switch_AIStatus_on)), 2 SECONDS)
+
+/mob/living/simple_animal/hostile/malf_drone/experimental/proc/switch_AIStatus_on()
+	AIStatus = AI_ON
 
 /obj/effect/temp_visual/drone_scan
 	icon = 'modular_bluemoon/icons/mob/dron.dmi'
@@ -307,3 +309,32 @@
 	var/turf/T = get_turf(src)
 	new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack(T)
 	new /obj/item/robot_module/syndicate/inteq(T)
+
+/mob/living/simple_animal/hostile/alien/queen/king
+	icon = 'modular_bluemoon/icons/mob/king.dmi'
+	name = "King"
+	desc = "It has a massive body with a characteristic head crest divided into two horns, between which there is a third, shorter protrusion. The king lacks the pair of pectoral limbs typical of the queen, but has a massive tail and dorsal breathing tubes resembling small tails."
+	icon_state = "Normal King Walking"
+	icon_living = "Normal King Walking"
+	icon_dead = "Normal King Dead"
+	health = 800
+	maxHealth = 800
+	melee_damage_lower = 40
+	melee_damage_upper = 70
+	armour_penetration = 20
+	minimum_distance = 1
+	retreat_distance = 1
+	ranged = FALSE
+	loot = list(/obj/effect/mob_spawn/alien/corpse/humanoid/queen/king)
+
+/mob/living/simple_animal/hostile/alien/queen/king/SpreadPlants()
+	return FALSE //Кинг не королева, чтобы создавать яйца
+
+/obj/effect/mob_spawn/alien/corpse/humanoid/queen/king
+	name = "king corpse"
+	mob_type = /mob/living/carbon/alien/humanoid/royal/queen/king
+
+/mob/living/carbon/alien/humanoid/royal/queen/king
+	icon = 'modular_bluemoon/icons/mob/king.dmi'
+	icon_state = "Normal King Dead"
+	stat = DEAD
