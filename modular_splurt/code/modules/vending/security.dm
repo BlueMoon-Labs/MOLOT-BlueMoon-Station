@@ -246,6 +246,7 @@
 	..()
 	new /obj/item/megaphone/sec(src)
 	new /obj/item/radio/headset/heads/ntr(src)
+	new /obj/item/radio/headset/heads/ntr/alt (src)
 	new /obj/item/stamp/syndicate(src)
 	new /obj/item/stamp/ntr(src)
 	new /obj/item/lighter/nt_rep(src)

@@ -63,6 +63,20 @@
 	else
 		user.typing_indicator_state = /obj/effect/overlay/typing_indicator
 
+/obj/item/radio/headset/heads/ntr/alt
+	name = "\improper the NanoTrasen Representative bowman headset"
+	desc = "A headset especially for emergency response personnel. Protects ears from flashbangs."
+	icon_state = "cent_headset_alt"
+	item_state = "cent_headset_alt"
+	bowman = TRUE
+
+/obj/item/radio/headset/heads/ntr/alt/equipped(mob/user, slot)
+	..()
+	if((slot == ITEM_SLOT_EARS_LEFT) || (slot == ITEM_SLOT_EARS_RIGHT))
+		user.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law
+	else
+		user.typing_indicator_state = /obj/effect/overlay/typing_indicator
+
 /obj/item/pda/heads/ntr
 	name = "NanoTrasen Representative PDA"
 	default_cartridge = /obj/item/cartridge/hos
