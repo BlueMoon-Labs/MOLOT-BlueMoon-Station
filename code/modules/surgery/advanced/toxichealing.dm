@@ -2,7 +2,6 @@
 	name = "Body Rejuvenation"
 	desc = "Хирургическая процедура, которая помогает справиться с кислородным голоданием, лечит части тела, поврежденные из-за токсичных соединений и выводит все реагенты из крови. Работает как с трупами, так и с живыми."
 	steps = list(/datum/surgery_step/incise,
-				/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/incise,
 				/datum/surgery_step/clamp_bleeders,

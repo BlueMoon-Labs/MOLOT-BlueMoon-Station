@@ -102,6 +102,14 @@
 			BP.generic_bleedstacks -= 3
 	return ..()
 
+/datum/surgery_step/close/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	. = ..()
+	if (ishuman(target))
+		var/mob/living/carbon/human/H = target
+		var/obj/item/bodypart/BP = H.get_bodypart(target_zone)
+		if(BP)
+			BP.take_damage(5, BURN)
+
 //saw bone
 /datum/surgery_step/saw
 	name = "Разрезать Кость"
