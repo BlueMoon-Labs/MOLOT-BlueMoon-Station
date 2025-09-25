@@ -22,7 +22,7 @@
 	description = "Stasis, but now mobile!"
 	prereq_ids = list("cryotech", "adv_biotech")
 	design_ids = list("stasis_roller_bed")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 
 /datum/techweb_node/adv_defibrillator_tec
 	id = "adv_defibrillator_tec"
