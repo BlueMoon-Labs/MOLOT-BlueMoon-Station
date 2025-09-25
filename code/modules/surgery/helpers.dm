@@ -68,7 +68,7 @@
 			app.name = text
 			choices[text] = app
 
-		var/P = show_radial_menu(user, M, choices, require_near = TRUE, radius = 20)
+		var/P = show_radial_menu(user, get_turf(M), choices, require_near = TRUE, radius = 20)
 		if(!P)
 			return
 

@@ -24,6 +24,7 @@
 	/datum/surgery/repair_puncture, \
 	/datum/surgery/healing/brute/basic, \
 	/datum/surgery/healing/burn/basic, \
+	/datum/surgery/blood_filter, \
 	/datum/surgery/graft_synthtissue, \
 	/datum/surgery/embalming, \
 	/datum/surgery/lipoplasty \

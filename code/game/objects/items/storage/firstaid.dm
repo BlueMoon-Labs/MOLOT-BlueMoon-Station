@@ -501,6 +501,7 @@
 	/obj/item/scalpel,
 	/obj/item/retractor,
 	/obj/item/cautery,
+	/obj/item/blood_filter,
 	/obj/item/surgical_drapes,
 	/obj/item/bonesetter,
 	/obj/item/autosurgeon,
