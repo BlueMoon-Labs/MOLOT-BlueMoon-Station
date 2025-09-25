@@ -1031,6 +1031,8 @@
 	pixel_y = 5
 	},
 /obj/item/inteq_sledgehammer,
+/obj/item/gun/energy/laser/canceller,
+/obj/item/radio,
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "bbw" = (
@@ -1080,6 +1082,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ/lvl3)
+"bcV" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
+	},
+/turf/open/floor/plating{
+	heat_capacity = 1e+006;
+	icon_state = "platingdmg2"
+	},
+/area/awaymission/InteQ)
 "bde" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1811,6 +1822,10 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/awaymission/InteQ)
+"bYX" = (
+/obj/item/electropack/shockcollar/bomb,
+/turf/open/floor/wood/wood_parquet,
+/area/awaymission/InteQ)
 "bZH" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
@@ -2305,6 +2320,7 @@
 	pixel_y = 7
 	},
 /obj/item/restraints/handcuffs/fake/kinky,
+/obj/item/radio,
 /turf/open/floor/light,
 /area/awaymission/InteQ)
 "cvi" = (
@@ -3286,6 +3302,7 @@
 	pixel_x = -6;
 	pixel_y = -25
 	},
+/obj/item/electropack/shockcollar/bomb,
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "duD" = (
@@ -3721,7 +3738,6 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/obj/effect/mob_spawn/human/inteqspace/dyson_gate,
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "dMl" = (
@@ -3747,6 +3763,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
 	},
 /turf/open/floor/plating,
 /area/awaymission/InteQ)
@@ -3781,10 +3800,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/InteQ)
 "dPQ" = (
-/obj/structure/railing{
-	dir = 8
+/obj/structure/rack,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
 	},
-/turf/closed/indestructible/rock,
+/obj/effect/turf_decal/tile/brown,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "dQl" = (
 /obj/machinery/piratepad,
@@ -3918,7 +3939,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "dXl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4319,6 +4344,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/bread,
 /turf/open/floor/plasteel,
 /area/awaymission/InteQ)
 "ert" = (
@@ -5243,7 +5269,6 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/effect/mob_spawn/human/inteqspace/dyson_gate,
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "fou" = (
@@ -6252,12 +6277,8 @@
 /turf/open/floor/plating,
 /area/awaymission/InteQ/lvl3)
 "gpK" = (
-/obj/effect/spawner/structure/window/plastitanium,
-/obj/machinery/door/poddoor/preopen{
-	id = "dorms-view"
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/blood/xtracks,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "gqb" = (
 /obj/effect/portal/permanent{
@@ -6534,6 +6555,7 @@
 /area/awaymission/InteQ)
 "gGw" = (
 /obj/structure/table,
+/obj/item/radio,
 /turf/open/floor/plasteel/white/textured/large,
 /area/awaymission/InteQ)
 "gGX" = (
@@ -7473,7 +7495,6 @@
 	name = "Silly paper"
 	},
 /obj/structure/safe/floor,
-/obj/item/gun/ballistic/revolver/russian,
 /turf/open/floor/carpet/orange,
 /area/awaymission/InteQ)
 "hzl" = (
@@ -8188,6 +8209,16 @@
 	},
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/plasteel/dark,
+/area/awaymission/InteQ)
+"ijo" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
+	},
+/turf/open/floor/plating,
 /area/awaymission/InteQ)
 "ijy" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -9520,6 +9551,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -9576,6 +9608,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/blood/xtracks,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "jzt" = (
@@ -9913,11 +9946,12 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "jQs" = (
-/obj/effect/turf_decal/tile/brown/opposingcorners,
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/syndicate/ranged/spacebattle,
+/obj/effect/decal/cleanable/blood/xtracks,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "jQt" = (
@@ -9977,6 +10011,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
@@ -10369,12 +10406,10 @@
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ/lvl2)
 "kmD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
 	},
-/obj/effect/turf_decal/tile/brown/opposingcorners,
-/mob/living/simple_animal/hostile/syndicate/ranged/spacebattle,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/awaymission/InteQ)
 "knd" = (
 /obj/effect/turf_decal/stripes/yellow/line{
@@ -10589,6 +10624,7 @@
 /obj/effect/turf_decal/stripes/yellow/line{
 	dir = 6
 	},
+/obj/item/radio,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/InteQ)
 "kwd" = (
@@ -11231,6 +11267,7 @@
 	req_access_txt = "152";
 	pixel_x = -26
 	},
+/obj/item/electropack/shockcollar/bomb,
 /turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "kZk" = (
@@ -15800,6 +15837,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "pqM" = (
@@ -15916,6 +15954,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
@@ -16681,6 +16722,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ/lvl2)
+"qeW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/InteQ)
 "qfj" = (
 /obj/structure/table/survival_pod,
 /obj/item/reagent_containers/hypospray/medipen/stimulants,
@@ -17688,6 +17738,10 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plating,
 /area/awaymission/InteQ)
+"qWd" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/space/stormtrooper,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/InteQ)
 "qWw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -18014,6 +18068,12 @@
 /area/awaymission/InteQ)
 "rko" = (
 /obj/structure/bed/matress/clean_pillowed,
+/obj/item/clothing/suit/space/hardsuit/advancedpa{
+	armor = list("melee" = 60, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 70, "bio" = 100, "rad" = 40, "fire" = 100, "acid" = 100, "wound" = 50);
+	desc = "Поврежденная силовая броня.Не хочеться думать как погиб ее прошлый владелец.";
+	name = "Поврежденная силовая броня"
+	},
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/padded,
 /area/awaymission/InteQ)
 "rkr" = (
@@ -18437,14 +18497,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/machinery/button/door/directional/north{
-	req_access_txt = "150";
-	name = "Dorms Blast Door Control";
-	desc = "To keep your sleepy heads away from the carp.";
-	id = "dorms-view";
-	pixel_x = 6;
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -18865,13 +18917,8 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "sbM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/carp/brown/beret{
-	name = "Admiral Brown"
-	},
-/turf/open/floor/wood,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/plating,
 /area/awaymission/InteQ)
 "scf" = (
 /obj/structure/bed,
@@ -19116,6 +19163,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/blood/xtracks,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "snp" = (
@@ -20051,7 +20099,9 @@
 /turf/open/floor/plating,
 /area/awaymission/InteQ)
 "tik" = (
-/obj/structure/shipping_container/kahraman,
+/obj/structure/shipping_container/kahraman{
+	layer = 1
+	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/awaymission/InteQ)
 "tiU" = (
@@ -21663,6 +21713,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "uBe" = (
@@ -21747,6 +21800,16 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/open/floor/plasteel/dark,
+/area/awaymission/InteQ)
+"uFn" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/decal/cleanable/blood/splatter{
+	color = "red"
+	},
+/turf/open/floor/plating,
 /area/awaymission/InteQ)
 "uFO" = (
 /turf/open/space/basic,
@@ -22029,7 +22092,6 @@
 /area/awaymission/InteQ)
 "uUr" = (
 /obj/machinery/door/poddoor/preopen,
-/mob/living/simple_animal/hostile/brute/leaper,
 /turf/open/floor/plasteel/showroomfloor,
 /area/awaymission/InteQ)
 "uUw" = (
@@ -22085,6 +22147,7 @@
 /obj/structure/railing,
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced,
+/obj/item/radio,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "uXW" = (
@@ -22610,6 +22673,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/decal/cleanable/blood/xtracks,
 /turf/open/floor/plating,
 /area/awaymission/InteQ)
 "vum" = (
@@ -22752,9 +22816,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/item/card/emag{
-	uses = 6
-	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/InteQ)
 "vFi" = (
@@ -23445,6 +23506,10 @@
 "wkc" = (
 /obj/structure/urbanismbigcrate,
 /turf/open/floor/plasteel/bluespace,
+/area/awaymission/InteQ)
+"wke" = (
+/obj/item/assembly/signaler/receiver,
+/turf/open/floor/wood/wood_parquet,
 /area/awaymission/InteQ)
 "wku" = (
 /obj/structure/table,
@@ -24597,7 +24662,8 @@
 /area/awaymission/InteQ)
 "xoN" = (
 /obj/structure/shipping_container/vitezstvi{
-	pixel_y = 38
+	pixel_y = 38;
+	pixel_x = 23
 	},
 /obj/structure/sign/flag/inteq,
 /turf/open/floor/catwalk_floor/iron_dark,
@@ -24812,6 +24878,15 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/indestructible/syndicate,
 /area/awaymission/InteQ/lvl2)
+"xxp" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/ert/commander,
+/turf/open/floor/mineral/plastitanium/yellow{
+	icon_state = "plastitanium"
+	},
+/area/awaymission/InteQ)
 "xyc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -26516,8 +26591,8 @@ uFO
 uFO
 uFO
 uFO
-rnu
-rnu
+uFO
+uFO
 fbM
 fbM
 fbM
@@ -26728,8 +26803,8 @@ fbM
 fbM
 fbM
 fbM
-gpK
-gpK
+fbM
+fbM
 fbM
 fbM
 pQl
@@ -26909,13 +26984,13 @@ jCe
 lLS
 uMw
 lMH
-aqi
+bcV
 ckw
 ckw
 rIA
 aqi
 ckw
-xqx
+kmD
 aPk
 fbM
 fbM
@@ -27123,7 +27198,7 @@ pcf
 fbM
 wxI
 ckw
-rHh
+xxp
 vDJ
 sCv
 ckw
@@ -27568,7 +27643,7 @@ nFZ
 fbM
 klg
 pjZ
-jCe
+iqW
 grv
 fbM
 fbM
@@ -27769,12 +27844,12 @@ pqC
 uKJ
 wjO
 eNL
-eNL
+jQs
 snl
 jzn
 mqz
 ubd
-oIo
+ijo
 oIo
 oIo
 hKw
@@ -27980,14 +28055,14 @@ xqx
 dFn
 bqG
 jSO
-jCe
+iqW
 jCe
 wUU
 jCe
-jCe
+gpK
 vtY
 dQA
-xqx
+sbM
 bEJ
 iBs
 sVj
@@ -28188,7 +28263,7 @@ bYR
 ckw
 ckw
 aqi
-jCe
+iqW
 aqi
 fbM
 nTE
@@ -28199,7 +28274,7 @@ laW
 jCe
 tJm
 dvF
-qWa
+uFn
 qWa
 tCJ
 ogM
@@ -28907,7 +28982,7 @@ uad
 uad
 ggI
 ggI
-qaS
+uOi
 uOi
 uOi
 uOi
@@ -29119,11 +29194,11 @@ uad
 uad
 uad
 ggI
-qaS
-qaS
-qaS
-qaS
-qaS
+uOi
+uOi
+uOi
+uOi
+uOi
 ggI
 uad
 uad
@@ -29331,10 +29406,10 @@ uad
 uad
 uad
 ggI
-qaS
-qaS
-qaS
-qaS
+uOi
+uOi
+uOi
+uOi
 ggI
 ggI
 uad
@@ -29544,8 +29619,8 @@ uad
 uad
 ggI
 ggI
-qaS
-qaS
+uOi
+uOi
 ggI
 ggI
 uad
@@ -29669,7 +29744,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -29881,7 +29956,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -30093,7 +30168,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -30111,7 +30186,7 @@ sYd
 kgV
 hTS
 wEe
-jQs
+tof
 hbw
 fbM
 mrh
@@ -30305,8 +30380,8 @@ ibQ
 ibQ
 ibQ
 ibQ
-wny
-huh
+eLN
+eLN
 eLN
 eLN
 eLN
@@ -30518,7 +30593,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -30532,7 +30607,7 @@ eLN
 fbM
 qCK
 ida
-sbM
+wWi
 hTS
 ahr
 bkG
@@ -30547,7 +30622,7 @@ bbO
 jCe
 jCe
 jCe
-qVO
+jCe
 jCe
 uvI
 fbM
@@ -30730,8 +30805,8 @@ ibQ
 ibQ
 ibQ
 ibQ
-wny
-huh
+eLN
+eLN
 eLN
 eLN
 eLN
@@ -30943,7 +31018,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -31155,7 +31230,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -31171,7 +31246,7 @@ mvu
 ida
 hTS
 erl
-kmD
+jxQ
 qmV
 fbM
 xzG
@@ -31367,7 +31442,7 @@ ibQ
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -31392,7 +31467,7 @@ jCe
 jCe
 jCe
 bbO
-jCe
+qVO
 jCe
 jCe
 jCe
@@ -31579,7 +31654,7 @@ cIr
 ibQ
 ibQ
 ibQ
-uee
+eLN
 eLN
 eLN
 eLN
@@ -31608,7 +31683,7 @@ jCe
 gWZ
 jCe
 jCe
-jCe
+qWd
 jCe
 fbM
 ezW
@@ -31791,8 +31866,8 @@ fbM
 ibQ
 ibQ
 ibQ
-wny
-dPQ
+eLN
+eLN
 eLN
 eLN
 eLN
@@ -32446,10 +32521,10 @@ kCr
 qmV
 rIu
 nCp
-xzG
+wjK
 jCe
 jCe
-jCe
+qVO
 jCe
 bbO
 jCe
@@ -36914,9 +36989,9 @@ pyf
 ezW
 lrM
 nMm
-pQl
+bYX
 kZj
-pQl
+wke
 djy
 qoA
 wWZ
@@ -37128,7 +37203,7 @@ lrM
 ozP
 bao
 pQl
-pQl
+bYX
 fjg
 wIh
 ycr
@@ -38028,7 +38103,7 @@ qaS
 qaS
 xPX
 qaS
-qaS
+hvi
 qaS
 qaS
 qaS
@@ -41561,8 +41636,8 @@ kOZ
 kCd
 kOZ
 dWN
-kZZ
-gyy
+dPQ
+qeW
 kOZ
 kOZ
 cwg
@@ -44810,7 +44885,7 @@ qaS
 qaS
 bfQ
 qaS
-qaS
+hvi
 qaS
 qaS
 qaS
