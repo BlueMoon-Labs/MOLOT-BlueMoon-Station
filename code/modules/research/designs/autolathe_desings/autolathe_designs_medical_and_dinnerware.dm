@@ -144,7 +144,7 @@
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/bonesetter
+/datum/design/bloodfilter
 	name = "Blood filter"
 	id = "bloodfilter"
 	build_type = AUTOLATHE | PROTOLATHE
