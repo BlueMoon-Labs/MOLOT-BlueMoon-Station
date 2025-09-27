@@ -2,7 +2,7 @@
 
 /datum/surgery/advanced/experimental_dissection
 	name = "Dissection"
-	desc = "A surgical procedure which analyzes the biology of a corpse, and automatically adds new findings to the research database."
+	desc = "Хирургическая процедура, которая анализирует биологию трупа и автоматически добавляет новые данные в базу данных исследований."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,
@@ -13,6 +13,10 @@
 	target_mobtypes = list(/mob/living) //Feel free to dissect devils but they're magic.
 	replaced_by = /datum/surgery/advanced/experimental_dissection/adv
 	requires_tech = FALSE
+	is_healing = FALSE // BLUEMOON ADD
+	icon = 'icons/obj/device.dmi'
+	icon_state = "forensicnew"
+	radial_priority = SURGERY_RADIAL_PRIORITY_OTHER_FOURTH
 	var/value_multiplier = 1
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target, obj/item/tool)

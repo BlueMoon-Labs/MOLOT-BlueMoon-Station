@@ -53,6 +53,7 @@
 		/obj/item/reagent_containers/borghypo/syndicate,
 		/obj/item/stack/medical/bone_gel,
 		/obj/item/bonesetter,
+		/obj/item/blood_filter,
 		/obj/item/organ_storage,
 		/obj/item/borg/cyborghug/medical,
 		/obj/item/borg/lollipop,

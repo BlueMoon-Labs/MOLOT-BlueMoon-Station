@@ -434,7 +434,7 @@ Class Procs:
 		user.set_machine(src)
 	. = ..()
 
-/obj/machinery/ui_act(action, params)
+/obj/machinery/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	if(params["ic_advactivator"])
 		return
 	add_fingerprint(usr)

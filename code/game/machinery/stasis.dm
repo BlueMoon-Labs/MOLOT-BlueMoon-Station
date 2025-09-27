@@ -75,6 +75,7 @@
 	var/_running = stasis_running()
 	if(!mattress_on)
 		mattress_on = SSvis_overlays.add_vis_overlay(src, icon, mattress_state, BELOW_OBJ_LAYER, plane, dir, alpha = 0, unique = TRUE)
+		mattress_on.vis_flags = VIS_INHERIT_PLANE | VIS_INHERIT_LAYER | VIS_INHERIT_DIR | VIS_INHERIT_ID
 	else
 		vis_contents += mattress_on
 		if(managed_vis_overlays)

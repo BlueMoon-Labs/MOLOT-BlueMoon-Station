@@ -16,6 +16,14 @@
 	design_ids = list("splitbeaker", "cryotube", "cryo_Grenade", "stasis")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 
+/datum/techweb_node/adv_cryotech
+	id = "adv_cryotech"
+	display_name = "Advanced Cryostasis Technology"
+	description = "Stasis, but now mobile!"
+	prereq_ids = list("cryotech", "adv_biotech")
+	design_ids = list("stasis_roller_bed")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+
 /datum/techweb_node/adv_defibrillator_tec
 	id = "adv_defibrillator_tec"
 	display_name = "Defibrillator Upgrades"
@@ -136,7 +144,7 @@
 	display_name = "Advanced Surgery Tools"
 	description = "Refined and improved redesigns for the run-of-the-mill medical utensils."
 	prereq_ids = list("basic_tools", "adv_biotech", "adv_surgery") // BLUEMOON ADD basic_tools for order consistency
-	design_ids = list("drapes", "retractor_adv", "surgicaldrill_adv", "scalpel_adv", "bonesetter", "surgical_tape")
+	design_ids = list("drapes", "retractor_adv", "surgicaldrill_adv", "scalpel_adv", "surgical_tape")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/exp_surgery

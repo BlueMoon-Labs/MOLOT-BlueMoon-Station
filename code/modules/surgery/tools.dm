@@ -486,7 +486,7 @@
 	icon_state = "bonesetter"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
+	custom_materials = list(/datum/material/iron=1000)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
 	w_class = WEIGHT_CLASS_SMALL
@@ -533,3 +533,63 @@
 		if(!(user.mind in dropped_notified))
 			to_chat(user, "<span class='warning' style='font-size:125%'>Без [src] вы больше не можете обслуживать синтетиков со сложным техобслуживанием.</span>")
 			dropped_notified += user.mind
+
+/obj/item/blood_filter
+	name = "blood filter"
+	desc = "For filtering the blood."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bloodfilter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	custom_materials = list(/datum/material/iron = 3000, /datum/material/glass = 3000)
+	item_flags = SURGICAL_TOOL
+	w_class = WEIGHT_CLASS_SMALL
+	attack_verb_continuous = list("pumps", "siphons")
+	attack_verb_simple = list("pump", "siphon")
+	tool_behaviour = TOOL_BLOODFILTER
+	toolspeed = 1
+	/// Assoc list of chem ids to names, used for deciding which chems to filter when used for surgery
+	var/list/whitelist = list()
+
+/obj/item/blood_filter/augment
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_TINY
+	toolspeed = 0.5
+
+/obj/item/blood_filter/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BloodFilter", name)
+		ui.open()
+
+/obj/item/blood_filter/ui_data(mob/user)
+	. = list()
+
+	.["whitelist"] = list()
+	for(var/key in whitelist)
+		.["whitelist"] += whitelist[key]
+
+/obj/item/blood_filter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	. = TRUE
+	switch(action)
+		if("add")
+			var/selected_reagent = tgui_input_list(usr, "Select reagent to filter", "Whitelist reagent", GLOB.name2reagent)
+			if(!selected_reagent)
+				return FALSE
+
+			var/datum/reagent/chem_id = GLOB.name2reagent[selected_reagent]
+			if(!chem_id)
+				return FALSE
+
+			if(!(chem_id in whitelist))
+				whitelist[chem_id] = selected_reagent
+
+		if("remove")
+			var/chem_name = params["reagent"]
+			for(var/path in whitelist)
+				if(whitelist[path] == chem_name)
+					whitelist -= path

@@ -323,6 +323,7 @@
 	name = "Medical"
 	added_channels = list(RADIO_CHANNEL_MEDICAL = 1)
 	basic_modules = list(
+		/obj/item/surgical_drapes,
 		/obj/item/scalpel,
 		/obj/item/retractor,
 		/obj/item/hemostat,
@@ -330,7 +331,7 @@
 		/obj/item/cautery,
 		/obj/item/surgicaldrill,
 		/obj/item/bonesetter,
-		/obj/item/surgical_drapes,
+		/obj/item/blood_filter,
 		/obj/item/shockpaddles/cyborg,
 		/obj/item/healthanalyzer/cyborg,
 		/obj/item/reagent_containers/borghypo,
@@ -2167,6 +2168,7 @@
 		/obj/item/scalpel/advanced,
 		/obj/item/melee/transforming/energy/sword/cyborg/saw,
 		/obj/item/bonesetter,
+		/obj/item/blood_filter,
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/roller/robo,
 		/obj/item/card/emag,

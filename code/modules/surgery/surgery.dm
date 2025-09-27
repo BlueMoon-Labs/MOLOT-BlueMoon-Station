@@ -18,8 +18,12 @@
 	var/lying_required = TRUE								//Does the vicitm needs to be lying down.
 	var/requires_tech = FALSE
 	var/replaced_by
-	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
-	var/datum/wound/targetable_wound							//The wound type this surgery targets
+	var/datum/wound/operated_wound							//The actual wound datum instance we're targeting
+	var/datum/wound/targetable_wound						//The wound type this surgery targets
+	var/is_healing = TRUE									//BLUEMOON ADD || Is this healing operation or improving/other
+	var/icon = 'icons/obj/surgery.dmi'						//BLUEMOON ADD || icon file for radial menu
+	var/icon_state = "scalpel"								//BLUEMOON ADD || icon state for radial menu
+	var/radial_priority = SURGERY_RADIAL_PRIORITY			//BLUEMOON ADD || icon state for radial menu
 
 	var/list/special_surgery_traits = list() // BLUEMOON ADD - наши особые трейты для операции
 
@@ -108,9 +112,14 @@
 	var/datum/surgery_step/S = get_surgery_step()
 	if(S)
 		var/obj/item/tool = user.get_active_held_item()
+		if(istype(tool, /obj/item/stack/medical/mesh))
+			var/obj/item/stack/medical/mesh/T = tool
+			if(!T.is_open)
+				//to_chat(user, span_warning("Вам нужно вскрыть упаковку, прежде чем приступать к операции!"))
+				return
 		if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
 			return TRUE
-		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
+		if((tool && tool.item_flags & SURGICAL_TOOL) || (S.stop_implements && (S.implement_type in S.implements))) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
 			/* BLUERMOON REMOVAL START - перенесено в try_op
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 			/ BLUEMOON REMOVAL END */
@@ -135,20 +144,24 @@
 	var/propability = 0.5
 	var/turf/T = get_turf(target)
 
-	if(locate(/obj/structure/table/optable/abductor, T))
-		propability += 1
-	else if(locate(/obj/structure/table/optable, T))
-		propability += 0.5
-	else if(locate(/obj/machinery/stasis))
-		propability += 0.4
-	else if(locate(/obj/structure/table, T))
-		propability += 0.3
-	else if(locate(/obj/structure/bed, T))
-		propability += 0.1
+	//It is important that the value with the highest chance is always on top.
+	var/static/list/prop_sources = list(
+		/obj/structure/table/optable/abductor 	= 1,
+		/obj/structure/table/optable           	= 0.5,
+		/obj/machinery/stasis                  	= 0.4,
+		/obj/structure/bed/roller             	= 0.35,
+		/obj/structure/table                   	= 0.3,
+		/obj/structure/bed                     	= 0.1
+		)
+
+	for (var/path in prop_sources)
+		if (locate(path, T))
+			propability += prop_sources[path]
+			break
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(target.mob_weight > MOB_WEIGHT_HEAVY)
-		propability = 0.8
+		propability = max(propability, 0.8)
 
 	// Шансы на операции в зависимости от состояния пациента
 	var/check_for_painkillers = FALSE
